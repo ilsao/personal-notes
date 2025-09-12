@@ -1,0 +1,1 @@
+https://www.xdull.cn/kmp.html
