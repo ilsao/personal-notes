@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Physics/1-1.md",
+                "file": "Math/Calculus/Limit.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "1-1"
+              "title": "Limit"
             }
           }
         ]
@@ -44,7 +44,7 @@
                 "autoReveal": false
               },
               "icon": "lucide-folder-closed",
-              "title": "Files"
+              "title": "文件列表"
             }
           },
           {
@@ -157,8 +157,8 @@
             "state": {
               "type": "calendar",
               "state": {},
-              "icon": "lucide-ghost",
-              "title": "calendar"
+              "icon": "calendar-with-checkmark",
+              "title": "Calendar"
             }
           }
         ],
@@ -171,22 +171,21 @@
   },
   "left-ribbon": {
     "hiddenItems": {
-      "switcher:Open quick switcher": false,
-      "graph:Open graph view": false,
-      "canvas:Create new canvas": false,
-      "daily-notes:Open today's daily note": false,
-      "templates:Insert template": false,
-      "command-palette:Open command palette": false,
-      "bases:Create new base": false
+      "bases:创建新数据库": false,
+      "switcher:打开快速切换": false,
+      "graph:查看关系图谱": false,
+      "canvas:新建白板": false,
+      "daily-notes:打开/创建今天的日记": false,
+      "templates:插入模板": false,
+      "command-palette:打开命令面板": false
     }
   },
   "active": "159ef33192f0884b",
   "lastOpenFiles": [
     "Math/Calculus/Calculus, Early Transcendentals.pdf",
-    "personal-notes.pub",
-    "personal-notes",
-    "CSAPP/CSAPP_U6.md",
-    "CSAPP/CSAPP_U2.md",
+    "Math/Calculus/Limit.md",
+    "Math/Calculus/Calculus, Early Transcendentals, International Metric -- Stewart J_, Clegg D_, Watson S_ -- 9, 2021 -- CENGAGE Learning Custom Publishing -- 9780357113516 -- 7f824382fbd3c78c10daace4bb9efc8c -- Anna’s Archive.pdf",
+    "pic/Pasted image 20250909165841.png",
     "Physics/1-1.md",
     "Operating Systems/MBR.md",
     "交大/重要日程.md",
@@ -196,7 +195,6 @@
     "Computer Networking/Intro. to the Internet.md",
     "CTF/MoeCTF 2025 Writeup.md",
     "C++/Class.md",
-    "Pasted image 20250909165841.png",
     "Math/Linear Algebra/Matrix and Systems.md",
     "Operating Systems/BeyondOS/Setup.md",
     "Operating Systems/BeyondOS",
@@ -211,15 +209,16 @@
     "Making a Debugger/Lab Design.md",
     "Making a Debugger",
     "Math/Calculus/Calculus.pdf",
-    "Math/Calculus/Calculus, Early Transcendentals, International Metric -- Stewart J_, Clegg D_, Watson S_ -- 9, 2021 -- CENGAGE Learning Custom Publishing -- 9780357113516 -- 7f824382fbd3c78c10daace4bb9efc8c -- Anna’s Archive.pdf",
     "Computer Networking",
     "pic/Pasted image 20250829145820.png",
     "AI Prompts.md",
     "CSAPP/README.md",
     "CSAPP/CSAPP_U10.md",
     "Algorithm/KMP.md",
+    "CSAPP/CSAPP_U6.md",
     "CSAPP/CSAPP_U8.md",
     "CSAPP/CSAPP_U7.md",
+    "Operating Systems",
     "CSAPP/淺談內存分配器設計 (malloc lab).md",
     "pic/Pasted image 20250810154758.png",
     "pic/Pasted image 20250810154313.png",
