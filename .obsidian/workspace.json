@@ -44,7 +44,7 @@
                 "autoReveal": false
               },
               "icon": "lucide-folder-closed",
-              "title": "文件列表"
+              "title": "Files"
             }
           },
           {
@@ -171,22 +171,24 @@
   },
   "left-ribbon": {
     "hiddenItems": {
-      "switcher:打开快速切换": false,
-      "graph:查看关系图谱": false,
-      "canvas:新建白板": false,
-      "daily-notes:打开/创建今天的日记": false,
-      "templates:插入模板": false,
-      "command-palette:打开命令面板": false,
-      "bases:创建新数据库": false
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false,
+      "bases:Create new base": false
     }
   },
-  "active": "1d5b0d980baa8a22",
+  "active": "73b4479fff272d60",
   "lastOpenFiles": [
-    "Math/Linear Algebra/Recommanded Syllabus.md",
+    "pic/Pasted image 20250914165104.png",
     "Math/Linear Algebra/Matrix and Systems.md",
+    "Physics/Vector.md",
+    "Physics/Physical Quantities.md",
     "Math/Calculus/Limit.md",
+    "Operating Systems/BeyondOS/MBR.md",
     "Math/Calculus/Basic concept.md",
-    "Physics/1-1.md",
     "Pasted image 20250909165841.png",
     "pic/Pasted image 20250909165841.png",
     "Math/Calculus/Calculus, Early Transcendentals.pdf",
@@ -196,13 +198,16 @@
     "CSAPP/CSAPP_U2.md",
     "Operating Systems/MBR.md",
     "交大/重要日程.md",
+    "Operating Systems/xv6 陷入機制淺析.md",
     "Operating Systems/OSTEP_Virtualization.md",
     "Operating Systems/操作系統真相還原 U0.md",
     "Computer Networking/Intro. to the Internet.md",
     "CTF/MoeCTF 2025 Writeup.md",
     "C++/Class.md",
+    "Operating Systems/BeyondOS/Setup.md",
     "Operating Systems/BeyondOS",
     "CSAPP/CSAPP_U9.md",
+    "Math/Linear Algebra/Recommanded Syllabus.md",
     "Physics",
     "pic/Pasted image 20250903170635.png",
     "CSAPP/Computer Systems A Programmer’s Perspective.pdf",
@@ -217,16 +222,11 @@
     "AI Prompts.md",
     "CSAPP/README.md",
     "CSAPP/CSAPP_U10.md",
-    "Algorithm/KMP.md",
-    "CSAPP/CSAPP_U8.md",
-    "CSAPP/CSAPP_U7.md",
-    "CSAPP/淺談內存分配器設計 (malloc lab).md",
     "pic/Pasted image 20250810154758.png",
     "pic/Pasted image 20250810154313.png",
     "pic/Pasted image 20250804192752.png",
     "pic/Pasted image 20250425214737.png",
     "pic/Pasted image 20250805231548.png",
-    "pic/Pasted image 20250805220646.png",
     "未命名.canvas"
   ]
 }
