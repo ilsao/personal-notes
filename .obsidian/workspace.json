@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Computer Networking/Intro. to the Internet.md",
+                "file": "Operating Systems/OSTEP/Concurrency.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Intro. to the Internet"
+              "title": "Concurrency"
             }
           }
         ]
@@ -78,7 +78,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 244.5
+    "width": 275.5
   },
   "right": {
     "id": "1ec41845cb5e3b89",
@@ -180,13 +180,20 @@
       "bases:创建新数据库": false
     }
   },
-  "active": "73b4479fff272d60",
+  "active": "1d5b0d980baa8a22",
   "lastOpenFiles": [
+    "C++/Class.md",
+    "Operating Systems/OSTEP/Concurrency.md",
+    "Operating Systems/OSTEP/Virtualization.md",
+    "Operating Systems/OSTEP",
     "Math/Linear Algebra/Matrix and Systems.md",
-    "Math/Linear Algebra/Recommanded Syllabus.md",
+    "Physics/Vector.md",
+    "Physics/Physical Quantities.md",
+    "Computer Networking/Intro. to the Internet.md",
+    "pic/Pasted image 20250914165104.png",
     "Math/Calculus/Limit.md",
+    "Operating Systems/BeyondOS/MBR.md",
     "Math/Calculus/Basic concept.md",
-    "Physics/1-1.md",
     "Pasted image 20250909165841.png",
     "pic/Pasted image 20250909165841.png",
     "Math/Calculus/Calculus, Early Transcendentals.pdf",
@@ -196,13 +203,13 @@
     "CSAPP/CSAPP_U2.md",
     "Operating Systems/MBR.md",
     "交大/重要日程.md",
-    "Operating Systems/OSTEP_Virtualization.md",
+    "Operating Systems/xv6 陷入機制淺析.md",
     "Operating Systems/操作系統真相還原 U0.md",
-    "Computer Networking/Intro. to the Internet.md",
     "CTF/MoeCTF 2025 Writeup.md",
-    "C++/Class.md",
+    "Operating Systems/BeyondOS/Setup.md",
     "Operating Systems/BeyondOS",
     "CSAPP/CSAPP_U9.md",
+    "Math/Linear Algebra/Recommanded Syllabus.md",
     "Physics",
     "pic/Pasted image 20250903170635.png",
     "CSAPP/Computer Systems A Programmer’s Perspective.pdf",
@@ -212,21 +219,14 @@
     "Making a Debugger/Lab Design.md",
     "Making a Debugger",
     "Math/Calculus/Calculus.pdf",
-    "Math/Calculus/Calculus, Early Transcendentals, International Metric -- Stewart J_, Clegg D_, Watson S_ -- 9, 2021 -- CENGAGE Learning Custom Publishing -- 9780357113516 -- 7f824382fbd3c78c10daace4bb9efc8c -- Anna’s Archive.pdf",
     "pic/Pasted image 20250829145820.png",
     "AI Prompts.md",
     "CSAPP/README.md",
-    "CSAPP/CSAPP_U10.md",
-    "Algorithm/KMP.md",
-    "CSAPP/CSAPP_U8.md",
-    "CSAPP/CSAPP_U7.md",
-    "CSAPP/淺談內存分配器設計 (malloc lab).md",
     "pic/Pasted image 20250810154758.png",
     "pic/Pasted image 20250810154313.png",
     "pic/Pasted image 20250804192752.png",
     "pic/Pasted image 20250425214737.png",
     "pic/Pasted image 20250805231548.png",
-    "pic/Pasted image 20250805220646.png",
     "未命名.canvas"
   ]
 }

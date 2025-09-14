@@ -1,9 +1,9 @@
 
 # Row Echelon Form (REF)
 
-1. The first nonzero entry in each nonzero row is 1.
-2. If row $k$ does not consist entirely of zeros, the number of leading zero entries in row $k+1$ is greater than the number of leading zero entries in row $k$. 
-3. If there are rows whose entires are zero,  they're below the rows having nonzero entries. 
+1. 任何非零 row 開頭第一個非零的數字必為1。
+2. 任何非零 row 開頭第一個非零的數字必在上一 row 開頭第一個非零數字之後的 column 上。
+3. 所有全零 row 必置於矩陣底部。
 
 The process of transform a matrix into REF is called **Guassian elimination**.
 
@@ -14,12 +14,12 @@ The process of transform a matrix into REF is called **Guassian elimination**.
 
 If a system in row echelon form and all the entries above the leading 1 in each column have been eliminated, it's **reduced row echelon form**. 
 
-1. The matrix is in row echelon form. 
-2. The first nonzero entry in each row is the only nonzero entry in it's column
+1. 矩陣為 REF。
+2. 對於任意 row，開頭第一個非零數字是該 column 上唯一的非零數字。
 
 The process of transform a matrix into RREF is called **Gauss-Jordan reduction**.
 
-# Overdetermined/Undetermined Systems
+# Overdetermined(超定)/Undetermined(欠定) Systems
 
 Overdetermined Systems: If there're **more** equations than unknows, it's an **overdetermined** system. 
 
@@ -162,3 +162,35 @@ Then, we add $\vec{u}$ to $c(\vec{u}-\vec{v})$. i.e., $\vec{u} + c(\vec{u}-\vec{
 Sol 2:
 
 $a⋅(u+c(u−v))=a⋅u+c(a⋅u−a⋅v)=b+c(b−b)=b$.
+
+2. 
+   給定一個 overdetermined 的齊次方程系統，討論解的情況。
+
+Sol:
+因為是齊次系統，所以該系統就算 overdetermined 也會有解(最少也有全零解)。
+分為：單一解(全零解)，無限多組解。
+
+3. 
+   給定一個 underdetermined 的非齊次方程，討論解的情況。
+
+Sol:
+因為 underdetermined，所以若沒有矛盾情況出現，則必有 free variable 出現，導致無限多組解。
+因為限制不足，所以無法出現單一解的情況。
+無解僅在矛盾出現時發生。
+
+統整：
+
+![[Pasted image 20250914165104.png]]
+
+$$
+\begin{align}
+ - & i_{1} + i_{2} - i_{3} = 0 \text{ (node A)} \\
+ & i_{1} - i_{2} + i_{4} = 0 \text{ (node B)} \\
+ & i_{3} - i_{5} + i_{6} = 0 \text{ (node C)} \\
+- & i_{4} + i_{5} - i_{6} = 0 \text{ (node D)} \\
+ & 4i_{1} + 2i_{2} = 8 \text{ (top loop)} \\
+ & 2i_{2} - 4i_{5} = \text{ (medium loop)} \\
+ & 4i_{5} + 5i_{6} = 10 \text{ (bottom loop)}
+\end{align}
+$$
+# ASK!!
