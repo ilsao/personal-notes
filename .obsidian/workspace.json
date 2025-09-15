@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Operating Systems/OSTEP/Concurrency.md",
+                "file": "Math/Calculus/Limit.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Concurrency"
+              "title": "Limit"
             }
           }
         ]
@@ -182,18 +182,18 @@
   },
   "active": "1d5b0d980baa8a22",
   "lastOpenFiles": [
+    "Math/Calculus/Basic concept.md",
+    "Math/Calculus/Limit.md",
     "C++/Class.md",
+    "Physics/Physical Quantities.md",
     "Operating Systems/OSTEP/Concurrency.md",
     "Operating Systems/OSTEP/Virtualization.md",
     "Operating Systems/OSTEP",
     "Math/Linear Algebra/Matrix and Systems.md",
     "Physics/Vector.md",
-    "Physics/Physical Quantities.md",
     "Computer Networking/Intro. to the Internet.md",
     "pic/Pasted image 20250914165104.png",
-    "Math/Calculus/Limit.md",
     "Operating Systems/BeyondOS/MBR.md",
-    "Math/Calculus/Basic concept.md",
     "Pasted image 20250909165841.png",
     "pic/Pasted image 20250909165841.png",
     "Math/Calculus/Calculus, Early Transcendentals.pdf",
