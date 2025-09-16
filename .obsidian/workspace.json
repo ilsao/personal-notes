@@ -44,7 +44,7 @@
                 "autoReveal": false
               },
               "icon": "lucide-folder-closed",
-              "title": "文件列表"
+              "title": "Files"
             }
           },
           {
@@ -171,26 +171,26 @@
   },
   "left-ribbon": {
     "hiddenItems": {
-      "switcher:打开快速切换": false,
-      "graph:查看关系图谱": false,
-      "canvas:新建白板": false,
-      "daily-notes:打开/创建今天的日记": false,
-      "templates:插入模板": false,
-      "command-palette:打开命令面板": false,
-      "bases:创建新数据库": false
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false,
+      "bases:Create new base": false
     }
   },
-  "active": "1d5b0d980baa8a22",
+  "active": "73b4479fff272d60",
   "lastOpenFiles": [
     "Math/Calculus/Basic concept.md",
     "Math/Calculus/Limit.md",
     "C++/Class.md",
-    "Physics/Physical Quantities.md",
     "Operating Systems/OSTEP/Concurrency.md",
+    "Math/Linear Algebra/Matrix and Systems.md",
     "Operating Systems/OSTEP/Virtualization.md",
     "Operating Systems/OSTEP",
-    "Math/Linear Algebra/Matrix and Systems.md",
     "Physics/Vector.md",
+    "Physics/Physical Quantities.md",
     "Computer Networking/Intro. to the Internet.md",
     "pic/Pasted image 20250914165104.png",
     "Operating Systems/BeyondOS/MBR.md",

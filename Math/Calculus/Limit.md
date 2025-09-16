@@ -231,6 +231,23 @@ Sol:
 From the $\epsilon \cdot \delta$ definition, $\forall \epsilon > 0, \exists \delta >0$ such that: 
 $\text{If }0<|x-3| < \delta \text{, then } |x^{2}-9| < \epsilon$
 $|x^{2}-9|=|x+3||x-3|$
-Takes $\delta \leq 1$, then
-$2 \leq x \leq 4 \implies |x+3| \leq 7$
-Hence, takes $\delta = \text{min}\{1,\frac{\epsilon}{7}\}$. 
+Take $\delta \leq 1$, then
+$2 < x < 4 \implies |x+3| < 7$
+Thus, take $\delta = \text{min}\{1,\frac{\epsilon}{7}\}$. 
+So, $\lim_{ x \to 3 }x^{2}=9$ by the definition of a limit. 
+
+4.  Verify that $\delta=\text{min}\left\{ 2, \frac{\epsilon}{8} \right\}$ showing that $\lim_{ x \to 3 }x^{2}=9$
+
+Sol:
+Given $\epsilon >0$, we let $\delta=\text{min}\left\{ 2, \frac{\epsilon}{8} \right\}$. 
+If $0<|x-3|<\delta \text{, then } 0<|x-3|<2\implies|x+3|<8.$
+Also $|x-3|< \frac{\epsilon}{8}$, so $|x^{2}-9| = |x+3||x-3| = 8 \cdot \frac{\epsilon}{8}=\epsilon$
+Thus, $\lim_{ x \to 3 }x^{2}=9$ by the definition of a limit. 
+
+5. Prove $\lim_{ x \to 6^{-} }(6+x)^{1/8}=0$
+
+Sol:
+From the $\epsilon \cdot \delta$ definition, $\forall \epsilon > 0, \exists \delta > 0$ such that
+If $0<x+6<\delta$ then $|(6+x)^{1/8}|<\epsilon$
+`~~~~~^ key`
+Remain are the same content as before. 
