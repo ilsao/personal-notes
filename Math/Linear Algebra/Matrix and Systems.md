@@ -148,6 +148,143 @@ y\begin{bmatrix}
 1 & 3
 \end{bmatrix}
 $$
+
+# 轉置矩陣
+
+一個 $m \times n$ 矩陣 $A$ 轉置為一個 $n \times m$ 矩陣 $B$，則 $A$ 與 $B$ 的關係定義為
+
+$$
+b_{ji}=a_{ij}
+$$
+
+其中， $i \leq n, j \leq m$。且矩陣 $A$ 的轉置記作 $A^{T}$。
+
+若 $A^{T}=A$，則此 $n \times n$ 的矩陣 $A$ **對稱(symmetric)**。
+
+以下列出一些 Algebraic Rules for Transposes
+1. $(\alpha A)^{T}=\alpha A^{T}$
+2. $(A+B)^{T}=A^{T}+B^{T}$
+3. $(AB)^{T}=B^{T}A^{T}$
+
+# 單位矩陣(The Identity Matrix)
+
+對於 $n\times n$ 單位矩陣 $I=(\delta_{ij})$定義如下：
+
+$$
+\delta_{ij}=
+\begin{cases}
+1 & \text{if i = j} \\
+0 & \text{if i } \neq \text{j}
+\end{cases}
+$$
+
+需要注意的是，想表示 $I$ 的第 $j$ column，不是使用 $i_{j}$，而使用 $e_{j}$。所以可以使用 $I=(e_{1}, e_{2}, \dots e_{n})$ 來表示一個 $n \times n$ 單位矩陣。
+
+# 矩陣的逆運算
+
+一個矩陣只能擁有一個乘法逆元，以下為證明：
+
+Proof:
+假設 $B, C$ 為 $A$ 的乘法逆元，則
+$$
+B = BI = B(AC) = (BA)C = IC = C
+$$
+
+**singular(奇異的)**：當一個矩陣沒有乘法逆元，則稱為 singular。即， $\det(A)=0$。
+
+注意，**singular不可以用在非方陣上**，因為一個非方陣總是沒有乘法逆元。
+
+如何求一個矩陣的乘法逆元？
+
+我們以如下例子說明。
+
+現有 $A=\begin{bmatrix} 2 & 1 \\ 3 & 2 \end{bmatrix}$ ，求$A^{-1}$。
+
+令 $A^{-1}=\begin{bmatrix} x_{11} & x_{12} \\ x_{21} & x_{22} \end{bmatrix}$ ，我們有：
+
+$$
+\begin{bmatrix}
+2 & 1 \\
+3 & 2
+\end{bmatrix}
+\begin{bmatrix}
+x_{11} & x_{12} \\
+x_{21} & x_{22}
+\end{bmatrix}
+=
+\begin{bmatrix}
+1 & 0 \\
+0 & 1
+\end{bmatrix}
+$$
+
+等於解：
+
+$$
+\begin{bmatrix}
+2 & 1 \\
+3 & 2
+\end{bmatrix}
+\begin{bmatrix}
+x_{11} \\
+x_{21}
+\end{bmatrix}=
+\begin{bmatrix}
+1 \\
+0
+\end{bmatrix}
+$$
+
+與
+
+$$
+\begin{bmatrix}
+2 & 1 \\
+3 & 2
+\end{bmatrix}
+\begin{bmatrix}
+x_{12} \\
+x_{22}
+\end{bmatrix}
+=\begin{bmatrix}
+0 \\
+1
+\end{bmatrix}
+$$
+
+也就是解以下增廣矩陣(化為 Reduced Row Echelon Form)：
+
+$$
+\begin{bmatrix}
+2 & 1 & | \text{ }1 & 0 \\
+3 & 2 & | \text{ }0 & 1
+\end{bmatrix}
+$$
+
+$$
+\begin{bmatrix}
+2 & 1 & 1 & 0 \\
+1 & 1 & -1 & 1
+\end{bmatrix}
+\to
+\begin{bmatrix}
+1 & 1 & -1 & 1 \\
+2 & 1 & 1 & 0
+\end{bmatrix}
+\to
+\begin{bmatrix}
+1 & 1 & -1 & 1 \\
+0 & -1 & 3 & -2
+\end{bmatrix}
+\to
+\begin{bmatrix}
+1 & 0 & 2 & -1 \\
+0 & 1 & -3 & 2
+\end{bmatrix}
+$$
+
+即，$A^{-1}=\begin{bmatrix}2 & -1 \\ -3 & 2\end{bmatrix}$。
+
 # 例題
 
 1. Assume $\vec{u} = (u_{1}, u_{1}\dots u_{n})$ and $\vec{v}= (v_{1}, v_{2} \dots v_{n})$ are two solutions of $a_{1}x_{1}+a_{2}x_{2}+ \dots +a_{n}x_{n}=b$. **Prove** that for any real number $C$, $\vec{u}+c(u-v)$ is the solution of $a_{1}x_{1}+a_{2}x_{2}+ \dots +a_{n}x_{n}=b$. 
