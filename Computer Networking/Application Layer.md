@@ -138,3 +138,52 @@ Content-Type: text/html
 「503 Service Unavailable」表示服務器當前很忙，暫時無法響應客戶端，類似「網絡服務正忙，請稍後重試」的意思。
 
 「505 HTTP Version Not Supported」 表示服務器不支持請求報文使用的 HTTP 版本。
+
+## 用戶與服務器的交互：cookie
+
+因為 HTTP 服務器是無狀態的，所以需要通過 cookie 來識別用戶。
+
+cookie 有 4 個組件：
+1. HTTP 響應報文中的 cookie 首部行。
+2. HTTP 請求報文中的 cookie 首部行。
+3. 用戶端保存的 cookie 文件，由瀏覽器留存。
+4. Web 站點的後端數據庫。
+
+## Web 緩存
+
+**Web 緩存器(Web cache)** 也稱**代理服務器(proxy server)**，能夠代理初始 Web 服務器來滿足 HTTP 請求。
+
+通常來說，一個配置正確的瀏覽器的所有請求都先被重定向到 Web 緩存器中。一次瀏覽器請求對象的流程如下：
+1. 瀏覽器創建一個到 Web 緩存器的 TCP 連接，並向 Web 緩存器發送 HTTP 請求。
+2. Web 緩存器檢查本地是否有該對象緩存。若有，Web 緩存器就用 HTTP 響應報文返回該對象。
+3. 若無，Web 緩存器就創建到初始 Web 服務器的 TCP 連接，並向初始 Web 服務器請求該對象。
+4. Web 緩存器接收對象並緩存，然後返回該對象給瀏覽器。
+
+### 條件 GET 方法
+
+HTTP 使用**條件 GET(conditional GET)** 來保證緩存器中的對象總是最新的。
+
+當代理服務器向初始服務器發送請求報文後，得到的響應報文會包含一個 `Last-Modified` 手部行，表明最後修改時間。
+
+當瀏覽器向代理服務器發送請求，且該請求的文件距離 `Last-Modified` 已經過了一段時間，代理服務器就會向初始服務器發送條件 GET 來檢查對象是否更新。
+
+緩存器發送一個條件 GET 報文：
+
+```
+GET /somedir/kiwi.gif HTTP/1.1
+Host: www.somewebsite.com
+If-modified-since: Wed, 9 Sep 2015 09:23:24
+```
+
+初始服務器會檢查文件是否更新，若發生更新則返回該對象。否則返回一個不包含實體體的響應報文：
+
+```
+HTTP/1.1 304 Not Modified
+Date: Sat, 10 Oct 2015 15:39:29
+Server: Apache/1.3.0 (Unix)
+
+(empty entity body)
+```
+
+# 電子郵件
+
