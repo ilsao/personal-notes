@@ -34,6 +34,7 @@ Thus, $\lim_{ x \to a }r(x)=\lim_{ x \to a }{\frac{p(x)}{q(x)}}$.
 By Limit Laws, we have $\frac{\lim_{ x \to a }p(x)}{\lim_{ x \to a }q(x)}=\frac{p(a)}{q(a)}=r(a)$.
 Thus, for any rational function r, $\lim_{ x \to a }r(x)=r(a)$.
 
+
 # 極限的精確定義
 
 我們稱$f(x)$在$x$趨近於$c$時的極限為$L$，記做：
@@ -198,10 +199,15 @@ $$
 \lim_{ x \to a^{-} } f(x)=f(a)
 $$
 
-# 易錯觀念
+# 小 tip
 
 - When denominator approaches 0 as $x\to a$, the limit will exist only if the numerator also approaches 0 as $x\to a$. 
-
+- $\lim_{ x \to 0 } \frac{\sin x}{x}=1$。利用單位圓，$\tan x, \sin x$夾擠可得。
+- $\lim_{ x \to 0 } \frac{\sin ax}{\sin bx}=\frac{a}{b}$
+proof:
+   利用經典極限：$\lim_{ x \to 0 }\frac{\sin x}{x}=1$。
+   將 $ax \text{ } bx$ 代換，$\lim_{ x \to 0 } \frac{\sin ax}{\sin bx}= \\lim_{ x \to 0 } \frac{\sin u}{\sin v}$。
+   展開 $\frac{\sin u}{u} \frac{u}{v} \frac{v}{\sin v}$，可得 $\lim_{ x \to 0 } \frac{\sin u}{\sin v}=1 \cdot \frac{u}{v} \cdot 1 = \frac{u}{v}$。
 # 經典例題
 
 1. $\text{If }\lim_{ x \to 1 } \frac{f(x)-8}{x-1}=10 \text{, find }\lim_{ x \to 1 }f(x).$
@@ -225,7 +231,20 @@ $0 \leq f(x) \leq x^{2}$
 By Squeeze Theorem, we have $\lim_{ x \to 0 }0=0=\lim_{ x \to 0 }x^{2}=\lim_{ x \to 0 }f(x)$. 
 Thus, by Squeeze Theorem we have $\lim_{ x \to 0 }f(x)=0$. 
 
-3. Prove that $\lim_{ x \to 3 }x^{2}=9$.
+3. 求 $\lim_{ x \to  0} \frac{\sin 3\theta}{\tan 2\theta}$。
+
+Sol:
+法一：
+$\frac{\sin 3\theta}{\frac{\sin 2\theta}{\cos 2\theta}}=\frac{\sin 3\theta \cos 2\theta}{\sin 2\theta}$
+又 $\lim_{ x \to 0 }\cos x=1 \therefore\lim_{ x \to 0 }\cos 2x=1$ 等於求 $\lim_{ \theta \to 0 } \frac{\sin 3\theta}{\sin 2\theta}$。
+利用 $\lim_{ \theta \to 0 } \frac{\sin ax}{\sin bx}=\frac{a}{b}$，則 $\lim_{ x \to 0 } \frac{\sin 3x}{\sin 2x}=\frac{3}{2}$。
+
+
+法二：洛必達
+$\because \lim_{ \theta \to 0 } \frac{\sin 3\theta}{\tan 2\theta} \in \text{0/0類型} \therefore \text{可以套用洛必達}$
+$\lim_{ \theta \to 0 } \frac{\sin 3\theta}{\tan 2\theta}=\lim_{ \theta \to 0 }\frac{\sin^{'} 3\theta}{\tan^{'}2\theta}=\lim_{ \theta \to 0 } \frac{3 \cos 3\theta}{2\sec^{2}2\theta}=\frac{3}{2}$。
+
+4. Prove that $\lim_{ x \to 3 }x^{2}=9$.
 
 Sol:
 From the $\epsilon \cdot \delta$ definition, $\forall \epsilon > 0, \exists \delta >0$ such that: 
@@ -244,10 +263,75 @@ If $0<|x-3|<\delta \text{, then } 0<|x-3|<2\implies|x+3|<8.$
 Also $|x-3|< \frac{\epsilon}{8}$, so $|x^{2}-9| = |x+3||x-3| = 8 \cdot \frac{\epsilon}{8}=\epsilon$
 Thus, $\lim_{ x \to 3 }x^{2}=9$ by the definition of a limit. 
 
-5. Prove $\lim_{ x \to 6^{-} }(6+x)^{1/8}=0$
+5. Verify, by a geometric argument, that the largest possible choice of $\delta$ for showing that $\lim_{ x \to 3 }x^{2}$ is $\delta=\sqrt{ 9+\epsilon }-3$
+
+![[Pasted image 20250918160953.png]]
+
+Sol:
+From the graph, our choice for $\delta$ are $\delta_{1}=3-\sqrt{ 9-\epsilon }$ and $\delta_{2} = \sqrt{ 9+\epsilon }-3$. The possible choice of $\delta$ is the minimum value of $\delta_{1}$ and $\delta_{2}$. So, $\delta=\delta_{2}=\sqrt{ 9+\epsilon }-3$. 
+
+6. Prove $\lim_{ x \to 6^{-} }(6+x)^{1/8}=0$
 
 Sol:
 From the $\epsilon \cdot \delta$ definition, $\forall \epsilon > 0, \exists \delta > 0$ such that
 If $0<x+6<\delta$ then $|(6+x)^{1/8}|<\epsilon$
 `~~~~~^ key`
 Remain are the same content as before. 
+
+7. Prove $\lim_{ x \to a }\sqrt{ x }=\sqrt{ a }$, if $a>0$
+
+Sol:
+... skip ...
+$|\sqrt{ x }-\sqrt{ a }|=|x-a|| \frac{1}{\sqrt{ x }+\sqrt{ a }}|$.
+We let $|x-a| < \frac{a}{2}\implies \frac{1}{\sqrt{ x }-\sqrt{ a }}< \frac{1}{\sqrt{ \frac{1}{2}a }+\sqrt{ a }}$ (若令 $|x-a|<1$，化簡後會得到 $a\geq 1$ 的條件)
+`~~~~~~~~~~~~~^ key`
+... skip ...
+
+8. Prove the Heaviside function that $\lim_{ x \to 0 }f(x)$ does not exist.
+
+Sol:
+Suppose that $\lim_{ x \to 0 }f(x)=L$. Given $\epsilon=\frac{1}{2}$, there exists $\delta>0$ such that:
+If $0<|x|<\delta$ then $|f(x)-L|<  \frac{1}{2}$
+$|f(x)-L|< \frac{1}{2} \implies L- \frac{1}{2} < f(x) < L + \frac{1}{2}$
+For $0<x<\delta$, we have $f(x)=1 \implies L> \frac{1}{2}$
+For $-\delta < x < 0$, we have $f(x)=0\implies L < \frac{1}{2}$
+This contradicts $L> \frac{1}{2}$. Therefore $\lim_{ x \to 0 }f(x)$ does not exist. 
+
+9. Given $\lim_{ x \to a }f(x)=\infty$ and $\lim_{ x \to a }g(x)=c$, prove the limit below: 
+- (a) $\lim_{ x \to a }f(x)+g(x)=\infty$
+- (b) $\lim_{ x \to a }f(x)g(x)=\infty$ if $c>0$
+- (c) $\lim_{ x \to a }f(x)g(x)=-\infty$ if $c<0$
+
+Sol:
+(a)
+Let $M>0$ be given. 
+Since $\lim_{ x \to a }f(x)=\infty$, there exists $\delta_{1} \ni$
+If $0<|x-a|<\delta_{1}$ then $f(x) > M -c + 1$
+Since $\lim_{ x \to a }g(x)=c$, for any $\epsilon>0$ there exists $\delta_{2} \ni$
+If $0<|x-a|<\delta_{2}$ then $|g(x)-c|<\epsilon$
+Take $\epsilon \leq 1$, then we can get $c-1<g(x)<c+1$
+Take $\delta = \text{min}\{\delta_{1}, \delta_{2}\}$, we have
+$0<|x-a|<\delta \implies f(x)+g(x)>(M - c + 1) + c＝M$
+Thus, $\lim_{ x \to a }(f(x)+g(x))=\infty$
+
+(b)
+Let $M > 0$ be given.
+Since $\lim_{ x \to a }f(x)=\infty$, there exists $\delta_{1} \ni$
+If $0<|x-a|<\delta_{1}$ then $f(x) > \frac{2M}{c}$
+Since $\lim_{ x \to a }g(x)=c$, for any $\epsilon>0$ there exists $\delta_{2} \ni$
+If $0<|x-a|<\delta_{2}$ then $|g(x)-c| < \epsilon$。
+Take $\epsilon \leq \frac{c}{2}$ we can get $\frac{c}{2}<g(x)< \frac{3c}{2}$
+Take $\delta = \text{min}\{\delta_{1}, \delta_{2}\}$, we have
+$0<|x-a|<\delta\implies f(x)g(x)> \frac{2M}{c}\cdot \frac{c}{2}=M$
+Thus, $\lim_{ x \to a }f(x)g(x)=\infty$. 
+
+(c)
+Let $M<0$ be given.
+Since $\lim_{ x \to a }f(x)=\infty$, there exists $\delta_{1} \ni$
+If $0<|x-a|<\delta_{1}$ then $f(x) < \frac{2M}{c}$ (Note that M < 0 and c < 0 then M/c > 0)
+Since $\lim_{ x \to a }g(x)=c$, for any $\epsilon>0$ there exists $\delta_{2} \ni$
+If $0<|x-a|<\delta_{2}$ then $|g(x)-c| < \epsilon$. 
+Take $\epsilon \leq \frac{-c}{2}$ we can get $\frac{3c}{2}<g(x)< \frac{c}{2}$.
+Take $\delta = \text{min}\{\delta_{1}, \delta_{2}\}$, we have
+$0<|x-a|<\delta\implies f(x)g(x)< \frac{2M}{c}\cdot \frac{c}{2}=M$
+Thus, $\lim_{ x \to a }f(x)g(x)=-\infty$. 
