@@ -384,15 +384,13 @@ Sol 2:
 
 $a⋅(u+c(u−v))=a⋅u+c(a⋅u−a⋅v)=b+c(b−b)=b$.
 
-2. 
-   給定一個 overdetermined 的齊次方程系統，討論解的情況。
+2. 給定一個 overdetermined 的齊次方程系統，討論解的情況。
 
 Sol:
 因為是齊次系統，所以該系統就算 overdetermined 也會有解(最少也有全零解)。
 分為：單一解(全零解)，無限多組解。
 
-3. 
-   給定一個 underdetermined 的非齊次方程，討論解的情況。
+3. 給定一個 underdetermined 的非齊次方程，討論解的情況。
 
 Sol:
 因為 underdetermined，所以若沒有矛盾情況出現，則必有 free variable 出現，導致無限多組解。
@@ -414,4 +412,20 @@ $$
  & 4i_{5} + 5i_{6} = 10 \text{ (bottom loop)}
 \end{align}
 $$
-# ASK!!
+
+4. $Ax=b$ be a linear system whose augmented matrix $(A|b)$ has reduced row echelon form $\begin{bmatrix}1 & 2 & 0 & 3 & 1  | &-2 \\ 0 & 0 & 1 & 2 & 4| & 5 \\ 0 & 0 & 0 & 0 & 0| & 0 \\ 0 & 0 & 0 & 0 & 0| & 0 \end{bmatrix}$
+   (a) Find all solutions to the system.
+   (b) If $a_{1}=\begin{bmatrix}1 \\ 1 \\ 3 \\ 4\end{bmatrix}$ and $a_{3}=\begin{bmatrix}2 \\ -1 \\ 1 \\ 3\end{bmatrix}$ determine $b$. 
+
+Sol:
+(a)
+It's easy to find out that $\begin{cases}x_{1}=-2-2s-3k-t \\ x_{2}=s \\ x_{3}=5-2k-4t \\x_{4}=k \\ x_{5}=t\end{cases}$
+
+(b)
+Let's recall the definition of $Ax=b$. 
+Actually, $b$ is the linear combination of $A$. 
+In this case, we can express as $b = x_{1}a_{1}+x_{2}a_{2}+x_{3}a_{3}+x_{4}a_{4}+x_{5}a_{5}$. 
+Since $a_{1}, a_{3}$ are given, let's find a special solution of $x$. 
+Take $x_{2}=x_{4}=x_{5}=0$, we have $x_{1}=-2, x_{3}=5$. 
+Thus, we can express $b$ as follow linear combination $Ax=b=-2a_{1}+5a_{3}$. 
+So, $b$ will be $\begin{bmatrix}8 \\ -7 \\ -1 \\ 7\end{bmatrix}$. 
