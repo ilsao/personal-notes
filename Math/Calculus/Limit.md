@@ -186,6 +186,8 @@ $$
 - $\lim_{ x \to a }f(x)$ 存在
 - $\lim_{ x \to a }f(x) = f(a)$
 
+需要注意的是，若為端點情況下，連續僅需考慮單邊極限。
+
 $$
 \text{A function }f \text{ is continuous from the right at a number }a \text{ if }
 $$
@@ -199,6 +201,135 @@ $$
 \lim_{ x \to a^{-} } f(x)=f(a)
 $$
 
+當函數 $f$ 在區間中連續，則代表 $f$ 在區間中處處連續。需要確認以下兩點：
+- 在一般情況下連續
+- 在端點情況下仍連續
+
+若函數 $f, g$ 在 $a$ 點連續，且 $c$ 是一個常數。則以下函數皆在 $a$ 點連續：
+- $f+g$
+- $f-g$
+- $cf$
+- $fg$
+- $\frac{f}{g}\text{ If } g(a)\neq 0$
+
+proof:
+Since $f(x)$ and $g(x)$ are continuous at $a$, we have:
+$\lim_{ x \to a }f(x)=f(a)$ and $\lim_{ x \to a }g(x)=g(a)$
+Therefore
+$\lim_{ x \to a }[f(x)+g(x)]=\lim_{ x \to a }f(x)+\lim_{ x \to a }g(x)$
+$=f(a)+g(a)$
+$=(f+g)(a)$
+This shows that $f+g$ is continuous at $a$. 
+
+以上結論可以推導出我們在 2.3 節使用的特性：
+- 多項式處處連續
+- 有理函數(rational function)處處連續，除了令分母等於零那點。
+
+還有，所有一對一連續函數的反函數也連續。
+
+若 $\lim_{ x \to a }g(x)=b$ ，且$f$ 在 $b$ 點處連續, 那麼 $\lim_{ x \to a }f(g(x))=f(b)$。即：
+
+$$
+\lim_{ x \to a }f(g(x))=f(\lim_{ x \to a } g(x))
+$$
+
+若 $g$ 在 $a$ 點連續，且 $f$ 在 $g(a)$ 處連續，則 $(f \circ g)(x)=f(g(x))$ 在$a$ 點連續(由以上定理推導得到)。也可以表達為：一個連續函數包裹著一個連續函數還是一個連續函數。
+
+proof:
+因為 $\lim_{ x \to a }f(g(x))= f(g(a))$，所以此函數連續。
+
+# 中值定理
+
+若 $f$ 在區間 $[a,b]$ 連續，$N$ 介於 $f(a), f(b)$ 之間且 $f(a) \neq f(b)$。則存在 $c \in (a,b)$ 使得 $f(c)=N$。
+
+需要注意的是，$c$ 的值可能唯一，也可能有很多組解。
+
+# 水平漸進線
+
+當 $f$ 在區間 $(a, \infty)$ 有定義，則
+
+$$
+\lim_{ x \to \infty } f(x)=L
+$$
+
+代表只要 $x$ 足夠大， $f(x)$ 可以無限接近 $L$ 。
+
+也可以表示為：
+
+$$
+f(x) \to L \text{ as } x\to \infty
+$$
+
+此極限的精確定義如下：
+
+$$
+\begin{align}
+ & \forall \epsilon>0,\exists N \ni \\
+ & \text{If } x>N\text{ then } |f(x)-L|<\epsilon
+\end{align}
+$$
+
+一個在 $x\to \infty$ 時趨近於 $\infty$ 的極限定義如下：
+
+$$
+\lim_{ x \to \infty } f(x)=\infty
+$$
+$$
+\text{means that } \forall M>0, \exists N>0 \ni
+$$
+$$
+\text{If } x>N \text{ then }f(x)>M
+$$
+
+## 計算趨近於無限的極限
+
+我們需要使用以下結論：
+$$
+\text{If }r>0 \text{ is a rational number, then}
+$$
+$$
+\lim_{ x \to \infty } \frac{1}{x^{r}}=0
+$$
+$$
+\text{If }r>0 \text{is a rational number such that }x^{r} \text{ is defined for all }x\text{, then}
+$$
+$$
+\lim_{ x \to -\infty } \frac{1}{x^{r}}=0
+$$
+
+至於為何二者的成立條件不同，是因為當 $x\to-\infty$ 時，如果對負數開偶數次方無意義，必須開奇數次方。
+
+我們還需要掌握以下變體：
+
+$$
+\lim_{ x \to \infty } f(x)=\lim_{ t \to 0^{+} } f\left( \frac{1}{t} \right)
+$$
+
+### 例題
+
+尋找 $f(x)= \frac{\sqrt{ 2x^{2}+1 }}{3x-5}$ 的水平漸進線。
+
+Sol:
+首先尋找 $x\to \infty$ 時的水平漸進線：$\lim_{ x \to \infty } \frac{\sqrt{ 2x^{2}+1 }}{3x-5}$。
+$\lim_{ x \to \infty } \frac{\sqrt{ 2+\frac{1}{x^{2}} }}{3-\frac{5}{x}}=\frac{\sqrt{ 2 }}{3}$. 
+接著尋找 $x\to -\infty$ 時的水平漸進線：$\lim_{ x \to -\infty } \frac{\sqrt{ 2x^{2}+1 }}{3x-5}$
+需要注意的是，$\because x<0 \therefore x=-\sqrt{ x^{2} }$. 
+$\lim_{ x \to -\infty } \frac{\sqrt{ 2x^{2}+1 }}{3x-5}=\lim_{ x \to -\infty } \frac{\frac{\sqrt{ 2x^{2}+1 }}{-\sqrt{ x^{2} }}}{3-\frac{5}{x}}=\lim_{ x \to -\infty } \frac{-\sqrt{ 2+\frac{1}{x^{2}} }}{3-\frac{5}{x}}=\frac{-\sqrt{ 2 }}{3}$
+亦或者令 $h=-x$ 求 $\lim_{ h \to \infty } \frac{\sqrt{ 2h^{2}+1 }}{-3h-5}= \frac{\sqrt{ 2 }}{-3}$
+
+求 $\lim_{ x \to 2^{+} }\tan\left( \frac{1}{x-2} \right)$
+
+Sol:
+$\because \lim_{ x \to 2^{+} } \frac{1}{x-2}=\infty \text{( doesn't exist )} \therefore \text{we cannot use the Theorem 8 in section 2.5}$.
+However, we can use the definition of arctan that its horizontal asymptote as $x\to \infty$ is $\frac{\pi}{2}$.
+Thus, we get the answer $\lim_{ x \to 2^{+} }\arctan\left( \frac{1}{x-2} \right)=\lim_{ t \to \infty }\arctan t=\frac{\pi}{2}$.
+
+求 $\lim_{ x \to \infty }(x^{2}-x)$
+
+Sol:
+需要注意，因為 $\infty$ 不是一個數字，並且 $\lim_{ x \to \infty }x=\infty$ 極限未定義，所以不能使用 Limit Law 來解此題。
+但是，我們可以將其分解為 $\lim_{ x \to \infty }x(x-1)=\infty$. 
+
 # 小 tip
 
 - When denominator approaches 0 as $x\to a$, the limit will exist only if the numerator also approaches 0 as $x\to a$. 
@@ -208,7 +339,12 @@ proof:
    利用經典極限：$\lim_{ x \to 0 }\frac{\sin x}{x}=1$。
    將 $ax \text{ } bx$ 代換，$\lim_{ x \to 0 } \frac{\sin ax}{\sin bx}= \\lim_{ x \to 0 } \frac{\sin u}{\sin v}$。
    展開 $\frac{\sin u}{u} \frac{u}{v} \frac{v}{\sin v}$，可得 $\lim_{ x \to 0 } \frac{\sin u}{\sin v}=1 \cdot \frac{u}{v} \cdot 1 = \frac{u}{v}$。
-# 經典例題
+   - 洛必達：$\lim_{ x \to a } \frac{f(x)}{g(x)}=\lim_{ x \to a } \frac{f'(x)}{g'(x)}$
+   - 注意，就算某點非連續，其極限仍可能存在。(比如某點未定義，但其左右極限相同)
+   - 若 $f=\frac{1}{x}, g=\frac{1}{x^{2}}$ 則 $(f \circ g)(x)=x^{2}$ ，且$(f \circ g)(x)$ 在 $x=0$ 處不連續(未定義)。不要以為處處連續！
+   - 若要證明「當且僅當」成立，需要雙向證明。
+
+# 經典練習題
 
 1. $\text{If }\lim_{ x \to 1 } \frac{f(x)-8}{x-1}=10 \text{, find }\lim_{ x \to 1 }f(x).$
 
@@ -334,4 +470,29 @@ If $0<|x-a|<\delta_{2}$ then $|g(x)-c| < \epsilon$.
 Take $\epsilon \leq \frac{-c}{2}$ we can get $\frac{3c}{2}<g(x)< \frac{c}{2}$.
 Take $\delta = \text{min}\{\delta_{1}, \delta_{2}\}$, we have
 $0<|x-a|<\delta\implies f(x)g(x)< \frac{2M}{c}\cdot \frac{c}{2}=M$
-Thus, $\lim_{ x \to a }f(x)g(x)=-\infty$. 
+Thus, $\lim_{ x \to a }f(x)g(x)=-\infty$.
+
+10. 證明 $f$ 在 $a$ 處連續 $\iff \lim_{ h \to 0 }f(a+h)=f(a)$
+
+Sol:
+Let x = a + h, and $h \to 0 \iff x \to a$
+Then we have $\lim_{ h \to 0 }f(a+h)=\lim_{ x \to a }f(x)$. 
+($\implies$) If $f$ is continuous at $a$, then $\lim_{ h \to 0 }f(a+h)=\lim_{ x \to a }f(x)=f(a)$. 
+($\impliedby$) If $\lim_{ h \to 0 }f(a+h)=f(a)$, then by substitution $\lim_{ x \to a }f(x)=f(a)$. i.e., $f$ is continuous at $a$. 
+
+11. prove that cosine is a continuous function. 
+
+Sol:
+因為使用定義 $\lim_{ x \to a }\cos x=\cos a$ 不好操作，使用 $\lim_{ h \to 0 }\cos(a+h)=\cos(a)$ 證明。
+$\lim_{ h \to 0 }\cos(a+h)=\lim_{ h \to 0 }[\cos a \cos h-\sin a\sin h]=\cos a$
+Thus, cosine is a continuous function. 
+
+12. Suppose $f$ is continuous on $[1,5]$ and the only solutions of the equation $f(x)=6$ are $x=1$ and $x=4$. If $f(2)=8$, explain why $f(3)>6$.
+
+Sol:
+Suppose that $f(3) < 6$. 
+By the I.V.T., in $(2,3)$ we have a number $c$ such that $f(c)=6$. 
+However, this contradicts that the only solution of $f(x)=6$ is $x=1$ and $x=4$. 
+Hence $f(3) < 6$ is incorrect.
+It follows that $f(3) \geq 6$. However, $f(3)=6$ also contradicts that the only solution of $f(x)=6$ is $x=1$ and $x=4$. 
+Thus, $f(3) > 6$. 
