@@ -496,3 +496,23 @@ However, this contradicts that the only solution of $f(x)=6$ is $x=1$ and $x=4$.
 Hence $f(3) < 6$ is incorrect.
 It follows that $f(3) \geq 6$. However, $f(3)=6$ also contradicts that the only solution of $f(x)=6$ is $x=1$ and $x=4$. 
 Thus, $f(3) > 6$. 
+
+13. If $a$ and $b$ are positive numbers, prove that the equation $\frac{a}{x^{3}+x^{2}-1}+\frac{b}{x^{3}+x-2}=0$ has at least one solution in the interval $(-1, 1)$. 
+
+Sol:
+We have to notice that $\frac{a}{x^{3}+x^{2}-1}+\frac{b}{x^{3}+x-2}=0$ can be convert as $a(x^{3}+x-2)+b(x^{3}+x^{2}-1)=0$. (Hard to realize this for me)
+Let the formula above be $f(x)$, $f(-1)=-4a<0, f(1)=2b>0$.
+Since $f(-1) < 0<f(1)$, and $f$ is continuous in $[-1, 1]$, there exists $c \in (-1, 1)$ such that $f(c)=0$ by Intermediate Value Theorem.
+
+14. Show that the absolute value function $F(x)=|x|$ is continuous everywhere.
+
+Sol:
+$\lim_{ x \to 0^{-} }F(x)=0, \lim_{ x \to 0^{+} }F(x)=0\implies \lim_{ x \to 0 }F(x)=0$. Thus, $F(x)$ is continuous at 0.
+For $a > 0$, $\lim_{ x \to a }F(x)=\lim_{ x \to a }x=a=F(a)$. Thus, $F(x)$ is continuous in $(0, \infty)$.
+For $a<0, \lim_{ x \to a }F(x)=\lim_{ x \to a }(-x)=-a=F(a)$. Thus, $F(x)$ is continuous in $(-\infty, 0)$. 
+Hence, $F(x)$ is continuous everywhere.
+
+15. Prove that if $f$ is a continuous function on an interval, then so is $|f|$.
+
+Sol:
+Assume $f$ is continuous in interval $I$. For $a \in I$, $\lim_{ x \to a }|f(x)|=|\lim_{ x \to a }f(x)|=|f(a)|$.  (If $a$ is the endpoint of $I$, use the appropriate one-sided limit. ) So $|f|$ is continuous in $I$. 
