@@ -5,7 +5,6 @@ $$
 $$
 
 proof: 
-
 Let $p(x)=a_{0} + a_{1}x + a_{2}x^{2}+ \dots +a_{n}x^{n}$ .
 Thus, by Limit Laws
 $\lim_{ x \to a }p(x)=a_{0}+a_{1}\lim_{ x \to a }x+a_{2}\lim_{ x \to a }x^{2}+\dots +a_{n}\lim_{ x \to a }x_{n}$ 
@@ -58,7 +57,7 @@ $$
 
 解：
 
-設$c=1$，$L=2$，$f(x)=5x-3$，則需要找到符合的$\delta$與$\epsilon$。
+設$c=1$，$L=2$，$f(x)=5x-3$，則需要找到符合的 $\delta$ 與 $\epsilon$ 使得：
 
 $$
 0<|x-1|<\delta \implies |f(x) - L| < \epsilon
@@ -67,28 +66,18 @@ $$
 利用$\epsilon$到推$\delta$：
 
 $$
-\begin{align}
-|(5x-3) - 2| = |5x-5| < \epsilon \\
-5|x-1| < \epsilon \\
-|x-1|< \frac{\epsilon}{5}
-\end{align}
+|(5x-3) - 2| = |5x-5| = 5|x-1|
 $$
 
-我們取$\delta=\frac{\epsilon}{5}$，若$0<|x-1|<\delta=\frac{\epsilon}{5}$則：
+取 $\delta=\frac{\epsilon}{5}$。
+
+若 $0<|x-c|<\delta$，則 $|x-c| < \frac{\epsilon}{5}$。
 
 $$
-|5x-5| < \epsilon
+|5x-5|=5|x-1| < 5 \cdot \frac{\epsilon}{5}=\epsilon
 $$
 
-證畢。
-
-$$
-\lim_{ x \to 1 } \frac{f(x)-8}{x-1}=10, \text{求} \lim_{ x \to 1 } f(x)
-$$
-$$
-\because \lim_{ x \to 1 } \frac{f(x)-8}{x-1} \text{ exist, }
-\therefore f(x)-8 \text{可以被 }x-1\text{整除，即}f(1)-8=0 \implies f(1)=8 \implies \lim_{ x \to 1 } f(x)=8
-$$
+所以，由極限的精確定義 $\lim_{ x \to 1 }f(x)=2$ 。
 
 # 單側極限
 
@@ -98,7 +87,7 @@ $$
 \lim_{ x \to a^{-} } f(x) = L
 $$
 
-對於所有數字 $\epsilon >0$，存在數字 $\delta > 0$ 使得
+對於所有 $\epsilon >0$，存在 $\delta > 0$ 使得
 
 $$
 \text{If } a-\delta<x<a \text{ then } |f(x) - L| < \epsilon
@@ -115,11 +104,6 @@ $$
 $$
 \text{If } a<x<a+\delta \text{ then } |f(x) - L| < \epsilon
 $$
-
-## 利用代數對給定的$\epsilon$求$\delta$
-
-1. 解不等式$|f(x)-L|<\epsilon$，找到一個開區間$(a,b)$包含$c$且當所有$x\neq c$時不等式皆成立。
-2. 找到一個$\delta>0$使得在開區間$(a,b)$中的$c$在$(c-\delta, c+\delta)$中間，且不等式$|f(x)-L|<\epsilon$對所有$x\neq c$皆成立。
 
 # 無限極限的精確定義
 
@@ -148,28 +132,36 @@ $$
 
 Sol:
 令 $M$ 為任意正數，我們需要尋找 $\delta > 0$ 使得
-$\text{If }0<|x|<\delta \text{ then } \frac{1}{x^{2}} > M$
-$\frac{1}{x^{2}} > M \Leftrightarrow x^{2} < \frac{1}{M} \Leftrightarrow |x| < \frac{1}{\sqrt{ M }}$
-取 $\delta = \frac{1}{\sqrt{ M }}$
+$\text{If }0<|x|<\delta \text{ then } \frac{1}{x^{2}} > M$ 
+$\frac{1}{x^{2}}=(|x|)^{-2}$ 
+取 $\delta = M^{-1/2}$ 
+若 $0<|x|<\delta$ 則 $|x| < M^{-1/2}$ 
+$\frac{1}{x^{2}}=|x|^{-2} > (M^{-1/2})^{-2}=M$ (取倒數變號) 
 因此，對於所有正數 $M$ 存在 $\delta = \frac{1}{\sqrt{ M }}$ 使得 $0<|x|<\delta \implies \frac{1}{x^{2}} > M$
 
 # 證明 limit law
 
-首先，我們來證明：
+若
+
+$$
+\lim_{ x \to a } f(x)=L,\lim_{ x \to a } g(x)=M
+$$
+
+證明：
 
 $$
 \lim_{ x \to a } [f(x) + g(x)] = L + M
 $$
 
 proof:
-根據 $\epsilon \cdot \delta$ 定義，$\forall \epsilon > 0, \exists\delta>0$ 使得
-$$
-\text{If }0<|x-a|<\delta \text{, then }|f(x) + g(x) - L - M| < \epsilon
-$$
+根據 $\epsilon - \delta$ 定義，$\forall \epsilon > 0, \exists\delta>0$ 使得
+$\text{If }0<|x-a|<\delta \text{, then }|f(x) + g(x) - L - M| < \epsilon$ 
 $|f(x) + g(x) - L - M|=|f(x)-L + g(x) - M|$
-根據三角不等式 $|x+y| \leq |x| + |y|$，我們可以寫出：$|f(x)-L + g(x) - M| \leq |f(x)-L| + |g(x)-M|$
-令 $\delta_{1} > 0 \text{, } \delta_{2} > 0$ 且 $0<|x-a|<\delta_{1}$ 使得 $|f(x)-L|<\frac{\epsilon}{2}$，與 $0<|x-a|<\delta_{2}$ 使得 $|g(x)-M|<\frac{\epsilon}{2}$
-取 $\delta = \text{min}\{\delta_{1}, \delta_{2}\}$
+根據**三角不等式** $|x+y| \leq |x| + |y|$，我們可以寫出：$|f(x)-L + g(x) - M| \leq |f(x)-L| + |g(x)-M|$
+`~~~~~~~^ key` 
+令 $\delta_{1} > 0 \text{, } \delta_{2} > 0$ 且 $0<|x-a|<\delta_{1}$ 使得 $|f(x)-L|<\frac{\epsilon}{2}$，與 $0<|x-a|<\delta_{2}$ 使得 $|g(x)-M|<\frac{\epsilon}{2}$ 
+`~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^ key` 
+取 $\delta = \text{min}\{\delta_{1}, \delta_{2}\}$ 
 因此，對於任何給定的 $\epsilon$，存在$\delta = \text{min}\{\delta_{1}, \delta_{2}\}$ 使得 $0<|x-a|<\delta \implies |f(x) + g(x) - L - M| < \epsilon$
 
 # 連續
@@ -225,7 +217,7 @@ This shows that $f+g$ is continuous at $a$.
 - 多項式處處連續
 - 有理函數(rational function)處處連續，除了令分母等於零那點。
 
-還有，所有一對一連續函數的反函數也連續。
+還有，所有一對一連續函數的反函數也連續。因為反函數由原函數對稱 $y=x$ 得到，不可能因為做對稱而由連續變為不連續。
 
 若 $\lim_{ x \to a }g(x)=b$ ，且$f$ 在 $b$ 點處連續, 那麼 $\lim_{ x \to a }f(g(x))=f(b)$。即：
 
@@ -236,7 +228,7 @@ $$
 若 $g$ 在 $a$ 點連續，且 $f$ 在 $g(a)$ 處連續，則 $(f \circ g)(x)=f(g(x))$ 在$a$ 點連續(由以上定理推導得到)。也可以表達為：一個連續函數包裹著一個連續函數還是一個連續函數。
 
 proof:
-因為 $\lim_{ x \to a }f(g(x))= f(g(a))$，所以此函數連續。
+因為 $\lim_{ x \to a }f(g(x))= f(\lim_{ x \to a }g(x)) = f(g(a))$，所以此函數連續。
 
 # 中值定理
 
@@ -291,13 +283,13 @@ $$
 \lim_{ x \to \infty } \frac{1}{x^{r}}=0
 $$
 $$
-\text{If }r>0 \text{is a rational number such that }x^{r} \text{ is defined for all }x\text{, then}
+\text{If }r>0 \text{ is a rational number such that }x^{r} \text{ is defined for all }x\text{, then}
 $$
 $$
 \lim_{ x \to -\infty } \frac{1}{x^{r}}=0
 $$
 
-至於為何二者的成立條件不同，是因為當 $x\to-\infty$ 時，如果對負數開偶數次方無意義，必須開奇數次方。
+至於為何二者的成立條件不同，是因為當 $x\to-\infty$ 時，如果對負數開偶數次方($r$ 為偶數為底的分數)無意義，必須開奇數次方。
 
 我們還需要掌握以下變體：
 
@@ -317,7 +309,7 @@ $\lim_{ x \to \infty } \frac{\sqrt{ 2+\frac{1}{x^{2}} }}{3-\frac{5}{x}}=\frac{\s
 $\lim_{ x \to -\infty } \frac{\sqrt{ 2x^{2}+1 }}{3x-5}=\lim_{ x \to -\infty } \frac{\frac{\sqrt{ 2x^{2}+1 }}{-\sqrt{ x^{2} }}}{3-\frac{5}{x}}=\lim_{ x \to -\infty } \frac{-\sqrt{ 2+\frac{1}{x^{2}} }}{3-\frac{5}{x}}=\frac{-\sqrt{ 2 }}{3}$
 亦或者令 $h=-x$ 求 $\lim_{ h \to \infty } \frac{\sqrt{ 2h^{2}+1 }}{-3h-5}= \frac{\sqrt{ 2 }}{-3}$
 
-求 $\lim_{ x \to 2^{+} }\tan\left( \frac{1}{x-2} \right)$
+求 $\lim_{ x \to 2^{+} }\arctan\left( \frac{1}{x-2} \right)$
 
 Sol:
 $\because \lim_{ x \to 2^{+} } \frac{1}{x-2}=\infty \text{( doesn't exist )} \therefore \text{we cannot use the Theorem 8 in section 2.5}$.
@@ -337,11 +329,11 @@ Sol:
 - $\lim_{ x \to 0 } \frac{\sin ax}{\sin bx}=\frac{a}{b}$
 proof:
    利用經典極限：$\lim_{ x \to 0 }\frac{\sin x}{x}=1$。
-   將 $ax \text{ } bx$ 代換，$\lim_{ x \to 0 } \frac{\sin ax}{\sin bx}= \\lim_{ x \to 0 } \frac{\sin u}{\sin v}$。
-   展開 $\frac{\sin u}{u} \frac{u}{v} \frac{v}{\sin v}$，可得 $\lim_{ x \to 0 } \frac{\sin u}{\sin v}=1 \cdot \frac{u}{v} \cdot 1 = \frac{u}{v}$。
+   將 $ax \text{ } bx$ 代換，$\lim_{ x \to 0 } \frac{\sin ax}{\sin bx}= \lim_{ x \to 0 } \frac{\sin u}{\sin v}$。
+   展開 $\frac{\sin u}{u} \frac{u}{v} \frac{v}{\sin v}$，可得 $\lim_{ x \to 0 } \frac{\sin u}{\sin v}=1 \cdot \frac{u}{v} \cdot 1 = \frac{u}{v}=\frac{a}{b}$。
    - 洛必達：$\lim_{ x \to a } \frac{f(x)}{g(x)}=\lim_{ x \to a } \frac{f'(x)}{g'(x)}$
    - 注意，就算某點非連續，其極限仍可能存在。(比如某點未定義，但其左右極限相同)
-   - 若 $f=\frac{1}{x}, g=\frac{1}{x^{2}}$ 則 $(f \circ g)(x)=x^{2}$ ，且$(f \circ g)(x)$ 在 $x=0$ 處不連續(未定義)。不要以為處處連續！
+   - 若 $f=\frac{1}{x}, g=\frac{1}{x^{2}}$ 則 $(f \circ g)(x)=x^{2}$ ，且$(f \circ g)(x)$ 在 $x=0$ 處不連續(未定義)。不要看到 $x^{2}$ 就以為處處連續！
    - 若要證明「當且僅當」成立，需要雙向證明。
 
 # 經典練習題
@@ -377,14 +369,13 @@ $0 \leq f(x) \leq x^{2}$
 By Squeeze Theorem, we have $\lim_{ x \to 0 }0=0=\lim_{ x \to 0 }x^{2}=\lim_{ x \to 0 }f(x)$. 
 Thus, by Squeeze Theorem we have $\lim_{ x \to 0 }f(x)=0$. 
 
-3. 求 $\lim_{ x \to  0} \frac{\sin 3\theta}{\tan 2\theta}$。
+3. 求 $\lim_{ \theta \to  0} \frac{\sin 3\theta}{\tan 2\theta}$。
 
 Sol:
 法一：
-$\frac{\sin 3\theta}{\frac{\sin 2\theta}{\cos 2\theta}}=\frac{\sin 3\theta \cos 2\theta}{\sin 2\theta}$
+$\frac{\sin 3\theta}{\frac{\sin 2\theta}{\cos 2\theta}}=\frac{\sin 3\theta \cos 2\theta}{\sin 2\theta}$ 
 又 $\lim_{ x \to 0 }\cos x=1 \therefore\lim_{ x \to 0 }\cos 2x=1$ 等於求 $\lim_{ \theta \to 0 } \frac{\sin 3\theta}{\sin 2\theta}$。
-利用 $\lim_{ \theta \to 0 } \frac{\sin ax}{\sin bx}=\frac{a}{b}$，則 $\lim_{ x \to 0 } \frac{\sin 3x}{\sin 2x}=\frac{3}{2}$。
-
+利用 $\lim_{ \theta \to 0 } \frac{\sin a\theta}{\sin b\theta}=\frac{a}{b}$ ($\lim_{ \theta \to 0 } \frac{\sin 3\theta}{\sin 2\theta}=\lim_{ \theta \to 0 }\left( \frac{\sin 3\theta}{3\theta} \cdot \frac{3\theta}{2\theta} \cdot \frac{2\theta}{\sin 2\theta} \right)= \frac{3}{2}$ )，則 $\lim_{ \theta \to 0 } \frac{\sin 3\theta}{\sin 2\theta}=\frac{3}{2}$。
 
 法二：洛必達
 $\because \lim_{ \theta \to 0 } \frac{\sin 3\theta}{\tan 2\theta} \in \text{0/0類型} \therefore \text{可以套用洛必達}$
@@ -418,13 +409,13 @@ Thus, $\lim_{ x \to 3 }x^{2}=9$ by the definition of a limit.
 Sol:
 From the graph, our choice for $\delta$ are $\delta_{1}=3-\sqrt{ 9-\epsilon }$ and $\delta_{2} = \sqrt{ 9+\epsilon }-3$. The possible choice of $\delta$ is the minimum value of $\delta_{1}$ and $\delta_{2}$. So, $\delta=\delta_{2}=\sqrt{ 9+\epsilon }-3$. 
 
-6. Prove $\lim_{ x \to 6^{-} }(6+x)^{1/8}=0$
+6. Prove $\lim_{ x \to 6^{-} }(6-x)^{1/8}=0$
 
 Sol:
-From the $\epsilon \cdot \delta$ definition, $\forall \epsilon > 0, \exists \delta > 0$ such that
-If $0<x+6<\delta$ then $|(6+x)^{1/8}|<\epsilon$
-`~~~~~^ key`
-Remain are the same content as before. 
+From the $\epsilon - \delta$ definition, $\forall \epsilon > 0, \exists \delta > 0$ such that
+If $6-\delta<x<6$ then $|(6-x)^{1/8}|<\epsilon$
+`~~~~~^ key` 
+Remain are the same contents as before. 
 
 7. Prove $\lim_{ x \to a }\sqrt{ x }=\sqrt{ a }$, if $a>0$
 
@@ -464,7 +455,7 @@ Since $\lim_{ x \to a }g(x)=c$, for any $\epsilon>0$ there exists $\delta_{2} \n
 If $0<|x-a|<\delta_{2}$ then $|g(x)-c|<\epsilon$
 Take $\epsilon \leq 1$, then we can get $c-1<g(x)<c+1$
 Take $\delta = \text{min}\{\delta_{1}, \delta_{2}\}$, we have
-$0<|x-a|<\delta \implies f(x)+g(x)>(M - c + 1) + c＝M$
+$0<|x-a|<\delta \implies f(x)+g(x)>(M - c + 1) + c-1＝M$
 Thus, $\lim_{ x \to a }(f(x)+g(x))=\infty$
 
 (b)

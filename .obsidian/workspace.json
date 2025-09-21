@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Math/Calculus/Basic concept.md",
+                "file": "Math/Calculus/Limit.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Basic concept"
+              "title": "Limit"
             }
           }
         ]
@@ -182,10 +182,10 @@
   },
   "active": "73b4479fff272d60",
   "lastOpenFiles": [
+    "Math/Calculus/Basic concept.md",
     "Math/Calculus/Limit.md",
     "Math/Linear Algebra/Matrix and Systems.md",
     "Computer Networking/Application Layer.md",
-    "Math/Calculus/Basic concept.md",
     "pic/Pasted image 20250918160953.png",
     "故事創作與影像敘事/討論作業一.md",
     "pic/Pasted image 20250917005952.png",
