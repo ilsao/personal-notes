@@ -352,7 +352,17 @@ Sol:
 $\lim_{ x \to 1 }[f(x)-8]=\lim_{ x \to 1 } [{\frac{f(x)-8}{x-1}\times(x-1)}]=\lim_{ x \to 1 }[f(x)-8] \times \lim_{ x \to 1 }(x-1)=0$
 $\lim_{ x \to 1 }[f(x)-8 + 8]=0 + \lim_{ x \to 1 }8=8$
 
-2. If 
+2. Determine the infinite limit $\lim_{ x \to 3^{-} } \frac{x^{2}+4x}{x^{2}-2x-3}$
+
+Sol:
+$\lim_{ x \to 3^{-} } \frac{x^{2}+4x}{x^{2}-2x-3}=\lim_{ x \to 3^{-} } \frac{x(x+4)}{(x-3)(x+1)}=-\infty$
+
+3. Determine the infinite limit $\lim_{ x \to 0 }(\ln x^{2}-x^{-2})$
+
+Sol:
+$\lim_{ x \to 0 }(\ln x^{2}-x^{-2})=\lim_{ x \to 0 }\left( \ln \frac{x^{2}}{e^{1/x^{2}}} \right)=-\infty$
+
+4. If 
 
 $$
 f(x)= \begin{cases}
@@ -395,8 +405,10 @@ So, $\lim_{ x \to 3 }x^{2}=9$ by the definition of a limit.
 
 Sol:
 Given $\epsilon >0$, we let $\delta=\text{min}\left\{ 2, \frac{\epsilon}{8} \right\}$. 
-If $0<|x-3|<\delta \text{, then } 0<|x-3|<2\implies|x+3|<8.$
-Also $|x-3|< \frac{\epsilon}{8}$, so $|x^{2}-9| = |x+3||x-3| = 8 \cdot \frac{\epsilon}{8}=\epsilon$
+If $0<|x-3|<\delta \text{, then } 0<|x-3|<2\implies|x+3|<8$.
+`~^ Be aware of the sentence that we use`
+Also $|x-3|< \frac{\epsilon}{8}$, so $|x^{2}-9| = |x+3||x-3| = 8 \cdot \frac{\epsilon}{8}=\epsilon$.
+`~^ Also notice here`
 Thus, $\lim_{ x \to 3 }x^{2}=9$ by the definition of a limit. 
 
 5. Verify, by a geometric argument, that the largest possible choice of $\delta$ for showing that $\lim_{ x \to 3 }x^{2}$ is $\delta=\sqrt{ 9+\epsilon }-3$
@@ -417,11 +429,16 @@ Remain are the same content as before.
 7. Prove $\lim_{ x \to a }\sqrt{ x }=\sqrt{ a }$, if $a>0$
 
 Sol:
-... skip ...
+From the $\epsilon \cdot \delta$ definition, $\forall \epsilon > 0, \exists \delta > 0$ such that
+If $0<|x-a|<\delta$ then $|\sqrt{ x }-\sqrt{ a }|<\epsilon$.
 $|\sqrt{ x }-\sqrt{ a }|=|x-a|| \frac{1}{\sqrt{ x }+\sqrt{ a }}|$.
 We let $|x-a| < \frac{a}{2}\implies \frac{1}{\sqrt{ x }-\sqrt{ a }}< \frac{1}{\sqrt{ \frac{1}{2}a }+\sqrt{ a }}$ (若令 $|x-a|<1$，化簡後會得到 $a\geq 1$ 的條件)
 `~~~~~~~~~~~~~^ key`
-... skip ...
+Thus, we take $\delta = \text{min}\left\{ \frac{a}{2}, \left( \sqrt{ \frac{a}{2} }+\sqrt{ a } \right)\epsilon \right\}$.
+If $0<|x-a|<\delta$, then $|x-a|< \frac{a}{2} \implies \sqrt{ x }+\sqrt{ a } > \sqrt{ \frac{a}{2} }+\sqrt{ a }$.
+Also, $|x-a|< \left( \sqrt{ \frac{a}{2} }+\sqrt{ a } \right)\epsilon$.
+Thus, $|\sqrt{ x }-\sqrt{ a }|= \frac{|x-a|}{\sqrt{ x }+\sqrt{ a }}< \left( \sqrt{ \frac{a}{2} }+\sqrt{ a } \right)\epsilon \cdot \frac{1}{\sqrt{ \frac{a}{2} }+\sqrt{ a }}=\epsilon$.
+Therefore, $\lim_{ x \to a }\sqrt{ x }=\sqrt{ a }$ if $a > 0$ by the definition of a limit. 
 
 8. Prove the Heaviside function that $\lim_{ x \to 0 }f(x)$ does not exist.
 
@@ -456,7 +473,8 @@ Since $\lim_{ x \to a }f(x)=\infty$, there exists $\delta_{1} \ni$
 If $0<|x-a|<\delta_{1}$ then $f(x) > \frac{2M}{c}$
 Since $\lim_{ x \to a }g(x)=c$, for any $\epsilon>0$ there exists $\delta_{2} \ni$
 If $0<|x-a|<\delta_{2}$ then $|g(x)-c| < \epsilon$。
-Take $\epsilon \leq \frac{c}{2}$ we can get $\frac{c}{2}<g(x)< \frac{3c}{2}$
+Take $\epsilon \leq \frac{c}{2}$ we can get $\frac{c}{2}<g(x)< \frac{3c}{2}$.
+`~~~~~~~^ key`
 Take $\delta = \text{min}\{\delta_{1}, \delta_{2}\}$, we have
 $0<|x-a|<\delta\implies f(x)g(x)> \frac{2M}{c}\cdot \frac{c}{2}=M$
 Thus, $\lim_{ x \to a }f(x)g(x)=\infty$. 
@@ -468,6 +486,7 @@ If $0<|x-a|<\delta_{1}$ then $f(x) < \frac{2M}{c}$ (Note that M < 0 and c < 0 th
 Since $\lim_{ x \to a }g(x)=c$, for any $\epsilon>0$ there exists $\delta_{2} \ni$
 If $0<|x-a|<\delta_{2}$ then $|g(x)-c| < \epsilon$. 
 Take $\epsilon \leq \frac{-c}{2}$ we can get $\frac{3c}{2}<g(x)< \frac{c}{2}$.
+`~~~~~~~^ notice that c < 0, thus epsilon must smaller than -c/2 but not c/2`
 Take $\delta = \text{min}\{\delta_{1}, \delta_{2}\}$, we have
 $0<|x-a|<\delta\implies f(x)g(x)< \frac{2M}{c}\cdot \frac{c}{2}=M$
 Thus, $\lim_{ x \to a }f(x)g(x)=-\infty$.
