@@ -156,7 +156,7 @@ $$
 proof:
 根據 $\epsilon - \delta$ 定義，$\forall \epsilon > 0, \exists\delta>0$ 使得
 $\text{If }0<|x-a|<\delta \text{, then }|f(x) + g(x) - L - M| < \epsilon$ 
-$|f(x) + g(x) - L - M|=|f(x)-L + g(x) - M|$
+$|f(x) + g(x) - L - M|=|f(x)-L + g(x) - M|$ 
 根據**三角不等式** $|x+y| \leq |x| + |y|$，我們可以寫出：$|f(x)-L + g(x) - M| \leq |f(x)-L| + |g(x)-M|$
 `~~~~~~~^ key` 
 令 $\delta_{1} > 0 \text{, } \delta_{2} > 0$ 且 $0<|x-a|<\delta_{1}$ 使得 $|f(x)-L|<\frac{\epsilon}{2}$，與 $0<|x-a|<\delta_{2}$ 使得 $|g(x)-M|<\frac{\epsilon}{2}$ 
@@ -206,7 +206,7 @@ $$
 
 proof:
 Since $f(x)$ and $g(x)$ are continuous at $a$, we have:
-$\lim_{ x \to a }f(x)=f(a)$ and $\lim_{ x \to a }g(x)=g(a)$
+$\lim_{ x \to a }f(x)=f(a)$ and $\lim_{ x \to a }g(x)=g(a)$ 
 Therefore
 $\lim_{ x \to a }[f(x)+g(x)]=\lim_{ x \to a }f(x)+\lim_{ x \to a }g(x)$
 $=f(a)+g(a)$
@@ -256,7 +256,7 @@ $$
 
 $$
 \begin{align}
- & \forall \epsilon>0,\exists N \ni \\
+ & \forall \epsilon>0,\exists N>0 \ni \\
  & \text{If } x>N\text{ then } |f(x)-L|<\epsilon
 \end{align}
 $$
@@ -307,7 +307,7 @@ $\lim_{ x \to \infty } \frac{\sqrt{ 2+\frac{1}{x^{2}} }}{3-\frac{5}{x}}=\frac{\s
 接著尋找 $x\to -\infty$ 時的水平漸進線：$\lim_{ x \to -\infty } \frac{\sqrt{ 2x^{2}+1 }}{3x-5}$
 需要注意的是，$\because x<0 \therefore x=-\sqrt{ x^{2} }$. 
 $\lim_{ x \to -\infty } \frac{\sqrt{ 2x^{2}+1 }}{3x-5}=\lim_{ x \to -\infty } \frac{\frac{\sqrt{ 2x^{2}+1 }}{-\sqrt{ x^{2} }}}{3-\frac{5}{x}}=\lim_{ x \to -\infty } \frac{-\sqrt{ 2+\frac{1}{x^{2}} }}{3-\frac{5}{x}}=\frac{-\sqrt{ 2 }}{3}$
-亦或者令 $h=-x$ 求 $\lim_{ h \to \infty } \frac{\sqrt{ 2h^{2}+1 }}{-3h-5}= \frac{\sqrt{ 2 }}{-3}$
+亦或者令 $h=-x$ 求 $\lim_{ h \to \infty } \frac{\sqrt{ 2h^{2}+1 }}{-3h-5}= \frac{\sqrt{ 2 }}{-3}$ 
 
 求 $\lim_{ x \to 2^{+} }\arctan\left( \frac{1}{x-2} \right)$
 
@@ -341,6 +341,7 @@ proof:
 1. $\text{If }\lim_{ x \to 1 } \frac{f(x)-8}{x-1}=10 \text{, find }\lim_{ x \to 1 }f(x).$
 
 Sol:
+By Limit Laws, we have:
 $\lim_{ x \to 1 }[f(x)-8]=\lim_{ x \to 1 } [{\frac{f(x)-8}{x-1}\times(x-1)}]=\lim_{ x \to 1 }[f(x)-8] \times \lim_{ x \to 1 }(x-1)=0$
 $\lim_{ x \to 1 }[f(x)-8 + 8]=0 + \lim_{ x \to 1 }8=8$
 
@@ -365,7 +366,7 @@ $$
    prove that $\lim_{ x \to 0 }f(x)=0$. 
 
 Sol:
-$0 \leq f(x) \leq x^{2}$
+$0 \leq f(x) \leq x^{2}$ 
 By Squeeze Theorem, we have $\lim_{ x \to 0 }0=0=\lim_{ x \to 0 }x^{2}=\lim_{ x \to 0 }f(x)$. 
 Thus, by Squeeze Theorem we have $\lim_{ x \to 0 }f(x)=0$. 
 
@@ -384,11 +385,11 @@ $\lim_{ \theta \to 0 } \frac{\sin 3\theta}{\tan 2\theta}=\lim_{ \theta \to 0 }\f
 4. Prove that $\lim_{ x \to 3 }x^{2}=9$.
 
 Sol:
-From the $\epsilon \cdot \delta$ definition, $\forall \epsilon > 0, \exists \delta >0$ such that: 
-$\text{If }0<|x-3| < \delta \text{, then } |x^{2}-9| < \epsilon$
-$|x^{2}-9|=|x+3||x-3|$
+From the $\epsilon - \delta$ definition, $\forall \epsilon > 0, \exists \delta >0$ such that: 
+$\text{If }0<|x-3| < \delta \text{, then } |x^{2}-9| < \epsilon$ 
+$|x^{2}-9|=|x+3||x-3|$ 
 Take $\delta \leq 1$, then
-$2 < x < 4 \implies |x+3| < 7$
+$2 < x < 4 \implies |x+3| < 7$ 
 Thus, take $\delta = \text{min}\{1,\frac{\epsilon}{7}\}$. 
 So, $\lim_{ x \to 3 }x^{2}=9$ by the definition of a limit. 
 
@@ -422,7 +423,7 @@ Remain are the same contents as before.
 Sol:
 From the $\epsilon \cdot \delta$ definition, $\forall \epsilon > 0, \exists \delta > 0$ such that
 If $0<|x-a|<\delta$ then $|\sqrt{ x }-\sqrt{ a }|<\epsilon$.
-$|\sqrt{ x }-\sqrt{ a }|=|x-a|| \frac{1}{\sqrt{ x }+\sqrt{ a }}|$.
+$|\sqrt{ x }-\sqrt{ a }|=|x-a|| \frac{1}{\sqrt{ x }+\sqrt{ a }}|$ 
 We let $|x-a| < \frac{a}{2}\implies \frac{1}{\sqrt{ x }-\sqrt{ a }}< \frac{1}{\sqrt{ \frac{1}{2}a }+\sqrt{ a }}$ (若令 $|x-a|<1$，化簡後會得到 $a\geq 1$ 的條件)
 `~~~~~~~~~~~~~^ key`
 Thus, we take $\delta = \text{min}\left\{ \frac{a}{2}, \left( \sqrt{ \frac{a}{2} }+\sqrt{ a } \right)\epsilon \right\}$.
@@ -473,8 +474,8 @@ Thus, $\lim_{ x \to a }f(x)g(x)=\infty$.
 (c)
 Let $M<0$ be given.
 Since $\lim_{ x \to a }f(x)=\infty$, there exists $\delta_{1} \ni$
-If $0<|x-a|<\delta_{1}$ then $f(x) < \frac{2M}{c}$ (Note that M < 0 and c < 0 then M/c > 0)
-Since $\lim_{ x \to a }g(x)=c$, for any $\epsilon>0$ there exists $\delta_{2} \ni$
+If $0<|x-a|<\delta_{1}$ then $f(x) >\frac{2M}{c}$ (Note that M < 0 and c < 0 then M/c > 0)
+Since $\lim_{ x \to a }g(x)=c$, for any $\epsilon>0$ there exists $\delta_{2} \ni$ 
 If $0<|x-a|<\delta_{2}$ then $|g(x)-c| < \epsilon$. 
 Take $\epsilon \leq \frac{-c}{2}$ we can get $\frac{3c}{2}<g(x)< \frac{c}{2}$.
 `~~~~~~~^ notice that c < 0, thus epsilon must smaller than -c/2 but not c/2`

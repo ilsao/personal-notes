@@ -162,9 +162,10 @@ $$
 若 $A^{T}=A$，則此 $n \times n$ 的矩陣 $A$ **對稱(symmetric)**。
 
 以下列出一些 Algebraic Rules for Transposes
-1. $(\alpha A)^{T}=\alpha A^{T}$
-2. $(A+B)^{T}=A^{T}+B^{T}$
-3. $(AB)^{T}=B^{T}A^{T}$
+1. $(\alpha A)^{T}=\alpha A^{T}$ 
+2. $(A+B)^{T}=A^{T}+B^{T}$ 
+3. $(AB)^{T}=B^{T}A^{T}$ 
+4. $(A^{n})^{T}=(A^{T})^{n}$ 
 
 以下我們證明 $(AB)^{T}=B^{T}A^{T}$.
 
@@ -429,3 +430,54 @@ Since $a_{1}, a_{3}$ are given, let's find a special solution of $x$.
 Take $x_{2}=x_{4}=x_{5}=0$, we have $x_{1}=-2, x_{3}=5$. 
 Thus, we can express $b$ as follow linear combination $Ax=b=-2a_{1}+5a_{3}$. 
 So, $b$ will be $\begin{bmatrix}8 \\ -7 \\ -1 \\ 7\end{bmatrix}$. 
+
+5. Is it possible for a nonzero symmetric $2\times 2$ matrix $A$ to have the property that $A^{2}=O$? Prove your answer. 
+
+Sol:
+Assume $A=\begin{bmatrix}a & b \\ b & c\end{bmatrix}$ , thus $A^{2}=\begin{bmatrix}a^{2}+b^{2} & ab+bc \\ ab+bc & b^{2}+c^{2}\end{bmatrix}=\begin{bmatrix}0 & 0 \\ 0 & 0\end{bmatrix}$.
+$\begin{cases} a^{2}+b^{2}=0 \\ ab+bc=0 \\ b^{2}+c^{2}=0 \end{cases}\implies \begin{cases}a=b=c=0\end{cases}$. 
+Therefore, it is impossible for a nonzero symmetric $2\times 2$ matrix to have this property.
+
+6. Let $A$ and $B$ be symmetric n times n matrices. For each of the following, determine whether the given matrix must be symmetric or could be nonsymmetric.
+   (a)A+B
+   (b)$A^2$
+   (c)AB
+   (d)ABA
+   (e)AB+BA
+   (f)AB-BA
+
+Sol:
+(a) $(A+B)^T$=$A^{T}+B^{T}=A+B$ 
+(b) $(A^{2})^{T}=(A^{T})^{2}=A^{2}$ 
+...
+Use the method above to prove each option.
+
+7. Prove that if $A$ is nonsingular, then $A^{T}$ is nonsingular and $(A^{T})^{-1}=(A^{-1})^{T}$ 
+
+Sol:
+Since $A$ is nonsingular, then $AA^{-1}= A^{-1}A = I$. And we know $I^{T}=I$.
+$(AA^{-1})^{T}=(A^{-1})^{T}A^{T}=I$ 
+$(A^{-1}A)^{T}=A^{T}(A^{-1})^{T}=I$ 
+Thus, we have $A^{T}$ is nonsingular and $(A^{-1})^{T}$ is the inverse of $A^{T}$.
+
+$(A^{k+1})^{-1}=(A^{k}A)^{-1}=A^{-1}(A^{k})^{-1}=A^{-1}(A^{-1})^{k}=(A^{-1})^{k+1}$ 
+
+8. Let $A$ be a nonsingular $n \times n$ matrix. Use mathematical induction to prove that $A^{m}$ is nonsingular and $(A^{m})^{-1}=(A^{-1})^{m}$ for $m=1,2,3,\dots$
+
+Sol:
+(Declare: If you have no extra time, just skip this problem. Since I actually solve this after a few minutes of thinking)
+當 $m = 1$ 時
+因為 Ａ 可逆，所以 $(A^{1})^{-1}=(A^{-1})^{1}$ 成立。
+設當 $m=k(k\geq 1)$ 時
+$(A^{k})^{-1}=(A^{-1})^{k}$ 亦成立。
+當 $m=k+1$ 時
+$(A^{k+1})^{-1}=(A^{k}A)^{-1}=A^{-1}(A^{k})^{-1}=A^{-1}(A^{-1})^{k}=(A^{-1})^{k+1}$ 成立。
+所以，由數學歸納法，結論對 $m \geq 1$ 皆成立。
+
+9. Let $D$ an $n \times n$ diagonal matrix whose diagonal entries are either 0 or 1.Show that $D$ is idempotent($D^{2}=D$).
+
+Sol:
+設 $D=\text{diag}(d_{1},d_{2},\dots,dn), d_{i}\in\{0,1\}$。
+對角矩陣相乘仍為對角矩陣，則 $D^{2}=\text{diag}(d_{1}^{2},d_{2}^{2},\dots,d_{n}^{2})$。
+因為 $d_{i}\in \{0,1\}$ 所以 $d_{i}^{2}=d_{1}$
+$\implies D^{2}=\text{diag}(d_{1}^{2},d_{2}^{2},\dots,d_{n}^{2})=\text{diag}(d_{1},d_{2},\dots,dn)=D, d_{i}\in\{0,1\}$ 
