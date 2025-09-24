@@ -481,3 +481,15 @@ Sol:
 對角矩陣相乘仍為對角矩陣，則 $D^{2}=\text{diag}(d_{1}^{2},d_{2}^{2},\dots,d_{n}^{2})$。
 因為 $d_{i}\in \{0,1\}$ 所以 $d_{i}^{2}=d_{1}$
 $\implies D^{2}=\text{diag}(d_{1}^{2},d_{2}^{2},\dots,d_{n}^{2})=\text{diag}(d_{1},d_{2},\dots,dn)=D, d_{i}\in\{0,1\}$ 
+
+10. Let $A$ and $B$ be symmetric $n \times n$ matrices. Prove that $AB=BA$ if and only if $AB$ is also symmetric .
+
+Sol:
+紀錄此題僅為練習 if and only if 的雙向證明法。
+($\implies$) If $AB = BA$ then
+$(AB)^{T}=B^{T}A^{T}=BA=AB$ 
+Thus, $AB$ is symmetric.
+($\impliedby$) If $AB$ is symmetric then
+$AB=(AB)^{T}=BA$
+Thus, $AB=BA$ 
+Hence,  $AB=BA$ if and only if $AB$ is also symmetric .

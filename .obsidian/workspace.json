@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Math/Linear Algebra/Matrix and Systems.md",
+                "file": "Physics/Newton's Laws.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Matrix and Systems"
+              "title": "Newton's Laws"
             }
           }
         ]
@@ -182,11 +182,15 @@
   },
   "active": "26720c0ea3e29b4d",
   "lastOpenFiles": [
+    "Physics/Uniform Accelerated Motion.md",
+    "Physics/Newton's Laws.md",
+    "Physics/Physical Quantities.md",
     "Math/Linear Algebra/Matrix and Systems.md",
-    "故事創作與影像敘事/討論作業二.md",
-    "故事創作與影像敘事/討論作業一.md",
     "Math/Calculus/Limit.md",
     "Math/Calculus/Basic concept.md",
+    "Physics/Vector.md",
+    "故事創作與影像敘事/討論作業二.md",
+    "故事創作與影像敘事/討論作業一.md",
     "Computer Networking/Application Layer.md",
     "pic/Pasted image 20250918160953.png",
     "pic/Pasted image 20250917005952.png",
@@ -196,9 +200,7 @@
     "故事創作與影像敘事/什麼是故事.md",
     "pic/Pasted image 20250916193635.png",
     "pic/Pasted image 20250916192919.png",
-    "Physics/Physical Quantities.md",
     "故事創作與影像敘事",
-    "Physics/Vector.md",
     "C++/Class.md",
     "Operating Systems/OSTEP/Concurrency.md",
     "Operating Systems/OSTEP/Virtualization.md",
@@ -225,9 +227,7 @@
     "Physics",
     "pic/Pasted image 20250903170635.png",
     "CSAPP/Computer Systems A Programmer’s Perspective.pdf",
-    "大學安排.md",
     "C++",
-    "自介.md",
     "未命名.canvas"
   ]
 }
