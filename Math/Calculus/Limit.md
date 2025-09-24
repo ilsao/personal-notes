@@ -324,6 +324,9 @@ Sol:
 
 # 小 tip
 
+- 當帶入 $x=a$ 時函數分母等於 0，此時分為兩種狀況：
+	- 分子與分母都有 $(x-a)$ 項，可以消掉 => 圖形在該點有空洞，但不是漸進線。因為 $\lim_{ x \to a }f(x)$ 有定義。
+	- 分子沒有 $(x-a)$ 項 => 圖形在該點為垂直漸進線。因為 $\lim_{ x \to a }f(x)$ 沒定義(趨近於正負無窮)。
 - When denominator approaches 0 as $x\to a$, the limit will exist only if the numerator also approaches 0 as $x\to a$. 
 - $\lim_{ x \to 0 } \frac{\sin x}{x}=1$。利用單位圓，$\tan x, \sin x$夾擠可得。
 - $\lim_{ x \to 0 } \frac{\sin ax}{\sin bx}=\frac{a}{b}$
