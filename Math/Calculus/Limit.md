@@ -264,6 +264,9 @@ $$
 一個在 $x\to \infty$ 時趨近於 $\infty$ 的極限定義如下：
 
 $$
+\text{Let} f \text{ be a function defined on some interval }(-\infty,a) \text{. Then}
+$$
+$$
 \lim_{ x \to \infty } f(x)=\infty
 $$
 $$
@@ -530,3 +533,32 @@ Hence, $F(x)$ is continuous everywhere.
 
 Sol:
 Assume $f$ is continuous in interval $I$. For $a \in I$, $\lim_{ x \to a }|f(x)|=|\lim_{ x \to a }f(x)|=|f(a)|$.  (If $a$ is the endpoint of $I$, use the appropriate one-sided limit. ) So $|f|$ is continuous in $I$. 
+
+16. Find a formula for a function $f$ that satisfies the following conditions(contains in the solution):
+
+Sol:
+(1) $\lim_{ x \to \pm \infty }f(x)=0\implies$ degree of numerator < degree of denominator
+(2) $\lim_{ x \to 0 }f(x)=-\infty\implies$ there is a factor of $x^{2}$ in the denominator(not just x, since that would produce a sign change at 0), and the function is negative near x = 0
+(3) $f(2)=0\implies$ there is at least one factor of $(x-2)$ in the numerator
+(4) $\lim_{ x \to 3^{-} }f(x)=\infty,\lim_{ x \to 3^{+} }f(x)=-\infty\implies$ there is a factor of $(x-3)$ in the denominator
+Combining all of these condition, we have $f(x)=\frac{-(x-2)}{x^{2}(x-3)}$ as one possibility. 
+
+17. Prove $\lim_{ x \to \infty }e^{x}=\infty$ 
+
+Sol:
+Given $M>0$ , we need $N>0$ such that
+$x>N\implies e^{x}>M$ 
+Since $e^{x}>M \Leftrightarrow x>\ln M$ 
+Take $N=\text{max}(1,\ln M)$ 
+`~~~~~~~~~~~~^ key 避免 M < 1 導致 N = ln M < 0 的狀況發生`
+Thus, $x>N=\text{max}(1,\ln M)\implies e^{x}>\text{max}(e,M)\geq M$. So $\lim_{ x \to \infty }e^{x}=\infty$ 
+
+18. Prove that $\lim_{ x \to -\infty }f(x)=\lim_{ t \to 0^{-} }f\left( \frac{1}{t} \right)$ 
+
+Sol:
+Suppose that $\lim_{ x \to -\infty }f(x)=L$. Then for all given $\epsilon > 0$, there exist $N<0$ such that
+If $x<N$ then $|f(x)-L|<\epsilon$ 
+If $t=\frac{1}{x}$ then $\frac{1}{N}< t<0$ 
+Thus, for every $\epsilon>0$, there is a corresponding $\delta>0$ (namely, $-\frac{1}{N}$) such that
+If $-\delta<t<0$ then $|f(t)-L|<\epsilon$.
+This prove that $\lim_{ x \to -\infty }f(x)=\lim_{ t \to 0^{-} }f\left( \frac{1}{t} \right)$.

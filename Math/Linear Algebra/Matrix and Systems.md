@@ -326,7 +326,8 @@ $$
 - 每個基本列運算都有其逆操作，所以每個初等矩陣都有其逆矩陣。
 - 所有基本列運算對行列式值的操作都不會使其等於零，所以初等矩陣總是可逆。
 
-當某個矩陣左乘一個初等矩陣，則會將對該初等矩陣應用的基本列運算應用到該矩陣上。
+當某個矩陣**左乘**一個初等矩陣，則會將對該初等矩陣應用的基本列運算應用到該矩陣的**列(row)** 上。
+若是右乘，則改變該矩陣的**行(column)**。
 
 所以，我們如下定義，若矩陣 $B$ 與矩陣 $A$ 行等價，則：
 
@@ -338,7 +339,7 @@ $$
 
 所以，若增廣矩陣 $(A|\vec{b})$ 和 $(B| \vec{c})$ 行等價，則 $Ax=\vec{b}$ 與 $Bx=\vec{c}$ 為等價方程組。
 
-由上，我們還可以得知，若 $B$ 處於 RREF(此時 $B$ 為單位矩陣)，則：
+由上，我們還可以得知，若 $B$ 處於 RREF (此時 $B$ 為單位矩陣)，則：
 
 $$
 E_{k}E_{k-1}\dots E_{1}=A^{-1}
@@ -369,6 +370,18 @@ proof:
 其中，$L$ 表示下三角矩陣，$U$ 表示上三角矩陣。
 
 我們可以使用基本列運算：將某 row 乘一個非零數加到另一 row 來構建其中一個三角矩陣，且另一三角矩陣為構建此三角矩陣所使用的初等矩陣的乘積的逆矩陣。
+
+我們將 LU 分解轉換為一系列初等矩陣相乘的結構：
+
+$$
+E_{3}E_{2}E_{1}A=U
+$$
+
+則，我們可以得到下三角矩陣：
+
+$$
+L=E_{1}^{-1}E_{2}^{-1}E_{3}^{-1}
+$$
 
 # 例題
 
@@ -493,3 +506,22 @@ Thus, $AB$ is symmetric.
 $AB=(AB)^{T}=BA$
 Thus, $AB=BA$ 
 Hence,  $AB=BA$ if and only if $AB$ is also symmetric .
+
+11. Let $U$ and $R$ be $n \times n$ upper triangular matrices and set $T=UR$. Show that $T$ is also upper triangular and that $t_{jj}=u_{jj}r_{jj}$ for $j = 1,\dots, n$.
+
+Sol:
+Use the definition of matrix multiplication.
+Let's describe $U$ and $R$ as
+$u_{ij}=0$ if $i>j$ 
+$r_{ij}=0$ if $i>j$ 
+Thus, $t_{ij}=\sum_{k=1}^{n}u_{ik}r_{kj}$ 
+Moreover, we know that if $i\leq k$ and $k\leq j$ then $t_{ij}$ could probably be a nonzero(if both $u_{ij}$ and $r_{ij}$ are nonzero).
+However, for $i<j$ the condition $k\geq i$ and $k\leq j$ could never happened. Thus, the lower part of $T$ must be all zero.
+Focus on the diagonal entries $t_{jj}=\sum_{k=1}^{n}u_{jk}r_{kj}$ .
+For matrix $U$,  every entries $j>k$ is zero. For matrix $R$, every entries $k > j$ is zero.
+Thus, only the entry $j=k$ have the possibility to be nonzero. This implies that $t_{jj}=\sum_{k=1}^{n}u_{jk}r_{kj}=u_{jj}r_{jj}$ .
+
+12. Let $A$ be a $3 \times 3$ matrix and suppose that $a_{1}=3a_{2}-2a_{3}$. Will the system $Ax=0$ have a nontrivial solution? Is $A$ nonsingular ?
+
+Sol:
+It's easy to find a nontrivial solution $(1,-3,2)^{T}$. Thus, the system must have infinite solutions. This also implies that $A$ is singular.
