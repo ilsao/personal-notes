@@ -348,7 +348,7 @@ $$
 E_{1}^{-1}\dots E_{k-1}^{-1}E_{k}^{-1}=A
 $$
 
-$A$ 為一個 $n \times n$ 矩陣，則下列敘述互相等價：
+(!) $A$ 為一個 $n \times n$ 矩陣，則下列敘述互相等價：
 - $A$ 可逆
 - $Ax=\vec{b}$ 有唯一解
 - $Ax=0$ 有唯一零解
@@ -382,6 +382,11 @@ $$
 $$
 L=E_{1}^{-1}E_{2}^{-1}E_{3}^{-1}
 $$
+
+# Tips
+
+- 證明 symmetric 類題，使用 $A^{T}=A$。
+- 證明 可逆 類題，使用 $A^{-1}A=I$，$Ax=0$ 僅有單一零解，或者反證法證明互相矛盾。
 
 # 例題
 
@@ -525,3 +530,27 @@ Thus, only the entry $j=k$ have the possibility to be nonzero. This implies that
 
 Sol:
 It's easy to find a nontrivial solution $(1,-3,2)^{T}$. Thus, the system must have infinite solutions. This also implies that $A$ is singular.
+
+13. Let $A$ and $B$ an $n \times n$ matrices and let $C = AB$. Prove that if $B$ is singular, then $C$ must be singular.
+
+Sol:
+(I) 
+$B$ is singular $\implies Bx=0$ have nontrivial solutions.
+Thus, we can express $Cx=A(Bx)=0$ .
+This implies that $C$ also have nontrivial solutions. Therefore, $C$ must be singular.
+
+(II) 反證法
+Suppose $C$ is nonsingular.
+Thus, we can find the inverse of $C$ such that $C^{-1}AB=I$.
+This implies $B$ have a inverse $C^{-1}A$, but this contradicts that $B$ is singular. 
+So, $C$ must be singular. 
+
+28. Prove the matrix $V$, $v_{ij}=\begin{cases}1 & \text{if }j=1 \\ x^{j-1} & \text{for }2,\dots,n+1\end{cases}$ is nonsingular if all $x_{i}$ is distinct to each other.
+
+Sol:
+若有函數 $p(x)=c_{1}+c_{2}x+\dots+c_{n+1}x^{n}$，
+我們可以將 $Vc=y$ 表達為：$p(x_{i})=y_{i}$。
+證明矩陣可逆，可以表達為證明 $Vc=0$ ，$c$ 有唯一零解。
+通過觀察，我們可以知道 $p(x)$ 的最高次為 $n$，但是$Vc=0$ 要求所有 $n+1$ 個 $x_{i}$ 都使得 $p(x_{i})=0$。
+我們學過，某多項式的最高次 $n$ 表示該函數圖形最多與 $y=0$ 相交 $n$ 次。但是在此，我們要求多項式圖形相交 $n+1$ 次，這表明該多項式為零多項式。即，$p(x)=0$，$c$ 為全零。
+這就表明 $V$ 必可逆。
