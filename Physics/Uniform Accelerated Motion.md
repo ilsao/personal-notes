@@ -110,3 +110,36 @@ $x=v_{0}\cos \theta\left( \frac{2v_{0}\sin \theta}{g} \right)=\boxed{\frac{v_{0}
 將 $\frac{t}{2}$ 帶入 $y$ 分量方程。
 $y=v_{0}\sin \theta\left( \frac{v_{0}\sin \theta}{g} \right)-\frac{1}{2}g\left( \frac{v_{0}^{2}\sin^{2}\theta}{g^{2}} \right)=\frac{v_{0}^{2}\sin^{2}\theta}{g}-\frac{v_{0}^{2}\sin^{2}\theta}{2g}$ 
 $=\boxed{\frac{v_{0}^{2}\sin^{2}\theta}{2g}}$ 
+
+# Tips
+
+- 注意，當固定射程尋找斜拋角度時，$\theta$ 的值會有兩個，分別是 $\alpha$ 與 $90^{\circ}-\alpha$。
+
+# 威儀指定習題
+
+1. The position of a particle moving in a straight line is given by $x = 5+2t+4t^{2}-t^{3}$, where $x$ is in meters. (a) Find an expression for the instantaneous velocity as a function of time. (b) Find the position of the particle at $t=0,1,0.1$ and $0.01$ sec. (c) What is the average velocity between $t=0$ sec and $t=1$ sec, between $t=0$ sec and $t=0.1$ sec, between $t=0$ sec and $t=0.01$ sec (d) What is the instantaneous velocity at $t=0$ sec. (e) What conclusion do you draw from the answers in (c) and (d)?
+
+Ans:
+(a) $v(t)=t+8t-3t^{2}$
+(b) $x(0)=5,x(1)=10,x(0.1)=5.239,x(0.01)=5.020399$ 
+(c) $5,2.39,2.0399$ 
+(d) $2m/s$
+(e) 當時間間隔縮短，時間變化率變小。這正符合極限的定義。
+
+2. A car moving at 25m/s strikes a tree, and the tree is seen to dent the front by 0.5m. Assume that the deceleration of the car was constant. Find the deceleration and time it took the car to stop.
+
+Ans:
+$a=625$ m/s
+$t=\frac{1}{25}$ s
+
+3. An electron is set in motion horizontally with a velocity $v_{x}=4 \times 10^{6}$ m/s. How far will it fall while traveling a horizontal distance of 10m?
+
+Ans:
+$y \approx \frac{1}{32}\times 10^{-9}$ m
+
+4. An artillery gunner wishes to have a projectile land at a point on level ground 20,000 m away from the gun. If the muzzle velocity is 500m/s and the muzzle is assumed to be at ground level, at what angle above the horizontal should the gun be aimed?
+
+Ans:
+$\theta \approx \frac{57^{\circ}}{2} \text{ or } 90^{\circ}- \frac{57^{\circ}}{2}$ 
+
+還好，都會。

@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Math/Linear Algebra/Matrix and Systems.md",
+                "file": "Physics/Uniform Accelerated Motion.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Matrix and Systems"
+              "title": "Uniform Accelerated Motion"
             }
           },
           {
@@ -209,12 +209,12 @@
   },
   "active": "26720c0ea3e29b4d",
   "lastOpenFiles": [
+    "Physics/Uniform Accelerated Motion.md",
+    "Physics/Newton's Laws.md",
     "Math/Linear Algebra/Matrix and Systems.md",
     "時間紀錄/Week 1.md",
-    "Physics/Uniform Accelerated Motion.md",
     "時間紀錄/Day1.md",
     "How to study efficiently.md",
-    "Physics/Newton's Laws.md",
     "Math/Calculus/Limit.md",
     "Math/Calculus/Calculus, Early Transcendentals.pdf",
     "時間紀錄",
