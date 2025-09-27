@@ -85,3 +85,29 @@ $$
 
 當 $a<0$：
 此時 $N=m(g-a)$，重量變輕。
+
+
+# 威儀指定習題
+
+1. A 500-kg box is to be lowered down a ramp at constant velocity. The ramp makes an angle of $30^{\circ}$ with the ground. The coefficient of friction between the ramp and the box is 0.7. (a) What force applied parallel to the ramp is needed? Must the box be pushed down or held back? (b) Repeat (a) if the coefficient of friction is 0.2.
+
+Ans:
+(a) push down $\approx 5.2 \times 10^{2}$ 
+(b) held back $\approx 1.6 \times 10^{3}$ 
+
+2. Three blocks of mass $m_{1}=3kg, m_{2}=4kg, m_{3}=6kg$ resting on a frictionless table and connected by strings with tensions $T_{1}$ and $T_{2}$ are being pulled to the right by a force of 6N. (a) What is the acceleration of the block? (b) What are the tensions in the strings? 
+
+Ans:
+(a) a = $\frac{6}{13} \ m/s^{2}$ 
+(b) $T_{1}=\frac{18}{13} \ N$ $T_{2}=\frac{42}{13} \ N$ 
+
+3. Block A rests on a frictionless plane and the connecting cord passes over a frictionless pulley with block B attached to it. What is the acceleration of block A along the plane when it is released?
+
+Ans:
+$0.67 \ m/s^{2}$ down the plane.
+
+3. A 10-kg ball is hung by a rope from the ceiling of a car. The maximum tension that the rope can withstand is 500N. (a) What is the maximum horizontal acceleration that the car can reach without the rope breaking? (b) What is the angle between the rope and the vertical for that acceleration?
+
+Ans:
+(a)
+(b)
