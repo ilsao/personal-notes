@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Math/Linear Algebra/Matrix and Systems.md",
+                "file": "Physics/Work, Energe, And Power.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Matrix and Systems"
+              "title": "Work, Energe, And Power"
             }
           },
           {
@@ -47,8 +47,7 @@
               "title": "Calculus, Early Transcendentals"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -207,19 +206,19 @@
       "bases:创建新数据库": false
     }
   },
-  "active": "6530f9b64e16e693",
+  "active": "26720c0ea3e29b4d",
   "lastOpenFiles": [
-    "Math/Linear Algebra/Matrix and Systems.md",
-    "時間紀錄/Week 1.md",
-    "Physics/Work, Energe, And Power.md",
-    "Physics/Newton's Laws.md",
     "Physics/Vector.md",
+    "Physics/Work, Energe, And Power.md",
+    "Math/Linear Algebra/Matrix and Systems.md",
+    "Math/Calculus/Limit.md",
+    "時間紀錄/Week 1.md",
+    "Physics/Newton's Laws.md",
     "Physics/Uniform Accelerated Motion.md",
     "Physics/Physical Quantities.md",
     "Algorithm/KMP.md",
     "時間紀錄/Day1.md",
     "How to study efficiently.md",
-    "Math/Calculus/Limit.md",
     "Math/Calculus/Calculus, Early Transcendentals.pdf",
     "時間紀錄",
     "Math/Calculus/Basic concept.md",
