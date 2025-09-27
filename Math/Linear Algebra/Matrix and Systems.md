@@ -383,6 +383,161 @@ $$
 L=E_{1}^{-1}E_{2}^{-1}E_{3}^{-1}
 $$
 
+# 分塊矩陣
+
+若有 $m \times n$ 大小的矩陣 $A$ 與大小 $n \times r$ 的分塊矩陣 $B=[b_{1}\dots b_{r}]$，則有：
+
+$$
+AB=(Ab_{1},Ab_{2},\dots,Ab_{r})
+$$
+
+類似地，對於分塊矩陣 $A=(\vec{a}_{1},\dots,\vec{a}_{n})$，有：
+
+$$
+AB=(\vec{a}_{1}B..,\vec{a}_{n}B)
+$$
+
+## 分塊乘法
+
+對於兩個可相乘的分塊矩陣 $A$ 與 $B$，二者分塊矩陣相乘的算法與普通矩陣相乘的算法相同。例如：
+
+$$
+A = \begin{bmatrix}
+A_{11} & A_{12} \\
+A_{21} & A_{22}
+\end{bmatrix}\quad
+B = \begin{bmatrix}
+B_{11} & B_{12} \\
+B_{21} & B_{22}
+\end{bmatrix}\quad
+AB = \begin{bmatrix}
+A_{11}B_{11} + A_{12}B_{21} & A_{11}B_{12} + A_{12}B_{22} \\
+A_{21}B_{11} + A_{22}B_{21} & A_{21}B_{12} + A_{22}B_{22}
+\end{bmatrix}
+
+$$
+
+$$
+(AB)_{ij}=\sum_{k=1}^{t}A_{ik}B_{kj}
+$$
+
+以上公式僅成立在對應分塊皆可乘的情況。
+
+## 例題
+
+1. 給定一個 $n \times n$ 大小的分塊矩陣 $A=\begin{bmatrix}A_{11} & O \\ O & A_{22}\end{bmatrix}$ ，其中 $A_{11}$ 的大小為 $k$ ($k < n$)。證明：$A$ 可逆 $\Leftrightarrow$ $A_{11},A_{22}$ 可逆。
+
+Sol:
+($\implies$)
+若 $A$ 可逆，則令 $B=A^{-1}$，則有：
+$\begin{bmatrix}A_{11} & O \\ O & A_{22}\end{bmatrix}\begin{bmatrix}B_{11} & B_{12} \\ B_{21} & B_{22}\end{bmatrix}=\begin{bmatrix}I_{k} & O \\ O & I_{n-k}\end{bmatrix}=\begin{bmatrix}B_{11} & B_{12} \\ B_{21} & B_{22}\end{bmatrix}\begin{bmatrix}A_{11} & O \\ O & A_{22}\end{bmatrix}$ 
+由上可知，$A_{11}B_{11}=I_{k}=B_{11}A_{11}$ 且 $A_{22}B_{22}=I_{n-k}=B_{22}A_{22}$ 。
+所以 $A_{11},A_{22}$ 可逆且有其乘法逆元 $B_{11},B_{22}$。
+($\impliedby$)
+若 $A_{11},A_{22}$ 可逆，則：
+$\begin{bmatrix}A_{11}^{-1} & O \\ O & A_{22}^{-1}\end{bmatrix}\begin{bmatrix}A_{11} & O \\ O & A_{22}\end{bmatrix}=\begin{bmatrix}I_{k} & O \\ O & I_{n-k}\end{bmatrix}=\begin{bmatrix}A_{11} & O \\ O & A_{22}\end{bmatrix}\begin{bmatrix}A_{11}^{-1} & O \\ O & A_{22}^{-1}\end{bmatrix}$ 
+所以 $A$ 可逆且有其乘法逆元 $\begin{bmatrix}A_{11}^{-1} & O \\ O & A_{22}^{-1}\end{bmatrix}$。
+
+## 分塊轉置
+
+分塊矩陣的轉置首先對大矩陣做一次轉置，然後對每個小分塊做一次轉置。
+
+$$
+A = \begin{bmatrix}
+A_{11} & A_{12} \\
+A_{21} & A_{22}
+\end{bmatrix}
+\quad\Longrightarrow\quad
+A^T = \begin{bmatrix}
+A_{11}^T & A_{21}^T \\
+A_{12}^T & A_{22}^T
+\end{bmatrix}
+$$
+
+## 外積展開 (Outer Product Expansions)
+
+兩個 column vector 相乘，可以如下表達：
+
+$$
+xy^{T}=\begin{bmatrix}
+x_{1} \\
+x_{2} \\
+\vdots \\
+x_{n}
+\end{bmatrix}
+\begin{bmatrix}
+y_{1} & y_{2} & \dots & y_{n}
+\end{bmatrix}
+=\begin{bmatrix}
+x_{1}y_{1} & x_{2}y_{2} & \dots & x_{1}y_{n} \\
+x_{2}y_{1} & x_{2}y_{2} & \dots & x_{2}y_{n} \\
+\vdots \\
+x_{n}y_{1} & x_{n}y_{2} & \dots & x_{ny_{n}}
+\end{bmatrix}
+$$
+
+同樣，如果我們對 $m\times n$ 矩陣 $X$ 和 $k \times n$ 矩陣 $Y$ 分塊，使得分割成一堆 column vector ，並做外積展開 $XY^{T}$，則：
+
+$$
+XY^{T}=\begin{bmatrix}
+x_{1} & x_{2} & \dots & x_{n}
+\end{bmatrix}
+\begin{bmatrix}
+y_{1}^{T} \\
+y_{2}^{T} \\
+\vdots \\
+y_{n}^{T}
+\end{bmatrix}
+=
+x_{1}y_{1}^{T}+x_{2}y_{2}^{T}+\dots+x_{n}y_{n}^{T}
+$$
+
+例如：
+
+$$
+\begin{align}
+ & X=\begin{bmatrix}
+3 & 2 \\
+2 & 4 \\
+1 & 2
+\end{bmatrix}\quad Y=\begin{bmatrix}
+1 & 2 \\
+2 & 4 \\
+3 & 1
+\end{bmatrix} \\ \\
+XY^{T} & =\begin{bmatrix}
+3 & 2 \\
+2 & 4 \\
+1 & 2
+\end{bmatrix}\begin{bmatrix}
+1 & 2 & 3 \\
+2 & 4 & 1
+\end{bmatrix} \\
+ & =\begin{bmatrix}
+3 \\
+2 \\
+1
+\end{bmatrix}\begin{bmatrix}
+1 & 2 & 3
+\end{bmatrix}+\begin{bmatrix}
+2 \\
+4 \\
+2
+\end{bmatrix}\begin{bmatrix}
+2 & 4 & 1
+\end{bmatrix} \\
+ & =\begin{bmatrix}
+3 & 6 & 9 \\
+2 & 4 & 6 \\
+1 & 2 & 3
+\end{bmatrix}+\begin{bmatrix}
+4 & 8 & 2 \\
+8 & 16 & 4 \\
+4 & 8 & 2
+\end{bmatrix}
+\end{align}
+$$
+
 # Tips
 
 - 證明 symmetric 類題，使用 $A^{T}=A$。
