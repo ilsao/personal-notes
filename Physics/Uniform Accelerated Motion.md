@@ -1,10 +1,10 @@
 
 # Velocity
 
-Here we define **instantaneous velocity** as follow equation(notice that $r$ represents displacement):
+Here we define **instantaneous velocity** as follow equation(notice that $x$ represents displacement):
 
 $$
-v=\lim_{ \Delta t \to 0 } \frac{\Delta r}{\Delta t}=\frac{dr}{dt}
+v=\lim_{ \Delta t \to 0 } \frac{\Delta x}{\Delta t}=\boxed{\frac{dx}{dt}}
 $$
 
 # Acceleration
@@ -12,7 +12,7 @@ $$
 We define instantaneous acceleration as:
 
 $$
-a=\lim_{ \Delta t \to 0 } \frac{\Delta v}{\Delta t}=\frac{dv}{dt}=\frac{d^{2}r}{dt^{2}}
+a=\lim_{ \Delta t \to 0 } \frac{\Delta v}{\Delta t}=\boxed{\frac{dv}{dt}}=\frac{d^{2}x}{dt^{2}}
 $$
 
 # Linear Motion
@@ -20,7 +20,7 @@ $$
 If $a$ remain constant, from the define of acceleration, we have:
 
 $$
-v=v_{0}+at
+\boxed{v=v_{0}+at}
 $$
 
 proof:
@@ -37,13 +37,13 @@ $v-v_{0}=at$
 And still, if $a$ remain constant, we have:
 
 $$
-\bar{v}=\frac{v+v_{0}}{2}
+\boxed{\bar{v}=\frac{v+v_{0}}{2}}
 $$
 
 and the displacement x becomes:
 
 $$
-x= \bar{v}t = \frac{v+v_{0}}{2}t
+\boxed{x= \bar{v}t = \frac{v+v_{0}}{2}t}
 $$
 
 The three equations above define linear motion for constant acceleration.
@@ -51,7 +51,7 @@ The three equations above define linear motion for constant acceleration.
 Let's obtain two auxiliary equations to help us solve the problem.
 
 $$
-v^{2}-v_{0}^{2}=2ax
+\boxed{v^{2}-v_{0}^{2}=2ax}
 $$
 
 proof:
@@ -65,7 +65,7 @@ $\implies\int^{v}_{v_{0}}v\ dv=a\int^{x}_{x_{0}}dx$
 $=v^{2}-v_{0}^{2}=2a(x-x_{0})$ 
 
 $$
-x=v_{0}t+\frac{1}{2}at^{2}
+\boxed{x=v_{0}t+\frac{1}{2}at^{2}}
 $$
 
 proof:

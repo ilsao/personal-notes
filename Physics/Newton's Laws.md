@@ -17,16 +17,16 @@ impede: 阻礙
 笛卡爾定義了動量，
 
 $$
-p = mv
+\boxed{p = mv}
 $$
 
 而牛頓由動量定義衝量：
 
-$$F\Delta t=\Delta mv$$
+$$\boxed{F\Delta t=\Delta mv}$$
 通過將質量視為不變的常數，可得：
 
 $$
-F=m \frac{\Delta v}{\Delta t}=ma
+\boxed{F=m \frac{\Delta v}{\Delta t}=ma}
 $$
 
 # Mass
@@ -49,7 +49,7 @@ $$
 我們定義一個物體的重量為
 
 $$
-\text{Weight}=mg
+\boxed{\text{Weight}=mg}
 $$
 
 # Friction
@@ -57,7 +57,7 @@ $$
 設 $\mu$ 為摩擦係數，$N$ 為正向力，則摩擦力 $f$ 如下定義：
 
 $$
-f=\mu N
+\boxed{f=\mu N}
 $$
 
 # Inertial Reference Frame (慣性坐標)
