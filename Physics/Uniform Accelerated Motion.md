@@ -114,6 +114,7 @@ $=\boxed{\frac{v_{0}^{2}\sin^{2}\theta}{2g}}$
 # Tips
 
 - 注意，當固定射程尋找斜拋角度時，$\theta$ 的值會有兩個，分別是 $\alpha$ 與 $90^{\circ}-\alpha$。
+- 注意，所有計算應先轉為 SI 單位再做計算。
 
 # 威儀指定習題
 
@@ -143,3 +144,13 @@ Ans:
 $\theta \approx \frac{57^{\circ}}{2} \text{ or } 90^{\circ}- \frac{57^{\circ}}{2}$ 
 
 還好，都會。
+
+# 重要例題
+
+1. A girl drops a flowerpot from a window 50m above the ground. At the same instant a boy directly under the flowerpot throws a stone with an upward velocity of $v$ m/s. What is the minimum velocity with which the stone must be thrown for the hit to occur?
+
+Sol:
+首先尋找相遇時間的方程，我們可以由以下等式求：
+$50-\frac{1}{2}gt^{2}=vt-\frac{1}{2}gt^{2}\implies t=\frac{50}{v}$ 
+然後尋找花盆落地需要的時間 $t_{down}=\sqrt{ \frac{2 \times 50}{g} }$ 必須要比相遇時間長：
+$t_{down}=\sqrt{ \frac{100}{g} } \geq \frac{50}{v}\implies v\approx 15.67$ m/s
