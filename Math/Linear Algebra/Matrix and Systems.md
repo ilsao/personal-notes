@@ -542,6 +542,10 @@ $$
 
 - 證明 symmetric 類題，使用 $A^{T}=A$。
 - 證明 可逆 類題，使用 $A^{-1}A=I$，$Ax=0$ 僅有單一零解，或者反證法證明互相矛盾。
+- **標準基向量(standard basis vector)** ：
+  用 $e_{j}$ 表示，表示 $\mathbb{R}^{n}$ 中的第 $j$ 個標準基底向量。例如：$e_{1}=\begin{bmatrix}1 \\ 0 \\ \vdots \\ 0\end{bmatrix}, \ e_{2}=\begin{bmatrix}0 \\ 1 \\ \vdots  \\ 0 \end{bmatrix}$ 。
+  通常，$Ae_{j}$ 用來抽取矩陣 $A$ 的 j column.
+- 想證明 $B$ 矩陣為 $A$ 矩陣的逆元，可以假設一個新的矩陣 $C$ 為 $A$ 的逆，並用未知數表達。相乘 $CA$ ，如果可以得到 $B$ 的形式則得證。
 
 # 例題
 
@@ -709,3 +713,21 @@ Sol:
 通過觀察，我們可以知道 $p(x)$ 的最高次為 $n$，但是$Vc=0$ 要求所有 $n+1$ 個 $x_{i}$ 都使得 $p(x_{i})=0$。
 我們學過，某多項式的最高次 $n$ 表示該函數圖形最多與 $y=0$ 相交 $n$ 次。但是在此，我們要求多項式圖形相交 $n+1$ 次，這表明該多項式為零多項式。即，$p(x)=0$，$c$ 為全零。
 這就表明 $V$ 必可逆。
+
+29. Let $A=\begin{bmatrix}A_{11} & A_{12} \\ O & A_{22}\end{bmatrix}$  where all four blocks are $n\times n$ matrices. (a) If $A_{11}, A_{22}$ are nonsingular, show that $A$ must also be nonsingular and that $A^{-1}$ must be of the form $\begin{bmatrix}A_{11}^{-1} & C \\ O & A_{22}^{-1}\end{bmatrix}$. (b) Determine $C$.
+
+Sol:
+(a)
+令 $X=\begin{bmatrix}X_{11} & X_{12} \\ O & X_{22}\end{bmatrix}$ 為 $A^{-1}$。所以 $AX=\begin{bmatrix}A_{11}X_{11} & A_{11}X_{12}+A_{12}X_{22} \\ O & A_{22}X_{22}\end{bmatrix}=I$。
+由此，我們可以得知：$X_{11}=A_{11}^{-1},X_{22}=A_{22}^{-1}$。
+所以 $X=\begin{bmatrix}A_{11}^{-1} & C \\ O & A_{22}^{-1}\end{bmatrix}$ 。
+
+(b)
+我們還需要解 $A_{11}X_{12}+A_{12}X_{22}=O\implies Ｃ＝X_{12}=-A_{11}^{-1}A_{12}A_{22}^{-1}$。
+
+30. Let $B$ and $C$ be $n \times n$ matrices with the property that $Bx=Cx$ for all $x \in \mathbb{R}^{n}$. Show that $B=C$.
+
+Sol:
+$A:=B-C$ 對於所有 $x \in \mathbb{R}^{n}$ $Ax=(B-C)x=0$ 
+取 $x=e_{j} \quad j=1,\dots,n$：
+$Ae_{j}=0\implies A=0\implies B-C=0\implies B=C$ 
