@@ -106,8 +106,34 @@ Ans:
 Ans:
 $0.67 \ m/s^{2}$ down the plane.
 
-3. A 10-kg ball is hung by a rope from the ceiling of a car. The maximum tension that the rope can withstand is 500N. (a) What is the maximum horizontal acceleration that the car can reach without the rope breaking? (b) What is the angle between the rope and the vertical for that acceleration?
+4. A 10-kg ball is hung by a rope from the ceiling of a car. The maximum tension that the rope can withstand is 500N. (a) What is the maximum horizontal acceleration that the car can reach without the rope breaking? (b) What is the angle between the rope and the vertical for that acceleration?
+
+Sol:
+(a)
+設繩子與 $y$ 軸的夾角為 $\theta$ ，則：
+$\begin{cases}T\sin \theta=ma \\ T\cos \theta=mg\end{cases}$ 且 $T=500N$ 
+所以 $T=500=\sqrt{ (ma)^{2}+(mg)^{2} }\implies a\approx 49.03 m/s^{2}$ 
+
+(b)
+$\tan \theta=\frac{a}{g} \approx 5\implies \theta=\arctan(5) \approx 78.7^{\circ}$ 
+
+5. A block is held against the front vertical wall of a railroad car. The coefficient of friction between the block and the wall is 0.4. When the train begins to accelerate, the block is released and begins to slide down the wall with an acceleration of $9.0 m/s^2$. What is the horizontal acceleration of the train? 
 
 Ans:
-(a)
-(b)
+$a \approx 2m/s^{2}$ 
+
+# 重要例題
+
+1. A $5kg$ mass is attached to the end of a string with a breaking strength of $100N$. What is the maximum acceleration that the mass can be given by pulling the string in the upward direction?
+
+Sol:
+$T-mg=ma\implies T=m(a+g)$ 
+$100=m(a+g)\implies a \approx 10.2 m/s^{2}$ 
+
+2. A rope of breaking strength $800N$ is to be used to drag a box at constant velocity on a horizontal surface. The rope pulls the box at some angle $\theta$ above the horizontal surface. If the coefficient of friction is 0.3, what is the maximum weight of the box that can be moved without the rope breaking?
+
+Sol:
+我們可以得知正向力：$N=mg-F\sin \theta\implies f=(mg-F\sin \theta)\mu$ 。
+因為要等速運動，所以 $F\cos \theta=f\implies F=\frac{mgu}{\cos \theta+\mu \sin \theta}\implies mg= \frac{F(\cos \theta+\mu \sin \theta)}{\mu}$ 。
+因為要使得 $mg$ 最大，所以要取 $\cos \theta+\mu \sin \theta$ 的最大值 $\sqrt{ 1+\mu^{2} }$ 。
+$\implies mg\approx 2784N$ 。

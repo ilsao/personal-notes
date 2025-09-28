@@ -154,3 +154,61 @@ P=\frac{dW}{dt}=\frac{F \cdot dx}{dt}=F \cdot v
 $$
 
 一度電的定義為，1 kwh = $1 \times 10^{3} W \times 3600 s=3.6\times 10^{6} J$。
+
+# Tips
+
+- 1hp = 746W
+
+# 威儀指定習題
+
+1. A boy pulls a 15kg sled at constant speed a distance of 30m along rough level snow that has a coefficient of friction of 0.1. How much work did he do?
+
+Ans:
+441J
+
+2. A bead having an initial speed at point A(h=0.7m) of $2m/s^{2}$ slides down a frictionless wire. What are its speeds at point B(h=0m) and C(h=0.3m)?
+
+Ans:
+$v_{b}\approx 4.21 m/s^{2},v_{c}\approx 3.44m/s^{2}$ 
+
+3. A pendulum consists of a mass at the end of a string 1.5m long. The mass is pulled sideways until the string makes an angle of $30^{\circ}$ with the vertical; then it is released. What is the speed of the mass as it passes through its lowest point?
+
+$mg(1.5 - 1.5\cos 30^{\circ})=\frac{1}{2}mv^{2}\implies v\approx 1.98 m/s$ 
+`~~~~^ 記得減 ^~~~~` 
+
+4. A light rope passing over a frictionless pulley connects two blocks of mass $m_{1}=3kg,m_{2}=5kg$. (a) If the blocks are released from rest in the position $h_{m_{1}}=0m,h_{m_{2}}=6m$ , what will be the velocity of $m_{2}$ as it hits the ground? (b) What is final height reached by $m_{1}$?
+
+Sol:
+(a)
+因為只受保守力做工，所以機械能守恆。
+$m_{2}g(6)=m_{1}g(6)+\frac{1}{2}m_{1}v^{2}+\frac{1}{2}m_{2}v^{2}\implies v \approx 5.42 m/s$ 
+不要忘記也要把 $m_{1}$ 的動能考慮進去喔！
+還有，因為有繩子綁著，所以 $m_{1},m_{2}$ 的速度一樣喔！
+
+(b)
+當 $m_{2}$ 觸地後，$m_{1}$ 持有的動能繼續轉化為位能：
+$\frac{1}{2}m_{1}v^{2}=m_{1}gh\implies h=1.5$ 
+所以最終高度為 $1.5+6=7m$ 。
+
+5. An 80kg man ascends a 4m high staircase in 12s. What is his horsepower?
+
+Ans:
+$\approx 0.35 hp$ (1hp = 746W)
+
+6. A pump is needed to lift 100kg of water per minute from a well 30m deep. The water is ejected with a speed of $5m/s$. What must be the power output of the pump?
+
+Sol:
+這題的難點在於看不懂題目...
+其實就是抽上去後水要以 5m/s 的速度繼續噴。
+先算一秒要抽多少水：$\frac{100}{60}=\frac{5}{3}$ kg/s。
+然後需要施加的能量等於增加的位能與動能：$E_{\text{in}}=\frac{5}{3}\times 30 \times g + \frac{1}{2} \times \frac{5}{3} \times 25 \approx 510.8J$ 。
+又因為這是一秒所做的功，所以等於需要的功率。
+
+# 重要例題
+
+1. A mass $m_{1}=3kg$ resting on a long table is connected by a light string passing over frictionless pulley to a second mass $m_{2}=5kg$ hanging 2m above the floor. The coefficient of friction between the table and $m_{1}$ is 0.3. The blocks are released from rest. What is the velocity of $m_{2}$ as it hits the floor?
+
+Sol:
+此題必須使用 $W_{\text{net}}=\Delta K$ 解。因為同時涉及到保守(重力)與非保守力(摩擦力)作功。
+$F_{\text{net}}=m_{2}g-f=4.1g$ 
+$W_{\text{net}}=F_{\text{net}}\cdot 2=\Delta K\implies 4.1g \times 2=\frac{1}{2}v^{2}(m_{1}+m_{2})\implies v \approx 4.48m/s$ 。
