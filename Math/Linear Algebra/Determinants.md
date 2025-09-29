@@ -70,6 +70,110 @@ $\det(A)=a_{11}\det(M_{11})$ 。
 又因為 $M_{11}$ 是 $k \times k$ 大小的下三角矩陣，所以由 $n=k$ 時的假設可以得知，$\det(M_{11})=a_{22}\times a_{33}\times\dots \times a_{k+1,k+1}$ 。
 所以，$\det(A)=a_{11}a_{22}\dots a_{nn}$ 。由數學歸納法，得證。
 
+# Properties of Determinants
+
+我們由一個引理來開啟此章節。
+
+令 $A$ 為一個 $n\times n$ 矩陣，$A_{ij}$ 為 $a_{ij}$ 的 cofactor。
+
+$$
+\sum_{k=1}^{n}a_{ik}A_{jk}=\begin{cases}
+\det(A) & \text{if }i=j \\
+0 & \text{if }i\neq j
+\end{cases}
+$$
+
+proof:
+這個證明很神奇。
+當 $i=j$ 的時候這條式子顯然就是該矩陣的拉普拉斯展開。
+讓我們來看看 $i\neq j$ 的情況。
+我們首先構建一個矩陣 $A^{*}$ ，其第 $j$ row 的值被第 $i$ row 替代。
+那麼，$\sum_{k=1}^{n}a_{ik}A^{*}_{jk}$ 就是 $\det(A^{*})=0$，因為行列式中有兩相等的 row。
+現在我們來講解為何 $\det(A^{*})=\det(A)$。
+因為 $A^{*}$ 會將第 $j$ row 的值刪掉，計算剩下的行列式值，所以將 $i$ 複製過來不會改變 cofactor 的值。
+所以，$\sum_{k=1}^{n}a_{ik}A^{*}_{jk}=\sum_{k=1}^{n}a_{ik}A_{jk}=0$ 當 $i \neq j$ 時。
+
+## 列運算 I
+
+將兩 row 交換。
+
+如果 $E$ 為將換兩 row 的初等矩陣，則 $\det(EA)=-\det(A)$。
+
+因為 $\det(E)=\det(EI)=-\det(I)=-1$，所以 $\det(EA)=\det(E)\det(A)$ 。
+
+## 列運算 II
+
+將某 row 乘某非零數。
+
+令 $E$ 為此運算的初等矩陣，則：
+
+$\det(EA)=\sum_{k=1}^{n}\alpha a_{1k}(-1)^{1+k}M_{1k}=\alpha\left( \sum_{k=1}^{n}a_{1k}(-1)^{1+k}M_{1k} \right)=\alpha \det(A)$ 。
+
+因為 $\det(E)=\det(EI)=\alpha \det(I)$，所以 $\det(EA)=\det(E)\det(A)$ 。
+
+## 列運算 III
+
+將某 row 乘以某非零數加到另一 row 上。
+
+令 $E$ 為此運算的初等矩陣，我們將第 $i$ row 乘 $c$ 加到 $j$ row，並對 $j$ row 展開：
+
+$\det(EA)$ 
+$=\sum_{k=1}^{n}(a_{jk}+ca_{ik})A_{jk}=\sum_{k=1}^{n}a_{jk}A_{jk}+c\sum_{k=1}^{n}a_{ik}A_{jk}$ 
+$=\det(A)+0=\det(A)$ 
+`~~~~~~~~~^`
+此處使用最開始的那個引理可以得知。
+
+我們可以得到：$\det(EA)=\det(A)=\det(E)\det(A)$。
+
+## 總整
+
+由以上三個列運算，我們可以得出以下結論。
+
+$$
+\det(EA)=\det(E)\det(A)
+$$
+
+其中，
+
+$$
+\det(E)=\begin{cases}
+-1 & \text{if E is of type I} \\
+\alpha\neq 0 & \text{if E is of type II} \\
+1 & \text{if E is of type III}
+\end{cases}
+$$
+
+同樣的結論也對 column operations 成立：
+
+$\det(AE)=\det((AE)^{T})=\det(E^{T}A^{T})=\det(E^{T})\det(A^{T})=\det(E)\det(A)$ 
+
+## 主要結論
+
+$$
+一個 \ n\times n \ 矩陣 \ A \ 奇異 \Leftrightarrow \det(A)=0
+$$
+proof:
+我們可以將 $A$ 在有限步驟內化為 REF：$U=E_{k}\dots E_{1}A$。
+$\det(U)=\det(E_{k})\dots \det(E_{1})\det(A)$ 。因為所有初等矩陣的行列式值皆不為零，所以 $\det(A)=0\Leftrightarrow\det(U)=0$。當 $\det(A)\neq 0$ 時，因為 $U$ 為上三角矩陣且對角線上的元素值皆為一，所以 $\det(U)=1$。
+
+$$
+\det(EA)=\det(E)\det(A)=\det(AE)
+$$
+
+當 $A,B$ 為大小 $n \times n$ 大小的矩陣時：
+
+$$
+\det(AB)=\det(A)\det(B)
+$$
+
+proof:
+當 $B$ 不可逆時，$AB$ 也不可逆。
+($Bx=0\implies (AB)x=0$ 且 $x\neq 0$)
+所以此時 $\det(AB)=0=\det(A)\det(B)$
+若 $B$ 可逆，則：
+$\det(AB)=\det(AE_{1}\dots E_{n})=\det(A)\det(E_{1}\dots E_{n})$ 
+$=\det(A)\det(B)$
+
 # 重要例題
 
 1. Let $A$ be a symmetric tridiagonal matrix. Let $B$ be the matrix formed from $A$ by deleting the first two rows and columns. Show that $\det(A)=a_{11}\det(M_{11})-a^{2}_{12}\det(B)$.
