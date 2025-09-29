@@ -345,6 +345,52 @@ $$
 - 圖形在某點的切線斜率。
 - 圖形在某點的瞬時變化率。
 
+# The Derivative Function
+
+我們稱 $f'(x)$ 為 $f$ 的導數。
+
+需要注意的是，$f'(x)$ 的 domain 是：$\{x|f(x) \exists\}$。
+
+以下是一些其他可以表示導數的符號：
+
+$f'(x)=y'=\frac{dy}{dx}=\frac{df}{dx}=\frac{d}{dx}f(x)=Df(x)=D_{x}f(x)$ 
+
+較為特殊的，$D_{t}f(x)=0$ 。因為對 $f(x)$ 來說，$t$ 不代表任何參數。所以，$D_{t}f(x)=f(x)-f(x)=0$。
+
+$$\frac{dy}{dx}=\lim_{ \Delta x \to 0 } \frac{\Delta y}{\Delta x}$$
+
+$\frac{dy}{dx}$ 不應該被視為某個比值，它是 $x$ 增量變化後，$y$ 隨之產生的增量。
+
+如果我們想要取得在 $a$ 的導數，可以如下表示：$\left. \frac{dy}{dx} \right|_{x=a}$。這是 $f'(a)$ 的符號表示，稱作 evaluate at。
+
+若 $f'(a)$ 存在，我們稱 $f$ 在 $a$ 可導(differentiable at a)。當函數在某**開區間**(本書中沒有定義閉區間內可導)可導，代表在區間內所有點都可導。
+
+需要注意，**可導必連續，但連續不一定可導**。($|x|$ 在零連續，但不可導)
+
+讓我們證明可導必連續。
+
+proof:
+$\lim_{ x \to a }f(x)=\lim_{ x \to a }\left[ \frac{f(x)-f(a)}{x-a}(x-a)+f(a) \right]=\lim_{ x \to a }\left[ \frac{f(x)-f(a)}{x-a}(x-a) \right]+\lim_{ x \to a }f(a)=f(a)$ By Limit Laws. 
+
+
+什麼情況下函數不可導？
+
+1.  A corner
+2.  A discontinuity
+3. A vertical tangent ($\lim_{ x \to a }|f'(x)|=\infty$)
+
+讓我們學習如何表示多次導數。
+
+一個二次導數可以表示為：$f''$ 或 $\frac{d}{dx}\left( \frac{dy}{dx} \right)=\frac{d^{2}y}{dx^{2}}$
+
+通常對於求導次數大於三時，我們用數字表示。
+
+對於多次導數，我們表示為：
+
+$$
+y^{(n)}=f^{(n)}(x)=\frac{d^{n}y}{dx^{n}}
+$$
+
 # 小 tip
 
 - 當帶入 $x=a$ 時函數分母等於 0，此時分為兩種狀況：
