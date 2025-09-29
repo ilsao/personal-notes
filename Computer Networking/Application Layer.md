@@ -197,3 +197,54 @@ Server: Apache/1.3.0 (Unix)
 如果發送方的服務器不能將郵件交付給接收方的郵件服務器，發送方的郵件服務器會將該郵件存儲在**報文隊列(message queue)** 中，並在一段時間後再次嘗試。若幾天後仍不成功，服務器就會刪除該報文並以郵件方式通知發送方。
 
 每台服務器都運行著 SMTP 的客戶端與服務端，當發送時則視為客戶端，接收時視為服務端。
+
+## SMTP
+
+SMTP 用於從發送方的郵件服務器發送報文到接收方的郵件服務器。而且報文內容僅接受七字節的 ASCII 碼，所以附件等多媒體文件必須先轉換為 ASCII 碼才能進行傳輸。
+
+比較特殊的是，SMTP 不會使用中轉服務器，不論兩個互相通訊的服務器距離多遠。SMTP 將兩台服務器建立直接的 TCP 連接。
+
+一旦 TCP 連接建立完成，就會開始通訊。以下給出一個例子：
+
+``` 
+S: 220 hamburger.edu
+C: HELO crepes.fr
+S: 250 Hello crepes.fr, pleased to meet you
+C: MAIL FROM: <alice@crepes.fr>
+S: 250 alice@crepes.fr ... Sender ok
+C: RCPT TO: <bob@hamburger.edu>
+S: 250 bob@hamburger.edu ... Recipient ok
+C: DATA
+S: 354 Enter mail, end with "." on a line by itself
+C: Do you like ketchup?
+C: How about pickles?
+C: .
+S: 250 Message accepted for delivery
+C: QUIT
+S: 221 hamburger.edu closing connection
+```
+
+SMTP 使用持續連接，如果有好幾個報文發往同一個郵箱，只需要使用一個新的 `MAIL FROM: crepes.fr` 就可以開始發送一個新的郵件。
+
+## 郵件報文格式
+
+前述的那些指令屬於 SMTP 握手協議的一部份，真正的郵件首部行位於報文前 DATA 命令後。
+
+一個經典的報文首部如下：
+
+```
+From: ilsao@outlook.com
+To: asciibase64@outlook.com
+Subject: Test
+```
+
+# 郵件訪問協議
+
+假設 Alice 要將郵件發給 Bob。
+
+Alice 會用 SMTP 或 HTTP 協議將郵件發給自己的郵件服務器，然後 Alice 的郵件服務器會將郵件轉發給 Bob 的郵件服務器。
+
+需要注意的是，當 Bob 的郵件代理想要拉取服務器的郵件時，無法使用 SMTP 協議。因為 SMTP 協議是一個推送協議。通常郵件代理會使用 HTTP(Gmail) 或 IMAP(outlook) 拉取郵件。
+
+# DNS
+
