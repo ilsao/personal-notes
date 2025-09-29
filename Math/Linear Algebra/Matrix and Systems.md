@@ -31,7 +31,7 @@ A system of linear equations is said to be **homogeneous(齊次的)** if the con
 
 1. Homogeneous systems are always consistent. 
 2. If an homogeneous system have an unique solution, it must be a trival solution = $(0, 0, \dots, 0)$. 
-3. An $m \times n$ homogeneous system of linear equations has a nontrival solution if $m < n$. 
+3. An $m \times n$ homogeneous system of linear equations has a nontrival solution if $m < n$. (Undetermined) 
 
 # 列運算表示法
 
@@ -40,6 +40,10 @@ A system of linear equations is said to be **homogeneous(齊次的)** if the con
 乘實數：$(-2)R_{1}\to R_{1}$
 
 乘實數後加到另一列：$(-2)R_{1} + R_{3} \to R_{3}$
+
+# 多項式曲線擬合 (Polynomial curve fitting)
+
+給定 $n$ 個點，尋找一個多項式 $p(x)=a_{0}+a_{1}x+\dots+a_{n-1}x^{n-1}$ 通過所有 $n$ 個點。
 
 # 矩陣相等
 
@@ -170,9 +174,9 @@ $$
 以下我們證明 $(AB)^{T}=B^{T}A^{T}$.
 
 proof:
-想證明這條等式，只需要證明其乘積中的每一項皆相同即可。
-其中，$(AB)^{T}$ 的每項可以表達為： $\vec{a}_{j}b_{i} = a_{j 1}b_{1 i} + \dots + a_{j n}b_{n i}$
-而 $B^{T}A^{T}$ 的每項可以表達為：$b_{i}^{T} \vec{a}_{j}^{T}=b_{1i}a_{j 1} + \dots +b_{n i} a_{j n}$
+想證明這條等式，只需要**證明其乘積中的每一項皆相同**即可。
+其中，$(AB)^{T}_{ij}=(AB)_{ji}$ 的每項可以表達為： $\vec{a}_{j}b_{i} = a_{j 1}b_{1 i} + \dots + a_{j n}b_{n i}$ 
+而 $(B^{T}A^{T})_{ij}$ 的每項可以表達為：$b_{i}^{T} \vec{a}_{j}^{T}=(b_{i 1})^{T}(a_{1j})^{T}+\dots+(b_{in})^{T}(a_{nj})^{T}=b_{1i}a_{j 1} + \dots +b_{n i} a_{j n}$ 
 因為二者中的每項皆相同，所以二者相等。
 
 # 單位矩陣(The Identity Matrix)
@@ -187,7 +191,7 @@ $$
 \end{cases}
 $$
 
-需要注意的是，想表示 $I$ 的第 $j$ column，不是使用 $i_{j}$，而使用 $e_{j}$。所以可以使用 $I=(e_{1}, e_{2}, \dots e_{n})$ 來表示一個 $n \times n$ 單位矩陣。
+需要注意的是，想表示 $I$ 的第 $j$ column，不是使用 $i_{j}$，而使用 $e_{j}$ ($e$ 也稱標準基底向量 standard basis vector)。所以可以使用 $I=(e_{1}, e_{2}, \dots e_{n})$ 來表示一個 $n \times n$ 單位矩陣。
 
 # 矩陣的逆運算
 
@@ -201,7 +205,7 @@ $$
 
 **singular(奇異的)**：當一個矩陣沒有乘法逆元，則稱為 singular。即， $\det(A)=0$。
 
-注意，**singular不可以用在非方陣上**，因為一個非方陣總是沒有乘法逆元。
+注意，**singular不可以用在非方陣上**，因為一個非方陣矩陣總是沒有乘法逆元(但是可以有左逆或右逆)。
 
 如何求一個矩陣的乘法逆元？
 
@@ -337,7 +341,7 @@ $$
 
 其中，$E_{n}$ 為初等矩陣。
 
-所以，若增廣矩陣 $(A|\vec{b})$ 和 $(B| \vec{c})$ 行等價，則 $Ax=\vec{b}$ 與 $Bx=\vec{c}$ 為等價方程組。
+所以，若增廣矩陣 $(A|\vec{b})$ 和 $(B| \vec{c})$ 行等價，則 $Ax=\vec{b}$ 與 $Bx=\vec{c}$ 為**等價方程組**。
 
 由上，我們還可以得知，若 $B$ 處於 RREF (此時 $B$ 為單位矩陣)，則：
 
@@ -350,10 +354,11 @@ $$
 
 (!) $A$ 為一個 $n \times n$ 矩陣，則下列敘述互相等價：
 - $A$ 可逆
-- $Ax=\vec{b}$ 有唯一解
-- $Ax=0$ 有唯一零解
+- $\det(A)\neq 0$ 
+- $Ax=\vec{b}$ 有唯一解 <---|
+- $Ax=0$ 有唯一零解 --| 可以用來幫助證明
 - $A$ 與單位矩陣行等價
-- $A$ 可以寫成一系列初等矩陣相乘
+- (!) $A$ 可以寫成一系列初等矩陣相乘
 
 想證明以上五點等價，可以先假設第一點成立，然後遞推到第五點也成立，最後由第五點推第一點成立即可。
 
@@ -546,27 +551,26 @@ $$
   用 $e_{j}$ 表示，表示 $\mathbb{R}^{n}$ 中的第 $j$ 個標準基底向量。例如：$e_{1}=\begin{bmatrix}1 \\ 0 \\ \vdots \\ 0\end{bmatrix}, \ e_{2}=\begin{bmatrix}0 \\ 1 \\ \vdots  \\ 0 \end{bmatrix}$ 。
   通常，$Ae_{j}$ 用來抽取矩陣 $A$ 的 j column.
 - 想證明 $B$ 矩陣為 $A$ 矩陣的逆元，可以假設一個新的矩陣 $C$ 為 $A$ 的逆，並用未知數表達。相乘 $CA$ ，如果可以得到 $B$ 的形式則得證。
+- $CA=BC$ 不論 $C$ 是否可逆，都沒有消去律($A$ 不一定等於 $B$)。
 
 # 例題
 
 1. Assume $\vec{u} = (u_{1}, u_{1}\dots u_{n})$ and $\vec{v}= (v_{1}, v_{2} \dots v_{n})$ are two solutions of $a_{1}x_{1}+a_{2}x_{2}+ \dots +a_{n}x_{n}=b$. **Prove** that for any real number $C$, $\vec{u}+c(u-v)$ is the solution of $a_{1}x_{1}+a_{2}x_{2}+ \dots +a_{n}x_{n}=b$. 
 
 Sol 1:
-
 $\because$ We have $a_{1}u_{1}+a_{2}u_{2}+ \dots a_{n}u_{n} = b$ and $a_{1}v_{1}+a_{2}v_{2}+ \dots +a_{n}v_{n} = b$ 
 $\therefore$ We have $a_{1}(u_{1}-v_{1})+a_{2}(u_{2}-v_{2})+ \dots +a_{n}(u_{n}-v_{n})=0$. i.e., $\vec{u}-\vec{v}$ is one of the solution of $a_{1}x_{1}+a_{2}x_{2}+\dots+a_{n}x_{n}=0$.
 $\implies$ $c(\vec{u}-\vec{v})$ is also the one of the solution of $a_{1}x_{1}+a_{2}x_{2}+\dots+a_{n}x_{n}=0$. 
 Then, we add $\vec{u}$ to $c(\vec{u}-\vec{v})$. i.e., $\vec{u} + c(\vec{u}-\vec{v})$, it's the solution of $a_{1}x_{1}+a_{2}x_{2}+ \dots +a_{n}x_{n}=b$. 
 
 Sol 2:
-
 $a⋅(u+c(u−v))=a⋅u+c(a⋅u−a⋅v)=b+c(b−b)=b$.
 
 2. 給定一個 overdetermined 的齊次方程系統，討論解的情況。
 
 Sol:
 因為是齊次系統，所以該系統就算 overdetermined 也會有解(最少也有全零解)。
-分為：單一解(全零解)，無限多組解。
+分為：單一解(全零解)，無限多組解(rank < 未知數數)。
 
 3. 給定一個 underdetermined 的非齊次方程，討論解的情況。
 
@@ -578,18 +582,6 @@ Sol:
 統整：
 
 ![[Pasted image 20250914165104.png]]
-
-$$
-\begin{align}
- - & i_{1} + i_{2} - i_{3} = 0 \text{ (node A)} \\
- & i_{1} - i_{2} + i_{4} = 0 \text{ (node B)} \\
- & i_{3} - i_{5} + i_{6} = 0 \text{ (node C)} \\
-- & i_{4} + i_{5} - i_{6} = 0 \text{ (node D)} \\
- & 4i_{1} + 2i_{2} = 8 \text{ (top loop)} \\
- & 2i_{2} - 4i_{5} = \text{ (medium loop)} \\
- & 4i_{5} + 5i_{6} = 10 \text{ (bottom loop)}
-\end{align}
-$$
 
 4. $Ax=b$ be a linear system whose augmented matrix $(A|b)$ has reduced row echelon form $\begin{bmatrix}1 & 2 & 0 & 3 & 1  | &-2 \\ 0 & 0 & 1 & 2 & 4| & 5 \\ 0 & 0 & 0 & 0 & 0| & 0 \\ 0 & 0 & 0 & 0 & 0| & 0 \end{bmatrix}$
    (a) Find all solutions to the system.
@@ -637,8 +629,6 @@ $(AA^{-1})^{T}=(A^{-1})^{T}A^{T}=I$
 $(A^{-1}A)^{T}=A^{T}(A^{-1})^{T}=I$ 
 Thus, we have $A^{T}$ is nonsingular and $(A^{-1})^{T}$ is the inverse of $A^{T}$.
 
-$(A^{k+1})^{-1}=(A^{k}A)^{-1}=A^{-1}(A^{k})^{-1}=A^{-1}(A^{-1})^{k}=(A^{-1})^{k+1}$ 
-
 8. Let $A$ be a nonsingular $n \times n$ matrix. Use mathematical induction to prove that $A^{m}$ is nonsingular and $(A^{m})^{-1}=(A^{-1})^{m}$ for $m=1,2,3,\dots$
 
 Sol:
@@ -656,7 +646,7 @@ $(A^{k+1})^{-1}=(A^{k}A)^{-1}=A^{-1}(A^{k})^{-1}=A^{-1}(A^{-1})^{k}=(A^{-1})^{k+
 Sol:
 設 $D=\text{diag}(d_{1},d_{2},\dots,dn), d_{i}\in\{0,1\}$。
 對角矩陣相乘仍為對角矩陣，則 $D^{2}=\text{diag}(d_{1}^{2},d_{2}^{2},\dots,d_{n}^{2})$。
-因為 $d_{i}\in \{0,1\}$ 所以 $d_{i}^{2}=d_{1}$
+因為 $d_{i}\in \{0,1\}$ 所以 $d_{i}^{2}=d_{1}$ 
 $\implies D^{2}=\text{diag}(d_{1}^{2},d_{2}^{2},\dots,d_{n}^{2})=\text{diag}(d_{1},d_{2},\dots,dn)=D, d_{i}\in\{0,1\}$ 
 
 10. Let $A$ and $B$ be symmetric $n \times n$ matrices. Prove that $AB=BA$ if and only if $AB$ is also symmetric .
@@ -667,7 +657,7 @@ Sol:
 $(AB)^{T}=B^{T}A^{T}=BA=AB$ 
 Thus, $AB$ is symmetric.
 ($\impliedby$) If $AB$ is symmetric then
-$AB=(AB)^{T}=BA$
+$AB=(AB)^{T}=B^{T}A^{T}=BA$ 
 Thus, $AB=BA$ 
 Hence,  $AB=BA$ if and only if $AB$ is also symmetric .
 
@@ -680,7 +670,7 @@ $u_{ij}=0$ if $i>j$
 $r_{ij}=0$ if $i>j$ 
 Thus, $t_{ij}=\sum_{k=1}^{n}u_{ik}r_{kj}$ 
 Moreover, we know that if $i\leq k$ and $k\leq j$ then $t_{ij}$ could probably be a nonzero(if both $u_{ij}$ and $r_{ij}$ are nonzero).
-However, for $i<j$ the condition $k\geq i$ and $k\leq j$ could never happened. Thus, the lower part of $T$ must be all zero.
+However, for $i>j$ the conditions $k\geq i$ and $k\leq j$ could never happened. Thus, the lower part of $T$ must be all zero.
 Focus on the diagonal entries $t_{jj}=\sum_{k=1}^{n}u_{jk}r_{kj}$ .
 For matrix $U$,  every entries $j>k$ is zero. For matrix $R$, every entries $k > j$ is zero.
 Thus, only the entry $j=k$ have the possibility to be nonzero. This implies that $t_{jj}=\sum_{k=1}^{n}u_{jk}r_{kj}=u_{jj}r_{jj}$ .
@@ -696,7 +686,7 @@ Sol:
 (I) 
 $B$ is singular $\implies Bx=0$ have nontrivial solutions.
 Thus, we can express $Cx=A(Bx)=0$ .
-This implies that $C$ also have nontrivial solutions. Therefore, $C$ must be singular.
+This implies that $C$ also have a nontrivial solutions. Therefore, $C$ must be singular.
 
 (II) 反證法
 Suppose $C$ is nonsingular.
@@ -710,7 +700,7 @@ Sol:
 若有函數 $p(x)=c_{1}+c_{2}x+\dots+c_{n+1}x^{n}$，
 我們可以將 $Vc=y$ 表達為：$p(x_{i})=y_{i}$。
 證明矩陣可逆，可以表達為證明 $Vc=0$ ，$c$ 有唯一零解。
-通過觀察，我們可以知道 $p(x)$ 的最高次為 $n$，但是$Vc=0$ 要求所有 $n+1$ 個 $x_{i}$ 都使得 $p(x_{i})=0$。
+通過觀察，我們可以知道 $p(x)$ 的最高次為 $n$，但是$Vc=0$ 要求所有 $n+1$ 個 $x_{i}$ (因為所有 $x_{i}$ 都不相同)都使得 $p(x_{i})=0$。
 我們學過，某多項式的最高次 $n$ 表示該函數圖形最多與 $y=0$ 相交 $n$ 次。但是在此，我們要求多項式圖形相交 $n+1$ 次，這表明該多項式為零多項式。即，$p(x)=0$，$c$ 為全零。
 這就表明 $V$ 必可逆。
 
@@ -730,4 +720,4 @@ Sol:
 Sol:
 $A:=B-C$ 對於所有 $x \in \mathbb{R}^{n}$ $Ax=(B-C)x=0$ 
 取 $x=e_{j} \quad j=1,\dots,n$：
-$Ae_{j}=0\implies A=0\implies B-C=0\implies B=C$ 
+$Ae_{j}=0\implies A=O\implies B-C=O\implies B=C$ 
