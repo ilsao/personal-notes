@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Math/Linear Algebra/Determinants.md",
+                "file": "Math/Calculus/Limit.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Determinants"
+              "title": "Limit"
             }
           },
           {
@@ -47,7 +47,8 @@
               "title": "Calculus, Early Transcendentals"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -206,10 +207,11 @@
       "bases:Create new base": false
     }
   },
-  "active": "6530f9b64e16e693",
+  "active": "26720c0ea3e29b4d",
   "lastOpenFiles": [
-    "時間紀錄/Week 1.md",
+    "Math/Calculus/Limit.md",
     "Math/Linear Algebra/Determinants.md",
+    "時間紀錄/Week 1.md",
     "Math/Linear Algebra/Matrix and Systems.md",
     "Physics/Work, Energe, And Power.md",
     "Physics/Uniform Accelerated Motion.md",
@@ -217,7 +219,6 @@
     "Physics/Physical Quantities.md",
     "時間紀錄/Day1.md",
     "How to study efficiently.md",
-    "Math/Calculus/Limit.md",
     "Math/Calculus/Calculus, Early Transcendentals.pdf",
     "時間紀錄",
     "Math/Calculus/Basic concept.md",

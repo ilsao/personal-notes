@@ -325,6 +325,26 @@ Sol:
 需要注意，因為 $\infty$ 不是一個數字，並且 $\lim_{ x \to \infty }x=\infty$ 極限未定義，所以不能使用 Limit Law 來解此題。
 但是，我們可以將其分解為 $\lim_{ x \to \infty }x(x-1)=\infty$. 
 
+# Derivatives (導數)
+
+我們如下定義導數：
+
+$$
+f'(a)=\lim_{ x \to a } \frac{f(x)-f(a)}{x-a}=\lim_{ h \to 0 } \frac{f(a+h)-f(a)}{h}
+$$
+
+需要注意的是，$\lim_{ x \to a }f'(x)$ 不一定等於 $f'(a)$。
+
+我們如下定義瞬時變化率：
+
+$$
+\text{instantaneous rate of change = }\lim_{ \Delta x \to 0 } \frac{\Delta y}{\Delta x}=\lim_{ x_{2} \to x_{1} } \frac{f(x_{2})-f(x_{1})}{x_{2}-x_{2}}
+$$
+
+所以，導數可以表示為：
+- 圖形在某點的切線斜率。
+- 圖形在某點的瞬時變化率。
+
 # 小 tip
 
 - 當帶入 $x=a$ 時函數分母等於 0，此時分為兩種狀況：
@@ -341,6 +361,7 @@ proof:
    - 注意，就算某點非連續，其極限仍可能存在。(比如某點未定義，但其左右極限相同)
    - 若 $f=\frac{1}{x}, g=\frac{1}{x^{2}}$ 則 $(f \circ g)(x)=x^{2}$ ，且$(f \circ g)(x)$ 在 $x=0$ 處不連續(未定義)。不要看到 $x^{2}$ 就以為處處連續！
    - 若要證明「當且僅當」成立，需要雙向證明。
+   - 小心，$\lim_{ x \to a }f'(x)$ 不一定等於 $f'(a)$。
 
 # 經典練習題
 
