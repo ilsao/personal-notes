@@ -25,11 +25,10 @@ $$
 
 proof:
 $a=\frac{dv}{dt}\implies a\ dt=dv$ 
-$v_{f}-v_{0}=\Delta v_{1}+\Delta v_{2}+\dots+\Delta v_{n}$ 
-$a_{1}\Delta t+a_{2}\Delta t+\dots+a_{n}\Delta t$ 
+$v_{f}-v_{0}=a_{1}\Delta t+a_{2}\Delta t+\dots+a_{n}\Delta t$  
 = the area under the a-t curve
 $\int_{t_{0}}^{t}a \ dt = \int_{v_{0}}^{v}dv$ 
-Since $a$ is a constant,
+Since we assume $a$ is a constant,
 $\int^{v}_{v_{0}}dv=a\int^{t}_{0}dt$ 
 This integrates to 
 $v-v_{0}=at$
@@ -91,8 +90,8 @@ $$
 
 $$
 \begin{cases}
-x=v_{0}\cos \theta t \\
-y=v_{0}\sin \theta t-\frac{1}{2}gt^{2}
+x=v_{0}\cos \theta \cdot t \\
+y=v_{0}\sin \theta \cdot t-\frac{1}{2}gt^{2}
 \end{cases}
 $$
 
@@ -147,7 +146,7 @@ $\theta \approx \frac{57^{\circ}}{2} \text{ or } 90^{\circ}- \frac{57^{\circ}}{2
 
 # 重要例題
 
-1. A girl drops a flowerpot from a window 50m above the ground. At the same instant a boy directly under the flowerpot throws a stone with an upward velocity of $v$ m/s. What is the minimum velocity with which the stone must be thrown for the hit to occur?
+1. (!) A girl drops a flowerpot from a window 50m above the ground. At the same instant a boy directly under the flowerpot throws a stone with an upward velocity of $v$ m/s. What is the minimum velocity with which the stone must be thrown for the hit to occur?
 
 Sol:
 首先尋找相遇時間的方程，我們可以由以下等式求：

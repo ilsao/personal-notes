@@ -101,7 +101,7 @@ Ans:
 (a) a = $\frac{6}{13} \ m/s^{2}$ 
 (b) $T_{1}=\frac{18}{13} \ N$ $T_{2}=\frac{42}{13} \ N$ 
 
-3. Block A rests on a frictionless plane and the connecting cord passes over a frictionless pulley with block B attached to it. What is the acceleration of block A along the plane when it is released?
+3. Block A(8kg) rests on a frictionless plane($37^{\circ}$ with the ground) and the connecting cord passes over a frictionless pulley with block B(4kg) attached to it. What is the acceleration of block A along the plane when it is released?
 
 Ans:
 $0.67 \ m/s^{2}$ down the plane.
@@ -130,7 +130,7 @@ Sol:
 $T-mg=ma\implies T=m(a+g)$ 
 $100=m(a+g)\implies a \approx 10.2 m/s^{2}$ 
 
-2. A rope of breaking strength $800N$ is to be used to drag a box at constant velocity on a horizontal surface. The rope pulls the box at some angle $\theta$ above the horizontal surface. If the coefficient of friction is 0.3, what is the maximum weight of the box that can be moved without the rope breaking?
+2. A rope of breaking strength $800N$ is to be used to drag a box at constant velocity on a horizontal surface. The rope pulls the box at some angle $\theta$ above the horizontal surface. If the coefficient of friction is 0.3, what is the maximum **weight** of the box that can be moved without the rope breaking?
 
 Sol:
 我們可以得知正向力：$N=mg-F\sin \theta\implies f=(mg-F\sin \theta)\mu$ 。
