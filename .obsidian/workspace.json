@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Physics/Work, Energe, And Power.md",
+                "file": "Physics/Uniform Accelerated Motion.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Work, Energe, And Power"
+              "title": "Uniform Accelerated Motion"
             }
           },
           {
@@ -47,7 +47,8 @@
               "title": "Calculus, Early Transcendentals"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -206,15 +207,18 @@
       "bases:Create new base": false
     }
   },
-  "active": "26720c0ea3e29b4d",
+  "active": "6530f9b64e16e693",
   "lastOpenFiles": [
+    "Physics/Uniform Accelerated Motion.md",
+    "Computer Networking/Application Layer.md",
+    "Pasted image 20250930150114.png",
+    "Pasted image 20250930150055.png",
+    "Computer Networking/Intro. to the Internet.md",
+    "Physics/Work, Energe, And Power.md",
     "時間紀錄/Week 5.md",
     "大學安排.md",
     "Math/Calculus/Limit.md",
-    "Physics/Work, Energe, And Power.md",
     "Physics/Newton's Laws.md",
-    "Physics/Uniform Accelerated Motion.md",
-    "Computer Networking/Application Layer.md",
     "時間紀錄/Week 1.md",
     "時間紀錄/Week 4.md",
     "Math/Linear Algebra/Determinants.md",
@@ -241,18 +245,14 @@
     "Operating Systems/OSTEP/Concurrency.md",
     "Operating Systems/OSTEP/Virtualization.md",
     "Operating Systems/OSTEP",
-    "Computer Networking/Intro. to the Internet.md",
     "pic/Pasted image 20250914165104.png",
     "Operating Systems/BeyondOS/MBR.md",
     "Pasted image 20250909165841.png",
-    "pic/Pasted image 20250909165841.png",
     "personal-notes.pub",
     "personal-notes",
     "CSAPP/CSAPP_U6.md",
-    "CSAPP/CSAPP_U2.md",
     "Operating Systems/BeyondOS",
     "Physics",
-    "pic/Pasted image 20250903170635.png",
     "CSAPP/Computer Systems A Programmer’s Perspective.pdf",
     "未命名.canvas"
   ]
