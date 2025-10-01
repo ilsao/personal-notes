@@ -46,7 +46,7 @@ $$
 proof:
 因為將行列式某列乘一個非零數加到另一列上後，行列式值不變。所以只要將兩相同的列的其中一個乘以負一加到另一個上，就會造成某列全零，行列式為零。
 
-- $\det(A^{T})=\det(A)$。
+- $^{*}\det(A^{T})=\det(A)$。
 
 proof:
 我們使用數學歸納法證明。
@@ -153,8 +153,12 @@ $$
 一個 \ n\times n \ 矩陣 \ A \ 奇異 \Leftrightarrow \det(A)=0
 $$
 proof:
+(I)
 我們可以將 $A$ 在有限步驟內化為 REF：$U=E_{k}\dots E_{1}A$。
 $\det(U)=\det(E_{k})\dots \det(E_{1})\det(A)$ 。因為所有初等矩陣的行列式值皆不為零，所以 $\det(A)=0\Leftrightarrow\det(U)=0$。當 $\det(A)\neq 0$ 時，因為 $U$ 為上三角矩陣且對角線上的元素值皆為一，所以 $\det(U)=1$。
+
+(II)
+若 $A$ 不可逆，則會有一行等價的矩陣 $B$ 的某列全為零 $\implies \det(B)=\det(E_{k}\dots E_{1})\det(A)=0\implies \det(A)=0$。
 
 $$
 \det(EA)=\det(E)\det(A)=\det(AE)
@@ -163,16 +167,24 @@ $$
 當 $A,B$ 為大小 $n \times n$ 大小的矩陣時：
 
 $$
-\det(AB)=\det(A)\det(B)
+^{*}\det(AB)=\det(A)\det(B)
 $$
 
 proof:
 當 $B$ 不可逆時，$AB$ 也不可逆。
 ($Bx=0\implies (AB)x=0$ 且 $x\neq 0$)
-所以此時 $\det(AB)=0=\det(A)\det(B)$
+所以此時 $\det(AB)=0=\det(A)\det(B)$ 
 若 $B$ 可逆，則：
 $\det(AB)=\det(AE_{1}\dots E_{n})=\det(A)\det(E_{1}\dots E_{n})$ 
-$=\det(A)\det(B)$
+$=\det(A)\det(B)$ 
+
+# Tips
+
+- $\det(A^{T})=\det(A)$ 歸納法。
+- $\det(\alpha A)=\alpha^{n}\det(A)$。
+- $\det(AB)=\det(A)\det(B)$ 將 $B$ 換成初等矩陣。
+- $\det(-I)=(-1)^{n}\neq-1$。
+- 當有一個分塊矩陣 $C=\begin{bmatrix}A & O \\ O & B\end{bmatrix}$ ，則 $\det(C)=\det(A)\det(B)$。
 
 # 重要例題
 
@@ -188,3 +200,42 @@ Sol:
 觀察 $M_{12}$，發現第一 column 只有 $a_{21}$ 非零，用它展開就是 $\det(M_{12})=a_{21}\det(B)$ 。
 又因為矩陣為 symmetric tridiagonal matrix，所以 $a_{21}=a_{12}$。所以帶回：
 $\det(A)=a_{11}\det(M_{11})-a_{12}^{2}\det(B)$。
+
+2. Let $A$ be a nonsingular matrix. Show that $\det(A^{-1})=\frac{1}{\det(A)}$. 
+
+Sol:
+利用性質 $\det(AB)=\det(A)\det(B)$。
+因為 $\det(A^{-1}A)=\det(A^{-1})\det(A)=\det(I)=1\implies \det(A^{-1})=\frac{1}{\det(A)}$ 。
+
+3. Let $A$ be an $n \times n$ matrix. Is it possible for $A^{2}+I=O$?
+
+Sol:
+$A^{2}+I=O\implies \det(A^{2})=\det(-I)$ 
+需要注意的是，$\det(-I)\neq -1$。
+因為 $I$ 是對角矩陣，所以 $\det(-I)=(-1)^{n}$！
+$\det(A^{2})=(\det(A))^{2}=(-1)^{n}$。當 $n$ 為奇數時，不可能成立。因為一個數字的平方不可能等於負一。
+
+4. Let $A$ be a nonsingular $n \times n$ matrix with a nonzero cofactor $A_{nn}$, and set $c=\frac{\det(A)}{A_{nn}}$. Show that if we subtract $c$ from $a_{nn}$, then the resulting matrix will be singular.
+
+Sol:
+對修改過的矩陣 $A'$ 與原本的矩陣對第 $n$ row 展開。
+$\det(A')=\sum_{j=1}^{n-1}a_{nj}A_{nj}+(a_{nn}-c)A_{nn}$ 
+$\det(A)=\sum_{j=1}^{n-1}a_{nj}A_{nj}+a_{nn}A_{nn}$ 
+兩式相減：$\det(A)-\det(A')=cA_{nn}\implies \det(A')=\det(A)-cA_{nn}=0$。
+
+5. Let $A$ be a $k \times k$ matrix and let $B$ be an $(n-k)\times (n-k)$ matrix. Let $E=\begin{bmatrix}I_{k} & O \\ O & B\end{bmatrix},\quad F=\begin{bmatrix}A & O \\ O & I_{n-k}\end{bmatrix}, \quad C=\begin{bmatrix}A & O \\ O & B\end{bmatrix}$ where $I_{k}$ and $I_{n-k}$ are the $k \times k$ and $(n-k)\times (n-k)$ identity matrices. (a) Show that $\det(E)=\det(B)$.  (b) Show that $\det(C)=\det(A)\det(B)$. 
+
+Sol:
+(a)
+假設 $E^{(r)}=\begin{bmatrix}I_{k-r} & O \\ O & B\end{bmatrix}$ $r=1, 2,\dots,k$ 。對任意 $r \leq k$，我們對第一行第一列進行拉普拉斯展開。得到：
+$\det(E)=\det(E^{(0)})=\det(E^{(1)})=\dots=\det(E^{(k)})=\det(B)$。
+
+(b)
+通過觀察，我們可以得知：$C=EF$。
+由於 $\det(E)=\det(B),\det(F)=\det(A)$，所以 $\det(C)=\det(A)\det(B)$！
+
+6. Show that evaluating the determinant of an $n \times n$ matrix by cofactors involves $(n!-1)$ additions and $\sum_{k=1}^{n-1} \frac{n!}{k!}$ multiplications. 
+
+Sol:
+I have no idea how to solve this question...
+

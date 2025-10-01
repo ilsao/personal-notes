@@ -349,7 +349,7 @@ $$
 
 我們稱 $f'(x)$ 為 $f$ 的導數。
 
-需要注意的是，$f'(x)$ 的 domain 是：$\{x|f(x) \exists\}$。
+需要注意，$f'(x)$ 的 domain 是：$\{x|f(x) \exists\}$。
 
 以下是一些其他可以表示導數的符號：
 
@@ -377,7 +377,7 @@ $\lim_{ x \to a }f(x)=\lim_{ x \to a }\left[ \frac{f(x)-f(a)}{x-a}(x-a)+f(a) \ri
 
 1.  A corner
 2.  A discontinuity
-3. A vertical tangent ($\lim_{ x \to a }|f'(x)|=\infty$)
+3. A vertical tangent $[\lim_{ x \to a }|f'(x)|=\infty \text{ 或 } (\lim_{ x \to a }f'(x)= \infty 或 \lim_{ x \to a }f'(x)=-\infty)]$ 
 
 讓我們學習如何表示多次導數。
 
@@ -391,7 +391,7 @@ $$
 y^{(n)}=f^{(n)}(x)=\frac{d^{n}y}{dx^{n}}
 $$
 
-# 小 tip
+# Tips
 
 - 當帶入 $x=a$ 時函數分母等於 0，此時分為兩種狀況：
 	- 分子與分母都有 $(x-a)$ 項，可以消掉 => 圖形在該點有空洞，但不是漸進線。因為 $\lim_{ x \to a }f(x)$ 有定義。
@@ -408,6 +408,9 @@ proof:
    - 若 $f=\frac{1}{x}, g=\frac{1}{x^{2}}$ 則 $(f \circ g)(x)=x^{2}$ ，且$(f \circ g)(x)$ 在 $x=0$ 處不連續(未定義)。不要看到 $x^{2}$ 就以為處處連續！
    - 若要證明「當且僅當」成立，需要雙向證明。
    - 小心，$\lim_{ x \to a }f'(x)$ 不一定等於 $f'(a)$。
+   - 需要注意，$f'(x)$ 的 domain 是：$\{x|f(x) \exists\}$。
+   - $\lim_{ x \to a }\frac{x^{1/3}-a^{1/3}}{x-a}=\frac{x-a}{(x-a)(x^{2/3}+(xa)^{1/3}+a^{2/3})}$，只要把它化為立方差就可以繼續化減了，我好聰明。
+   - 當 $\lim_{ x \to a }|f'(x)|=\infty$ 時，函數在 $x=a$ 時有垂直切線。
 
 # 經典練習題
 
@@ -629,3 +632,13 @@ If $t=\frac{1}{x}$ then $\frac{1}{N}< t<0$
 Thus, for every $\epsilon>0$, there is a corresponding $\delta>0$ (namely, $-\frac{1}{N}$) such that
 If $-\delta<t<0$ then $|f(t)-L|<\epsilon$.
 This prove that $\lim_{ x \to -\infty }f(x)=\lim_{ t \to 0^{-} }f\left( \frac{1}{t} \right)$.
+
+19. Compare $f(x)=\begin{cases}x\sin \frac{1}{x} & \text{if x }\neq 0 \\ 0 & \text{if x} =0\end{cases}$ and $g(x)=\begin{cases}x^{2}\sin \frac{1}{x} & \text{if x }\neq 0 \\ 0 & \text{if x }=0\end{cases}$ , are they differentiable at $x=0$?
+
+Sol:
+這題可以直接考慮算導數的值，因為取值在零附近很討喜。不要去考慮什麼連續的問題，因為就算連續也不一定可導。
+首先考慮 $f(x)$。
+$\lim_{ x \to 0 } \frac{x\sin \frac{1}{x}}{x}=\lim_{ x \to 0 }\sin \frac{1}{x}$ 不存在，所以不可導。
+考慮 $g(x)$。
+$\lim_{ x \to 0 } \frac{x^{2}\sin \frac{1}{x}}{x}=\lim_{ x \to 0 }x\sin \frac{1}{x}$。
+因為 $-|x|\leq x\sin \frac{1}{x}\leq |x|$ 又 $\lim_{ x \to 0 }(-|x|)=0$ 且 $\lim_{ x \to 0 }|x|=0$，所以由夾擠定理 $\lim_{ x \to 0 }x\sin \frac{1}{x}=0$ 存在，可導。
