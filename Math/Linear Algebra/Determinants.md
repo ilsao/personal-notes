@@ -216,6 +216,64 @@ $x_{i}=A^{-1}\mathbf{b}$
 $=\frac{1}{\det(A)}\text{Adj}(A)\mathbf{b}=\frac{\sum _{k=1}^{n}b_{k}A_{ki}}{\det(A)}$ 
 $=\frac{\det(A_{i})}{\det(A)}$ (可以回憶 $A_{i}$ 的定義)
 
+## 外積(The Cross Product)
+
+給定兩個向量 $\mathbf{x},\mathbf{y} \in \mathbb{R}^{3}$，則二者的外積：
+
+$$\mathbf{x}\times \mathbf{y}=\begin{bmatrix}x_{2}y_{3}-y_{2}x_{3} \\ y_{1}x_{3}-x_{1}y_{3} \\ x_{1}y_{2}-y_{1}x_{2}\end{bmatrix}$$
+
+若 $C$ 為任意形如：
+
+$$
+C=\begin{bmatrix}
+w_{1} & w_{2} & w_{3} \\
+x_{1} & x_{2} & x_{3} \\
+y_{1} & y_{2} & y_{3}
+\end{bmatrix}
+$$
+
+則：
+
+$$
+\mathbf{x}\times \mathbf{y}=C_{11}e_{1}+C_{12}e_{2}+C_{13}e_{3}
+$$
+
+如果將 $C$ 的行列式對第一 row 進行拉普拉斯展開：
+
+$$
+\det(C)=w_{1}C_{11}+w_{2}C_{12}+w_{3}C_{13}=\mathbf{w}^{T}(\mathbf{x}\times \mathbf{y})
+$$
+
+具體來說，如果 $\mathbf{w}=\mathbf{x}$ 或 $\mathbf{w}=\mathbf{y}$，則 $\mathbf{x}^{T}(\mathbf{x}\times \mathbf{y})=\mathbf{y}^{T}(\mathbf{x}\times \mathbf{y})=0$。
+
+我們也可以將 $\mathbf{x}=(x_{1},x_{2},x_{3})$ 與 $\mathbf{y}=(y_{1},y_{2},y_{3})$ 視為 row vector。此時，我們如下定義外積：
+
+$$
+\mathbf{x}\times \mathbf{y}=(x_{2}y_{3}-y_{2}x_{3})\mathbf{i}-(x_{1}y_{3}-y_{1}x_{3})\mathbf{j}+(x_{1}y_{2}-y_{1}x_{2})\mathbf{k}
+$$
+
+其中，$\mathbf{i},\mathbf{j},\mathbf{k}$ 為 $3 \times 3$ 但為矩陣中的 row vector。
+
+同時，外積也可以用行列式表達：
+
+$$
+\mathbf{x}\times \mathbf{y}=\begin{vmatrix}
+\mathbf{i} & \mathbf{j} & \mathbf{k} \\
+x_{1} & x_{2} & x_{3} \\
+y_{1} & y_{2} & y_{3}
+\end{vmatrix}
+$$
+
+或將 row vector 換成 column vector：
+
+$$
+\mathbf{x}\times \mathbf{y}=\begin{vmatrix}
+\mathbf{e_{1}} & \mathbf{e_{2}} & \mathbf{e_{3}} \\
+x_{1} & x_{2} & x_{3} \\
+y_{1} & y_{2} & y_{3}
+\end{vmatrix}
+$$
+
 # Tips
 
 - $\det(A^{T})=\det(A)$ 歸納法。
@@ -223,6 +281,9 @@ $=\frac{\det(A_{i})}{\det(A)}$ (可以回憶 $A_{i}$ 的定義)
 - $\det(AB)=\det(A)\det(B)$ 將 $B$ 換成初等矩陣。
 - $\det(-I)=(-1)^{n}\neq-1$。
 - 當有一個分塊矩陣 $C=\begin{bmatrix}A & O \\ O & B\end{bmatrix}$ ，則 $\det(C)=\det(A)\det(B)$。
+- 若一個全部都是整數的矩陣 $A$ 且 $\det(A)=\pm 1$，則其逆矩陣 $A^{-1}=\text{adj(A)}$ 也全部皆是整數。如果想要構造出這樣的矩陣 $A$，我們可以從單位矩陣出發，對其進行無數個將某列乘以某值加到某列，或進行偶數個交換兩列。
+- 計算逆矩陣時，$\text{Adj}A$ 求的是 cofactor，記得正負！
+- 給定一個矩陣 $A$，如果想要計算 $A^{-1}$ 的第 $j$ column，可以將其視為解 $A\mathbf{x}=e_{2}$，並利用克拉默法則很快就可以得出答案。
 
 # 重要例題
 
@@ -277,3 +338,12 @@ $\det(E)=\det(E^{(0)})=\det(E^{(1)})=\dots=\det(E^{(k)})=\det(B)$。
 Sol:
 I have no idea how to solve this question...
 
+7. Let $B_{j}$ denote the matrix obtained by replacing the $j$th column of the identity matrix with a vector $\mathbf{b}=(b_{1},\dots b_{n})^{T}$. Prove that $b_{j}=\det(B_{j})\quad \text{for }j=1,\dots ,n$. 
+
+Sol:
+(I) Cramer's Rule
+將其視為解 $I\mathbf{x}=\mathbf{b}$。
+此時 $\mathbf{x}=\mathbf{b}$，所以 $x_{j}=b_{j}$。
+由於克拉默法則，所以：$x_{j}=b_{j}=\frac{\det(B_{j})}{\det(I)}=\det(B_{j})$。
+
+(II)
