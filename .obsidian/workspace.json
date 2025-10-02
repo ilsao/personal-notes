@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Computer Networking/Application Layer.md",
+                "file": "Math/Calculus/Limit.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Application Layer"
+              "title": "Limit"
             }
           },
           {
@@ -192,14 +192,14 @@
       "bases:Create new base": false
     }
   },
-  "active": "1d5b0d980baa8a22",
+  "active": "26720c0ea3e29b4d",
   "lastOpenFiles": [
+    "Computer Networking/Application Layer.md",
     "pic/Pasted image 20251002093811.png",
     "Math/Calculus/Limit.md",
     "Math/Calculus/Calculus, Early Transcendentals.pdf",
     "時間紀錄/Week 5.md",
     "Math/Linear Algebra/Determinants.md",
-    "Computer Networking/Application Layer.md",
     "Physics/Uniform Accelerated Motion.md",
     "pic/Pasted image 20250930150114.png",
     "pic/Pasted image 20250930150055.png",
@@ -228,7 +228,6 @@
     "Computer Networking/Computer Networking A top-down approach.pdf",
     "故事創作與影像敘事/什麼是故事.md",
     "pic/Pasted image 20250916193635.png",
-    "pic/Pasted image 20250916192919.png",
     "故事創作與影像敘事",
     "C++/Class.md",
     "Operating Systems/OSTEP/Concurrency.md",

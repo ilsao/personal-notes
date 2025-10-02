@@ -411,6 +411,7 @@ proof:
    - 需要注意，$f'(x)$ 的 domain 是：$\{x|f(x) \exists\}$。
    - $\lim_{ x \to a }\frac{x^{1/3}-a^{1/3}}{x-a}=\frac{x-a}{(x-a)(x^{2/3}+(xa)^{1/3}+a^{2/3})}$，只要把它化為立方差就可以繼續化減了，我好聰明。
    - 當 $\lim_{ x \to a }|f'(x)|=\infty$ 時，函數在 $x=a$ 時有垂直切線。
+   - 若要處理 $\lim_{ h \to 0 } \frac{-f(x-h)+f(x)}{h}$ ，可以令 $\Delta X=-h\implies \lim_{ \Delta X \to 0 } \frac{-[f(x + \Delta X)-f(x)]}{-\Delta X}=-f'(x)$ 。
 
 # 經典練習題
 
@@ -642,3 +643,25 @@ $\lim_{ x \to 0 } \frac{x\sin \frac{1}{x}}{x}=\lim_{ x \to 0 }\sin \frac{1}{x}$ 
 考慮 $g(x)$。
 $\lim_{ x \to 0 } \frac{x^{2}\sin \frac{1}{x}}{x}=\lim_{ x \to 0 }x\sin \frac{1}{x}$。
 因為 $-|x|\leq x\sin \frac{1}{x}\leq |x|$ 又 $\lim_{ x \to 0 }(-|x|)=0$ 且 $\lim_{ x \to 0 }|x|=0$，所以由夾擠定理 $\lim_{ x \to 0 }x\sin \frac{1}{x}=0$ 存在，可導。
+
+20.  Prove that the derivative of an even function is an odd function.
+
+Sol:
+使用性質：$f'(-x)=-f'(x)$。
+$f'(-x)=\lim_{ h \to 0 } \frac{f(-x+h)-f(-x)}{h}=\lim_{ h \to 0 } \frac{f(x-h)-f(x)}{h}$ (Let $\Delta X=-h$)
+$=\lim_{ \Delta X \to 0 } \frac{f(x+\Delta X)-f(x)}{-\Delta X}=-\lim_{ \Delta X \to 0 } \frac{f(x+\Delta X)-f(x)}{\Delta X}=-f'(x)$ 
+
+21. Prove that the derivative of an odd function is an even function.
+
+Sol:
+讓我們嘗試使用導數的另一種方式證明此題。
+$\lim_{ x \to -a } \frac{f(x)-f(-a)}{x+a}=\lim_{ x \to -a } \frac{f(x)+f(a)}{x+a}=\lim_{ x \to -a } \frac{-f(x)-f(a)}{-x-a}$ (Let $u=-x$)
+$\lim_{ u \to a } \frac{-f(-u)-f(a)}{u-a}=\lim_{ u \to a } \frac{f(u)-f(a)}{u-a}=f'(x)$ 
+
+# Extra questions
+
+1. $\lim_{ x \to \infty }(2^{x}+3^{x}+5^{x})^{1/x}$ 
+
+Sol:
+$5^{x}\leq(2^{x}+3^{x}+5^{x})\leq3\cdot 5^{x}\implies 5\leq(2^{x}+3^{x}+5^{x})^{1/x}\leq3^{1/x}\cdot 5$ 
+$\lim_{ x \to \infty }5=5 \leq \lim_{ x \to \infty }(2^{x}+3^{x}+5^{x})^{1/x}\leq\lim_{ x \to \infty }3^{1/x}\cdot 5=5$ By Squeeze Theorem.
