@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Math/Calculus/Limit.md",
+                "file": "Math/Linear Algebra/Determinants.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Limit"
+              "title": "Determinants"
             }
           },
           {
@@ -194,9 +194,9 @@
   },
   "active": "26720c0ea3e29b4d",
   "lastOpenFiles": [
+    "Math/Calculus/Limit.md",
     "Computer Networking/Application Layer.md",
     "pic/Pasted image 20251002093811.png",
-    "Math/Calculus/Limit.md",
     "Math/Calculus/Calculus, Early Transcendentals.pdf",
     "時間紀錄/Week 5.md",
     "Math/Linear Algebra/Determinants.md",

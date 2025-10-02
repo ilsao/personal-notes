@@ -178,6 +178,44 @@ proof:
 $\det(AB)=\det(AE_{1}\dots E_{n})=\det(A)\det(E_{1}\dots E_{n})$ 
 $=\det(A)\det(B)$ 
 
+# Additional Topics and Applications
+
+## 伴隨矩陣(The Adjoint of a Matrix)
+
+給定一個 $n \times n$ 大小的矩陣 ，我們如下定義伴隨矩陣(其中，$A_{ij}$ 是矩陣 $A$ 的餘子式)：
+
+$$\text{adj}A=\begin{bmatrix}A_{11} & A_{21} & \dots & A_{n_{1}} \\ A_{12} & A_{22} & \dots & A_{n_{2}} \\ \vdots \\ A_{n 1} & A_{n 2} & \dots & A_{nn}\end{bmatrix}$$
+
+即，$\text{AdjA}_{ij}=(A_{ij})^{T}$。
+
+伴隨矩陣會有如下性質：
+
+$$
+A(\text{Adj}A)=\det(A)I
+$$
+
+proof:
+令 $A(\text{Adj}A)=B$，則 $B_{ij}=\sum_{k=1}^{n} a_{ik}A_{kj}$。根據最初的引理，僅當 $i=j$ 時 $B_{ij}=\det(A)$，否則 $B_{ij}=0\implies B=\det(A)I$。
+
+若 $A$ 非奇異，則其行列式值永不為零。可以得到 $A\left( \frac{1}{\det(A)}\text{Adj}A \right)=I$。
+
+所以，我們可以如下計算 $A$ 的逆：
+
+$$
+A^{-1}=\frac{1}{\det(A)}\text{Adj}A \quad \text{when }\det(A)\neq 0
+$$
+
+## 克拉默法則(Cramer's Rule)
+
+令 $A$ 為一個大小 $n\times n$ 且可逆的矩陣，$\mathbf{b} \in \mathbb{R}^{n}$。定義 $A_{i}$ 為 $A$ 矩陣的第 $i$ column 被 $b$ 替代後的新矩陣。如果 $x$ 是 $A\mathbf{x}=\mathbf{b}$ 的唯一解，則：
+
+$$x_{i}= \frac{\det(A_{i})}{\det(A)} \quad \text{for }i=1,2,\dots,n$$
+
+proof:
+$x_{i}=A^{-1}\mathbf{b}$ 
+$=\frac{1}{\det(A)}\text{Adj}(A)\mathbf{b}=\frac{\sum _{k=1}^{n}b_{k}A_{ki}}{\det(A)}$ 
+$=\frac{\det(A_{i})}{\det(A)}$ (可以回憶 $A_{i}$ 的定義)
+
 # Tips
 
 - $\det(A^{T})=\det(A)$ 歸納法。
