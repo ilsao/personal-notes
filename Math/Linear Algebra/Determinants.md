@@ -89,7 +89,7 @@ proof:
 讓我們來看看 $i\neq j$ 的情況。
 我們首先構建一個矩陣 $A^{*}$ ，其第 $j$ row 的值被第 $i$ row 替代。
 那麼，$\sum_{k=1}^{n}a_{ik}A^{*}_{jk}$ 就是 $\det(A^{*})=0$，因為行列式中有兩相等的 row。
-現在我們來講解為何 $\det(A^{*})=\det(A)$。
+現在我們來講解為何此時 $\det(A^{*})=\det(A)$。
 因為 $A^{*}$ 會將第 $j$ row 的值刪掉，計算剩下的行列式值，所以將 $i$ 複製過來不會改變 cofactor 的值。
 所以，$\sum_{k=1}^{n}a_{ik}A^{*}_{jk}=\sum_{k=1}^{n}a_{ik}A_{jk}=0$ 當 $i \neq j$ 時。
 
@@ -152,12 +152,7 @@ $\det(AE)=\det((AE)^{T})=\det(E^{T}A^{T})=\det(E^{T})\det(A^{T})=\det(E)\det(A)$
 $$
 一個 \ n\times n \ 矩陣 \ A \ 奇異 \Leftrightarrow \det(A)=0
 $$
-proof:
-(I)
-我們可以將 $A$ 在有限步驟內化為 REF：$U=E_{k}\dots E_{1}A$。
-$\det(U)=\det(E_{k})\dots \det(E_{1})\det(A)$ 。因為所有初等矩陣的行列式值皆不為零，所以 $\det(A)=0\Leftrightarrow\det(U)=0$。當 $\det(A)\neq 0$ 時，因為 $U$ 為上三角矩陣且對角線上的元素值皆為一，所以 $\det(U)=1$。
-
-(II)
+proof：
 若 $A$ 不可逆，則會有一行等價的矩陣 $B$ 的某列全為零 $\implies \det(B)=\det(E_{k}\dots E_{1})\det(A)=0\implies \det(A)=0$。
 
 $$
@@ -195,7 +190,7 @@ A(\text{Adj}A)=\det(A)I
 $$
 
 proof:
-令 $A(\text{Adj}A)=B$，則 $B_{ij}=\sum_{k=1}^{n} a_{ik}A_{kj}$。根據最初的引理，僅當 $i=j$ 時 $B_{ij}=\det(A)$，否則 $B_{ij}=0\implies B=\det(A)I$。
+令 $A(\text{Adj}A)=B$，則 $B_{ij}=\sum_{k=1}^{n} a_{ik}A_{jk}$。根據最初的引理，僅當 $i=j$ 時 $B_{ij}=\det(A)$，否則 $B_{ij}=0\implies B=\det(A)I$。
 
 若 $A$ 非奇異，則其行列式值永不為零。可以得到 $A\left( \frac{1}{\det(A)}\text{Adj}A \right)=I$。
 
@@ -204,6 +199,22 @@ proof:
 $$
 A^{-1}=\frac{1}{\det(A)}\text{Adj}A \quad \text{when }\det(A)\neq 0
 $$
+
+以下性質是我在題目證明中遇到，覺得好用的性質：
+
+$$
+\text{adj}(AB)=\text{adj}(A)\text{adj}(B)
+$$
+
+proof:
+$\text{adj}(AB)=\det(AB)(AB)^{-1}=\det(A)\det(B)B^{-1}A^{-1}=\text{adj}(A)\text{adj(B)}$ 
+
+$$
+(\text{adj}A)^{n}=\text{adj}A^{n}
+$$
+
+proof:
+利用上一個性質，$\text{adj}(A)\text{adj}(B)=adj(AB)\implies (\text{adjA})^{n} = \text{adj}(A)\dots \text{adj}(A)=\text{adj}A^{n}$ 。
 
 ## 克拉默法則(Cramer's Rule)
 
@@ -244,7 +255,7 @@ $$
 \det(C)=w_{1}C_{11}+w_{2}C_{12}+w_{3}C_{13}=\mathbf{w}^{T}(\mathbf{x}\times \mathbf{y})
 $$
 
-具體來說，如果 $\mathbf{w}=\mathbf{x}$ 或 $\mathbf{w}=\mathbf{y}$，則 $\mathbf{x}^{T}(\mathbf{x}\times \mathbf{y})=\mathbf{y}^{T}(\mathbf{x}\times \mathbf{y})=0$。
+具體來說，如果 $\mathbf{w}=\mathbf{x}$ 或 $\mathbf{w}=\mathbf{y}$，則 $\mathbf{x}^{T}(\mathbf{x}\times \mathbf{y})=\mathbf{y}^{T}(\mathbf{x}\times \mathbf{y})=0$。(行列式中兩列相同)
 
 我們也可以將 $\mathbf{x}=(x_{1},x_{2},x_{3})$ 與 $\mathbf{y}=(y_{1},y_{2},y_{3})$ 視為 row vector。此時，我們如下定義外積：
 
@@ -252,7 +263,7 @@ $$
 \mathbf{x}\times \mathbf{y}=(x_{2}y_{3}-y_{2}x_{3})\mathbf{i}-(x_{1}y_{3}-y_{1}x_{3})\mathbf{j}+(x_{1}y_{2}-y_{1}x_{2})\mathbf{k}
 $$
 
-其中，$\mathbf{i},\mathbf{j},\mathbf{k}$ 為 $3 \times 3$ 但為矩陣中的 row vector。
+其中，$\mathbf{i},\mathbf{j},\mathbf{k}$ 為 $1 \times 3$ 但為矩陣中的 row vector。
 
 同時，外積也可以用行列式表達：
 
@@ -276,14 +287,15 @@ $$
 
 # Tips
 
-- $\det(A^{T})=\det(A)$ 歸納法。
+- $\det(A^{T})=\det(A)$ 歸納法可證。
 - $\det(\alpha A)=\alpha^{n}\det(A)$。
-- $\det(AB)=\det(A)\det(B)$ 將 $B$ 換成初等矩陣。
+- $\det(AB)=\det(A)\det(B)$ 將 $B$ 換成初等矩陣可證。
 - $\det(-I)=(-1)^{n}\neq-1$。
+- $\det(\text{AdjA})=(\det(A))^{n-1}$。
 - 當有一個分塊矩陣 $C=\begin{bmatrix}A & O \\ O & B\end{bmatrix}$ ，則 $\det(C)=\det(A)\det(B)$。
 - 若一個全部都是整數的矩陣 $A$ 且 $\det(A)=\pm 1$，則其逆矩陣 $A^{-1}=\text{adj(A)}$ 也全部皆是整數。如果想要構造出這樣的矩陣 $A$，我們可以從單位矩陣出發，對其進行無數個將某列乘以某值加到某列，或進行偶數個交換兩列。
 - 計算逆矩陣時，$\text{Adj}A$ 求的是 cofactor，記得正負！
-- 給定一個矩陣 $A$，如果想要計算 $A^{-1}$ 的第 $j$ column，可以將其視為解 $A\mathbf{x}=e_{2}$，並利用克拉默法則很快就可以得出答案。
+- 給定一個矩陣 $A$，如果想要計算 $A^{-1}$ 的第 $j$ column，可以將其視為解 $A\mathbf{x}=e_{j}$，並利用克拉默法則很快就可以得出答案。
 
 # 重要例題
 
@@ -306,7 +318,7 @@ Sol:
 利用性質 $\det(AB)=\det(A)\det(B)$。
 因為 $\det(A^{-1}A)=\det(A^{-1})\det(A)=\det(I)=1\implies \det(A^{-1})=\frac{1}{\det(A)}$ 。
 
-3. Let $A$ be an $n \times n$ matrix. Is it possible for $A^{2}+I=O$?
+3. (!) Let $A$ be an $n \times n$ matrix. Is it possible for $A^{2}+I=O$?
 
 Sol:
 $A^{2}+I=O\implies \det(A^{2})=\det(-I)$ 
@@ -333,12 +345,12 @@ $\det(E)=\det(E^{(0)})=\det(E^{(1)})=\dots=\det(E^{(k)})=\det(B)$。
 通過觀察，我們可以得知：$C=EF$。
 由於 $\det(E)=\det(B),\det(F)=\det(A)$，所以 $\det(C)=\det(A)\det(B)$！
 
-6. Show that evaluating the determinant of an $n \times n$ matrix by cofactors involves $(n!-1)$ additions and $\sum_{k=1}^{n-1} \frac{n!}{k!}$ multiplications. 
+6. (!) Show that evaluating the determinant of an $n \times n$ matrix by cofactors involves $(n!-1)$ additions and $\sum_{k=1}^{n-1} \frac{n!}{k!}$ multiplications. 
 
 Sol:
 I have no idea how to solve this question...
 
-7. Let $B_{j}$ denote the matrix obtained by replacing the $j$th column of the identity matrix with a vector $\mathbf{b}=(b_{1},\dots b_{n})^{T}$. Prove that $b_{j}=\det(B_{j})\quad \text{for }j=1,\dots ,n$. 
+7. (!) Let $B_{j}$ denote the matrix obtained by replacing the $j$th column of the identity matrix with a vector $\mathbf{b}=(b_{1},\dots b_{n})^{T}$. Prove that $b_{j}=\det(B_{j})\quad \text{for }j=1,\dots ,n$. 
 
 Sol:
 (I) Cramer's Rule
@@ -346,4 +358,27 @@ Sol:
 此時 $\mathbf{x}=\mathbf{b}$，所以 $x_{j}=b_{j}$。
 由於克拉默法則，所以：$x_{j}=b_{j}=\frac{\det(B_{j})}{\det(I)}=\det(B_{j})$。
 
-(II)
+(II) Cofactor expansion
+對 $B_{j}$ 的第 $j$ column 做拉普拉斯展開：$\det(B_{j})=\sum_{i=1}^{n}b_{i}(-1)^{i+j}\det(M_{ij})$ 。
+因為 $M_{ij}$ 會將對應的 $i$ row 和 $j$ column 刪除，所以對於所有$i \neq j$ 都一定有一 row 為全零 $\implies \det(M_{ij})=0$。
+也就是說，只有當 $i = j$ 時 $\det(M_{ij})$ 存在，且 $\det(M_{ij})=1\implies \det(B_{j})=b_{j}$。
+
+8. Let $A$ be a nonsingular $n\times n$ matrix with $n>1$. Show that $\det(\text{Adj}A)=\det(A)^{n-1}$. 
+
+Sol:
+我們有 $A^{-1}A=I\implies \frac{1}{\det(A)}(\text{Adj}A)A=I$。
+全部取行列式：$[\det(A)]^{-n}\det(\text{AdjA})\det(A)=1\implies \det(AdjA)=\det(A)^{n-1}$ 
+
+9. Suppose that $Q$ is a matrix with the property $Q^{-1}=Q^{T}$. Show that $q_{ij}=\frac{Q_{ij}}{\det(Q)}$. ($Q_{ij}$ is the cofactor of $Q$)
+
+Sol:
+$\text{adj}Q=\det(Q)Q^{-1}=\det(Q)Q^{T}$ 
+$Q_{ij}=\det(Q)q_{ij}\implies q_{ij}=\frac{Q_{ij}}{\det(Q)}$ 
+
+10. Prove that if $\det(A)=0$ then $\det(\text{adj}A)=0$. 
+
+Sol:
+因為 $\det(A)=0$，我們可以得到 $A\text{adj}A=0$。
+假設 $\det(\text{adj}A)\neq 0$，則該伴隨矩陣有逆。可以得到 $A=0\cdot(\text{adj}A)^{-1}=O$。
+這就表示了 $\text{adjA}=O\implies \det(\text{adjA})=O$，與假設矛盾。
+所以 $\det(\text{adjA})=0$。

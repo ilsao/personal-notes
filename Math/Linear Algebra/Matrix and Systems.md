@@ -360,13 +360,13 @@ $$
 - $A$ 與單位矩陣行等價
 - (!) $A$ 可以寫成一系列初等矩陣相乘
 
-想證明以上五點等價，可以先假設第一點成立，然後遞推到第五點也成立，最後由第五點推第一點成立即可。
+想證明以上幾點等價，可以先假設第一點成立，然後遞推到第六點也成立，最後由第六點推第一點成立即可。
 
-我們還可以推論，如果 $Ax=\vec{b}$ 有唯一解，則 $A$ 必為非奇異的。
+我們來證明，如果 $Ax=\vec{b}$ 有唯一解，則 $A$ 必為非奇異的。
 
 proof:
 如果 $A$ 是非奇異的，則 $x$ 有唯一解 $A^{-1}\vec{b}$。
-誠然，若 $A$ 為奇異的，則 $Ax=0$ 會有解 $z \neq 0$。但這也表明 $Ax=\vec{b}$ 會有不僅單一組解，取 $\vec{x} + z$ 為第二組解也是可以的，因為 $A(\vec{x}+z)=A\vec{x}+Az=\vec{b}+0=\vec{b}$。此假設與前提矛盾，所以 $A$ 必為非奇異的。
+若 $A$ 為奇異的，則 $Ax=0$ 會有解 $z \neq 0$。這表明 $Ax=\vec{b}$ 會不僅有單一組解，取 $\vec{x} + z$ 為第二組解也是可以的，因為 $A(\vec{x}+z)=A\vec{x}+Az=\vec{b}+0=\vec{b}$。此假設與前提矛盾，所以 $A$ 必為非奇異的。
 
 # LU分解(LU Factorization)
 
@@ -551,7 +551,7 @@ $$
   用 $e_{j}$ 表示，表示 $\mathbb{R}^{n}$ 中的第 $j$ 個標準基底向量。例如：$e_{1}=\begin{bmatrix}1 \\ 0 \\ \vdots \\ 0\end{bmatrix}, \ e_{2}=\begin{bmatrix}0 \\ 1 \\ \vdots  \\ 0 \end{bmatrix}$ 。
   通常，$Ae_{j}$ 用來抽取矩陣 $A$ 的 j column.
 - 想證明 $B$ 矩陣為 $A$ 矩陣的逆元，可以假設一個新的矩陣 $C$ 為 $A$ 的逆，並用未知數表達。相乘 $CA$ ，如果可以得到 $B$ 的形式則得證。
-- $CA=BC$ 不論 $C$ 是否可逆，都沒有消去律($A$ 不一定等於 $B$)。
+- (!) $CA=BC$ 不論 $C$ 是否可逆，都沒有消去律($A$ 不一定等於 $B$)。
 
 # 例題
 
@@ -600,14 +600,14 @@ Take $x_{2}=x_{4}=x_{5}=0$, we have $x_{1}=-2, x_{3}=5$.
 Thus, we can express $b$ as follow linear combination $Ax=b=-2a_{1}+5a_{3}$. 
 So, $b$ will be $\begin{bmatrix}8 \\ -7 \\ -1 \\ 7\end{bmatrix}$. 
 
-5. Is it possible for a nonzero symmetric $2\times 2$ matrix $A$ to have the property that $A^{2}=O$? Prove your answer. 
+5. Is it possible for a nonzero **symmetric** $2\times 2$ matrix $A$ to have the property that $A^{2}=O$? Prove your answer. 
 
 Sol:
 Assume $A=\begin{bmatrix}a & b \\ b & c\end{bmatrix}$ , thus $A^{2}=\begin{bmatrix}a^{2}+b^{2} & ab+bc \\ ab+bc & b^{2}+c^{2}\end{bmatrix}=\begin{bmatrix}0 & 0 \\ 0 & 0\end{bmatrix}$.
 $\begin{cases} a^{2}+b^{2}=0 \\ ab+bc=0 \\ b^{2}+c^{2}=0 \end{cases}\implies \begin{cases}a=b=c=0\end{cases}$. 
 Therefore, it is impossible for a nonzero symmetric $2\times 2$ matrix to have this property.
 
-6. Let $A$ and $B$ be symmetric n times n matrices. For each of the following, determine whether the given matrix must be symmetric or could be nonsymmetric.
+6. Let $A$ and $B$ be symmetric $n \times n$ matrices. For each of the following, determine whether the given matrix must be symmetric or could be nonsymmetric.
    (a)A+B
    (b)$A^2$
    (c)AB
@@ -694,7 +694,7 @@ Thus, we can find the inverse of $C$ such that $C^{-1}AB=I$.
 This implies $B$ have a inverse $C^{-1}A$, but this contradicts that $B$ is singular. 
 So, $C$ must be singular. 
 
-28. Prove the matrix $V$, $v_{ij}=\begin{cases}1 & \text{if }j=1 \\ x^{j-1} & \text{for }2,\dots,n+1\end{cases}$ is nonsingular if all $x_{i}$ is distinct to each other.
+14. (!) Prove the matrix $V$, $v_{ij}=\begin{cases}1 & \text{if }j=1 \\ x^{j-1}_{i} & \text{for }2,\dots,n+1\end{cases}$ is nonsingular if all $x_{i}$ is distinct to each other.
 
 Sol:
 若有函數 $p(x)=c_{1}+c_{2}x+\dots+c_{n+1}x^{n}$，
@@ -704,7 +704,7 @@ Sol:
 我們學過，某多項式的最高次 $n$ 表示該函數圖形最多與 $y=0$ 相交 $n$ 次。但是在此，我們要求多項式圖形相交 $n+1$ 次，這表明該多項式為零多項式。即，$p(x)=0$，$c$ 為全零。
 這就表明 $V$ 必可逆。
 
-29. Let $A=\begin{bmatrix}A_{11} & A_{12} \\ O & A_{22}\end{bmatrix}$  where all four blocks are $n\times n$ matrices. (a) If $A_{11}, A_{22}$ are nonsingular, show that $A$ must also be nonsingular and that $A^{-1}$ must be of the form $\begin{bmatrix}A_{11}^{-1} & C \\ O & A_{22}^{-1}\end{bmatrix}$. (b) Determine $C$.
+15. Let $A=\begin{bmatrix}A_{11} & A_{12} \\ O & A_{22}\end{bmatrix}$  where all four blocks are $n\times n$ matrices. (a) If $A_{11}, A_{22}$ are nonsingular, show that $A$ must also be nonsingular and that $A^{-1}$ must be of the form $\begin{bmatrix}A_{11}^{-1} & C \\ O & A_{22}^{-1}\end{bmatrix}$. (b) Determine $C$.
 
 Sol:
 (a)
@@ -715,9 +715,10 @@ Sol:
 (b)
 我們還需要解 $A_{11}X_{12}+A_{12}X_{22}=O\implies Ｃ＝X_{12}=-A_{11}^{-1}A_{12}A_{22}^{-1}$。
 
-30. Let $B$ and $C$ be $n \times n$ matrices with the property that $Bx=Cx$ for all $x \in \mathbb{R}^{n}$. Show that $B=C$.
+16. (!) Let $B$ and $C$ be $n \times n$ matrices with the property that $Bx=Cx$ for all $x \in \mathbb{R}^{n}$. Show that $B=C$.
 
 Sol:
 $A:=B-C$ 對於所有 $x \in \mathbb{R}^{n}$ $Ax=(B-C)x=0$ 
 取 $x=e_{j} \quad j=1,\dots,n$：
+`~~~^ key point! `
 $Ae_{j}=0\implies A=O\implies B-C=O\implies B=C$ 
