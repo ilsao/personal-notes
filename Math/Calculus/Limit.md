@@ -232,7 +232,7 @@ proof:
 
 # 中值定理
 
-若 $f$ 在區間 $[a,b]$ 連續，$N$ 介於 $f(a), f(b)$ 之間且 $f(a) \neq f(b)$。則存在 $c \in (a,b)$ 使得 $f(c)=N$。
+若 $f$ 在區間 $[a,b]$ **連續**，$N$ 介於 $f(a), f(b)$ 之間且 $f(a) \neq f(b)$。則存在 $c \in (a,b)$ 使得 $f(c)=N$。
 
 需要注意的是，$c$ 的值可能唯一，也可能有很多組解。
 
@@ -307,7 +307,7 @@ $$
 Sol:
 首先尋找 $x\to \infty$ 時的水平漸進線：$\lim_{ x \to \infty } \frac{\sqrt{ 2x^{2}+1 }}{3x-5}$。
 $\lim_{ x \to \infty } \frac{\sqrt{ 2+\frac{1}{x^{2}} }}{3-\frac{5}{x}}=\frac{\sqrt{ 2 }}{3}$. 
-接著尋找 $x\to -\infty$ 時的水平漸進線：$\lim_{ x \to -\infty } \frac{\sqrt{ 2x^{2}+1 }}{3x-5}$
+接著尋找 $\boxed{x\to -\infty}$ 時的水平漸進線：$\lim_{ x \to -\infty } \frac{\sqrt{ 2x^{2}+1 }}{3x-5}$
 需要注意的是，$\because x<0 \therefore x=-\sqrt{ x^{2} }$. 
 $\lim_{ x \to -\infty } \frac{\sqrt{ 2x^{2}+1 }}{3x-5}=\lim_{ x \to -\infty } \frac{\frac{\sqrt{ 2x^{2}+1 }}{-\sqrt{ x^{2} }}}{3-\frac{5}{x}}=\lim_{ x \to -\infty } \frac{-\sqrt{ 2+\frac{1}{x^{2}} }}{3-\frac{5}{x}}=\frac{-\sqrt{ 2 }}{3}$
 亦或者令 $h=-x$ 求 $\lim_{ h \to \infty } \frac{\sqrt{ 2h^{2}+1 }}{-3h-5}= \frac{\sqrt{ 2 }}{-3}$ 
@@ -412,6 +412,7 @@ proof:
    - $\lim_{ x \to a }\frac{x^{1/3}-a^{1/3}}{x-a}=\frac{x-a}{(x-a)(x^{2/3}+(xa)^{1/3}+a^{2/3})}$，只要把它化為立方差就可以繼續化減了，我好聰明。
    - 當 $\lim_{ x \to a }|f'(x)|=\infty$ 時，函數在 $x=a$ 時有垂直切線。
    - 若要處理 $\lim_{ h \to 0 } \frac{-f(x-h)+f(x)}{h}$ ，可以令 $\Delta X=-h\implies \lim_{ \Delta X \to 0 } \frac{-[f(x + \Delta X)-f(x)]}{-\Delta X}=-f'(x)$ 。
+   - 注意，如果趨近於負無窮的極限搭配根號或平方，就需要考慮變號的問題。如果沒有這種情況，照常考慮即可。
 
 # 經典練習題
 
@@ -658,6 +659,12 @@ Sol:
 $\lim_{ x \to -a } \frac{f(x)-f(-a)}{x+a}=\lim_{ x \to -a } \frac{f(x)+f(a)}{x+a}=\lim_{ x \to -a } \frac{-f(x)-f(a)}{-x-a}$ (Let $u=-x$)
 $\lim_{ u \to a } \frac{-f(-u)-f(a)}{u-a}=\lim_{ u \to a } \frac{f(u)-f(a)}{u-a}=f'(x)$ 
 
+22. Find the limit $\lim_{ x \to -\infty } \frac{\sqrt{ x^{2}-6 }}{2x-6}$ 
+
+Sol:
+這種趨近於**負**無窮的要特別小心，因為 $\sqrt{ x^{2}}= |x|=-x$。
+所以上下同除 $-x$，$\lim_{ x \to -\infty } \frac{\sqrt{ x^{2}-6 }/\sqrt{ x^{2} }}{(2x-6)/-x}=\lim_{ x \to -\infty } \frac{\sqrt{ 1-\frac{6}{x^{2}} }}{-2+ \frac{6}{x}}= -\frac{1}{2}$ 。
+
 # Extra questions
 
 1. $\lim_{ x \to \infty }(2^{x}+3^{x}+5^{x})^{1/x}$ 
@@ -665,3 +672,4 @@ $\lim_{ u \to a } \frac{-f(-u)-f(a)}{u-a}=\lim_{ u \to a } \frac{f(u)-f(a)}{u-a}
 Sol:
 $5^{x}\leq(2^{x}+3^{x}+5^{x})\leq3\cdot 5^{x}\implies 5\leq(2^{x}+3^{x}+5^{x})^{1/x}\leq3^{1/x}\cdot 5$ 
 $\lim_{ x \to \infty }5=5 \leq \lim_{ x \to \infty }(2^{x}+3^{x}+5^{x})^{1/x}\leq\lim_{ x \to \infty }3^{1/x}\cdot 5=5$ By Squeeze Theorem.
+
