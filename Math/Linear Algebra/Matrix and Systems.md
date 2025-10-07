@@ -178,6 +178,9 @@ proof:
 其中，$(AB)^{T}_{ij}=(AB)_{ji}$ 的每項可以表達為： $\vec{a}_{j}b_{i} = a_{j 1}b_{1 i} + \dots + a_{j n}b_{n i}$ 
 而 $(B^{T}A^{T})_{ij}$ 的每項可以表達為：$b_{i}^{T} \vec{a}_{j}^{T}=(b_{i 1})^{T}(a_{1j})^{T}+\dots+(b_{in})^{T}(a_{nj})^{T}=b_{1i}a_{j 1} + \dots +b_{n i} a_{j n}$ 
 因為二者中的每項皆相同，所以二者相等。
+(更清晰的方法)
+$(AB)^{T}_{ij}=(AB)_{ji}=\sum_{k=1}^{n}a_{jk}b_{ki}$ 
+$(B^{T}A^{T})_{ij}=\sum_{k=1}^{n}(B^{T})_{ik}(A^{T})_{kj}=\sum_{k=1}^{n}b_{ki}a_{jk}=(AB)^{T}$ 
 
 # 單位矩陣(The Identity Matrix)
 
@@ -589,7 +592,7 @@ Sol:
 
 Sol:
 (a)
-It's easy to find out that $\begin{cases}x_{1}=-2-2s-3k-t \\ x_{2}=s \\ x_{3}=5-2k-4t \\x_{4}=k \\ x_{5}=t\end{cases}$
+It's easy to find out that $\begin{cases}x_{1}=-2-2s-3k-t \\ x_{2}=s \\ x_{3}=5-2k-4t \\x_{4}=k \\ x_{5}=t\end{cases}$ 
 
 (b)
 Let's recall the definition of $Ax=b$. 
@@ -722,3 +725,8 @@ $A:=B-C$ 對於所有 $x \in \mathbb{R}^{n}$ $Ax=(B-C)x=0$
 取 $x=e_{j} \quad j=1,\dots,n$：
 `~~~^ key point! `
 $Ae_{j}=0\implies A=O\implies B-C=O\implies B=C$ 
+
+17. 說明：若 $U$ 是上三角矩陣，則 $U^{-1}$ 仍是上三角矩陣。
+
+Sol:
+想將 $U$ 化為 RREF，所需要的基本列運算只有兩個：將下面的列乘某數加到上面的列，將某列乘以某數。這兩個操作只會造成上三角矩陣。而一堆上三角矩陣相乘還是上三角矩陣。

@@ -134,13 +134,14 @@ $$
 
 你可能會問，又不能保證 $x\neq 0$，怎麼可以亂約分捏？
 
-但是你想喔，$F(x)$ 一定是可導的嘛，那可導是不是必連續呀？說明什麼捏？說明 $x=0$ 是不是根本不在函數的定義域裡面呢？所以可以放心的約掉 $x$ 啦！
+但是你想喔，$F(x)$ 一定是可導的嘛，那可導是不是必連續呀？說明什麼捏？說明 $x=0$ 是不是根本不在函數的定義域裡面咩？所以可以放心的約掉 $x$ 啦！
 
 # Tips
 
 - $x^{n}-a^{n}=(x-a)\sum_{k=0}^{n-1}x^{n-1-k}a^{k}$ 
 - 對於簡單的 $\frac{d}{dx} \frac{a}{x^{2}}$，我們可以先化為 $\frac{d}{dx} (ax^{-2})=-2ax^{-3}$，避免腦子壞掉犯錯。
 - 如何求某多項式函數在哪點有垂直切線？先對該函數求導，然後觀察其導數在哪點不存在。通常是分母為零。
+- 想求某分段函數是否可導，可以先對每段求導，然後確認在邊界時導數值是否一致。
 # 重要例題
 
 1. Differentiate the function $f(v)= v^{-2/3}-2e^{v}$ 
@@ -157,3 +158,43 @@ $y'=2e^{x}+3+15x^{2}$
 然後你就會去翻解答，然後就會發現原來不用解。
 $\because 2e^{x}\geq 0$ and $15x^{2}\geq 0 \therefore\text{min}\{y'\}=3$ 
 
+3. Let $f(x)=\begin{cases}x^{2} & \text{if }x\leq 2 \\ mx+b & \text{if} x>2\end{cases}$. Find the values of $m$ and $b$ that make $f$ differentiable everywhere.
+
+Sol:
+我們可以得到 $f'(x)=\begin{cases}2x & \text{if }x<2 \\ m & \text{if }x>2\end{cases}$ 。
+想要可導需要滿足兩個條件：
+1. 在此處連續。
+2. 在此處極限存在，左極限等於右極限。
+先滿足 (2)，所以 $2\times {2}=m=4$。
+再滿足 (1)，所以 $2^{2}=4(2)+b\implies b=-4$。
+
+3. Two perpendicular lines that intersect on the y-axis and are both tangent to the parabola $y=x^{2}$. Where do these lines intersect? 
+
+Sol:
+這題還行，之後可以寫看看，看還會不會。
+假設兩條垂直的切線與函數圖形交於 $(a,a^{2}), (-a,a^{2})$。
+我們還有 $y'=2x$。
+所以我們可以知道兩條切線的斜率：$m_{1}=2a,m_{2}=-2a$。
+兩條切線垂直，所以斜率相乘等於負一：$-4a^{2}=-1\implies a=\pm \frac{1}{2}$。(取 $a=\frac{1}{2}$)
+接下來我們要算兩條線的交點：$l_{1}:y-\frac{1}{4}=x-\frac{1}{2}$, $l_{2}:y-\frac{1}{4}=-\left( x+\frac{1}{2} \right)$。
+解聯立得到：$x=0,y=-\frac{1}{4}\implies\left( 0,-\frac{1}{4} \right)$。
+
+4. Do you think there is a line that is tangent to both $y=x^{2}$ and $y=x^{2}-2x+2$? If so, find its equation. If not, why not?
+
+Sol:
+一開始我錯誤的以為，直接使用 $y_{1}'=y_{2}'$ 然後說無解就好。但是，哈哈，還是太年輕太天真了。
+假設兩個函數上的點：$(a, a^{2})$ 與 $(b,b^{2}-2b+2)$。
+想要尋找公切線，需要使得：在 $m_{a}=m_{b}=m_{ab}$。
+我們有：$y_{1}'=2x, y_{2}'=2x-2$
+所以有：$2a=2b-2= \frac{a^{2}-b^{2}+2b-2}{a-b}\implies a=\frac{1}{2},b=\frac{3}{2}$。
+然後，過 $a$ 做切線：$l:y-\frac{1}{4}=x-\frac{1}{2}$。
+
+5. If $c> \frac{1}{2}$, how many lines through the point $(0,c)$ are **normal lines** to the parabola $y=x^{2}$? What if $c\leq \frac{1}{2}$?
+
+Sol:
+感覺跟不是在考微積分...
+通過微分，我們可以知道切線斜率，然後就可以知道法線斜率是：$-\frac{1}{2a}$。
+過 $(a,a^{2})$ 做法線：$y-a^{2}=-\frac{1}{2a}(x-a)$。
+帶入 $(0,c)$：$c-a^{2}=-\frac{1}{2a}(-a)\implies a=\pm \sqrt{ c-\frac{1}{2} }$。
+所以，對於 $c> \frac{1}{2}$ 我們會有兩個 $a\implies$ 兩個法線。還需要加上一個過 $x=0$ 的法線共三條～
+對 $c\leq \frac{1}{2}$ $\implies a=0$ 或不存在。所以只有一條法線：$x=0$。

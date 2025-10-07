@@ -181,7 +181,7 @@ $=\det(A)\det(B)$
 
 $$\text{adj}A=\begin{bmatrix}A_{11} & A_{21} & \dots & A_{n_{1}} \\ A_{12} & A_{22} & \dots & A_{n_{2}} \\ \vdots \\ A_{n 1} & A_{n 2} & \dots & A_{nn}\end{bmatrix}$$
 
-即，$\text{AdjA}_{ij}=(A_{ij})^{T}$。
+即，$(\text{adj}A)_{ij}=(A_{ij})^{T}$。
 
 伴隨矩陣會有如下性質：
 
@@ -292,6 +292,7 @@ $$
 - $\det(AB)=\det(A)\det(B)$ 將 $B$ 換成初等矩陣可證。
 - $\det(-I)=(-1)^{n}\neq-1$。
 - $\det(\text{AdjA})=(\det(A))^{n-1}$。
+- 基本上很多涉及 $\text{adj}A$ 的證明都要將 $\text{adj}A=\det(A)A^{-1}$ 解。
 - 當有一個分塊矩陣 $C=\begin{bmatrix}A & O \\ O & B\end{bmatrix}$ ，則 $\det(C)=\det(A)\det(B)$。
 - 若一個全部都是整數的矩陣 $A$ 且 $\det(A)=\pm 1$，則其逆矩陣 $A^{-1}=\text{adj(A)}$ 也全部皆是整數。如果想要構造出這樣的矩陣 $A$，我們可以從單位矩陣出發，對其進行無數個將某列乘以某值加到某列，或進行偶數個交換兩列。
 - 計算逆矩陣時，$\text{Adj}A$ 求的是 cofactor，記得正負！
@@ -348,7 +349,7 @@ $\det(E)=\det(E^{(0)})=\det(E^{(1)})=\dots=\det(E^{(k)})=\det(B)$。
 6. (!) Show that evaluating the determinant of an $n \times n$ matrix by cofactors involves $(n!-1)$ additions and $\sum_{k=1}^{n-1} \frac{n!}{k!}$ multiplications. 
 
 Sol:
-I have no idea how to solve this question...
+I have no idea how to solve this problem...
 
 7. (!) Let $B_{j}$ denote the matrix obtained by replacing the $j$th column of the identity matrix with a vector $\mathbf{b}=(b_{1},\dots b_{n})^{T}$. Prove that $b_{j}=\det(B_{j})\quad \text{for }j=1,\dots ,n$. 
 
