@@ -139,3 +139,21 @@ $$
 # Tips
 
 - $x^{n}-a^{n}=(x-a)\sum_{k=0}^{n-1}x^{n-1-k}a^{k}$ 
+- 對於簡單的 $\frac{d}{dx} \frac{a}{x^{2}}$，我們可以先化為 $\frac{d}{dx} (ax^{-2})=-2ax^{-3}$，避免腦子壞掉犯錯。
+- 如何求某多項式函數在哪點有垂直切線？先對該函數求導，然後觀察其導數在哪點不存在。通常是分母為零。
+# 重要例題
+
+1. Differentiate the function $f(v)= v^{-2/3}-2e^{v}$ 
+
+Sol:
+需要注意的是，$\frac{d}{dv} 2e^{v}=2e^{v}$。
+所以 $f'(v)=-\frac{2}{3}v^{-5/3}-2e^{v}$。
+
+2. Show that the curve $y=2e^{x}+3x+5x^{3}$ has no tangent line with slope 2. 
+
+Sol:
+$y'=2e^{x}+3+15x^{2}$ 
+然後你會發現，誒？沒教過啊，怎麼解？？
+然後你就會去翻解答，然後就會發現原來不用解。
+$\because 2e^{x}\geq 0$ and $15x^{2}\geq 0 \therefore\text{min}\{y'\}=3$ 
+
