@@ -157,3 +157,15 @@ $$
 
 如果兩個東東碰撞後沒黏在一起，但仍屬於非彈性碰撞時，雖然會損失動能，但是捏，不是最大滴。
 
+# 威儀指定習題
+
+1. Three boys stand on a 10kg wagon resting on a frictionless horizontal surface. The boys tkae turns running off the same end of the wagon with a velocity of 1.5/sec relative to the wagon. The mass of each of the boys is 40kg. What is the final velocity of the wagon? 
+
+Sol:
+ASKKKKKKKKK
+
+2. A 2kg block rests on the ground. The coefficient of friction between the block and the ground is 0.4. A man fire a 0.01kg bullet parallel to the ground. It lodges in the block, and the block and bullet are observed to slide 2m before coming to rest. What was the velocity of the bullet?
+
+Sol:
+分兩步，首先假設 $v_{b}$ 為子彈初速度，然後假設 $v$ 為子彈射入木塊後二者共同的速度。
+然後利用第三章的公式計算由摩擦力引起的加速度，利用位移與加速度就可以算 $v$，然後反推 $v_{b}$。

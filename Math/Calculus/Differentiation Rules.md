@@ -89,6 +89,16 @@ $$
 \boxed{\frac{d}{dx}e^{x}=e^{x}}
 $$
 
+我們來偷用 3.4 節的東西來證明：$f(x)=a^{x}\implies f'(x)=a^{x}\ln a$ 。
+
+首先，我們有：
+
+$$f(x)=a^{x}=(e^{\ln a})^{x}=e^{(\ln a)x}$$
+
+然後，利用 chain rule，我們有：
+
+$$f'(x)=e^{(\ln a)x}\ln a=\boxed{a^{x}\ln a}$$
+
 # The product and Quotient Rules
 
 ## The Product Rule
@@ -198,3 +208,4 @@ Sol:
 帶入 $(0,c)$：$c-a^{2}=-\frac{1}{2a}(-a)\implies a=\pm \sqrt{ c-\frac{1}{2} }$。
 所以，對於 $c> \frac{1}{2}$ 我們會有兩個 $a\implies$ 兩個法線。還需要加上一個過 $x=0$ 的法線共三條～
 對 $c\leq \frac{1}{2}$ $\implies a=0$ 或不存在。所以只有一條法線：$x=0$。
+
