@@ -86,13 +86,58 @@ proof:
 使用 chain rule：$\alpha=\frac{d\omega}{dt}=\frac{d\omega}{d\theta} \frac{d\theta}{dt}=\omega \frac{d\omega}{d\theta}\implies\alpha d\theta=\omega d\omega$。
 $\int_{\theta_{0}}^{\theta}\alpha d\theta=\int_{\omega_{0}}^{\omega}\omega d\omega\implies\alpha(\theta-\theta_{0})=\frac{1}{2}(\omega^{2}-\omega_{0}^{2})\implies\omega^{2}-\omega_{0}^{2}=2\alpha(\theta-\theta_{0})$。
 
-# Radial Acceleration
+# Radial Acceleration (逕向加速度)
 
+我們定義逕向加速度(造成旋轉速度改變)為：
 
+$$
+a_{R}=\lim_{ \Delta t \to 0 }  \frac{\Delta \mathbf{v}}{\Delta t}=\boxed{r\omega^{2}= \frac{v^{2}}{r}}
+$$
 
-# Centripetal Force
+proof:
+我們將座標表達為三角函數：
+$x=r\cos \theta=r\cos \ \omega t$ 
+$y = r\sin \ \omega t$ 
+那麼，我們可以找到切線速度：
+$v_{x}=r \frac{d}{dt}\cos\omega t=-r\omega\sin\omega t$ 
+$v_{y}=r \frac{d}{dt}\sin\omega t=r\omega\cos\omega t$ 
+接著，就可以找到加速度：
+$a_{x}=r\omega \frac{d}{dt}\sin\omega t=-r\omega^{2}\cos\omega t$ 
+$a_{y}=r\omega \frac{d}{dt}\sin\omega t=r\omega^{2}\cos\omega t$ 
+$\implies a=\sqrt{ a_{x}^{2}+a_{y}^{2}}=\pm r\omega^{2}$。
+如果我們代換回去，那就可以得到另一個公式：$a= \frac{v^{2}}{r}$。
+
+# Centripetal Force (向心力)
+
+讓我們簡潔的寫下向心力公式叭~
+
+$$
+\boxed{\sum F_{R}=ma_{R}=m \frac{v_{T}^{2}}{r}}
+$$
+
+為了解題方便，我們可以自己定義指向圓心的力為正，指出圓心的力為負。
 
 # Orbital Motion and Gravitation
+
+來吧，讓我們寫出那個經典的萬有引力公式：
+
+$$
+F= \frac{GMm}{r^{2}}
+$$
+
+其中，$G$ 代表萬有引力常數 $6.67 \times 10^{-11} Nm^{2}/kg^{2}$。
+
+對於在地表附近的物體，我們如下列式：
+
+$$
+mg= \frac{GMm}{r_{e}^{2}}
+$$
+
+對於繞著地球轉的星體，我們如下列式：
+
+$$
+m \frac{v^{2}}{r}= \frac{GMm}{r^{2}_{e}}
+$$
 
 # 威儀指定習題
 

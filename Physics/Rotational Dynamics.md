@@ -1,4 +1,3 @@
-
 <------ merge here ------>
 
 對於很多質點組成的物體，如果所有質點與旋轉中心點的距離皆相同，我們有：
@@ -10,9 +9,10 @@ $$
 其中，$M$ 為所有質點的質量總和。
 
 在此，我們需要注意區分三種加速度：
+
 - rotational acceleration：$\alpha$
-- tangential acceleration：$a_{T}=r\alpha$ 
-- radial acceleration：$a_{R}=r\omega^{2}= \frac{v^{2}}{r}$ 
+- tangential acceleration：$a_{T}=r\alpha$
+- radial acceleration：$a_{R}=r\omega^{2}= \frac{v^{2}}{r}$
 
 # Rotational Kinetic Energy
 
@@ -46,7 +46,7 @@ $$
 $$
 
 proof:
-$E_{k}=\frac{1}{2}mv_{T}^{2}=\frac{1}{2}mr^{2}\omega^{2}=\frac{1}{2}I\omega^{2}$ 
+$E_{k}=\frac{1}{2}mv_{T}^{2}=\frac{1}{2}mr^{2}\omega^{2}=\frac{1}{2}I\omega^{2}$
 
 一個物體可以一邊移動一邊旋轉，所以：
 
@@ -97,9 +97,37 @@ $$
 proof:
 因為動量守恆的條件為沒有外力作工，所以 $\implies \tau=\frac{dL}{dt}=0\implies\Delta\omega=0\implies{(I\omega)_{0}=(I\omega)_{f}}$。
 
+# Moment of Inertia And Torque
+
+首先，假設 $r$ 為力臂，我們給出力矩的定義：
+
+$$
+\mathbf{\tau}=\mathbf{r} \times \mathbf{F}
+$$
+
+如果只是表示力矩的大小，我們可以如下取得：
+
+$$
+\tau=rF\sin \theta=rma_{T}=mr^{2}\alpha=I\alpha
+$$
+
+所以，我們定義轉動慣量：
+
+$$
+\boxed{I=mr^{2}}
+$$
+
+# Rotational Knetic Energy
+
+# Power
+
+# Angular Momentum
+
+# Conservation of Angular Momentum
+
 # 威儀指定習題
 
-1. A uniform wooden board of mass 20kg rests on two supports. A 30kg steel block is placed to the right of support A. How far to the right of A can the steel block be placed without tipping the board? 
+1. A uniform wooden board of mass 20kg rests on two supports. A 30kg steel block is placed to the right of support A. How far to the right of A can the steel block be placed without tipping the board?
 
 ```
 <---11---><-3-><---8--->

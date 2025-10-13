@@ -159,7 +159,7 @@ $$
 
 # 威儀指定習題
 
-1. Three boys stand on a 10kg wagon resting on a frictionless horizontal surface. The boys tkae turns running off the same end of the wagon with a velocity of 1.5/sec relative to the wagon. The mass of each of the boys is 40kg. What is the final velocity of the wagon? 
+1. Three boys stand on a 10kg wagon resting on a frictionless horizontal surface. The boys take turns running off the same end of the wagon with a velocity of 1.5/sec relative to the wagon. The mass of each of the boys is 40kg. What is the final velocity of the wagon? 
 
 Sol:
 ASKKKKKKKKK
