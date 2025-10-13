@@ -36,7 +36,7 @@ $$
 而我們在圓周運動中還有角加速度：
 
 $$
-\alpha=\frac{d\omega}{dt}
+\boxed{\alpha=\frac{d\omega}{dt}}
 $$
 
 同樣，我們關聯角加速度與切線加速度：
