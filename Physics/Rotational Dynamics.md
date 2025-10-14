@@ -28,9 +28,9 @@ $$
 
 在此，我們需要注意區分三種加速度：
 
-- rotational acceleration：$\alpha$
-- tangential acceleration：$a_{T}=r\alpha$
-- radial acceleration：$a_{R}=r\omega^{2}= \frac{v^{2}}{r}$
+- rotational acceleration：$\alpha$ 
+- tangential acceleration：$a_{T}=r\alpha$ 
+- radial acceleration：$a_{R}=r\omega^{2}= \frac{v^{2}}{r}$ 
 
 # Rotational Kinetic Energy
 
@@ -74,7 +74,7 @@ $$
 
 # Power
 
-我們來寫下功率的公式：
+(!) 我們來寫下功率的公式：
 
 $$
 \text{Power}=\frac{dW}{dt}=\frac{\tau d\theta}{dt}=\boxed{\tau\omega
@@ -97,7 +97,7 @@ $\tau=Fr=r\times \frac{d}{dt}(mv)$。
 那麼，我們可以找到轉動動量 $L$ ：
 
 $$
-L=r\times mv=rm v\sin \theta=rmv_{T}=mr^{2}\omega=\boxed{I\omega}
+L=\boxed{r\times mv}=rm v\sin \theta=rmv_{T}=mr^{2}\omega=\boxed{I\omega}
 $$
 
 而力矩也可以被重新寫成：
@@ -114,6 +114,8 @@ $$
 
 proof:
 因為動量守恆的條件為沒有外力作工，所以 $\implies \tau=\frac{dL}{dt}=0\implies\Delta\omega=0\implies{(I\omega)_{0}=(I\omega)_{f}}$。
+
+![[Pasted image 20251013205255.png]]
 
 # 威儀指定習題
 
@@ -146,3 +148,30 @@ Sol:
 Sol:
 這題有個要注意的地方，旋轉木馬的 $I$ 我們要用 $\frac{1}{2}mr^{2}$ 算，但是人的要當成質點算。
 還有，能量的來源是人克服慣性向前施的功，轉變為旋轉的動能。
+
+# 重要例題
+
+1. A ball of mass 0.3kg and radius 0.1m rolls along the ground with a transverse speed of 4m/s. It comes to a slope inclined at $30^{\circ}$. How far up the slope does it roll? ($I = 2/5 mr^2$)
+
+Sol:
+這題用動能解很快。
+$mgh=(E_{k})_{\text{trans}}+(E_{k})_{\text{rot}}$ 
+我們知道切線速度為 $4m/s\implies\omega=40rad/s$。
+帶入公式：$mgh=\frac{1}{2}mv^{2}+\frac{1}{2}I\omega^{2}\implies h\approx 1.14$ 
+$h = s\sin 30^{\circ}\implies s \approx 2.29 \ m$ 
+
+2. A 4kg block is attached to one end of a light rope. The other end of the rope is wrapped around a pulley of moment of inertia $I = 0.5 kg-m^2$ and radius $r=0.2m$ . The block is released from rest, and it moves down 9m in 3s. (a) What is the friction torque of the bearing? (b) Use energy principles to calculate the velocity of the bloc after it has fallen 9m.
+
+Sol:
+(a)
+我們可以先求得切線加速度：$9=\frac{1}{2}at^{2}\implies a=2$。
+然後列出兩個式子：
+$mg-T=ma$ 
+$Tr-\tau_{f}=I\alpha$ (!)
+將第一式帶入第二式並將 $\alpha$ 用 $a$ 表達：
+$\tau_{f}=m(g-a)r - I \times \frac{a}{r} \approx 1.24$ 
+
+(b)
+使用動能守恆：$mgh=\frac{1}{2}mv^{2}+\frac{1}{2}I\omega^{2}+\tau_{f}\theta$ (!)
+帶入 $\theta=\frac{h}{r}$ (!)
+化簡得到 $v^{2}=\left( mgh-\frac{\tau_{f}h}{r} \right)\times \frac{2r^{2}}{mr^{2}+I}\implies v\approx 6 \ m/s$。

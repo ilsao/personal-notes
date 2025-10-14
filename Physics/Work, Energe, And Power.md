@@ -150,7 +150,7 @@ $$
 我們還可以如下計算瞬時功率：
 
 $$
-P=\frac{dW}{dt}=\frac{F \cdot dx}{dt}=F \cdot v
+P=\frac{dW}{dt}=\frac{F \cdot dx}{dt}=\boxed{F \cdot v}
 $$
 
 一度電的定義為，1 kwh = $1 \times 10^{3} W \times 3600 s=3.6\times 10^{6} J$。

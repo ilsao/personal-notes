@@ -178,3 +178,17 @@ Sol:
 
 (b)
 這個也還行，注意要求的是 $\omega$ 不是 $v$ 就好。
+
+# 重要例題
+
+1. A pulley of radius $r_{p}=8$cm is connected to the shaft of an electric motor. A belt couples the pulley to a wheel of radius $r_{w}=24$cm. The motor shaft begins to rotate with an angular acceleration $\alpha=25$$rad/sec^2$. (a) What is the angular velocity of the wheel after 3 sec? (b) Through what angle has the wheel rotated when the centripetal acceleration of a point on the rim of the wheel is 100g?
+
+Sol:
+(a)
+先算出 $\omega_{p}=25 \times 3=75$。
+因為用帶子連在一起，所以切線速度相同：$r_{p}\omega_{p}=r_{w}\omega_{w}\implies \omega_{w}=\frac{r_{p}}{r_{w}}\omega_{p}=25$ rad/s
+
+(b)
+由上，我們可以得到輪子的角加速度：$\alpha_{w}=\frac{25}{3}$。
+利用 $r\omega^{2}=a_{R}$ 列式：$\omega^{2}=\frac{100g}{24}$。
+利用位移公式：$\omega^{2}_{f}-\omega_{0}^{2}=2\alpha_{w}\theta\implies \theta=245$ rad

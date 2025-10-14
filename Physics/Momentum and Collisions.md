@@ -93,7 +93,7 @@ $$
 
 以下我們來推導當質量差距極大時，碰撞後速度的變化。
 
-假設 $M\gg m$
+假設 $M\gg m$。
 
 首先，使用動量守恆：
 
@@ -116,7 +116,7 @@ $$
 然後將上式除以 $M(V_{0}-V_{f})=m(v_{f}-v_{0})$，得到：
 
 $$
-V_{0}+V_{f}=v_{f}-v_{0}
+V_{0}+V_{f}=v_{f}+v_{0}
 $$
 
 我們在此假設 $V_{0}=0$，帶回第一條式子：
@@ -169,3 +169,19 @@ ASKKKKKKKKK
 Sol:
 分兩步，首先假設 $v_{b}$ 為子彈初速度，然後假設 $v$ 為子彈射入木塊後二者共同的速度。
 然後利用第三章的公式計算由摩擦力引起的加速度，利用位移與加速度就可以算 $v$，然後反推 $v_{b}$。
+
+# 重要例題
+
+1. A fire hose delivers water at the rate of 20kg/sec with a speed of 25m/sec. A riot police officer uses the hose to control an unruly crowd. The water from the hose strikes a person horizontally and then falls down to the ground. What is the average force experienced by that person?
+
+Sol:
+$F=\dot{m}(v_{\text{in}}-v_{\text{out}})=20 \times 25=500N$ 
+
+2. An atom of mass 10u strikes a stationary atom of mass M and rebounds elastically with one half its original velocity. What is the mass of the atom it struck?
+
+Sol:
+這題要使用動量守恆與動能守恆。
+首先利用動量守恆得到：
+$10\times v=10\left( -\frac{1}{2}v \right)+Mv'\implies v'=\frac{15v}{M}$ 
+帶入動能守恆公式：
+$\frac{1}{2}10v^{2}=\frac{1}{2}10\left( -\frac{1}{2}v \right)^{2}+\frac{1}{2}M\left( \frac{15v}{M} \right)^{2}\implies M=30$ 
