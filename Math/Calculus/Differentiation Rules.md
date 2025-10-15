@@ -146,12 +146,168 @@ $$
 
 但是你想喔，$F(x)$ 一定是可導的嘛，那可導是不是必連續呀？說明什麼捏？說明 $x=0$ 是不是根本不在函數的定義域裡面咩？所以可以放心的約掉 $x$ 啦！
 
+# Derivatives of Trigonometric Functions
+
+首先我們要先來證明兩個性質：
+
+$$
+\boxed{\lim_{ x \to 0 } \frac{\sin x}{x}=1}
+$$
+
+proof:
+![[Pasted image 20251014175953.png]]
+
+由圖，我們可以得到 $|BC|<arcAB<|AD|$。
+因為邊長為 1 ，我們可以得到他們的對位：$\sin \theta<\theta<\tan \theta$。
+同除 $\sin \theta\implies 1< \frac{\theta}{\sin \theta}< \frac{1}{\cos \theta}\implies \cos \theta< \frac{\sin \theta}{\theta}<1$ 
+因為 $\lim_{ \theta \to 0 }\cos \theta=1$ 且 $\lim_{ \theta \to 0 }1=1$，根據夾擠定理，我們有 $\lim_{ \theta \to 0 } \frac{\sin \theta}{\theta}=1$。
+
+$$
+\boxed{\lim_{ x \to 0 } \frac{\cos x-1}{x}=0}
+$$
+
+proof:
+我們上下同乘 $\cos x+1$：
+$\lim_{ x \to 0 } \frac{\cos^{2}x-1}{x(\cos x+1)}=\lim_{ x \to 0 } \frac{-\sin^{2}x}{x(\cos x+1)}=-\lim_{ x \to 0 } \frac{\sin x}{x} \times \lim_{ x \to 0 } \frac{\sin x}{\cos x+1}$ 
+$=-1 \times \frac{0}{2}=0$ 
+
+由上，我們可以推出 $\sin x$ 的導數：
+
+$$
+\boxed{\frac{d}{dx}(\sin x)=\cos x}
+$$
+
+proof:
+$f(x)=\sin x$, 我們要找 $f$ 的導數。
+$f'(x)=\lim_{ h \to 0 } \frac{\sin(x+h)-\sin x}{h}=\lim_{ h \to 0 } \frac{\sin x\cos h+\sin h \cos x-\sin x}{h}=\lim_{ h \to 0 } \frac{\sin x(\cos h-1)}{h}+\lim_{ h \to 0 } \frac{\sin h \cos x}{h}$ 
+$=\sin x\lim_{ h \to 0 } \frac{\cos h-1}{h}+\cos x \lim_{ h \to 0 } \frac{\sin h}{h}=\cos x$ 
+
+利用類似的方法，我們可以得到：
+
+$$
+\boxed{\frac{d}{dx} (\cos x)=-\sin x}
+$$
+
+我們還有：
+
+$$
+\boxed{\frac{d}{dx}(\tan x)=\sec^{2}x}
+$$
+
+proof:
+$\frac{d}{dx}(\tan x)=\frac{d}{dx}\left( \frac{\sin x}{\cos x} \right)= \frac{\cos x\cos x-\sin x(-\sin x)}{\cos^{2} x}$ 
+$= \frac{\cos^{2}x+\sin^{2}x}{\cos^{2x}} = \frac{1}{\cos^{2}x}$ 
+
+剩下的幾個三角函數 $\csc, \sec, \cot$ 可以輕易的使用 The Quotient Rule 導出：
+
+$$
+\boxed{\frac{d}{dx}(\csc x)=-\csc x\cot x}
+$$
+
+$$
+\boxed{\frac{d}{dx}(\sec x)=\sec x\tan x}
+$$
+
+$$
+\boxed{\frac{d}{dx}(\cot)=-\csc^{2}x}
+$$
+
+# The Chain Rule
+
+如果 $g$ 在 $x$ 可微，且 $f$ 在 $g(x)$ 可微，並令 $F(x)=f\circ g$ 那麼有：
+
+$$
+\boxed{\begin{align}
+ & F'(x)=f'(g(x))g'(x)
+\end{align}}
+$$
+
+如果使用萊布尼茲的方式表達，令 $y = f(u), \ u=g(x)$，則：
+
+$$
+\boxed{\frac{dy}{dx} = \frac{dy}{du} \frac{du}{dx}}
+$$
+
+讓我們嘗試用 Chain Rule 推導一遍指數函數的導數。
+
+$$
+\boxed{b^{x}=b^{x}\ln b}
+$$
+
+proof:
+$\frac{d}{dx} (b^{x})=\frac{d}{dx} (e^{x\ln b})=e^{x\ln b} \frac{d}{dx}(x\ln b)=b^{x}\ln b$ 
+
+接下來重頭戲就開場了，讓我們證明 Chain Rule 吧！
+
+誒，在重場戲開始之前，讓我們先來熱個身，推導一個可以幫助 Chain Rule 的東西叭～
+
+我們知道：
+
+$$
+\Delta y=f(a+\Delta x)-f(a)
+$$
+
+以及：
+
+$$
+\lim_{ x \to 0 } \frac{\Delta y}{\Delta x}=f'(a)
+$$
+
+我們令 $\epsilon= \frac{\Delta y}{\Delta x}-f'(a)$，那麼：
+
+$$
+\lim_{ \Delta x \to 0 } \epsilon=f'(a)-f'(a)=0
+$$
+
+如果我們定義 $\epsilon$ 在 $x=0$ 時 $\epsilon=0$，那麼 $\epsilon$ 就會是一個對 $x$ 處處連續的函數。
+
+又因為 $\epsilon= \frac{\Delta y}{\Delta x}-f'(a)$，所以我們可以改寫：
+
+$$
+\Delta y= f'(a)\Delta x + \epsilon\Delta x \quad\text{where} \quad \epsilon\to 0\text{ as } \Delta x\to0
+$$
+
+那麼捏，這個性質可以幫助我們證明 Chain Rule 喔！嘿嘿，重頭戲來嘍～
+
+讓我們假設 $u=g(a)$ 在 $a$ 可導，且 $y=f(u)$ 在 $b=g(a)$ 處可導。
+
+我們有：
+
+$$
+\Delta u=g'(a)\Delta x-\epsilon\Delta x=[g'(a)-\epsilon_{1}]\Delta x
+$$
+
+與
+
+$$
+\Delta y=f'(b)\Delta u-\epsilon\Delta u=[f'(b)-\epsilon_{2}]\Delta u
+$$
+
+我們將上上式帶入上式，可得：
+
+$$
+\Delta y=[f'(b)-\epsilon_{2}][g'(a)-\epsilon_{1}]\Delta x\implies \frac{\Delta y}{\Delta x}=[f'(b)-\epsilon_{2}][g'(a)-\epsilon_{1}]
+$$
+
+取極限：
+
+$$
+\lim_{ \Delta x \to 0 } \frac{\Delta y}{\Delta x}=f'(a)=f'(b)g'(a)=f'(g(a))g'(a)
+$$
+
+太棒啦，你成功證明了 Chain Rule 了誒！
+
+# Implicit Differentiation
+
+
+
 # Tips
 
 - $x^{n}-a^{n}=(x-a)\sum_{k=0}^{n-1}x^{n-1-k}a^{k}$ 
 - 對於簡單的 $\frac{d}{dx} \frac{a}{x^{2}}$，我們可以先化為 $\frac{d}{dx} (ax^{-2})=-2ax^{-3}$，避免腦子壞掉犯錯。
 - 如何求某多項式函數在哪點有垂直切線？先對該函數求導，然後觀察其導數在哪點不存在。通常是分母為零。
 - 想求某分段函數是否可導，可以先對每段求導，然後確認在邊界時導數值是否一致。
+- $\sec^{2}x=\tan^{2}x+1$。
 # 重要例題
 
 1. Differentiate the function $f(v)= v^{-2/3}-2e^{v}$ 
@@ -208,3 +364,28 @@ Sol:
 帶入 $(0,c)$：$c-a^{2}=-\frac{1}{2a}(-a)\implies a=\pm \sqrt{ c-\frac{1}{2} }$。
 所以，對於 $c> \frac{1}{2}$ 我們會有兩個 $a\implies$ 兩個法線。還需要加上一個過 $x=0$ 的法線共三條～
 對 $c\leq \frac{1}{2}$ $\implies a=0$ 或不存在。所以只有一條法線：$x=0$。
+
+6. Find the limit $\lim_{ \theta \to 0 } \frac{\cos \theta-1}{2\theta^{2}}$ 
+
+Sol:
+讓我們先來示範一下**錯誤**做法。
+$\lim_{ \theta \to 0 } \frac{\cos \theta-1}{\theta}\times \frac{1}{2\theta}=0\times \lim_{ \theta \to 0 } \frac{1}{2\theta}=0$ 是不正確的，因為我們首先需要明確 Limit product Law 適用範圍。想要可以使用 Limit Laws，則兩者極限應該接存在。顯然 $\lim_{ \theta \to 0 } \frac{1}{2\theta}$ 不存在。
+我們稱 $0 \times \infty$ 的形式為不定形，他也不一定等於零，這取決於二者趨近的速度。
+正確應該上下同乘 $\cos \theta+1$：
+$\lim_{ \theta \to 0 } \frac{\cos \theta-1}{2\theta^{2}}=\lim_{ \theta \to 0 } \frac{\cos^{2}\theta-1}{2\theta^{2}(\cos \theta+1)}=\lim_{ \theta \to 0 } \frac{-\sin^{2}\theta}{2\theta^{2}(\cos \theta+1)}$ 
+$-\lim_{ \theta \to 0 }\frac{\sin \theta}{\theta} \times \frac{\sin \theta}{2\theta(\cos \theta+1)}=-1 \times \lim_{ \theta \to 0 } \frac{\sin \theta}{\theta} \times \frac{1}{2} \times \frac{1}{(\cos \theta+1)}$ 
+$=-1\times 1\times \frac{1}{2} \times \frac{1}{2}=-\frac{1}{4}$ 
+
+7. Find the limit $\lim_{ x \to \frac{\pi}{4} } \frac{1-\tan x}{\sin x-\cos x}$ 
+
+Sol:
+這題應該還好，但是第一次我解的時候粗心解錯，所以希望你在後面複習的時候重新寫寫看。
+答案是：$-\sqrt{ 2 }$。
+
+8. The figure shows a circular arc of length $s$ and a chord of length $d$, both subtended by a central angle $\theta$. Find $\lim_{ \theta \to 0^{+} } \frac{s}{d}$. 
+
+![[Pasted image 20251015133344.png]]
+
+Sol:
+我們可以觀察出 $s=r\theta$，$d=2r\sin \frac{\theta}{2}$。
+那麼 $\lim_{ \theta \to 0^{+} }= \frac{\theta}{2\sin \frac{\theta}{2}}=1$ 。
