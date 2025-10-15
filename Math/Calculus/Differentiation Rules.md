@@ -535,3 +535,24 @@ Sol:
 Sol:
 我們可以觀察出 $s=r\theta$，$d=2r\sin \frac{\theta}{2}$。
 那麼 $\lim_{ \theta \to 0^{+} }= \frac{\theta}{2\sin \frac{\theta}{2}}=1$ 。
+
+9. Find all points on the graph of the function $f(x)=2\sin x+\sin^{2}x$ at which the tangent line is horizontal. 
+
+Sol:
+先微分：$f'(x)=2\cos x+2\sin x\cos x$ 
+然後微分等於零，解 $x$：$f'(x)=2\cos x(\sin x+1)=0\implies 2\cos x=0\text{ or }\sin x+1=0$ 。
+$\implies x=\frac{\pi}{2}+2k\pi, \frac{3\pi}{2}+2k\pi \quad k \in \mathbb{Z}$ 
+$\implies y=3,-1\implies\left( \frac{\pi}{2}+2k\pi,3 \right)\text{ or }\left( \frac{3\pi}{2}+2k\pi, -1 \right)\text{ and } k\in \mathbb{Z}$ 
+
+10. 已知 $\frac{d}{dx}(|x|)=\frac{x}{|x|}$，求 $f(x)=|\sin x|$ 的導數，並說明在哪不可導。
+
+Sol:
+$f'(x)= \frac{\sin x}{|\sin x|}\cos x=\begin{cases}\cos x & \text{if }\sin x>0 \\ -\cos x & \text{if }\sin x<0\end{cases}$ 
+所以，$f(x)$ 在 $|\sin x|=0$ 時不可導，即 $x=k\pi \quad k \in \mathbb{Z}$ 時不可導。
+
+11. Let $c$ be the x-intercept of the tangent line to the curve $y=b^{x}$ ($b>0, b\neq 1$) at the point $(a,b^{a})$. Show that the distance between the points $(a,0)$ and $(c,0)$ is the same for all values of $a$. 
+
+Sol:
+$y'=b^{x}\ln b\implies m_{a}=b^{a}\ln b\implies l: y-b^{a}=(b^{a}\ln b)(x-a)$ 
+$\implies-b^{a}=(b^{a}\ln b)(c-a)\implies a-c= \frac{1}{\ln b}\implies |a-c|= \frac{1}{|\ln b|}$ 
+$(a,0)$ 到 $(c,0)$ 的距離為 $|a-c|$，而此距離為定值 $\frac{1}{|\ln b|}$。所以對任意 $a$ 值，二者距離不變。
