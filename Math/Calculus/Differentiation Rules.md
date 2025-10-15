@@ -77,7 +77,7 @@ $$
 \boxed{\frac{d}{dx}b^{x}=f'(0)b^{x}=(\ln b)b^{x}}
 $$
 
-回想我們定義自然常數 $e$ 在 $x=0$ 時斜率為 $1$。所以，$e$ 的定義如下：
+回想我們定義自然常數 $e$ 在 $x=0$ 時斜率為 $1$。所以，$e$ 的定義為滿足以下式子的數：
 
 $$
 \boxed{\lim_{ h \to 0 } \frac{e^{h}-1}{h}=1 }
@@ -95,7 +95,7 @@ $$
 
 $$f(x)=a^{x}=(e^{\ln a})^{x}=e^{(\ln a)x}$$
 
-然後，利用 chain rule，我們有：
+然後，利用 Chain Rule，我們有：
 
 $$f'(x)=e^{(\ln a)x}\ln a=\boxed{a^{x}\ln a}$$
 
@@ -299,7 +299,151 @@ $$
 
 # Implicit Differentiation
 
+如果我們想要對一個隱式定義的函數微分，我們就可以使用隱微分。也就是，同時對等號左右兩邊微分。
 
+需要注意的是，在隱微分中，我們將 $y$ 視為一個由 $x$ 隱式表達的函數，所以在對 $y$ 微分時會需要使用到 Chain Rule。
+
+我們使用一個例子來講解隱微分的做法。
+
+Ex: 
+(a) Find $y'$ if $x^{3}+y^{3}=6xy$. 
+(b) At what point in the first quadrant is the tangent line horizontal? 
+
+Sol:
+(a)
+對左右微分：
+$\frac{d}{dx}(x^{3})+\frac{d}{dx}(y^{3})=6\frac{d}{dx}(xy)$ 
+$3x^{2}+3y^{2} \frac{dy}{dx}=6\left( 1\cdot y + x \cdot 1 \cdot \frac{dy}{dx} \right)\implies 3x^{2}+3y^{2}y'=6y+6xy'\implies x^{2}+y^{2}y'=2y+2xy'$ 
+$\implies y' = \frac{x^{2}-2y}{x-y^{2}}$ 
+
+(b)
+$y'=0\implies x^{2}-2y=0\implies y=\frac{1}{2}x^{2}$ 
+帶回原方程式：$x^{3}+\left( \frac{1}{2}x^{2} \right)^{3}=6x\left( \frac{1}{2}x^{2} \right)\implies x^{6}=16x^{3}$ 
+因為 $x\neq 0$ 所以可以同除 $x^{3}$，$x^{3}=16\implies x=2^{4/3},\ y=2^{5/3}$。
+
+如果想要計算多次隱微分，可以直接對一次微分後的結果再多次微分，裡面可能會出現 $y'$，只要使用之前計算的 $y'$ 帶入就好。
+
+# Derivatives of Logarithmic and Inverse Trigonometric
+
+## Derivatives of Logarithmic Functions
+
+我們知道，一個可導的一對一函數的反函數照樣可導。(除去有水平切線的點，因為變成反函數後，該切線會變為鉛直切線)
+
+我們有：
+
+$$
+\boxed{\frac{d}{dx}(\log_{b}x)=\frac{1}{x\ln b}}
+$$
+
+proof:
+令 $y=\log_{b}x$，我們有 $b^{y}=x$。
+我們對 $x$ 隱微分，得到：$(b^{y}\ln b) \frac{dy}{dx}=1\implies \frac{d}{dx}(\log_{b}x)=\frac{1}{x\ln b}$。
+
+在此，如果我們取 $b=e$，則有：
+
+$$
+\boxed{\frac{d}{dx}(\ln x)= \frac{1}{x}}
+$$
+
+利用 Chain Rule，我們還有：
+
+$$
+\frac{d}{dx}(\ln g(x))=\frac{g'(x)}{g(x)}
+$$
+
+最後，我們還有：
+
+$$
+\boxed{\frac{d}{dx}(\ln|x|)=\frac{d}{dx}(\ln x)=\frac{1}{x}}
+$$
+
+proof:
+$f(x)=\begin{cases}\ln x & \text{if }x>0 \\ \ln(-x) & \text{if }x<0\end{cases}$ ，所以 $f'(x)=\begin{cases} \frac{1}{x} & \text{if }x>0 \\ \frac{1}{(-x)}(-1)=\frac{1}{x} & \text{if }x<0\end{cases}$ 。
+
+所以勒，在某些不知道是正還是負的函數我們都不用加絕對值啦！很方便叭～ 原書裡面說，這個結論很 worth remembering 喔～
+
+## Logarithmic Differentiation
+
+一些很複雜的函數的微分(比如乘法與除法)，可以使用對數來化減。
+
+例如：微分 $y= \frac{x^{3/4}\sqrt{ x^{2}+1 }}{(3x+2)^{5}}$。
+
+直接套用 Product Rule / Quotient Rule 實在太變態了，我們對等號左右取 $\ln$。
+
+$\ln y = \frac{3}{4}\ln x + \frac{1}{2}\ln(x^{2}+1)-5\ln(3x+2)$，然後再解是不是簡單多啦！
+
+步驟如下：
+- 對 $y=f(x)$ 左右取 $\ln$，然後使用對數律展開。
+- 兩邊隱微分。
+- 把隱微分結果中的 $y$ 用 $f(x)$ 代替。
+
+而且，對於 $\frac{d}{dx}[f(x)]^{g(x)}$ 形式的問題，也可以使用對數解決。
+
+現在，我們還可以用 $\ln$ 來重新證明 $\frac{d}{dx}(x^{n})=nx^{n-1}$。
+
+proof:
+令 $y=x^{n}$。
+因為我們不知道 $x^{n}$ 會不會小於零，所以我們需要加上絕對值。
+$\ln|y|=\ln|x|^{n}=n\ln|x|$。
+由上，我們知道對絕對值取對數後的導數不變，所以：
+$\frac{y'}{y}=n \frac{1}{x}\implies y'=n \frac{y}{x}=n \frac{x^{n}}{x}=nx^{n-1}$。
+
+## The Number $e$ as Limit
+
+$$
+\boxed{e=\lim_{ x \to 0 } (1+x)^{1/x}=\lim_{ n \to \infty } \left( 1+\frac{1}{n} \right)^{n}}
+$$
+
+proof:
+我們從 $\frac{d}{dx}(\ln x)=\frac{1}{x}$ 出發。如果 $f(x)=\ln x$，那麼 $f'(1)=1$。
+寫成極限形式：
+$f'(1)=\lim_{ x \to 0 } \frac{f(1+x)-f(1)}{x}=\lim_{ x \to 0 } \frac{\ln(1+x)-\ln{1}}{x}=\lim_{ x \to 0 } \frac{1}{x}\ln(1+x)$ 
+$=\lim_{ x \to 0 }\ln(1+x)^{1/x}=1$ 
+那麼，因為 $e=e^{1}=e^{\lim_{ x \to 0 }\ln(1+x)^{1/x}}=\lim_{ x \to 0 }e^{\ln(1+x)^{1/x}}=\lim_{ x \to 0 }(1+x)^{1/x}$ 。
+
+令 $n=\frac{1}{x}$，那麼 $x\to0^{+}$ 則 $n\to \infty$。所以有 $e=\lim_{ n \to \infty }\left( 1+\frac{1}{n} \right)^{n}$。
+
+最後，我們可以計算：
+
+$$
+\boxed{e \approx 2.7182818}
+$$
+
+## Derivatives of Inverse Trigonometric Functions
+
+$$
+\boxed{\frac{d}{dx}(\sin^{-1}x)=\frac{1}{\sqrt{ 1-x^{2} }}}
+$$
+
+proof:
+回想反三角函數的定義，$y=\sin^{-1}x$ 代表了 $\sin y=x$ 且 $y \in \left[ -\frac{\pi}{2}, \frac{\pi}{2} \right]$。
+使用隱微分：$\cos y \frac{dy}{dx}=1\implies \frac{dy}{dx}=\frac{1}{\cos y}=\frac{1}{\sqrt{ 1-x^{2} }}$。 ($\cos y \geq 0$ 因為 $y \in \left[ -\frac{\pi}{2}, \frac{\pi}{2} \right]$)
+
+$$
+\boxed{\frac{d}{dx}(\tan^{-1}x)=\frac{1}{1+x^{2}}}
+$$
+
+proof:
+$\tan y=x$ 且 $y\in \left[ -\frac{\pi}{2}, \frac{\pi}{2} \right]$。
+$\sec^{2}y \frac{dy}{dx}=1\implies \frac{dy}{dx}=\frac{1}{\sec^{2}y}=\frac{1}{1+\tan^{2}y}=\frac{1}{1+x^{2}}$ 
+
+其他的證明都大同小異啦，直接給你答案～
+
+$$
+\boxed{\frac{d}{dx}(\cos^{-1}x)=- \frac{1}{\sqrt{ 1-x^{2} }}}
+$$
+
+$$
+\boxed{\frac{d}{dx}(\csc^{-1}x)=- \frac{1}{x\sqrt{ x^{2}-1 }}}
+$$
+
+$$
+\boxed{\frac{d}{dx}(\sec^{-1}x)= \frac{1}{x\sqrt{ x^{2}-1 }}}
+$$
+
+$$
+\boxed{\frac{d}{dx}(\cot^{-1}x)= -\frac{1}{1+x^{2}}}
+$$
 
 # Tips
 
@@ -308,6 +452,8 @@ $$
 - 如何求某多項式函數在哪點有垂直切線？先對該函數求導，然後觀察其導數在哪點不存在。通常是分母為零。
 - 想求某分段函數是否可導，可以先對每段求導，然後確認在邊界時導數值是否一致。
 - $\sec^{2}x=\tan^{2}x+1$。
+- 當你不會微分某個函數時，想想他的反函數會不會比較好算。
+- 對於 $\frac{d}{dx}[f(x)]^{g(x)}$ 形式的問題，可以使用對數解決。例如：$\frac{d}{dx}(x^{\sqrt{ x }})$。
 # 重要例題
 
 1. Differentiate the function $f(v)= v^{-2/3}-2e^{v}$ 
