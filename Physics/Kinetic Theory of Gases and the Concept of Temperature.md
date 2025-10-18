@@ -149,7 +149,7 @@ $$
 **一團**理想氣體的動能為：
 
 $$
-\Delta E_{k}=\frac{3}{2} \frac{R}{N_{a}}T \times n \times N_{A}=\frac{3}{2}R \times n \Delta T = \boxed{nC_{v}\Delta T}
+\Delta E_{k}=\frac{3}{2} \frac{R}{N_{a}}\Delta T \times n \times N_{A}=\frac{3}{2}R \times n \Delta T = \boxed{nC_{v}\Delta T}
 $$
 
 注：雖然此式由理想氣體方程式推導而來，但是對於液體與固體亦成立。

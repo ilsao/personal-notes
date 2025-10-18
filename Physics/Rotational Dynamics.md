@@ -3,13 +3,13 @@
 首先，假設 $r$ 為力臂，我們給出力矩的定義：
 
 $$
-\mathbf{\tau}=\mathbf{r} \times \mathbf{F}
+\boxed{\mathbf{\tau}=\mathbf{r} \times \mathbf{F}}
 $$
 
 如果只是表示力矩的大小，我們可以如下取得：
 
 $$
-\tau=rF\sin \theta=rma_{T}=mr^{2}\alpha=I\alpha
+\tau=rF\sin \theta=rma_{T}=mr^{2}\alpha=\boxed{I\alpha}
 $$
 
 所以，我們定義轉動慣量：
@@ -34,7 +34,7 @@ $$
 
 # Rotational Kinetic Energy
 
-雖然等速圓周運動不作功，但是呢，非等速圓周運動是做功的喔！
+雖然等速圓周運動不作功，但是呢，**非等速圓周運動是做功的**喔！
 
 $$
 \boxed{W_{\theta}=\int_{\theta_{0}}^{\theta_{f}}\tau d\theta}
