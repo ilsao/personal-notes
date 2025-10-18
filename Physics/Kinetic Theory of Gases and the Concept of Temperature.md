@@ -54,7 +54,7 @@ $$
 \boxed{PV=nRT}
 $$
 
-其中，$R$ 在物理中通常取 $R=8.314\text{ J/mol}\cdot\text{K}$。
+其中，$R$ 在物理中通常取 $\boxed{R=8.314\text{ J/mol}\cdot\text{K}}$。
 
 我們定義**絕對零度(absolute zero)**：$-273.15^{\circ}C=0K$。
 
@@ -144,7 +144,13 @@ $$
 \boxed{\frac{1}{2}m \bar{v^{2}}=\frac{3}{2}k_{B}T}\implies \boxed{T= \frac{2 \bar{E_{k}}}{3k_{B}}}
 $$
 
-需要小心的是，以上的 $E_{k}=\frac{1}{2}m \bar{v^{2}}$ 為一個粒子的動能。
+需要小心的是，以上的 $E_{k}=\frac{1}{2}m \bar{v^{2}}$ 為**一個粒子**的動能。
+
+**一團**理想氣體的動能為：
+
+$$
+\Delta E_{k}=\frac{3}{2} \frac{R}{N_{a}}T \times n \times N_{A}=\frac{3}{2}R \times n \Delta T = \boxed{nC_{v}\Delta T}
+$$
 
 注：雖然此式由理想氣體方程式推導而來，但是對於液體與固體亦成立。
 
@@ -168,12 +174,12 @@ $$
 \boxed{\Delta Q=mc\Delta T}
 $$
 
-我們現在知道：熱量其實是能量的一種。我們可以通過那個在水裡轉來轉去然後旁邊釣著一個東西往下(等速)掉的裝置來測量。之所以要等速往下掉，是因為要避免動能變化，使得只使用未能就可以轉換。
+我們現在知道：熱量其實是能量的一種。我們可以通過那個在水裡轉來轉去然後旁邊釣著一個東西往下(等速)掉的裝置來測量。之所以要等速往下掉，是因為要避免動能變化，使得只使用位能就可以轉換。
 
 我們可以得到以下等式：
 
 $$
-mgh=mc\Delta T\implies 4.184\text{ J}=1\text{ cal}
+mgh=mc\Delta T\implies \boxed{4.184\text{ J}=1\text{ cal}}
 $$
 
 上式稱為：**熱的機械當量(mechanical equivalent of heat)**。
@@ -264,3 +270,81 @@ $$
 當溫度上升，平均速度與最高速度均增加，但是曲線較平緩。如下圖所示。
 
 ![[Pasted image 20251017232319.png]]
+
+# 威儀指定習題
+
+1. A gas tank contains 10kg of oxygen at a pressure of $10^{7}\text{ N/m}^{2}$ and a temperature of $27^{\circ}$C. As a result of a leak, the pressure drops to $5 \times10^{6}\text{ N/m}^{2}$ and the temperature decreases to $7^{\circ}$C. (a) What is the volume of the tank? (b) How much oxygen has leaked out? 
+
+Ans:
+需要注意，我兩個計算都是錯在 $K=273.15$ 加錯？？
+(a) $V \approx 7.79 \times 10^{-2}\text{m}^{3}$ 
+(b) $\approx 4.65\text{ kg}$ 
+
+2. The temperature of a gas in a closed container at $27^{\circ}$C is raised to $327^{\circ}$C. By what multiple has $v_{RMS}$ changed?($v_{RMS}$ 改變了多少倍)
+
+Ans: $\sqrt{ 2 }$ 倍
+
+3. The temperature of a room $7\text{m}\times 5\text{m}\times 3\text{m}$ is $27^{\circ}\text{C}$. (a) How much energy is contained in the air of that room? (b) If that energy could be converted to electrical energy, for how long could a $100-W$ bulb be lit? Assume the air behaves as an ideal gas.
+
+Sol:
+臥槽，這題相當有水準啊！但是最後我想出來了，我也相當有水準啊！
+(a)
+我們使用公式：$E_{k}=n \times N_{A} \times \frac{3}{2}(k_{B}T)$。
+其中，$n= \frac{PV}{RT}$，你會疑惑地發現沒有給壓力。
+這時候神奇的來了，你應該直接帶入一大氣壓的值，即 $1.01 \times 10^{5}\text{ N/m}^{2}$。
+那麼我們先帶入公式化減一波吧：$E_{k}= \frac{PV}{RT} \times N_{A} \times \frac{3}{2} \times \frac{R}{N_{A}} \times T=PV \times \frac{3}{2}=1.01 \times 10^{5} \times 105 \times \frac{3}{2} \approx 1.5 \times 10^{7}\text{ J}$ 。
+
+(b)
+$\frac{1.5 \times 10^{7}}{100\times{8}6400} \approx 1.84\text{ days}$。
+
+4. A 20g bullet is shot into a ballistic pendulum with a velocity of $1000\text{ m/s}$. The mass of the wooden block is 2kg. If the bullet remains embedded in the block and 80% of the energy lost in the collision is absorbed as heat by the bullet, what is the increase in the temperature of the bullet? The specific heat of the bullet is $0.1\text{ cal/g-}^{\circ}\text{C}$. 
+
+Sol:
+:(
+首先動量守恆得到最終速度：$v \approx 9.9$。
+然後分別求動能：
+$E_{1}= 0+ \frac{1}{2}\times0.02\times (10^{3})^{2}=10^{4}$ 
+$E_{f}=\frac{1}{2} \times (2+0.02) (9.9^{2}) \approx 99$ 
+需要注意這邊算的動能變化量是整體系統的動能變化量，如果只算子彈的動能變化，會導致傳遞給木塊的動能也被算到能量損失中，這是非常離譜且錯誤的觀念。
+$|\Delta E|=E_{1}-E_{f} \approx 9901$ 
+$9901 \times 80\%=20\text{ g} \times 0.1\text{ cal/g-}^{\circ}\text{C} \times 4.18\text{ J/cal} \times T\implies T \approx 945^{\circ}\text{C}$ 
+需要注意，此處給的比熱單位為卡路里，我們要手動將其轉成焦耳。
+
+5. A mole of an ideal gas is taken from state A to state C along the path ABC. (a) If 1000cal of heat flow into the gas and the gas does 2100J of work, what is the change in the internal energy of the gas? (b) When the gas is returned from C to A along the path CDA, 700cal of heat flow out of the gas. How much work is done on the gas? (c) What is the change in the temperature of the gas when it is brought back from C to A? (d) If the pressure of the gas in state A is 2 atm, what is the difference in the volume of the gas between stated D and A?
+
+```
+Pressure
+^
+|
+|    B   ->   C
+|    ^        |
+|    |        ˇ
+|    A   <-   D
+|
+|
+---------------------> Volume
+
+```
+
+Sol:
+(a)
+利用 $\Delta E=\Delta Q-\Delta W$ 可以得到 $\Delta E \approx 2080\text{ J}$ 
+
+(b)
+利用 (a)
+我們要從 C 返回 A，所以 $\Delta E$ 要**取負號**。
+$-2080 = -700 \times 4.18 - \Delta W\implies\Delta W = -846\text{ J}$ 
+作功為負，代表有外力在壓縮氣體，所以壓縮氣體的力作功為 $846\text{ J}$。
+
+(c)
+之前我有一個錯誤觀念，我以為 $\Delta Q=nC_{v}\Delta T$ 會在任意情況下成立。
+事實上並不是，此條件僅在定容的情況下成立，即沒有作功($\Delta W=0$)的條件下才成立。
+其實，應該是 $\Delta E=nC_{v}\Delta T$ 才對。
+那麼 $-2080 = 1 \times \frac{3}{2}R \times \Delta T \implies\Delta T \approx -167\text{ K}$ 
+
+(d)
+本來我想說在 D 的溫度比 A 的高 167K，但實際上，C 到 D 也會降溫，所以我錯得很徹底。
+利用能量的觀念想，$W_{CA}=W_{CD}+W_{DA}=0+W_{DA}\implies W_{DA}=-846\text{ J}$ 。之所以 $W_{CD}=0$，因為在此情況下 C 到 D 定容，所以氣體不作功。
+那麼，利用：
+$\Delta W=P\Delta V\implies-846=2\text{ atm} \times 1.01 \times 10^{5}\text{N/m}^{2}\text{atm }(V_{A}-V_{D})\implies V_{D}-V_{A} \approx 4.17 \times 10^{-3}\text{ m}^{3}$ 。
+難的是想不到要用作功的式子啦！
