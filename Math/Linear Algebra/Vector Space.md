@@ -110,3 +110,52 @@ $$
 
 ## The Span of a Set of Vectors
 
+令 $\mathbf{v_{1}}, \mathbf{v_{2}}, \dots, \mathbf{v_{n}}$ 是向量空間 $V$ 中的向量，我們稱 $\alpha \mathbf{v_{1}}+\alpha \mathbf{v_{2}}+\dots+\alpha \mathbf{v_{n}}$ 為 $\mathbf{v_{1}}, \mathbf{v_{2}}, \dots, \mathbf{v_{n}}$ 的線性組合。**所有線性組合組成的集合**就稱為 $\mathbf{v_{1}}, \mathbf{v_{2}}, \dots, \mathbf{v_{n}}$ 的**生成空間(span)**，可以用 $\text{Span}(\mathbf{v_{1}}, \mathbf{v_{2}}, \dots, \mathbf{v_{n}})$ 表示。
+
+$$
+如果 \ \mathbf{v_{1}}, \mathbf{v_{2}}, \dots, \mathbf{v_{n}} \ 是向量空間 \ V \ 中的向量，那麼其生成空間必為 \ V \ 的子空間。
+$$
+
+proof:
+令 $\beta$ 為標量，$\mathbf{v}=\alpha \mathbf{v_{1}}+\dots+\alpha \mathbf{v_{2}}$, $\mathbf{w}=\beta \mathbf{v_{1}}+\dots+\beta \mathbf{v_{2}}$ 為兩個取自 $\text{Span}(\mathbf{v_{1}}, \mathbf{v_{2}}, \dots, \mathbf{v_{n}})$ 的向量。
+因為：
+$\beta \mathbf{v_{1}}=(\beta\alpha)\mathbf{v}+\dots+(\beta\alpha)\mathbf{v_{n}} \in\text{Span}(\mathbf{v_{1}, \dots, v_{n}})$ 
+且：
+$\mathbf{v}+\mathbf{w}=(\alpha+\beta)\mathbf{v_{1}}+\dots+(\alpha\beta)\mathbf{v_{n} \in \text{Span}(\mathbf{v_{1}},\dots,\mathbf{v_{n}})}$ 
+所以，命題成立。
+
+## Spanning Set for a Vector Space
+
+$\mathbf{v_{1}}, \mathbf{v_{2}}, \dots \mathbf{v_{n}}$ 是 $V$ 的生成集 $\Leftrightarrow$ $V$ 可以被表達為 $\mathbf{v_{1}}, \mathbf{v_{2}}, \dots \mathbf{v_{n}}$ 的線性組合。
+
+這邊有點繞，我們必須清楚的區分 Span 和 Spanning Set。其實，他們互為反向描述。
+
+讓我們舉個例子，想要張出向量空間 $\mathbb{R}^{2}$，我們最少區要兩個向量作為生成集。因為一個向量的生成空間只會是一條直線。
+
+我們可以取 $\{\mathbf{e_{1}}, \mathbf{e_{2}}\}$ 來張出 $\mathbb{R}^{2}$。那麼 $\{\mathbf{e_{1}}, \mathbf{e_{2}}\}$ 就是 $\mathbb{R}^{2}$ 的生成集。
+
+## Linear Systems Revisited
+
+考慮一個有解的線性系統 $A\mathbf{x}=\mathbf{b}$。
+
+如果 $\mathbf{b}=\mathbf{0}$，那麼所有解構成的集合 $S=N(A)$，且 $S$ 是 $\mathbb{R}^{n}$ 的子空間。
+
+如果 $\mathbf{b}\neq \mathbf{0}$，那麼 $S$ 無法構成 $\mathbb{R}^{n}$ 的子空間，因為 $\mathbf{0} \not\in S$。
+
+我們有：如果給定 $\mathbf{x_{0}}$ 為一組特定解，那麼 $\mathbf{y}$ 也會是一組解 $\Leftrightarrow \mathbf{y}=\mathbf{x_{0}}+\mathbf{z}$，其中 $\mathbf{z} \in N(A)$。
+
+要如何理解這個？給定系統的另一個解 $\mathbf{x_{1}}$，並令 $\mathbf{z}=\mathbf{x_{1}-x_{0}}$。那麼：
+
+$$
+A\mathbf{z}=A\mathbf{x_{1}}-A\mathbf{x_{2}}=\mathbf{b}-\mathbf{b}=\mathbf{0}
+$$
+
+所以，另一個解必為 $\mathbf{x_{1}}=\mathbf{x_{0}}+\mathbf{z}$，且 $\mathbf{z} \in N(A)$。
+
+我們可以通過其幾何意含來更深入的了解：
+
+令 $A$ 為一個 $3 \times 3$ 的矩陣。 想像 $N(A)$ 構成了一個通過原點的一條直線或平面。那麼我們找到的那個特定解 $\mathbf{x_{0}}$ 則代表被平移後的 $N(A)$ 中的一點。整個解集合 $S = \mathbf{x_{0}}+N(A)$ 就是 $N(A)$ 形成的直線或平面被使用 $\mathbf{x_{0}}$ 位移後的結果。
+
+可以將解集合視為一個被平移後的子空間，如果 $\mathbf{b}\neq \mathbf{0}$ 則解集合不是 $\mathbb{R}^{3}$ 的子空間。我們稱這種空間叫**仿射子空間(affine subspace)**。
+
+# Linear Independence
