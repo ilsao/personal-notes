@@ -196,7 +196,7 @@ $$
 
 proof:
 $\frac{d}{dx}(\tan x)=\frac{d}{dx}\left( \frac{\sin x}{\cos x} \right)= \frac{\cos x\cos x-\sin x(-\sin x)}{\cos^{2} x}$ 
-$= \frac{\cos^{2}x+\sin^{2}x}{\cos^{2x}} = \frac{1}{\cos^{2}x}$ 
+$= \frac{\cos^{2}x+\sin^{2}x}{\cos^{2x}} = \frac{1}{\cos^{2}x}=\sec^{2}x$ 
 
 剩下的幾個三角函數 $\csc, \sec, \cot$ 可以輕易的使用 The Quotient Rule 導出：
 
@@ -259,7 +259,7 @@ $$
 \lim_{ \Delta x \to 0 } \epsilon=f'(a)-f'(a)=0
 $$
 
-如果我們定義 $\epsilon$ 在 $x=0$ 時 $\epsilon=0$，那麼 $\epsilon$ 就會是一個對 $x$ 處處連續的函數。
+如果我們定義 $\epsilon$ 在 $x=0$ 時 $\epsilon=0$，那麼 $\epsilon$ 就會是一個對 $x$ 連續的函數。
 
 又因為 $\epsilon= \frac{\Delta y}{\Delta x}-f'(a)$，所以我們可以改寫：
 
@@ -267,7 +267,7 @@ $$
 \Delta y= f'(a)\Delta x + \epsilon\Delta x \quad\text{where} \quad \epsilon\to 0\text{ as } \Delta x\to0
 $$
 
-那麼捏，這個性質可以幫助我們證明 Chain Rule 喔！嘿嘿，重頭戲來嘍～
+那麼捏，這個性質可以幫助我們證明 Chain Rule ！重頭戲上場～
 
 讓我們假設 $u=g(a)$ 在 $a$ 可導，且 $y=f(u)$ 在 $b=g(a)$ 處可導。
 
@@ -295,7 +295,7 @@ $$
 \lim_{ \Delta x \to 0 } \frac{\Delta y}{\Delta x}=f'(a)=f'(b)g'(a)=f'(g(a))g'(a)
 $$
 
-太棒啦，你成功證明了 Chain Rule 了誒！
+太棒啦，你成功證明了 Chain Rule 了誒！真有實力～
 
 # Implicit Differentiation
 
@@ -361,6 +361,8 @@ proof:
 $f(x)=\begin{cases}\ln x & \text{if }x>0 \\ \ln(-x) & \text{if }x<0\end{cases}$ ，所以 $f'(x)=\begin{cases} \frac{1}{x} & \text{if }x>0 \\ \frac{1}{(-x)}(-1)=\frac{1}{x} & \text{if }x<0\end{cases}$ 。
 
 所以勒，在某些不知道是正還是負的函數我們都不用加絕對值啦！很方便叭～ 原書裡面說，這個結論很 worth remembering 喔～
+
+寫完題目後評：嗯，我認可。確實 worth remembering。
 
 ## Logarithmic Differentiation
 
@@ -452,7 +454,7 @@ $$
 - 如何求某多項式函數在哪點有垂直切線？先對該函數求導，然後觀察其導數在哪點不存在。通常是分母為零。
 - 想求某分段函數是否可導，可以先對每段求導，然後確認在邊界時導數值是否一致。
 - $\sec^{2}x=\tan^{2}x+1$。
-- 當你不會微分某個函數時，想想他的反函數會不會比較好算。二者的導數互為倒數。
+- 當你不會微分某個函數時，想想他的反函數會不會比較好算。
 - 對於 $\frac{d}{dx}[f(x)]^{g(x)}$ 形式的問題，可以使用對數解決。例如：$\frac{d}{dx}(x^{\sqrt{ x }})$。
 - 大會考好像蠻喜歡考 Chain Rule + implicit differentiation 的。如果有那種給你 $f(x)$ 讓你求 $(f^{-1})'(n)$ 的題目，就列 $f^{-1}(f(x))=x$ 然後隱微分 $(f^{-1})'(f(x))= \frac{1}{f'(x)}$ 就好。例如：底下大會考第一題。
 # 重要例題
