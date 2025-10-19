@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Physics/Kinetic Theory of Gases and the Concept of Temperature.md",
+                "file": "Math/Calculus/Differentiation Rules.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Kinetic Theory of Gases and the Concept of Temperature"
+              "title": "Differentiation Rules"
             }
           },
           {
@@ -194,9 +194,9 @@
   },
   "active": "26720c0ea3e29b4d",
   "lastOpenFiles": [
+    "Physics/Kinetic Theory of Gases and the Concept of Temperature.md",
     "Math/Calculus/Differentiation Rules.md",
     "Math/Calculus/Limit.md",
-    "Physics/Kinetic Theory of Gases and the Concept of Temperature.md",
     "Physics/Rotational Dynamics.md",
     "Physics/Rotational Motion.md",
     "Physics/Work, Energe, And Power.md",

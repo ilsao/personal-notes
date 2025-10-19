@@ -447,12 +447,12 @@ $$
 
 # Tips
 
-- $x^{n}-a^{n}=(x-a)\sum_{k=0}^{n-1}x^{n-1-k}a^{k}$ 
+- $x^{n}-a^{n}=(x-a)\sum_{k=0}^{n-1}x^{n-1-k}a^{k}=(x-a)(x^{n-1}+x^{n-2}a+\dots+xa^{n-2}+a^{n-1})$ 
 - 對於簡單的 $\frac{d}{dx} \frac{a}{x^{2}}$，我們可以先化為 $\frac{d}{dx} (ax^{-2})=-2ax^{-3}$，避免腦子壞掉犯錯。
 - 如何求某多項式函數在哪點有垂直切線？先對該函數求導，然後觀察其導數在哪點不存在。通常是分母為零。
 - 想求某分段函數是否可導，可以先對每段求導，然後確認在邊界時導數值是否一致。
 - $\sec^{2}x=\tan^{2}x+1$。
-- 當你不會微分某個函數時，想想他的反函數會不會比較好算。
+- 當你不會微分某個函數時，想想他的反函數會不會比較好算。二者的導數互為倒數。
 - 對於 $\frac{d}{dx}[f(x)]^{g(x)}$ 形式的問題，可以使用對數解決。例如：$\frac{d}{dx}(x^{\sqrt{ x }})$。
 - 大會考好像蠻喜歡考 Chain Rule + implicit differentiation 的。如果有那種給你 $f(x)$ 讓你求 $(f^{-1})'(n)$ 的題目，就列 $f^{-1}(f(x))=x$ 然後隱微分 $(f^{-1})'(f(x))= \frac{1}{f'(x)}$ 就好。例如：底下大會考第一題。
 # 重要例題
@@ -469,7 +469,7 @@ Sol:
 $y'=2e^{x}+3+15x^{2}$ 
 然後你會發現，誒？沒教過啊，怎麼解？？
 然後你就會去翻解答，然後就會發現原來不用解。
-$\because 2e^{x}\geq 0$ and $15x^{2}\geq 0 \therefore\text{min}\{y'\}=3$ 
+$\because 2e^{x}> 0$ and $15x^{2}\geq 0 \therefore\text{min}\{y'\}=3$ 
 
 3. Let $f(x)=\begin{cases}x^{2} & \text{if }x\leq 2 \\ mx+b & \text{if} x>2\end{cases}$. Find the values of $m$ and $b$ that make $f$ differentiable everywhere.
 
@@ -477,7 +477,7 @@ Sol:
 若 $f$ 可導，我們可以得到 $f'(x)=\begin{cases}2x & \text{if }x<2 \\ m & \text{if }x>2\end{cases}$ 。
 想要可導需要滿足兩個條件：
 1. 在此處連續。
-2. 在此處極限存在，左極限等於右極限。
+2. 從左逼近其導數值等於從右逼近其導數值。
 先滿足 (2)，所以 $2\times {2}=m=4$。
 再滿足 (1)，所以 $2^{2}=4(2)+b\implies b=-4$。
 
@@ -507,7 +507,7 @@ Sol:
 Sol:
 感覺跟不是在考微積分...
 通過微分，我們可以知道切線斜率，然後就可以知道法線斜率是：$-\frac{1}{2a}$。
-過 $(a,a^{2})$ 做法線：$y-a^{2}=-\frac{1}{2a}(x-a)$。
+(!) 過 $(a,a^{2})$ 做法線：$y-a^{2}=-\frac{1}{2a}(x-a)$。`<-- key`
 帶入 $(0,c)$：$c-a^{2}=-\frac{1}{2a}(-a)\implies a=\pm \sqrt{ c-\frac{1}{2} }$。
 所以，對於 $c> \frac{1}{2}$ 我們會有兩個 $a\implies$ 兩個法線。還需要加上一個過 $x=0$ 的法線共三條～
 對 $c\leq \frac{1}{2}$ $\implies a=0$ 或不存在。所以只有一條法線：$x=0$。
@@ -542,7 +542,7 @@ Sol:
 Sol:
 先微分：$f'(x)=2\cos x+2\sin x\cos x$ 
 然後微分等於零，解 $x$：$f'(x)=2\cos x(\sin x+1)=0\implies 2\cos x=0\text{ or }\sin x+1=0$ 。
-$\implies x=\frac{\pi}{2}+2k\pi, \frac{3\pi}{2}+2k\pi \quad k \in \mathbb{Z}$ 
+$\implies x=\frac{\pi}{2}+k\pi, \frac{3\pi}{2}+2k\pi \quad k \in \mathbb{Z}$ 
 $\implies y=3,-1\implies\left( \frac{\pi}{2}+2k\pi,3 \right)\text{ or }\left( \frac{3\pi}{2}+2k\pi, -1 \right)\text{ and } k\in \mathbb{Z}$ 
 
 10. 已知 $\frac{d}{dx}(|x|)=\frac{x}{|x|}$，求 $f(x)=|\sin x|$ 的導數，並說明在哪不可導。
@@ -595,9 +595,10 @@ Sol:
 (II)
 此法無需依賴，顯現扎實功底。
 令 $f(x)=\ln x$，那麼 $f'\left( \frac{1}{x} \right)=x$。
-利用定義展開：$f'\left( \frac{1}{x} \right)=\lim_{ x \to 0 } \frac{\ln\left( \frac{1}{x}+x \right)-\ln\left( \frac{1}{x} \right)}{x}=\lim_{ x \to 0 }\ln(x^{2}+1)^{1/x}=\ln(\lim_{ x \to 0 }(x^{2}+1)^{1/x})$ 。
-又 $e^{x}=e^{\ln(\lim_{ x \to 0 }(x^{2}+1)^{1/x})}=\lim_{ x \to 0 }(x^{2}+1)^{1/x}$。
-令 $n=\frac{1}{x}$ 則，$n\to \infty$ as $x\to 0^{+}\implies \lim_{ n \to \infty }\left( 1+\frac{x}{n} \right)^{n}=e^{x}$。
+利用定義展開：$f'\left( \frac{1}{x} \right)=\lim_{ h \to 0 } \frac{\ln\left( \frac{1}{x}+h \right)-\ln\left( \frac{1}{x} \right)}{h}=\lim_{ h \to 0 }\ln(1+xh)^{1/h}=\ln(\lim_{ h \to 0 }(1+xh)^{1/h})$ 。
+`~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^ 因為 ln 在(0, infty) 連續`
+又 $e^{x}=e^{\ln(\lim_{ h \to 0 }(1+xh)^{1/h})}=\lim_{ h \to 0 }(1+xh)^{1/h}$。
+令 $n=\frac{1}{h}$ 則，$n\to \infty$ as $h\to 0^{+}\implies \lim_{ n \to \infty }\left( 1+\frac{x}{n} \right)^{n}=e^{x}$。
 
 # 大會考
 
