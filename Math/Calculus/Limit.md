@@ -445,7 +445,7 @@ $$
 
 Sol:
 $0 \leq f(x) \leq x^{2}$ 
-By Squeeze Theorem, we have $\lim_{ x \to 0 }0=0=\lim_{ x \to 0 }x^{2}=\lim_{ x \to 0 }f(x)$. 
+We have $\lim_{ x \to 0 }0=0=\lim_{ x \to 0 }x^{2}=\lim_{ x \to 0 }f(x)$. 
 Thus, by Squeeze Theorem we have $\lim_{ x \to 0 }f(x)=0$. 
 
 3. 求 $\lim_{ \theta \to  0} \frac{\sin 3\theta}{\tan 2\theta}$。

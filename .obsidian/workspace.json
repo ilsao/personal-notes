@@ -1,24 +1,36 @@
 {
   "main": {
-    "id": "a4a58c4470c43770",
+    "id": "4bc2facfd64c98d3",
     "type": "split",
     "children": [
       {
-        "id": "21df2c7164b4dff7",
+        "id": "cb0040b091f8e290",
         "type": "tabs",
         "children": [
           {
-            "id": "4bccfe014a9a43ba",
+            "id": "26720c0ea3e29b4d",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Math/Linear Algebra/Vector Space.md",
+                "file": "Physics/Kinetic Theory of Gases and the Concept of Temperature.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Vector Space"
+              "title": "Kinetic Theory of Gases and the Concept of Temperature"
+            }
+          },
+          {
+            "id": "6530f9b64e16e693",
+            "type": "leaf",
+            "state": {
+              "type": "pdf",
+              "state": {
+                "file": "Math/Calculus/Calculus, Early Transcendentals.pdf"
+              },
+              "icon": "lucide-file-text",
+              "title": "Calculus, Early Transcendentals"
             }
           }
         ]
@@ -27,15 +39,15 @@
     "direction": "vertical"
   },
   "left": {
-    "id": "fcce2994e59d5f3f",
+    "id": "91c9a2f047380cc1",
     "type": "split",
     "children": [
       {
-        "id": "85e0fb49041c2b95",
+        "id": "476df94d37da26b7",
         "type": "tabs",
         "children": [
           {
-            "id": "6c1c0106d04a8ca7",
+            "id": "1d5b0d980baa8a22",
             "type": "leaf",
             "state": {
               "type": "file-explorer",
@@ -44,11 +56,11 @@
                 "autoReveal": false
               },
               "icon": "lucide-folder-closed",
-              "title": "文件列表"
+              "title": "Files"
             }
           },
           {
-            "id": "8dcbf3830c51b7dc",
+            "id": "d240e727d202afb8",
             "type": "leaf",
             "state": {
               "type": "search",
@@ -65,36 +77,36 @@
             }
           },
           {
-            "id": "c6c2e6fecf16fe50",
+            "id": "828b82de6f15188f",
             "type": "leaf",
             "state": {
               "type": "bookmarks",
               "state": {},
               "icon": "lucide-bookmark",
-              "title": "书签"
+              "title": "Bookmarks"
             }
           }
         ]
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 275.5
   },
   "right": {
-    "id": "ae3831121594472c",
+    "id": "1ec41845cb5e3b89",
     "type": "split",
     "children": [
       {
-        "id": "31629c340c678950",
+        "id": "51443124e11acc25",
         "type": "tabs",
         "children": [
           {
-            "id": "a5b635ecde914d74",
+            "id": "cd0e8cdae3b02225",
             "type": "leaf",
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Physics/Rotational Dynamics.md",
+                "file": "AI Prompts.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -104,25 +116,25 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Rotational Dynamics 的反向链接列表"
+              "title": "AI Prompts 的反向链接列表"
             }
           },
           {
-            "id": "ec0966e210fe1675",
+            "id": "8a2a12cf989111dc",
             "type": "leaf",
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Physics/Rotational Dynamics.md",
+                "file": "CSAPP_U3.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Rotational Dynamics 的出链列表"
+              "title": "Outgoing links from CSAPP_U3"
             }
           },
           {
-            "id": "731e3ab2f1929680",
+            "id": "731aba1e01181b81",
             "type": "leaf",
             "state": {
               "type": "tag",
@@ -133,35 +145,36 @@
                 "searchQuery": ""
               },
               "icon": "lucide-tags",
-              "title": "标签"
+              "title": "Tags"
             }
           },
           {
-            "id": "de48cd7610cd1c1b",
+            "id": "060a916617e47462",
             "type": "leaf",
             "state": {
               "type": "outline",
               "state": {
-                "file": "Physics/Rotational Dynamics.md",
+                "file": "CSAPP_U3.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Rotational Dynamics 的大纲"
+              "title": "Outline of CSAPP_U3"
             }
           },
           {
-            "id": "aafd7729f723950c",
+            "id": "4b8ccdf46250baa6",
             "type": "leaf",
             "state": {
               "type": "calendar",
               "state": {},
-              "icon": "calendar-with-checkmark",
-              "title": "Calendar"
+              "icon": "lucide-ghost",
+              "title": "calendar"
             }
           }
-        ]
+        ],
+        "currentTab": 4
       }
     ],
     "direction": "horizontal",
@@ -170,29 +183,63 @@
   },
   "left-ribbon": {
     "hiddenItems": {
-      "switcher:打开快速切换": false,
-      "graph:查看关系图谱": false,
-      "canvas:新建白板": false,
-      "daily-notes:打开/创建今天的日记": false,
-      "templates:插入模板": false,
-      "command-palette:打开命令面板": false,
-      "bases:创建新数据库": false
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false,
+      "bases:Create new base": false
     }
   },
-  "active": "4bccfe014a9a43ba",
+  "active": "26720c0ea3e29b4d",
   "lastOpenFiles": [
-    "Physics/Midterm Preparation.md",
+    "Math/Calculus/Differentiation Rules.md",
+    "Math/Calculus/Limit.md",
     "Physics/Kinetic Theory of Gases and the Concept of Temperature.md",
     "Physics/Rotational Dynamics.md",
+    "Physics/Rotational Motion.md",
+    "Physics/Work, Energe, And Power.md",
+    "Physics/Momentum and Collisions.md",
+    "Physics/Newton's Laws.md",
+    "Physics/Uniform Accelerated Motion.md",
+    "Physics/Vector.md",
+    "Physics/Physical Quantities.md",
+    "Physics/Midterm Preparation.md",
     "pic/Pasted image 20251017233410.png",
+    "Pasted image 20251017233346.png",
     "pic/Pasted image 20251017232319.png",
+    "Computer Networking/Application Layer.md",
+    "Computer Networking/Intro. to the Internet.md",
     "pic/Pasted image 20251017201252.png",
+    "Math/Linear Algebra/Matrix and Systems.md",
     "pic/Pasted image 20251015133344.png",
+    "Math/Linear Algebra/Vector Space.md",
+    "Math/Linear Algebra/Determinants.md",
+    "Computer Networking/Transport Layer.md",
     "pic/Pasted image 20251014175953.png",
+    "Math/Calculus/Basic concept.md",
     "pic/Pasted image 20251014151039.png",
+    "Cryptography/Section 1.md",
+    "Computer Networking/lab1.md",
     "pic/Pasted image 20251014131706.png",
     "pic/Pasted image 20251013205255.png",
-    "Computer Networking/Transport Layer.md",
-    "Physics/Physical Quantities.md"
+    "Math/Calculus/Calculus, Early Transcendentals.pdf",
+    "pic/Pasted image 20251008164626.png",
+    "Math/Linear Algebra/U1 U2 Summary Note.md",
+    "Math/Linear Algebra/The Art of Linear Algebra.pdf",
+    "時間紀錄/Week 5.md",
+    "大學安排.md",
+    "時間紀錄/Week 1.md",
+    "時間紀錄/Week 4.md",
+    "時間紀錄",
+    "Computer Networking/Computer Networking A top-down approach.pdf",
+    "故事創作與影像敘事",
+    "Operating Systems/OSTEP",
+    "personal-notes.pub",
+    "personal-notes",
+    "Operating Systems/BeyondOS",
+    "Physics",
+    "未命名.canvas"
   ]
 }

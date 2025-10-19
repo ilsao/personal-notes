@@ -454,6 +454,7 @@ $$
 - $\sec^{2}x=\tan^{2}x+1$。
 - 當你不會微分某個函數時，想想他的反函數會不會比較好算。
 - 對於 $\frac{d}{dx}[f(x)]^{g(x)}$ 形式的問題，可以使用對數解決。例如：$\frac{d}{dx}(x^{\sqrt{ x }})$。
+- 大會考好像蠻喜歡考 Chain Rule + implicit differentiation 的。如果有那種給你 $f(x)$ 讓你求 $(f^{-1})'(n)$ 的題目，就列 $f^{-1}(f(x))=x$ 然後隱微分 $(f^{-1})'(f(x))= \frac{1}{f'(x)}$ 就好。例如：底下大會考第一題。
 # 重要例題
 
 1. Differentiate the function $f(v)= v^{-2/3}-2e^{v}$ 
@@ -473,7 +474,7 @@ $\because 2e^{x}\geq 0$ and $15x^{2}\geq 0 \therefore\text{min}\{y'\}=3$
 3. Let $f(x)=\begin{cases}x^{2} & \text{if }x\leq 2 \\ mx+b & \text{if} x>2\end{cases}$. Find the values of $m$ and $b$ that make $f$ differentiable everywhere.
 
 Sol:
-我們可以得到 $f'(x)=\begin{cases}2x & \text{if }x<2 \\ m & \text{if }x>2\end{cases}$ 。
+若 $f$ 可導，我們可以得到 $f'(x)=\begin{cases}2x & \text{if }x<2 \\ m & \text{if }x>2\end{cases}$ 。
 想要可導需要滿足兩個條件：
 1. 在此處連續。
 2. 在此處極限存在，左極限等於右極限。
@@ -597,3 +598,14 @@ Sol:
 利用定義展開：$f'\left( \frac{1}{x} \right)=\lim_{ x \to 0 } \frac{\ln\left( \frac{1}{x}+x \right)-\ln\left( \frac{1}{x} \right)}{x}=\lim_{ x \to 0 }\ln(x^{2}+1)^{1/x}=\ln(\lim_{ x \to 0 }(x^{2}+1)^{1/x})$ 。
 又 $e^{x}=e^{\ln(\lim_{ x \to 0 }(x^{2}+1)^{1/x})}=\lim_{ x \to 0 }(x^{2}+1)^{1/x}$。
 令 $n=\frac{1}{x}$ 則，$n\to \infty$ as $x\to 0^{+}\implies \lim_{ n \to \infty }\left( 1+\frac{x}{n} \right)^{n}=e^{x}$。
+
+# 大會考
+
+1. Let $f\left( \frac{1+x}{1-x} \right)=x$ . Find $f'(2)$. 
+
+Sol:
+令 $g(x)=\frac{1+x}{1-x}$，則 $f(g(x))=x$。
+隱微分：$f'(g(x))g'(x)=1\implies f'(g(x))=\frac{1}{g'(x)}$。
+對 $g(x)$ 微分： $g'(x)=\frac{2}{(1-x)^{2}}$。
+我們要找 $f'(2)$，令 $g(x)= \frac{1+x}{1-x}=2\implies x=\frac{1}{3}$。
+那麼 $f'(2)=\frac{1}{g'\left( \frac{1}{3} \right)}=\frac{2}{9}$。
