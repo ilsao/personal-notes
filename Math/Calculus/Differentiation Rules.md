@@ -402,7 +402,6 @@ proof:
 $f'(1)=\lim_{ x \to 0 } \frac{f(1+x)-f(1)}{x}=\lim_{ x \to 0 } \frac{\ln(1+x)-\ln{1}}{x}=\lim_{ x \to 0 } \frac{1}{x}\ln(1+x)$ 
 $=\lim_{ x \to 0 }\ln(1+x)^{1/x}=1$ 
 那麼，因為 $e=e^{1}=e^{\lim_{ x \to 0 }\ln(1+x)^{1/x}}=\lim_{ x \to 0 }e^{\ln(1+x)^{1/x}}=\lim_{ x \to 0 }(1+x)^{1/x}$ 。
-
 令 $n=\frac{1}{x}$，那麼 $x\to0^{+}$ 則 $n\to \infty$。所以有 $e=\lim_{ n \to \infty }\left( 1+\frac{1}{n} \right)^{n}$。
 
 最後，我們可以計算：

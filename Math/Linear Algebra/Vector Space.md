@@ -159,3 +159,48 @@ $$
 可以將解集合視為一個被平移後的子空間，如果 $\mathbf{b}\neq \mathbf{0}$ 則解集合不是 $\mathbb{R}^{3}$ 的子空間。我們稱這種空間叫**仿射子空間(affine subspace)**。
 
 # Linear Independence
+
+如果想要尋找最小生成集(沒有任何多餘的向量)，我們需要了解線性獨立與線性相依的概念。
+
+我們定義：
+
+$$
+\text{向量空間 V 中的向量 }\mathbf{v_{1}, \dots,v_{n}}\text{ 如果滿足：}
+$$
+$$
+c_{1}\mathbf{v_{1}} + \dots+c_{n}\mathbf{v_{n}}=\mathbf{0} \implies c_{1},\dots c_{n}\text{ 必須全部為零}
+$$
+$$
+\text{則稱 }\mathbf{v_{1}, \dots, v_{n}}\text{ 線性獨立。}
+$$
+
+同時，我們還可以意識到線性相依的含義：向量空間中的某向量可以被寫成向量空間中的其他向量的線性組合
+
+我們可以知道，一個向量空間的最小生成集必須線性獨立。一些線性相依的向量張出的生成空間，必定等於其減去一個或多個向量使得線性獨立時張出的生成空間。
+
+可以這樣理解：
+
+如果生成集中有 $\{\mathbf{v_{1},\mathbf{v_{2}},\mathbf{v_{3}}}\}$，且 $\mathbf{v_{3}}=c_{1}\mathbf{v_{1}}+c_{2}\mathbf{v_{2}}$。
+
+那麼，這些向量形成的線性組合可以被表達為只有 $\mathbf{v_{1}}$ 與 $\mathbf{v_{2}}$ 的形式：
+$\alpha_{1}\mathbf{v_{1}}+\alpha_{2}\mathbf{v_{2}}+\alpha_{3}\mathbf{v_{3}}=(\alpha_{1}+c_{1})\mathbf{v_{1}}+(\alpha_{2}+c_{2})\mathbf{v_{2}}$ 。
+
+也就是說：$\text{Span}(\mathbf{v_{1}},\mathbf{v_{2}},\mathbf{v_{3}})=\text{Span}(\mathbf{v_{1}},\mathbf{v_{2}})$。
+
+我們如下統整觀察到的現象：
+1. 如果 $\mathbf{v_{1},\dots,\mathbf{v_{n}}}$ 張出一個向量空間 $V$，且其中某個向量可以被寫成其他 $n-1$ 個向量的線性組合，那麼那 $n-1$ 個向量同樣張出 $V$。
+2. 給定 $n$ 個向量 $\mathbf{v_{1}},\dots \mathbf{v_{n}}$。如果有辦法將某個向量寫成其他 $n-1$ 個向量的線性組合 $\Leftrightarrow$ $c_{1}\mathbf{v_{1}}+\dots+c_{n}\mathbf{v_{n}}=\mathbf{0}$ 且 $c_{1},\dots,c_{n} \neq 0$。
+
+proof (1):
+假設 $\mathbf{v_{n}}$ 可以被其他向量的線性組合表達。
+令 $\mathbf{v}$ 為向量空間 $V$ 中的向量，因為 $\mathbf{v_{1}},\dots,\mathbf{v_{n}}$ 可以張出 $V$，所以：
+$\mathbf{v}=\alpha_{1} \mathbf{v_{1}}+\dots+\alpha _{n} \mathbf{v_{n}}=\alpha_{1}\mathbf{v_{1}}+\dots+\alpha_{n}(\beta_{1}\mathbf{v_{1}}+\dots+\beta_{n-1}\mathbf{v_{n-1}})$ 
+$=(\alpha_{1}+\beta_{1})\mathbf{v_{1}} + \dots+(\alpha_{n}+\beta_{n})\mathbf{v_{n-1}}$ 
+因為向量空間 $V$ 的任意向量 $\mathbf{v}$ 都可以被表達為 $\mathbf{v_{1}},\dots,\mathbf{v_{n-1}}$ 的線性組合，所以這些向量生成 $V$。
+
+proof (2):
+
+
+本章的重點有點混亂：
+- 線性相依：某向量可以被其他向量表達 $\implies$ $c_{1}\mathbf{v_{1}}+\dots+c_{n}\mathbf{v_{n}}=\mathbf{0}$ 且 $c_{1},\dots c_{n}\neq0$。
+- 線性獨立：沒有向量可以被其他向量表達 $\implies$  $c_{1}\mathbf{v_{1}}+\dots+c_{n}\mathbf{v_{n}}=\mathbf{0}$ 且 $c_{1},\dots c_{n}\neq0$。
