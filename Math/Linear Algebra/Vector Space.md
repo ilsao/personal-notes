@@ -174,9 +174,19 @@ $$
 \text{則稱 }\mathbf{v_{1}, \dots, v_{n}}\text{ 線性獨立。}
 $$
 
-同時，我們還可以意識到線性相依的含義：向量空間中的某向量可以被寫成向量空間中的其他向量的線性組合
+同時，我們還可以意識到線性相依的含義：向量空間中的某向量可以被寫成向量空間中的其他向量的線性組合。
 
-我們可以知道，一個向量空間的最小生成集必須線性獨立。一些線性相依的向量張出的生成空間，必定等於其減去一個或多個向量使得線性獨立時張出的生成空間。
+$$
+\text{向量空間 V 中的向量 }\mathbf{v_{1}, \dots,v_{n}}\text{ 如果滿足：}
+$$
+$$
+c_{1}\mathbf{v_{1}} + \dots+c_{n}\mathbf{v_{n}}=\mathbf{0} \implies c_{1},\dots c_{n}\text{ 必須最少有一個非零}
+$$
+$$
+\text{則稱 }\mathbf{v_{1}, \dots, v_{n}}\text{ 線性相依。}
+$$
+
+我們可以知道，**一個向量空間的最小生成集必須線性獨立**。因為一些線性相依的向量張出的生成空間，必定等於其減去一個或多個向量使得線性獨立時張出的生成空間。
 
 可以這樣理解：
 
@@ -199,8 +209,99 @@ $=(\alpha_{1}+\beta_{1})\mathbf{v_{1}} + \dots+(\alpha_{n}+\beta_{n})\mathbf{v_{
 因為向量空間 $V$ 的任意向量 $\mathbf{v}$ 都可以被表達為 $\mathbf{v_{1}},\dots,\mathbf{v_{n-1}}$ 的線性組合，所以這些向量生成 $V$。
 
 proof (2):
-
+($\implies$)
+假設 $\mathbf{v_{n}}$ 可以被其他向量的線性組合表達。
+$\mathbf{v_{n}}=\alpha_{1}\mathbf{v_{1}}+\alpha_{2}\mathbf{v_{2}+\dots+\alpha_{n-1}\mathbf{v_{n-1}}}$ 
+移項可得：$\alpha_{1}\mathbf{v_{1}}+\dots+\alpha_{n-1}\mathbf{v_{n-1}}-\mathbf{v_{n}}=\mathbf{0}$ 
+如果我們設對於 $i,\dots,n-1$ 有 $c_{i}=\alpha_{i}$ ，且 $c_{n}=-1$，我們有：$c_{1}\mathbf{v_{1}}+\dots+c_{n}\mathbf{v_{n}}=\mathbf{0}$ 
+相反的，如果 $c_{1}\mathbf{v_{1}}+\dots+c_{n}\mathbf{v_{n}}=\mathbf{0}$，那麼一定有一個 $c_{i}\neq 0$ (這裡取 $c_{n}$) 使得：
+$\mathbf{v_{n}}= \frac{-c_{1}}{c_{n}}\mathbf{v_{1}}+\dots+ \frac{-c_{n-1}}{c_{n}}\mathbf{v_{n-1}}$ 
 
 本章的重點有點混亂：
-- 線性相依：某向量可以被其他向量表達 $\implies$ $c_{1}\mathbf{v_{1}}+\dots+c_{n}\mathbf{v_{n}}=\mathbf{0}$ 且 $c_{1},\dots c_{n}\neq0$。
-- 線性獨立：沒有向量可以被其他向量表達 $\implies$  $c_{1}\mathbf{v_{1}}+\dots+c_{n}\mathbf{v_{n}}=\mathbf{0}$ 且 $c_{1},\dots c_{n}\neq0$。
+- 線性相依：某向量可以被其他向量表達 $\implies$ $c_{1}\mathbf{v_{1}}+\dots+c_{n}\mathbf{v_{n}}=\mathbf{0}$ 且 $c_{1},\dots c_{n}\neq0$。$\det(A)=0$ 
+- 線性獨立：沒有向量可以被其他向量表達 $\implies$  $c_{1}\mathbf{v_{1}}+\dots+c_{n}\mathbf{v_{n}}=\mathbf{0}$ 且 $c_{1},\dots c_{n}=0$。$\det(A)\neq 0$
+
+## Geometric Interpretation
+
+如果我們有 $\mathbb{R}^{3}$ 空間中的三個向量 $\mathbf{x,y,z}$，如果 $\mathbf{x,y}$ 線性相依，那麼：$c_{1}\mathbf{x}+c_{2}\mathbf{y}=\mathbf{0}$ 其中 $c_{1}, c_{2}$ 至少一個不為零。
+假設 $c_{1}$ 不為零，那麼：$\mathbf{x}=-\frac{c_{2}}{c_{1}}\mathbf{y}$。說明 $\mathbf{x,y}$ 在三維空間中共線。
+相反如果二者線性獨立，那麼 $\mathbf{x},\mathbf{y}$ 可以在三維空間中張出一個平面。
+此時，如果 $\mathbf{z}$ 與二者線性相依，那麼 $\mathbf{z}$ 會落在該平面上。若線性獨立，則不會落在該平面上。
+
+## Theorems and Examples
+
+誒，我好厲害，他剛要講的 Theorem 我在之前就補充道上上小節了耶～
+
+$$令 \ \mathbf{x_{1}},\dots,\mathbf{x_{n}} \ 為 \ \mathbb{R}^{n} \ 中的 \ n \ 個向量，且 \ X=(\mathbf{x_{1}},\dots,\mathbf{x_{n}})。則 \ \mathbf{x_{1}},\dots,\mathbf{x_{n}} \ 線性相依 \ \Leftrightarrow X \ 奇異。$$
+
+proof:
+等式：$c_{1}\mathbf{x_{1}}+\dots+c_{n}\mathbf{x_{n}}$ 可以被寫成以下矩陣方程：$X\mathbf{c}=\mathbf{0}$ 。
+此方程有 nontrivial solution $\Leftrightarrow X$ 奇異。
+
+需要注意的是，待檢測的 $k$ 個 $\mathbb{R}^{n}$ 中的向量如果 $k\neq n$，則不能使用行列式檢測。我們必須將矩陣化成 REF，然後觀察 free variables 是否出現。如果有，則必定線性相依。相反，則線性獨立。
+
+$$
+\text{令 }\mathbf{v_{1}},\dots,\mathbf{v_{n}}\text{ 為向量空間 }V\text{ 中的向量}。\text{對於 } \mathbf{v} \in \text{Span}(\mathbf{v_{1}},\dots,\mathbf{v_{n}})\text{：}
+$$
+$$
+\mathbf{v}\text{ 可以被寫成} \ \mathbf{v_{1}},\dots,\mathbf{v_{n}}\text{唯一的線性組合方式} \Leftrightarrow\text{ } \mathbf{v_{1}},\dots,\mathbf{v_{n}}\text{ 線性獨立}
+$$
+
+proof:
+我們有 $\mathbf{v}=\alpha_{1}\mathbf{v_{1}}+\dots+\alpha_{n}\mathbf{v_{n}}$。
+假設還有 $\mathbf{v}=\beta_{1}\mathbf{v_{1}}+\dots+\beta_{n}\mathbf{v_{n}}$
+如果 $\mathbf{v_{1}},\dots,\mathbf{v_{n}}$ 線性獨立，那麼我們要證明 $\alpha_{i}=\beta_{i}$。
+我們將兩式相減，得到 $(\alpha_{1}-\beta_{1})\mathbf{v_{1}}+\dots+(\alpha_{n}-\beta_{n})\mathbf{v_{n}}=\mathbf{0}$ 。
+又因為 $\mathbf{v_{1}},\dots,\mathbf{v_{n}}$ 線性獨立，所以所有係數都應該等於零 $\alpha_{i}-\beta_{i}=0\implies\alpha_{i}=\beta_{i}$。
+若 $\mathbf{v_{1}},\dots,\mathbf{v_{n}}$ 線性相依，那麼我們要證明最少有一個 $\beta_{i}$ 不等於 $\alpha_{i}$。
+因為 $\mathbf{v_{1}},\dots,\mathbf{v_{n}}$ 線性相依，所以我們可以假設 $c_{1}\mathbf{v_{1}}+\dots+c_{n}\mathbf{v_{n}}=\mathbf{0}$，其中 $c_{1},\dots,c_{n}$ 不全為零。
+令 $\beta_{i}=\alpha_{i}+c_{i}$，那麼：
+$\beta_{1}\mathbf{v_{1}}+\dots+\beta_{n}\mathbf{v_{n}}=(\alpha_{1}+c_{1})\mathbf{v_{1}}+\dots+(\alpha_{n}+c_{n})\mathbf{v_{n}}=\mathbf{v}+\mathbf{0}=\mathbf{v}$ 
+說明一定可以找的 $\beta_{i}=\alpha_{i}+c_{i}$ 使得最少有一個 $\beta_{i}$ 不等於 $\alpha_{i}$ 使得 $\mathbf{v}=\beta_{1}\mathbf{v_{1}}+\dots+\beta_{n}\mathbf{v_{n}}$。
+
+## Vector Spaces of Functions
+
+### The Vector Space $P_{n}$ 
+
+想測試多項式 $p_{1},\dots,p_{n}$ 是否線性獨立在 $P_{n}$ 向量空間中，我們令：$c_{1}p_{1}+c_{2}p_{2}+\dots+c_{n}p_{n}=z$ 。
+
+其中，$z$ 為零多項式。即，$z(x)=0x^{n-1}+0x^{n-2}+\dots+0x+0$。
+
+我們可以將 $c_{1}p_{1}+c_{2}p_{2}+\dots+c_{n}p_{n}$ 寫成 $a_{1}x^{n-1}+\dots+a_{n}$。
+
+那麼，想要 $p_{1},\dots,p_{n}$ 線性獨立，則 $a_{1},\dots,a_{n}$ 必須全部等於零。由於 $a_{i}$ 由 $c_{i}$ 與 $p_{i}$ 構成，也就說明 $c_{1},\dots,c_{n}$ 必須全部為零。
+
+### The Vector Space $C^{(n-1)}[a,b]$ 
+
+我們同樣可以利用行列式判斷 $C^{(n-1)}[a,b]$ 中的向量是否線性獨立。
+
+假設對於標量 $c_{1},\dots,c_{n}$ 我們有：$c_{1}f_{1}(x)+\dots+c_{n}f_{n}(x)=0$。
+
+對等式左右一直隱微分，可以得到：
+
+$c_{1}f_{1}(x)+\dots+c_{n}f_{n}(x)=0$ 
+$c_{1}f_{1}'(x)+\dots+c_{n}f_{n}'(x)=0$
+$\vdots$
+$c_{1}f_{1}^{(n-1)}(x)+\dots+c_{n}f_{n}^{(n-1)}(x)=0$ 
+
+所以，可以寫成以下矩陣方程：
+
+$\begin{bmatrix}f_{1}(x) & \dots & f_{n}(x) \\ \vdots \\ f_{1}^{(n-1)}(x) & \dots & f_{n}^{(n-1)}(x)\end{bmatrix}\begin{bmatrix}c_{1} \\ \vdots \\ c_{n}\end{bmatrix}=\begin{bmatrix}0 \\ \vdots \\ 0\end{bmatrix}$ 
+
+同理，如果 $c_{1},\dots,c_{n}$ 不全為零，那麼這些函數線性相依。否則，他們線性獨立。
+
+我們令 $W[f_{1},\dots,f_{n}](x)= \begin{vmatrix}f_{1}(x) & \dots & f_{n}(x) \\\vdots \\f_{1}^{(n-1)}(x) & \dots & f_{n}^{(n-1)}(x)\end{vmatrix}$ ，且這種函數稱作 $\mathbf{Wronskian} \ \text{of} f_{1},\dots,f_{n}$。
+
+$$
+令 \ f_{1},\dots,f_{n} \ 為 \ C^{(n-1)}[a,b] \ 中的函數。
+$$
+$$
+如果存在一個點 \ x_{0} \ 在區間 \ [a,b] \ 中使得 \ W[f_{1},\dots,f_{n}](x)\neq 0，那麼 \ f_{1},\dots,f_{n} \ 線性獨立。
+$$
+
+proof:
+如果 $f_{1},\dots,f_{n}$ 線性相依，則之前說明的矩陣不論 $x$ 為多少必定奇異，也就是
+$W[f_{1},\dots,f_{n}](x)=0 \ \forall x \in [a,b]$ 。
+所以，只要可以找到任意 $x\in[a,b]$ 使得 $W=[f_{1},\dots,f_{n}](x)\neq 0$ 則 $f_{1},\dots,f_{n}$ 線性獨立。
+
+需要注意，反向結論是不成立的。也就是說就算對於所有 $x$ 都有 $W[f_{1},\dots,f_{n}](x)=0$ 並仍**不可保證** $f_{1},\dots,f_{n}$ 線性相依。因為，想要保證線性相依， $c_{i}$ 必須為一個固定常數。但是對於所有 $x$ 都有 $W[f_{1},\dots,f_{n}](x)=0$ 只能保證對於某特定 $x$ 可以找到相對應的 $c_{i}$ 使得等式成立。而這個 $c_{i}$ 有可能是常數也有可能隨著 $x$ 不同而改變。所以無法保證線性相依，但是可以說明有一定可能性這些函數線性相依。
