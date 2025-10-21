@@ -13,25 +13,22 @@
 2. (a) 托勒密如何解釋星體忽進忽退？(b) 地心說算不算科學？
 
 雖然我感覺我的答案是對的，但還是列給你看：
-(a) 利用大輪小輪的概念。星體繞著小輪轉，小輪的中心繞著大輪轉，大輪繞著地球轉。這樣就可以說明忽進忽退的現象。
+(a) 利用大輪小輪的概念。星體繞著小輪轉，小輪的中心繞著地球轉。這樣就可以說明忽進忽退的現象。
 (b) 是，只要是利用合理而科學的推理與演繹得來的知識就算是科學，就算在現在已經被證明錯誤仍算科學。
 
 3. 說明 (a) 質量守恆定律 (b) 為何⼀個東⻄的能量是「此物體能給其他物體做功的能⼒」
 
-(a) 在一個孤立的系統中，能量不會憑空出現或消失，只會從一種形式轉成另一種形式，總能量和保持不變。
+(a) 一個系統中的能量不會憑空出現或消失，只會從一種形式轉成另一種形式，**總能量和保持不變**。
 
-(b) 在物理上，作功表示一個物體的能量轉移到另一個物體上。所以，能量就是該物體能給其他物體作功的能力。
+(b) 作功會造成物體的位能或動能改變，也就是能量的改變。所以，能量就是該物體能給其他物體作功的能力。
 
 4. 說明為何摩擦力與接觸面積大小無關
 
-$P=\frac{F}{A}\implies F=PA$ 當 $F$ 固定時，接觸面積與壓力成反比。
-接觸面積大 => 壓力小，使得**微觀看來二者的電磁力減少**，單位面積摩擦力小。
-接觸面積小 => 壓力大，同理，使得單位面積摩擦力大。
-但是，我們將單位面積摩擦力乘以總接觸面積，得到的總摩擦力永遠為定值，所以摩擦力與接觸面積大小無關。
+摩擦力取決於物體與接觸面微突起造成的電磁力。面積變大時，壓力變小，使得物體與微突起接觸較淺。面積變小時壓力變大，使得物體與微突起接觸較深。單位面積電磁力乘以總面積大小即為摩擦力，雖然壓力會影響電磁力，但與面積和壓力的變化互相抵銷，所以摩擦力大小相同。
 
 5. 請⽤理想氣體公式解釋為何在深海潛⽔的⼈突然往海⾯上游是⼀件很危險的事情？
 
-由 $PV=nRT$ 如果短時間內氣體溫度與莫耳數保持不變，$P_{1}V_{1}=P_{2}V_{2}$。
+由 $PV=nRT$ 如果短時間內**氣體溫度與莫耳數保持不變**，$P_{1}V_{1}=P_{2}V_{2}$。
 我們假設有人從 90m 的深水快速上浮到海平面：(10 公尺水柱壓力 $\approx 1\text{ atm}$)
 $\frac{P_{1}}{P_{2}}=\frac{10\text{ atm}}{1\text{ atm}}=\frac{V_{2}}{V_{1}}\implies V_{1}:V_{2}=1:10$ ，氣體會變大十倍，使人的肺部爆炸。
 
@@ -56,9 +53,8 @@ $F=ma=m \frac{v^{2}}{r}=m \frac{\left( r \cdot \frac{2\pi}{T} \right)^{2}}{r}=m 
 
 8. What is “centrifugal force”? Is centrifugal force a real force from a physical point of view? If centrifugal force doesn’t exist, please explain why lots of people believe in centrifugal force.
 
-離心力是指當人或物體處於旋轉座標系(非慣性座標)中，感覺自己被向外推的一種力。
-離心力不是一種真實存在的力，而是一種假想力。因為處於非慣性坐標中，為了讓牛頓定律成立，必須引入假想力來讓數學看起來平衡。
-之所以會感覺被向外推，是因為慣性想保持原本與切線同向的移動方向，但卻被向心力向內束縛而產生的感覺。
+離心力是指當物體處於旋轉座標系(非慣性座標)中，讓物體看起來受到向外推的一個假想力力。
+離心力不是一種真實存在的力，而是一種假想力。因為處於非慣性坐標中，為了讓牛頓定律成立，必須引入假想力來讓數學看起來平衡。之所以會感覺被向外推，是因為慣性想保持原本與切線同向的移動方向，但卻被向心力向內束縛而產生的感覺。
 
 9. A 20g bullet is shot into a ballistic pendulum with a velocity of $1000\text{ m/s}$. The mass of the wooden block is 2kg. If the bullet remains embedded in the block and 80% of the energy lost in the collision is absorbed as heat by the bullet, what is the increase in the temperature of the bullet? The specific heat of the bullet is $0.1\text{ cal/g-}^{\circ}\text{C}$. 
 
@@ -76,14 +72,14 @@ $9901 \times 80\%=20\text{ g} \times 0.1\text{ cal/g-}^{\circ}\text{C} \times 4.
 
 (a) 牛頓**第一**運動定律永遠成立的坐標系。
 
-(b) 可以直接套用牛頓三大運動定律而無需引入假想力。
+(b) 可以直接套用牛頓三大運動定律而**無需引入假想力**。
 
 (c) 體積，質量，溫度... 
 
 
 11. 絕對溫度代表何種物理量？潛熱為何不會影響溫度？
 
-絕對溫度代表 $K$(Kelvin)。潛熱是在相變過程中吸收或放出的熱，其能量用來增減粒子間的位能，不會造成動能改變，也就導致溫度不變。
+絕對溫度代表 $K$(Kelvin)。潛熱是在相變過程中吸收或放出的熱，其能量用來**增減**粒子間的位能，不會造成動能改變，也就導致溫度不變。
 
 12. A mole of an ideal gas is taken from state A to state C along the path ABC. (a) If 1000cal of heat flow into the gas and the gas does 2100J of work, what is the change in the internal energy of the gas? (b) When the gas is returned from C to A along the path CDA, 700cal of heat flow out of the gas. How much work is done on the gas? (c) What is the change in the temperature of the gas when it is brought back from C to A? (d) If the pressure of the gas in state A is 2 atm, what is the difference in the volume of the gas between stated D and A?
 
@@ -112,8 +108,8 @@ $-2080 = -700 \times 4.18 - \Delta W\implies\Delta W = -846\text{ J}$
 
 (c)
 之前我有一個錯誤觀念，我以為 $\Delta Q=nC_{v}\Delta T$ 會在任意情況下成立。
-事實上並不是，此條件僅在定容的情況下成立，即沒有作功($\Delta W=0$)的條件下才成立。
-其實，應該是 $\Delta E=nC_{v}\Delta T$ 才對。
+事實上並不是，此條件**僅在定容的情況下成立，即沒有作功($\Delta W=0$)的條件下才成立**。
+其實，應該是 **$\Delta E=nC_{v}\Delta T$ 才對**。
 那麼 $-2080 = 1 \times \frac{3}{2}R \times \Delta T \implies\Delta T \approx -167\text{ K}$ 
 
 (d)
