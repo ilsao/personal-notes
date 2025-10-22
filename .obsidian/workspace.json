@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Math/Calculus/Differentiation Rules.md",
+                "file": "Math/Calculus/Applications of Differentiation.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Differentiation Rules"
+              "title": "Applications of Differentiation"
             }
           },
           {
@@ -194,9 +194,10 @@
   },
   "active": "26720c0ea3e29b4d",
   "lastOpenFiles": [
-    "Math/Linear Algebra/Determinants.md",
     "Math/Calculus/Differentiation Rules.md",
-    "Pasted image 20251022141233.png",
+    "Math/Calculus/Applications of Differentiation.md",
+    "Math/Linear Algebra/Determinants.md",
+    "pic/Pasted image 20251022141233.png",
     "Math/Linear Algebra/Vector Space.md",
     "pic/Pasted image 20251021232959.png",
     "Computer Networking/Application Layer.md",
