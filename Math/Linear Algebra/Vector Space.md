@@ -305,3 +305,47 @@ $W[f_{1},\dots,f_{n}](x)=0 \ \forall x \in [a,b]$ 。
 所以，只要可以找到任意 $x\in[a,b]$ 使得 $W=[f_{1},\dots,f_{n}](x)\neq 0$ 則 $f_{1},\dots,f_{n}$ 線性獨立。
 
 需要注意，反向結論是不成立的。也就是說就算對於所有 $x$ 都有 $W[f_{1},\dots,f_{n}](x)=0$ 並仍**不可保證** $f_{1},\dots,f_{n}$ 線性相依。因為，想要保證線性相依， $c_{i}$ 必須為一個固定常數。但是對於所有 $x$ 都有 $W[f_{1},\dots,f_{n}](x)=0$ 只能保證對於某特定 $x$ 可以找到相對應的 $c_{i}$ 使得等式成立。而這個 $c_{i}$ 有可能是常數也有可能隨著 $x$ 不同而改變。所以無法保證線性相依，但是可以說明有一定可能性這些函數線性相依。
+
+# 重要例題
+
+1. Let $C$ be the set of complex numbers. Define addition on $C$ by $(a+bi)+(c+di)=(a+c)+(b+d)i$ and define scalar multiplication by $\alpha(a+bi)=\alpha a+\alpha bi$ for all real numbers $\alpha$. Show that $C$ is a vector space with these operations.
+
+Sol:
+這題很無聊，寫過來只是讓你知道怎麼證。但是如果考試真的讓你證十條正不正確，這邊推薦直接送他分。
+![[Pasted image 20251021232959.png]]
+
+
+2. Show that $\mathbb{R}^{m\times n}$ is also a vector space.
+
+Sol:
+這裡只給出思路：假設兩個矩陣 $A$ 與 $B$。對兩個矩陣，我們使用**每個元素的視角**進行驗證與運算，就可以得出結論。
+
+3. Show that the element $\mathbf{0}$ in a vector space is unique.
+
+Sol:
+(I) 我的寫法
+令 $\mathbf{z_{1}}, \mathbf{z_{2}}$ 皆為零向量。那麼，$\forall \mathbf{x} \in V$ 有 $\mathbf{x+z_{1}}=\mathbf{x}$ 與 $\mathbf{x+z_{2}=x}$ 。
+則 $\mathbf{x+z_{1}=x+z_{2}}$。
+左右同時加上 $\mathbf{-x}$，得到 $\mathbf{z_{1}=z_{2}}$。
+所以，零向量唯一。
+
+(II) AI 漂亮版，考試寫這個吧。前一個會用到下一題才證明的性質。
+令 $\mathbf{z_{1}}, \mathbf{z_{2}}$ 皆為零向量。那麼，$\forall \mathbf{x} \in V$ 有 $\mathbf{x+z_{1}}=\mathbf{x}$ 與 $\mathbf{x+z_{2}=x}$ 。
+取 $\mathbf{x}=\mathbf{z_{2}}$，得 $\mathbf{z_{2}+z_{1}}=\mathbf{z_{2}}=\mathbf{z_{1}+z_{2}}$。(加法交換律)
+取 $\mathbf{x}=\mathbf{z_{1}}$，得 $\mathbf{z_{1}}+\mathbf{z_{2}}=\mathbf{z_{1}}$。
+得到，$\mathbf{z_{1}}=\mathbf{z_{2}}$。
+所以，零向量唯一。
+
+4. Let $\mathbf{x,y}$ and $\mathbf{z}$ be vectors in a vector space $V$. Prove that if $\mathbf{x+y=x+z}$ then $\mathbf{y=z}$. 
+
+Sol:
+左右同時**加上** $\mathbf{-x}$：$(\mathbf{-x+x})+\mathbf{y}=(\mathbf{-x+x})+\mathbf{z}\implies \mathbf{0+y}=\mathbf{0+z}$  
+$\implies \mathbf{y=z}$ 
+
+5. Let $V$ be a vector space and let $\mathbf{x} \in V$. Show that (a) $\beta \mathbf{0}=\mathbf{0}$ for each scalar $\beta$. (b) if $\alpha \mathbf{x}=\mathbf{0}$, then either $\alpha=0$ or $\mathbf{x}=\mathbf{0}$. 
+
+(a)
+因為 $\beta \mathbf{x}\in V$，可以構造出方程：$\beta \mathbf{x}+\beta \mathbf{0}=\beta(\mathbf{x+0})=\beta \mathbf{x}$。
+因為 $\beta \mathbf{x}+\beta \mathbf{0}=\beta \mathbf{x}$，左右同加 $-\beta \mathbf{x}$ 得到 $\beta \mathbf{0}=\mathbf{0}$。
+
+(b)

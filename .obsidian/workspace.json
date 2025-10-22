@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Math/Linear Algebra/Vector Space.md",
+                "file": "Math/Calculus/Differentiation Rules.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Vector Space"
+              "title": "Differentiation Rules"
             }
           },
           {
@@ -194,8 +194,12 @@
   },
   "active": "26720c0ea3e29b4d",
   "lastOpenFiles": [
-    "Computer Networking/Application Layer.md",
+    "Math/Linear Algebra/Determinants.md",
+    "Math/Calculus/Differentiation Rules.md",
+    "Pasted image 20251022141233.png",
     "Math/Linear Algebra/Vector Space.md",
+    "pic/Pasted image 20251021232959.png",
+    "Computer Networking/Application Layer.md",
     "Physics/Midterm Preparation.md",
     "Physics/Kinetic Theory of Gases and the Concept of Temperature.md",
     "Physics/Rotational Dynamics.md",
@@ -206,7 +210,6 @@
     "Physics/Newton's Laws.md",
     "Physics/Uniform Accelerated Motion.md",
     "Physics/Vector.md",
-    "Math/Calculus/Differentiation Rules.md",
     "Math/Calculus/Basic concept.md",
     "Math/Calculus/Limit.md",
     "pic/Pasted image 20251017233410.png",
@@ -216,22 +219,18 @@
     "pic/Pasted image 20251017201252.png",
     "Math/Linear Algebra/Matrix and Systems.md",
     "pic/Pasted image 20251015133344.png",
-    "Math/Linear Algebra/Determinants.md",
     "Computer Networking/Transport Layer.md",
     "pic/Pasted image 20251014175953.png",
     "pic/Pasted image 20251014151039.png",
     "Cryptography/Section 1.md",
     "Computer Networking/lab1.md",
     "pic/Pasted image 20251014131706.png",
-    "pic/Pasted image 20251013205255.png",
     "Math/Calculus/Calculus, Early Transcendentals.pdf",
-    "pic/Pasted image 20251008164626.png",
     "Math/Linear Algebra/U1 U2 Summary Note.md",
     "Math/Linear Algebra/The Art of Linear Algebra.pdf",
     "時間紀錄/Week 5.md",
     "大學安排.md",
     "時間紀錄/Week 1.md",
-    "時間紀錄/Week 4.md",
     "時間紀錄",
     "Computer Networking/Computer Networking A top-down approach.pdf",
     "故事創作與影像敘事",

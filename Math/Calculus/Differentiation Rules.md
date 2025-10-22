@@ -446,6 +446,70 @@ $$
 \boxed{\frac{d}{dx}(\cot^{-1}x)= -\frac{1}{1+x^{2}}}
 $$
 
+# Linear Approximations and Differentials
+
+## Linearization and Approximation
+
+我們可以使用在 $(a,f(a))$ 的切線來估計 $y=f(x)$，其中， $x$ 很接近 $a$ 。
+
+那麼，在 $(a,f(a))$ 的切線我們可以使用：
+
+$$
+L(x)=f(a) + f'(a)(x-a)
+$$
+
+這個稱為：Linearization of $f$ at $a$。
+
+那麼估計 $f(x) \approx L(x)$ 可以寫為：
+
+$$
+\boxed{f(x) \approx f(a) + f'(a)(x-a)}
+$$
+
+這個方程稱作 linear approximation 或 tangent line approximation of $f$ at $a$。
+
+這樣可以推導出很經典的：當 $\theta$ 很接近 $0$ 時，$\sin \theta \approx \theta$ 與 $\cos \theta \approx 1$。
+
+$f(x)\approx L(x)=\sin0+\cos0(x-0)=x$ 
+
+與
+
+$f(x)\approx L(x)=\cos0-\sin 0(x-0)=1$ 
+
+## Differentials
+
+考慮 $y=f(x)$，其中 $f$ 為可導函數。此時，$dx$ 為獨立變量，$dy$ 則依賴於 $dx$ 的值。
+
+$$
+\boxed{dy=f'(x)dx}
+$$
+
+需要知道的是，$dx$ 不必趨近於零，而可以是任意數字。而 $dy$ 則是經由 $f'(x)$ 線性預估出來的值，與 $\Delta y$ 存在誤差。
+
+可以使用下圖來理解 $dy$ 與 $\Delta y$ 的差別：
+
+![[Pasted image 20251022141233.png]]
+
+因為 $dx$ 為 $x$ 的變化量，所以 $dx=\Delta x$。
+
+但是因為 $dy$ 基於斜率為 $f'(x)$ 且經過 $(x,f(x))$ 所做的 linear approximation 預估，所以與真正的 $\Delta y$ 存在誤差。
+
+真正的 $\Delta y$ 如下：$\Delta y=f(x+\Delta x)-f(x)$。
+
+可以觀察出來，當 $dx$ 越小，$\Delta y$ 越接近 $dy$。
+
+由於 $f(x) \approx f(a) + f'(a)(x-a)$，我們可以將 $f(a+dx)\approx f(a)+f'(a)(dx)=f(a)+dy$ 。
+
+例如，我們想尋找 $\sqrt{ 4.05 }$，那麼，可以藉助 $f(x)=\sqrt{ x+3 }$。
+(I)
+$f(x)\approx f(1)+f'(1)(x-1)=2+\frac{1}{4}(x-1)=\frac{7}{4}+\frac{x}{4}$ ($x$ 在 $1$ 附近時成立)
+取 $x=1.05$，$f(1.05)\approx \frac{7}{4}+\frac{1.05}{4} =2.0125$。
+
+(II)
+使用上述的 $dy$ 與 $dx$ 的關係。
+$dy=f'(x)dx$ ，此處取 $dx=0.05\implies dy=0.0125$。
+取 $a=1$，套用 $f(a+dx)\approx f(a)+dy$。$f(1+0.05)=f(1)+dy=2.0125$。
+
 # Tips
 
 - $x^{n}-a^{n}=(x-a)\sum_{k=0}^{n-1}x^{n-1-k}a^{k}=(x-a)(x^{n-1}+x^{n-2}a+\dots+xa^{n-2}+a^{n-1})$ 
