@@ -52,3 +52,25 @@ proof:
 1. 在開區間 $(a,b)$ 上尋找 $f$ 的關鍵點。
 2. 尋找端點時 $f$ 的值。
 3. 比較在第一與第二步上尋找的值，最大者為全局最大值，反之為全局最小值。
+
+# Summary of Curve Sketching
+
+## Guidelines for Sketching a Curve
+
+A. Domain and **Range**
+
+B. Intercepts
+
+C. Symmetry
+
+D. Asymptotes
+
+Slant Asymptotes: $\lim_{ x \to \infty }[f(x)-(mx+b)]=0$ => (i) $\lim_{ x \to \infty } \frac{f(x)}{x}=m$ (ii) $\lim_{ x \to \infty }[f(x)-mx]=b$ 
+
+E. Interval of Increase or Decrease
+
+F. Local Maximum or Minimum Values
+
+G. Concavity and Points of Inflection
+
+H. Sketch the Curve

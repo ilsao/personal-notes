@@ -349,3 +349,17 @@ $\implies \mathbf{y=z}$
 因為 $\beta \mathbf{x}+\beta \mathbf{0}=\beta \mathbf{x}$，左右同加 $-\beta \mathbf{x}$ 得到 $\beta \mathbf{0}=\mathbf{0}$。
 
 (b)
+對於 $\alpha=0$，驗證 $\alpha \mathbf{x}=0\mathbf{x}=\mathbf{0}$。
+$0\mathbf{x}=(0+0)\mathbf{x}=0\mathbf{x}+0\mathbf{x}$。
+左右同加 $-0\mathbf{x}$，得到 $\mathbf{0}=0\mathbf{x}$。命題成立。
+對於 $\alpha\neq 0$，原式左右同乘 $\alpha^{-1}$：$\alpha^{-1}\alpha \mathbf{x}=\alpha^{-1}\mathbf{0}$。
+$1\mathbf{x}=\alpha^{-1}\mathbf{0}\implies\mathbf{x}=\alpha^{-1}\mathbf{0}=\mathbf{0}$。(利用 (a) 小題結論)
+所以，若 $\alpha \mathbf{x}=0$，則 $\alpha=0$ 或 $\mathbf{x}=\mathbf{0}$。
+
+6. Let $S$ be the set of all ordered pairs of real numbers. Define scalar multiplication and addition on $S$ by $\alpha(x_{1},x_{2})=(\alpha x_{1},\alpha x_{2})$ and $(x_{1},x_{2})\oplus (y_{1},y_{2})=(x_{1}+y_{1},0)$. Show that $s$ is not a vector space. Which of the eight axioms fail to hold? 
+
+Sol:
+(僅列出不符合項)
+首先，令 $\mathbf{0}=(\alpha,\beta)$ 則 $(x_{1},x_{2})+\mathbf{0}=(x_{1}+\alpha,0)\neq (x_{1},x_{2})$ ，所以 $\mathbf{x}+\mathbf{0}=\mathbf{x}$ 不成立，$s$ 不是一個向量空間。
+由上，因為 $\mathbf{x+0=x}$ 不成立，那麼左右同加 $-\mathbf{x}$ 的 $\mathbf{x}+(-\mathbf{x})=\mathbf{0}$ 也不成立。
+最後，$(\alpha+\beta)(x_{1},x_{2})=((\alpha+\beta)x_{1},(\alpha+\beta)x_{2}) \neq\alpha(x_{1},x_{2})+\beta(x_{1},x_{2})=((\alpha+\beta)x_{1},0)$ 。
