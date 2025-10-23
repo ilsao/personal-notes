@@ -498,7 +498,11 @@ $$
 
 可以觀察出來，當 $dx$ 越小，$\Delta y$ 越接近 $dy$。
 
-由於 $f(x) \approx f(a) + f'(a)(x-a)$，我們可以將 $f(a+dx)\approx f(a)+f'(a)(dx)=f(a)+dy$ 。
+由於 $f(x) \approx f(a) + f'(a)(x-a)$，我們可以有：$f(a+dx)\approx f(a)+f'(a)(dx)=f(a)+dy$
+
+$$ 
+\boxed{f(a+dx)\approx (a)+dy}
+$$
 
 例如，我們想尋找 $\sqrt{ 4.05 }$，那麼，可以藉助 $f(x)=\sqrt{ x+3 }$。
 (I)
@@ -520,6 +524,7 @@ $dy=f'(x)dx$ ，此處取 $dx=0.05\implies dy=0.0125$。
 - 當你不會微分某個函數時，想想他的反函數會不會比較好算。
 - 對於 $\frac{d}{dx}[f(x)]^{g(x)}$ 形式的問題，可以使用對數解決。例如：$\frac{d}{dx}(x^{\sqrt{ x }})$。
 - 大會考好像蠻喜歡考 Chain Rule + implicit differentiation 的。如果有那種給你 $f(x)$ 讓你求 $(f^{-1})'(n)$ 的題目，就列 $f^{-1}(f(x))=x$ 然後隱微分 $(f^{-1})'(f(x))= \frac{1}{f'(x)}$ 就好。例如：底下大會考第一題。
+- 注意題目要求。若 Find the "derivative" of y，是求 $y'$。若 Find the "differential" of y，是求 $dy$。
 # 重要例題
 
 1. Differentiate the function $f(v)= v^{-2/3}-2e^{v}$ 
@@ -664,6 +669,40 @@ Sol:
 `~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^ 因為 ln 在(0, infty) 連續`
 又 $e^{x}=e^{\ln(\lim_{ h \to 0 }(1+xh)^{1/h})}=\lim_{ h \to 0 }(1+xh)^{1/h}$。
 令 $n=\frac{1}{h}$ 則，$n\to \infty$ as $h\to 0^{+}\implies \lim_{ n \to \infty }\left( 1+\frac{x}{n} \right)^{n}=e^{x}$。
+
+16. Estimate $\cos29^{\circ}$. 
+
+Sol:
+(I)
+令 $f(x)=\cos\left( \frac{\pi}{6}-x \right)$。則在 $x=0$ 附近的 linearization 為：$L(x)= \frac{\sqrt{ 3 }}{2}-\frac{x}{2}$ 。
+取 $x=\frac{\pi}{180}$，則 $f\left( -\frac{\pi}{180} \right)=\cos29^{\circ}\approx L\left( -\frac{\pi}{180} \right)=\frac{\sqrt{ 3 }}{2}+\frac{\pi}{360}$ 
+
+(II)
+令 $y=f(x)=\cos x$，則 $dy=-\sin x \ dx$
+取 $x=\frac{\pi}{6}$，$dx=-\frac{\pi}{180}$，則 $dy=\frac{\pi}{360}$。
+$f\left( \frac{\pi}{6}-\frac{\pi}{180} \right)=\cos29^{\circ} \approx f\left( \frac{\pi}{6} \right)+dy= \frac{\sqrt{ 3 }}{2}+\frac{\pi}{180}$ 
+
+17.   The circumference(圓周長) of a sphere was measured to be 84 cm with a possible error of 0.5 cm. (a) Use differentials to estimate the maximum error in the calculated surface area. What is the relative error? (b) Use differentials to estimate the maximum error in the calculated volume. What is the relative error?
+
+Sol:
+(a)
+我們有 $2\pi r=84\implies r=\frac{84}{2\pi}$ 與 $dr=\Delta r=\frac{0.5}{2\pi}=\frac{1}{4\pi}$ 
+$S=4\pi r^{2}$ 
+$dS=8\pi r \ dr$ 
+$\frac{\Delta S}{S}\approx \frac{dS}{S}=\frac{8\pi r \ dr}{4\pi r^{2}}= \frac{2dr}{r}= \frac{1}{2\pi}\times \frac{2\pi}{84}\approx 1.12\%$ 
+
+(b)
+$V=\frac{4}{3}\pi r^{3}$ 
+$dV=4\pi r^{2}dr$ 
+$\frac{\Delta V}{V}\approx \frac{dV}{V}= \frac{4\pi r^{2}dr}{\frac{4}{3}\pi r^{3}}=\frac{3dr}{r}=\frac{3}{4\pi}\times \frac{2\pi}{84}\approx 1.8\%$ 
+
+18. If a current I passes through a resistor with resistance R, Ohm’s Law states that the voltage drop is V− RI. If V is constant and R is measured with a certain error, use differentials to show that the relative error in calculating I is approximately the same (in magnitude) as the relative error in R.
+
+Sol:
+$V=IR\implies I=\frac{V}{R}\implies dI=-\frac{V}{R^{2}}dR$ 
+The relative error in I is: $\frac{\Delta I}{I}\approx \frac{dI}{I}=-\frac{V}{R^{2}}dR \times \frac{R}{V}=-\frac{dR}{R}$ 
+The relative error in R is: $\frac{\Delta R}{R}\approx \frac{dR}{R}$ 
+所以，the relative error in I 與 the relative error in R 大小大約相同。
 
 # 大會考
 
