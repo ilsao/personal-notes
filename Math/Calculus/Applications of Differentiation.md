@@ -13,6 +13,8 @@
 
 注意，此處的 x near c 表示該值落在**包含 $c$ 的某個開區間中**。也就是說，**local maximum 與 minimum 不可能出現在端點處**。
 
+但是，**局部極值可能出現在非連續的地方**喔！
+
 一個數可以可以同時是局部最大/小值也是全局最大/小值。
 
 ok啊，在了解完以上高中就了解過的東西，我們就可以來學習**極值定理**(The Extreme Value Theorem)啦！
@@ -88,6 +90,72 @@ Sol:
 
 ## The Mean Value Theorem
 
+**The Mean Value Theorem** 說，若：
+1. $f$ 在閉區間 $[a,b]$ 上連續。
+2. $f$ 在開區間 $(a,b)$ 上可導。
+
+一定存在一個在 $(a,b)$ 中的數 $c$ 使得：
+
+$$
+\boxed{f'(c)= \frac{f(b)-f(a)}{b-a}
+}
+$$
+
+或，
+
+$$
+\boxed{f(b)-f(a)=f'(c)(b-a)}
+$$
+
+proof:
+首先，我們定義**函數 $h(x)$ 為 $f$ 與直線 $AB$ 的差**。(構造輔助函數 $h$ 使得將兩端拉平，構造出 Rolle's Theorem 的使用條件)
+![[Pasted image 20251024114606.png]]
+那麼，$h(x)=f(x)-f(a)- \frac{f(b)-f(a)}{b-a}(x-a)$。
+我們想要對 $h(x)$ 套用 Rolle's Theorem，所以需要確認：
+1. $h$ 在 $[a,b]$ 上連續。因為一個連續函數 $f$ + 一個多項式(連續)得到的函數還是連續。
+2. $h$ 在 $(a,b)$ 上可導。因為一個可導函數 $f$ + 一個多項式(可導)得到的函數還是可導。
+3. $h(a)=0=h(b)$ 。
+套用 Rolle's Theorem，得出必定有一落在 $(a,b)$ 中的數 $c$ 使得 $h'(c)=0$。
+因為 $h'(x)=f'(x)- \frac{f(b)-f(a)}{b-a}$，又 $h'(c)=0\implies f'(c)= \frac{f(b)-f(a)}{b-a}$。
+
+我們可以使用幾何觀點來理解這個定理。$\frac{f(b)-f(a)}{b-a}$ 代表的是 $AB$ 的斜率 $m_{AB}$，所以此定理說明的是，函數圖形上一定有某點的切線斜率等於 $m_{AB}$。用圖形解釋也很直觀，我們只要做 $AB$ 線段，將它向上或向下平移，直到與圖形相切。該切點就是 $(c,f(c))$。
+
+或者，我們也可以用物理角度解釋均值定理。一輛車的瞬時速度一定會至少一次等於平均速度。
+
+我們也可以使用均值定理，從導數的資訊中取得原函數的資訊，如以下 Example 1。
+
+藉由均值定理，我們還可以得出以下定理：**如果所有 $x\in(a,b)$ 都使得 $f'(x)=0$，則 $f$ 在 $(a,b)$ 中為常數**。
+
+proof:
+令 $x_{1},x_{2}\in(a,b)$，且 $x_{1}<x_{2}$。因為 $f$ 在 $(a,b)$ 可導，所以必在 $(x_{1},x_{2})$ 可導且在 $[x_{1},x_{2}]$ 連續。
+套用均值定理，一定可以找到一個數 $c\in(x_{1},x_{2})$ 使得 $f(x_{2})-f(x_{1})=f'(c)(x_{2}-x_{1})$。
+因為 $f'(c)=0$，所以 $f(x_{2})-f(x_{1})=0\implies f(x_{2})=f(x_{1})$。
+得到，對任意在 $(a,b)$ 上的兩點，$f$ 都有相同值。這說明 $f$ 在 $(a,b)$ 中為常數函數。
+
+注意：$f(x)=\frac{x}{|x|}$ 的定義域為 $D=\{x|x\neq 0\}$，且對任意 $x\in D$ 我們有 $f'(x)=0$，但 $f$ 卻不是常數函數。這與上述定理並不矛盾，因為 $D$ 顯然不是一個區間。
+
+我們還可以通過均值定理得到以下定理：**如果 $f'(x)=g'(x)$ 對任意 $x\in(a,b)$ 皆成立，則在 $(a,b)$ 上 $f-g$ 為常數函數。即，$f(x)=g(x)+c$，其中 $c$ 為常數。**
+
+proof:
+令 $F(x)=f(x)-g(x)\implies F'(x)=f'(x)-g'(x)=0$，則根據上一個定理，$F(x)=f(x)-g(x)=c$，其中 $c$ 為一個常數。
+
+### Example
+
+1. Suppose $f(0)=-3$ and $f'(x)\leq5$ for all values of $x$. How large can $f(2)$ possibly be?
+
+Sol:
+因為函數處處可導，所以處處連續。
+在閉區間 $[0,2]$ 套用均值定理。說明，一定存在一個數 $c\in(0,2)$ 使得：
+$f(2)-f(0)=f'(c)(2-0)\implies f(2)=f(0)+2f'(c)\leq7$ 
+
+2. Prove the identity $\tan^{-1}x+\cot^{-1}x=\frac{\pi}{2}$. 
+
+Sol
+令 $f(x)=\tan^{-1}x+\cot^{-1}x$，則 $f'(x)= \frac{1}{1+x^{2}}-\frac{1}{1+x^{2}}=0$。
+因為對任意 $x$ 來說 $f'(c)=0$ 都成立，所以 $f(x)$ 是一個常數。
+想找到該常數的值很簡單，隨便代一個數字進去就好。
+代入 $x=1$，$f(1)=\frac{\pi}{4}+\frac{\pi}{4}=\frac{\pi}{2}$。
+
 # Summary of Curve Sketching
 
 ## Guidelines for Sketching a Curve
@@ -109,3 +177,17 @@ F. Local Maximum or Minimum Values
 G. Concavity and Points of Inflection
 
 H. Sketch the Curve
+
+# Tips
+
+- 局部極值可能發生在非連續處，但不可能發生在端點數。
+
+# 重要例題
+
+1. Find the critical numbers of the function $F(x)=x^{4/5}(x-4)^{2}$. 
+
+Sol:
+這題難在化簡，放上來讓你練練手浪費浪費時間。
+$F'(x)=\frac{4}{5}x^{-1/5}(x-4)^{2}+2x^{4/5}(x-4)\implies F'(x)= \frac{(x-4)(14x-16)}{5x^{1/5}}$ 
+$F'(x)=0\implies x=4\text{ or } \frac{8}{7}$ . $F'(0)$ 不存在。
+所以，關鍵點為：$0,4, \frac{8}{7}$。
