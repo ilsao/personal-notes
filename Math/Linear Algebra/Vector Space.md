@@ -5,43 +5,24 @@
 
 令 $V$ 為定義了加法與數量積操作的**非空集合**($\mathbf{0} \in V$)。對於 $\mathbf{x}$ 與 $\mathbf{y}$ 在 $V$ 中，我們有 $\mathbf{x}+\mathbf{y}$ 仍在 $V$ 中。如果有數量積 $\alpha$，我們有 $\alpha \mathbf{x}$ 仍在 $V$ 中。我們稱符合以下定義且具有加法與數量積操作的集合 $V$ 為向量空間。
 
-- $\mathbf{x}+\mathbf{y} \in V$ for any x and y in V. 
-- $\alpha \mathbf{x} \in V$ for any scalar $\alpha$ and $x$ in V. 
 - $\mathbf{x}+\mathbf{y}=\mathbf{y}+\mathbf{x}$ for any x and y in V. 
 - $(\mathbf{x+y})+\mathbf{z}=\mathbf{x+(\mathbf{y+z})}$ for any x, y, and z in V. 
 - There exists an element $\mathbf{0}$ in V such that $\mathbf{x}+\mathbf{0}=\mathbf{x}$ for each $\mathbf{x} \in V$. 
 - For each $\mathbf{x} \in V$, there exists an element $-\mathbf{x}$ in V such that $\mathbf{x}+(-\mathbf{x})=\mathbf{0}$. 
 - $\alpha(\mathbf{x}+\mathbf{y})=\alpha \mathbf{x}+\alpha \mathbf{y}$ for each scalar $\alpha$ and any $\mathbf{x}$ and $\mathbf{y}$ in V. 
+- $(\alpha+\beta)\mathbf{x}=\alpha \mathbf{x}+\beta \mathbf{x}$. 
 - $(\alpha\beta)\mathbf{x}=\alpha(\beta \mathbf{x})$ for any scalars $\alpha$ and $\beta$ and any $\mathbf{x} \in V$. 
 - $1\mathbf{x}=\mathbf{x}$ for all $\mathbf{x}\in V$. 
+- $\mathbf{x}+\mathbf{y} \in V$ for any x and y in V. 
+- $\alpha \mathbf{x} \in V$ for any scalar $\alpha$ and $x$ in V. 
 
-以上十條的第一與第二條很重要！我們舉例來跟你說為啥：
+以上十條的最後兩條很重要！我們舉例來跟你說為啥：
 
 假設有一個集合：$W=\{(a,1) | a \text{ real}\}$。
 
 假設兩個元素 $(3,1)$ 與 $(5,1)$ 在集合中。$(3,1)+(5,1)=(8,2) \not\in W$，且數量積也不在 $W$ 中。所以 $W$ 不是一個向量空間。
 
 對於向量空間中的元素，我們就稱為向量。
-
-## The Vector Space $C[a,b]$ 
-
-我們定義 $C[a,b]$ 為所有在區間 $[a,b]$ 皆有定義且連續的實數函數構成的向量空間。所以，我們的向量就是被包含在 $C[a,b]$ 中的函數們。
-
-我們檢查 $(f+g)(x)=f(x)+g(x)$(兩連續函數的和仍為連續函數)，$(\alpha f)(x)=\alpha f(x)$(常數乘以連續函數仍為連續函數) 皆在 $C[a,b]$ 中。
-
-因此，我們可以定義加法操作 $(f+g)(x)=(g+f)(x)$ 滿足 $\mathbf{x}+\mathbf{y}=\mathbf{y}+\mathbf{x}$(因為 $(f+g)(x)=f(x)+g(x)=g(x)+f(x)=(g+f)(x)$)。
-
-我們還可以定義一個函數 $z(x)=0\text{ for all }x\text{ in }[a,b]$，使得 $f+z=f\text{ for all }f\text{ in }C[a,b]$。
-
-哎呀，對於剩下的公理就留給可愛滴讀者證明叭～
-
-## The Vector Space $P_{n}$ 
-
-定義 $P_{n}$ 代表所以最高次係數小於等於 $n$ 的多項式形成的集合。定義 $p+q$ 與 $\alpha p$ 如下：$(p+q)(x)=(q+p)(x)$ 與 $(\alpha p)(x)=\alpha p(x)$ 對於所有 $x \in  \mathbb{R}$ 成立。在這種情況下，零向量等於零多項式。
-
-作者又很欠扁啦～說想證明公理對 $P_{n}$ 都成立非常手拿把掐，所以這個東東是一個向量空間呦！
-
-需要注意的是 $P_{n}$ 的定義，如果定義變成最高次係數為 $n$ 且其係數不為零，那麼這個集合就不是向量空間。舉一個簡單的反例：$x^{n} + (-x^{n})=0 \not\in P'_{n}$。
 
 ## Additional Properties of Vector Spaces
 
@@ -68,6 +49,26 @@ $\mathbf{0}=\mathbf{(-x)+\mathbf{x}}=0+0\mathbf{x}=0\mathbf{x}$
 證明這條會用到以上兩個定理喔～
 $\mathbf{0}=0\mathbf{x}=(1+(-1))\mathbf{x}=1\mathbf{x}+(-1\mathbf{x})$ 
 $1\mathbf{x}+(-1\mathbf{x})=0\implies (-1)\mathbf{x}=-\mathbf{x}$ 
+
+## The Vector Space $C[a,b]$ 
+
+我們定義 $C[a,b]$ 為所有在區間 $[a,b]$ 皆有定義且連續的實數函數構成的向量空間。所以，我們的向量就是被包含在 $C[a,b]$ 中的函數們。
+
+我們檢查 $(f+g)(x)=f(x)+g(x)$(兩連續函數的和仍為連續函數)，$(\alpha f)(x)=\alpha f(x)$(常數乘以連續函數仍為連續函數) 皆在 $C[a,b]$ 中。
+
+因此，我們可以定義加法操作 $(f+g)(x)=(g+f)(x)$ 滿足 $\mathbf{x}+\mathbf{y}=\mathbf{y}+\mathbf{x}$(因為 $(f+g)(x)=f(x)+g(x)=g(x)+f(x)=(g+f)(x)$)。
+
+我們還可以定義一個函數 $z(x)=0\text{ for all }x\text{ in }[a,b]$，使得 $f+z=f\text{ for all }f\text{ in }C[a,b]$。
+
+哎呀，對於剩下的公理就留給可愛滴讀者證明叭～
+
+## The Vector Space $P_{n}$ 
+
+定義 $P_{n}$ 代表所以最高次係數小於等於 $n$ 的多項式形成的集合。定義 $p+q$ 與 $\alpha p$ 如下：$(p+q)(x)=(q+p)(x)$ 與 $(\alpha p)(x)=\alpha p(x)$ 對於所有 $x \in  \mathbb{R}$ 成立。在這種情況下，零向量等於零多項式。
+
+作者又很欠扁啦～說想證明公理對 $P_{n}$ 都成立非常手拿把掐，所以這個東東是一個向量空間呦！
+
+需要注意的是 $P_{n}$ 的定義，如果定義變成最高次係數為 $n$ 且其係數不為零，那麼這個集合就不是向量空間。舉一個簡單的反例：$x^{n} + (-x^{n})=0 \not\in P'_{n}$。
 
 # Subspaces
 
@@ -107,7 +108,6 @@ $$
 
 所以，$\mathbf{x}+\mathbf{y} \in N(A)$。那麼，$N(A)$ 確實為 $\mathbb{R}^{n}$ 的子空間。我們稱 $N(A)$ 為：**零空間(null space)**。
 
-
 ## The Span of a Set of Vectors
 
 令 $\mathbf{v_{1}}, \mathbf{v_{2}}, \dots, \mathbf{v_{n}}$ 是向量空間 $V$ 中的向量，我們稱 $\alpha \mathbf{v_{1}}+\alpha \mathbf{v_{2}}+\dots+\alpha \mathbf{v_{n}}$ 為 $\mathbf{v_{1}}, \mathbf{v_{2}}, \dots, \mathbf{v_{n}}$ 的線性組合。**所有線性組合組成的集合**就稱為 $\mathbf{v_{1}}, \mathbf{v_{2}}, \dots, \mathbf{v_{n}}$ 的**生成空間(span)**，可以用 $\text{Span}(\mathbf{v_{1}}, \mathbf{v_{2}}, \dots, \mathbf{v_{n}})$ 表示。
@@ -117,11 +117,11 @@ $$
 $$
 
 proof:
-令 $\beta$ 為標量，$\mathbf{v}=\alpha \mathbf{v_{1}}+\dots+\alpha \mathbf{v_{2}}$, $\mathbf{w}=\beta \mathbf{v_{1}}+\dots+\beta \mathbf{v_{2}}$ 為兩個取自 $\text{Span}(\mathbf{v_{1}}, \mathbf{v_{2}}, \dots, \mathbf{v_{n}})$ 的向量。
+令 $\beta$ 為標量，$\mathbf{v}=\alpha_{1} \mathbf{v_{1}}+\dots+\alpha_{n} \mathbf{v_{2}}$, $\mathbf{w}=\beta_{1} \mathbf{v_{1}}+\dots+\beta_{n} \mathbf{v_{2}}$ 為兩個取自 $\text{Span}(\mathbf{v_{1}}, \mathbf{v_{2}}, \dots, \mathbf{v_{n}})$ 的向量。
 因為：
-$\beta \mathbf{v_{1}}=(\beta\alpha)\mathbf{v}+\dots+(\beta\alpha)\mathbf{v_{n}} \in\text{Span}(\mathbf{v_{1}, \dots, v_{n}})$ 
+$\beta \mathbf{v}=(\beta_{1}\alpha_{1})\mathbf{v_{1}}+\dots+(\beta_{n}\alpha_{n})\mathbf{v_{n}} \in\text{Span}(\mathbf{v_{1}, \dots, v_{n}})$ 
 且：
-$\mathbf{v}+\mathbf{w}=(\alpha+\beta)\mathbf{v_{1}}+\dots+(\alpha\beta)\mathbf{v_{n} \in \text{Span}(\mathbf{v_{1}},\dots,\mathbf{v_{n}})}$ 
+$\mathbf{v}+\mathbf{w}=(\alpha_{1}+\beta_{1})\mathbf{v_{1}}+\dots+(\alpha_{n}+\beta_{n})\mathbf{v_{n} \in \text{Span}(\mathbf{v_{1}},\dots,\mathbf{v_{n}})}$ 
 所以，命題成立。
 
 ## Spanning Set for a Vector Space
@@ -130,7 +130,7 @@ $\mathbf{v_{1}}, \mathbf{v_{2}}, \dots \mathbf{v_{n}}$ 是 $V$ 的生成集 $\Le
 
 這邊有點繞，我們必須清楚的區分 Span 和 Spanning Set。其實，他們互為反向描述。
 
-讓我們舉個例子，想要張出向量空間 $\mathbb{R}^{2}$，我們最少區要兩個向量作為生成集。因為一個向量的生成空間只會是一條直線。
+讓我們舉個例子，想要張出向量空間 $\mathbb{R}^{2}$，我們最少需要兩個向量作為生成集。因為一個向量的生成空間只會是一條直線。
 
 我們可以取 $\{\mathbf{e_{1}}, \mathbf{e_{2}}\}$ 來張出 $\mathbb{R}^{2}$。那麼 $\{\mathbf{e_{1}}, \mathbf{e_{2}}\}$ 就是 $\mathbb{R}^{2}$ 的生成集。
 
@@ -140,17 +140,25 @@ $\mathbf{v_{1}}, \mathbf{v_{2}}, \dots \mathbf{v_{n}}$ 是 $V$ 的生成集 $\Le
 
 如果 $\mathbf{b}=\mathbf{0}$，那麼所有解構成的集合 $S=N(A)$，且 $S$ 是 $\mathbb{R}^{n}$ 的子空間。
 
-如果 $\mathbf{b}\neq \mathbf{0}$，那麼 $S$ 無法構成 $\mathbb{R}^{n}$ 的子空間，因為 $\mathbf{0} \not\in S$。
+如果 $\mathbf{b}\neq \mathbf{0}$，那麼所有解構成的集合 $S$ 無法構成 $\mathbb{R}^{n}$ 的子空間，因為 $\mathbf{0} \not\in S$。
 
-我們有：如果給定 $\mathbf{x_{0}}$ 為一組特定解，那麼 $\mathbf{y}$ 也會是一組解 $\Leftrightarrow \mathbf{y}=\mathbf{x_{0}}+\mathbf{z}$，其中 $\mathbf{z} \in N(A)$。
+我們有：如果給定 $\mathbf{x_{0}}$ 為 $A\mathbf{x}=\mathbf{b}$ 的一組特定解，那麼 $\mathbf{y}$ 也會是一組解 $\Leftrightarrow \mathbf{y}=\mathbf{x_{0}}+\mathbf{z}$，其中 $\mathbf{z} \in N(A)$。
 
-要如何理解這個？給定系統的另一個解 $\mathbf{x_{1}}$，並令 $\mathbf{z}=\mathbf{x_{1}-x_{0}}$。那麼：
+假設 $\mathbf{y}$ 為 $A\mathbf{x}=\mathbf{b}$ 的另一組解，則： 
 
 $$
-A\mathbf{z}=A\mathbf{x_{1}}-A\mathbf{x_{2}}=\mathbf{b}-\mathbf{b}=\mathbf{0}
+A\mathbf{z}=A\mathbf{y}-A\mathbf{x_{0}}=\mathbf{b}-\mathbf{b}=\mathbf{0}
 $$
 
-所以，另一個解必為 $\mathbf{x_{1}}=\mathbf{x_{0}}+\mathbf{z}$，且 $\mathbf{z} \in N(A)$。
+所以 $\mathbf{z}\in N(A)$。
+
+又：
+
+$$
+A\mathbf{y}=A\mathbf{x_{0}}+A\mathbf{z}=\mathbf{b}+\mathbf{0}=\mathbf{b}
+$$
+
+所以，另一個解必為 $\mathbf{y}=\mathbf{x_{0}}+\mathbf{z}$，且 $\mathbf{z} \in N(A)$。
 
 我們可以通過其幾何意含來更深入的了解：
 
@@ -306,6 +314,10 @@ $W[f_{1},\dots,f_{n}](x)=0 \ \forall x \in [a,b]$ 。
 
 需要注意，反向結論是不成立的。也就是說就算對於所有 $x$ 都有 $W[f_{1},\dots,f_{n}](x)=0$ 並仍**不可保證** $f_{1},\dots,f_{n}$ 線性相依。因為，想要保證線性相依， $c_{i}$ 必須為一個固定常數。但是對於所有 $x$ 都有 $W[f_{1},\dots,f_{n}](x)=0$ 只能保證對於某特定 $x$ 可以找到相對應的 $c_{i}$ 使得等式成立。而這個 $c_{i}$ 有可能是常數也有可能隨著 $x$ 不同而改變。所以無法保證線性相依，但是可以說明有一定可能性這些函數線性相依。
 
+# Tips
+
+- 零多項式的 degree 通常沒有定義或者定義為 $\text{deg(0)}=-\infty$。
+
 # 重要例題
 
 1. Let $C$ be the set of complex numbers. Define addition on $C$ by $(a+bi)+(c+di)=(a+c)+(b+d)i$ and define scalar multiplication by $\alpha(a+bi)=\alpha a+\alpha bi$ for all real numbers $\alpha$. Show that $C$ is a vector space with these operations.
@@ -363,3 +375,36 @@ Sol:
 首先，令 $\mathbf{0}=(\alpha,\beta)$ 則 $(x_{1},x_{2})+\mathbf{0}=(x_{1}+\alpha,0)\neq (x_{1},x_{2})$ ，所以 $\mathbf{x}+\mathbf{0}=\mathbf{x}$ 不成立，$s$ 不是一個向量空間。
 由上，因為 $\mathbf{x+0=x}$ 不成立，那麼左右同加 $-\mathbf{x}$ 的 $\mathbf{x}+(-\mathbf{x})=\mathbf{0}$ 也不成立。
 最後，$(\alpha+\beta)(x_{1},x_{2})=((\alpha+\beta)x_{1},(\alpha+\beta)x_{2}) \neq\alpha(x_{1},x_{2})+\beta(x_{1},x_{2})=((\alpha+\beta)x_{1},0)$ 。
+
+4. Determine the null space of $\begin{bmatrix}2 & 1 & 3 & -3 \\ 1 & 2 & -6 & 6\end{bmatrix}$. 
+
+Sol:
+利用增廣矩陣解 $\begin{bmatrix}2 & 1 & 3 & -3 \\ 1 & 2 & -6 & 6\end{bmatrix}$。
+$\begin{bmatrix}2 & 1 & 3 & -3 & | & 0 \\ 1 & 2 & -6 & 6 & | & 0\end{bmatrix}\implies \begin{bmatrix}1 & 0 & 4 & -4 & | & 0 \\ 0 & 1 & -5 & 5 & | & 0\end{bmatrix}$ 
+所以，$N(A)=\text{Span}((-4,5,1,0)^{T},(4,-5,0,1))$。
+**注意 $N(A)$ 的表達方式。** 
+
+5. Determine whether the following are subspaces of $P_{4}$: (a) The set of polynomials in $P_{4}$ of even degree. (b) The set of all polynomials of degree 3. (c) The set of all polynomials $p(x)$ in $P_{4}$ such that $p(0)= 0$. (d) The set of all polynomials in $P_{4}$ having at least one real root. 
+
+Sol:
+令每題的集合為 $S$，取集合中任意二相異向量 $p,q$。
+(a)
+取最高次項為偶數，而不是只能有偶次項。
+$\mathbf{0}\not\in S$ (零多項式的最高次項未定義或定義為 $-\infty$)
+$\alpha p\in S$ 
+但 $p+q$ 不一定 $\in S$。
+反例：$p(x)=x^{2},q(x)=-x^{2}$，則 $(p+q)(x)=\mathbf{0}\not\in S$ 
+
+(b)
+同 (a)
+
+(c)
+所有 $p(0)=0$ 的多項式都滿足 $p(x)=ax^{3}+bx^{2}+cx$，其中 $a,b,c,d \in \mathbb{R}$。
+$\because p(x)=0$ 滿足 $p(0)=0$ $\therefore \mathbf{0}\in S$ 
+$\alpha p=(\alpha a)x^{3}+(\alpha b)x^{2}+(\alpha c)x \in S$。
+$p+q=(a_{1}+a_{2})x^{3}+(b_{1}+b_{2})x^{2}+(c_{1}+c_{2})x\in S$。
+
+(d)
+$\because p(x)=0$ 有所有實數作為根 $\therefore\mathbf{0}\in S$。
+標量積不引響解的個數，所以 $\alpha p\in S$。
+但是，若 $p(x)=1,q(x)=0$，則 $(p+q)(x)=1$ 無解，所以 $p+q$ 不一定 $\in S$。
