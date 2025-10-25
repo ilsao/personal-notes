@@ -233,3 +233,114 @@ $$
 下圖模擬了一次 SR 運行過程：
 
 ![[Pasted image 20251024165612.png]]
+
+需要注意，因為發送方與接收放互相不知道對方窗口位置，所以會導致以下狀況：
+
+![[Pasted image 20251025163559.png]]
+
+如上圖所示，因為接收雙方互相不知曉對方的窗口狀態，所以無法識別是情況 a 還是情況 b。也就是說，接收方無法知曉當前接收的分組是舊的分組還是新的分組，這是非常致命的。
+
+## 窗口長度
+
+假設窗口長度為 $N$，最大序號為 $W$，則：
+
+對 GBN 來說，窗口最大長度為：$N<W$。
+
+對 SR 來說，窗口最大長度為：$N< \frac{W}{2}$。
+
+# 面向連接運輸：TCP
+
+## TCP 連接
+
+TCP 稱為**面向連接的(connection oriented)**，因為程序在開始發送數據前必須互相握手。這種連接是邏輯上存在的，而非實際存在的。連接狀態只保留在程序中，而不會保留在中間更底層的網絡設備中。
+
+TCP 是**全雙工(full-duplex)** 的，也就是連接雙方都可以發送與接收數據。
+
+通信雙方建立連接後，TCP 會將即將發送的數據放進緩存，然後在適合的時間從緩存發送這些數據。
+
+TCP 一次從緩存中取出的數據大小取決於 **MSS(Maximum Segment Size)** 。一 MSS 代表報文段中有效載荷的最大長度(不包含首部)。
+
+MSS 的大小取決於**最大傳輸單元(Maximum Transmission Unit, MTU)** 的大小。MTU 是鏈路層上一個最大鏈路層幀的大小，通常 MTU 為 1500 Bytes，所以 MSS 通常設置為 1460。(TCP 首部 20 Bytes + IP 首部 20 Bytes)
+
+而接收方收到數據後，也會先存在接收緩存中，直到進程從緩存讀取數據。
+
+## TCP 報文段結構
+
+![[Pasted image 20251025172819.png]]
+
+上圖為 TCP 報文段結構。
+
+包含以下字段：
+- 32 bits 序號字段 (sequence number field)：等會兒說。
+- 32 bits 確認號字段 (acknowledgement number field)：等會兒說。
+- 16 bits 接收窗口字段 (receive window field)：接收方願意接受的字節數。用於流量控制。
+- 4 bits 首部長度字段 (header length field)：因為 TCP 首部長度可變，用來標示首部長度。
+- 可選與變長的選項字段 (options fields)：現在不會沒關係。
+- 6 bits 標記字段 (flag field)：ACK bit 說明該報文段包含一個對成功接收的報文段的確認。RST SYN FIN bit 用於連接建立與拆除。
+
+TCP 報文段中的序號與確認好非常重要喔～
+
+TCP 會隨機的選擇一個初始序號當作要發送的第一個報文段的序號(指向有效載荷的第一個字節)。對於第二個發送的報文段序號，則是初始序號 + 第一個報文段的長度(字節)。第三個報文段的序號則是初始序號 + 第一個報文段 + 第二個報文段的長度... 以此類推。
+
+而確認號則表示當前主機期望收到的報文段序號。例如，主機 A 與主機 B 在通訊。A 收到了 B 的 0~535 字節，那麼確認號應為 536。又例如，A 收到了 B 的 0~535 字節，又亂序收到了 900~1000 字節，確認號仍為 536。因為 TCP 只確認連續到來的字節 + 1。
+
+因為 TCP 是全雙工的(full-duplex)，所以使用**捎帶(piggybacked)** 技術。
+
+也就是說，正在通訊的雙方會將數據與給對方的回應 ACK 綁在同一個報文段中傳輸。
+
+以下給出一個使用 telnet 通訊的例子：
+
+![[Pasted image 20251025175354.png]]
+
+## 往返時間的估計與超時
+
+因為 RTT 在通訊過程中是變動的，所以我們需要一些技術來幫助我們設置超時計時器長度。
+
+### 估計往返時間
+
+我們使用 EstimatedRTT 估計我們對將來往返時間的期待。EstimatedRTT 的初始值被設置為第一個未重傳且收到 ACK 的報文段的往返時間。
+
+TCP 對所有未重傳且收到 ACK 的報文段測量樣本 RTT(SampleRTT)，然後使用加權平均來計算 EstimatedRTT：
+
+$$
+\text{EstimatedRTT}=(1-\alpha)\text{EstimatedRTT}+\alpha\text{SampleRTT}
+$$
+
+其中，$\alpha$ 的推薦值為 $\alpha=0.125$。
+
+而 EstimatedRTT 的指數表達形式為：
+
+$$
+\text{EstimatedRTT}_{n}=\alpha \sum_{k=1}^{n}(1-\alpha)^{n-k}\text{SampleRTT}_{k}
+$$
+
+也就是說，距離當前預估 RTT 較近的 SampleRTT 佔有較大的比重。這種平均方式稱為**指數加權移動平均(Exponential Weighted Moving Average, EWMA)**。
+
+除了計算 EstimatedRTT，我們還需估算 SampleRTT 偏離 EstimatedRTT 的程度：
+
+$$
+\text{DevRTT}=(1-\beta)\text{DevRTT}+\beta|\text{SampleRTT}-\text{EstimatedRTT}|
+$$
+
+其中，$\beta$ 的推薦值為 $\beta=0.25$。
+
+### 設置與管理重傳超時間隔
+
+超時間隔設置公式如下：
+
+$$
+\text{TimeoutInterval}=\text{EstimatedRTT}+4\text{DevRTT}
+$$
+
+推薦的初始 TimeoutInterval 值為 1 秒。
+
+當超時出現，TimeoutInterval 將會短暫的被設置為兩倍，避免超時重傳的報文段再次超時。
+
+但是，只要收到新的 ACK 並更新了 EstimatedRTT，TimeoutInterval 就會被使用上述公式重新設置。
+
+## 可靠數據傳輸
+
+## 流量控制
+
+## TCP 連接管理
+
