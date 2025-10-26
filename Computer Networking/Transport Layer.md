@@ -340,7 +340,155 @@ $$
 
 ## 可靠數據傳輸
 
-## 流量控制
+為每個報文段都設置一個計時器的代價過於高昂，所以本文講述的 TCP 都使用單一計時器的設計。
+
+雖然單一計時器會導致某些報文段的丟失可能經過較久才被檢測，但是節省了內存與處理器開銷。
+
+讓我們先給出一個高度簡化的 TCP 發送方偽代碼：
+
+``` plaintext
+NextSeqNum = InitialSeqNumber
+SendBase = InitialSeqNumber
+
+loop (forever) {
+	switch (event)
+	
+		event: data received from application above
+			create TCP segment with sequence number NextSeqNum
+			if (timer currently is not running)
+				start timer
+			pass segment to IP
+			NextSeqNum += length(data)
+			break;
+		
+		event: timer timeout
+			retransmit not-yet-acknowledged segment with smallest sequence number
+			start timer
+			break;
+		
+		evnet: ACK received, with ACK field value of y
+			if (y > SendBase) {
+				SendBase = y
+				if (there are currently not-yet-acknowledged segments)
+					start timer
+			}
+			break;
+}
+```
+
+需要注意的是，TCP 採用累積確認，也就是說 ACK y 說明字節編號在 y 之前的所有字節都已確認收到。
+
+但不要以為使用累積確認 TCP 就會丟棄失序的報文段，相反，**TCP 會將失序的報文段緩存起來**。
+
+所以，TCP 實際上是 GBN 與 SR 的混合體。
+
+因為 TCP 只維護一個 SendBase 與 NextSeqNum，所以看起來不像 SR。又因為超時重傳只會重傳具有最小未確認序號的報文段，所以看起來不像 GBN。
+
+注意，如果一個 ACK n 丟失，但是在超時前收到一個 ACK (n+1)，TCP 也不會重傳 n。因為採用累積確認，這保證了收到 (n+1) 就一定收到了 n。
+
+接下來，讓我們討論更多 TCP 實現的功能。
+
+### 超時間隔加倍
+
+當超時事件發生，TCP 會將超時間隔設置為原本的兩倍。
+
+但是，只要當收到上層應用的數據或收到 ACK 導致計時器被啟動，超時間隔就會被重新設置為 TimeoutInterval。
+
+### 快速重傳
+
+**冗餘 ACK(duplicate ACK)**：對某個報文段超過一次的確認。
+
+為了理解冗餘 ACK 出現的情況，我們統整了下表：
+
+| 事件                                 | TCP 接收方操作                                 |
+| ---------------------------------- | ----------------------------------------- |
+| 具有所期望序號的報文段按序到達。所有在期望序號以前的數據都已被確認。 | 延遲的 ACK。等待 500ms，若時間內沒有按序的報文段到達，單獨發送 ACK。 |
+| 具有所期望序號的報文段按序到達。另一個按序報文段等待 ACK 傳輸。 | 立即發送累積 ACK，以同時確認兩個按序報文段。                  |
+| 比期望序號大的報文段失序到達。檢測出間隔。              | 立即發送冗餘 ACK，指示下一個期待字節序號。(指向間隔低端的序號)        |
+| 能部分或完全填充接收數據間隔的報文段到達。              | 若該報文段位於間隔低端，立即發送 ACK。                     |
+
+當發生冗餘 ACK 時，代表一個序號比預期大的報文段失序到來。那麼，如果連續收到多個冗餘 ACK 就表示具有預期序號的報文段很有可能丟失了。
+
+所以，一旦收到 3 個冗餘 ACK (也就是對同一個序號的 4 次 ACK，一次正常 ACK 三次冗餘 ACK)
+，就會觸發**快速重傳(fast retransmit)**，將具有該序號的報文段重傳。
+
+使用以下偽代碼代替上述簡易版 TCP 偽代碼：
+
+``` plaintext
+event: ACK received, with ACK field value of y
+if (y > SendBase) {
+	SendBase = y
+	if (there are currently not-yet-acknowledged segments) 
+		start timer
+	else {
+		increament number of duplicate ACKs recieved for y
+		if (number of duplicate ACKs recieved for y == 3)
+			resend segment with sequence number y
+	}
+	break;
+}
+```
+
+## 流量控制 (flow control)
+
+之前說過，接收方有一個接收緩衝區。收到的數據會先存在其中，等進程需要才會讀取。
+
+但是，進程可能剛好在忙著幹別的事，沒空讀緩存。如果這時發送方一直不斷地發送數據，就會導致緩衝區溢出。
+
+所以，TCP 需要做流量控制。通過在發送方維護一個**接收窗口(receive window, rwnd)** 實現。因為 TCP 是全雙工通信，所以在連接雙方都各維護一個接收窗口。
+
+為了簡化描述，在此我們假設 TCP 接收方丟棄所有失序的報文段。
+
+假設主機 A 透過 TCP 傳給主機 B 一個文件。B 為該連接分配了一個接收緩存，我們使用 `RcvBuffer` 表示其大小。我們定義以下變量：
+- `LastByteRead`：B 的進程從緩存讀取出數據流的最後一個字節的編號。
+- `LastByteRcvd`：B 接收到緩存中的數據流的最後一個字節編號。
+
+為了避免溢出，下式必須成立：
+
+$$
+\text{LastByteRcvd}-\text{LastByteRead}\leq \text{RcvBuffer}
+$$
+
+而接收窗口的大小由緩存空間可用大小動態計算：
+
+$$
+\text{rwnd}=\text{RcvBuffer}-[\text{LastByteRcvd-LastByteRead}]
+$$
+
+B 在初始時設定 `rwnd = RcvBuffer`，之後動態計算 `rwnd` 的大小。
+
+B 通過將 `rwnd` 的值存在 ACK 中的 receive window 字段，通知 A 當前緩存可用大小。
+
+A 必須保證發送到連接中但未被確認的數據量小於等於 `rwnd`，才能保證 B 的緩存不會溢出。所以，A 還需要維護兩個變量：`LastByteSent` 與 `LastByteAcked`，使得：
+
+$$
+\text{LasyByteSent}-\text{LastByteAcked}\leq \text{rwnd}
+$$
+
+我們需要考慮 `rwnd = 0` 時的狀況。如果此時 B 的緩存清出空間了，但是 A 沒有發送數據，B 也沒有發送數據給 A，則 A 會以為 B 的緩存還是滿的！
+
+所以此時 A 會每經過一段時間發送 Zero-Window Probe，通常是一個一字節的報文段，直到 B 的緩存清出空間給 A 用。
 
 ## TCP 連接管理
+
+一次 TCP 三次握手如下建立：
+1. 客戶端向服務器發送一種特殊的報文段 **SYN 報文段(SYN segment)**。該報文段不包含應用層數據，且將標誌為中的 SYN bit 置 1 。客戶端會隨機選擇 `client_isn` 當作初始序號，並將該值放於序號字段中。
+2. 服務器接收到 SYN 報文段，為該連接配置緩存與變量。然後，服務器向客戶端發送 **SYNACK 報文段(SYNACK segment)**，該報文段也不包含應用層數據，並且 SYN bit 置 1。服務器會隨機選擇 `server_isn` 當作初始序號，並存放於序號字段中。最後，在確認字段放入 `client_isn + 1`。
+3. 客戶端收到 SYNACK 報文段，為該連接分配緩存與變量。然後發送一個報文段給服務器，因為連接已建立，所以不需要將 SYN bit 置 1。最後，在報文段的確認字段填入 `server_sin + 1` 並附上應用層想傳送給服務器的數據。
+
+![[Pasted image 20251026223025.png]]
+
+TCP 的四次揮手如下：
+1. 客戶端向服務器發送一個 FIN bit 置 1 的報文段，表明想結束連接。
+2. 服務器發送一個 ACK。然後發送最後的資料。
+3. 服務器發送完最後的資料，也發送一個 FIN 報文段。
+4. 客戶端回覆 ACK，並等待兩個最長報文壽命，然後關閉連接。
+
+以下是一個 TCP 客戶端經歷的典型狀態序列：
+
+![[Pasted image 20251026223849.png]]
+
+以下是一個 TCP 服務端經歷的典型狀態序列：
+
+![[Pasted image 20251026224105.png]]
 
