@@ -219,17 +219,29 @@ A. Domain and **Range**
 
 B. Intercepts
 
+當 $x=0$ 時，求 $y$ 值。如果 $y=0$ 時求 $x$ 略難，可略過不求。
+
 C. Symmetry
+
+- 奇函數：$f(-x)=-f(x)$ 對稱原點。
+- 偶函數：$f(-x)=f(x)$ 對稱 $y$ 軸。
+- 週期函數：$f(x+p)=f(x)$ 且 $p$ 為一個正的常數。
 
 D. Asymptotes
 
-Slant Asymptotes: $\lim_{ x \to \infty }[f(x)-(mx+b)]=0$ => (i) $\lim_{ x \to \infty } \frac{f(x)}{x}=m$ (ii) $\lim_{ x \to \infty }[f(x)-mx]=b$ 
+- Horizontal Asymptotes
+- Vertical Asymptotes
+- Slant Asymptotes: $\lim_{ x \to \infty }[f(x)-(mx+b)]=0$ => (i) $\lim_{ x \to \infty } \frac{f(x)}{x}=m$ (ii) $\lim_{ x \to \infty }[f(x)-mx]=b$ 
 
 E. Interval of Increase or Decrease
+
+利用 critical point，觀察關鍵點左右 $f'$ 正負號。
 
 F. Local Maximum or Minimum Values
 
 G. Concavity and Points of Inflection
+
+在 $f''(x)=0$ 左右測試 $f''$ 的正負，如果變號則為反曲點。
 
 H. Sketch the Curve
 
