@@ -158,6 +158,59 @@ Sol
 想找到該常數的值很簡單，隨便代一個數字進去就好。
 代入 $x=1$，$f(1)=\frac{\pi}{4}+\frac{\pi}{4}=\frac{\pi}{2}$。
 
+# What Derivatives Tell Us about the Shape of a Graph
+
+## What Does $f'$ Say about $f$ ?
+
+根據 $f'$ 的值，我們可以得出以下結論：
+- $f'(x)>0$ on an interval, then $f$ is decreasing on that interval. 
+- $f'(x)<0$ on an interval, then $f$ is decreasing on that interval. 
+
+以上結論稱為 Increasing/Decreasing Test (I/D Test)，使用均值定理可證。
+
+proof:
+令 $x_{1},x_{2}$ 為區間上的兩點，且 $x_{1}<x_{2}$。
+假設 $f'(x)>0$，我們想證明 $f(x_{1})<f(x_{2})$。
+因為 $f$ 在區間中可導且連續，套用均值定理。可以找到一個數 $c$ 在區間中且使得：
+$f(x_{2})-f(x_{1})=f'(c)(x_{2}-x_{1})$ 
+因為 $f'(c)>0$ 且 $x_{2}-x_{1}>0$，所以 $f(x_{2})-f(x_{1})>0\implies f(x_{1})<f(x_{2})$ 
+證畢。
+$f'(x)<0$ 的情況同理可證。
+
+## The First Derivative Test
+
+The First Derivative Test 可以用來檢測該關鍵點是否為局部極值。
+
+若 $x$ 為關鍵點且 $f$ 為連續函數：
+- 若(從左側到右側看) $f'$ 從 $f'(x)>0$ 轉為 $f'(x)<0$ 則該關鍵點為局部最大值。
+- 若 $f'$ 從 $f'(x)<0$ 轉為 $f'(x)>0$ 則該關鍵點為局部最小值。
+
+## What Does $f''$ Say about $f$ ?
+
+一次微分只能告訴我們函數圖形在區間中是上升還是下降，卻無法告訴我們在該區間的凹向。
+
+我們先來定義圖形的凹向：
+- **凹口向上(concave upward)**：$f$ 的圖形始終在切線的上方。
+- **凹口向下(concave downward)**：$f$ 的圖形始終在切線的下方。
+
+我們可以使用二次微分來對應函數圖形的凹向，稱為 Concavity Test：
+- 若 $f''(x)>0$ 則在區間中函數凹口向上。
+- 若 $f''(x)<0$ 則在區間中函數凹口向下。
+
+反曲點：該處 $f''(x)=0$ 且變號。
+
+我們可以使用反曲點處的二次微分變號情況來判斷切線斜率的極值情況：
+- $f''(x)$ 從正轉負：切線斜率最大值發生於此。
+- $f''(x)$ 從負轉正：切線斜率最小值發生於此。
+
+## The Second Derivative Test
+
+若 $f''$ 在 $c$ 附近連續，可以使用 Second Derivative Test 來取得 $f$ 的資訊：
+- 若 $f'(c)=0$ 且 $f''(c)>0$，$c$ 為局部最小值。
+- 若 $f'(c)=0$ 且 $f''(c)<0$，$c$ 為局部最大值。
+
+當 Second Derivative Test 失效時，我們需要回歸 First Derivative Test 來判斷該點性質。
+
 # Summary of Curve Sketching
 
 ## Guidelines for Sketching a Curve
@@ -185,6 +238,8 @@ H. Sketch the Curve
 - 局部極值可能發生在非連續處，但不可能發生在端點數。
 - 尋找全局極值時，除了比對關鍵點外，還需要確保該點在給定的區間內。
 - $f^{2}$ 在 $(a,b)$ 上可導，並**不代表** $f$ 在 $(a,b)$ 上可導。因為平方可能會抹平在零處的尖角或奇異。例如 $f(x)=|x|$ 在 $x=0$ 不可導，但 $f^{2}(x)=x^{2}$ 可導。
+- 就算 $f'(x)$ 沒變號且 $f''(x)=0$ 也不能代表該點是反曲點。反曲點必須要 $f''(x)$ 在該點變號。
+- 一個 critical point 可能不是極值也不是反曲點。例如：$x^{2}\sin\left( \frac{1}{x} \right)$ (非連續函數)
 
 # 重要例題
 

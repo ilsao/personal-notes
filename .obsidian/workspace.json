@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Math/Linear Algebra/Vector Space.md",
+                "file": "Math/Calculus/Applications of Differentiation.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Vector Space"
+              "title": "Applications of Differentiation"
             }
           },
           {
@@ -194,8 +194,8 @@
   },
   "active": "26720c0ea3e29b4d",
   "lastOpenFiles": [
-    "Math/Linear Algebra/Determinants.md",
     "Math/Linear Algebra/Vector Space.md",
+    "Math/Linear Algebra/Determinants.md",
     "Computer Networking/Transport Layer.md",
     "pic/Pasted image 20251025175354.png",
     "pic/Pasted image 20251025172819.png",
