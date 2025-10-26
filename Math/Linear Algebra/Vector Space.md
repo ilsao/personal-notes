@@ -134,6 +134,12 @@ $\mathbf{v_{1}}, \mathbf{v_{2}}, \dots \mathbf{v_{n}}$ 是 $V$ 的生成集 $\Le
 
 我們可以取 $\{\mathbf{e_{1}}, \mathbf{e_{2}}\}$ 來張出 $\mathbb{R}^{2}$。那麼 $\{\mathbf{e_{1}}, \mathbf{e_{2}}\}$ 就是 $\mathbb{R}^{2}$ 的生成集。
 
+如果我們想檢查 $\mathbf{v}$ 是否為 $S=\text{Span}(\mathbf{v_{1}},\dots,\mathbf{v_{n}})$ 中的向量，可以用增廣矩陣解線性組合，如果沒產生矛盾說明 $\mathbf{v}\in S$，否則 $\mathbf{v}\not\in S$。
+
+如果想檢查 $\text{Span}(\mathbf{v_{1}},\dots,\mathbf{v_{j}})$ 是否張出了 $\mathbb{R}^{n}$：
+- 如果 $j=n$，則求 $\det(\mathbf{v_{1}},\dots,\mathbf{v_{j}})$ 是否等於 $0$。不等於零說明線性獨立，可張出 $\mathbb{R}^{n}$，否則不行。
+- 如果 $j> n$，則每 $n$ 個 $\mathbf{v_{i}}$ 一組求行列式。如果任意一組不等於零，可張出 $\mathbb{R}^{n}$，否則不行。
+
 ## Linear Systems Revisited
 
 考慮一個有解的線性系統 $A\mathbf{x}=\mathbf{b}$。
@@ -207,7 +213,7 @@ $\alpha_{1}\mathbf{v_{1}}+\alpha_{2}\mathbf{v_{2}}+\alpha_{3}\mathbf{v_{3}}=(\al
 
 我們如下統整觀察到的現象：
 1. 如果 $\mathbf{v_{1},\dots,\mathbf{v_{n}}}$ 張出一個向量空間 $V$，且其中某個向量可以被寫成其他 $n-1$ 個向量的線性組合，那麼那 $n-1$ 個向量同樣張出 $V$。
-2. 給定 $n$ 個向量 $\mathbf{v_{1}},\dots \mathbf{v_{n}}$。如果有辦法將某個向量寫成其他 $n-1$ 個向量的線性組合 $\Leftrightarrow$ $c_{1}\mathbf{v_{1}}+\dots+c_{n}\mathbf{v_{n}}=\mathbf{0}$ 且 $c_{1},\dots,c_{n} \neq 0$。
+2. 給定 $n$ 個向量 $\mathbf{v_{1}},\dots \mathbf{v_{n}}$。如果有辦法將某個向量寫成其他 $n-1$ 個向量的線性組合 $\Leftrightarrow$ $c_{1}\mathbf{v_{1}}+\dots+c_{n}\mathbf{v_{n}}=\mathbf{0}$ 且 $c_{1},\dots,c_{n}$ 至少有一項 $\neq 0$。
 
 proof (1):
 假設 $\mathbf{v_{n}}$ 可以被其他向量的線性組合表達。
@@ -317,6 +323,8 @@ $W[f_{1},\dots,f_{n}](x)=0 \ \forall x \in [a,b]$ 。
 # Tips
 
 - 零多項式的 degree 通常沒有定義或者定義為 $\text{deg(0)}=-\infty$。
+- $A$ matrix commute with $B$ $\Leftrightarrow$ $AB=BA$。
+- $N(A)=\{\mathbf{0}\}\implies$ $A$ 化成 RREF 後沒有自由變數，也就是 $I$。
 
 # 重要例題
 
@@ -408,3 +416,93 @@ $p+q=(a_{1}+a_{2})x^{3}+(b_{1}+b_{2})x^{2}+(c_{1}+c_{2})x\in S$。
 $\because p(x)=0$ 有所有實數作為根 $\therefore\mathbf{0}\in S$。
 標量積不引響解的個數，所以 $\alpha p\in S$。
 但是，若 $p(x)=1,q(x)=0$，則 $(p+q)(x)=1$ 無解，所以 $p+q$ 不一定 $\in S$。
+
+6. Determine whether the set of functions $f$ in $C[-1,1]$ such that $f(-1)=f(1)$ is subspace of $C[-1,1]$. 
+
+Sol:
+此題用來學習如何說明一個子空間成立。
+令符合 $f(-1)=f(1)$ 的多項式組成一個集合 $V$，$f,g\in V$，$\alpha\in \mathbb{R}$。
+零多項式符合條件，$\mathbf{0}\in V$。
+$(\alpha f)(-1)=\alpha f(-1)=\alpha f(1)$，$\alpha f\in V$。
+$(f+g)(-1)=f(-1)+g(-1)=f(1)+g(1)=(f+g)(1)$，$f+g\in V$。
+所以，$V$ 是 $C[-1,1]$ 的一個子空間。
+
+7. Show that $C^{n}[a,b]$ is a subspace of $C[a,b]$. 
+
+Sol:
+注意表達形式。
+令 $f,g\in C^{n}[a,b]$，$\alpha\in \mathbb{R}$。
+則滿足 $f^{(k)}$ 與 $g^{(k)}$ 對所有  $k\leq n$ 皆連續。
+$0$ 函數的所有導數都為 $0$ 且連續，$0\in C^{n}[a,b]$。
+$(\alpha f)^{(k)}(x)=\alpha f^{(k)}(x)$ 且連續函數乘以某實數仍為連續函數，所以 $\alpha f\in C^{n}[a,b]$。
+$(f+g)^{(k)}(x)=f^{(k)}(x)+g^{(k)}(x)$ 仍連續，所以 $f+g\in C^{n}[a,b]$。
+
+8. Let $A$ be a $4\times3$ matrix and let $\mathbf{b}\in \mathbb{R}^{4}$. How many possible solutions could the system $A\mathbf{x}=\mathbf{b}$ have if $N(A)=\{0\}$? Answer the same question in the case $N(A)\neq \{0\}$. Explain your answers.
+
+Sol:
+(a)
+假設 $\mathbf{x_{1},x_{2}}$ 為 $A\mathbf{x}=\mathbf{b}$ 的兩個解，則：
+$A(\mathbf{x_{1}}-\mathbf{x_{2}})=A\mathbf{x_{1}}-A\mathbf{x_{2}}=\mathbf{b}-\mathbf{b}=\mathbf{0}\implies \mathbf{x_{1}}-\mathbf{x_{2}}=\mathbf{0}\implies \mathbf{x_{1}}=\mathbf{x_{2}}$ 
+所以，$A\mathbf{x}=\mathbf{b}$ 有唯一解，或者無解。
+
+(b)
+設 $\mathbf{x_{1}}$ 為 $A\mathbf{x}=\mathbf{b}$ 的一個解。
+令 $\mathbf{x_{2}}=\mathbf{x_{1}}+t\mathbf{z}$，$t\in \mathbb{R}$，$\mathbf{z}\in N(A)$。
+則 $A\mathbf{x_{2}}=A(\mathbf{x_{1}}+t\mathbf{z})=A\mathbf{x_{1}}+tA\mathbf{z}=\mathbf{b}+\mathbf{0}=\mathbf{b}$，$\mathbf{x_{2}}$ 也是 $A\mathbf{x}=\mathbf{b}$ 的一組解。
+因為 $t\in \mathbb{R}$，所以 $\mathbf{x_{2}}$ 的個數有無限多個。
+所以 $A\mathbf{x}=\mathbf{b}$ 有無限多組解，或者無解。
+
+9. Prove that if $S$ is a subspace of $\mathbb{R}^{1}$, then either $S=\{\mathbf{0}\}$ or $S=\mathbb{R}^{1}$. 
+
+Sol:
+當 $S=\{\mathbf{0}\}$ 時，顯然滿足構成子空間的三個條件，所以 $S=\{\mathbf{0}\}$ 是一個子空間。
+假設 $S$ 含有非零元素 $\mathbf{x_{0}}\in S$，且 $\alpha\in \mathbb{R}$。
+因為 $S$ 是一個子空間，所以必須滿足 $\alpha \mathbf{x_{0}}\in S$。
+又因為 $S$ 是 $\mathbb{R}^{1}$ 的子空間，所以 $\mathbf{x_{0}}\in \mathbb{R}$。
+取任意 $y\in \mathbb{R}$，令 $\alpha=\frac{y}{\mathbf{x_{0}}}$，則 $\alpha \mathbf{x_{0}}=y\in S$ 。
+因為 $y$ 可以是任意實數，所以此情況下 $S=\mathbb{R}^{1}$。
+所以，$S=\{\mathbf{0}\}$ 或 $S=\mathbb{R}^{1}$。
+(GPT 說這題是很經典的線性代數入門題，但是我覺得一點都不入門...)
+
+10. Let $A$ be an $n\times n$ matrix. Prove that the following statements are equivalent: (a) $N(A)=\{\mathbf{0}\}$ (b) $A$ is nonsingular. (c) For each $\mathbf{b}\in \mathbb{R}^{n}$, the system $A\mathbf{x}=\mathbf{b}$ has a unique solution.
+
+Sol:
+注意，這題不要用 $(a)\implies(b)$，不好證明。
+$(b)\implies(a)$ 
+因為 $A$ 非奇異，所以 $A^{-1}$ 存在。
+$A\mathbf{x}=\mathbf{0}$ 左右同乘 $A^{-1}$：$A^{-1}A\mathbf{x}=\mathbf{0}\implies \mathbf{x}=\mathbf{0}$ 
+$\implies N(A)=\{\mathbf{0}\}$ 
+$(a)\implies(c)$ 
+因為 $N(A)=\{\mathbf{0}\}$，所以 $A$ 化成 RREF 後必等於 $I$，所以 $A\mathbf{x}=\mathbf{b}$ 必有解。
+令 $\mathbf{x_{1}},\mathbf{x_{2}}$ 為 $A\mathbf{x}=\mathbf{b}$ 的兩個解，則：
+$A(\mathbf{x_{1}}-\mathbf{x_{2}})=A\mathbf{x_{1}}-A\mathbf{x_{2}}=\mathbf{b}-\mathbf{b}=\mathbf{0}$ 
+所以 $\mathbf{x_{1}}-\mathbf{x_{2}}\in N(A)\implies \mathbf{x_{1}}-\mathbf{x_{2}}=\mathbf{0}\implies \mathbf{x_{1}}=\mathbf{x_{2}}$ 
+所以，$A\mathbf{x}=\mathbf{b}$ 有唯一解。
+$(c)\implies(b)$ 
+因為 $A\mathbf{x}=\mathbf{b}$ 有唯一解，所以 $A$ 可以被化成 RREF，且 $A$ 的 RREF 為 $I$。
+令將 $A$ 化成 RREF 的初等矩陣為 $E_{1},\dots,E_{k}$。
+則 $A^{-1}$ 存在且 $A^{-1}=E_{k}^{-1},\dots,E_{1}^{-1}$。
+所以，$A$ 非奇異。
+
+11. Let $U$ and $V$ be subspaces of a vector space $W$. Prove that their intersection $U\cap V$ is also a subspace of $W$. 
+
+Sol:
+因為 $\mathbf{0}\in U$ 且 $\mathbf{0}\in V$，所以 $\mathbf{0}\in U\cap V$。
+取 $\mathbf{a},\mathbf{b}\in U\cap V$。
+則 $\alpha \mathbf{a}\in U$ 且 $\alpha \mathbf{a}\in V$，所以 $\alpha \mathbf{a}\in U\cap V$。
+又 $\mathbf{a}+\mathbf{b}\in U$ 且 $\mathbf{a}+\mathbf{b}\in V$，所以 $\mathbf{a}+\mathbf{b}\in U\cap V$。
+所以，$U\cap V$ 也是 $W$ 的子空間。
+
+12. Let $S$ be the subspace of $\mathbb{R}^{2}$ spanned by $\mathbf{e_{1}}$ and let $T$ be the subspace of $\mathbb{R}^{2}$ spanned by $\mathbf{e_{2}}$. Is $S\cup T$ a subspace of $\mathbb{R}^{2}$ ? Explain. 
+
+Sol:
+$S=\text{Span}(\mathbf{e_{1}})=\{(x,0)|x\in \mathbb{R}\}$ 
+$T=\text{Span}(\mathbf{e_{2}})=\{(0,y)|y\in \mathbb{R}\}$ 
+因為 $\mathbf{0}\in S$ 且 $\mathbf{0}\in T$ 所以 $\mathbf{0}\in S\cup T$。
+令 $\mathbf{a}\in S, \mathbf{b}\in T$。
+因為 $\alpha \mathbf{a}\in S$ 所以 $\alpha \mathbf{a}\in S\cup T$。
+又 $\alpha \mathbf{b}\in T$ 所以 $\alpha \mathbf{b}\in S\cup T$。
+但是 $\mathbf{a}+\mathbf{b}=(x,y)\quad x,y\in \mathbb{R} \implies \mathbf{a}+\mathbf{b}\not\in S$ 且 $\mathbf{a}+\mathbf{b}\not\in T$，所以 $\mathbf{a}+\mathbf{b}\not\in S\cup T$。
+所以，$S\cup T$ 不是 $\mathbb{R}^{2}$ 的子空間。
+
+ASK linear algebra 3.2 exercise 27. 

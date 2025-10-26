@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Math/Calculus/Applications of Differentiation.md",
+                "file": "Math/Linear Algebra/Vector Space.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Applications of Differentiation"
+              "title": "Vector Space"
             }
           },
           {
@@ -194,14 +194,15 @@
   },
   "active": "26720c0ea3e29b4d",
   "lastOpenFiles": [
+    "Math/Linear Algebra/Matrix and Systems.md",
     "Math/Linear Algebra/Vector Space.md",
+    "Math/Calculus/Applications of Differentiation.md",
     "Math/Linear Algebra/Determinants.md",
     "Computer Networking/Transport Layer.md",
     "pic/Pasted image 20251025175354.png",
     "pic/Pasted image 20251025172819.png",
     "pic/Pasted image 20251024165612.png",
     "pic/Pasted image 20251025163559.png",
-    "Math/Calculus/Applications of Differentiation.md",
     "Math/Calculus/Basic concept.md",
     "Math/Calculus/Limit.md",
     "Math/Calculus/Differentiation Rules.md",
@@ -224,7 +225,6 @@
     "Physics/Newton's Laws.md",
     "Physics/Uniform Accelerated Motion.md",
     "Physics/Vector.md",
-    "Math/Linear Algebra/Matrix and Systems.md",
     "Cryptography/Section 1.md",
     "Computer Networking/lab1.md",
     "Math/Calculus/Calculus, Early Transcendentals.pdf",
