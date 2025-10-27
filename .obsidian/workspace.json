@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Math/Calculus/Applications of Differentiation.md",
+                "file": "Computer Networking/Transport Layer.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Applications of Differentiation"
+              "title": "Transport Layer"
             }
           },
           {
@@ -192,29 +192,32 @@
       "bases:Create new base": false
     }
   },
-  "active": "26720c0ea3e29b4d",
+  "active": "1d5b0d980baa8a22",
   "lastOpenFiles": [
+    "pic/Pasted image 20251027232243.png",
+    "導師晤談.md",
+    "大學安排.md",
     "Computer Networking/Transport Layer.md",
+    "pic/Pasted image 20251027221949.png",
+    "pic/Pasted image 20251027213728.png",
+    "pic/Pasted image 20251027134958.png",
+    "pic/Pasted image 20251027132834.png",
+    "pic/Pasted image 20251027125507.png",
+    "pic/Pasted image 20251027121834.png",
+    "Math/Calculus/Applications of Differentiation.md",
     "pic/Pasted image 20251026224105.png",
     "pic/Pasted image 20251026223849.png",
     "pic/Pasted image 20251026223025.png",
     "Math/Linear Algebra/Vector Space.md",
     "Math/Linear Algebra/Matrix and Systems.md",
-    "Math/Calculus/Applications of Differentiation.md",
     "Math/Linear Algebra/Determinants.md",
     "pic/Pasted image 20251025175354.png",
-    "pic/Pasted image 20251025172819.png",
-    "pic/Pasted image 20251024165612.png",
-    "pic/Pasted image 20251025163559.png",
     "Math/Calculus/Basic concept.md",
     "Math/Calculus/Limit.md",
     "Math/Calculus/Differentiation Rules.md",
     "Physics/Rotational Dynamics.md",
-    "pic/Pasted image 20251013205255.png",
     "Physics/Physical Quantities.md",
     "Physics/Kinetic Theory of Gases and the Concept of Temperature.md",
-    "pic/Pasted image 20251024164050.png",
-    "pic/Pasted image 20251024163017.png",
     "Computer Networking/Intro. to the Internet.md",
     "Computer Networking/Application Layer.md",
     "**極值定理**.md",
@@ -228,9 +231,7 @@
     "Cryptography/Section 1.md",
     "Computer Networking/lab1.md",
     "Math/Calculus/Calculus, Early Transcendentals.pdf",
-    "Math/Linear Algebra/U1 U2 Summary Note.md",
     "Math/Linear Algebra/The Art of Linear Algebra.pdf",
-    "時間紀錄/Week 5.md",
     "時間紀錄",
     "Computer Networking/Computer Networking A top-down approach.pdf",
     "故事創作與影像敘事",
