@@ -231,7 +231,15 @@ D. Asymptotes
 
 - Horizontal Asymptotes
 - Vertical Asymptotes
-- Slant Asymptotes: $\lim_{ x \to \infty }[f(x)-(mx+b)]=0$ => (i) $\lim_{ x \to \infty } \frac{f(x)}{x}=m$ (ii) $\lim_{ x \to \infty }[f(x)-mx]=b$ 
+- Slant Asymptotes：滿足如下極限的直線。
+
+$\lim_{ x \to \infty }[f(x)-(mx+b)]=0$ 
+可以透過以下兩個操作找出：
+   (i) $\lim_{ x \to \infty } \frac{f(x)}{x}=m$ 
+   (ii) $\lim_{ x \to \infty }[f(x)-mx]=b$ 
+
+或者，如果函數是有理函數，且分子最高次項比分母高 1，則：
+使用長除法將 $f(x)=\frac{p(x)}{q(x)}=mx+b+ \frac{r(x)}{q(x)}$。
 
 E. Interval of Increase or Decrease
 
