@@ -307,7 +307,7 @@ $$
 Sol:
 首先尋找 $x\to \infty$ 時的水平漸進線：$\lim_{ x \to \infty } \frac{\sqrt{ 2x^{2}+1 }}{3x-5}$。
 $\lim_{ x \to \infty } \frac{\sqrt{ 2+\frac{1}{x^{2}} }}{3-\frac{5}{x}}=\frac{\sqrt{ 2 }}{3}$. 
-接著尋找 $\boxed{x\to -\infty}$ 時的水平漸進線：$\lim_{ x \to -\infty } \frac{\sqrt{ 2x^{2}+1 }}{3x-5}$
+接著尋找 $\boxed{x\to -\infty}$ 時的水平漸進線：$\lim_{ x \to -\infty } \frac{\sqrt{ 2x^{2}+1 }}{3x-5}$ 
 需要注意的是，$\because x<0 \therefore x=-\sqrt{ x^{2} }$. 
 $\lim_{ x \to -\infty } \frac{\sqrt{ 2x^{2}+1 }}{3x-5}=\lim_{ x \to -\infty } \frac{\frac{\sqrt{ 2x^{2}+1 }}{-\sqrt{ x^{2} }}}{3-\frac{5}{x}}=\lim_{ x \to -\infty } \frac{-\sqrt{ 2+\frac{1}{x^{2}} }}{3-\frac{5}{x}}=\frac{-\sqrt{ 2 }}{3}$
 亦或者令 $h=-x$ 求 $\lim_{ h \to \infty } \frac{\sqrt{ 2h^{2}+1 }}{-3h-5}= \frac{\sqrt{ 2 }}{-3}$ 

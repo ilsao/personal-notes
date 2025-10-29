@@ -253,6 +253,64 @@ G. Concavity and Points of Inflection
 
 H. Sketch the Curve
 
+# Indeterminate Forms and l'Hospital's Rule
+
+## Indeterminate Forms
+
+如果我們有： 
+
+$$
+\lim_{ x \to a }  \frac{f(x)}{g(x)}
+$$
+
+且當 $x\to a$ 時，$f(x)\to0$ 且 $g(x)\to0$，則該極限可能存在也可能不存在。我們稱這種類型的極限為 $\frac{0}{0}$ 類型的不定形。若 $f(x)\to \infty$ 且 $g(x)\to \infty$ 則稱爲 $\frac{\infty}{\infty}$ 類型的不定形。
+
+## L'Hospital's Rule
+
+若 $f$ 和 $g$ 在包含 $a$ 的區間 $I$ 中可導，且 $g'(x)\neq 0$，並且屬於 $\frac{0}{0}$ 或 $\frac{\infty}{\infty}$ 類型的不定型的話(若右側極限存在 或等於 $\pm \infty$ 的話)：
+
+$$
+\boxed{\lim_{ x \to a } \frac{f(x)}{g(x)}=\lim_{ x \to a } \frac{f'(x)}{g'(x)}}
+$$
+
+**注意，如果右側極限的結果是由於震盪出現的極限不存在，並不可保證左側極限也不存在。**
+
+洛必達雖好，但請慎用。
+
+道路千萬條，安全第一條。套洛不規範，親人兩行淚。
+
+## Indeterminate Products
+
+有種不定形長這樣：$0\cdot \infty$。
+
+若 $\lim_{ x \to a }f(x)=0$ 且 $\lim_{ x \to a }g(x)=\infty$，我們可以將 $0\cdot \infty$ 類型的不定形如下轉換：
+
+$$
+fg=\frac{f}{\frac{1}{g}}\text{ or }fg=\frac{g}{\frac{1}{f}}
+$$
+
+注意，**選擇不同轉換方式造成的計算複雜度可能天差地別，所以一條轉不通記得換第二條轉。**
+
+## Indeterminate Differences
+
+有種不定型長這樣：$\infty-\infty$。
+
+可以通過有理化，或者提出某數，之類的方式化為 $\frac{0}{0}$ 或 $\frac{\infty}{\infty}$。
+
+## Indeterminate Powers
+
+對於 
+
+$$
+\lim_{ x \to a } [f(x)]^{g(x)}
+$$
+
+有 $0^{0}$ ，$\infty^{0}$ ，$1^{\infty}$ 類型不定型。
+
+我們有兩種方法將其轉換：
+1. 左右取 $\ln$ 。
+2. 轉成以 $e$ 為底的新指數函數。
+
 # Tips
 
 - 局部極值可能發生在非連續處，但不可能發生在端點數。
@@ -260,6 +318,7 @@ H. Sketch the Curve
 - $f^{2}$ 在 $(a,b)$ 上可導，並**不代表** $f$ 在 $(a,b)$ 上可導。因為平方可能會抹平在零處的尖角或奇異。例如 $f(x)=|x|$ 在 $x=0$ 不可導，但 $f^{2}(x)=x^{2}$ 可導。
 - 就算 $f'(x)$ 沒變號且 $f''(x)=0$ 也不能代表該點是反曲點。反曲點必須要 $f''(x)$ 在該點變號。
 - 一個 critical point 可能不是極值也不是反曲點。例如：$x^{2}\sin\left( \frac{1}{x} \right)$ (非連續函數)
+- 轉換 $0\cdot \infty$ 類型不定型，記得嘗試兩種可能性：$f$ 當分子或 $g$ 當分子。
 
 # 重要例題
 
@@ -303,6 +362,34 @@ Sol:
 $f'(x)=g'(x)\quad \forall x\in \mathbb{R}$。
 根據 Corollary 7，$f(x)-g(x)=d$，($d$ a constant)。
 $\implies f(x)=cx+d$ 
+
+5. Prove that identity $\tan^{-1}x+\cot^{-1}x=\frac{\pi}{2}$. 
+
+Sol:
+令 $f(x)=\tan^{-1}x+\cot^{-1}x$，則 $f'(x)= \frac{1}{1+x^{2}}- \frac{1}{1+x^{2}}=0$。
+因為 $\forall x \in \mathbb{R} \quad f'(x)=0$，所以 $f$ 爲一個常數函數。(By Mean Value Theorem)
+所以，任意 $x$ 帶入的值皆相同。取 $f(1)=\frac{\pi}{4}+\frac{\pi}{4}=\frac{\pi}{2}$。
+所以，$\tan^{-1}x+\cot^{-1}x=\frac{\pi}{2}$。
+
+6. Evaluate $\lim_{ x \to \infty }\left[ x-x^{2}\ln\left( \frac{1+x}{x} \right) \right]$ 
+
+Sol:
+$\lim_{ x \to \infty }\left[ x-x^{2}\ln\left( \frac{1+x}{x} \right) \right]=\lim_{ x \to \infty }\left[ \frac{\frac{1}{x}}{\frac{1}{x^{2}}}-\frac{\ln(1+x)-\ln x}{\frac{1}{x^{2}}} \right] = \lim_{ x \to \infty } \frac{\frac{1}{x}-\ln(1+x)-\ln x}{\frac{1}{x^{2}}}$ 
+`~~~~~~~~~~~~~~~~~~~~~^ key` 
+$\overset{\left( \frac{0}{0} \right)}{=}\lim_{ x \to \infty } \frac{-x^{-2}-\frac{1}{1+x}+\frac{1}{x}}{-2x^{-3}}=\lim_{ x \to \infty } \frac{x}{2+2x}=\frac{1}{2}$ 
+
+7. Suppose $f$ is a positive function. If $\lim_{ x \to a }f(x)=0$ and $\lim_{ x \to a }g(x)=\infty$, show that $\lim_{ x \to a }[f(x)]^{g(x)}=0$. 
+
+Sol:
+令 $y=\lim_{ x \to a }[f(x)]^{g(x)}$，則 $\ln y=\lim_{ x \to a }g(x)\ln f(x)$ 
+不是 $0\cdot \infty$ 類型，所以 $\ln y=-\infty$。
+$y=e^{\ln y}=0$ 
+
+7. For what values of $a$ and $b$ is the following equation true? $\lim_{ x \to 0 }\left( \frac{\sin2x}{x^{3}}+a+ \frac{b}{x^{2}} \right)=0$ 
+
+Sol:
+這題我寫出來了，放這裡只是怕你忘記，然後注意解答方式：
+![[Pasted image 20251029200438.png]]
 
 # 大會考
 
