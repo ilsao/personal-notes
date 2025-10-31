@@ -157,13 +157,14 @@ $\implies \log a^{\log_{a} b}=\log b$
 $\implies \log_{a}b \times \log a = \log b$
 $\implies \log_{a}b = \frac{\log b}{\log a}$
 
-# 易錯知識
+# Tips
 
 - 給定 $f$ 的定義域為 $A$，$g$ 的定義域為$B$。
   $(f+g)(x)、(f-g)(x)、(fg)(x)$ 的定義域為 $A \cap B$。
   $\left( \frac{f}{g} \right)(x)$ 的定義域為 $\{x \in A \cap B | g(x)\neq 0\}$。
-
 - 指數函數、拋物線：如何選擇擬合曲線？
   指數擬合：長期增加爆炸快。
   拋物線擬合：長期雖快，但仍沒指數快。
 - 找反函數前，必須證明他是一對一函數！！！
+- $\sin(\sin^{-1}x)$ 的定義域為 $-1\leq x\leq1$。值域為 $-1\leq x\leq1$。
+- $\sin^{-1}(\sin x)$ 的定義域為 $x\in \mathbb{R}$。值域為 $-\frac{\pi}{2}\leq x\leq\frac{\pi}{2}$。
