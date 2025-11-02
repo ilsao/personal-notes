@@ -665,6 +665,33 @@ Sol:
 這種趨近於**負**無窮的要特別小心，因為 $\sqrt{ x^{2}}= |x|=-x$。
 所以上下同除 $-x$，$\lim_{ x \to -\infty } \frac{\sqrt{ x^{2}-6 }/\sqrt{ x^{2} }}{(2x-6)/-x}=\lim_{ x \to -\infty } \frac{\sqrt{ 1-\frac{6}{x^{2}} }}{-2+ \frac{6}{x}}= -\frac{1}{2}$ 。
 
+23. If $\lim_{ x \to 0 }g(x)=L,\quad\lim_{ x \to 0 }h(x)=M$, prove or disprove that if $g(x)<h(x)$ for all $x\neq 0$ then $L<M$. 
+
+Sol:
+反例：$g(x)=0\quad h(x)=|x|$ 
+$\lim_{ x \to 0 }g(x)=0$ 
+$\lim_{ x \to 0 }h(x)=0$ 
+$\implies L=M$ 
+
+24. $I$ is defined on the interval $(\alpha,\beta)$ and $\gamma\in (\alpha,\beta)$. Prove or disprove that if $\lim_{ h \to 0 }|I(\gamma+h)-I(\gamma-h)|=0$ then $\lim_{ h \to 0 }|I(\gamma+h)-I(\gamma)|=0$. 
+
+Sol:
+反例：$I=\begin{cases}0 & \text{if }x\neq \gamma \\ 1 & \text{if }x=\gamma\end{cases}$ 
+則 $\lim_{ h \to 0 }|I(\gamma+h)-I(\gamma-h)|=|0-0|=0$ 但 $\lim_{ h \to 0 }|I(\gamma+h)-I(\gamma)|=|0-1|=1\neq0$
+
+25. $w(x)=\lim_{ n \to \infty } \frac{x^{n+2}-x^{-n}}{x^{n}+x^{-n}}$ for $x>0$, is $w(x)$ continuous at $x=1$?
+
+Sol:
+這題需要分別考慮：$0<x<1 \quad x=1 \quad x>1$ 三種情況。
+我們將分數上下同乘 $x^{n}\implies \lim_{ n \to \infty } \frac{x^{2n+2}-1}{x^{2n}+1}$。
+$x>1$ 時：
+$\lim_{ n \to \infty } \frac{x^{2n+2}-1}{x^{2n}+1}=x^{2}$ 
+$x=1$ 時：
+$\lim_{ n \to \infty } \frac{x^{2n+2}-1}{x^{2n}+1}= \frac{1-1}{1+1}=0$ 
+$0<x<1$ 時：
+$\lim_{ n \to \infty } \frac{x^{2n+2}-1}{x^{2n}+1}= \frac{0-1}{0+1}=-1$ 
+所以，$w(x)$ 在 $x=1$ 不連續。
+
 # Extra questions
 
 1. $\lim_{ x \to \infty }(2^{x}+3^{x}+5^{x})^{1/x}$ 
