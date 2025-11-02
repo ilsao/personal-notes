@@ -387,7 +387,17 @@ Sol:
 不是 $0\cdot \infty$ 類型，所以 $\ln y=-\infty$。
 $y=e^{\ln y}=0$ 
 
-7. For what values of $a$ and $b$ is the following equation true? $\lim_{ x \to 0 }\left( \frac{\sin2x}{x^{3}}+a+ \frac{b}{x^{2}} \right)=0$ 
+8. Find the limit $\lim_{ x \to 0^{+} } (1+\sin3x)^{1/x}$。
+
+Sol:
+$\sin3x \to 3x$ as $x\to {0}^{+}$. 
+$\lim_{ x \to 0^{+} }(1+\sin3x)^{1/x}=\lim_{ x \to 0^{+} }(1+3x)^{1/3}$。
+注意，**錯誤觀念**是：$\lim_{ x \to 0^{+} }(1+3x)=1^{+}\implies(1^{+})^{\infty}=\infty$。
+不對，這個是不定型，左右 $\ln$ 把指數拉下來。
+$\lim_{ x \to 0^{+} }\ln(1+3x)^{1/x}=\lim_{ x \to 0^{+} } \frac{1}{x}\ln(1+3x) \overset{\left( \frac{0}{0} \right)}{=}\lim_{ x \to 0^{+} } \frac{3}{1+3x}=3$。
+所以，原極限為 $e^{3}$。
+
+9. For what values of $a$ and $b$ is the following equation true? $\lim_{ x \to 0 }\left( \frac{\sin2x}{x^{3}}+a+ \frac{b}{x^{2}} \right)=0$ 
 
 Sol:
 這題我寫出來了，放這裡只是怕你忘記，然後注意解答方式：

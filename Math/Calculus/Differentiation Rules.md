@@ -501,7 +501,7 @@ $$
 由於 $f(x) \approx f(a) + f'(a)(x-a)$，我們可以有：$f(a+dx)\approx f(a)+f'(a)(dx)=f(a)+dy$
 
 $$ 
-\boxed{f(a+dx)\approx (a)+dy}
+\boxed{f(a+dx)\approx f(a)+dy}
 $$
 
 例如，我們想尋找 $\sqrt{ 4.05 }$，那麼，可以藉助 $f(x)=\sqrt{ x+3 }$。
@@ -703,6 +703,14 @@ $V=IR\implies I=\frac{V}{R}\implies dI=-\frac{V}{R^{2}}dR$
 The relative error in I is: $\frac{\Delta I}{I}\approx \frac{dI}{I}=-\frac{V}{R^{2}}dR \times \frac{R}{V}=-\frac{dR}{R}$ 
 The relative error in R is: $\frac{\Delta R}{R}\approx \frac{dR}{R}$ 
 所以，the relative error in I 與 the relative error in R 大小大約相同。
+
+19. Let $g(x)=x|x|$, find $g''(0)$. 
+
+Sol:
+我們將函數分段表達：$g(x)=\begin{cases}x^{2} & \text{if }x\geq0 \\ -x^{2} & \text{if }x<0\end{cases}$ 。
+$\lim_{ x \to 0^{-} }= \frac{-x^{2}}{x}=0=\lim_{ x \to 0^{+} } \frac{x^{2}}{x}$，所以 $g'(0)=0$，$g'(x)$ 連續。
+$\implies g'(x)=\begin{cases}2x & \text{if }x\geq 0 \\ -2x & \text{if }x<0\end{cases}$ 
+$\lim_{ x \to 0^{-} } \frac{-2x}{x}=-2\neq \lim_{ x \to 0^{+} } \frac{2x}{x}=2\implies g''(0) \ \not\exists$ 
 
 # 大會考
 

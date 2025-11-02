@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Math/Calculus/Applications of Differentiation.md",
+                "file": "Math/Calculus/Differentiation Rules.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Applications of Differentiation"
+              "title": "Differentiation Rules"
             }
           },
           {
@@ -194,8 +194,8 @@
   },
   "active": "930e5d797c093d6f",
   "lastOpenFiles": [
-    "Math/Calculus/大會考 (一) 上半錯題.md",
     "Math/Calculus/Applications of Differentiation.md",
+    "Math/Calculus/大會考 (一) 上半錯題.md",
     "Math/Calculus/Differentiation Rules.md",
     "Math/Calculus/pic/Pasted image 20251101225650.png",
     "Math/Calculus/pic/Pasted image 20251101223353.png",
