@@ -564,7 +564,7 @@ Thus, $\lim_{ x \to a }f(x)g(x)=-\infty$.
 10. 證明 $f$ 在 $a$ 處連續 $\iff \lim_{ h \to 0 }f(a+h)=f(a)$
 
 Sol:
-Let x = a + h, and $h \to 0 \iff x \to a$
+Let x = a + h, and $h \to 0 \iff x \to a$. 
 Then we have $\lim_{ h \to 0 }f(a+h)=\lim_{ x \to a }f(x)$. 
 ($\implies$) If $f$ is continuous at $a$, then $\lim_{ h \to 0 }f(a+h)=\lim_{ x \to a }f(x)=f(a)$. 
 ($\impliedby$) If $\lim_{ h \to 0 }f(a+h)=f(a)$, then by substitution $\lim_{ x \to a }f(x)=f(a)$. i.e., $f$ is continuous at $a$. 
