@@ -46,7 +46,7 @@ $$
 $$
 \begin{align}
  & F=-kx=ma \\
- & F=-kA\sin(\omega t+\phi)=-mA\omega^{2}(\omega t+\phi) \\
+ & F=-kA\sin(\omega t+\phi)=-mA\omega^{2}\sin(\omega t+\phi) \\
  & \implies \boxed{k=m\omega^{2}} \\
  & \implies \boxed{\omega=\sqrt{ \frac{k}{m} }} \\
  & \implies \boxed{\nu=\frac{1}{2\pi}\sqrt{ \frac{k}{m} }} \\
@@ -60,6 +60,35 @@ $$
 
 可以得到 $x_{0}=A\sin(\phi)$ 且 $v_{x}=0=A\omega \cos(\phi)\implies \begin{cases}\phi=\frac{\pi}{2}\text{ 或 } \frac{3\pi}{2} \\ x_{0}=A\end{cases}$。
 
-並且，我們還有 $v_{\text{max}}=A\omega$，$a_{\text{max}}=A\omega^{2}$。
+我們還有：
+
+$$\boxed{v_{\text{max}}=A\omega}$$
+
+$$\boxed{a_{\text{max}}=A\omega^{2}}$$
 
 # Energy of Oscillation
+
+當一個物體從其平衡位置位移到距離平衡位置 $x$ 的地方，則將該點能量記為 $E_{p}$，且該能量由將該物體移動到該位置的力作的功產生。
+
+所以，當該物體處於偏離平衡位置 $x$ 時，該點的位能記為：
+
+$$
+\boxed{E_{p}\text{(spring)}=\frac{1}{2}kx^{2}}
+$$
+
+當省略摩擦力時，根據能量守恆，我們有：
+
+$$
+\boxed{E_{\text{total}}=E_{k}+E_{p}=\frac{1}{2}mv^{2}+\frac{1}{2}kx^{2}}
+$$
+
+若我們想求某點的加速度，可以使用：
+
+$$
+\begin{align}
+ & F=ma \\
+- & kx=ma \\
+\implies  & a= -\frac{kx}{m}
+\end{align}
+$$
+
