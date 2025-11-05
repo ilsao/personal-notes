@@ -219,7 +219,7 @@ proof (1):
 假設 $\mathbf{v_{n}}$ 可以被其他向量的線性組合表達。
 令 $\mathbf{v}$ 為向量空間 $V$ 中的向量，因為 $\mathbf{v_{1}},\dots,\mathbf{v_{n}}$ 可以張出 $V$，所以：
 $\mathbf{v}=\alpha_{1} \mathbf{v_{1}}+\dots+\alpha _{n} \mathbf{v_{n}}=\alpha_{1}\mathbf{v_{1}}+\dots+\alpha_{n}(\beta_{1}\mathbf{v_{1}}+\dots+\beta_{n-1}\mathbf{v_{n-1}})$ 
-$=(\alpha_{1}+\beta_{1})\mathbf{v_{1}} + \dots+(\alpha_{n}+\beta_{n})\mathbf{v_{n-1}}$ 
+$=(\alpha_{1}+\alpha_{n}\beta_{1})\mathbf{v_{1}} + \dots+(\alpha_{n-1}+\alpha_{n}\beta_{n-1})\mathbf{v_{n-1}}$ 
 因為向量空間 $V$ 的任意向量 $\mathbf{v}$ 都可以被表達為 $\mathbf{v_{1}},\dots,\mathbf{v_{n-1}}$ 的線性組合，所以這些向量生成 $V$。
 
 proof (2):
@@ -228,23 +228,28 @@ proof (2):
 $\mathbf{v_{n}}=\alpha_{1}\mathbf{v_{1}}+\alpha_{2}\mathbf{v_{2}+\dots+\alpha_{n-1}\mathbf{v_{n-1}}}$ 
 移項可得：$\alpha_{1}\mathbf{v_{1}}+\dots+\alpha_{n-1}\mathbf{v_{n-1}}-\mathbf{v_{n}}=\mathbf{0}$ 
 如果我們設對於 $i,\dots,n-1$ 有 $c_{i}=\alpha_{i}$ ，且 $c_{n}=-1$，我們有：$c_{1}\mathbf{v_{1}}+\dots+c_{n}\mathbf{v_{n}}=\mathbf{0}$ 
-相反的，如果 $c_{1}\mathbf{v_{1}}+\dots+c_{n}\mathbf{v_{n}}=\mathbf{0}$，那麼一定有一個 $c_{i}\neq 0$ (這裡取 $c_{n}$) 使得：
+( $\Leftarrow$ )
+如果 $c_{1}\mathbf{v_{1}}+\dots+c_{n}\mathbf{v_{n}}=\mathbf{0}$，那麼一定有一個 $c_{i}\neq 0$ (這裡取 $c_{n}$) 使得：
 $\mathbf{v_{n}}= \frac{-c_{1}}{c_{n}}\mathbf{v_{1}}+\dots+ \frac{-c_{n-1}}{c_{n}}\mathbf{v_{n-1}}$ 
 
+由於線性獨立 $\implies$ $c_{1},\dots,c_{n}$ 全為零 $\implies \det(A)\neq 0$。
+
+又有線性相依 $\implies c_{1},\dots,c_{n}$ 不全為零 $\implies \det(A)=0$。
+
 本章的重點有點混亂：
-- 線性相依：某向量可以被其他向量表達 $\implies$ $c_{1}\mathbf{v_{1}}+\dots+c_{n}\mathbf{v_{n}}=\mathbf{0}$ 且 $c_{1},\dots c_{n}\neq0$。$\det(A)=0$ 
-- 線性獨立：沒有向量可以被其他向量表達 $\implies$  $c_{1}\mathbf{v_{1}}+\dots+c_{n}\mathbf{v_{n}}=\mathbf{0}$ 且 $c_{1},\dots c_{n}=0$。$\det(A)\neq 0$
+- 線性相依：某向量可以被其他向量表達 $\implies$ $c_{1}\mathbf{v_{1}}+\dots+c_{n}\mathbf{v_{n}}=\mathbf{0}$ 且 $c_{1},\dots c_{n}\neq0$。$\boxed{\det(A)=0}$ 
+- 線性獨立：沒有向量可以被其他向量表達 $\implies$  $c_{1}\mathbf{v_{1}}+\dots+c_{n}\mathbf{v_{n}}=\mathbf{0}$ 且 $c_{1},\dots c_{n}=0$。$\boxed{\det(A)\neq 0}$
 
 ## Geometric Interpretation
 
 如果我們有 $\mathbb{R}^{3}$ 空間中的三個向量 $\mathbf{x,y,z}$，如果 $\mathbf{x,y}$ 線性相依，那麼：$c_{1}\mathbf{x}+c_{2}\mathbf{y}=\mathbf{0}$ 其中 $c_{1}, c_{2}$ 至少一個不為零。
 假設 $c_{1}$ 不為零，那麼：$\mathbf{x}=-\frac{c_{2}}{c_{1}}\mathbf{y}$。說明 $\mathbf{x,y}$ 在三維空間中共線。
 相反如果二者線性獨立，那麼 $\mathbf{x},\mathbf{y}$ 可以在三維空間中張出一個平面。
-此時，如果 $\mathbf{z}$ 與二者線性相依，那麼 $\mathbf{z}$ 會落在該平面上。若線性獨立，則不會落在該平面上。
+此時($\mathbf{x},\mathbf{y}$ 線性獨立)，如果 $\mathbf{z}$ 與二者線性相依，那麼 $\mathbf{z}$ 會落在該平面上。若線性獨立，則不會落在該平面上。
 
 ## Theorems and Examples
 
-誒，我好厲害，他剛要講的 Theorem 我在之前就補充道上上小節了耶～
+誒，我好厲害，他剛要講的 Theorem 我在之前就補充到上上小節了耶～
 
 $$令 \ \mathbf{x_{1}},\dots,\mathbf{x_{n}} \ 為 \ \mathbb{R}^{n} \ 中的 \ n \ 個向量，且 \ X=(\mathbf{x_{1}},\dots,\mathbf{x_{n}})。則 \ \mathbf{x_{1}},\dots,\mathbf{x_{n}} \ 線性相依 \ \Leftrightarrow X \ 奇異。$$
 
@@ -252,22 +257,22 @@ proof:
 等式：$c_{1}\mathbf{x_{1}}+\dots+c_{n}\mathbf{x_{n}}$ 可以被寫成以下矩陣方程：$X\mathbf{c}=\mathbf{0}$ 。
 此方程有 nontrivial solution $\Leftrightarrow X$ 奇異。
 
-需要注意的是，待檢測的 $k$ 個 $\mathbb{R}^{n}$ 中的向量如果 $k\neq n$，則不能使用行列式檢測。我們必須將矩陣化成 REF，然後觀察 free variables 是否出現。如果有，則必定線性相依。相反，則線性獨立。
+需要注意的是，**待檢測的 $k$ 個 $\mathbb{R}^{n}$ 中的向量如果 $k\neq n$，則不能使用行列式檢測。我們必須將矩陣化成 REF，然後觀察 free variables 是否出現(必有某 row 全零才可使得 free variables 出現)**。(因為 $\det(A)=\det(A^{t})$，所以可以把 column vectors 轉置成 row vectors 思考)如果有，則必定線性相依。相反，則線性獨立。
 
 $$
 \text{令 }\mathbf{v_{1}},\dots,\mathbf{v_{n}}\text{ 為向量空間 }V\text{ 中的向量}。\text{對於 } \mathbf{v} \in \text{Span}(\mathbf{v_{1}},\dots,\mathbf{v_{n}})\text{：}
 $$
 $$
-\mathbf{v}\text{ 可以被寫成} \ \mathbf{v_{1}},\dots,\mathbf{v_{n}}\text{唯一的線性組合方式} \Leftrightarrow\text{ } \mathbf{v_{1}},\dots,\mathbf{v_{n}}\text{ 線性獨立}
+\mathbf{v}\text{ 可以被寫成} \ \mathbf{v_{1}},\dots,\mathbf{v_{n}}\ \text{唯一的線性組合方式} \Leftrightarrow\text{ } \mathbf{v_{1}},\dots,\mathbf{v_{n}}\ \text{ 線性獨立}
 $$
 
 proof:
 我們有 $\mathbf{v}=\alpha_{1}\mathbf{v_{1}}+\dots+\alpha_{n}\mathbf{v_{n}}$。
-假設還有 $\mathbf{v}=\beta_{1}\mathbf{v_{1}}+\dots+\beta_{n}\mathbf{v_{n}}$
+假設還有 $\mathbf{v}=\beta_{1}\mathbf{v_{1}}+\dots+\beta_{n}\mathbf{v_{n}}$。
 如果 $\mathbf{v_{1}},\dots,\mathbf{v_{n}}$ 線性獨立，那麼我們要證明 $\alpha_{i}=\beta_{i}$。
 我們將兩式相減，得到 $(\alpha_{1}-\beta_{1})\mathbf{v_{1}}+\dots+(\alpha_{n}-\beta_{n})\mathbf{v_{n}}=\mathbf{0}$ 。
 又因為 $\mathbf{v_{1}},\dots,\mathbf{v_{n}}$ 線性獨立，所以所有係數都應該等於零 $\alpha_{i}-\beta_{i}=0\implies\alpha_{i}=\beta_{i}$。
-若 $\mathbf{v_{1}},\dots,\mathbf{v_{n}}$ 線性相依，那麼我們要證明最少有一個 $\beta_{i}$ 不等於 $\alpha_{i}$。
+若 $\mathbf{v_{1}},\dots,\mathbf{v_{n}}$ 線性相依，我們要證明最少有一個 $\beta_{i}$ 不等於 $\alpha_{i}$。
 因為 $\mathbf{v_{1}},\dots,\mathbf{v_{n}}$ 線性相依，所以我們可以假設 $c_{1}\mathbf{v_{1}}+\dots+c_{n}\mathbf{v_{n}}=\mathbf{0}$，其中 $c_{1},\dots,c_{n}$ 不全為零。
 令 $\beta_{i}=\alpha_{i}+c_{i}$，那麼：
 $\beta_{1}\mathbf{v_{1}}+\dots+\beta_{n}\mathbf{v_{n}}=(\alpha_{1}+c_{1})\mathbf{v_{1}}+\dots+(\alpha_{n}+c_{n})\mathbf{v_{n}}=\mathbf{v}+\mathbf{0}=\mathbf{v}$ 
@@ -283,7 +288,7 @@ $\beta_{1}\mathbf{v_{1}}+\dots+\beta_{n}\mathbf{v_{n}}=(\alpha_{1}+c_{1})\mathbf
 
 我們可以將 $c_{1}p_{1}+c_{2}p_{2}+\dots+c_{n}p_{n}$ 寫成 $a_{1}x^{n-1}+\dots+a_{n}$。
 
-那麼，想要 $p_{1},\dots,p_{n}$ 線性獨立，則 $a_{1},\dots,a_{n}$ 必須全部等於零。由於 $a_{i}$ 由 $c_{i}$ 與 $p_{i}$ 構成，也就說明 $c_{1},\dots,c_{n}$ 必須全部為零。
+那麼，想要 $p_{1},\dots,p_{n}$ 線性獨立，則 $a_{1},\dots,a_{n}$ 必須全部等於零。由於 $a_{i}$ 由 $c_{i}$ 與 $p_{i}$ 構成，也就**說明 $c_{1},\dots,c_{n}$ 必須全部為零**。
 
 ### The Vector Space $C^{(n-1)}[a,b]$ 
 
@@ -318,13 +323,125 @@ proof:
 $W[f_{1},\dots,f_{n}](x)=0 \ \forall x \in [a,b]$ 。
 所以，只要可以找到任意 $x\in[a,b]$ 使得 $W=[f_{1},\dots,f_{n}](x)\neq 0$ 則 $f_{1},\dots,f_{n}$ 線性獨立。
 
-需要注意，反向結論是不成立的。也就是說就算對於所有 $x$ 都有 $W[f_{1},\dots,f_{n}](x)=0$ 並仍**不可保證** $f_{1},\dots,f_{n}$ 線性相依。因為，想要保證線性相依， $c_{i}$ 必須為一個固定常數。但是對於所有 $x$ 都有 $W[f_{1},\dots,f_{n}](x)=0$ 只能保證對於某特定 $x$ 可以找到相對應的 $c_{i}$ 使得等式成立。而這個 $c_{i}$ 有可能是常數也有可能隨著 $x$ 不同而改變。所以無法保證線性相依，但是可以說明有一定可能性這些函數線性相依。
+需要注意，**反向結論是不成立的**。也就是說就算對於所有 $x$ 都有 $W[f_{1},\dots,f_{n}](x)=0$ 並仍**不可保證** $f_{1},\dots,f_{n}$ 線性相依。因為，想要保證線性相依， $c_{i}$ 必須為一個固定常數。但是對於所有 $x$ 都有 $W[f_{1},\dots,f_{n}](x)=0$ 只能保證對於某特定 $x$ 可以找到相對應的 $c_{i}$ 使得等式成立。而這個 $c_{i}$ 有可能是常數也有可能隨著 $x$ 不同而改變。所以無法保證線性相依，但是可以說明有一定可能性這些函數線性相依。
+
+# Basis and Dimension
+
+首先，我們給出 basis 的定義：
+
+$$
+\text{向量 }\mathbf{v_{1}},\dots,\mathbf{v_{n}} \text{ 組成向量空間 } V\text{ 的基底(basis) 若且唯若}
+$$
+$$
+\begin{align}
+ & 1. \ \mathbf{v_{1}},\dots,\mathbf{v_{n}}\text{ 線性獨立} \\
+ & 2. \ \mathbf{v_{1}},\dots,\mathbf{v_{n}} \text{ 生成 }V
+\end{align}
+$$
+
+$$
+\text{若 }\mathbf{v_{1}},\dots,\mathbf{v_{n}} \text{ 是向量空間 }V\text{ 的生成集，且 }m>n \text{，則任意 }m \text{ 個從 } V\text{ 中取得的向量線性相依}
+$$
+
+proof:
+令 $\mathbf{u_{1}},\dots,\mathbf{u_{m}}$ 為 $m$ 個從 $V$ 中選取的向量。
+我們可以將 $\mathbf{u_{i}}$ 表示為：
+$\mathbf{u_{i}}=a_{i 1}\mathbf{v_{1}}+\dots+a_{i n}\mathbf{v_{n}}$ ，其中 $i=1,\dots,m$。
+那麼，線性組合 $c_{1}\mathbf{u_{1}}+\dots+c_{m}\mathbf{u_{m}}$ 可以表達為：
+$c_{1}\mathbf{u_{1}}+\dots+c_{m}\mathbf{u_{m}}=\sum_{i=1}^{m}\left( c_{i}\sum_{j=1}^{n}a_{ij}\mathbf{v_{j}} \right)=\sum_{j=1}^{n}\left( \sum_{i=1}^{m}a_{ij}c_{i} \right)\mathbf{v_{j}}$ 
+那麼，考慮系統：
+$\sum_{i=1}^{m}a_{ij}c_{i}=0$，其中 $j=1,\dots,n$。
+是一個未知數 > 等式 的齊次系統，所以必有 nontrivial solution $(\hat{c_{1}},\dots,\hat{c_{m}})^{T}$。
+帶回原式：$\hat{c_{1}}\mathbf{u_{1}}+\dots+\hat{c_{n}}\mathbf{u_{m}}=\sum_{j=1}^{n}0\mathbf{v_{j}}=0$ 。
+所以，$\mathbf{u_{1}},\dots,\mathbf{u_{m}}$ 線性相依。
+
+$$
+\text{若 }\{\mathbf{v_{1}},\dots,\mathbf{v_{n}}\}\text{ 與 }\{\mathbf{u_{1}},\dots,\mathbf{u_{m}}\} \text{ 都是向量空間 }V\text{ 的基底，則 }n=m。
+$$
+
+proof:
+令 $\mathbf{v_{1}},\dots,\mathbf{v_{n}}$ 與 $\mathbf{u_{1}},\dots,\mathbf{u_{n}}$ 為 $V$ 的基底。
+因為他們都是 $V$ 的基底，所以二者都線性獨立。
+為了滿足線性獨立的條件，根據上一個我們證明的性質：
+因為 $\mathbf{v_{1}},\dots,\mathbf{v_{n}}$ 是 $V$ 的生成集，所以 $m\leq n$ 可以滿足線性獨立的條件。
+又因為 $\mathbf{u_{1}},\dots, \mathbf{u_{m}}$ 是 $V$ 的生成集，所以必須 $n\leq m$。
+綜合以上，$n=m$。
+
+以下給出向量空間**維度(dimension)** 的定義：
+
+$$
+\text{當向量空間 } V \text{ 由 } n \text{ 個基底張成，則稱 }V\text{ 的維度為 } n \text{。}V\text{ 的子空間 }\{0\}\text{ 擁有維度 }0。
+$$
+$$
+\text{若 }V\text{ 的基底向量有限，}\text{則稱 } V\text{ 有限維度(finite dimension)，否則為無限維度(infinite dimension)。}
+$$
+
+有了以上定義，我們來延伸一個引理：
+
+$$
+\text{若 }V\text{ 是一個維度 }n>0\text{ 的向量空間，則：} 
+$$
+$$
+\begin{align}
+ (I)  & \text{ 任意 }V\text{ 中的 } n\text{ 個線性獨立的向量可以張出 } V。\\
+ (II) & \text{ 任意可以張出 }V\text{ 的 }n\text{ 個向量線性獨立。}
+\end{align}
+$$
+
+proof:
+(I)
+我們取 $V$ 中 $n$ 個線性獨立的向量 $\mathbf{v_{1}},\dots,\mathbf{v_{n}}$，以及一個向量 $\mathbf{v}$。
+因為 $\mathbf{v_{1}},\dots,\mathbf{v_{n}}$ 線性獨立，所以：$c_{1}\mathbf{v_{1}}+\dots+c_{n}\mathbf{v_{n}}=\mathbf{0}$ 
+那麼，$c_{1}\mathbf{v_{1}}+\dots+c_{n}\mathbf{v_{n}}+c_{n+1}\mathbf{v}=\mathbf{0}$ 中的 $c_{n+1}$ 必不為零，否則 $\mathbf{v_{1}},\dots,\mathbf{v_{n}}$ 不是線性獨立。
+$\implies \mathbf{v}=\alpha \mathbf{v_{1}}+\dots+\alpha \mathbf{v_{n}}$ 且 $\alpha_{i}=-\frac{c_{i}}{c_{n+1}}$，其中 $i=1,\dots,n$。
+因為 $\mathbf{v}$ 為 $V$ 中的任意向量，所以 $c_{1}\mathbf{v_{1}}+\dots+c_{n}\mathbf{v_{n}}$ 張出 $V$。
+(II)
+利用反證法：假設 $\mathbf{v_{1}},\dots,\mathbf{v_{n}}$ 張出 $V$ 且線性線性相依。
+那麼一定可以在這些向量中找到某個 $\mathbf{v_{i}}$ 可以被其他向量表達，我們可以一直挑出這樣的向量，直到最終 $\mathbf{v_{1}},\dots,\mathbf{v_{k}}$ 線性獨立且張出 $V$，其中 $k<n$。
+但是，這與前提 $\text{dim }V=n$ 矛盾，所以 $\mathbf{v_{1}},\dots,\mathbf{v_{n}}$ 必定線性獨立。
+
+讓我們介紹本節最後一個引理：
+
+$$
+\text{若 }V\text{ 是一個維度 }n>0\text{ 的向量空間，則：} 
+$$
+$$
+\begin{align}
+(i)  & \text{ 任何少於 }n\text{ 個向量的生成集都無法生成 }V。\\
+(ii)  & \text{ 任何由少於 }n\text{ 個線性獨立的向量構成的子集都可被擴充成 }V\text{ 的一組基底。}\\
+(iii) & \text{ 任何由大於 }n\text{ 個向量構成的集合都可以由刪去某些向量成為 }V\text{ 的一組基底。}
+\end{align}
+$$
+
+proof:
+(i)
+利用反證法：假設 $\mathbf{v_{1},\dots,\mathbf{v_{m}}}$ 張出 $V$，其中 $m<n$。
+那麼根據 (iii)，可以刪去某些向量使得 $\mathbf{v_{1}},\dots,\mathbf{v_{k}}$ 張出 $V$，其中 $k\leq m$。
+這與前提 $\text{dim }V=n$ 矛盾，所以 $\mathbf{v_{1},\dots,\mathbf{v_{m}}}$ 無法張出 $V$。
+(ii)
+假設 $\mathbf{v_{1},\dots,\mathbf{v_{k}}}$ 線性獨立且 $k<n$。
+我們一定可以找到一個向量 $\mathbf{v_{k+1}}$ 在 $V$ 中但不在 $\text{Span}(\mathbf{v_{1}},\dots,\mathbf{v_{k}})$ 中，我們把它加入前面。
+會變為：$\mathbf{v_{1},\dots,\mathbf{v_{k}}},\mathbf{v_{k+1}}$ ，並且 $\mathbf{v_{1},\dots,\mathbf{v_{k+1}}}$ 仍線性獨立。
+如果 $\mathbf{v_{1},\dots,\mathbf{v_{k+1}}}$ 仍無法張出 $V$，我們可以繼續找到 $\mathbf{v_{k+2}}$，加入到集合中。
+週而復始，最終我們一定可以將原集合拓展成 $\mathbf{v_{1}},\dots,\mathbf{v_{n}}$ 並張出 $V$。
+(iii)
+假設 $\mathbf{v_{1}},\dots,\mathbf{v_{m}}$ 且 $m>n$。由上條引理，我們知道這個集合一定線性相依。
+所以我們通過不斷將向量剔出，最終剔除到 $\mathbf{v_{1}},\dots,\mathbf{v_{n}}$ 且線性獨立，那麼該集合張出 $V$。
+
+## Standard Bases
+
+我們稱 $\mathbb{R}^{n}$ 的**標準基底(standard bases)** 為：$\{\mathbf{e_{1}},\dots,\mathbf{e_{n}}\}$。
+
+又稱 $\mathbb{R}^{n\times n}$ 的標準基底為：$\{E_{11},E_{12},E_{21},E_{22}\}$。
+
+又稱 $P_{n}$ 的標準基底為：$\{1,x,x^{2},\dots,x^{n-1}\}$。
 
 # Tips
 
 - 零多項式的 degree 通常沒有定義或者定義為 $\text{deg(0)}=-\infty$。
 - $A$ matrix commute with $B$ $\Leftrightarrow$ $AB=BA$。
 - $N(A)=\{\mathbf{0}\}\implies$ $A$ 化成 RREF 後沒有自由變數，也就是 $I$。
+- 對於 Wronskian，只要能找到一個數 $x$ 使得 $W[f_{1},\dots,f_{n}](x) \neq 0$，則 $f_{1},\dots,f_{n}$ 線性獨立。但是，**反向結論不成立**。
 
 # 重要例題
 
