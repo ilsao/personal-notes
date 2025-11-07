@@ -439,6 +439,260 @@ proof:
 
 又稱 $P_{n}$ 的標準基底為：$\{1,x,x^{2},\dots,x^{n-1}\}$。
 
+# Change of Basis
+
+## Changing Coordinates in $\mathbb{R}^{2}$ 
+
+$\mathbb{R}^{2}$ 的標準基底為 $\{\mathbf{e_{1}},\mathbf{e_{2}}\}$。任何 $\mathbb{R}^{2}$ 中的向量 $\mathbf{x}$ 都可以被表示成：
+
+$$
+\mathbf{x}=x_{1}\mathbf{e_{1}}+x_{2}\mathbf{e_{2}}
+$$
+
+標量 $x_{1},x_{2}$ 可以被視為 $\mathbf{x}$ 在**標準基底**上的座標。
+
+若我們取 $\mathbb{R}^{2}$ 的任意一組基底 $\{\mathbf{y},\mathbf{z}\}$，則 $\mathbf{x}$ 可以被表達成：
+
+$$
+\mathbf{x}=\alpha \mathbf{y}+\beta \mathbf{z}
+$$
+
+那麼標量 $\alpha,\beta$ 可以被視為 $\mathbf{x}$ 在 $\{\mathbf{y},\mathbf{z}\}$ 上的座標。
+
+需要注意，我們必須為基底定義順序。因為相同基底，但不同順序的組合會導致 $\mathbf{x}$ 相對於該基底的座標不同。
+
+## Changing Coordinates
+
+考慮 $\mathbb{R}^{2}$ 中的一組基底：
+
+$$
+\mathbf{u_{1}}=\begin{bmatrix}
+3 \\
+2
+\end{bmatrix}
+\quad 
+\mathbf{u_{2}}=\begin{bmatrix}
+1 \\
+1
+\end{bmatrix}
+$$
+
+思考以下兩個問題：
+1. 給定一向量 $\mathbf{x}=(x_{1},x_{2})^{T}$，找到 $x$ 在 $\mathbf{u_{1}}$ 與 $\mathbf{u_{2}}$ 上的座標。
+2. 給定一向量 $c_{1}\mathbf{u_{1}}+c_{2}\mathbf{u_{2}}$ ($(c_{1},c_{2})^{T}$ 是該向量在 $\mathbf{u_{1},u_{2}}$ 上的座標)，找到該向量在 $\mathbf{e_{1}}$ 與 $\mathbf{e_{2}}$ 上的座標。
+
+我們首先考慮問題 $2$，因為較容易解決，只需要將 $\mathbf{u_{1}},\mathbf{u_{2}}$ 用標準基底表達即可：
+
+$$
+c_{1}\mathbf{u_{1}}+c_{2}\mathbf{u_{2}}=c_{1}(3\mathbf{e_{1}}+2\mathbf{e_{2}})+c_{2}(\mathbf{e_{1}}+\mathbf{e_{2}})=(3c_{1}+c_{2})\mathbf{e_{1}}+(2c_{1}+c_{2})\mathbf{e_{2}}
+$$
+
+於是：
+
+$$
+\mathbf{x}=\begin{bmatrix}
+3c_{1}+c_{2} \\
+2c_{1}+c_{2}
+\end{bmatrix}=\begin{bmatrix}
+3 & 1 \\
+2 & 1
+\end{bmatrix}
+\begin{bmatrix}
+c_{1} \\
+c_{2}
+\end{bmatrix}
+$$
+
+如果我們令 $U=(\mathbf{u_{1}},\mathbf{u_{2}})=\begin{bmatrix}3 & 1 \\ 2 & 1\end{bmatrix}$ ，則：
+
+$$
+\mathbf{x}=U\mathbf{c}
+$$
+
+我們將這種矩陣 $U$ 稱為**轉移矩陣(transition matrix)**。
+
+讓我們回過頭解決 $1$。
+
+因為 $U$ 矩陣可逆，所以：
+
+$$
+\mathbf{c}=U^{-1}\mathbf{x}
+$$
+
+考慮另一個新問題：給定 $\{\mathbf{u_{1}},\mathbf{u_{2}}\}$ 與 $\{\mathbf{v_{1}},\mathbf{v_{2}}\}$ 為 $\mathbb{R}^{2}$ 上的兩組不同的基底。假設 $\mathbf{x}$ 是 $\mathbb{R}^{2}$ 上的一個向量，如何將 $\mathbf{x}$ 在 $\mathbf{u}$ 上的座標轉換成 $\mathbf{v}$ 上的左標？
+
+已知 $\mathbf{x}=c_{1}\mathbf{u_{1}}+c_{2}\mathbf{u_{2}}$，想要將其轉換成 $\mathbf{v}$ 上的座標，我們需要找到標量使得：
+
+$$
+c_{1}\mathbf{u_{1}}+c_{2}\mathbf{u_{2}}=d_{1}\mathbf{v_{1}}+d_{2}\mathbf{v_{2}}
+$$
+
+令 $U=(\mathbf{u_{1}},\mathbf{u_{2}})$ 與 $V=(\mathbf{v_{1}},\mathbf{v_{2}})$，則：
+
+$$
+U\mathbf{c}=V\mathbf{d}\implies \mathbf{d}=V^{-1}U\mathbf{c}
+$$
+
+我們也可以將其想成：先將 $\mathbf{c}$ 轉為標準基底上的座標 ($U\mathbf{c}$)，然後再轉為 $\mathbf{v}$ 上的座標 ($V^{-1}U\mathbf{c}$)。
+
+## Change of Basis of a General Vector Space
+
+綜上所述，我們給出定義：
+
+令 $V$ 為向量空間並令 $E=\{\mathbf{v_{1}},\dots ,\mathbf{v_{n}}\}$ 為 $V$ 的一組排序過的基底。
+
+取 $V$ 中任意向量 $\mathbf{v}$，則 $\mathbf{v}$ 可被表達為：$\mathbf{v}=c_{1}\mathbf{v_{1}}+\dots+c_{n}\mathbf{v_{n}}$，其中 $c_{1},\dots,c_{n}$ 為標量。
+
+那麼，對於每個 $\mathbf{v}$，我們都可以找到獨有的向量 $c=(c_{1},\dots ,c_{n})^{t}\in \mathbb{R}^{n}$。
+
+我們稱 **$\mathbf{c}$ 是 $\mathbf{v}$ 在有序基底 $E$ 上的座標向量(coordinate vector)，並記作 $[\mathbf{v}]_{E}$**。
+
+$\mathbf{c}$ 的每一項稱為 $\mathbf{v}$ 在 $E$ 上的座標。
+
+注意到：**每個轉移矩陣必定都是可逆的**。
+
+proof:
+這個證明有點繞，做好心理準備。
+令 $V$ 是一個 $n$ 維的向量空間。令 $E=\{\mathbf{w_{1}},\dots,\mathbf{w_{n}}\}$ 與 $F=\{\mathbf{v_{1}},\dots,\mathbf{v_{n}}\}$。
+接下來這步是最重要的一步：將 $\mathbf{w_{j}}$ 用 $\mathbf{v_{i}}$ 表達。
+$$
+\begin{align}
+ & \mathbf{w_{1}}=s_{11}\mathbf{v_{1}}+s_{21}\mathbf{v_{2}}+\dots+s_{n{1}}\mathbf{v_{n}} \\
+ & \vdots \\
+ & \mathbf{w_{n}}=s_{1n}\mathbf{v_{1}}+s_{2n}\mathbf{v_{2}}+\dots+s_{nn}\mathbf{v_{n}}
+\end{align}
+$$
+在此，$S=([\mathbf{w_{1}}]_{F} \ [\mathbf{w_{2}}]_{F} \ \dots \ [\mathbf{w_{n}}]_{F})$。
+也就是說，$S$ 是一個將 $E$ 上座標轉換成 $F$ 座標的 transition matrix。
+令 $\mathbf{v}\in V$，且 $\mathbf{x}=[\mathbf{v}]_{E}$，$\mathbf{y}=[\mathbf{v}]_{F}$，則：
+$$
+\mathbf{y}=S\mathbf{x}
+$$
+而且 $\mathbf{y}=S\mathbf{x}\Leftrightarrow x_{1}\mathbf{w_{1}}+\dots+x_{n}\mathbf{w_{n}}=y_{1}\mathbf{v_{1}}+\dots+y_{n}\mathbf{v_{n}}$。
+令 $\mathbf{y}=\mathbf{0}\implies x_{1}\mathbf{w_{1}}+\dots+x_{n}\mathbf{w_{n}}=\mathbf{0}$。
+因為 $\mathbf{w_{1},\dots,w_{n}}$ 線性獨立，所以 $x_{1}=\dots=x_{n}=0$。
+那麼：$S\mathbf{x}=\mathbf{0}$ 有唯一零解，所以 $S$ 可逆。
+
+以上，我們證明了所有 transition matrix 都可逆。實際上，我們可以將任何可逆的矩陣都視為 transition matrix。
+
+對於任意給定的可逆矩陣 $A\in \mathbb{R}^{n\times n}$，給定任意一組基底 $V=\{\mathbf{v_{1}},\dots,\mathbf{v_{n}}\}$，定義 $F=\{A\mathbf{v_{1}}, A\mathbf{v_{2}},\dots,A{\mathbf{v_{n}}}\}$，則 $F$ 也會是一組基底(因為 $\{A\mathbf{v_{1}}, A\mathbf{v_{2}},\dots,A{\mathbf{v_{n}}}\}$ 必定線性獨立 ($A$ 非奇異)，下面例題好像有證過)。且 $A$ 為轉換 $V$ 上座標到 $F$ 上座標的 transition matrix。
+
+# Row Space and Column Space
+
+首先定義一波：
+
+若 $A$ 是一個 $m\times n$ 的矩陣，則：
+
+**row space**：由 $A$ 的 row vectors 生成的 $\mathbb{R}^{1\times n}$ 子空間。
+
+**column space**：由 $A$ 的 column vectors 生成的 $\mathbb{R}^{m}$ 子空間。
+
+這邊我們有個定理給你介紹一下～
+
+$$
+\text{兩個 row equivalent 的矩陣有相同的 row space。}
+$$
+
+proof:
+因為 $B$ row equivalent $A$，所以 $B$ 的 row vectors 可以由 $A$ 的 row vectors 的線性組合表達。
+那麼，$B$ 的 row space 必定為 $A$ 的 row space 的子空間。
+同理，$A$ 的 row space 也必為 $B$ 的 row space 的子空間。
+所以 $A$ 的 row space 必等於 $B$ 的 row space。
+
+緊接著，我們定義什麼是**秩(rank)**：$A$ 的 row space 的維度。寫成：$\text{rank}(A)$。
+
+想找出 $A$ 的秩，我們可以將 $A$ 化成 REF。
+
+所有非零 row 會構成 $A$ 的 row space 的基底，所以 $\text{rank}(A)=$ nonzero rows 的個數。
+
+## Linear Systems
+
+Consistency Theorem for Linear Systems說：一個線性系統 $A\mathbf{x}=\mathbf{b}$ 有解 $\Leftrightarrow \mathbf{b}$ 在 $A$ 的 column space 中。
+
+這很好理解，因為 $A\mathbf{x}=\mathbf{b}$ 可以寫成：
+
+$$
+x_{1}\begin{bmatrix}
+a_{11} \\
+a_{21} \\
+\vdots \\
+a_{m1}
+\end{bmatrix}
++\dots+
+x_{n}\begin{bmatrix}
+a_{1n} \\
+a_{2n} \\
+\vdots \\
+a_{mn}
+\end{bmatrix}
+=\begin{bmatrix}
+b_{1} \\
+b_{2} \\
+\vdots \\
+b_{n}
+\end{bmatrix}
+$$
+
+也就是說，$A\mathbf{x}=\mathbf{b}$ 有解，代表 $\mathbf{b}$ 可以被寫成 $A$ 的 column vectors 的線性組合。
+
+還有一個定理說：若 $A$ 為 $m\times n$ 的矩陣，則 $A\mathbf{x}=\mathbf{b}$ 有解 $\forall \mathbf{b}\in \mathbb{R}^{m}\Leftrightarrow A$ 的 column vectors span $\mathbb{R}^{m}$。若 $\mathbf{b}$ 最多只有一解，則 $A$ 的 column vectors 線性獨立。
+
+proof:
+第一點可以簡單的用 Consistency Theorem 證明，所以我們來證第二點。
+($\implies$)
+$A\mathbf{x}=\mathbf{b}$ 最多只有一解 $\implies A\mathbf{x}=\mathbf{0}$ 只有 trivial solution。
+$\implies A$ 的 column vectors 線性獨立。
+($\Leftarrow$)
+$A$ 的 column vectors 線性獨立 $\implies A\mathbf{x}=\mathbf{0}$ 只有 trivial solution。
+令 $\mathbf{x_{1}},\mathbf{x_{2}}$ 都是 $A\mathbf{x}=\mathbf{b}$ 的解，則 $A(\mathbf{x_{1}}-\mathbf{x_{2}})=\mathbf{0}$。
+因為 $A\mathbf{x}=\mathbf{0}$ 只有 trivial solution，所以 $\mathbf{x_{1}}=\mathbf{x_{2}}$，最多只有一解。
+
+我們還有一個引理：$A$ 為一個 $n\times n$ 的可逆矩陣 $\Leftrightarrow$ $A$ 的 column vectors 構成 $\mathbb{R}^{n}$ 的基底。
+
+proof:
+假設 $A$ 為 $n\times m$ 的矩陣。
+因為 $A$ 的 column vectors 要張出 $\mathbb{R}^{n}$，所以 $m\geq n$。
+因為 $A$ 的 column vectors 要線性獨立(基底必線性獨立)，所以 $m\leq n$。
+$\begin{cases}m\geq n \\ m\leq n\end{cases}\implies m=n$。
+
+### The Rank-Nullity Theorem
+
+(怕你忘記，nullity 就是 $\text{dim}(N(A))$)
+
+$$
+A \text{ 是一個 } m\times n\text{ 矩陣，則 } \text{rank}(A)+\text{null}(A)=n
+$$
+
+proof:
+令 $U$ 為 RREF 狀態的 $A$。
+若 $\text{rank}(A)=r$，則 $U$ 會有 $r$ 行 nonzero rows，以及 $n-r$ 個 free variables。
+而 $\text{dim}(N(A))=$ free variables 的個數，所以 $\text{rank}(A)+\text{null}(A)=n$。
+
+## The Column Space
+
+我們需要知道，**兩個 row equivalent 的矩陣的 column vectors 具有相同的 dependency relation。**
+
+那麼，我們可以使用上面通靈得到的定理證明如下定理。
+
+$A$ 為一個 $m\times n$ 矩陣。$A$ 的 row space 的維度 $=$ column space 的維度。
+
+proof:
+若 $A$ 為 $m\times n$ 的矩陣且 $\text{rank}(A)=r$。
+令 $U$ 為 $A$ 的 REF，令 $U_{L}$ 為刪除了包含 free variables 的 column，$A_{L}$ 也是。
+因為 $U$ 有 $n-r$ 個 free variables，所以 $U_{L}$ 與 $A_{L}$ 有 $r$ 個 column
+則 $A_{L}$ 與 $U_{L}$ row equivalent，且因為 $U_{L}$ 的 column vectors 線性獨立，所以 $U_{L}\mathbf{x}=\mathbf{0}$ 只有 trivial solution，且 $U_{L}\mathbf{x}=\mathbf{0}$ 的解也是 $A_{L}\mathbf{x}=\mathbf{0}$ 的解。
+$\implies$ $A$ 的 column vectors 線性獨立($A_{L}$ 有 $r$ 個 columns) $\implies$ $A$ 的 column vectors 的維度 $\geq r$。
+那麼：
+$\text{dim}(\text{row space of }A)\leq\text{dim}(\text{column space of }A)$ 
+又
+$\text{dim}(\text{row space of }A)=\text{dim}(\text{column space of }A^{T})\geq\text{dim}(\text{row space of }A^{T})=\text{dim}(\text{column space of }A)$ 
+所以：$\text{dim}(\text{row space of }A)=\text{dim}(\text{column space of }A)$。
+
+我們可以使用 $U$ 來幫忙尋找 $A$ 的 column space 的 basis。只需要取得 $U_{L}$，則對應的 $A_{L}$ 中的 column vectors 就會是 $A$ 的 column space 的 basis。
+(還記得嗎，兩個 row equivalent 的矩陣的 column vectors 具有相同的 dependency relation。所以 $\text{dim}(\text{column space of }U)=\text{dim}(\text{column space of }A)$)
+
+也就是說 $A$ 的 column space 的維度 = $A$ 的 REF 的 leading 1 個數。
+
 # Tips
 
 - 零多項式的 degree 通常沒有定義或者定義為 $\text{deg(0)}=-\infty$。
