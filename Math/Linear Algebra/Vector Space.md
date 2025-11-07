@@ -321,7 +321,7 @@ $$
 proof:
 如果 $f_{1},\dots,f_{n}$ 線性相依，則之前說明的矩陣不論 $x$ 為多少必定奇異，也就是
 $W[f_{1},\dots,f_{n}](x)=0 \ \forall x \in [a,b]$ 。
-所以，只要可以找到任意 $x\in[a,b]$ 使得 $W=[f_{1},\dots,f_{n}](x)\neq 0$ 則 $f_{1},\dots,f_{n}$ 線性獨立。
+所以，**只要可以找到任意 $x\in[a,b]$ 使得 $W=[f_{1},\dots,f_{n}](x)\neq 0$ 則 $f_{1},\dots,f_{n}$ 線性獨立**。
 
 需要注意，**反向結論是不成立的**。也就是說就算對於所有 $x$ 都有 $W[f_{1},\dots,f_{n}](x)=0$ 並仍**不可保證** $f_{1},\dots,f_{n}$ 線性相依。因為，想要保證線性相依， $c_{i}$ 必須為一個固定常數。但是對於所有 $x$ 都有 $W[f_{1},\dots,f_{n}](x)=0$ 只能保證對於某特定 $x$ 可以找到相對應的 $c_{i}$ 使得等式成立。而這個 $c_{i}$ 有可能是常數也有可能隨著 $x$ 不同而改變。所以無法保證線性相依，但是可以說明有一定可能性這些函數線性相依。
 
@@ -339,6 +339,8 @@ $$
 \end{align}
 $$
 
+我們有引理：
+
 $$
 \text{若 }\mathbf{v_{1}},\dots,\mathbf{v_{n}} \text{ 是向量空間 }V\text{ 的生成集，且 }m>n \text{，則任意 }m \text{ 個從 } V\text{ 中取得的向量線性相依}
 $$
@@ -351,7 +353,7 @@ $\mathbf{u_{i}}=a_{i 1}\mathbf{v_{1}}+\dots+a_{i n}\mathbf{v_{n}}$ ，其中 $i=
 $c_{1}\mathbf{u_{1}}+\dots+c_{m}\mathbf{u_{m}}=\sum_{i=1}^{m}\left( c_{i}\sum_{j=1}^{n}a_{ij}\mathbf{v_{j}} \right)=\sum_{j=1}^{n}\left( \sum_{i=1}^{m}a_{ij}c_{i} \right)\mathbf{v_{j}}$ 
 那麼，考慮系統：
 $\sum_{i=1}^{m}a_{ij}c_{i}=0$，其中 $j=1,\dots,n$。
-是一個未知數 > 等式 的齊次系統，所以必有 nontrivial solution $(\hat{c_{1}},\dots,\hat{c_{m}})^{T}$。
+是一個未知數 > 等式數 的齊次系統，所以必有 nontrivial solution $(\hat{c_{1}},\dots,\hat{c_{m}})^{T}$。
 帶回原式：$\hat{c_{1}}\mathbf{u_{1}}+\dots+\hat{c_{n}}\mathbf{u_{m}}=\sum_{j=1}^{n}0\mathbf{v_{j}}=0$ 。
 所以，$\mathbf{u_{1}},\dots,\mathbf{u_{m}}$ 線性相依。
 
@@ -362,7 +364,7 @@ $$
 proof:
 令 $\mathbf{v_{1}},\dots,\mathbf{v_{n}}$ 與 $\mathbf{u_{1}},\dots,\mathbf{u_{n}}$ 為 $V$ 的基底。
 因為他們都是 $V$ 的基底，所以二者都線性獨立。
-為了滿足線性獨立的條件，根據上一個我們證明的性質：
+為了滿足線性獨立的條件，**根據上一個我們證明的性質**：
 因為 $\mathbf{v_{1}},\dots,\mathbf{v_{n}}$ 是 $V$ 的生成集，所以 $m\leq n$ 可以滿足線性獨立的條件。
 又因為 $\mathbf{u_{1}},\dots, \mathbf{u_{m}}$ 是 $V$ 的生成集，所以必須 $n\leq m$。
 綜合以上，$n=m$。
@@ -392,11 +394,12 @@ proof:
 (I)
 我們取 $V$ 中 $n$ 個線性獨立的向量 $\mathbf{v_{1}},\dots,\mathbf{v_{n}}$，以及一個向量 $\mathbf{v}$。
 因為 $\mathbf{v_{1}},\dots,\mathbf{v_{n}}$ 線性獨立，所以：$c_{1}\mathbf{v_{1}}+\dots+c_{n}\mathbf{v_{n}}=\mathbf{0}$ 
-那麼，$c_{1}\mathbf{v_{1}}+\dots+c_{n}\mathbf{v_{n}}+c_{n+1}\mathbf{v}=\mathbf{0}$ 中的 $c_{n+1}$ 必不為零，否則 $\mathbf{v_{1}},\dots,\mathbf{v_{n}}$ 不是線性獨立。
+那麼，$c_{1}\mathbf{v_{1}}+\dots+c_{n}\mathbf{v_{n}}+c_{n+1}\mathbf{v}=\mathbf{0}$ 中的 **$c_{n+1}$ 必不為零**，否則 $\mathbf{v_{1}},\dots,\mathbf{v_{n}}$ 不是線性獨立。
+(若 $c_{n+1}$ 為零，那麼 $c_{1}\mathbf{v_{1}}+\dots+c_{n}\mathbf{v_{n}}+c_{n+1}\mathbf{v}=\mathbf{0}$ 會等於 $c_{1}\mathbf{v_{1}}+\dots+c_{n}\mathbf{v_{n}}=\mathbf{0}$，這隱含了 $\mathbf{v_{1}},\dots \mathbf{v_{n}}$ 線性相關，與前提矛盾)
 $\implies \mathbf{v}=\alpha \mathbf{v_{1}}+\dots+\alpha \mathbf{v_{n}}$ 且 $\alpha_{i}=-\frac{c_{i}}{c_{n+1}}$，其中 $i=1,\dots,n$。
 因為 $\mathbf{v}$ 為 $V$ 中的任意向量，所以 $c_{1}\mathbf{v_{1}}+\dots+c_{n}\mathbf{v_{n}}$ 張出 $V$。
 (II)
-利用反證法：假設 $\mathbf{v_{1}},\dots,\mathbf{v_{n}}$ 張出 $V$ 且線性線性相依。
+利用**反證法**：假設 $\mathbf{v_{1}},\dots,\mathbf{v_{n}}$ 張出 $V$ 且線性相依。
 那麼一定可以在這些向量中找到某個 $\mathbf{v_{i}}$ 可以被其他向量表達，我們可以一直挑出這樣的向量，直到最終 $\mathbf{v_{1}},\dots,\mathbf{v_{k}}$ 線性獨立且張出 $V$，其中 $k<n$。
 但是，這與前提 $\text{dim }V=n$ 矛盾，所以 $\mathbf{v_{1}},\dots,\mathbf{v_{n}}$ 必定線性獨立。
 
@@ -442,6 +445,7 @@ proof:
 - $A$ matrix commute with $B$ $\Leftrightarrow$ $AB=BA$。
 - $N(A)=\{\mathbf{0}\}\implies$ $A$ 化成 RREF 後沒有自由變數，也就是 $I$。
 - 對於 Wronskian，只要能找到一個數 $x$ 使得 $W[f_{1},\dots,f_{n}](x) \neq 0$，則 $f_{1},\dots,f_{n}$ 線性獨立。但是，**反向結論不成立**。
+- 取 $\mathbb{R}^{n}$ 中 $U$ 和 $V$ 兩個子向量空間。若 $U\cap V=\{\mathbf{0}\}\implies$ $U$ 和 $V$ 的**基底線性獨立**，若 $U\cap V\neq \{\mathbf{0}\}\implies$ $U$ 和 $V$ 的**基底線性相依**。(例題 21, 22 包含證明)
 
 # 重要例題
 
@@ -623,3 +627,128 @@ $T=\text{Span}(\mathbf{e_{2}})=\{(0,y)|y\in \mathbb{R}\}$
 所以，$S\cup T$ 不是 $\mathbb{R}^{2}$ 的子空間。
 
 ASK linear algebra 3.2 exercise 27. 
+
+13. Show that $1,e^{x}+e^{-x},e^{x}-e^{-x}$ is linear independent on $C[a,b]$. 
+
+Sol:
+法一：
+首先要證 $1,e^{x},e^{-x}$ 線性獨立。
+令 $a,b,c$ 為 scalars，則令 $ae^{x}+be^{-x}+c=0$。
+同乘 $e^{x}\implies a(e^{x})^{2}+ce^{x}+b=0$。
+令 $t=e^{x}\quad t\in(0,\infty)$，則 $at^{2}+ct+b=0$。
+$\implies a=b=c=0\implies1,e^{x},e^{-x}$ 線性獨立。
+回到題目：
+解 $a(e^{x}+e^{-x})+b(e^{x}-e^{-x})+c=0\implies(a+b)e^{x}+(a-b)e^{-x}+c=0$ 
+因為$1,e^{x},e^{-x}$ 線性獨立，所以：
+$\begin{cases}a+b=0 \\ a-b=0 \\ c=0\end{cases}\implies a=b=c=0\implies1,e^{x}+e^{-x},e^{x}-e^{-x}$ 線性獨立。
+法二：
+因為 $e^{x},e^{-x},1$ 都可以微無限次，且 $C^{2}[a,b] \subseteq C[a,b]$。
+又因為在子空間線性獨立的向量們，在父向量空間也線性獨立。
+那麼，此題本來無法用 Wronskian 解 $3\times2$ 的行列式，可以多微一次變成 $3\times 3$ 的行列式。
+只要檢查該行列式是否等於零即可。
+$\begin{vmatrix}1 & e^{x}+e^{-x} & e^{x}-e^{-x} \\ 0 & e^{x}-e^{-x} & e^{x}+e^{-x} \\ 0 & e^{x}+e^{-x} & e^{x}-e^{-x}\end{vmatrix}=-4\neq 0\implies$線性獨立。
+
+14. Consider the vector $\cos(x+\alpha)$ and $\sin x$ in $C[-\pi,\pi]$. For what values of $\alpha$ will the two vectors be linear dependent?
+
+Sol:
+利用 Wronskian：$\begin{vmatrix}\cos(x+\alpha) & \sin x \\ -\sin(x+\alpha) & \cos x\end{vmatrix}=\cos x\cos(x+\alpha)+\sin x\sin(x+\alpha)$ 
+是不是有點矇逼？問題不大，回憶公式 $\cos(a-b)=\cos a\cos b+\sin a\sin b$。
+套用到本題：$\cos x\cos(x+\alpha)+\sin x\sin(x+\alpha)=\cos(-\alpha)=\cos\alpha\implies\alpha= \frac{\pi}{2}+k\pi\quad k\in \mathbb{N}$。
+
+15. Given the functions $2x$ and $|x|$, show that (a) these two vectors are linearly independent in $C[-1,1]$. (b) these two vectors are linearly dependent in $C[0,1]$. 
+
+Sol:
+(a)
+這題不要用 Wronskian，得出的解會找不到 $x$ 使得行列式不等於零。
+直接套定義：
+嘗試解 $a(2x)+b(|x|)=0$。
+當 $x\geq0$：
+$2ax+bx=0\implies2a+b=0$ 
+當 $x<0$：
+$2ax-bx=0\implies2a-b=0$ 
+$\implies a=b=0$ 線性獨立。
+(b)
+當 $x\geq0\implies 2a+b=0$ 有 nontrivial solutions，所以線性相關。
+
+16. Let $A$ be an $m\times n$ matrix. Show that if $A$ has linearly independent column vectors, then $N(A)=\{0\}$. 
+
+Sol:
+寫這題主要是為了教你如何證明這種類型的題目。 
+令 $\mathbf{x}$ 為 $N(A)$ 中的任意向量。
+則 $A\mathbf{x}=\mathbf{0}$。
+$A\mathbf{x}=x_{1}\mathbf{a_{1}}+\dots+x_{n}\mathbf{a_{n}}=0$。
+因為 column vectors 互相獨立，所以有 $x_{1}=x_{2}=\dots=x_{n}=0$。
+因為 $\mathbf{x}$ 為 $N(A)$ 中的任意向量，所以 $N(A)=\{0\}$。
+
+17. Let $\mathbf{x_{1}},\dots,\mathbf{x_{k}}$ be linearly independent vectors in $\mathbb{R}^{n}$ and let $A$ be a nonsingular $n\times n$ matrix. Define $\mathbf{y_{i}}=A\mathbf{x_{i}}$ for $i=1,\dots,k$. Show that $\mathbf{y_{1}},\dots,\mathbf{y_{k}}$ are linearly independent. 
+
+Sol:
+這題思考後自己寫了出來，如果有額外時間可以複習。
+令 $\alpha_{1},\dots\alpha_{k}$ 為 scalars。
+解 $\alpha_{1}(A\mathbf{x_{1}})+\dots+\alpha_{k}(A\mathbf{x_{k}})=0$ 是否只有 trivial solution。
+提出 $A$：$A(\alpha_{1}\mathbf{x_{1}}+\dots+\alpha_{k}\mathbf{x_{k}})=0$。
+因為 $A$ nonsingular，所以只有 trivial solution $(\alpha_{1}\mathbf{x_{1}}+\dots+\alpha_{k}\mathbf{x_{k}})=0$。
+又因為 $\mathbf{x_{1}},\dots,\mathbf{x_{k}}$ 線性獨立，所以 $\alpha_{1},\dots,\alpha_{k}$ 必須 $\alpha_{1}=\dots=\alpha_{k}=0$。
+
+18. Let $\mathbf{v_{1}},\dots,\mathbf{v_{n}}$ be the independent vectors in the vector space $V$. Show that $\mathbf{v_{2}},\dots,\mathbf{v_{n}}$ cannot span $V$. 
+
+Sol:
+利用反證法。
+假設 $\mathbf{v_{2}},\dots,\mathbf{v_{n}}$ 可以張出 $V$。
+因為 $\mathbf{v_{1}}\in V$，所以必有 $\mathbf{v_{1}}=\alpha_{2}\mathbf{v_{2}}+\dots+\alpha_{n}\mathbf{v_{n}}$。
+$\implies-\mathbf{v_{1}}+\alpha_{2}\mathbf{v_{2}}+\dots+\alpha_{n}\mathbf{v_{n}}=0\implies \mathbf{v_{1}},\dots,\mathbf{v_{n}}$ 線性相關。
+與前提矛盾，所以 $\mathbf{v_{2}},\dots,\mathbf{v_{n}}$ 無法張出 $V$。
+
+19. Find a basis for the subspace $S$ of $\mathbb{R}^{4}$ consisting of all vectors of the form $(a+b,a-b+2c,b,c)^{T}$, where $a,b,c$ are all real numbers. What is the dimension of $S$ ?
+
+Sol:
+$(a+b,a-b+2c,b,c)^{T}=a(1,1,0,0)^{T}+b(1,-1,1,0)^{T}+c(0,2,0,1)^{T}$ 
+所以，$(1,1,0,0)^{T}, (1,-1,1,0)^{T},(0,2,0,1)^{T}$ span $S$。
+驗證線性獨立：
+考慮 $(a+b,a-b+2c,b,c)^{T}=\mathbf{0}\implies \begin{cases}a+b=0 \\ a-b+2c=0 \\ b=0 \\ c=0\end{cases}\implies a=b=c=0$ 
+$\implies(1,1,0,0)^{T}, (1,-1,1,0)^{T},(0,2,0,1)^{T}$ 線性獨立。
+所以 $(1,1,0,0)^{T}, (1,-1,1,0)^{T},(0,2,0,1)^{T}$ 為 $S$ 的基底，且 $\text{dim} \ S=3$。
+
+20. Let $S$ be subspace of $P_{3}$ consisting of all polynomials $p(x)$ such that $p(0)=0$, and let $T$ be subspace of all polynomials $q(x)$ such that $q(1)=0$. Find bases for (a) $T$ (b) $S \cap T$. 
+
+Sol:
+(a)
+不是很懂題目的意思，$T$ 到底是不是 $P_{3}$ 的子空間？這邊假設是好了。
+**$q(1)=0\implies$ 可以被 $1$ 整除。**
+則 $T=\{(x-1)(ax^{2}+bx+c)|a,b,c \in \mathbb{R}\}$。
+展開：$ax^{3}+(-a+b)x^{2}+(-b+c)x-c=a(x^{3}-x^{2})+b(x^{2}-x)+c(x-1)$ 
+因為 $x^{3}-x^{2},x^{2}-x,x-1$ 線性獨立，所以一組基底為：$\{x^{3}-x^{2},x^{2}-x,x-1\}$。
+(b)
+$p(0)=0, q(1)=0\implies$ **可以被 $0,1$ 整除**。
+則 $S\cap T=\{x(x-1)(\alpha x+\beta)\}$。
+展開：$x(x-1)(\alpha x+\beta)=\alpha x^{3}+(-\alpha+\beta)x^{2}-\beta x=\alpha(x^{3}-x^{2})+\beta(x^{2}-x)$。
+因為 $x^{3}-x^{2},x^{2}-x$ 線性獨立，所以一組基底為：$\{x^{3}-x^{2},x^{2}-x\}$。
+
+21. Is it possible to find a pair of two-dimensional subspaces $U$ and $V$ of $\mathbb{R}^{3}$ whose intersection is $\{\mathbf{0}\}$? Prove your answer. (Hint: Let $\{\mathbf{u_{1}},\mathbf{u_{2}}\}$ and $\{\mathbf{v_{1}},\mathbf{v_{2}}\}$ be bases for $U$ and $V$, respectively. Show that $\mathbf{u_{1}},\mathbf{u_{2}},\mathbf{v_{1}},\mathbf{v_{2}}$ are linearly dependent.)
+
+Sol:
+因為 $\mathbb{R}^{3}$ 中任意三個線性獨立的向量可以張出整個向量空間，所以不可能存在四個向量屬於 $\mathbb{R}^{3}$ 且線性獨立(第四個向量必定可以被前三個向量表達)。
+令 $U=\text{Span}(\mathbf{u_{1}},\mathbf{u_{2}})$ 與 $V=\text{Span}(\mathbf{v_{1}},\mathbf{v_{2}})$。
+$\alpha_{1}\mathbf{u_{1}}+\alpha_{2}\mathbf{u_{2}}+\alpha_{3}\mathbf{v_{1}}+\alpha_{4}\mathbf{v_{2}}=\mathbf{0}$ 其中 $\alpha_{1},\alpha_{2},\alpha_{3},\alpha_{4}$ 必定為 nontrivial solutions。
+移項：$\alpha_{1}\mathbf{u_{1}}+\alpha_{2}\mathbf{u_{2}}=-\alpha_{3}\mathbf{v_{1}}-\alpha_{4}\mathbf{v_{4}}$ 。
+**上式等號左右不為零**。(可以用此反推 $U\cap V\neq \{\mathbf{0}\}\implies$ $U, V$ 的基底必**線性相依**)
+因為 $\alpha_{1}\mathbf{u_{1}}+\alpha_{2}\mathbf{u_{2}}\in U$ 且 $-\alpha_{3}\mathbf{v_{1}}-\alpha_{4}\mathbf{v_{4}}\in V$，
+所以一定可以找到 $\mathbf{x}=\alpha_{1}\mathbf{u_{1}}+\alpha_{2}\mathbf{u_{2}}=-\alpha_{3}\mathbf{v_{1}}-\alpha_{4}\mathbf{v_{4}}\neq \mathbf{0}$ 使得 $\mathbf{x}\in U\cap V$。
+所以 $U\cap V\neq \{\mathbf{0}\}$。
+
+22. Show that if $U$ and $V$ are subspaces of $\mathbb{R}^{n}$ and $U\cap V=\{\mathbf{0}\}$, then $\text{dim}(U+V)=\text{dim} \ U+\text{dim }V$. 
+
+Sol:
+我們先來證明性質：$U\cap V=\{\mathbf{0}\}\implies U,V$ 的基底線性獨立。
+令 $U=\text{Span}(\mathbf{u_{1}},\dots ,\mathbf{u_{n}})$ 與 $V=\text{Span}(\mathbf{v_{1}},\dots,\mathbf{v_{n}})$。
+令 $\alpha_{1},\dots,\alpha_{n}$ 與 $\beta_{1},\dots,\beta_{n}$ 為 scalars。
+考慮：$\alpha_{1}\mathbf{u_{1}}+\dots+\alpha_{n}\mathbf{u_{n}}+\beta_{1}\mathbf{v_{1}}+\dots+\beta_{n} \mathbf{v_{n}}=0$。
+移項：$\alpha_{1}\mathbf{u_{1}}+\dots+\alpha_{n}\mathbf{u_{n}}=-(\beta_{1}\mathbf{v_{1}}+\dots+\beta_{n}\mathbf{v_{n}})$ 。
+因為 $\alpha_{1}\mathbf{u_{1}}+\dots+\alpha_{n}\mathbf{u_{n}} \in U$ 且 $-(\beta_{1}\mathbf{v_{1}}+\dots+\beta_{n}\mathbf{v_{n}}) \in V$，又 $U\cap V=\{\mathbf{0}\}$。
+所以，$\mathbf{0}=\alpha_{1}\mathbf{u_{1}}+\dots+\alpha_{n}\mathbf{u_{n}}=-(\beta_{1}\mathbf{v_{1}}+\dots+\beta_{n}\mathbf{v_{n}})$。
+因為基底線性獨立，所以 $\alpha_{1}=\dots=\alpha_{n}=\beta_{1}=\dots=\beta_{n}=0$ 
+$\implies \mathbf{u_{1}},\dots,\mathbf{u_{n}},\mathbf{v_{1}},\dots,\mathbf{v_{n}}$ 線性獨立。
+那麼，因為 $\mathbf{u_{1}},\dots,\mathbf{u_{n}},\mathbf{v_{1}},\dots,\mathbf{v_{n}}$ 線性獨立，
+所以有：
+$\text{dim}(U+V)=\text{dim}(\text{Span}(\mathbf{u_{1}},\dots,\mathbf{u_{n}},\mathbf{v_{1}},\dots,\mathbf{v_{n}}))=\text{dim}(\text{Span}(\mathbf{u_{1}},\dots,\mathbf{u_{n}}))+\text{dim}(\text{Span}(\mathbf{v_{1}}, \dots,\mathbf{v_{n}}))$ 
+$\implies\text{dim}(U+V)=\text{dim}(U)+\text{dim}(V)$。
