@@ -64,7 +64,7 @@ $1\mathbf{x}+(-1\mathbf{x})=0\implies (-1)\mathbf{x}=-\mathbf{x}$
 
 ## The Vector Space $P_{n}$ 
 
-定義 $P_{n}$ 代表所以最高次係數小於等於 $n$ 的多項式形成的集合。定義 $p+q$ 與 $\alpha p$ 如下：$(p+q)(x)=(q+p)(x)$ 與 $(\alpha p)(x)=\alpha p(x)$ 對於所有 $x \in  \mathbb{R}$ 成立。在這種情況下，零向量等於零多項式。
+定義 $P_{n}$ 代表所以最高次係數小於 $n$ 的多項式形成的集合 (老師的定義與課本不一樣，他是最高次係數小於或等於 $n$)。定義 $p+q$ 與 $\alpha p$ 如下：$(p+q)(x)=(q+p)(x)$ 與 $(\alpha p)(x)=\alpha p(x)$ 對於所有 $x \in  \mathbb{R}$ 成立。在這種情況下，零向量等於零多項式。
 
 作者又很欠扁啦～說想證明公理對 $P_{n}$ 都成立非常手拿把掐，所以這個東東是一個向量空間呦！
 
@@ -228,7 +228,7 @@ proof (2):
 $\mathbf{v_{n}}=\alpha_{1}\mathbf{v_{1}}+\alpha_{2}\mathbf{v_{2}+\dots+\alpha_{n-1}\mathbf{v_{n-1}}}$ 
 移項可得：$\alpha_{1}\mathbf{v_{1}}+\dots+\alpha_{n-1}\mathbf{v_{n-1}}-\mathbf{v_{n}}=\mathbf{0}$ 
 如果我們設對於 $i,\dots,n-1$ 有 $c_{i}=\alpha_{i}$ ，且 $c_{n}=-1$，我們有：$c_{1}\mathbf{v_{1}}+\dots+c_{n}\mathbf{v_{n}}=\mathbf{0}$ 
-( $\Leftarrow$ )
+( $\impliedby$ )
 如果 $c_{1}\mathbf{v_{1}}+\dots+c_{n}\mathbf{v_{n}}=\mathbf{0}$，那麼一定有一個 $c_{i}\neq 0$ (這裡取 $c_{n}$) 使得：
 $\mathbf{v_{n}}= \frac{-c_{1}}{c_{n}}\mathbf{v_{1}}+\dots+ \frac{-c_{n-1}}{c_{n}}\mathbf{v_{n-1}}$ 
 
@@ -635,6 +635,11 @@ $$
 
 也就是說，$A\mathbf{x}=\mathbf{b}$ 有解，代表 $\mathbf{b}$ 可以被寫成 $A$ 的 column vectors 的線性組合。
 
+那麼，對於 $A\mathbf{x}=\mathbf{b}$ 有解，解的情況可以如以下討論：
+- 無解：$\mathbf{b}\not\in\text{Col}(A)$。
+- 唯一解：$\mathbf{b}\in\text{Col}(A)$ 且 $A$ 的 column vectors 線性獨立。
+- 無限多組解：$\mathbf{b}\in\text{Col}(A)$ 且 $A$ 的 column vectors 線性相依。
+
 還有一個定理說：若 $A$ 為 $m\times n$ 的矩陣，則 $A\mathbf{x}=\mathbf{b}$ 有解 $\forall \mathbf{b}\in \mathbb{R}^{m}\Leftrightarrow A$ 的 column vectors span $\mathbb{R}^{m}$。若 $\mathbf{b}$ 最多只有一解，則 $A$ 的 column vectors 線性獨立。
 
 proof:
@@ -642,7 +647,7 @@ proof:
 ($\implies$)
 $A\mathbf{x}=\mathbf{b}$ 最多只有一解 $\implies A\mathbf{x}=\mathbf{0}$ 只有 trivial solution。
 $\implies A$ 的 column vectors 線性獨立。
-($\Leftarrow$)
+($\impliedby$)
 $A$ 的 column vectors 線性獨立 $\implies A\mathbf{x}=\mathbf{0}$ 只有 trivial solution。
 令 $\mathbf{x_{1}},\mathbf{x_{2}}$ 都是 $A\mathbf{x}=\mathbf{b}$ 的解，則 $A(\mathbf{x_{1}}-\mathbf{x_{2}})=\mathbf{0}$。
 因為 $A\mathbf{x}=\mathbf{0}$ 只有 trivial solution，所以 $\mathbf{x_{1}}=\mathbf{x_{2}}$，最多只有一解。
@@ -681,7 +686,7 @@ proof:
 令 $U$ 為 $A$ 的 REF，令 $U_{L}$ 為刪除了包含 free variables 的 column，$A_{L}$ 也是。
 因為 $U$ 有 $n-r$ 個 free variables，所以 $U_{L}$ 與 $A_{L}$ 有 $r$ 個 column
 則 $A_{L}$ 與 $U_{L}$ row equivalent，且因為 $U_{L}$ 的 column vectors 線性獨立，所以 $U_{L}\mathbf{x}=\mathbf{0}$ 只有 trivial solution，且 $U_{L}\mathbf{x}=\mathbf{0}$ 的解也是 $A_{L}\mathbf{x}=\mathbf{0}$ 的解。
-$\implies$ $A$ 的 column vectors 線性獨立($A_{L}$ 有 $r$ 個 columns) $\implies$ $A$ 的 column vectors 的維度 $\geq r$。
+$\implies$ $A_{L}$ 的 column vectors 線性獨立($A_{L}$ 有 $r$ 個 columns) $\implies$ $A$ 的 column vectors 的維度 $\geq r$。
 那麼：
 $\text{dim}(\text{row space of }A)\leq\text{dim}(\text{column space of }A)$ 
 又
@@ -700,6 +705,10 @@ $\text{dim}(\text{row space of }A)=\text{dim}(\text{column space of }A^{T})\geq\
 - $N(A)=\{\mathbf{0}\}\implies$ $A$ 化成 RREF 後沒有自由變數，也就是 $I$。
 - 對於 Wronskian，只要能找到一個數 $x$ 使得 $W[f_{1},\dots,f_{n}](x) \neq 0$，則 $f_{1},\dots,f_{n}$ 線性獨立。但是，**反向結論不成立**。
 - 取 $\mathbb{R}^{n}$ 中 $U$ 和 $V$ 兩個子向量空間。若 $U\cap V=\{\mathbf{0}\}\implies$ $U$ 和 $V$ 的**基底線性獨立**，若 $U\cap V\neq \{\mathbf{0}\}\implies$ $U$ 和 $V$ 的**基底線性相依**。(例題 21, 22 包含證明)
+- 取 $\mathbb{R}^{n}$ 中一向量 $\mathbf{b}$，並給定一個 $n\times k$ 矩陣 $A$。若 $\text{rank}(A)=n$ ($n<k$)，則 $A\mathbf{x}=\mathbf{b}$ 的解永遠有**無限多組解**，不可能無解。
+- 判斷 $A\mathbf{x}=\mathbf{b}$ 解的個數，首先判斷 $\mathbf{b}$ 是否 $\in$ $\text{Col}(A)$ ($\text{Col}(A)$ 是否可以完整張出 $\mathbf{b}$ 所在的向量空間？)，然後判斷 $\text{null}(A)$ 是否可能無限多組解。
+- 基本矩陣乘以某個矩陣不會改變該矩陣的 rank。
+- 想證明 $A$ 的 column vectors 張出 $\mathbb{R}^{m}$，可以取任意 $\mathbf{b}\in\mathbb{R}^{m}$，然後用 $A$ 的 column vectors 線性組合 $\mathbf{b}$ 來證明。
 
 # 重要例題
 
@@ -1006,3 +1015,95 @@ $\implies \mathbf{u_{1}},\dots,\mathbf{u_{n}},\mathbf{v_{1}},\dots,\mathbf{v_{n}
 所以有：
 $\text{dim}(U+V)=\text{dim}(\text{Span}(\mathbf{u_{1}},\dots,\mathbf{u_{n}},\mathbf{v_{1}},\dots,\mathbf{v_{n}}))=\text{dim}(\text{Span}(\mathbf{u_{1}},\dots,\mathbf{u_{n}}))+\text{dim}(\text{Span}(\mathbf{v_{1}}, \dots,\mathbf{v_{n}}))$ 
 $\implies\text{dim}(U+V)=\text{dim}(U)+\text{dim}(V)$。
+
+23. Given $\mathbf{v_{1}}=\begin{bmatrix}3 \\ 1\end{bmatrix}, \mathbf{v_{2}}=\begin{bmatrix}4 \\ 2\end{bmatrix}, S=\begin{bmatrix}2 & -5 \\ -1 & 3\end{bmatrix}$, find the vector $\mathbf{w_{1}}$ and $\mathbf{w_{2}}$ so that $S$ will be the transition matrix from $\{\mathbf{w_{1}},\mathbf{w_{2}}\}$ to $\{\mathbf{v_{1}},\mathbf{v_{2}}\}$. 
+
+Sol:
+首先給波錯誤示範：
+令 $W=(\mathbf{w_{1}},\mathbf{w_{2}})$，我**以為**可以寫成 $SW=V$。
+但是**不行**！這樣只能解出兩個在 $\{\mathbf{w_{1}}\mathbf{w_{2}}\}$ 上的座標使得映射後等於 $\mathbf{v_{1}},\mathbf{v_{2}}$，但我們要求的是基底而不是座標。
+給波正確範例：
+令 $V=\begin{bmatrix}3 & 4 \\ 1 & 2\end{bmatrix}$ $W=(\mathbf{w_{1}},\mathbf{w_{2}})$。
+根據定義，我們有：$S=V^{-1}W$。
+那麼，解 $W=VS=\begin{bmatrix}2 & -3 \\ 0 & 1\end{bmatrix}\implies \mathbf{w_{1}}=(2,0)^{T} \ \mathbf{w_{2}}=(-3,1)^{T}$。
+
+24. Let $A$ be $4\times3$ matrix and suppose the vectors $\mathbf{z_{1}}=\begin{bmatrix}1 \\ 1 \\ 2\end{bmatrix} \ \mathbf{z_{2}}=\begin{bmatrix}1 \\ 0 \\ -1\end{bmatrix}$ forms a basis for $N(A)$. If $\mathbf{b}=a_{1}+2a_{2}+a_{3}$, find all the solutions of the system $A\mathbf{x}=\mathbf{b}$. 
+
+Sol:
+這題主要怕漏解，其實不難。
+$\mathbf{b}=A\begin{bmatrix}1 \\ 2 \\ 1\end{bmatrix}$ 
+$A(\begin{bmatrix}1 \\ 2 \\ 1\end{bmatrix}+t\begin{bmatrix}1 \\ 1 \\ 2\end{bmatrix}+s\begin{bmatrix}1 \\ 0 \\ -1\end{bmatrix})=\mathbf{b}+0+0=\mathbf{b}$  $t,s\in \mathbb{R}$ 
+$\implies \mathbf{x}=\begin{bmatrix}1+t+s \\ 2+t \\ 1+2t-s\end{bmatrix} \ t,s\in \mathbb{R}$ 
+
+25. Let $A$ be $4\times4$ matrix with reduced echelon form given by $\begin{bmatrix}1 & 0 & -1 & 1 \\ 0 & 1 & 3 & 2 \\ 0 & 0 & 0 & 0 \\ 0 & 0 & 0 & 0\end{bmatrix}$. If $\mathbf{a_{1}}=\begin{bmatrix}3 \\ 2 \\ -1 \\ 2\end{bmatrix}$ and $\mathbf{a_{2}}=\begin{bmatrix}1 \\ 1 \\ -1 \\ 3\end{bmatrix}$, find $\mathbf{a_{3}},\mathbf{a_{4}}$. 
+
+Sol:
+這題難在我忘記：**兩個 row equivalent 的矩陣，column vectors 的 dependency relations 會相同**。
+所以 $\mathbf{u_{3}}=-\mathbf{u_{1}}+3\mathbf{u_{2}}, \ \mathbf{u_{4}}=\mathbf{u_{1}}+2\mathbf{u_{2}}\implies \mathbf{a_{3}}=-\mathbf{a_{1}}+3\mathbf{a_{2}}, \ \mathbf{a_{4}}=\mathbf{a_{1}}+2\mathbf{a_{2}}$。
+解解就好。
+
+26. Let $A$ be a $4 × 5$ matrix and let $U$ be the reduced row echelon form of $A$. If $\mathbf{a_{1}}=\begin{bmatrix}2 \\ 1 \\ -3 \\ -2\end{bmatrix}$ $\mathbf{a_{2}}=\begin{bmatrix}-1 \\ 2 \\ 3 \\ 1\end{bmatrix}$ $U=\begin{bmatrix} 1 & 0 & 2 & 0 & -1 \\ 0 & 1 & 3 & 0 & -2 \\ 0 & 0 & 0 & 1 & 5 \\ 0 & 0 & 0 & 0 & 0\end{bmatrix}$ and given that $\mathbf{x_{0}}=\begin{bmatrix} 3 \\ 2 \\ 0 \\ 2 \\ 0\end{bmatrix}$ is a solution to $A\mathbf{x}=\begin{bmatrix}0 \\ 5 \\ 3 \\ 4\end{bmatrix}$. Determine $\mathbf{a_{4}}$. 
+
+Sol:
+因為這題的其他問題都還好，我就把卡住的點拿出來問。
+因為 $\begin{bmatrix}0 \\ 5 \\ 3 \\ 4\end{bmatrix}=3\mathbf{a_{1}}+2\mathbf{a_{2}}+2\mathbf{a_{4}}\implies \mathbf{a_{4}}=\begin{bmatrix}-2 \\ -1 \\ 4 \\ 4\end{bmatrix}$。
+`~~~~~~~~~~~~~~~~~~~~~^ 利用` $\mathbf{x_{0}}$。
+
+27. (!)Let $A$ and $B$ be $m × n$ matrices. Show that $\text{rank}(A+B)\leq\text{rank}(A)+\text{rank}(B)$. 
+
+Sol:
+令 $\mathbf{x}\in \mathbb{R}^{n}$，則 $(A+B)\mathbf{x}=A\mathbf{x}+B\mathbf{x} \in\text{Col}(A)+\text{Col}(B)$。
+$\implies\text{rank}(A+B)$ 
+$=\text{dim}(\text{Col}(A+B))\leq\text{dim}(\text{Col}(A)+\text{Col}(B))\leq\text{dim}(\text{Col}(A))+\text{dim}(\text{Col}(B))=\text{rank}(A)+\text{rank(B)}$ 
+
+27. Let $A$ be an $m × n$ matrix. Show that if $C$ is a nonsingular $n × n$ matrix, then $AC$ and $A$ have the same rank.
+
+Sol:
+因為 $C$ 非奇異，所以可以將 $C$ 寫成一系列基本矩陣相乘。
+因為將**基本矩陣乘以某個矩陣不會改變該矩陣的 rank**，所以 $\text{rank}(AC)=\text{rank}(AE_{1},\dots,E_{n})=\text{rank}(A)$ 
+
+28. Let $A$ and $B$ be $n × n$ matrices. (a) Show that $AB= O$ if and only if the column space of $B$ is a subspace of the null space of $A$. (b) Show that if $AB= O$, then the sum of the ranks of $A$ and $B$ cannot exceed $n$.
+
+Sol:
+(a)
+($\implies$)
+取 $\mathbf{y}\in\text{Col}(B)$，則有 $\mathbf{x}$ 滿足 $\mathbf{y}=B\mathbf{x}$。
+考慮 $A\mathbf{y}=A(B\mathbf{x})=(AB)\mathbf{x}=\mathbf{0}\implies \mathbf{y}\in N(A)$ 
+$\implies\text{Col}(B)\subseteq N(A)$ 
+($\impliedby$)
+取 $B\mathbf{x}\in\text{Col}(B)$ 則 $B\mathbf{x}\in N(A)$，$x\in \mathbb{R}^{n}$。
+那麼，$A(B\mathbf{x})=(AB)\mathbf{x}=\mathbf{0}$。
+因為 $\forall x \in \mathbb{R}^{n}$ $AB\mathbf{x}=\mathbf{0}$ 都成立，所以 $AB=\mathbf{0}$。
+
+29. Let $\mathbf{x}$ and $\mathbf{y}$ be nonzero vectors in $\mathbb{R}^{m}$ and $\mathbb{R}^{n}$, respectively, and let $A= \mathbf{xy}^{T}$. Show that $\{\mathbf{x}\}$ is a basis for the column space of $A$ and that $\{\mathbf{y}^{T} \}$ is a basis for the row space of $A$.
+
+Sol:
+$a_{i}=y_{i}\mathbf{x}$ 
+$\implies\text{Col}(A)=\text{Span}(\mathbf{x})$ 且 $\{\mathbf{x}\}$ 線性獨立 $\implies\{\mathbf{x}\}$ 為 column space 的基底。
+$a^{j}=x_{y}\mathbf{y}^{T}$ 
+$\implies\text{Row}(A)=\text{Span}(\mathbf{y}^{T})$ 且 $\{\mathbf{y}^{T}\}$ 線性獨立 $\implies\{\mathbf{y}^{T}\}$ 為 row space 的基底
+
+30. Let $A\in \mathbb{R}^{m\times n},\ B\in \mathbb{R}^{n\times r}$, and $C=AB$. Show that if $A$ and $B$ both have linearly independent column vectors, then the column vectors of $C$ will also be linearly independent. 
+
+Sol:
+本來這題我想用上題那樣分解，但是貌似有更快的解法。
+由題意可知：$N(A)=N(B)=\{\mathbf{0}\}$。
+取任意 $\mathbf{w}\in \mathbb{R}^{r}$ 使得 $C\mathbf{w}=\mathbf{0}$。
+則 $C\mathbf{w}=AB\mathbf{w}=A(B\mathbf{w})=\mathbf{0}$。
+因為 $N(A)=\{\mathbf{0}\}$，所以 $B\mathbf{w}=\mathbf{0}$。
+又因為 $N(B)=\{\mathbf{0}\}$，所以 $\mathbf{w}=\mathbf{0}$。
+那麼，$N(C)=\{\mathbf{0}\}$，所以 column vectors of $C$ 線性獨立。
+
+31. An $m × n$ matrix $A$ is said to have a right inverse if there exists an $n × m$ matrix $C$ such that $AC= I_{m}$. Show that if $A$ has a right inverse, then the column vectors of $A$ span $\mathbb{R}^{m}$.
+
+Sol:
+令 $\mathbf{b}\in \mathbb{R}^{m}$ 的任意向量。
+$\mathbf{b}=I\mathbf{b}=AC\mathbf{b}=A(C\mathbf{b})$ 
+那麼，$\mathbf{b}$ 可以被 $A$ 的 column vectors 線性組合 ($C\mathbf{b}$ 為 $n\times1$ 的向量)。
+$\implies \mathbb{R}^{m}\subseteq\text{Col}(A)$ 
+
+32. Prove: If $A$ is an $m × n$ matrix and the column vectors of $A$ span $\mathbb{R}^{m}$, then $A$ has a right inverse. (Hint: Let $\mathbf{e_{j}}$ denote the jth column of $I_{m}$ and solve $A\mathbf{x}=\mathbf{e_{j}}$ for $j=1,\dots,m$. )
+
+Sol:
+因為 $\mathbf{e}_{j}\in \mathbb{R}^{m}\subseteq\text{Col(A)}$，所以對於 $A\mathbf{x}=\mathbf{e_{j}}$ 都可以找到解。
+將這些解合起來組成一個矩陣，就是 $A$ 的右逆。
