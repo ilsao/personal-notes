@@ -92,3 +92,42 @@ $$
 我們可以如下求 $A$：$a_{j}=L(\mathbf{e}_{j})\quad j=1,\dots,n$。
 
 proof:
+若定義 $\mathbf{a}_{j}=L(\mathbf{e}_{j})$ for $j=1,\dots,n$，並令 $A=(a_{ij})=(\mathbf{a_{1}},\dots,\mathbf{a_{n}})$。
+若 $\mathbf{x}=x_{1}\mathbf{e_{1}}+\dots+x_{n}\mathbf{e}_{n}$ 為 $\mathbb{R}^{n}$ 中的任一向量，則：
+$L(\mathbf{x})=x_{1}L(\mathbf{e_{1}})+\dots+x_{n}L(\mathbf{e_{n}})$ 
+$=x_{1}\mathbf{a_{1}}+\dots+x_{n}\mathbf{a_{n}}=(\mathbf{a_{1}},\dots,\mathbf{a_{n}})\begin{bmatrix}x_{1} \\ \vdots \\ x_{n}\end{bmatrix}$ 
+$=A\mathbf{x}$ 
+
+讓我們回憶一下高中的東西：旋轉矩陣吧~
+
+一個讓向量逆時針選轉 $\theta$ 的旋轉矩陣定義如下：
+
+$$
+\begin{bmatrix}
+\cos \theta & -\sin \theta \\
+\sin \theta & \cos \theta
+\end{bmatrix}
+$$
+
+推導過程很簡單，對於 $\mathbf{e_{1}}$，想要讓其逆時針旋轉 $\theta$ 則會從 $(1,0)$ 變成 $(\cos \theta,\sin \theta)$。
+
+而對於 $\mathbf{e_{2}}$ 來說，會從 $(0,1)$ 變成 $(-\sin \theta,\cos \theta)$。
+
+所以，這兩個分別為矩陣的第一個 column 和第二個 column。
+
+我們來看看 Matrix Representation Theorem：
+
+若 $E=\{\mathbf{v_{1}},\dots,\mathbf{v_{n}}\}$ $F=\{\mathbf{w_{1}},\dots,\mathbf{w_{n}}\}$ 分別為 $V$ 和 $W$ 的有序基底。
+
+則對於線性變換 $L:V\to W$，一定存在一個 $m\times n$ 矩陣 $A$ 使得：
+
+$$
+[L(\mathbf{v})]_{F}=A[\mathbf{v}]_{E} \quad \text{for each }\mathbf{v}\in V
+$$
+
+且 $A$ 矩陣可以如下計算：
+
+$$
+\mathbf{a}_{j}=[L(\mathbf{v})_{j}]_{F}\quad j=1,\dots,n
+$$
+
