@@ -115,7 +115,7 @@ $$
 
 所以，這兩個分別為矩陣的第一個 column 和第二個 column。
 
-我們來看看 Matrix Representation Theorem：
+我們來看看 **Matrix Representation Theorem**：
 
 若 $E=\{\mathbf{v_{1}},\dots,\mathbf{v_{n}}\}$ $F=\{\mathbf{w_{1}},\dots,\mathbf{w_{n}}\}$ 分別為 $V$ 和 $W$ 的有序基底。
 
@@ -131,3 +131,93 @@ $$
 \mathbf{a}_{j}=[L(\mathbf{v})_{j}]_{F}\quad j=1,\dots,n
 $$
 
+隨著上一個定理的結束，我們迎來了下一個定理：
+
+令 $E=\{\mathbf{u_{1}},\dots,\mathbf{u_{n}}\}$ 與 $F=\{\mathbf{b_{1}},\dots,\mathbf{b_{n}}\}$ 為 $\mathbb{R}^{n}$ 與 $\mathbb{R}^{m}$ 的有序基底，其中 $B=(\mathbf{b_{1}},\dots,\mathbf{b_{n}})$。若有線性變換 $L:\mathbb{R}^{n}\to \mathbb{R}^{m}$，則此變換基於 $E$ 和 $F$ 的矩陣表達 $A$ 可以如下求得：
+
+$$
+\mathbf{a}_{j}=B^{-1}L(\mathbf{u}_{j})\quad \text{for }j=1,\dots ,n
+$$
+
+proof:
+$L(\mathbf{u}_{j})=a_{1j}\mathbf{b_{1}}+\dots+a_{mj}\mathbf{b_{m}}=B\mathbf{a}_{j}$ 
+$\implies \mathbf{a}_{j}=B^{-1}L(\mathbf{u}_{j})\quad j=1,\dots,n$ 
+
+接下來，我們要介紹一個使用以上定理的引理：
+
+若 $A$ 為基於基底  $E=\{\mathbf{u_{1}},\dots,\mathbf{u_{n}}\}$ 與 $F=\{\mathbf{b_{1}},\dots,\mathbf{b_{n}}\}$ 的變換 $L:\mathbb{R}^{n}\to \mathbb{R}^{m}$ 的矩陣表達形式，則 $(\mathbf{b_{1}},\dots,\mathbf{b_{m}}|L(\mathbf{u_{1}}),\dots,L(\mathbf{u_{n}}))$ 的 RREF 形式就是 $(I|A)$。
+
+proof:
+$B^{-1}(\mathbf{b_{1}},\dots,\mathbf{b_{m}}|L(\mathbf{u_{1}}),\dots,L(\mathbf{u_{n}}))=(I|B^{-1}L(\mathbf{u_{1}}),\dots,B^{-1}L(\mathbf{u}_{n}))=(I|\mathbf{a_{1}},\dots,\mathbf{a_{n}})$ 
+$=(I|A)$ 
+
+## Homogeneous Coordinates
+
+一個齊次座標系統將 $\mathbb{R}^{2}$ 對應到 $\mathbb{R}^{3}$：
+
+$$
+\begin{bmatrix}
+x_{1} \\
+x_{2}
+\end{bmatrix}
+\leftrightarrow
+\begin{bmatrix}
+x_{1} \\
+x_{2} \\
+1
+\end{bmatrix}
+$$
+
+為啥需要這樣的齊次系統捏？誒，這不得不提到心愛的計算機圖學啦～
+
+在 $\mathbb{R}^{2}$ 中，如果想要位移座標，必須使用加法運算。但是如果拓展到 $\mathbb{R}^{3}$ ，就可以輕鬆的使用矩陣乘法位移二維坐標啦～
+
+例如：
+
+$$
+\begin{bmatrix}
+1 & 0 & t_{1} \\
+0 & 1 & t_{2} \\
+0 & 0 & 1
+\end{bmatrix}
+\begin{bmatrix}
+x_{1} \\
+y_{1} \\
+1
+\end{bmatrix}
+=\begin{bmatrix}
+x_{1} +t_{1}\\
+y_{1} +t_{2}\\
+1
+\end{bmatrix}
+$$
+
+# Similarity
+
+令 $E=\{\mathbf{u_{1}},\dots,\mathbf{u_{n}}\}$ 與 $F=\{\mathbf{b_{1}},\dots,\mathbf{b_{n}}\}$ 為 $V$ 的兩個有序基底，且令 $L$ 為 $V$ 上的線性操作。令 $S$ 為變換 $F$ 上座標到 $E$ 上座標的矩陣，且 $A$ 為 $L$ 在 $E$ 上的矩陣表達，$B$ 為 $L$ 在 $F$ 上的矩陣表達，則：$B=S^{-1}AS$。
+
+proof:
+令 $\mathbf{x}$ 為 $\mathbb{R}^{n}$ 中的任意向量，令 $\mathbf{v}=\{x_{1}\mathbf{w_{1}}+\dots+x_{n}\mathbf{w_{n}}\}$。
+那麼：
+$$
+\mathbf{y}=S\mathbf{x} \quad \mathbf{t}=A\mathbf{y}=[L(\mathbf{v})]_{E}\quad \mathbf{z}=B\mathbf{x}=[L(\mathbf{v})]_{F}
+$$
+則 $S^{-1}A\mathbf{y}=S^{-1}AS\mathbf{x}=B\mathbf{x}\implies B=S^{-1}AS$ (因為對於 $\forall \mathbf{x}\in \mathbb{R}^{n}$ 都成立)
+
+我們可以如下理解這個觀念：某個向量 $[\mathbf{x}]_{F}$ 左乘 $S$ 變換到 $[\mathbf{x}]_{E}$，左乘 $A$ 變換到 $[L(\mathbf{x})]_{E}$，再左乘 $S^{-1}$ 變換到 $[L(\mathbf{x})]_{F}$。
+
+到此，終於可以給出**相似(similar)** 的定義：給定 $A$ 與 $B$ 兩個 $n\times n$ 矩陣，若存在一個非奇異矩陣 $S$ ，且 $B=S^{-1}AS$ 則稱 $A$ 與 $B$ 相似。
+
+根據本節開頭的引理，兩個相對於不同基底，但表達同一個線性變換的矩陣會相似。
+
+反過來說，如果 $A$ 表示 $L$ 在 $\{\mathbf{v_{1}},\dots,\mathbf{v_{n}}\}$ 上的矩陣表達，且 $B=S^{-1}AS$。其中 $\mathbf{w_{1}},\dots,\mathbf{w_{n}}$ 如下定義：
+
+$$
+\begin{align}
+ & \mathbf{w_{1}}=s_{11}\mathbf{v_{1}}+\dots+s_{n 1}\mathbf{v_{n}} \\
+ & \vdots \\
+ & \mathbf{w_{n}}=s_{1 n}\mathbf{v1}+\dots+s_{nn}\mathbf{v_{n}}
+\end{align}
+$$
+
+則：$\{\mathbf{w_{1}},\dots,\mathbf{w_{n}}\}$ 為 $V$ 的一組基底，且 $B$ 表示 $L$ 在 $\{\mathbf{w_{1}},\dots,\mathbf{w_{n}}\}$ 上的矩陣表達。
