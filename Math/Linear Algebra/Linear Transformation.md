@@ -133,7 +133,7 @@ $$
 
 隨著上一個定理的結束，我們迎來了下一個定理：
 
-令 $E=\{\mathbf{u_{1}},\dots,\mathbf{u_{n}}\}$ 與 $F=\{\mathbf{b_{1}},\dots,\mathbf{b_{n}}\}$ 為 $\mathbb{R}^{n}$ 與 $\mathbb{R}^{m}$ 的有序基底，其中 $B=(\mathbf{b_{1}},\dots,\mathbf{b_{n}})$。若有線性變換 $L:\mathbb{R}^{n}\to \mathbb{R}^{m}$，則此變換基於 $E$ 和 $F$ 的矩陣表達 $A$ 可以如下求得：
+令 $E=\{\mathbf{u_{1}},\dots,\mathbf{u_{n}}\}$ 與 $F=\{\mathbf{b_{1}},\dots,\mathbf{b_{m}}\}$ 為 $\mathbb{R}^{n}$ 與 $\mathbb{R}^{m}$ 的有序基底，其中 $B=(\mathbf{b_{1}},\dots,\mathbf{b_{n}})$。若有線性變換 $L:\mathbb{R}^{n}\to \mathbb{R}^{m}$，則此變換基於 $E$ 和 $F$ 的矩陣表達 $A$ 可以如下求得：
 
 $$
 \mathbf{a}_{j}=B^{-1}L(\mathbf{u}_{j})\quad \text{for }j=1,\dots ,n
@@ -221,3 +221,65 @@ $$
 $$
 
 則：$\{\mathbf{w_{1}},\dots,\mathbf{w_{n}}\}$ 為 $V$ 的一組基底，且 $B$ 表示 $L$ 在 $\{\mathbf{w_{1}},\dots,\mathbf{w_{n}}\}$ 上的矩陣表達。
+
+# Tips
+
+- 如果要表示一個線性變換的 ker 和 range，可以使用 $\text{span}$！
+- 對於 $L(\mathbf{x})=(x_{1},x_{2},0)^{T}$，$\text{ker}(L)=\text{span}((0,0,1)^{T})$。
+- 要說明某個線性變換 $L:\mathbb{R}^{3}\to \mathbb{R}^{3}$，利用 $L(\mathbf{e_{1}}),L(\mathbf{e_{2}}),L(\mathbf{e_{3}})$ 的結果線性獨立，且 $\text{Im}(L)=\text{span}(L(\mathbf{e_{1}}),L(\mathbf{e_{2}}),L(\mathbf{e_{3}}))$。
+
+# 重要例題
+
+1. Let $L:\mathbb{R}^{2}\to \mathbb{R}^{2}$ be a linear operator. If $L((2,3)^{T})=(3,-2)^{T}$ and $L((-1,1)^{T})=(1,4)^{T}$, find the value of $L((8,7)^{T})$. 
+
+Sol:
+兩種看法，1. 利用第一節的東西拆解。2. 利用第二節的矩陣表達解。
+(I)
+$(8,7)^{T}=3(2,3)^{T}-2(-1,1)^{T}$ 
+$L((8,7)^{T})=L(3(2,3)^{T}-2(-1,1)^{T})=3L((2,3)^{T})-2L((-1,1)^{T})$ 
+$=(9,-6)^{T}+(-2,-8)^{T}=(7,-14)^{T}$ 
+(II)
+因為 $(2,3)^{T}$ 與 $(-1,1)^{T}$ 線性獨立，所以可以作為 $\mathbb{R}^{2}$ 的一組基底 $E$。
+又 $(3,-2)^{T}$ 與 $(1,4)^{T}$ 線性獨立，所以可以作為 $\mathbb{R}^{2}$ 的一組基底 $F$。
+那麼，對於變換矩陣 $A_{E:F}=([L((2,3)^{T})]_{F}, [L(-1,1)^{T}]_{F})=\begin{bmatrix}1 & 0 \\ 0 & 1\end{bmatrix}$ 
+所以，如果將 $[(8,7)^{T}]_{E}$ 應用 $A_{E:F}$ 再轉回標準基底就是解。
+令 $V=\{\mathbf{e_{1}},\mathbf{e_{2}}\}$ 
+所以：$\begin{bmatrix}3 & 1 \\ -2 & 4\end{bmatrix}_{F\to V}\begin{bmatrix}1 & 0 \\ 0 & 1\end{bmatrix}_{E:F}\begin{bmatrix}2 & -1 \\ 3 & 1\end{bmatrix}_{V\to E}\begin{bmatrix}8 \\ 7\end{bmatrix}=\begin{bmatrix}7 \\ -14\end{bmatrix}$ 就是答案。
+
+2. Use mathematical induction to prove that if $L$ is a linear transformation from $V$ to $W$, then $L(\alpha_{1}\mathbf{v_{1}}+\dots+\alpha_{n}\mathbf{v_{n}})=\alpha_{1}L(\mathbf{v_{1}})+\dots+\alpha_{n}L(\mathbf{v_{n}})$. 
+
+Sol:
+其他正常，需要注意的是：
+將 $L(\alpha_{1}\mathbf{v_{1}}+\dots+\alpha_{k}\mathbf{v_{k}}+\alpha_{k+1}\mathbf{v_{k+1}}) = L(\alpha_{1}\mathbf{v_{1}}+\dots+\alpha_{k}\mathbf{v_{k}})+L(\alpha_{k+1}\mathbf{v_{k+1}})$ 
+再繼續就好。
+
+3. Let $L$ be a linear operator on a vector space $V$. Define $L^{n}$, $n\geq 1$, recursively by $L^{1}=L$ and $L^{k+1}(\mathbf{v})=L(L^{k}(\mathbf{v}))$ for all $\mathbf{v}\in V$. Show that $L^{n}$ is a linear operator on $V$ for each $n\geq 1$. 
+
+Sol:
+直接給重點。
+因為假設 $L^{k}$ 是 linear operator，所以有(注意檢驗方式)：
+$L^{k+1}(\alpha \mathbf{v}+\beta \mathbf{w})=L(L^{k}(\alpha \mathbf{v}+\beta \mathbf{w}))=L(\alpha L^{k}(\mathbf{v})+\beta L^{k}(\mathbf{w}))$ 
+$=\alpha L^{k+1}(\mathbf{v})+\beta L^{k}(\mathbf{w})$ 
+
+4. Find the kernel and the range of linear operation on $P_{3}$: $L(p(x))=p(0)x+p(1)$. 
+
+Sol:
+這裡我們用課本的定義：設 $p(x)=ax^{2}+bx+c$。
+則 $p(0)x+p(1)=cx+a+b+c$。
+$p(0)x+p(1)=0\implies \begin{cases}a=-b \\ c=0\end{cases}$ 
+$\implies\text{ker}(L)=\text{span}(-x^{2}+x)$ 
+`~~~~~~~~~~~~~~~~~~^` 這裡注意，$\text{ker}(L)$ 是**轉換前的向量空間中的子集合**，而不是轉換後的。
+$\implies\text{range}(L)=\text{span}(x,1)$ 
+
+5. A linear transformation $L: V → W$ is said to be one-to-one if $L (\mathbf{v_{1}})= L (\mathbf{v_{2}})$ implies that $\mathbf{v_{1}}=\mathbf{v_{2}}$ (i.e., no two distinct vectors $\mathbf{v_{1}},\mathbf{v_{2}}$ in $V$ get mapped into the same vector $w ∈ W$). Show that $L$ is one-to-one if and only if $\text{ker}(L) = {\mathbf{0_{V}} }$. 
+
+Sol:
+($\implies$)
+取 $\mathbf{v}\in\text{ker}(V)$ 使得 $L(\mathbf{v})=\mathbf{0_{W}}$。
+因為 $L(\mathbf{0}_{V})=\mathbf{0}_{W}$，且 $L$ 為 one-to-one，所以 $\mathbf{v}=\mathbf{0}_{V}$。
+$\implies\text{ker}(V)=\{\mathbf{0}_{V}\}$ 
+($\impliedby$)
+取 $\mathbf{v_{1}},\mathbf{v_{2}}\in V$，若 $L(\mathbf{v_{1}})=L(\mathbf{v_{2}})$，則：
+$L(\mathbf{v_{1}})-L(\mathbf{v_{2}})=L(\mathbf{v_{1}}-\mathbf{v_{2}})=\mathbf{0}_{W}$ (因為 $\text{ker}(L)=\mathbf{0}_{V}$)
+$\implies \mathbf{v_{1}}-\mathbf{v_{2}}=\mathbf{0}_{V}\implies \mathbf{v_{1}}=\mathbf{v_{2}}$ 
+
