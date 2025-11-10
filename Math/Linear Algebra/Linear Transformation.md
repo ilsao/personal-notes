@@ -125,10 +125,10 @@ $$
 [L(\mathbf{v})]_{F}=A[\mathbf{v}]_{E} \quad \text{for each }\mathbf{v}\in V
 $$
 
-且 $A$ 矩陣可以如下計算：
+且 $A$ 矩陣可以如下計算(因為 $[\mathbf{v}_{j}]_{E}=\mathbf{e}_{j}$)：
 
 $$
-\mathbf{a}_{j}=[L(\mathbf{v})_{j}]_{F}\quad j=1,\dots,n
+\mathbf{a}_{j}=[L(\mathbf{v}_{j})]_{F}\quad j=1,\dots,n
 $$
 
 隨著上一個定理的結束，我們迎來了下一個定理：
@@ -150,6 +150,14 @@ $\implies \mathbf{a}_{j}=B^{-1}L(\mathbf{u}_{j})\quad j=1,\dots,n$
 proof:
 $B^{-1}(\mathbf{b_{1}},\dots,\mathbf{b_{m}}|L(\mathbf{u_{1}}),\dots,L(\mathbf{u_{n}}))=(I|B^{-1}L(\mathbf{u_{1}}),\dots,B^{-1}L(\mathbf{u}_{n}))=(I|\mathbf{a_{1}},\dots,\mathbf{a_{n}})$ 
 $=(I|A)$ 
+
+其實還有一種找矩陣表達的方式令 $V$ 為標準基底：
+
+$$
+[L(\mathbf{x})]_{E:F}=B^{-1}_{V\to F}A_{V}U_{E\to V}
+$$
+
+也就是說，先找出基於標準基底的矩陣表達 $A$，然後右乘將以 $E$ 為基底的座標轉換成標準基底座標的矩陣 $U$，最後左乘將標準基底座標轉換為 $F$ 基底座標的 $B^{-1}$。
 
 ## Homogeneous Coordinates
 
@@ -206,7 +214,7 @@ $$
 
 我們可以如下理解這個觀念：某個向量 $[\mathbf{x}]_{F}$ 左乘 $S$ 變換到 $[\mathbf{x}]_{E}$，左乘 $A$ 變換到 $[L(\mathbf{x})]_{E}$，再左乘 $S^{-1}$ 變換到 $[L(\mathbf{x})]_{F}$。
 
-到此，終於可以給出**相似(similar)** 的定義：給定 $A$ 與 $B$ 兩個 $n\times n$ 矩陣，若存在一個非奇異矩陣 $S$ ，且 $B=S^{-1}AS$ 則稱 $A$ 與 $B$ 相似。
+到此，終於可以給出**相似(similar)** 的定義：給定 $A$ 與 $B$ 兩個 $n\times n$ 矩陣，若存在一個非奇異矩陣 $S$ ，且 $B=S^{-1}AS$ 則稱 $A$ 與 $B$ 相似。($A$ 與 $B$ 表達在不同基底下相同的線性變換)
 
 根據本節開頭的引理，兩個相對於不同基底，但表達同一個線性變換的矩陣會相似。
 
@@ -227,6 +235,7 @@ $$
 - 如果要表示一個線性變換的 ker 和 range，可以使用 $\text{span}$！
 - 對於 $L(\mathbf{x})=(x_{1},x_{2},0)^{T}$，$\text{ker}(L)=\text{span}((0,0,1)^{T})$。
 - 要說明某個線性變換 $L:\mathbb{R}^{3}\to \mathbb{R}^{3}$，利用 $L(\mathbf{e_{1}}),L(\mathbf{e_{2}}),L(\mathbf{e_{3}})$ 的結果線性獨立，且 $\text{Im}(L)=\text{span}(L(\mathbf{e_{1}}),L(\mathbf{e_{2}}),L(\mathbf{e_{3}}))$。
+- 注意，在基底轉換時，轉換的是基底而不是向量空間，所以要標注基底而非向量空間。
 
 # 重要例題
 
@@ -283,3 +292,20 @@ $\implies\text{ker}(V)=\{\mathbf{0}_{V}\}$
 $L(\mathbf{v_{1}})-L(\mathbf{v_{2}})=L(\mathbf{v_{1}}-\mathbf{v_{2}})=\mathbf{0}_{W}$ (因為 $\text{ker}(L)=\mathbf{0}_{V}$)
 $\implies \mathbf{v_{1}}-\mathbf{v_{2}}=\mathbf{0}_{V}\implies \mathbf{v_{1}}=\mathbf{v_{2}}$ 
 
+6. Let $L$ be a linear operator on $\mathbb{R}^{n}$. Suppose that $L (x)= 0$ for some $x \neq 0$. Let $A$ be the matrix representing $L$ with respect to the standard basis $\{\mathbf{e_{1}}, \mathbf{e_{2}}, . . . , \mathbf{e}_{n}\}$. Show that $A$ is singular.
+
+Sol:
+(I)
+$L(\mathbf{x})=A\mathbf{x}=\mathbf{0}\quad\text{for some }\mathbf{x}\neq0$ 
+$\implies N(A)\neq\{\mathbf{0}\}\implies A\text{ is singular}$ 
+(II)
+令 $\mathbf{x}=\alpha_{1}\mathbf{e_{1}}+\dots+\alpha_{n}\mathbf{e_{n}}$ 其中 $\alpha_{1},\dots\alpha_{n}$ 為標量且不全為零。
+$L(\mathbf{x})=A\begin{bmatrix}\alpha_{1} \\ \vdots \\ \alpha_{n}\end{bmatrix}=\mathbf{0}$ 
+因為 $\alpha_{1},\dots,\alpha_{n}$ 不全為零，根據定義 $A$ 奇異。
+
+7. 若 $L_{1}:V\to F ,\ L_{2}:F\to G$ 說明 $[L_{2}(L_{1}(\mathbf{v}))]_{G}=B_{F:G}A_{V:F}[\mathbf{v}]_{E}$ (令此處 $V$ $F$ $G$ 的基底分別為 $V \ F \ G$)
+
+Sol:
+這題需要注意，要從**外往內分解**。
+取任意 $\mathbf{v}\in V$，我們有：
+$[L_{2}(L_{1}(\mathbf{v}))]_{G}=B_{F:G}[L_{1}(\mathbf{v})]_{F}=B_{F:G}A_{V:F}[\mathbf{v}]_{E}$ 
