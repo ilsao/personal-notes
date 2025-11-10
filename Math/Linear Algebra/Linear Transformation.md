@@ -236,6 +236,7 @@ $$
 - 對於 $L(\mathbf{x})=(x_{1},x_{2},0)^{T}$，$\text{ker}(L)=\text{span}((0,0,1)^{T})$。
 - 要說明某個線性變換 $L:\mathbb{R}^{3}\to \mathbb{R}^{3}$，利用 $L(\mathbf{e_{1}}),L(\mathbf{e_{2}}),L(\mathbf{e_{3}})$ 的結果線性獨立，且 $\text{Im}(L)=\text{span}(L(\mathbf{e_{1}}),L(\mathbf{e_{2}}),L(\mathbf{e_{3}}))$。
 - 注意，在基底轉換時，轉換的是基底而不是向量空間，所以要標注基底而非向量空間。
+- 若 $A$ 與 $B$ 相似，則存在 $T$ 與可逆矩陣 $S$ 使得 $A=TS$ 且 $B=ST$。
 
 # 重要例題
 
@@ -309,3 +310,24 @@ Sol:
 這題需要注意，要從**外往內分解**。
 取任意 $\mathbf{v}\in V$，我們有：
 $[L_{2}(L_{1}(\mathbf{v}))]_{G}=B_{F:G}[L_{1}(\mathbf{v})]_{F}=B_{F:G}A_{V:F}[\mathbf{v}]_{E}$ 
+
+8. Let $A$ and $B$ be $n × n$ matrices. Show that if $A$ is similar to $B$, then there exist $n × n$ matrices $S$ and $T$, with $S$ nonsingular, such that $A=ST \ B=TS$。
+
+Sol:
+根據定義，我們有可逆舉陣 $P$ 使得 $B=P^{-1}AP$。
+令 $S=P$，$T=P^{-1}A$。
+則 $TS=P^{-1}AP=B$，且 $ST=PP^{-1}A=A$。
+
+9. Show that if $A$ is nonsingular and similar to $B$, then $B$ must be nonsingular.
+
+Sol:
+此題的重點在於，想不到要用**行列式**檢驗 $B$ 是否奇異。
+$\det(A)=\det(S^{-1})\det(B)\det(S)=\dots=\det(B)\neq0$ 
+
+10. Let $A$ and $B$ be similar matrices and let $λ$ be any scalar. Show that $A− λI$and $B− λI$ are similar. 
+
+Sol:
+令 $A=S^{-1}BS$。
+$A-\lambda I=S^{-1}BS-\lambda I$ 
+$=S^{-1}BS-\lambda S^{-1}IS=S^{-1}BS-S^{-1}\lambda IS$ 
+$=S^{-1}(BS-\lambda IS)=S^{-1}(B-\lambda I)S$ 
