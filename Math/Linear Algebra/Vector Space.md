@@ -142,11 +142,11 @@ $\mathbf{v_{1}}, \mathbf{v_{2}}, \dots \mathbf{v_{n}}$ 是 $V$ 的生成集 $\Le
 
 ## Linear Systems Revisited
 
-考慮一個有解的線性系統 $A\mathbf{x}=\mathbf{b}$。
+考慮一個有解的線性系統 $A\mathbf{x}=\mathbf{b}$。($A$ 的大小為 $m\times n$)
 
 如果 $\mathbf{b}=\mathbf{0}$，那麼所有解構成的集合 $S=N(A)$，且 $S$ 是 $\mathbb{R}^{n}$ 的子空間。
 
-如果 $\mathbf{b}\neq \mathbf{0}$，那麼所有解構成的集合 $S$ 無法構成 $\mathbb{R}^{n}$ 的子空間，因為 $\mathbf{0} \not\in S$。
+**如果 $\mathbf{b}\neq \mathbf{0}$，那麼所有解構成的集合 $S$ 無法構成 $\mathbb{R}^{n}$ 的子空間**，因為 $\mathbf{0} \not\in S$。(需要搞清楚，$\mathbf{b}$ 落在 $\text{Col}(A)$ 中，而不是 $\mathbf{x}$)
 
 我們有：如果給定 $\mathbf{x_{0}}$ 為 $A\mathbf{x}=\mathbf{b}$ 的一組特定解，那麼 $\mathbf{y}$ 也會是一組解 $\Leftrightarrow \mathbf{y}=\mathbf{x_{0}}+\mathbf{z}$，其中 $\mathbf{z} \in N(A)$。
 
@@ -300,7 +300,7 @@ $\beta_{1}\mathbf{v_{1}}+\dots+\beta_{n}\mathbf{v_{n}}=(\alpha_{1}+c_{1})\mathbf
 
 $c_{1}f_{1}(x)+\dots+c_{n}f_{n}(x)=0$ 
 $c_{1}f_{1}'(x)+\dots+c_{n}f_{n}'(x)=0$
-$\vdots$
+$\vdots$ 
 $c_{1}f_{1}^{(n-1)}(x)+\dots+c_{n}f_{n}^{(n-1)}(x)=0$ 
 
 所以，可以寫成以下矩陣方程：
@@ -323,7 +323,7 @@ proof:
 $W[f_{1},\dots,f_{n}](x)=0 \ \forall x \in [a,b]$ 。
 所以，**只要可以找到任意 $x\in[a,b]$ 使得 $W=[f_{1},\dots,f_{n}](x)\neq 0$ 則 $f_{1},\dots,f_{n}$ 線性獨立**。
 
-需要注意，**反向結論是不成立的**。也就是說就算對於所有 $x$ 都有 $W[f_{1},\dots,f_{n}](x)=0$ 並仍**不可保證** $f_{1},\dots,f_{n}$ 線性相依。因為，想要保證線性相依， $c_{i}$ 必須為一個固定常數。但是對於所有 $x$ 都有 $W[f_{1},\dots,f_{n}](x)=0$ 只能保證對於某特定 $x$ 可以找到相對應的 $c_{i}$ 使得等式成立。而這個 $c_{i}$ 有可能是常數也有可能隨著 $x$ 不同而改變。所以無法保證線性相依，但是可以說明有一定可能性這些函數線性相依。
+需要注意，**反向結論是不成立的**。也就是說就算對於所有 $x$ 都有 $W[f_{1},\dots,f_{n}](x)=0$ 並仍**不可保證** $f_{1},\dots,f_{n}$ 線性相依。因為，想要保證線性相依， $c_{i}$ 必須為一個固定常數。但是對於所有 $x$ 都有 $W[f_{1},\dots,f_{n}](x)=0$ 只能保證對於某特定 $x$ 可以找到相對應的 $c_{i}$ 使得等式成立。而這個 $c_{i}$ 有可能是常數也有可能隨著 $x$ 不同而改變。雖然無法保證線性相依，但是可以說明有一定可能性這些函數線性相依。
 
 # Basis and Dimension
 
@@ -362,7 +362,7 @@ $$
 $$
 
 proof:
-令 $\mathbf{v_{1}},\dots,\mathbf{v_{n}}$ 與 $\mathbf{u_{1}},\dots,\mathbf{u_{n}}$ 為 $V$ 的基底。
+令 $\mathbf{v_{1}},\dots,\mathbf{v_{n}}$ 與 $\mathbf{u_{1}},\dots,\mathbf{u_{m}}$ 為 $V$ 的基底。
 因為他們都是 $V$ 的基底，所以二者都線性獨立。
 為了滿足線性獨立的條件，**根據上一個我們證明的性質**：
 因為 $\mathbf{v_{1}},\dots,\mathbf{v_{n}}$ 是 $V$ 的生成集，所以 $m\leq n$ 可以滿足線性獨立的條件。
@@ -394,7 +394,7 @@ proof:
 (I)
 我們取 $V$ 中 $n$ 個線性獨立的向量 $\mathbf{v_{1}},\dots,\mathbf{v_{n}}$，以及一個向量 $\mathbf{v}$。
 因為 $\mathbf{v_{1}},\dots,\mathbf{v_{n}}$ 線性獨立，所以：$c_{1}\mathbf{v_{1}}+\dots+c_{n}\mathbf{v_{n}}=\mathbf{0}$ 
-那麼，$c_{1}\mathbf{v_{1}}+\dots+c_{n}\mathbf{v_{n}}+c_{n+1}\mathbf{v}=\mathbf{0}$ 中的 **$c_{n+1}$ 必不為零**，否則 $\mathbf{v_{1}},\dots,\mathbf{v_{n}}$ 不是線性獨立。
+那麼， $c_{1}\mathbf{v_{1}}+\dots+c_{n}\mathbf{v_{n}}+c_{n+1}\mathbf{v}=\mathbf{0}$ 中 $c_{i}$ 不全為零(之前有證明過)，則必有 **$c_{n+1}$ 不為零**，否則 $\mathbf{v_{1}},\dots,\mathbf{v_{n}}$ 不是線性獨立。
 (若 $c_{n+1}$ 為零，那麼 $c_{1}\mathbf{v_{1}}+\dots+c_{n}\mathbf{v_{n}}+c_{n+1}\mathbf{v}=\mathbf{0}$ 會等於 $c_{1}\mathbf{v_{1}}+\dots+c_{n}\mathbf{v_{n}}=\mathbf{0}$，這隱含了 $\mathbf{v_{1}},\dots \mathbf{v_{n}}$ 線性相關，與前提矛盾)
 $\implies \mathbf{v}=\alpha \mathbf{v_{1}}+\dots+\alpha \mathbf{v_{n}}$ 且 $\alpha_{i}=-\frac{c_{i}}{c_{n+1}}$，其中 $i=1,\dots,n$。
 因為 $\mathbf{v}$ 為 $V$ 中的任意向量，所以 $c_{1}\mathbf{v_{1}}+\dots+c_{n}\mathbf{v_{n}}$ 張出 $V$。
@@ -549,6 +549,20 @@ $$
 
 $\mathbf{c}$ 的每一項稱為 $\mathbf{v}$ 在 $E$ 上的座標。
 
+其實，學完第四章的內容後，我們可以用第四章的內容幫助我們更快速的找到 transition matrix。
+
+假設我們有 $V=\text{span}(\mathbf{v_{1}},\dots,\mathbf{v_{n}})$ 與 $U=\text{span}(\mathbf{u_{1}},\dots,\mathbf{u_{n}})$ 都是某個向量空間的基底，求從 $V\to U$ 的 transition matrix。
+
+令 $A$ 為想求的 transition matrix，則：
+
+$$
+\mathbf{a}_{j}=[\mathbf{v}_{j}]_{U}
+$$
+
+proof:
+對於任意向量，我們有 $A[\mathbf{x}]_{V}=[\mathbf{x}]_{U}$。
+帶入 $\mathbf{x}=\mathbf{v}_{j}$，則有 $A\mathbf{e}_{j}=[\mathbf{v}_{j}]_{U}$。
+
 注意到：**每個轉移矩陣必定都是可逆的**。
 
 proof:
@@ -577,20 +591,6 @@ $$
 
 對於任意給定的可逆矩陣 $A\in \mathbb{R}^{n\times n}$，給定任意一組基底 $V=\{\mathbf{v_{1}},\dots,\mathbf{v_{n}}\}$，定義 $F=\{A\mathbf{v_{1}}, A\mathbf{v_{2}},\dots,A{\mathbf{v_{n}}}\}$，則 $F$ 也會是一組基底(因為 $\{A\mathbf{v_{1}}, A\mathbf{v_{2}},\dots,A{\mathbf{v_{n}}}\}$ 必定線性獨立 ($A$ 非奇異)，下面例題好像有證過)。且 $A$ 為轉換 $V$ 上座標到 $F$ 上座標的 transition matrix。
 
-其實，學完第四章的內容後，我們可以用第四章的內容幫助我們更快速的找到 transition matrix。
-
-假設我們有 $V=\text{span}(\mathbf{v_{1}},\dots,\mathbf{v_{n}})$ 與 $U=\text{span}(\mathbf{u_{1}},\dots,\mathbf{u_{n}})$ 都是某個向量空間的基底，求從 $V\to U$ 的 transition matrix。
-
-令 $A$ 為想求的 transition matrix，則：
-
-$$
-\mathbf{a}_{j}=[\mathbf{v}_{j}]_{U}
-$$
-
-proof:
-對於任意向量，我們有 $A[\mathbf{x}]_{V}=[\mathbf{x}]_{U}$。
-帶入 $\mathbf{x}=\mathbf{v}_{j}$，則有 $A\mathbf{e}_{j}=[\mathbf{v}_{j}]_{U}$。
-
 # Row Space and Column Space
 
 首先定義一波：
@@ -613,7 +613,7 @@ proof:
 同理，$A$ 的 row space 也必為 $B$ 的 row space 的子空間。
 所以 $A$ 的 row space 必等於 $B$ 的 row space。
 
-緊接著，我們定義什麼是**秩(rank)**：$A$ 的 row space 的維度。寫成：$\text{rank}(A)$。
+緊接著，我們定義什麼是**秩(rank)**：$A$ 的 row space 或 column space 的維度。寫成：$\text{rank}(A)$。
 
 想找出 $A$ 的秩，我們可以將 $A$ 化成 REF。
 
@@ -666,6 +666,8 @@ $A$ 的 column vectors 線性獨立 $\implies A\mathbf{x}=\mathbf{0}$ 只有 tri
 令 $\mathbf{x_{1}},\mathbf{x_{2}}$ 都是 $A\mathbf{x}=\mathbf{b}$ 的解，則 $A(\mathbf{x_{1}}-\mathbf{x_{2}})=\mathbf{0}$。
 因為 $A\mathbf{x}=\mathbf{0}$ 只有 trivial solution，所以 $\mathbf{x_{1}}=\mathbf{x_{2}}$，最多只有一解。
 
+注意一個特殊狀況：取 $\mathbb{R}^{n}$ 中一向量 $\mathbf{b}$，並給定一個 $n\times k$ 矩陣 。若 $\text{rank}(A)=n$ ($n<k$)，則 $A\mathbf{x}=\mathbf{b}$ 的解永遠有**無限多組解**，不可能無解，因為 $\text{Col}(A)$ 張出整個 $\mathbb{R}^{n}$ 空間。
+
 我們還有一個引理：$A$ 為一個 $n\times n$ 的可逆矩陣 $\Leftrightarrow$ $A$ 的 column vectors 構成 $\mathbb{R}^{n}$ 的基底。
 
 proof:
@@ -697,7 +699,7 @@ $A$ 為一個 $m\times n$ 矩陣。$A$ 的 row space 的維度 $=$ column space 
 
 proof:
 若 $A$ 為 $m\times n$ 的矩陣且 $\text{rank}(A)=r$。
-令 $U$ 為 $A$ 的 REF，令 $U_{L}$ 為刪除了包含 free variables 的 column，$A_{L}$ 也是。
+令 $U$ 為 $A$ 的 RREF，令 $U_{L}$ 為刪除了包含 free variables 的 column，$A_{L}$ 也是。
 因為 $U$ 有 $n-r$ 個 free variables，所以 $U_{L}$ 與 $A_{L}$ 有 $r$ 個 column
 則 $A_{L}$ 與 $U_{L}$ row equivalent，且因為 $U_{L}$ 的 column vectors 線性獨立，所以 $U_{L}\mathbf{x}=\mathbf{0}$ 只有 trivial solution，且 $U_{L}\mathbf{x}=\mathbf{0}$ 的解也是 $A_{L}\mathbf{x}=\mathbf{0}$ 的解。
 $\implies$ $A_{L}$ 的 column vectors 線性獨立($A_{L}$ 有 $r$ 個 columns) $\implies$ $A$ 的 column vectors 的維度 $\geq r$。
@@ -720,7 +722,7 @@ $\text{dim}(\text{row space of }A)=\text{dim}(\text{column space of }A^{T})\geq\
 - 對於 Wronskian，只要能找到一個數 $x$ 使得 $W[f_{1},\dots,f_{n}](x) \neq 0$，則 $f_{1},\dots,f_{n}$ 線性獨立。但是，**反向結論不成立**。
 - 取 $\mathbb{R}^{n}$ 中 $U$ 和 $V$ 兩個子向量空間。若 $U\cap V=\{\mathbf{0}\}\implies$ $U$ 和 $V$ 的**基底線性獨立**，若 $U\cap V\neq \{\mathbf{0}\}\implies$ $U$ 和 $V$ 的**基底線性相依**。(例題 21, 22 包含證明)
 - 取 $\mathbb{R}^{n}$ 中一向量 $\mathbf{b}$，並給定一個 $n\times k$ 矩陣 $A$。若 $\text{rank}(A)=n$ ($n<k$)，則 $A\mathbf{x}=\mathbf{b}$ 的解永遠有**無限多組解**，不可能無解。
-- 判斷 $A\mathbf{x}=\mathbf{b}$ 解的個數，首先判斷 $\mathbf{b}$ 是否 $\in$ $\text{Col}(A)$ ($\text{Col}(A)$ 是否可以完整張出 $\mathbf{b}$ 所在的向量空間？)，然後判斷 $\text{null}(A)$ 是否可能無限多組解。
+- 判斷 $A\mathbf{x}=\mathbf{b}$ 解的個數，首先判斷 $\mathbf{b}$ 是否 $\in$ $\text{Col}(A)$ ($\text{Col}(A)$ 是否可以完整張出 $\mathbf{b}$ 所在的向量空間？)，然後判斷 $\text{null}(A)$ 是否可能無限多組解。(判斷 $A$ 是否可逆，或者說 $A$ 的 row/column vectors 是否線性獨立)
 - 基本矩陣乘以某個矩陣不會改變該矩陣的 rank。
 - 想證明 $A$ 的 column vectors 張出 $\mathbb{R}^{m}$，可以取任意 $\mathbf{b}\in\mathbb{R}^{m}$，然後用 $A$ 的 column vectors 線性組合 $\mathbf{b}$ 來證明。
 
