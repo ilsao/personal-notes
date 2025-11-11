@@ -125,7 +125,7 @@ $$
 [L(\mathbf{v})]_{F}=A[\mathbf{v}]_{E} \quad \text{for each }\mathbf{v}\in V
 $$
 
-且 $A$ 矩陣可以如下計算(因為 $[\mathbf{v}_{j}]_{E}=\mathbf{e}_{j}$)：
+且 $A$ 矩陣可以如下計算(代入 $\mathbf{x}=\mathbf{v}_{j}$，且 $[\mathbf{v}_{j}]_{E}=\mathbf{e}_{j}$)：
 
 $$
 \mathbf{a}_{j}=[L(\mathbf{v}_{j})]_{F}\quad j=1,\dots,n

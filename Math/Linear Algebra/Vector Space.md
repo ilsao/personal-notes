@@ -577,6 +577,20 @@ $$
 
 對於任意給定的可逆矩陣 $A\in \mathbb{R}^{n\times n}$，給定任意一組基底 $V=\{\mathbf{v_{1}},\dots,\mathbf{v_{n}}\}$，定義 $F=\{A\mathbf{v_{1}}, A\mathbf{v_{2}},\dots,A{\mathbf{v_{n}}}\}$，則 $F$ 也會是一組基底(因為 $\{A\mathbf{v_{1}}, A\mathbf{v_{2}},\dots,A{\mathbf{v_{n}}}\}$ 必定線性獨立 ($A$ 非奇異)，下面例題好像有證過)。且 $A$ 為轉換 $V$ 上座標到 $F$ 上座標的 transition matrix。
 
+其實，學完第四章的內容後，我們可以用第四章的內容幫助我們更快速的找到 transition matrix。
+
+假設我們有 $V=\text{span}(\mathbf{v_{1}},\dots,\mathbf{v_{n}})$ 與 $U=\text{span}(\mathbf{u_{1}},\dots,\mathbf{u_{n}})$ 都是某個向量空間的基底，求從 $V\to U$ 的 transition matrix。
+
+令 $A$ 為想求的 transition matrix，則：
+
+$$
+\mathbf{a}_{j}=[\mathbf{v}_{j}]_{U}
+$$
+
+proof:
+對於任意向量，我們有 $A[\mathbf{x}]_{V}=[\mathbf{x}]_{U}$。
+帶入 $\mathbf{x}=\mathbf{v}_{j}$，則有 $A\mathbf{e}_{j}=[\mathbf{v}_{j}]_{U}$。
+
 # Row Space and Column Space
 
 首先定義一波：
