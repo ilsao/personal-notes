@@ -49,7 +49,7 @@ $$
 3. $L(-\mathbf{v})=-L(\mathbf{v})$ $\forall \mathbf{v}\in V$。
 
 讓我們證明一下 (3)：
-從 (1) 出發：$\mathbf{0}_{W}=L(\mathbf{0}_{V})=L(\mathbf{v}-\mathbf{v})=L(\mathbf{v})+L(-\mathbf{v})\implies L(-\mathbf{v})=L(\mathbf{v})$。
+從 (1) 出發：$\mathbf{0}_{W}=L(\mathbf{0}_{V})=L(\mathbf{v}-\mathbf{v})=L(\mathbf{v})+L(-\mathbf{v})\implies L(-\mathbf{v})=-L(\mathbf{v})$。
 
 ## The Image and  Kernel
 
@@ -67,7 +67,9 @@ $$
 L(S)=\{\mathbf{w}\in W|\mathbf{w}=L(\mathbf{v}) \quad \text{for some }\mathbf{v}\in S\}
 $$
 
-也就是說，$L(S)$ 表達了 $V$ 中的子空間 $S$ 被映射到 $W$ 的範圍。且如果 $L$ 用矩陣 $A$ 表示的話，$\text{dim}(L(S))=\text{rank}(A)$。
+也就是說，$L(S)$ 表達了 $V$ 中的子空間 $S$ 被映射到 $W$ 的範圍。且如果 $L$ 用矩陣 $A$ 表示的話，$\text{dim}(\text{range}(L))=\text{rank}(A)$。
+
+需要注意的是，$\text{dim}(L(S))=\text{rank}(A)$ 並不總是正確。例如：$A$ 是 $\mathbb R^3\to\mathbb R^2$ 的滿秩映射，取 $S$ 為 $\mathbb R^3$ 中任意一條直線，則 $\dim(L(S))\le 1<\mathrm{rank}(A)=2$。應該是：$\text{dim}(L(S))\leq\text{rank}(A)$。
 
 image of 整個向量空間 $V$，$L(V)$， 稱作 **range(值域)** of $L$。
 
@@ -151,10 +153,12 @@ proof:
 $B^{-1}(\mathbf{b_{1}},\dots,\mathbf{b_{m}}|L(\mathbf{u_{1}}),\dots,L(\mathbf{u_{n}}))=(I|B^{-1}L(\mathbf{u_{1}}),\dots,B^{-1}L(\mathbf{u}_{n}))=(I|\mathbf{a_{1}},\dots,\mathbf{a_{n}})$ 
 $=(I|A)$ 
 
-其實還有一種找矩陣表達的方式令 $V$ 為標準基底：
+其實還有一種找矩陣表達的方式：
+
+令 $V$ 為標準基底，我們有：
 
 $$
-[L(\mathbf{x})]_{E:F}=B^{-1}_{V\to F}A_{V}U_{E\to V}
+[L(\mathbf{x})]_{E:F}=(B^{-1})_{V\to F}A_{V}U_{E\to V}
 $$
 
 也就是說，先找出基於標準基底的矩陣表達 $A$，然後右乘將以 $E$ 為基底的座標轉換成標準基底座標的矩陣 $U$，最後左乘將標準基底座標轉換為 $F$ 基底座標的 $B^{-1}$。
@@ -224,7 +228,7 @@ $$
 \begin{align}
  & \mathbf{w_{1}}=s_{11}\mathbf{v_{1}}+\dots+s_{n 1}\mathbf{v_{n}} \\
  & \vdots \\
- & \mathbf{w_{n}}=s_{1 n}\mathbf{v1}+\dots+s_{nn}\mathbf{v_{n}}
+ & \mathbf{w_{n}}=s_{1 n}\mathbf{v_{1}}+\dots+s_{nn}\mathbf{v_{n}}
 \end{align}
 $$
 

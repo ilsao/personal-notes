@@ -718,7 +718,7 @@ $\text{dim}(\text{row space of }A)=\text{dim}(\text{column space of }A^{T})\geq\
 
 - 零多項式的 degree 通常沒有定義或者定義為 $\text{deg(0)}=-\infty$。
 - $A$ matrix commute with $B$ $\Leftrightarrow$ $AB=BA$。
-- $N(A)=\{\mathbf{0}\}\implies$ $A$ 化成 RREF 後沒有自由變數，也就是 $I$。
+- $N(A)=\{\mathbf{0}\}\implies$ $A$ (方陣) 化成 RREF 後沒有自由變數，也就是 $I$。
 - 對於 Wronskian，只要能找到一個數 $x$ 使得 $W[f_{1},\dots,f_{n}](x) \neq 0$，則 $f_{1},\dots,f_{n}$ 線性獨立。但是，**反向結論不成立**。
 - 取 $\mathbb{R}^{n}$ 中 $U$ 和 $V$ 兩個子向量空間。若 $U\cap V=\{\mathbf{0}\}\implies$ $U$ 和 $V$ 的**基底線性獨立**，若 $U\cap V\neq \{\mathbf{0}\}\implies$ $U$ 和 $V$ 的**基底線性相依**。(例題 21, 22 包含證明)
 - 取 $\mathbb{R}^{n}$ 中一向量 $\mathbf{b}$，並給定一個 $n\times k$ 矩陣 $A$。若 $\text{rank}(A)=n$ ($n<k$)，則 $A\mathbf{x}=\mathbf{b}$ 的解永遠有**無限多組解**，不可能無解。
