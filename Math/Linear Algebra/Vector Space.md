@@ -725,6 +725,7 @@ $\text{dim}(\text{row space of }A)=\text{dim}(\text{column space of }A^{T})\geq\
 - 判斷 $A\mathbf{x}=\mathbf{b}$ 解的個數，首先判斷 $\mathbf{b}$ 是否 $\in$ $\text{Col}(A)$ ($\text{Col}(A)$ 是否可以完整張出 $\mathbf{b}$ 所在的向量空間？)，然後判斷 $\text{null}(A)$ 是否可能無限多組解。(判斷 $A$ 是否可逆，或者說 $A$ 的 row/column vectors 是否線性獨立)
 - 基本矩陣乘以某個矩陣不會改變該矩陣的 rank。
 - 想證明 $A$ 的 column vectors 張出 $\mathbb{R}^{m}$，可以取任意 $\mathbf{b}\in\mathbb{R}^{m}$，然後用 $A$ 的 column vectors 線性組合 $\mathbf{b}$ 來證明。
+- 若 $A$ 為 $m\times n$ 矩陣，則 $\text{rank}(A)=\text{min}(m,n)$，但 $\text{rank}(A)+\text{null}(A)=n$。($\text{null}(A)$ 只與 column 相關)
 
 # 重要例題
 
@@ -815,7 +816,7 @@ $p+q=(a_{1}+a_{2})x^{3}+(b_{1}+b_{2})x^{2}+(c_{1}+c_{2})x\in S$。
 (d)
 $\because p(x)=0$ 有所有實數作為根 $\therefore\mathbf{0}\in S$。
 標量積不引響解的個數，所以 $\alpha p\in S$。
-但是，若 $p(x)=1,q(x)=0$，則 $(p+q)(x)=1$ 無解，所以 $p+q$ 不一定 $\in S$。
+但是，若 $p(x)=x,q(x)=-x+1$，則 $(p+q)(x)=1$ 無解，所以 $p+q$ 不一定 $\in S$。
 
 6. Determine whether the set of functions $f$ in $C[-1,1]$ such that $f(-1)=f(1)$ is subspace of $C[-1,1]$. 
 
@@ -832,7 +833,7 @@ $(f+g)(-1)=f(-1)+g(-1)=f(1)+g(1)=(f+g)(1)$，$f+g\in V$。
 Sol:
 注意表達形式。
 令 $f,g\in C^{n}[a,b]$，$\alpha\in \mathbb{R}$。
-則滿足 $f^{(k)}$ 與 $g^{(k)}$ 對所有  $k\leq n$ 皆連續。
+**則滿足 $f^{(k)}$ 與 $g^{(k)}$ 對所有  $k\leq n$ 皆連續。**
 $0$ 函數的所有導數都為 $0$ 且連續，$0\in C^{n}[a,b]$。
 $(\alpha f)^{(k)}(x)=\alpha f^{(k)}(x)$ 且連續函數乘以某實數仍為連續函數，所以 $\alpha f\in C^{n}[a,b]$。
 $(f+g)^{(k)}(x)=f^{(k)}(x)+g^{(k)}(x)$ 仍連續，所以 $f+g\in C^{n}[a,b]$。
@@ -843,14 +844,14 @@ Sol:
 (a)
 假設 $\mathbf{x_{1},x_{2}}$ 為 $A\mathbf{x}=\mathbf{b}$ 的兩個解，則：
 $A(\mathbf{x_{1}}-\mathbf{x_{2}})=A\mathbf{x_{1}}-A\mathbf{x_{2}}=\mathbf{b}-\mathbf{b}=\mathbf{0}\implies \mathbf{x_{1}}-\mathbf{x_{2}}=\mathbf{0}\implies \mathbf{x_{1}}=\mathbf{x_{2}}$ 
-所以，$A\mathbf{x}=\mathbf{b}$ 有唯一解，或者無解。
+所以，$A\mathbf{x}=\mathbf{b}$ 有唯一解，或者**無解**。
 
 (b)
 設 $\mathbf{x_{1}}$ 為 $A\mathbf{x}=\mathbf{b}$ 的一個解。
 令 $\mathbf{x_{2}}=\mathbf{x_{1}}+t\mathbf{z}$，$t\in \mathbb{R}$，$\mathbf{z}\in N(A)$。
 則 $A\mathbf{x_{2}}=A(\mathbf{x_{1}}+t\mathbf{z})=A\mathbf{x_{1}}+tA\mathbf{z}=\mathbf{b}+\mathbf{0}=\mathbf{b}$，$\mathbf{x_{2}}$ 也是 $A\mathbf{x}=\mathbf{b}$ 的一組解。
 因為 $t\in \mathbb{R}$，所以 $\mathbf{x_{2}}$ 的個數有無限多個。
-所以 $A\mathbf{x}=\mathbf{b}$ 有無限多組解，或者無解。
+所以 $A\mathbf{x}=\mathbf{b}$ 有無限多組解，或者**無解**。
 
 9. Prove that if $S$ is a subspace of $\mathbb{R}^{1}$, then either $S=\{\mathbf{0}\}$ or $S=\mathbb{R}^{1}$. 
 
@@ -859,7 +860,7 @@ Sol:
 假設 $S$ 含有非零元素 $\mathbf{x_{0}}\in S$，且 $\alpha\in \mathbb{R}$。
 因為 $S$ 是一個子空間，所以必須滿足 $\alpha \mathbf{x_{0}}\in S$。
 又因為 $S$ 是 $\mathbb{R}^{1}$ 的子空間，所以 $\mathbf{x_{0}}\in \mathbb{R}$。
-取任意 $y\in \mathbb{R}$，令 $\alpha=\frac{y}{\mathbf{x_{0}}}$，則 $\alpha \mathbf{x_{0}}=y\in S$ 。
+**取任意 $y\in \mathbb{R}$，令 $\alpha=\frac{y}{\mathbf{x_{0}}}$，則 $\alpha \mathbf{x_{0}}=y\in S$ 。**
 因為 $y$ 可以是任意實數，所以此情況下 $S=\mathbb{R}^{1}$。
 所以，$S=\{\mathbf{0}\}$ 或 $S=\mathbb{R}^{1}$。
 (GPT 說這題是很經典的線性代數入門題，但是我覺得一點都不入門...)
@@ -873,7 +874,7 @@ $(b)\implies(a)$
 $A\mathbf{x}=\mathbf{0}$ 左右同乘 $A^{-1}$：$A^{-1}A\mathbf{x}=\mathbf{0}\implies \mathbf{x}=\mathbf{0}$ 
 $\implies N(A)=\{\mathbf{0}\}$ 
 $(a)\implies(c)$ 
-因為 $N(A)=\{\mathbf{0}\}$，所以 $A$ 化成 RREF 後必等於 $I$，所以 $A\mathbf{x}=\mathbf{b}$ 必有解。
+因為 $N(A)=\{\mathbf{0}\}$，所以 $A$ 化成 RREF 後必等於 $I$，$A\mathbf{x}=\mathbf{b}$ 必有解。
 令 $\mathbf{x_{1}},\mathbf{x_{2}}$ 為 $A\mathbf{x}=\mathbf{b}$ 的兩個解，則：
 $A(\mathbf{x_{1}}-\mathbf{x_{2}})=A\mathbf{x_{1}}-A\mathbf{x_{2}}=\mathbf{b}-\mathbf{b}=\mathbf{0}$ 
 所以 $\mathbf{x_{1}}-\mathbf{x_{2}}\in N(A)\implies \mathbf{x_{1}}-\mathbf{x_{2}}=\mathbf{0}\implies \mathbf{x_{1}}=\mathbf{x_{2}}$ 
@@ -904,8 +905,6 @@ $T=\text{Span}(\mathbf{e_{2}})=\{(0,y)|y\in \mathbb{R}\}$
 又 $\alpha \mathbf{b}\in T$ 所以 $\alpha \mathbf{b}\in S\cup T$。
 但是 $\mathbf{a}+\mathbf{b}=(x,y)\quad x,y\in \mathbb{R} \implies \mathbf{a}+\mathbf{b}\not\in S$ 且 $\mathbf{a}+\mathbf{b}\not\in T$，所以 $\mathbf{a}+\mathbf{b}\not\in S\cup T$。
 所以，$S\cup T$ 不是 $\mathbb{R}^{2}$ 的子空間。
-
-ASK linear algebra 3.2 exercise 27. 
 
 13. Show that $1,e^{x}+e^{-x},e^{x}-e^{-x}$ is linear independent on $C[a,b]$. 
 
@@ -1010,7 +1009,7 @@ Sol:
 令 $U=\text{Span}(\mathbf{u_{1}},\mathbf{u_{2}})$ 與 $V=\text{Span}(\mathbf{v_{1}},\mathbf{v_{2}})$。
 $\alpha_{1}\mathbf{u_{1}}+\alpha_{2}\mathbf{u_{2}}+\alpha_{3}\mathbf{v_{1}}+\alpha_{4}\mathbf{v_{2}}=\mathbf{0}$ 其中 $\alpha_{1},\alpha_{2},\alpha_{3},\alpha_{4}$ 必定為 nontrivial solutions。
 移項：$\alpha_{1}\mathbf{u_{1}}+\alpha_{2}\mathbf{u_{2}}=-\alpha_{3}\mathbf{v_{1}}-\alpha_{4}\mathbf{v_{4}}$ 。
-**上式等號左右不為零**。(可以用此反推 $U\cap V\neq \{\mathbf{0}\}\implies$ $U, V$ 的基底必**線性相依**)
+**上式等號左右皆不為零**。(可以用此反推 $U\cap V\neq \{\mathbf{0}\}\implies$ $U, V$ 的基底必**線性相依**)
 因為 $\alpha_{1}\mathbf{u_{1}}+\alpha_{2}\mathbf{u_{2}}\in U$ 且 $-\alpha_{3}\mathbf{v_{1}}-\alpha_{4}\mathbf{v_{4}}\in V$，
 所以一定可以找到 $\mathbf{x}=\alpha_{1}\mathbf{u_{1}}+\alpha_{2}\mathbf{u_{2}}=-\alpha_{3}\mathbf{v_{1}}-\alpha_{4}\mathbf{v_{4}}\neq \mathbf{0}$ 使得 $\mathbf{x}\in U\cap V$。
 所以 $U\cap V\neq \{\mathbf{0}\}$。
@@ -1039,7 +1038,7 @@ Sol:
 令 $W=(\mathbf{w_{1}},\mathbf{w_{2}})$，我**以為**可以寫成 $SW=V$。
 但是**不行**！這樣只能解出兩個在 $\{\mathbf{w_{1}}\mathbf{w_{2}}\}$ 上的座標使得映射後等於 $\mathbf{v_{1}},\mathbf{v_{2}}$，但我們要求的是基底而不是座標。
 給波正確範例：
-令 $V=\begin{bmatrix}3 & 4 \\ 1 & 2\end{bmatrix}$ $W=(\mathbf{w_{1}},\mathbf{w_{2}})$。
+令 $V=\begin{bmatrix}3 & 4 \\ 1 & 2\end{bmatrix}$ ，$W=(\mathbf{w_{1}},\mathbf{w_{2}})$。
 根據定義，我們有：$S=V^{-1}W$。
 那麼，解 $W=VS=\begin{bmatrix}2 & -3 \\ 0 & 1\end{bmatrix}\implies \mathbf{w_{1}}=(2,0)^{T} \ \mathbf{w_{2}}=(-3,1)^{T}$。
 
@@ -1083,7 +1082,7 @@ Sol:
 Sol:
 (a)
 ($\implies$)
-取 $\mathbf{y}\in\text{Col}(B)$，則有 $\mathbf{x}$ 滿足 $\mathbf{y}=B\mathbf{x}$。
+取任意 $\mathbf{y}\in\text{Col}(B)$，則有 $\mathbf{x}$ 滿足 $\mathbf{y}=B\mathbf{x}$。
 考慮 $A\mathbf{y}=A(B\mathbf{x})=(AB)\mathbf{x}=\mathbf{0}\implies \mathbf{y}\in N(A)$ 
 $\implies\text{Col}(B)\subseteq N(A)$ 
 ($\impliedby$)
