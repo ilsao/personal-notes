@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Math/Calculus/Integrals.md",
+                "file": "Physics/Wave Motion.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Integrals"
+              "title": "Wave Motion"
             }
           },
           {
@@ -194,12 +194,16 @@
   },
   "active": "930e5d797c093d6f",
   "lastOpenFiles": [
-    "故事創作與影像敘事/什麼是故事.md",
     "Physics/Oscillatory Motion.md",
+    "Physics/Wave Motion.md",
+    "Physics/Uniform Accelerated Motion.md",
+    "Physics/Physical Quantities.md",
+    "Physics/Rotational Dynamics.md",
+    "Math/Calculus/Integrals.md",
+    "故事創作與影像敘事/什麼是故事.md",
     "Physics/Momentum and Collisions.md",
     "Math/Calculus/大會考 (一) 上半錯題.md",
     "Math/Calculus/Calculus, Early Transcendentals.pdf",
-    "Math/Calculus/Integrals.md",
     "Math/Calculus/Basic concept.md",
     "Math/Calculus/Applications of Differentiation.md",
     "Computer Networking/Application Layer.md",
@@ -229,10 +233,6 @@
     "Math/Calculus.zip",
     "Untitled.md",
     "Math/Calculus/pic",
-    "AI Prompts.md",
-    "CTF/MoeCTF 2025 Writeup.md",
-    "CSAPP/CSAPP_U2.md",
-    "CSAPP/CSAPP ShellLab 題解.md",
     "CSAPP/Computer Systems A Programmer’s Perspective.pdf",
     "Math/Linear Algebra/The Art of Linear Algebra.pdf",
     "時間紀錄",
