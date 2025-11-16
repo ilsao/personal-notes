@@ -320,7 +320,7 @@ $$
 - 轉換 $0\cdot \infty$ 類型不定型，記得嘗試兩種可能性：$f$ 當分子或 $g$ 當分子。
 - 對於函數**凹向**，我們通常**用開區間 $(a,b)$ 表示範圍**，而**不用**閉區間 $[a,b]$ 表示。
 - 如果 $f$ 是一個連續函數，但 $f'$ 在 $x=a$ 未定義($f$ 在此有定義喔)，但是在 $(-\infty,a)$ 上 $f'(x)<0$ 且 $(a,\infty)$ 上 $f'(x)>0$，仍可說 $x=a$ 是該函數的最小值。例如：$f(x)=|x|$。
-- 對於任意類似 $\lim_{ x \to \infty }x^{n}\sin\left( \frac{1}{x^{m}} \right)$ 的計算，我們可以利用 $\theta$ 很小時 $\sin \theta\to \theta\implies \lim_{ x \to \infty }x^{n}\sin\left( \frac{1}{x^{m}} \right)=\lim_{ x \to \infty }x^{n-m}$ 計算。
+- 對於任意類似 $\lim_{ x \to \infty }x^{n}\sin\left( \frac{1}{x^{m}} \right)$ 的計算，我們可以利用 $\theta$ 很小時 $\sin \theta\to \theta\implies \lim_{ x \to \infty }x^{n}\sin\left( \frac{1}{x^{m}} \right)=\lim_{ x \to \infty }x^{n-m}$ 計算。 (注意，此法不嚴謹，僅可寫作填充題過程。嚴謹法需使用 $\lim_{ \theta \to 0 } \frac{\sin \theta}{\theta}=1$ 的性質)
 
 # 重要例題
 
