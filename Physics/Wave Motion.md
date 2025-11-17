@@ -21,6 +21,15 @@ $$
 
 # Traveling Wave in a String
 
+理解這段之前，我們要先知道**時間相位(temporal phase)** 與**空間相位(spatial phase)**。
+
+時間相位：對於固定的 $x$，波的運動根據 $t$ 如何變化，也就是 $\omega t+\phi_{1}$。
+
+空間相位：對於固定的 $t$，波的運動根據 $x$ 如何變化，也就是 $-kx+\phi_{2}$。
+
+當一個波要到達 $x$，需要經過 $t_{0}=\frac{x}{v}$ 的時間。那麼在 $x$ 的時間相位就是：
+$\omega(t-t_{0})=\omega t-\frac{\omega}{v}x=\omega t-kx$。(因為在原點時的相位為 $\omega t$)
+
 當我們想表達一個橫波時，需要兩個變量，$x$ 與 $t$。
 
 可以表達成：$y=f(x,t)$。

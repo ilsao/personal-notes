@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Physics/Wave Motion.md",
+                "file": "Physics/Interference of Wave.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Wave Motion"
+              "title": "Interference of Wave"
             }
           },
           {
@@ -192,10 +192,16 @@
       "bases:Create new base": false
     }
   },
-  "active": "930e5d797c093d6f",
+  "active": "1d5b0d980baa8a22",
   "lastOpenFiles": [
-    "Physics/Oscillatory Motion.md",
+    "Physics/pic/Pasted image 20251117111515.png",
+    "Physics/pic/Pasted image 20251117105242.png",
+    "Physics/pic",
+    "Physics/Untitled.md",
+    "Physics/Interference of Wave.md",
+    "Physics/pic/Pasted image 20251117104205.png",
     "Physics/Wave Motion.md",
+    "Physics/Oscillatory Motion.md",
     "Physics/Uniform Accelerated Motion.md",
     "Physics/Physical Quantities.md",
     "Physics/Rotational Dynamics.md",
@@ -219,8 +225,6 @@
     "Computer Networking/lab1.md",
     "Physics/Midterm Preparation.md",
     "Math/Calculus/Limit.md",
-    "Math/Calculus/Differentiation Rules.md",
-    "大學安排.md",
     "Math/Calculus/pic/Pasted image 20251101225650.png",
     "Math/Calculus/pic/Pasted image 20251101223353.png",
     "Math/Calculus/pic/Pasted image 20251101221000.png",
@@ -228,10 +232,7 @@
     "Math/Calculus/pic/Pasted image 20251101212740.png",
     "Math/Calculus/pic/Pasted image 20251101150433.png",
     "Math/Calculus/pic/Pasted image 20251101130651.png",
-    "Math/Calculus/pic/Pasted image 20251101121329.png",
-    "Math/Calculus/pic/Pasted image 20251101121215.png",
     "Math/Calculus.zip",
-    "Untitled.md",
     "Math/Calculus/pic",
     "CSAPP/Computer Systems A Programmer’s Perspective.pdf",
     "Math/Linear Algebra/The Art of Linear Algebra.pdf",
@@ -239,7 +240,6 @@
     "Computer Networking/Computer Networking A top-down approach.pdf",
     "故事創作與影像敘事",
     "Operating Systems/OSTEP",
-    "personal-notes.pub",
     "未命名.canvas"
   ]
 }
