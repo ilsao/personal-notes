@@ -117,11 +117,76 @@ $$
 
 最後一個性質可以幫助預估積分的粗略大小範圍。
 
+# The Fundamental Theorem of Calculus
+
+## The Fundamental Theorem of Calculus, Part 1
+
+考慮如下函數：
+
+$$
+g(x)=\int_{a}^{x}f(t)\ dt \Leftrightarrow g'(x)=f(x)
+$$
+
+其中，$f(x)$ 在 $[a,b]$ 上**連續**而 $g(x)$ 在 $[a,b]$ 上連續且可導(可導不是條件，而是必然的結果)，並且 $a\leq x\leq b$。
+
+proof:
+令 $x,x+h$ 在 $(a,b)$ 上。
+$g(x+h)-g(x)=\int_{a}^{x+h}f(t)\ dt-\int_{a}^{x}f(t)\ dt=\int_{a}^{x}f(t) \ dt+\int_{x}^{x+h}f(t) \ dt-\int_{a}^{x}f(t) \ dt$ 
+$=\int_{x}^{x+h}f(t) \ dt$ 
+那麼，對於 $h\neq 0$ 我們有 $\frac{g(x+h)-g(x)}{h}=\frac{1}{h}\int_{x}^{x+h}f(t) \ dt$。
+假設 $h>0$，因為 $f$ 在 $[x,x+h]$ 上連續，根據極值定理可以找到兩個數 $u,v$ 使得 $f(u)=m$ 為全局最小值，$f(v)=M$ 為全局最大值。(在 $[x,x+h]$ 上)
+也就是：$mh\leq \int_{x}^{x_{h}}f(t) \ dt\leq Mh\implies f(u)\leq \frac{1}{h}\int_{x}^{x_{h}}f(t) \ dt\leq f(v)$ 。
+代回 $\frac{g(x+h)-g(x)}{h}=\frac{1}{h}\int_{x}^{x+h}f(t) \ dt$，得到 $f(u)\leq\frac{g(x+h)-g(x)}{h}\leq f(v)$。
+同理，對於 $h<0$ 我們也可以得到相同結論。
+因為 $f$ 在 $[x,x+h]$ 連續，得到 $\lim_{ h \to 0 }f(u)=\lim_{ u \to x }f(u)=f(x)$ 與 $\lim_{ h \to 0 }f(v)=\lim_{ v \to x }f(v)=f(x)$。
+根據夾擠定理，我們有 $\lim_{ h \to 0 } \frac{g(x+h)-g(x)}{h}=f(x)$。
+
+如果用萊布尼茲(Leibniz) 的符號寫，就是：$\frac{d}{dx}\int_{a}^{x}f(t) \ dt=f(x)$。
+
+## The Fundamental Theorem of Calculus, Part 2
+
+若 $F$ 為 $f$ 的反導函數($F'=f$)，且 $f$ 在 $[a,b]$ 上連續，則：
+
+$$
+\int_{a}^{b}f(x) \ dx=F(b)-F(a)
+$$
+
+proof:
+令 $g(x)=\int_{a}^{x}f(t) \ dt$，則有 $g'(x)=f(x)$。
+若找到另一個反函數 $F(x)$，我們可知 $F(x)=g(x)+C$，$C$ 為常數。
+若取 $g(a)=\int_{a}^{a}f(t) \ dt=0$，我們可以構建：
+$F(b)-F(a)=[g(b)+C]-[g(a)+C]=g(b)=\int_{a}^{b}f(t) \ dt$ 
+
 # Tips
 
 - 估計積分時，需要注意函數在區間內的**遞增/減**。
 
 # 重要例題
+
+1. When $\int_{-4}^{2}f(x) \ dx=-3$, evaluate $\int_{-4}^{2}[f(x)+2x+5] \ dx$. 
+
+Sol:
+這邊需要注意，我在寫題目的時候不知道為啥腦子壞掉了，把問題化簡成 $(-3) + 2x+5$，但不能這樣算。正確算法如下。
+$\int_{-4}^{2}[f(x)+2x+5] \ dx=-3+2\int_{-4}^{2}x \ dx+5\times 6=15$ 
+
+2. Use the properties of integrals to verify the inequality without evaluating the integral. (a) $\frac{\pi}{12}\leq \int_{\frac{\pi}{6}}^{\frac{\pi}{3}}\sin x \ dx\leq \frac{\sqrt{ 3 }}{12}$ (b) $\int_{0}^{1}\sqrt{ 1+x^{2} }\leq \int_{0}^{1}\sqrt{ 1+x }$ 
+
+Sol:
+(a)
+利用函數的極值來解不等式。
+因為 $\sin x$ 在 $\left[ \frac{\pi}{6}, \frac{\pi}{3} \right]$ 上的全局最小值為 $\sin \frac{\pi}{6}=\frac{1}{2}$，又全局最大值為 $\sin \frac{\pi}{3}=\frac{\sqrt{ 3 }}{2}$。
+所以 $\left( \frac{\pi}{3}-\frac{\pi}{6} \right)\left( \frac{1}{2} \right)\leq\int_{\frac{\pi}{6}}^{\frac{\pi}{3}}\sin x \ dx\leq\left( \frac{\pi}{3}-\frac{\pi}{6} \right)\left( \frac{\sqrt{ 3 }}{2} \right)\implies \frac{\pi}{12}\leq\int_{\frac{\pi}{6}}^{\frac{\pi}{3}}\sin x \ dx\leq \frac{\sqrt{ 3 }}{12}$ 
+(b)
+利用性質當 $a\leq b$ 時 $f(x)\leq g(x)\implies \int_{a}^{b}f(x) \ dx\leq\int_{a}^{b}g(x)\ dx$。
+因為在 $[0,1]$ 上 $x^{2}<x$，所以在 $[0,1]$ 上  $\sqrt{ 1+x^{2} }<\sqrt{ 1+x }$。
+根據上述性質，有 $\int_{0}^{1}\sqrt{ 1+x^{2} }\ dx\leq \int_{0}^{1}\sqrt{ 1+x }\ dx$。
+
+3. Use properties of integrals, together with $\int_{a}^{b}x\ dx= \frac{a^{2}-b^{2}}{2}$ and $\int_{a}^{b}x^{2}\ dx=\frac{a^{3}-b^{3}}{3}$, to prove the inequality $\int_{1}^{3}\sqrt{ x^{4}+1 }\ dx\geq \frac{26}{3}$. 
+
+Sol:
+這題請通靈。
+可以通過觀察 $\frac{26}{3}$ 聯想 $\frac{26}{3}=\int_{1}^{3}x^{2}\ dx$，構建答案。
+因為 $\sqrt{ x^{4}+1 }\geq \sqrt{ x^{4} }=x^{2}$，所以 $\int_{1}^{3}\sqrt{ x^{4}+1 }\ dx\geq \int_{1}^{3}x^{2}\ dx=\frac{26}{3}$。
 
 # 大會考
 
@@ -135,28 +200,3 @@ Sol:
 $L_{n}=\left( f(0)+f\left( \frac{1}{2} \right) \right)\Delta x=\frac{1}{2}(e^{0}+e^{-1/4})=\frac{1}{2}(1+e^{-1/4})<1$ 
 $R_{n}=\left( f\left( \frac{1}{2} \right)+f(1) \right)\Delta x=\frac{1}{2}(e^{-1/4}+e^{-1})$ 
 $\implies \frac{1}{2}(e^{-1/4}+e^{-1})<L<1$ 
-
-2. When $\int_{-4}^{2}f(x) \ dx=-3$, evaluate $\int_{-4}^{2}[f(x)+2x+5] \ dx$. 
-
-Sol:
-這邊需要注意，我在寫題目的時候不知道為啥腦子壞掉了，把問題化簡成 $(-3) + 2x+5$，但不能這樣算。正確算法如下。
-$\int_{-4}^{2}[f(x)+2x+5] \ dx=-3+2\int_{-4}^{2}x \ dx+5\times 6=15$ 
-
-3. Use the properties of integrals to verify the inequality without evaluating the integral. (a) $\frac{\pi}{12}\leq \int_{\frac{\pi}{6}}^{\frac{\pi}{3}}\sin x \ dx\leq \frac{\sqrt{ 3 }}{12}$ (b) $\int_{0}^{1}\sqrt{ 1+x^{2} }\leq \int_{0}^{1}\sqrt{ 1+x }$ 
-
-Sol:
-(a)
-利用函數的極值來解不等式。
-因為 $\sin x$ 在 $\left[ \frac{\pi}{6}, \frac{\pi}{3} \right]$ 上的全局最小值為 $\sin \frac{\pi}{6}=\frac{1}{2}$，又全局最大值為 $\sin \frac{\pi}{3}=\frac{\sqrt{ 3 }}{2}$。
-所以 $\left( \frac{\pi}{3}-\frac{\pi}{6} \right)\left( \frac{1}{2} \right)\leq\int_{\frac{\pi}{6}}^{\frac{\pi}{3}}\sin x \ dx\leq\left( \frac{\pi}{3}-\frac{\pi}{6} \right)\left( \frac{\sqrt{ 3 }}{2} \right)\implies \frac{\pi}{12}\leq\int_{\frac{\pi}{6}}^{\frac{\pi}{3}}\sin x \ dx\leq \frac{\sqrt{ 3 }}{12}$ 
-(b)
-利用性質當 $a\leq b$ 時 $f(x)\leq g(x)\implies \int_{a}^{b}f(x) \ dx\leq\int_{a}^{b}g(x)\ dx$。
-因為在 $[0,1]$ 上 $x^{2}<x$，所以在 $[0,1]$ 上  $\sqrt{ 1+x^{2} }<\sqrt{ 1+x }$。
-根據上述性質，有 $\int_{0}^{1}\sqrt{ 1+x^{2} }\ dx\leq \int_{0}^{1}\sqrt{ 1+x }\ dx$。
-
-4. Use properties of integrals, together with $\int_{a}^{b}x\ dx= \frac{a^{2}-b^{2}}{2}$ and $\int_{a}^{b}x^{2}\ dx=\frac{a^{3}-b^{3}}{3}$, to prove the inequality $\int_{1}^{3}\sqrt{ x^{4}+1 }\ dx\geq \frac{26}{3}$. 
-
-Sol:
-這題請通靈。
-可以通過觀察 $\frac{26}{3}$ 聯想 $\frac{26}{3}=\int_{1}^{3}x^{2}\ dx$，構建答案。
-因為 $\sqrt{ x^{4}+1 }\geq \sqrt{ x^{4} }=x^{2}$，所以 $\int_{1}^{3}\sqrt{ x^{4}+1 }\ dx\geq \int_{1}^{3}x^{2}\ dx=\frac{26}{3}$。
