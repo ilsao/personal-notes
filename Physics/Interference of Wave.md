@@ -148,6 +148,17 @@ Sol:
 已知：$\lambda=\frac{2l}{n}$，又$\lambda \nu=v$ 
 $\implies \nu=\frac{6}{\frac{2}{n}}=3n\text{(Hz)}$，其中 $n$ 為正整數。
 
+5. Monochromatic (single wavelength) light is directed on a double slit. A light meter is placed to the right of the slits in the position show below. When slit $S_{2}$ is closed, the light intensity at the location of the meter is $I_{1}$. When slit $S_{1}$ is closed the light intensity is $I_{2}$. (a) What is the light intensity $I_{T}$ when both slits are open if $x_{1}-x_{2}=\lambda$? (b) What is $I_{T}$ if $x_{1}-x_{2}=\frac{1}{2}\lambda$? $I_{1}$ and $I_{2}$ are not necessarily equal. Assume that the size of the slits is smaller than the wavelength so that the slits can be considered to be the light source. 
+
+![[Pasted image 20251117233034.png]]
+
+Sol:
+(a)
+已知 $I \propto\text{Amplitude}^{2}$，且此時為建設性干涉。
+又知道 $I_{1}:I_{2}=A_{1}^{2}:A_{2}^{2}$，那麼 $I_{T}\propto (A_{1}+A_{2})^{2}=A_{1}^{2}+A_{2}^{2}+2A_{1}A_{2}\implies I_{T}=I_{1}+I_{2}+2(I_{1}I_{2})^{1/2}$ 
+(b)
+此時為破壞性干涉：$I_{T}\propto(A_{1}-A_{2})^{2}=A_{1}^{2}-2A_{1}A_{2}+A_{2}^{2}\implies I_{T}=I_{1}^{2}+I_{2}^{2}-2(I_{1}I_{2})^{1/2}$ 
+
 # 威儀考古
 
 1. 人耳最敏感、接收最清楚的聲波頻率為 3000Hz,由此請試著推算出人耳道的大約長度,假設聲速為每秒 340 公尺。

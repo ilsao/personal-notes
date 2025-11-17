@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Math/Calculus/Integrals.md",
+                "file": "Physics/Interference of Wave.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Integrals"
+              "title": "Interference of Wave"
             }
           },
           {
@@ -196,6 +196,8 @@
   "lastOpenFiles": [
     "Physics/Wave Motion.md",
     "Physics/Interference of Wave.md",
+    "Physics/pic/Pasted image 20251117233034.png",
+    "Math/Calculus/Integrals.md",
     "Physics/pic/Pasted image 20251117151126.png",
     "Physics/pic/Pasted image 20251117111515.png",
     "Physics/pic/Pasted image 20251117105242.png",
@@ -206,7 +208,6 @@
     "Physics/Uniform Accelerated Motion.md",
     "Physics/Physical Quantities.md",
     "Physics/Rotational Dynamics.md",
-    "Math/Calculus/Integrals.md",
     "故事創作與影像敘事/什麼是故事.md",
     "Physics/Momentum and Collisions.md",
     "Math/Calculus/大會考 (一) 上半錯題.md",
@@ -230,7 +231,6 @@
     "Math/Calculus/pic/Pasted image 20251101223353.png",
     "Math/Calculus/pic/Pasted image 20251101221000.png",
     "Math/Calculus/pic/Pasted image 20251101220459.png",
-    "Math/Calculus/pic/Pasted image 20251101212740.png",
     "Math/Calculus.zip",
     "Math/Calculus/pic",
     "CSAPP/Computer Systems A Programmer’s Perspective.pdf",
