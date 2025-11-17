@@ -177,3 +177,13 @@ $\omega=kv=24\pi$
 偏微分即可：$v_{\text{max}}=A\omega=0.02\times24\pi=0.48\pi\text{ m/s}$ 
 (b)
 $a_{\text{max}}=A\omega^{2}=0.04\times (24\pi)^{2}=11.52\pi^{2}\text{ m/s}^{2}$ 
+
+
+# 威儀考古
+
+1. At $t=0$, a pulse is described by $y(x)= \frac{A}{B+x^{2}}$. Pulse moves in $+x$ direction at $3\text{ m/s}$. What is the wave function at t?
+
+Sol:
+$y(x,t)= \frac{A}{B+(x-vt)^{2}}=\frac{A}{B+(x-3t)^{2}}$ 
+
+2. 指定習題 3
