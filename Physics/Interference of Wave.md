@@ -128,7 +128,7 @@ Sol:
 ![[Pasted image 20251117151126.png]]
 
 Sol:
-$y_{2}-y_{1}=l(\sin \theta_{2}-\sin \theta_{1})=1.5(\tan \theta_{2}-\tan \theta_{1})$ (將 $y_{2}-y_{1}$ 視為兩個破壞性干涉之間的差計算較方便)
+$y_{2}-y_{1}=l(\sin \theta_{2}-\sin \theta_{1})=1.5(\tan \theta_{2}-\tan \theta_{1})$ 
 $d\sin \theta_{1}=5000\times10^{-10}\implies \theta_{1}\approx0.716^{\circ}$ 
 $d\sin \theta_{2}=2\times5000\times10^{-1}\implies \theta_{2}\approx1.433^{\circ}$ 
 $\implies 1.5(\tan \theta_{2}-\tan\theta_{1})\approx0.0188\text{ m}=1.88\text{ cm}$ 

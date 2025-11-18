@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Physics/Interference of Wave.md",
+                "file": "Computer Networking/Network Layer, Data Plane.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Interference of Wave"
+              "title": "Network Layer, Data Plane"
             }
           },
           {
@@ -192,10 +192,15 @@
       "bases:Create new base": false
     }
   },
-  "active": "930e5d797c093d6f",
+  "active": "1d5b0d980baa8a22",
   "lastOpenFiles": [
-    "Physics/Wave Motion.md",
+    "Computer Networking/pic/Pasted image 20251118150459.png",
+    "Computer Networking/pic/Pasted image 20251118144045.png",
+    "Computer Networking/pic/Pasted image 20251118134059.png",
+    "Computer Networking/pic",
     "Physics/Interference of Wave.md",
+    "Computer Networking/Network Layer, Data Plane.md",
+    "Physics/Wave Motion.md",
     "Physics/pic/Pasted image 20251117233034.png",
     "Math/Calculus/Integrals.md",
     "Physics/pic/Pasted image 20251117151126.png",
@@ -226,11 +231,8 @@
     "Computer Networking/Intro. to the Internet.md",
     "Computer Networking/lab1.md",
     "Physics/Midterm Preparation.md",
-    "Math/Calculus/Limit.md",
     "Math/Calculus/pic/Pasted image 20251101225650.png",
     "Math/Calculus/pic/Pasted image 20251101223353.png",
-    "Math/Calculus/pic/Pasted image 20251101221000.png",
-    "Math/Calculus/pic/Pasted image 20251101220459.png",
     "Math/Calculus.zip",
     "Math/Calculus/pic",
     "CSAPP/Computer Systems A Programmer’s Perspective.pdf",
@@ -238,7 +240,6 @@
     "時間紀錄",
     "Computer Networking/Computer Networking A top-down approach.pdf",
     "故事創作與影像敘事",
-    "Operating Systems/OSTEP",
     "未命名.canvas"
   ]
 }
