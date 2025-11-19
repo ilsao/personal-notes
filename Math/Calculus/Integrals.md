@@ -160,6 +160,9 @@ $F(b)-F(a)=[g(b)+C]-[g(a)+C]=g(b)=\int_{a}^{b}f(t) \ dt$
 # Tips
 
 - 估計積分時，需要注意函數在區間內的**遞增/減**。
+- 在找 antiderivative 時，如果遇到 $(ax+b)^{n}$ 之類的形式很難找反導函數，可以考慮把括號展開。
+- 若 $u$ 為 $x$ 的函數，且 $g(x)=\int_{0}^{u}f(t) \ dt$。則 $g'(x)=f(u) \frac{du}{dx}$。(因爲 $\frac{d}{dx}g(x)=\frac{d}{du}g(x) \frac{du}{dx}$)
+- $\cos(x^{2})$ 的反導函數**不是** $\frac{\sin(x^{2})}{2x}$。相反，我們(以我們的實力來說)找不到他的反導函數。
 
 # 重要例題
 
@@ -187,6 +190,34 @@ Sol:
 這題請通靈。
 可以通過觀察 $\frac{26}{3}$ 聯想 $\frac{26}{3}=\int_{1}^{3}x^{2}\ dx$，構建答案。
 因為 $\sqrt{ x^{4}+1 }\geq \sqrt{ x^{4} }=x^{2}$，所以 $\int_{1}^{3}\sqrt{ x^{4}+1 }\ dx\geq \int_{1}^{3}x^{2}\ dx=\frac{26}{3}$。
+
+4. Use Part 1 of the Fundamental Theorem of Calculus to find the derivative of the function: $y=\int_{e^{x}}^{-1}\ln t \ dt$ 
+
+Sol:
+注意這題有兩個考點：
+1. Chain Rule
+2. $\int_{a}^{b}f(x) \ dx=-\int_{b}^{a}f(x) \ dx$ 
+
+令 $u=e^{x}$，則 $y=\int_{u}^{-1}\ln t \ dt=-\int_{-1}^{u}\ln t \ dt$。
+又 $\frac{dy}{dx}= \frac{dy}{du} \frac{du}{dx}\implies y'=-\ln u\cdot \frac{du}{dx}=-\ln e^{x}\cdot e^{x}=-xe^{x}$。(By FTC1)
+
+5.  (a) Show that $1\leq \sqrt{ 1+x^{3} }\leq1+x^{3}$ for all $x\geq0$.  (b) Show that $1\leq \int_{0}^{1}\sqrt{ 1+x^{3} } \ dx\leq 1.25$ .
+
+Sol:
+(a)
+這題可以用復合函數的思想解。
+令 $f(u)=\sqrt{ u }$，則 $f'(u)=\frac{1}{2\sqrt{ u }}>0\quad \forall u>0\implies f$ 在 $u>0$ 時單調遞增。
+代入 $u=1+x^{3}\implies f(1+x^{3})=\sqrt{ 1+x^{3} }$。
+因為在 $x\geq0$ 時 $u>0$，所以 $\sqrt{ 1+x^{3} }$ 在 $[0,\infty)$ 單調遞增。
+$\implies f(1+0)=1$ 為 $f(1+x^{3})$ 在 $[0,\infty)$ 上的全局最小值 $\implies 1\leq \sqrt{ 1+x^{3} }$。
+令 $g(t)=t^{2}-t\implies g'(t)=2t-1\implies g$ 在 $t> \frac{1}{2}$ 時單調遞增，且 $g(1)=0$。
+代入 $t=\sqrt{ 1+x^{3} }\implies g(\sqrt{ 1+x^{3} })=1+x^{3}-\sqrt{ 1+x^{3} }$。
+因為 $\sqrt{ 1+x^{3} }\geq 1$，所以 $g(\sqrt{ 1+x^{3} })$ 在 $[0,\infty)$ 上單調遞增且 $\geq 0$。
+也就是 $1+x^{3}-\sqrt{ 1+x^{3} }\geq0\implies \sqrt{ 1+x^{3} }\leq 1+x^{3}$。
+所以，$1\leq \sqrt{ 1+x^{3} }\leq1+x^{3}$。
+(b)
+$\int_{0}^{1}1 \ dx=\int_{0}^{1}\sqrt{ 1+x^{3} } \ dx\leq \int_{0}^{1}1+x^{3} \ dx$ 
+$\implies 1\leq \int_{0}^{1}\sqrt{ 1+x^{3} }\leq1.25$ 
 
 # 大會考
 

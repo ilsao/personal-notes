@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Computer Networking/Network Layer, Data Plane.md",
+                "file": "Math/Calculus/Integrals.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Network Layer, Data Plane"
+              "title": "Integrals"
             }
           },
           {
@@ -192,17 +192,19 @@
       "bases:Create new base": false
     }
   },
-  "active": "1d5b0d980baa8a22",
+  "active": "930e5d797c093d6f",
   "lastOpenFiles": [
+    "Math/Calculus/Differentiation Rules.md",
+    "Math/Calculus/Integrals.md",
+    "Math/Calculus/Applications of Differentiation.md",
+    "Computer Networking/Network Layer, Data Plane.md",
     "Computer Networking/pic/Pasted image 20251118150459.png",
     "Computer Networking/pic/Pasted image 20251118144045.png",
     "Computer Networking/pic/Pasted image 20251118134059.png",
     "Computer Networking/pic",
     "Physics/Interference of Wave.md",
-    "Computer Networking/Network Layer, Data Plane.md",
     "Physics/Wave Motion.md",
     "Physics/pic/Pasted image 20251117233034.png",
-    "Math/Calculus/Integrals.md",
     "Physics/pic/Pasted image 20251117151126.png",
     "Physics/pic/Pasted image 20251117111515.png",
     "Physics/pic/Pasted image 20251117105242.png",
@@ -218,7 +220,6 @@
     "Math/Calculus/大會考 (一) 上半錯題.md",
     "Math/Calculus/Calculus, Early Transcendentals.pdf",
     "Math/Calculus/Basic concept.md",
-    "Math/Calculus/Applications of Differentiation.md",
     "Computer Networking/Application Layer.md",
     "Math/Calculus/Techniques of Integrations.md",
     "Math/Linear Algebra/Linear Transformation.md",
@@ -232,7 +233,6 @@
     "Computer Networking/lab1.md",
     "Physics/Midterm Preparation.md",
     "Math/Calculus/pic/Pasted image 20251101225650.png",
-    "Math/Calculus/pic/Pasted image 20251101223353.png",
     "Math/Calculus.zip",
     "Math/Calculus/pic",
     "CSAPP/Computer Systems A Programmer’s Perspective.pdf",
