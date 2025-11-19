@@ -157,12 +157,41 @@ proof:
 若取 $g(a)=\int_{a}^{a}f(t) \ dt=0$，我們可以構建：
 $F(b)-F(a)=[g(b)+C]-[g(a)+C]=g(b)=\int_{a}^{b}f(t) \ dt$ 
 
+# Indefinite Integrals and the Net Change Theorem
+
+## Indefinite Integrals
+
+因為反導函數有很多個，我們定義不定積分就是某個函數的所有反導函數的可能。
+
+$$
+\int f(x) \ dx=F(x)\quad \text{means}\quad F'(x)=f(x)
+$$
+
+因為常數項在微分後會等於零，所以 $F(x)$ 會有一個常數項 $C$ 代表所有可能的值。
+
+下表列出了常見的不定積分對應表：
+
+![[Pasted image 20251119202513.png]]
+
+需要注意，不定積分所得出來的函數(們)通常只在某個區間內成立。比如某個反導函數為：$-\frac{1}{x}+C$ 在 $x=0$ 時未定義。
+
+## The Net Change Theorem
+
+The Net Change Theorem 說：變化率的積分就是淨變化量。
+
+$$
+\int_{a}^{b}F'(x) \ dx = F(b)-F(a)
+$$
+
+最好理解的例子就是：將速度對時間積分，所得的值為位移量，也就是最終位置減去初始位置。
+
 # Tips
 
 - 估計積分時，需要注意函數在區間內的**遞增/減**。
 - 在找 antiderivative 時，如果遇到 $(ax+b)^{n}$ 之類的形式很難找反導函數，可以考慮把括號展開。
 - 若 $u$ 為 $x$ 的函數，且 $g(x)=\int_{0}^{u}f(t) \ dt$。則 $g'(x)=f(u) \frac{du}{dx}$。(因爲 $\frac{d}{dx}g(x)=\frac{d}{du}g(x) \frac{du}{dx}$)
 - $\cos(x^{2})$ 的反導函數**不是** $\frac{\sin(x^{2})}{2x}$。相反，我們(以我們的實力來說)找不到他的反導函數。
+- 利用圖形判斷積分大小時，記得看圖表 $y$ 軸值。(例如若 $0<y<1$ 時 $f^{2}$ 可能會比 $f$ 小)
 
 # 重要例題
 
@@ -219,6 +248,12 @@ $\implies f(1+0)=1$ 為 $f(1+x^{3})$ 在 $[0,\infty)$ 上的全局最小值 $\im
 $\int_{0}^{1}1 \ dx=\int_{0}^{1}\sqrt{ 1+x^{3} } \ dx\leq \int_{0}^{1}1+x^{3} \ dx$ 
 $\implies 1\leq \int_{0}^{1}\sqrt{ 1+x^{3} }\leq1.25$ 
 
+6. Express $\lim_{ n \to \infty }\left( \frac{1}{n^{3}\sqrt{ 4n^{2}+1 }}+\dots+ \frac{n^{3}}{n^{3}\sqrt{ 4n^{2}+n^{2} }} \right)$ as an integral on $[0,1]$. 
+
+Sol:
+$\lim_{ n \to \infty }\sum_{i=1}^{n} \frac{i^{3}}{n^{3}\sqrt{ 4n^{2}+i^{2} }}=\lim_{ n \to \infty }\sum_{i=1}^{n} \frac{i^{3}}{n^{4}\sqrt{ 4+\left( \frac{i}{n} \right)^{2} }}=\lim_{ n \to \infty } \frac{1}{n}\sum_{i=1}^{n} \frac{i^{3}}{n^{3}\sqrt{ 4+\left( \frac{i}{n} \right)^{2} }}$ 
+$=\lim_{ n \to \infty } \frac{1}{n}\sum_{i=1}^{n} \frac{\left( \frac{i}{n} \right)^{3}}{\sqrt{ 4+\left( \frac{i}{n} \right)^{2} }}=\int_{0}^{1} \frac{x^{3}}{\sqrt{ 4+x^{2} }} \ dx$ 
+
 # 大會考
 
 1. Which one of the following statements is TRUE for $\int_{0}^{1}e^{-x^{2}}dx=L$? (ans: $\frac{1}{2}(e^{-1/4}+e^{-1})<L<1$)
@@ -231,3 +266,29 @@ Sol:
 $L_{n}=\left( f(0)+f\left( \frac{1}{2} \right) \right)\Delta x=\frac{1}{2}(e^{0}+e^{-1/4})=\frac{1}{2}(1+e^{-1/4})<1$ 
 $R_{n}=\left( f\left( \frac{1}{2} \right)+f(1) \right)\Delta x=\frac{1}{2}(e^{-1/4}+e^{-1})$ 
 $\implies \frac{1}{2}(e^{-1/4}+e^{-1})<L<1$ 
+
+2. Let $I=\lim_{ x \to 0^{+} } \frac{1}{x}\left( \int_{1-x}^{1} \frac{1}{t^{3}-t} \ dt \right)$, find $I$。
+
+Sol:
+這題我會，但是感覺很經典所以記錄一下。
+這題重點在用洛必達還有利用 FTC1 替換積分。
+令 $g(x)=\int_{1-x}^{1} \frac{1}{t^{3}-t} \ dt$。
+那麼 $I=\lim_{ x \to 0^{+} } \frac{g(x)}{x} \stackrel{\left( \frac{0}{0} \right)}{=}\lim_{ x \to 0^{+} } g'(x)=\frac{1}{2}$。
+
+3. Consider $g(x)=\begin{cases} \frac{1}{x}\int_{0}^{\sqrt{ x }} \frac{1}{t^{2}+\sqrt{ t }+1} \ dt & \text{, }x>0 \\ 1 & \text{, }x\leq1\end{cases}$ . Which of the following options are TRUE ? (a) $\lim_{ x \to 0 }g(x)=1$ (b) $\lim_{ x \to \infty }g(x)=0$ (c) $\lim_{ x \to 0 }(\sin x)g(x)=0$ (d) $\lim_{ x \to 1 }g'(x)> 0$. 
+
+Sol:
+這題卡在 (c) 忘記換 $\frac{\sin x}{x}$ 還有 (d) 用估計的方式算積分。
+令 $f(x)=\int_{0}^{\sqrt{ x }} \frac{1}{t^{2}+\sqrt{ t }+1} \ dt$，則 $f'(x)= \frac{1}{2x^{3/2}+2x^{3/4}+2x^{1/2}}$。
+(a)
+$\lim_{ x \to 0^{+} }g(x) \stackrel{\left( \frac{0}{0} \right)}{=}\lim_{ x \to 0^{+} }f'(x)=\infty\neq \lim_{ x \to 0^{-} }g(x)=1$ 
+(b)
+$\lim_{ x \to \infty }g(x)=\lim_{ x \to \infty }f'(x)=0$ 
+(c)
+$\lim_{ x \to 0 }(\sin x)g(x)=\lim_{ x \to 0 } \frac{\sin x}{x}f(x)=\lim_{ x \to 0 }f(x)=0$ 
+(d)
+$\lim_{ x \to 1 }g'(x)=\lim_{ x \to 1 } \frac{f'(x)x^{2}-f(x)2x}{x^{2}}=\lim_{ x \to 1 }f'(x)-f(x)$ 
+$=\frac{1}{6}-\int_{0}^{1} \frac{1}{t^{2}+\sqrt{ t }+1} \ dt$ 
+因為這個積分不好算，我們用估的：$\frac{1}{t^{2}+\sqrt{ t }+1}$ 在 $t\geq0$ 上單調遞減，所以 $\frac{1}{t^{2}+\sqrt{ t }+1}$ 的最小值為 $\frac{1}{3}$。
+$\implies \int_{0}^{1}\frac{1}{t^{2}+\sqrt{ t }+1} \ dt \geq \frac{1}{3}$。
+$\implies \lim_{ x \to 1 }g'(x)<0$ 
