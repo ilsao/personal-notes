@@ -185,6 +185,64 @@ $$
 
 最好理解的例子就是：將速度對時間積分，所得的值為位移量，也就是最終位置減去初始位置。
 
+# The Substitution Rule
+
+## Substitution Indefinite Integrals
+
+若 $u=g(x)$ 為一個可導函數且其值域為 $I$。若 $f$ 在 $I$ 上連續，則：
+
+$$
+\int f(g(x))g'(x) \ dx=\int f(u) \ du
+$$
+
+proof:
+令 $F'(x)=f(x)$。
+則 $\int F'(g(x))g'(x) \ dx=F(g(x))+C=F(u)+C=\int F'(u) \ du$ 
+
+對於如何選擇被換元的函數，我們最好挑那種微分後仍部分存在函數中者。
+
+這部分我們可以推出 $\tan x$ 的反導函數：
+
+$$
+\int \tan x \ dx=\ln|\sec x|+C
+$$
+
+proof:
+令 $u=\cos x$，則 $du=-\sin x \ dx$。
+$\int \tan x \ dx=\int \frac{\sin x}{\cos x} \ dx=\int \frac{-1}{u} \ du=-\ln|u|+C$ 
+$=-\ln|\cos x|+C=\ln|\sec x|+C$ 
+
+## Substitution Definite Integrals
+
+利用換元法求定積分的值有兩種解法：
+- 先算不定積分然後代值。
+- 修改定積分的上下界。
+
+若 $g'$ 在 $[a,b]$ 上連續且 $f$ 在 $u=g(x)$ 的值域上連續，則：
+
+$$
+\int_{a}^{b}f(g(x))g'(x) \ dx=\int_{g(a)}^{g(b)}f(u) \ du
+$$
+
+proof:
+令 $F$ 為 $f$ 的反導函數，則有：
+$\int_{a}^{b}f(g(x))g'(x) \ dx=F(g(x))|^{b}_{a}=F(g(b))-F(g(a))$ 
+且：
+$\int_{g(a)}^{g(b)}f(u) \ du=F(u)|^{g(b)}_{g(a)}=F(g(b))-F(g(a))$ 
+
+## Symmetry
+
+若 $f$ 在 $[-a,a]$ 上連續，則：
+- 若 $f$ 為偶函數則：$\int_{-a}^{a}f(x) \ dx=2\int_{0}^{a}f(x) \ dx$ 
+- 若 $f$ 為奇函數則：$\int_{-a}^{a}f(x) \ dx=0$ 
+
+proof:
+$\int_{-a}^{a}f(x) \ dx=-\int_{0}^{-a}f(x) \ dx+\int_{0}^{a}f(x) \ dx$ 
+令 $u=-x$，則 $du = -dx$ 且當 $x=-a$ 時 $u=a$。
+上式變成：$-\int_{0}^{a}f(-u) \ -du+\int_{0}^{a}f(x) \ dx=\int_{0}^{a}f(-u) \ du+\int_{0}^{a}f(x) \ dx$ 
+若 $f$ 為偶函數：$\int_{0}^{a}f(-u) \ du+\int_{0}^{a}f(x) \ dx=2\int_{0}^{a}f(x) \ dx$ 
+若 $f$ 為奇函數：$\int_{0}^{a}f(-u) \ du+\int_{0}^{a}f(x) \ dx=0$ 
+
 # Tips
 
 - 估計積分時，需要注意函數在區間內的**遞增/減**。
@@ -192,6 +250,8 @@ $$
 - 若 $u$ 為 $x$ 的函數，且 $g(x)=\int_{0}^{u}f(t) \ dt$。則 $g'(x)=f(u) \frac{du}{dx}$。(因爲 $\frac{d}{dx}g(x)=\frac{d}{du}g(x) \frac{du}{dx}$)
 - $\cos(x^{2})$ 的反導函數**不是** $\frac{\sin(x^{2})}{2x}$。相反，我們(以我們的實力來說)找不到他的反導函數。
 - 利用圖形判斷積分大小時，記得看圖表 $y$ 軸值。(例如若 $0<y<1$ 時 $f^{2}$ 可能會比 $f$ 小)
+- 不會積的時候試試看用估計的。
+- $\tan^{2}\theta=\sec^{2}\theta-1$ 
 
 # 重要例題
 
@@ -253,6 +313,12 @@ $\implies 1\leq \int_{0}^{1}\sqrt{ 1+x^{3} }\leq1.25$
 Sol:
 $\lim_{ n \to \infty }\sum_{i=1}^{n} \frac{i^{3}}{n^{3}\sqrt{ 4n^{2}+i^{2} }}=\lim_{ n \to \infty }\sum_{i=1}^{n} \frac{i^{3}}{n^{4}\sqrt{ 4+\left( \frac{i}{n} \right)^{2} }}=\lim_{ n \to \infty } \frac{1}{n}\sum_{i=1}^{n} \frac{i^{3}}{n^{3}\sqrt{ 4+\left( \frac{i}{n} \right)^{2} }}$ 
 $=\lim_{ n \to \infty } \frac{1}{n}\sum_{i=1}^{n} \frac{\left( \frac{i}{n} \right)^{3}}{\sqrt{ 4+\left( \frac{i}{n} \right)^{2} }}=\int_{0}^{1} \frac{x^{3}}{\sqrt{ 4+x^{2} }} \ dx$ 
+
+7. Find the indefinite integral: $\int 2+\tan^{2}\theta \ d\theta$. 
+
+Sol:
+發現 $\tan^{2}$，找不到反導函數，於是代換為 $\sec^{2}\theta - 1$。
+$\int 2+(\sec^{2}\theta-1) \ d\theta=\int 1+\sec^{2}\theta \ d\theta=\theta+\tan \theta+C$ 
 
 # 大會考
 
