@@ -111,6 +111,92 @@ line termination 和 processing，會將傳入的光訊號轉換成 bit，並將
 
 1. FIFO
 
+最簡單的策略，不用多說了吧。
+
 2. 優先權排隊(Priority Queuing)
 
+在 priority queuing 中，到達輸出鏈路的分組會被分類放入不同優先級的隊列中。
+
+當需要選擇一個分組傳輸時，會先從優先級較高的隊列中取出分組。(例如，實時電話的優先級可能比電子郵件的優先級高)
+
+通常來說，同一個優先級隊列中的分組採取 FIFO。
+
 3. 循環和加權公平排隊 (Round Robin and Weighted Fair Queuing, WFQ)
+
+在**循環排隊規則(round robin queuing discipline)** 中，分組也會被分類，但是不像 priority queuing 那樣具有優先級。相反，會在不同隊列中循環輪替發送分組。
+
+當然，如果輪到的隊列為空，會自動向下延續輪替。這種規則稱為**保持工作排隊(work-conserving queuing)**。
+
+一種通用的循環排隊策略稱為**加權公平排隊(WFQ)**。
+
+除了循環排隊規則外，WFQ 會給每個隊列一個權重 $w_{i}$。WFQ 會確保第 $i$ 類得到的吞吐量最少為 $R\cdot \frac{w_{i}}{\sum w}$。
+
+# The Internet Protocol (IP): IPv4, Addressing, IPv6, and More
+
+## IPv4 Datagram Format
+
+![[Pasted image 20251120192704.png]]
+
+IPv4 數據報中的關鍵字段如下：
+- Version
+- Header length
+- Type of service：分別不同類型的 IP 數據報。比如將實時數據報與非實時流量分開。
+- Datagram length
+- Identifier, flags, fragmentation offset：這三個字段與 IP 分片有關。Identifier 用來標示分片後的數據報是否為同一個原數據報，而 fragmentation offset 用來標示該分片後的數據報在原數據報中的偏移量。
+- Time-to-live：為了防止數據報在網絡中無限循環。每當數據報經過一個路由器時，TTL 的值就會減一。一但減為零該數據報就會被丟棄。
+- Protocol：此字段通常只在到達目的後才有用，用來標示要將數據交給哪個運輸層協議。例如值 6 表示交給 TCP，值 17 說明交給 UDP。
+- Header checksum：正常的繳驗和功能。需要注意的是，**每經過一台路由器繳驗和就要重新計算**，因為 TTL 的值不斷更新。為什麼要在運輸層與網絡層都進行差錯繳驗？因為 IP 層只對數據報繳驗，TCP/UDP 會對整個報文段繳驗。又因為 IP 的數據不一定都傳給 TCP/UDP，且 TCP 可以運行在不是 IP 協議的網絡中。
+- Source and destination IP addresses
+- Options
+- Data (payload)
+
+如果不包含可選項，一個 IP 報文首部有 20 字節。如果該數據報攜帶著 TCP 報文段，則包含 40 字節的首部與應用層報文。
+
+## IPv4 Addressing
+
+一台主機通常經由一條鏈路連接到網絡。主機與物理鏈路之間的邊界稱為**接口(Interface)**。
+
+因為路由器需要從一條鏈路接收數據並從另一條鏈路轉發該數據，所以一個路由器會有多個接口。
+
+IP 規定每個接口都有獨立的 IP 地址，所以**一個路由器會有多個 IP 地址**。
+
+在因特網中，每個主機與路由器上的接口都必須有唯一的 IP 地址(NAT 後面的接口除外)。而地址與其所屬的子網關聯。
+
+一個**子網(subnet)** 是由一段共同 IP 前綴構成的邏輯網，同子網內的接口可以直接通過鏈路層協議溝通而無需經過 routing。
+
+一個子網可能有這樣的地址：`223.1.1.0/24`。其中 `/24`(稱為 slash-24)叫做**子網掩碼(network mask)**，說明 32 bits 中較高的 24 bits 定義了子網地址。
+
+因特網的地址分配策略稱為**無類別域間路由選擇(Classless Inter-Domain Routing, CIDR)**，也就是使用前綴長度(由子網掩碼給出)表示子網大小。
+
+在配置轉發表時，只需考慮子網的地址前綴即可，因為同一個子網中的接口共享相同的地址前綴。這種通過一條條目就可以發送到多個接口的能力稱為**地址聚合(address aggregation)** 或**路由聚合(route aggregation)** 或**路由摘要(route summarization)**。
+
+我們來說說 IP 廣播地址 255.255.255.255。(只在子網內部廣播)
+
+如果一台主機發送一個目的地址為 255.255.255.255 的數據報，那麼報文會被交付給所有**同子網**的主機。
+
+- 如何取得一塊地址？
+
+兩種辦法：
+1. 通過 ISP 分配。一個 ISP 可能會從已分配給該 ISP 的地址中分配一些地址，如下圖展示。
+2. 由**因特網名字和編號分配機構(Internet Corporation for Assigned Names and Numbers, ICANN)** 分配。
+
+![[Pasted image 20251120221226.png]]
+
+- 獲取主機地址：動態主機配置協議
+
+某組織一但獲取了一塊地址，就可為組織內的主機與路由器分配 IP 地址。
+
+通常，路由器地址由管理員手動配置。但是，主機地址通常由**動態主機配置協議(Dynamic Host Configuration Protocol, DHCP)** 分配。
+
+因為 DHCP 可以自動將主機連接到網絡，所以也稱為**即插即用協議(plug-and-play protocol)** 或**零配置(zeroconf)** 協議。
+
+DHCP 是一個客戶-服務器協議。客戶端為新到達的主機，想要獲取 IP 地址與其他網絡配置信息。
+
+在簡化的場景下，每個子網有一個 DHCP 服務器。或者，一個 DHCP 中繼代理(通常為路由器)，這個代理知道服務該網絡的 DHCP 服務器的地址。
+
+考慮下圖場景：DHCP 服務器連接到子網 `223.1.2/24`，而且有一台 DHCP 中繼代理路由器幫助 `223.1.1/24` 與 `223.1.3/24` 中的客戶端提供服務。
+
+## Network Address Translation (NAT)
+
+## IPv6
+
