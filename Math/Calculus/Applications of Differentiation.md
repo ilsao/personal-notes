@@ -403,6 +403,12 @@ Sol:
 這題我寫出來了，放這裡只是怕你忘記，然後注意解答方式：
 ![[Pasted image 20251029200438.png]]
 
+10. Prove or disprove that if $z(t)$ is differentiable on $(0, \infty)$ and has a limit as $t\to \infty$, then $\lim_{t\to \infty} z'(t) = 0$. 
+
+Sol:
+反例：$z(t)=\frac{\sin(t^{2})}{t}$。
+$z'(t)=2\cos(t^{2})- \frac{\sin(t^{2})}{t^{2}}$ 在 $t\to \infty$ 不會收斂。
+
 # 大會考
 
 1. Let $g(x)=xe^{x}$. Then the absolute maximum value of $g(\sin x+2\cos x)$, $x\in \mathbb{R}$, is?

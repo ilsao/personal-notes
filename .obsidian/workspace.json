@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Math/Calculus/Techniques of Integrations.md",
+                "file": "Math/Calculus/Differentiation Rules.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Techniques of Integrations"
+              "title": "Differentiation Rules"
             }
           },
           {
@@ -194,8 +194,10 @@
   },
   "active": "930e5d797c093d6f",
   "lastOpenFiles": [
-    "Math/Calculus/Integrals.md",
+    "Math/Calculus/Applications of Differentiation.md",
+    "Math/Calculus/Differentiation Rules.md",
     "Math/Calculus/Techniques of Integrations.md",
+    "Math/Calculus/Integrals.md",
     "Pasted image 20251121210001.png",
     "Physics/Oscillatory Motion.md",
     "Physics/pic/Pasted image 20251121203452.png",
@@ -210,10 +212,8 @@
     "Computer Networking/pic/Network Layer, Data Plane/Pasted image 20251121145936.png",
     "Computer Networking/pic/Network Layer, Data Plane/Pasted image 20251120221226.png",
     "Computer Networking/pic/Network Layer, Data Plane/Pasted image 20251120192704.png",
-    "Math/Calculus/Applications of Differentiation.md",
     "Math/Calculus/Basic concept.md",
     "Math/Calculus/大會考 (一) 上半錯題.md",
-    "Math/Calculus/Differentiation Rules.md",
     "Computer Networking/pic",
     "Physics/Interference of Wave.md",
     "Physics/Wave Motion.md",

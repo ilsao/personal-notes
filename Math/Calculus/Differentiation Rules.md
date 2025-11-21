@@ -731,3 +731,12 @@ Sol:
 對 $g(x)$ 微分： $g'(x)=\frac{2}{(1-x)^{2}}$。
 我們要找 $f'(2)$，令 $g(x)= \frac{1+x}{1-x}=2\implies x=\frac{1}{3}$。
 那麼 $f'(2)=\frac{1}{g'\left( \frac{1}{3} \right)}=\frac{2}{9}$。
+
+2. Prove that if $E(x)$ is an even function and $E'(0)$ exists, then $E'(0)=0$。
+
+Sol:
+$E(x)$ 為偶函數 $\implies E(x)=E(-x)$。
+假設 $E'(0)=M<\infty$。
+$E'(0)=\lim_{ h \to 0 } \frac{E(0+h)-E(0)}{h}=\frac{1}{2}\lim_{ h \to 0 }\left[ \frac{E(h)-E(0)}{h}+\frac{E(h)-E(0)}{h} \right]$ 
+$=\frac{1}{2}\lim_{ h \to 0 }\left[ \frac{E(h)-E(0)}{h}- \frac{E(-h)-E(0)}{-h} \right]=\frac{1}{2}(M-M)=0$ 
+$\implies E'(0)=0$ 
