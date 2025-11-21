@@ -41,7 +41,7 @@ $$
 \end{align}}
 $$
 
-帶回虎克定律，彈簧對木塊所施的力為：
+代回虎克定律，彈簧對木塊所施的力為：
 
 $$
 \begin{align}
@@ -92,3 +92,50 @@ $$
 \end{align}
 $$
 
+# 威儀指定習題
+
+1. When a mass of 0.2 kg is suspended from a spring, it stretches 0.04 m. The mass is pulled down an additional distance 0.1 m from its equilibrium position and released. (a) What is the spring constant? (b) What is the period of oscillation?(c) What is the frequency of oscillation? (d) What will be the maximum velocity?
+
+Sol:
+(a)
+$0.2g=k\cdot0.04\implies k=5g\approx 4.9\text{ N/m}$ 
+(b)
+$T=\frac{2\pi}{\omega}=2\pi \sqrt{ \frac{m}{k} }=\frac{2\pi}{5\sqrt{ g }}\approx0.4\text{ sec}$ 
+(c)
+$\nu=\frac{1}{T}\approx2.5\text{ Hz}$ 
+(d)
+$\frac{1}{2}kx_{\text{max}}^{2}=\frac{1}{2}mv_{\text{max}}^{2}\implies v_{max}=\frac{\sqrt{ g }}{2}\approx1.57\text{ m/sec}$ 
+
+2. Two springs with force constants $k_{1}$ = 100 N/m and $k_{2}$ = 200 N/m are connected to opposite ends of a block of mass 3 kg (see Fig. 10-8). (a) If the block is displaced 0.1 m to the right, what is the net force exerted by the springs on the block? The block is released from that position. (b) What are the frequency and the period of the motion? (c) What is the amplitude of the motion? (d) Find an expression for the position of the particle as a function of time?
+
+![[Pasted image 20251121202029.png]]
+
+Sol:
+(a)
+$F=(k_{1}+k_{2})x=30\text{ N}$ 
+(b)
+$T=2\pi \sqrt{ \frac{m}{k} }=0.2\pi$ 
+$\nu=\frac{1}{T}=\frac{5}{\pi}$ 
+(c)
+amplitude = 0.1
+(d)
+$x(t)=0.1\cos\left( \sqrt{ \frac{300}{3} }t \right)=0.1\cos10t$ 
+
+3. A wooden block of mass 0.8 kg rests on a frictionless table connected to a spring _(k_ = 200 N/m) as shown in Fig. 10-10. A 20-g bullet moving with a velocity _v_ = 500 m/sec is shot into the block and remains embedded in it. What is the amplitude of the ensuing oscillatory motion?
+
+![[Pasted image 20251121203452.png]]
+
+Sol:
+$0.02\times500=(0.82)v$ 
+$\frac{1}{2}kx^{2}=\frac{1}{2}mv^{2}\implies x\approx0.78\text{ m}$ 
+
+4. A block of mass $m_{1}$ = 3 kg rests on a frictionless surface connected to a spring _(k_ = 150 _N/m)._ A second block of mass $m_{2}$ = 1 kg is launched toward ml with a velocity of 4 m/sec (see Fig. 10-11). After the collision, $m_{2}$ bounces back in the opposite direction with a velocity of 1 m/sec. (a) How much will the spring be compressed? (b) What fraction of the energy is lost in the collision?
+
+Sol:
+(a)
+$m_{2}\cdot 4=(m_{1}v)+(-m_{2})\implies v=\frac{5}{3}$ 
+$\frac{1}{2}m_{1}v^{2}=\frac{1}{2}kx^{2}\implies x\approx 0.24\text{ m}$ 
+(b)
+注意，此處 fraction of the energy is lost 指的是：$\frac{\text{lost}}{\text{all}}$ 
+也就是：
+$\frac{\frac{1}{2}m_{2}\cdot 4^{2}-\frac{1}{2}m_{1}\cdot\left( \frac{5}{3} \right)^{2}-\frac{1}{2}m_{2}\cdot 1^{2}}{\frac{1}{2}m_{2}\cdot 4^{2}}\approx0.42$ 

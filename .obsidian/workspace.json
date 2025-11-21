@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Math/Calculus/Integrals.md",
+                "file": "Physics/Oscillatory Motion.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Integrals"
+              "title": "Oscillatory Motion"
             }
           },
           {
@@ -192,10 +192,12 @@
       "bases:Create new base": false
     }
   },
-  "active": "930e5d797c093d6f",
+  "active": "1d5b0d980baa8a22",
   "lastOpenFiles": [
-    "Math/Linear Algebra/Orthogonality.md",
+    "Physics/pic/Pasted image 20251121203452.png",
+    "Physics/pic/Pasted image 20251121202029.png",
     "Math/Calculus/Integrals.md",
+    "Math/Linear Algebra/Orthogonality.md",
     "Computer Networking/Network Layer, Data Plane.md",
     "Computer Networking/pic/Network Layer, Data Plane/Pasted image 20251121160508.png",
     "Computer Networking/pic/Network Layer, Data Plane",
@@ -210,7 +212,6 @@
     "Math/Calculus/Applications of Differentiation.md",
     "Math/Calculus/Basic concept.md",
     "Math/Calculus/大會考 (一) 上半錯題.md",
-    "Math/Calculus/pic/Pasted image 20251119202513.png",
     "Math/Calculus/Differentiation Rules.md",
     "Computer Networking/pic",
     "Physics/Interference of Wave.md",
