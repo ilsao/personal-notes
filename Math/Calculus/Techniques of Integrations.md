@@ -69,3 +69,16 @@ $\implies n\int \sin^{n}x \ dx=-\cos x\sin^{n-2}x+(n-1)\int \sin^{n-1}x$
 $\implies \int \sin^{n}x \ dx=-\frac{1}{n}\cos x\sin^{n-1}x+ \frac{n-1}{n}\int \sin^{n-2}x$ 
 
 這個公式非常有用，因為它可以把 $\int\sin^{n}x\ dx$ 化簡為 $\int \sin x \, dx$ ($n$ 為奇數) 或 $\int  \, dx$ ($n$ 為偶數)。
+
+# 重要例題
+
+# 大會考
+
+1. $\int_{0}^{e-2}\ln(2+x) \ dx= \ ?$ 
+
+Sol:
+令 $t=2+x$，則 $dt=dx$。
+$\int_{0}^{e-2}\ln(2+x) \ dx= \int_{2}^{e}\ln t  \, dt$ 
+注意，這邊看起來很簡單，所以你可能會忘記要求反導函數而不是直接帶入！
+利用 IBP，令 $u=\ln t，dv=dt$，則：
+$\int_{2}^{e}\ln t \ dt=[t\ln t]^{e}_{2}-\int_{2}^{e}  \, dt=2-2\ln2$ 

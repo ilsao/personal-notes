@@ -347,6 +347,13 @@ Sol:
 $\int_{1}^{16} \frac{x^{1/2}}{1+x^{3/4}} \ dx=\int_{1}^{16}x^{3/4} \frac{x^{-1/4}}{1+x^{3/4}} \ dx=\frac{4}{3}\int_{2}^{9} \frac{u-1}{u} \ du$ 
 $=\frac{4}{3}\left( 7+\ln \frac{2}{9} \right)$ 
 
+10. Use substitution rule to simplify the integral $\int \cos(\ln x) \ dx$. 
+
+Sol:
+令 $u=\ln x$，則 $du= \frac{1}{x} \ dx$。
+這樣你可能就矇逼了，但是你大意了：$dx = x \ du = e^{u} \ du$。
+所以 $\int \cos(\ln x) \, dx=\int e^{t}\cos t \, dt$。
+
 # 大會考
 
 1. Which one of the following statements is TRUE for $\int_{0}^{1}e^{-x^{2}}dx=L$? (ans: $\frac{1}{2}(e^{-1/4}+e^{-1})<L<1$)
