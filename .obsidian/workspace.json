@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Computer Networking/Network Layer, Data Plane.md",
+                "file": "Math/Calculus/Integrals.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Network Layer, Data Plane"
+              "title": "Integrals"
             }
           },
           {
@@ -192,28 +192,31 @@
       "bases:Create new base": false
     }
   },
-  "active": "1d5b0d980baa8a22",
+  "active": "930e5d797c093d6f",
   "lastOpenFiles": [
+    "Math/Calculus/Basic concept.md",
+    "Math/Calculus/Integrals.md",
+    "Math/Linear Algebra/Orthogonality.md",
+    "Math/Linear Algebra/pic/Orthogonality/Pasted image 20251122210350.png",
+    "Math/Linear Algebra/pic/Orthogonality/Pasted image 20251122200645.png",
+    "Math/Linear Algebra/pic/Orthogonality/Pasted image 20251122194244.png",
+    "Math/Linear Algebra/pic/Orthogonality",
+    "Math/Linear Algebra/pic",
+    "Math/Linear Algebra/Matrix and Systems.md",
+    "Math/Linear Algebra/Linear Transformation.md",
+    "Computer Networking/Network Layer, Data Plane.md",
     "Computer Networking/pic/Network Layer, Data Plane/Pasted image 20251122172126.png",
     "Math/Calculus/pic/Pasted image 20251121210001.png",
-    "Computer Networking/Network Layer, Data Plane.md",
     "Computer Networking/pic/Network Layer, Data Plane/Pasted image 20251122170818.png",
     "Math/Calculus/Techniques of Integrations.md",
-    "Math/Calculus/Integrals.md",
     "Math/Calculus/Differentiation Rules.md",
     "Math/Calculus/Applications of Differentiation.md",
     "Physics/Oscillatory Motion.md",
     "Physics/pic/Pasted image 20251121203452.png",
     "Physics/pic/Pasted image 20251121202029.png",
-    "Math/Linear Algebra/Orthogonality.md",
     "Computer Networking/pic/Network Layer, Data Plane/Pasted image 20251121160508.png",
     "Computer Networking/pic/Network Layer, Data Plane",
     "Computer Networking/pic/Network Layer, Data Plane/Pasted image 20251118134059.png",
-    "Computer Networking/pic/Network Layer, Data Plane/Pasted image 20251121154244.png",
-    "Computer Networking/pic/Network Layer, Data Plane/Pasted image 20251121152313.png",
-    "Computer Networking/pic/Network Layer, Data Plane/Pasted image 20251121145936.png",
-    "Computer Networking/pic/Network Layer, Data Plane/Pasted image 20251120221226.png",
-    "Math/Calculus/Basic concept.md",
     "Math/Calculus/大會考 (一) 上半錯題.md",
     "Computer Networking/pic",
     "Physics/Interference of Wave.md",
@@ -227,10 +230,8 @@
     "Physics/Momentum and Collisions.md",
     "Math/Calculus/Calculus, Early Transcendentals.pdf",
     "Computer Networking/Application Layer.md",
-    "Math/Linear Algebra/Linear Transformation.md",
     "Math/Linear Algebra/Vector Space.md",
     "Computer Graphics/圖形學概覽複習.md",
-    "Math/Linear Algebra/Matrix and Systems.md",
     "Math/Linear Algebra/Determinants.md",
     "Computer Networking/Transport Layer.md",
     "Computer Networking/Intro. to the Internet.md",
@@ -238,8 +239,6 @@
     "Math/Calculus/pic",
     "CSAPP/Computer Systems A Programmer’s Perspective.pdf",
     "Math/Linear Algebra/The Art of Linear Algebra.pdf",
-    "時間紀錄",
-    "Computer Networking/Computer Networking A top-down approach.pdf",
     "未命名.canvas"
   ]
 }

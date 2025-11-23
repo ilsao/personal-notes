@@ -556,7 +556,7 @@ $$
 - 想證明 $B$ 矩陣為 $A$ 矩陣的逆元，可以假設一個新的矩陣 $C$ 為 $A$ 的逆，並用未知數表達。相乘 $CA$ ，如果可以得到 $B$ 的形式則得證。
 - (!) $CA=BC$ 不論 $C$ 是否可逆，都沒有消去律($A$ 不一定等於 $B$)。
 
-# 例題
+# 重要例題
 
 1. Assume $\vec{u} = (u_{1}, u_{1}\dots u_{n})$ and $\vec{v}= (v_{1}, v_{2} \dots v_{n})$ are two solutions of $a_{1}x_{1}+a_{2}x_{2}+ \dots +a_{n}x_{n}=b$. **Prove** that for any real number $C$, $\vec{u}+c(u-v)$ is the solution of $a_{1}x_{1}+a_{2}x_{2}+ \dots +a_{n}x_{n}=b$. 
 
