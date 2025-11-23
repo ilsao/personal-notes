@@ -154,11 +154,111 @@ $(\mathbf{x_{1}}+\mathbf{x_{2}})^{T}\mathbf{y}=0\implies \mathbf{x_{1}}+\mathbf{
 
 首先你要知道：$R(A)=\text{Col}(A)$。且 $R(A)$ 表示 $A$ 的 range。
 
-我們有一個定理 **Fundamental Subspaces Theorem**：若 $A$ 為 $m\times n$ 矩陣，則 $N(A)=R(A^{T})^{\perp}$ 且 $N(A^{T})=R(A)^{\perp}$。
+我們有一個定理 **Fundamental Subspaces Theorem**：若 $A$ 為 $m\times n$ 矩陣，則：
+
+$$N(A)=R(A^{T})^{\perp}\text{ } 且 \text{ }N(A^{T})=R(A)^{\perp}$$
 
 proof:
 因為已知 $N(A)\perp R(A^{T})$，所以 $N(A)\subseteq R(A^{T})^{\perp}$。
 反過來說，若 $\mathbf{x}$ 為 $R(A^{T})^{\perp}$ 中的任意向量，所以 $\mathbf{x}$ 與 $A^{T}$ 的任意 column vector 都正交，也就是 $A\mathbf{x}=\mathbf{0}$。這要求 $\mathbf{x}\in N(A)$，所以 $N(A)=R(A^{T})^{\perp}$。同理可證 $N(A^{T})=R(A)^{\perp}$。
+
+雖然你不一定想要，但是再送你一些免費的定理～
+
+若 $S$ 是 $\mathbb{R}^{n}$ 的子空間，則：
+
+$$\text{dim }S+\text{dim }S^{\perp}=n$$
+
+此外，若 $\{\mathbf{x_{1}},\dots,\mathbf{x}_{r}\}$ 為 $S$ 的基底，$\{\mathbf{x}_{r+1},\dots,\mathbf{x}_{n}\}$ 為 $S^{\perp}$ 的基底，則 $\{\mathbf{x_{1}},\dots,\mathbf{x}_{r},\dots,\mathbf{x}_{n}\}$ 為 $\mathbb{R}^{n}$ 的一組基底。
+
+proof:
+若 $S=\{\mathbf{0}\}$，則 $S^{\perp}=\mathbb{R}^{n}$。滿足 $\text{dim }S+\text{dim }S^{\perp}=n$。
+若 $S\neq\{\mathbf{0}\}$，則令 $X$ 為 $r\times n$ 大小的矩陣。$X$ 的第 $i$ 個 row 定義為 $\mathbf{x}_{i}^{T}$。
+那麼，$\text{rank}(X)=r$，且 $R(X^{T})=S$。
+由上一個定理，我們有：$S^{\perp}=R(X^{T})^{\perp}=N(X)$。
+根據 rank-nullity theorem，我們有 $\text{dim }N(X)=n-r$。
+想證明  $\{\mathbf{x_{1}},\dots,\mathbf{x}_{r},\dots,\mathbf{x}_{n}\}$ 張出 $\mathbb{R}^{n}$，我們只需要證明 $\{\mathbf{x_{1}},\dots,\mathbf{x}_{r},\dots,\mathbf{x}_{n}\}$ 線性獨立。
+設 $c_{1}\mathbf{x_{1}}+\dots+c_{r}\mathbf{x}_{r}+c_{r+1}\mathbf{x}_{r+1}+\dots+c_{n}\mathbf{x}_{n}=\mathbf{0}$。
+令 $\mathbf{y}=c_{1}\mathbf{x}_{1}+\dots+c_{r}\mathbf{x}_{r}$，$\mathbf{z}=c_{r+1}\mathbf{x}_{r+1}+\dots+c_{n}\mathbf{x}_{n}$。
+則 $\mathbf{y}+\mathbf{z}=\mathbf{0}\implies \mathbf{y}=-\mathbf{z}$。
+說明 $\mathbf{y}$ 與 $\mathbf{z}$ $\in S\cap S^{\perp}=\{\mathbf{0}\}\implies \{\mathbf{x_{1}},\dots,\mathbf{x}_{r},\dots,\mathbf{x}_{n}\}$ 線性獨立
+$\implies\{\mathbf{x_{1}},\dots,\mathbf{x}_{r},\dots,\mathbf{x}_{n}\}$ 張出 $\mathbb{R}^{n}$。 
+
+來一波定義：若 $U$ 和 $V$ 為 $W$ 的子空間，取 $\mathbf{u}\in U$，$\mathbf{v}\in V$。若任意 $\mathbf{w}\in W$ 都可以被唯一的表示成 $\mathbf{w}=\mathbf{u}+\mathbf{v}$，則稱 $W$ 是 $U$ 和 $V$ 的**直和(direct sum)**，且記為 $W=U\oplus V$。
+
+給你個定理：若 $S$ 是 $\mathbb{R}^{n}$ 的子空間，則：
+
+$$
+\mathbb{R}^{n}=S\oplus S^{\perp}
+$$
+
+proof:
+這個結論在 $S=\{\mathbf{0}\}$ 或 $S=\mathbb{R}^{n}$ 時很 trivial。
+當 $\text{dim }S=r$，且 $0<r<n$ 時：
+任意 $\mathbf{x}\in \mathbb{R}^{n}$ 都可以被表示為 $\mathbf{x} = c_{1}\mathbf{x_{1}}+\dots+c_{r}\mathbf{x}_{r}+c_{r+1}\mathbf{x}_{r+1}+\dots+c_{n}\mathbf{x}_{n}$ 。
+又 $\mathbf{y}=c_{1}\mathbf{x}_{1}+\dots+c_{r}\mathbf{x}_{r}$，$\mathbf{z}=c_{r+1}\mathbf{x}_{r+1}+\dots+c_{n}\mathbf{x}_{n}$ 且 $\mathbf{y}\in S$ 且 $\mathbf{z}\in S^{\perp}$。
+所以我們有 $\mathbf{x}=\mathbf{y}+\mathbf{z}$。
+來證明唯一性，令 $\mathbf{x}=\mathbf{u}+\mathbf{v}$ 且 $\mathbf{u}\in S$，$\mathbf{v}\in S^{\perp}$。
+則 $\mathbf{u}+\mathbf{v}=\mathbf{x}=\mathbf{y}+\mathbf{z}\implies \mathbf{u}-\mathbf{y}=\mathbf{z}-\mathbf{v}$。
+因為 $\mathbf{u}-\mathbf{y}\in S$ 且 $\mathbf{z}-\mathbf{v}\in S^{\perp}$，所以 $\mathbf{u}-\mathbf{y}$ 與 $\mathbf{z}-\mathbf{v}$ 都在 $S\cap S^{\perp}=\{\mathbf{0}\}$ 中。
+所以 $\mathbf{u}=\mathbf{y}$，$\mathbf{v}=\mathbf{z}$。
+
+都送你一個定理了，那就不吝色的再送你一個叭～
+
+若 $S$ 為 $\mathbb{R}^{n}$ 的子空間，則：
+
+$$
+(S^{\perp})^{\perp}=S
+$$
+
+proof:
+令 $\mathbf{z}\in (S^{\perp})^{\perp}$，$\mathbf{u}\in S$，$\mathbf{v}\in S^{\perp}$。
+則因為 $(S^{\perp})^{\perp}\in \mathbb{R}^{n}$，所以 $\mathbf{z}$ 可以被唯一的表達成：$\mathbf{z}=\mathbf{u}+\mathbf{v}$。
+因為 $\mathbf{v}\in S^{\perp}$，所以會與 $\mathbf{z}$ 和 $\mathbf{u}$ 都正交。
+$0=\mathbf{v}^{T}\mathbf{z}=\mathbf{v}^{T}(\mathbf{u}+\mathbf{v})=\mathbf{v}^{T}\mathbf{u}+\mathbf{v}^{T}\mathbf{v}=\mathbf{v}^{T}\mathbf{v}$ 
+所以 $\mathbf{v}=\mathbf{0}$，$\mathbf{z}=\mathbf{u}$。
+所以 $S=(S^{\perp})^{\perp}$。
+
+回想 $N(A)=R(A^{T})^{\perp}\text{ } 且 \text{ }N(A^{T})=R(A)^{\perp}$，根據上述定理我們有：
+
+$$
+N(A)^{\perp}=R(A^{T})\text{ 且 }N(A^{T})^{\perp}=R(A)
+$$
+
+接下來我們要說一個聽起來很牛逼的東西！
+
+若 $A$ 為 $m\times n$ 矩陣，且 $\mathbf{b}\in \mathbb{R}^{m}$。則不是存在 $\mathbf{x}\in \mathbb{R}^{n}$ 使得 $A\mathbf{x}=\mathbf{b}$ 就是存在 $\mathbf{y}\in \mathbb{R}^{m}$ 使得 $A^{T}\mathbf{y}=\mathbf{0}$ 且 $\mathbf{y}^{T}\mathbf{b}\neq 0$。
+
+先搞清楚這個定理在講啥？
+
+很明顯 $A\mathbf{x}=\mathbf{b}$ 是在說明系統有解的情況。
+
+那 $A^{T}\mathbf{y}=\mathbf{0}$ 說明的是什麼？Oh，原來想說明 $\mathbf{y}\in N(A^{T})=R(A)^{\perp}$ 呀！
+
+$R(A)$ 指的是 $A$ 的 column space 對吧？根據上述我們還知道 $\mathbf{y}$ 是 $A$ 的 column space 的正交補，所以如果 $\mathbf{b}$ 與 $\mathbf{y}$ 不正交 ($\mathbf{y}^{T}\mathbf{b}\neq 0$)，就說明 $\mathbf{b}\not\in R(A)=\text{Col}(A)$，也就是系統無解！
+
+希望下圖能幫助你理解：
+
+![[Pasted image 20251123210430.png]]
+
+接下來我們要講一個很厲害的東西，一個 $m\times n$ 的 $A$ 矩陣可以將自己的 column space 一對一對應到自己的 row space 上。
+
+以下我們將 $A$ 視為一個 $\mathbb{R}^{n}$ 到 $\mathbb{R}^{m}$ 上的線性轉換，即 $\mathbf{x}\in \mathbb{R}^{n}\to A\mathbf{x}\in \mathbb{R}^{m}$
+
+因為 $R(A^{T})$ 與 $N(A)$ 為正交補，所以：$\mathbb{R}^{n}=R(A^{T})\oplus N(A)$。
+
+那麼任意 $\mathbf{x}\in \mathbb{R}^{n}$ 都可以寫成 $\mathbf{x}=\mathbf{y}+\mathbf{z}$，其中 $\mathbf{y}\in R(A^{T})$ 且 $\mathbf{z}\in N(A)$。
+
+則：$A\mathbf{x}=A\mathbf{y}+A\mathbf{z}=A\mathbf{y}$。(因為 $\mathbf{z}\in N(A)$)
+
+也就是說 $R(A)=\{A\mathbf{x}|\mathbf{x\in \mathbb{R}^{n}}\}=\{A\mathbf{y}|\mathbf{y}\in R(A^{T})\}$。
+
+如果我們將 $A$ 的定義域限定為 $R(A^{T})$，則 $A$ 將 $R(A^{T})$ 映射到 $R(A)$，且映射是一對一的。
+
+假設 $\mathbf{x}_{1},\mathbf{x}_{2}\in R(A^{T})$，且 $A\mathbf{x}_{1}=A\mathbf{x}_{2}$。
+
+則有 $A(\mathbf{x}_{1}-\mathbf{x}_{2})=\mathbf{0}$。因為 $\mathbf{x_{1}}-\mathbf{x_{2}} \in R(A^{T})\cap N(A)=\{\mathbf{0}\}$ (這裡不要求 $N(A)=\{\mathbf{0}\}$)，所以有 $\mathbf{x_{1}}=\mathbf{x_{2}}$。
+
+因為這種對應是一對一的，所以可將 $A$ 視為在 $R(A)$ 到 $R(A^{T})$ 上的轉換可逆(不論是否在 $\mathbb{R}^{n}$ 上可逆！)。
 
 # Tips
 
