@@ -70,6 +70,93 @@ $\implies \int \sin^{n}x \ dx=-\frac{1}{n}\cos x\sin^{n-1}x+ \frac{n-1}{n}\int \
 
 這個公式非常有用，因為它可以把 $\int\sin^{n}x\ dx$ 化簡為 $\int \sin x \, dx$ ($n$ 為奇數) 或 $\int  \, dx$ ($n$ 為偶數)。
 
+# Trigonometric Integrals
+
+## Integrals of Powers of Sine and Cosine
+
+對於計算 $\int \sin^{m}x\cos^{n}x \ dx$，我們有如下策略：
+
+(a)
+
+若 $n$ 為奇數 $2k+1$，則留下一個 cosine 並使用 $\cos^{2}x=1-\sin^{2}x$ 替代剩下的 cosine。最後使用 $u=\sin x$ 代換。($du=\cos x\ dx$)
+
+$\int \sin^{m}x\cos^{2k+1}x \ dx=\int\sin^{m}x(\cos^{2})^{k}\cos x=\int\sin^{m}x(1-\sin^{2})^{k}\cos x \ dx$ 
+
+(b)
+
+若 $m$ 為奇數 $2k+1$，同理可得。
+
+注：若 $m$ 與 $n$ 都是奇數，則 (a) 或 (b) 隨便你愛用啥用啥。
+
+(c)
+
+若 $m$ 與 $n$ 都是偶數，則使用半角公式。
+
+$$
+\sin^{2}x=\frac{1}{2}(1-\cos2x)\quad\cos^{2}x=\frac{1}{2}(1+\cos 2x)
+$$
+
+或者使用：
+
+$$
+\sin x\cos x=\frac{1}{2}\sin2x
+$$
+
+## Integrals of Powers of Secant and Tangent
+
+對於計算 $\int \tan^{m}x\sec^{n}x \ dx$，我們有以下策略：
+
+(a)
+
+若 $n=2k$ 為偶數且 $k\geq2$，則保留 $\sec^{2}x$ 並利用恆等式 $\sec^{2}x=\tan^{2}x+1$ 代替剩下的 secant。最後使用 $u=\tan x$ 代換。($du=\sec^{2}x \ dx$)
+
+(b)
+
+若 $m=2k+1$ 為奇數，則保留 $\sec x\tan x$，並利用恆等式代替剩下的 tangent。最後使用 $u=\sec x$ 代換。($du = \sec x\tan x \ dx$)
+
+(c)
+
+若存在偶數個 tangent 與奇數個 secant，將 tangent 全部換成 secant，然後使用 Integration By Parts。
+
+有時後，我們會需要使用以下兩條式子幫助求解：
+
+$$
+\int \tan x \, dx = \ln|\sec x|+C
+$$
+
+$$
+\int \sec x \, dx = \ln|\tan x+\sec x|+C
+$$
+
+最後，$\int \cot^{m}x\csc^{n}x \ dx$ 可以使用類似的方法求解。($1+\cot^{2}x=\csc^{2}x$)
+
+## Using Product Identities
+
+若想解：
+(a) $\int \sin mx\cos nx \ dx$
+(b) $\int \sin mx\sin nx \ dx$ 
+(c) $\int \cos mx\cos nx \, dx$ 
+
+以下的公式對求解三角函數積分非常有用，而我之前從未學過：
+
+(a)
+
+$$
+\sin A\cos B=\frac{1}{2}[\sin(A-B)+\sin(A+B)]
+$$
+
+(b)
+
+$$
+\sin A\sin B=\frac{1}{2}[\cos(A-B)-\cos(A+B)]
+$$
+
+(c)
+
+$$
+\cos A\cos B=\frac{1}{2}[\cos(A-B)+\cos(A+B)]
+$$
+
 # 重要例題
 
 # 大會考
