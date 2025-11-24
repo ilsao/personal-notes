@@ -127,7 +127,7 @@ $$
 g(x)=\int_{a}^{x}f(t)\ dt \Leftrightarrow g'(x)=f(x)
 $$
 
-其中，$f(x)$ 在 $[a,b]$ 上**連續**而 $g(x)$ 在 $[a,b]$ 上連續且可導(可導不是條件，而是必然的結果)，並且 $a\leq x\leq b$。
+其中，$f(x)$ 在 $[a,b]$ 上**連續**而 $g(x)$ 在 $[a,b]$ 上連續且可導(可導不是條件，而是必然的結果)，並且 $a\leq x\leq b$。(注意，若 $f(x)$ 包含有限個 jump discontinuity 時，$g'(x)$ 在 $f(x)$ 連續的那些點仍等於 $f(x)$，但在 jump discontinuity 的那些點通常不滿足此關係式)
 
 proof:
 令 $x,x+h$ 在 $(a,b)$ 上。
@@ -245,9 +245,9 @@ $\int_{-a}^{a}f(x) \ dx=-\int_{0}^{-a}f(x) \ dx+\int_{0}^{a}f(x) \ dx$
 
 # Tips
 
-- 使用左右端點法估計積分時，需要注意函數在區間內的**遞增/減**。(與 $a$，$b$ 的大小)
+- 使用左右端點法估計積分時，需要注意函數在區間內的**遞增/減**(判斷左端點估計出來的較大還是揍端點估計出來的較大)。(與 $a$，$b$ 的大小)
 - 在找 antiderivative 時，如果遇到 $(ax+b)^{n}$ 之類的形式很難找反導函數，可以考慮把括號展開。
-- 若 $u$ 為 $x$ 的函數，且 $g(x)=\int_{0}^{u}f(t) \ dt$。則 $g'(x)=f(u) \frac{du}{dx}$。(因爲 $\frac{d}{dx}g(x)=\frac{d}{du}g(x) \frac{du}{dx}$，注意分辨這個還有 substitution rule 的差別)
+- 若 $u$ 為 $x$ 的函數，且 $g(x)=\int_{0}^{u}f(x) \ dx$。則 $g'(x)=f(u) \frac{du}{dx}$。(因爲 $\frac{d}{dx}g(x)=\frac{d}{du}g(x) \frac{du}{dx}$，注意分辨這個還有 substitution rule 的差別)
 - $\cos(x^{2})$ 的反導函數**不是** $\frac{\sin(x^{2})}{2x}$。相反，我們(以我們的實力來說)找不到他的反導函數。
 - 利用圖形判斷積分大小時，記得看圖表 $y$ 軸值。(例如若 $0<y<1$ 時 $f^{2}$ 可能會比 $f$ 小)
 - 不會積的時候試試看用估計的。
@@ -291,9 +291,13 @@ Sol:
 注意這題有兩個考點：
 1. Chain Rule
 2. $\int_{a}^{b}f(x) \ dx=-\int_{b}^{a}f(x) \ dx$ 
-
+(I) (課外寫法)
 令 $u=e^{x}$，則 $y=\int_{u}^{1}\ln t \ dt=-\int_{1}^{u}\ln t \ dt$。
 又 $\frac{dy}{dx}= \frac{dy}{du} \frac{du}{dx}\implies y'=-\ln u\cdot \frac{du}{dx}=-\ln e^{x}\cdot e^{x}=-xe^{x}$。(By FTC1)
+(II) (課內寫法)
+令 $u=\ln t$ (因為想令 $u(e^{x})=x$)，則 $du=\frac{1}{t}dt\implies dt=e^{u}du$。
+$y = \int^{1}_{e^{x}}\ln t \ dt=\int_{0}^{x}-ue^{u} \ du$ 
+$y'=-xe^{x}$ (By FTC1) 注意此處無需帶換回 $\ln t$，有疑慮請回去看 FTC1 的定義。
 
 5.  (a) Show that $1\leq \sqrt{ 1+x^{3} }\leq1+x^{3}$ for all $x\geq0$.  (b) Show that $1\leq \int_{0}^{1}\sqrt{ 1+x^{3} } \ dx\leq 1.25$ .
 
@@ -373,7 +377,7 @@ $\implies \frac{1}{2}(e^{-1/4}+e^{-1})<L<1$
 Sol:
 這題我會，但是感覺很經典所以記錄一下。
 這題重點在用洛必達還有利用 FTC1 替換積分。
-令 $g(x)=\int_{1-x}^{1} \frac{1}{t^{3}-t} \ dt$。
+令 $g(x)=\int_{1-x}^{1} \frac{1}{t^{3}+t} \ dt=-\int_{1}^{u} \frac{1}{t^{3}+t}  \, dt$，則 $g'(x)= \frac{1}{u^{3}+u}= \frac{1}{(1-x)^{3}+(1-x)}$。
 那麼 $I=\lim_{ x \to 0^{+} } \frac{g(x)}{x} \stackrel{\left( \frac{0}{0} \right)}{=}\lim_{ x \to 0^{+} } g'(x)=\frac{1}{2}$。
 
 3. Consider $g(x)=\begin{cases} \frac{1}{x}\int_{0}^{\sqrt{ x }} \frac{1}{t^{2}+\sqrt{ t }+1} \ dt & \text{, }x>0 \\ 1 & \text{, }x\leq0\end{cases}$ . Which of the following options are TRUE ? (a) $\lim_{ x \to 0 }g(x)=1$ (b) $\lim_{ x \to \infty }g(x)=0$ (c) $\lim_{ x \to 0 }(\sin x)g(x)=0$ (d) $\lim_{ x \to 1 }g'(x)> 0$. 

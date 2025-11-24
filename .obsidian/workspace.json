@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Math/Calculus/Techniques of Integrations.md",
+                "file": "Math/Calculus/Integrals.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Techniques of Integrations"
+              "title": "Integrals"
             }
           },
           {
@@ -194,6 +194,8 @@
   },
   "active": "930e5d797c093d6f",
   "lastOpenFiles": [
+    "Math/Calculus/Differentiation Rules.md",
+    "Math/Calculus/Techniques of Integrations.md",
     "Math/Linear Algebra/Orthogonality.md",
     "Math/Linear Algebra/Linear Transformation.md",
     "Math/Linear Algebra/pic/Orthogonality/Pasted image 20251123210430.png",
@@ -210,8 +212,6 @@
     "Computer Networking/pic/Network Layer, Data Plane/Pasted image 20251122172126.png",
     "Math/Calculus/pic/Pasted image 20251121210001.png",
     "Computer Networking/pic/Network Layer, Data Plane/Pasted image 20251122170818.png",
-    "Math/Calculus/Techniques of Integrations.md",
-    "Math/Calculus/Differentiation Rules.md",
     "Math/Calculus/Applications of Differentiation.md",
     "Physics/Oscillatory Motion.md",
     "Physics/pic/Pasted image 20251121203452.png",
