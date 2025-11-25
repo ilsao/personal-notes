@@ -409,4 +409,3 @@ $=\lim_{ n \to \infty } \frac{4}{n^{2}}\sum_{i=1}^{n}n\sqrt{ 1-\left( \frac{i}{n
 $=4\int_{0}^{1}\sqrt{ 1-x^{2} } \ dx$ (誒，注意這裡不是 $\int_{0}^{4}\sqrt{ 1-x^{2} } \ dx$ 沒定義誒！！！)
 然後注意，這邊還沒學 inverse substitution rule，所以把 $\int_{0}^{1}\sqrt{ 1-x^{2} }$ 視為求半徑為 $1$ 的 $\frac{1}{4}$ 圓面積就好啦。
 $\implies4\int_{0}^{1}\sqrt{ 1-x^{2} } \ dx=4\left( \frac{1}{4}\pi \times 1^{2} \right)=\pi$ 
-

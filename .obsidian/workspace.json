@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Math/Calculus/Integrals.md",
+                "file": "Math/Calculus/Techniques of Integrations.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Integrals"
+              "title": "Techniques of Integrations"
             }
           },
           {
@@ -194,13 +194,13 @@
   },
   "active": "930e5d797c093d6f",
   "lastOpenFiles": [
+    "Math/Calculus/Integrals.md",
     "Math/Calculus/Differentiation Rules.md",
     "Math/Calculus/Techniques of Integrations.md",
     "Math/Linear Algebra/Orthogonality.md",
     "Math/Linear Algebra/Linear Transformation.md",
     "Math/Linear Algebra/pic/Orthogonality/Pasted image 20251123210430.png",
     "Math/Linear Algebra/Vector Space.md",
-    "Math/Calculus/Integrals.md",
     "Math/Calculus/Basic concept.md",
     "Math/Linear Algebra/pic/Orthogonality/Pasted image 20251122210350.png",
     "Math/Linear Algebra/pic/Orthogonality/Pasted image 20251122200645.png",

@@ -137,7 +137,7 @@ $$
 (b) $\int \sin mx\sin nx \ dx$ 
 (c) $\int \cos mx\cos nx \, dx$ 
 
-以下的公式對求解三角函數積分非常有用，而我之前從未學過：
+以下的公式對求解三角函數積分非常有用，而我之前從未學過(二評：好難背啊啊啊)：
 
 (a)
 
@@ -157,7 +157,52 @@ $$
 \cos A\cos B=\frac{1}{2}[\cos(A-B)+\cos(A+B)]
 $$
 
+# Tips
+
+1. $\int \frac{1}{2\cos^{2}\theta} \ d\theta=\int \frac{1}{2}\sec^{2}\theta \ d\theta=\frac{1}{2}\tan \theta$ 
+
 # 重要例題
+
+1. Evaluate $\int_{0}^{\pi/4}\sin^{2}2\theta \ d\theta$ 
+
+Sol:
+這題可能會想成把 $\sin 2\theta=2\sin \theta \cos \theta$，但是這樣反而會令問題變複雜。
+使用 $\sin^{2}\theta=\frac{1}{2}(1-\cos2\theta)$。
+$\int_{0}^{\pi/4}\sin^{2}2\theta \ d\theta=\frac{1}{2}\int_{0}^{\pi/4}(1-\cos4\theta)  \, dx=\frac{1}{2}\left[ \theta-\frac{1}{4}\sin4\theta \right]^{\pi/4}_{0}=\frac{\pi}{8}$ 
+
+2. Find $\int x\tan^{2}x \ dx$. 
+
+Sol:
+很自然的想到 IBP，但是不能直接 IBP，因為你發現你不會找 $\tan^{2}x$ 的反導函數。
+那麼，很自然的把 $\tan^{2}x=\sec^{2}x-1$ 然後就可以很簡單的找到 $\sec^{2}x$ 的反導函數 $\tan x$。
+然後你就會力，不用繼續寫了吧。
+
+3. Find $\int \frac{1}{\sec \theta+1} \, d\theta$. 
+
+Sol:
+$\int \frac{1}{\sec \theta+1} \, d\theta=\int \frac{\cos \theta}{1+\cos \theta} \, d\theta$ 
+沒法往下做，思考生出一個平方有沒有用？試試看吧。
+$\cos \theta=2\cos^{2} \frac{\theta}{2}-1$，代入：
+$\int \frac{\cos \theta}{1+\cos \theta} \, d\theta=\int \frac{2\cos^{2} \frac{\theta}{2}-1}{2\cos^{2} \frac{\theta}{2}} \ d\theta=\int 1- \frac{1}{2}\sec^{2} \frac{\theta}{2} \ d\theta=\theta-\frac{1}{2}\tan \frac{\theta}{2}+C$。
+`~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^ 注意此處代換`
+
+
+4. Prove the formula $\int_{-\pi}^{\pi}\sin mx\sin nx \ dx=\begin{cases}0 & \text{if }m\neq n \\ \pi & \text{if }m=n\end{cases}$, where $m$ and $n$ are positive integers. 
+
+Sol:
+這個不能直接說 $\sin mx\sin nx$ 為奇函數，因為必須按照 $m$ 與 $n$ 的值分類討論。
+$\int_{-\pi}^{\pi}\sin mx\sin nx \ dx=\frac{1}{2}\int_{-\pi}^{\pi}\cos(m-n)x-\cos(m+n)x \ dx$ 
+當 $m\neq n$：
+$\frac{1}{2}\int_{-\pi}^{\pi}\cos(m-n)x-\cos(m+n)x \ dx=\frac{1}{2}\left[  \frac{\sin(m-n)x}{m-n}- \frac{\sin(m+n)x}{m+n} \right]^{\pi}_{-\pi}=0$ 
+當 $m=n$：
+$\frac{1}{2}\int_{-\pi}^{\pi}\cos(m-n)x-\cos(m+n)x \ dx=\frac{1}{2}\int_{-\pi}^{\pi}1-\cos2mx \ dx=\frac{1}{2}\left[ x-\frac{1}{2m}\sin2mx \right]^{\pi}_{-\pi}=\pi$ 
+
+5. A finite Fourier series is given by the sum $f(x)=\sum_{n=1}^{N}a_{n}\sin nx$. Use the result of (3) to show that $a_{m}=\frac{1}{\pi}\int_{-\pi}^{\pi}f(x)\sin mx \ dx$. 
+
+Sol:
+不要怕，咱們把 $f(x)$ 的定義代進公式：
+$a_{m}=\frac{1}{\pi}\int_{-\pi}^{\pi}\sum_{n=1}^{N}a_{n}\sin nx\sin mx=a_{m}$ 
+根據 (3)，因為除了第 $m$ 項使得 $m=n$ 時會等於 $\pi$，其他的 $n$ 值都會導致積分得到 $0$。
 
 # 大會考
 
