@@ -41,19 +41,19 @@ $$
 \int_{a}^{b}f(x) \ dx=\lim_{ n \to \infty } \sum_{i=1}^{n}f(x_{i}^{*})\Delta x
 $$
 
-若此極限存在且對於任意 sample point 都保持定值，則稱 $f$ 在 $[a,b]$ 可微。
+若此極限存在且對於任意 sample point 都保持定值，則稱 $f$ 在 $[a,b]$ 可積。
 
 我們介紹一個定理來判斷函數是否可積。
 
-若 $f$ 在閉區間 $[a,b]$ 連續或者僅含有限個 jump discontinuities，則 $f$ 在閉區間內可積。
+若 $f$ 在閉區間 $[a,b]$ **連續或者僅含有限個 jump discontinuities**，則 $f$ 在閉區間內可積。
 
 為了方便，我們通常將 sample points 取右端點，也就是：
 
 $$
-\int_{a}^{b}f(x)=\lim_{ n \to \infty } \sum_{i=1}^{n}f(x_{i})\Delta x
+\int_{a}^{b}f(x) \ dx=\lim_{ n \to \infty } \sum_{i=1}^{n}f(x_{i})\Delta x
 $$
 
-其中，$\Delta x= \frac{b-a}{n}$，$x_{i}= a+i\Delta x$。
+其中，$\Delta x= \frac{b-a}{n}$，$x_{i}= \boxed{a}+i\Delta x$。
 
 ## Evaluating Definite Integrals
 
@@ -84,7 +84,7 @@ $$
 也就是：
 
 $$
-\int_{a}^{b}f(x) \ dx\approx \lim_{ n \to \infty } \sum_{i=1}^{n}f(\bar{x_{i}})\Delta x
+\int_{a}^{b}f(x) \ dx= \lim_{ n \to \infty } \sum_{i=1}^{n}f(\bar{x_{i}})\Delta x
 $$
 
 ## Properties of the Definite Integral
@@ -97,12 +97,12 @@ $$
  & \int_{a}^{a}f(x) \ dx = 0 \\
  & \int_{a}^{b}c \ dx=c(b-a)\quad\quad\quad\quad\quad\quad\text{,where } c\text{ is any constant} \\
  & \int_{a}^{b}[f(x)\pm g(x)] \ dx = \int_{a}^{b}f(x) \ dx\pm\int_{a}^{b}g(x) \ dx \\
- & \int_{a}^{b}cf(x) \ dx =c\int_{a}^{b}f(x) \ dx\quad\quad\text{,where }c\text{ is any constan} \\ \\
+ & \int_{a}^{b}cf(x) \ dx =c\int_{a}^{b}f(x) \ dx\quad\quad\text{,where }c\text{ is any constant} \\ \\
  & \int_{a}^{b}f(x) \ dx + \int_{b}^{c}f(x)=\int_{a}^{c}f(x) \ dx
 \end{align}
 $$
 
-(!以下性質可以拿來考不等式判斷的題目，例如重要例題 3) 上述性質不用考慮 $a,b$ 的大小皆可成立，但下列性質必須保證 $a\leq b$。
+(!以下性質可以拿來考不等式判斷的題目，例如重要例題 3) 上述性質不用考慮 $a,b$ 的大小皆可成立，**但下列性質必須保證 $a\leq b$**。
 
 $$
 \begin{align}
@@ -127,7 +127,7 @@ $$
 g(x)=\int_{a}^{x}f(t)\ dt \Leftrightarrow g'(x)=f(x)
 $$
 
-其中，$f(x)$ 在 $[a,b]$ 上**連續**而 $g(x)$ 在 $[a,b]$ 上連續且可導(可導不是條件，而是必然的結果)，並且 $a\leq x\leq b$。
+其中，$f(x)$ 在 $[a,b]$ 上**連續**而 $g(x)$ 在 $[a,b]$ 上連續且可導(可導不是條件，而是必然的結果)，並且 $a\leq x\leq b$。(注意，若 $f(x)$ 包含有限個 jump discontinuity 時，$g'(x)$ 在 $f(x)$ 連續的那些點仍等於 $f(x)$，但在 jump discontinuity 的那些點通常不滿足此關係式)
 
 proof:
 令 $x,x+h$ 在 $(a,b)$ 上。
@@ -173,7 +173,7 @@ $$
 
 ![[Pasted image 20251119202513.png]]
 
-需要注意，不定積分所得出來的函數(們)通常只在某個區間內成立。比如某個反導函數為：$-\frac{1}{x}+C$ 在 $x=0$ 時未定義。
+需要注意，不定積分所得出來的函數(們)可能只在某個區間內成立。比如某個反導函數為：$-\frac{1}{x}+C$ 在 $x=0$ 時未定義。
 
 ## The Net Change Theorem
 
@@ -245,9 +245,9 @@ $\int_{-a}^{a}f(x) \ dx=-\int_{0}^{-a}f(x) \ dx+\int_{0}^{a}f(x) \ dx$
 
 # Tips
 
-- 估計積分時，需要注意函數在區間內的**遞增/減**。
+- 使用左右端點法估計積分時，需要注意函數在區間內的**遞增/減**(判斷左端點估計出來的較大還是揍端點估計出來的較大)。(與 $a$，$b$ 的大小)
 - 在找 antiderivative 時，如果遇到 $(ax+b)^{n}$ 之類的形式很難找反導函數，可以考慮把括號展開。
-- 若 $u$ 為 $x$ 的函數，且 $g(x)=\int_{0}^{u}f(t) \ dt$。則 $g'(x)=f(u) \frac{du}{dx}$。(因爲 $\frac{d}{dx}g(x)=\frac{d}{du}g(x) \frac{du}{dx}$)
+- 若 $u$ 為 $x$ 的函數，且 $g(x)=\int_{0}^{u}f(x) \ dx$。則 $g'(x)=f(u) \frac{du}{dx}$。(因爲 $\frac{d}{dx}g(x)=\frac{d}{du}g(x) \frac{du}{dx}$，注意分辨這個還有 substitution rule 的差別)
 - $\cos(x^{2})$ 的反導函數**不是** $\frac{\sin(x^{2})}{2x}$。相反，我們(以我們的實力來說)找不到他的反導函數。
 - 利用圖形判斷積分大小時，記得看圖表 $y$ 軸值。(例如若 $0<y<1$ 時 $f^{2}$ 可能會比 $f$ 小)
 - 不會積的時候試試看用估計的。
@@ -256,6 +256,7 @@ $\int_{-a}^{a}f(x) \ dx=-\int_{0}^{-a}f(x) \ dx+\int_{0}^{a}f(x) \ dx$
 - 如果反導函數是 $\ln|g(x)|$ 的形式，考慮 $g(x)$ 是否恆正。若是，則答案必須處除絕對值。
 - $u=2x$，則 $du=2dx$ 而不是 $du=dx$，小菜菜。
 - 不定積分得出的 $u$ 需要替換回 $g(x)$，但是定積分如果 $\int_{g(a)}^{g(b)}f(u) \ du$ 就不用替換回 $g(x)$，除非是 $\int_{a}^{b}f(u) \ du$。
+- 將 $\int_{0}^{1}\sqrt{ 1-x^{2} } \ dx$ 視為求半徑為 $1$ 的圓的 $\frac{1}{4}$ 面積：$\frac{1}{4}\pi$。
 
 # 重要例題
 
@@ -284,15 +285,19 @@ Sol:
 可以通過觀察 $\frac{26}{3}$ 聯想 $\frac{26}{3}=\int_{1}^{3}x^{2}\ dx$，構建答案。
 因為 $\sqrt{ x^{4}+1 }\geq \sqrt{ x^{4} }=x^{2}$，所以 $\int_{1}^{3}\sqrt{ x^{4}+1 }\ dx\geq \int_{1}^{3}x^{2}\ dx=\frac{26}{3}$。
 
-4. Use Part 1 of the Fundamental Theorem of Calculus to find the derivative of the function: $y=\int_{e^{x}}^{-1}\ln t \ dt$ 
+4. Use Part 1 of the Fundamental Theorem of Calculus to find the derivative of the function: $y=\int_{e^{x}}^{1}\ln t \ dt$ 
 
 Sol:
 注意這題有兩個考點：
 1. Chain Rule
 2. $\int_{a}^{b}f(x) \ dx=-\int_{b}^{a}f(x) \ dx$ 
-
-令 $u=e^{x}$，則 $y=\int_{u}^{-1}\ln t \ dt=-\int_{-1}^{u}\ln t \ dt$。
+(I) (課外寫法)
+令 $u=e^{x}$，則 $y=\int_{u}^{1}\ln t \ dt=-\int_{1}^{u}\ln t \ dt$。
 又 $\frac{dy}{dx}= \frac{dy}{du} \frac{du}{dx}\implies y'=-\ln u\cdot \frac{du}{dx}=-\ln e^{x}\cdot e^{x}=-xe^{x}$。(By FTC1)
+(II) (課內寫法)
+令 $u=\ln t$ (因為想令 $u(e^{x})=x$)，則 $du=\frac{1}{t}dt\implies dt=e^{u}du$。
+$y = \int^{1}_{e^{x}}\ln t \ dt=\int_{0}^{x}-ue^{u} \ du$ 
+$y'=-xe^{x}$ (By FTC1) 注意此處無需帶換回 $\ln t$，有疑慮請回去看 FTC1 的定義。
 
 5.  (a) Show that $1\leq \sqrt{ 1+x^{3} }\leq1+x^{3}$ for all $x\geq0$.  (b) Show that $1\leq \int_{0}^{1}\sqrt{ 1+x^{3} } \ dx\leq 1.25$ .
 
@@ -309,7 +314,7 @@ $\implies f(1+0)=1$ 為 $f(1+x^{3})$ 在 $[0,\infty)$ 上的全局最小值 $\im
 也就是 $1+x^{3}-\sqrt{ 1+x^{3} }\geq0\implies \sqrt{ 1+x^{3} }\leq 1+x^{3}$。
 所以，$1\leq \sqrt{ 1+x^{3} }\leq1+x^{3}$。
 (b)
-$\int_{0}^{1}1 \ dx=\int_{0}^{1}\sqrt{ 1+x^{3} } \ dx\leq \int_{0}^{1}1+x^{3} \ dx$ 
+$\int_{0}^{1}1 \ dx\leq\int_{0}^{1}\sqrt{ 1+x^{3} } \ dx\leq \int_{0}^{1}1+x^{3} \ dx$ 
 $\implies 1\leq \int_{0}^{1}\sqrt{ 1+x^{3} }\leq1.25$ 
 
 6. Express $\lim_{ n \to \infty }\left( \frac{1}{n^{3}\sqrt{ 4n^{2}+1 }}+\dots+ \frac{n^{3}}{n^{3}\sqrt{ 4n^{2}+n^{2} }} \right)$ as an integral on $[0,1]$. 
@@ -359,23 +364,23 @@ Sol:
 1. Which one of the following statements is TRUE for $\int_{0}^{1}e^{-x^{2}}dx=L$? (ans: $\frac{1}{2}(e^{-1/4}+e^{-1})<L<1$)
 
 Sol:
-這題使用左右端點和估計面積值。
+這題使用**左右端點和估計面積值**。(嘗試代換你會發現換不了一點)
 首先判斷函數的遞增/減。
-因為 $e^{-x^{2}}$ 在 $[0,1]$ **遞減**，所以 $R_{n}<L<L_{n}$。
+因為 $e^{-x^{2}}$ 在 $[0,1]$ **遞減**，所以 $R_{n}\leq L\leq L_{n}$。
 觀察一下題目，決定取 $\Delta x=\frac{1}{2}$。
 $L_{n}=\left( f(0)+f\left( \frac{1}{2} \right) \right)\Delta x=\frac{1}{2}(e^{0}+e^{-1/4})=\frac{1}{2}(1+e^{-1/4})<1$ 
 $R_{n}=\left( f\left( \frac{1}{2} \right)+f(1) \right)\Delta x=\frac{1}{2}(e^{-1/4}+e^{-1})$ 
 $\implies \frac{1}{2}(e^{-1/4}+e^{-1})<L<1$ 
 
-2. Let $I=\lim_{ x \to 0^{+} } \frac{1}{x}\left( \int_{1-x}^{1} \frac{1}{t^{3}-t} \ dt \right)$, find $I$。
+2. Let $I=\lim_{ x \to 0^{+} } \frac{1}{x}\left( \int_{1-x}^{1} \frac{1}{t^{3}+t} \ dt \right)$, find $I$。
 
 Sol:
 這題我會，但是感覺很經典所以記錄一下。
 這題重點在用洛必達還有利用 FTC1 替換積分。
-令 $g(x)=\int_{1-x}^{1} \frac{1}{t^{3}-t} \ dt$。
+令 $g(x)=\int_{1-x}^{1} \frac{1}{t^{3}+t} \ dt=-\int_{1}^{u} \frac{1}{t^{3}+t}  \, dt$，則 $g'(x)= \frac{1}{u^{3}+u}= \frac{1}{(1-x)^{3}+(1-x)}$。
 那麼 $I=\lim_{ x \to 0^{+} } \frac{g(x)}{x} \stackrel{\left( \frac{0}{0} \right)}{=}\lim_{ x \to 0^{+} } g'(x)=\frac{1}{2}$。
 
-3. Consider $g(x)=\begin{cases} \frac{1}{x}\int_{0}^{\sqrt{ x }} \frac{1}{t^{2}+\sqrt{ t }+1} \ dt & \text{, }x>0 \\ 1 & \text{, }x\leq1\end{cases}$ . Which of the following options are TRUE ? (a) $\lim_{ x \to 0 }g(x)=1$ (b) $\lim_{ x \to \infty }g(x)=0$ (c) $\lim_{ x \to 0 }(\sin x)g(x)=0$ (d) $\lim_{ x \to 1 }g'(x)> 0$. 
+3. Consider $g(x)=\begin{cases} \frac{1}{x}\int_{0}^{\sqrt{ x }} \frac{1}{t^{2}+\sqrt{ t }+1} \ dt & \text{, }x>0 \\ 1 & \text{, }x\leq0\end{cases}$ . Which of the following options are TRUE ? (a) $\lim_{ x \to 0 }g(x)=1$ (b) $\lim_{ x \to \infty }g(x)=0$ (c) $\lim_{ x \to 0 }(\sin x)g(x)=0$ (d) $\lim_{ x \to 1 }g'(x)> 0$. 
 
 Sol:
 這題卡在 (c) 忘記換 $\frac{\sin x}{x}$ 還有 (d) 用估計的方式算積分。
@@ -392,3 +397,16 @@ $=\frac{1}{6}-\int_{0}^{1} \frac{1}{t^{2}+\sqrt{ t }+1} \ dt$
 因為這個積分不好算，我們用估的：$\frac{1}{t^{2}+\sqrt{ t }+1}$ 在 $t\geq0$ 上單調遞減，所以 $\frac{1}{t^{2}+\sqrt{ t }+1}$ 的最小值為 $\frac{1}{3}$。
 $\implies \int_{0}^{1}\frac{1}{t^{2}+\sqrt{ t }+1} \ dt \geq \frac{1}{3}$。
 $\implies \lim_{ x \to 1 }g'(x)<0$ 
+(d) 選項有錯，但是懶得算了。就醬吧。
+
+# 書銘考古
+
+1. Find the limit $\lim_{ n \to \infty } \frac{4}{n^{2}}(\sqrt{ n^{2}-1 }+\sqrt{ n^{2}-4 }+\dots+\sqrt{ n^{2}-n^{2} })$. 
+
+Sol:
+$\lim_{ n \to \infty } \frac{4}{n^{2}}(\sqrt{ n^{2}-1 }+\sqrt{ n^{2}-4 }+\dots+\sqrt{ n^{2}-n^{2} })=\lim_{ n \to \infty } \frac{4}{n^{2}}\sum_{i=1}^{n}\sqrt{ n^{2}-i^{2} }$ 
+$=\lim_{ n \to \infty } \frac{4}{n^{2}}\sum_{i=1}^{n}n\sqrt{ 1-\left( \frac{i}{n} \right)^{2} }=\lim_{ n \to \infty } \frac{4}{n}\sum_{i=1}^{n}\sqrt{ 1-\left( \frac{i}{n} \right)^{2} }$ 
+$=4\int_{0}^{1}\sqrt{ 1-x^{2} } \ dx$ (誒，注意這裡不是 $\int_{0}^{4}\sqrt{ 1-x^{2} } \ dx$ 沒定義誒！！！)
+然後注意，這邊還沒學 inverse substitution rule，所以把 $\int_{0}^{1}\sqrt{ 1-x^{2} }$ 視為求半徑為 $1$ 的 $\frac{1}{4}$ 圓面積就好啦。
+$\implies4\int_{0}^{1}\sqrt{ 1-x^{2} } \ dx=4\left( \frac{1}{4}\pi \times 1^{2} \right)=\pi$ 
+
