@@ -260,6 +260,123 @@ $R(A)$ 指的是 $A$ 的 column space 對吧？根據上述我們還知道 $\mat
 
 因為這種對應是一對一的，所以可將 $A$ 視為在 $R(A)$ 到 $R(A^{T})$ 上的轉換可逆(不論是否在 $\mathbb{R}^{n}$ 上可逆！)。
 
+# Least Squares Problems
+
+## Least Squares Solutions of Overdetermined Systems
+
+對於一個 $m\times n$ 超定系統，很可能系統 $A\mathbf{x}=\mathbf{b}$ 無解。
+
+我們首先定義**殘差(residual)**：
+
+$$
+r(\mathbf{x})=\mathbf{b}-A\mathbf{x}
+$$
+
+我們定義 $\mathbf{b}$ 到 $A\mathbf{x}$ 的距離為：
+
+$$
+||\mathbf{b}-A\mathbf{x}||=||r(\mathbf{x})||
+$$
+
+如果你想找 $\mathbf{\hat{x}}\in \mathbb{R}^{n}$ 使得 $||b-A\mathbf{\hat{x}}||$ 最小，則此類問題稱為 Least Squares Solution。
+
+閒話少說，直接給定理。
+
+令 $S$ 為 $\mathbb{R}^{m}$ 的子空間。對於任意 $\mathbf{b}\in \mathbb{R}^{m}$ 都有唯一的 $\mathbf{p}\in S$ 最靠近 $\mathbf{b}$，即：
+
+$$
+||\mathbf{b}-\mathbf{y}||>||\mathbf{b}-\mathbf{p}||
+$$
+
+其中 $\mathbf{y}\in S$ 且 $\mathbf{y}\neq \mathbf{p}$。而且，$\mathbf{p}\in S$ 最靠近 $\mathbf{b}\Leftrightarrow\mathbf{b}-\mathbf{p}\in S^{\perp}$。
+
+proof:
+因為 $\mathbb{R}^{m}=S\oplus S^{\perp}$，任意 $\mathbf{b}\in \mathbb{R}^{m}$ 都可以被唯一的表示成 $\mathbf{b}=\mathbf{p}+\mathbf{z}$，其中 $\mathbf{p}\in S$，$\mathbf{z}\in S^{\perp}$。
+若 $\mathbf{y}$ 為任意 $S$ 中其他向量，則：$||\mathbf{b}-\mathbf{y}||^{2}=||(\mathbf{b}-\mathbf{p})+(\mathbf{p}-\mathbf{y})||^{2}$。
+因為 $\mathbf{b}-\mathbf{p}=\mathbf{z}\in S^{\perp}$ 且 $\mathbf{p-\mathbf{y}}\in S$，由畢氏定理有：$||\mathbf{b}-\mathbf{y}||^{2}=||\mathbf{b}-\mathbf{p}||^{2}+||\mathbf{p}-\mathbf{y}||^{2}$。
+($||\mathbf{u}+\mathbf{v}||^{2}=||\mathbf{u}||^{2}+||\mathbf{v}||^{2}$)
+所以，$||\mathbf{b}-\mathbf{y}||>||\mathbf{b}-\mathbf{p}||$。也就是說，若 $\mathbf{p}\in S$ 且 $\mathbf{b}-\mathbf{p}\in S^{\perp}$ 則 $\mathbf{p}$ 就是 $S$ 中最靠近 $\mathbf{b}$ 的向量。
+反過來說，若 $\mathbf{q}\in S$ 且 $\mathbf{b}-\mathbf{q}\not\in S^{\perp}$，則 $||\mathbf{b}-\mathbf{q}||>||\mathbf{b}-\mathbf{p}||$。
+
+對於上述引理的特殊情況 $\mathbf{b}\in S$，會有 $\mathbf{b}=\mathbf{p}+\mathbf{z}$ 其中 $\mathbf{p}=\mathbf{b}$，$\mathbf{z}=\mathbf{0}$。
+
+當 $\mathbf{\hat{x}}$ 為 least squares problem $A\mathbf{x}=\mathbf{b}$ 的解 $\iff$ $\mathbf{p}=A\mathbf{\hat{x}}$ 是 $R(A)$ 中最靠近 $\mathbf{b}$ 的向量。
+
+其中，向量 $\mathbf{p}$ 被稱為 $\mathbf{b}$ 到 $R(A)$ 的投影。(the projection of $\mathbf{b}$ onto $R(A)$)
+
+並且根據上述定理我們有：
+
+$$
+\mathbf{b}-\mathbf{p}=\mathbf{b}-A\mathbf{\hat{x}}=r(\mathbf{\hat{x}})
+$$
+
+殘差必須垂直 $R(A)$，也就是：
+
+$$
+r(\mathbf{\hat{x}})\in R(A)^{\perp}
+$$
+
+那怎麼找 $\mathbf{\hat{x}}$？
+
+我們有 $r(\mathbf{\hat{x}})\in R(A)^{\perp}=N(A^{T})$，也就是 $\mathbf{0}=A^{T}r(\mathbf{\hat{x}})=A(\mathbf{b}-A\mathbf{\hat{x}})$，也就等於求解 $A^{T}A\mathbf{x}=A\mathbf{b}$。
+
+我們將 $A^{T}A\mathbf{x}=A^{T}\mathbf{x}$ 稱為 **normal equation**。
+
+送你個定理(我不要哇！！！)：
+
+若 $A$ 是一個 $m\times n$ 大小矩陣且秩為 $n$，normal equation：
+
+$$
+A^{T}A\mathbf{x}=A^{T}\mathbf{b}
+$$
+
+有唯一解：
+
+$$
+\mathbf{\hat{x}}=(A^{T}A)^{-1}A^{T}\mathbf{b}
+$$
+
+且 $\mathbf{\hat{x}}$ 是 least squares problem $A\mathbf{x}=\mathbf{b}$ 的唯一解。(the unique least squares solution of the system)
+
+proof:
+考慮 $A^{T}A\mathbf{x}=\mathbf{0}$。令 $\mathbf{z}$ 為他的解，則 $A\mathbf{z}\in N(A^{T})$ 且 $A\mathbf{z}\in R(A)$。因為 $A\mathbf{z}\in N(A^{T})\cap R(A)=\{\mathbf{0}\}$，所以 $A\mathbf{z}=\mathbf{0}$。
+又因為 $A$ 的秩為 $n$，所以 $A$ 的 column vectors 線性獨立 $\implies A\mathbf{z}=\mathbf{0}$ 只有零解 $\mathbf{z}=\mathbf{0}\implies A^{T}A\mathbf{x}=\mathbf{0}$ 只有零解。
+$\implies A^{T}A$ 可逆 $\mathbf{\hat{x}}=(A^{T}A)^{-1}A\mathbf{b}$ 唯一且為 least squares solution $A\mathbf{x}=\mathbf{b}$ 的唯一解。
+
+我們可以通過：
+
+$$\mathbf{p}=A\mathbf{\hat{x}}=A(A^{T}A)^{-1}A\mathbf{b}$$
+
+尋找 $R(A)$ 上的  projection vector，使得 $\mathbf{p}$ 與 $\mathbf{b}$ 最近。
+
+我們將 $P=A(A^{T}A)^{-1}A$ 稱為**投影矩陣(projection matrix)**。
+
+如果給定一些數據點，找線性回歸：
+
+$$
+y=c_{0}+c_{1}x
+$$
+
+我們可以考慮 least squares problem：
+
+$$
+\begin{bmatrix}
+1 & x_{1} \\
+1 & x_{2} \\
+\vdots & \vdots \\
+1 & x_{m}
+\end{bmatrix}\begin{bmatrix}
+c_{0} \\
+c_{1}
+\end{bmatrix}
+=\begin{bmatrix}
+y_{1} \\
+y_{2} \\
+\vdots \\
+y_{m}
+\end{bmatrix}
+$$
+
 # Tips
 
 - 做不出來的時候回頭看看題目，說不定會有驚人發現！
