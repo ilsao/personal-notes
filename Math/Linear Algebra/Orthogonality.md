@@ -120,7 +120,7 @@ $$
 
 給你個例子：$A$ 為 $m\times n$ 矩陣，而 $\mathbf{x}\in N(A)$，則 $A\mathbf{x}=\mathbf{0}$。所以，對任意 $A^{T}$ 的 column vector，都有 $\mathbf{x}^{T}\mathbf{y}=0$，所以 $N(A)$ 與 $\text{Col}(A^{T})$ 正交。
 
-注意，$xy$ 平面組成的向量空間與 $yz$ 平面組成的向量空間並不正交。事實上，只有平面上的某些向量正交。
+注意，**$xy$ 平面組成的向量空間與 $yz$ 平面組成的向量空間並不正交**。事實上，只有平面上的某些向量正交。
 
 接下來再給一個定義：令 $Y$ 為 $\mathbb{R}^{n}$ 的子空間。由 $\mathbb{R}^{n}$ 中所有與任意 $Y$ 中向量正交的向量組成的集合被計為 $Y^{\perp}$。
 
@@ -172,7 +172,7 @@ $$\text{dim }S+\text{dim }S^{\perp}=n$$
 
 proof:
 若 $S=\{\mathbf{0}\}$，則 $S^{\perp}=\mathbb{R}^{n}$。滿足 $\text{dim }S+\text{dim }S^{\perp}=n$。
-若 $S\neq\{\mathbf{0}\}$，則令 $X$ 為 $r\times n$ 大小的矩陣。$X$ 的第 $i$ 個 row 定義為 $\mathbf{x}_{i}^{T}$。
+若 $S\neq\{\mathbf{0}\}$，則**令 $X$ 為 $r\times n$ 大小的矩陣。$X$ 的第 $i$ 個 row 定義為 $\mathbf{x}_{i}^{T}$**。
 那麼，$\text{rank}(X)=r$，且 $R(X^{T})=S$。
 由上一個定理，我們有：$S^{\perp}=R(X^{T})^{\perp}=N(X)$。
 根據 rank-nullity theorem，我們有 $\text{dim }N(X)=n-r$。
@@ -263,6 +263,9 @@ $R(A)$ 指的是 $A$ 的 column space 對吧？根據上述我們還知道 $\mat
 # Tips
 
 - 做不出來的時候回頭看看題目，說不定會有驚人發現！
+- 小菜菜，分清楚 $R(A)$ 等於 $\text{Col}(A)$ 不等於 $\text{Row}(A)$。
+- 若已知 $U$ 與 $V$ 為兩向量空間，則想證明 $U$ 是 $V$ 的子空間只需要證明 $U\subseteq V$。
+- 若 $U\subseteq V$，則 $V^{\perp}\subseteq U^{\perp}$。
 
 # 重要例題
 
@@ -293,3 +296,75 @@ $=||\mathbf{a_{1}}||^{2}-||\mathbf{a_{1}}||^{2}\left(  \frac{\mathbf{a_{1}}^{T}\
 $\implies h^{2}||\mathbf{a_{2}}||^{2}=||\mathbf{a_{1}}||^{2}||\mathbf{a_{2}}||^{2}-(\mathbf{a_{1}}^{T}\mathbf{a_{2}})^{2}$ 
 (b)
 展開化簡就好。
+
+![[Pasted image 20251126095445.png]]
+
+Sol:
+好啦，我知道這不難。但是複習一下好嗎，你會寫錯。
+對 $A$ 找 RREF $=\begin{bmatrix}1 & 0 & 1 \\ 0 & 1 & 1 \\ 0 & 0 & 0\end{bmatrix}$。
+$A$ 的 RREF 可以幫助找 $N(A)$ 與 $R(A^{T})$。
+顯然，$N(A)=\text{span}((-1,-1,1)^{T})$，$R(A^{T})=\text{span}((1,0,1)^{T},(0,1,1)^{T})$。
+對 $A^{T}$ 找 RREF $=\begin{bmatrix}1 & 0 & 1 \\ 0 & 1 & 2 \\ 0 & 0 & 0\end{bmatrix}$。
+顯然，$N(A^{T})=\text{span}((-1,-2,1)^{T})$，$R(A)=\text{span}((1,0,1)^{T},(0,1,2)^{T})$。
+
+![[Pasted image 20251126102936.png]]
+
+Sol:
+再送你一個超簡單但是我做錯的題目叭～人甚至不能共情之前的自己～
+令 $X=\begin{bmatrix}1 \\ -1 \\ 1\end{bmatrix}$，則 $R(X)=\text{span}(\mathbf{x})$。
+所以 $S^{\perp}=R(X)^{\perp}=N(X^{T})=\text{span}((1,1,0)^{T},(-1,0,1)^{T})$。(誒，不要只有一個 row 就不會解啊！設 free variable 啊兄弟！)
+
+![[Pasted image 20251126104511.png]]
+
+Sol:
+小錯不慌。
+有 $\text{dim }R(A)=\text{dim }R(A^{T})=r$。
+則有 $\text{dim }N(A)=n-r$，又 $A^{T}$ 為 $n\times m$ 的矩陣 所以 $\text{dim }N(A^{T})=m-r$ By rank-nullity theorem. 
+
+![[Pasted image 20251126114121.png]]
+
+Sol:
+(a)
+$\mathbf{x}\in N(A^{T}A)\implies A^{T}(A\mathbf{x})=0\implies A\mathbf{x}\in N(A^{T})$ 
+又因為 $A\mathbf{x}$ 為 $A$ 的 column vector 的線性組合，所以 $A\mathbf{x}\in R(A)$。
+(b)
+對於 $\mathbf{x}\in N(A)$，有 $A^{T}A\mathbf{x}=A^{T}\mathbf{0}=\mathbf{0}\implies N(A)\subseteq N(A^{T}A)$。
+取任意 $\mathbf{y}\in N(A^{T}A)$ 都有 $A\mathbf{y}\in R(A)\cap N(A^{T})=\{\mathbf{0}\}\implies \mathbf{y}\in N(A)$。
+$\implies N(A)=N(A^{T}A)$ 
+(c)
+$\text{rank}(A)+\text{dim }N(A)=n$ 
+$\text{rank}(A^{T}A)+\text{dim }N(A^{T}A)=n$ 
+根據 (b) 又有 $\text{dim }N(A)=\text{dim }N(A^{T}A)$，所以 $A$ 與 $A^{T}A$ 有相同的 rank。
+(d)
+$A$ 的 column vector 線性獨立 $\implies A\mathbf{x}=\mathbf{0}$ 只有 trivial solution $\implies N(A)=\{\mathbf{0}\}$ 。
+$A^{T}A\mathbf{x}=\mathbf{0}\implies \mathbf{x}\in N(A^{T}A)=N(A)=\{\mathbf{0}\}\implies$ $A^{T}A\mathbf{x}=\mathbf{0}$ 只有 trivial solution $\implies A^{T}A$ nonsingular. 
+
+證明若$U$ 與 $V$ 為兩向量空間，且 $U\subseteq V$，則 $V^{\perp}\subseteq U^{\perp}$。
+
+Sol:
+取任意 $\mathbf{v}\in V^{\perp}$ 與任意 $\mathbf{x}\in V$，則有 $\mathbf{v}\cdot \mathbf{x}=0$。
+又因為 $U\subseteq V$，所以對任意 $\mathbf{u}\in U$ 都有 $\mathbf{v}\cdot \mathbf{u}=0$。
+也就是說 $\mathbf{v}\in U^{\perp}$。
+因為對任意 $\mathbf{v}\in V^{\perp}$ 皆成立，所以 $V^{\perp}\subseteq U^{\perp}$。
+
+![[Pasted image 20251126144353.png]]
+
+Sol:
+不難，就是會忘了證明 $A\mathbf{x_{1}},\dots,A\mathbf{x}_{r}$ 線性獨立。
+令對任意 $\mathbf{w}\in \mathbb{R}^{n}$，有 $\mathbf{u}\in R(A^{T})$，$\mathbf{v}\in N(A)$ 且 $\mathbf{w}=\mathbf{u}+\mathbf{v}$ 唯一。
+$A\mathbf{w}=A\mathbf{u}+A\mathbf{v}=A\mathbf{u}\implies A\mathbf{w}=A\mathbf{u}=A(\alpha_{1}\mathbf{x_{1}}+\dots+\alpha_{r}\mathbf{x}_{r})=\alpha_{1}A\mathbf{x_{1}}+\dots+\alpha_{r}A\mathbf{x}_{r}$ 
+又 $A\mathbf{w}=R(A)$，所以 $A\mathbf{x_{1}},\dots,A\mathbf{x}_{r}$ 可能是 $R(A)$ 的一組基底。
+現在證明 $A\mathbf{x_{1}},\dots,A\mathbf{x}_{r}$ 線性獨立。
+考慮 $A(\alpha_{1}\mathbf{x_{1}}+\dots+\alpha_{r}\mathbf{x}_{r})=\mathbf{0}$，則 $\alpha_{1}\mathbf{x_{1}}+\dots+\alpha_{r}\mathbf{x}_{r}\in N(A)\cap R(A^{T})=\{\mathbf{0}\}$ 
+因為 $\mathbf{x_{1}},\dots,\mathbf{x}_{r}$ 線性獨立，所以 $\alpha_{1}=\dots=\alpha_{r}=0\implies A\mathbf{x_{1}},\dots,A\mathbf{x}_{r}$ 線性獨立且張出 $R(A)$。
+
+![[Pasted image 20251126150150.png]]
+![[Pasted image 20251126150204.png]]
+
+Sol:
+取任意 $\mathbf{u}\in N(A)$，有 $A\mathbf{u}=\mathbf{xy}^{T}\mathbf{u}+\mathbf{yx}^{T}\mathbf{u}=0$。
+因為 $\mathbf{x},\mathbf{y}$ 線性獨立，所以 $\mathbf{u}\perp \mathbf{x}$ 與 $\mathbf{u}\perp \mathbf{y}\implies \mathbf{u}\in S^{\perp}$。
+所以 $N(A)\subseteq S^{\perp}$。
+取任意 $\mathbf{v}\in S^{\perp}$，有 $A\mathbf{v}=\mathbf{xy}^{T}\mathbf{v}+\mathbf{yx}^{T}\mathbf{v}=0$。
+所以 $\mathbf{v}\in N(A)\implies S^{\perp}\subseteq N(A)$。
+綜合 $N(A)\subseteq S^{\perp}$ 與 $\mathbf{v}\in N(A)\implies S^{\perp}\subseteq N(A)$，我們有 $N(A)=S^{\perp}$。
