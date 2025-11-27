@@ -157,9 +157,113 @@ $$
 \cos A\cos B=\frac{1}{2}[\cos(A-B)+\cos(A+B)]
 $$
 
+# Trigonometric Substitution
+
+這邊你需要先知道一下 inverse substitution：對於給定的 $\int f(x) \ dx$ 找 $\int f(g(t))g'(t) \, dt$ 的行為。
+
+想尋找 inverse substitution，我們必須令 $g$ 的反函數存在，也就是說 $g$ 是一個 one-to-one function。
+
+下表展示了一些有用的 trigonometric substitution：
+
+| Expression             | Substitution                                                                                                                                                                                                       | Identity                           |
+| ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------------------------------- |
+| $\sqrt{ a^{2}-x^{2} }$ | $x=a\sin \theta\quad -\frac{\pi}{2}\leq \theta\leq \frac{\pi}{2}$                                                                                                                                                  | $\cos^{2}\theta=1-\sin^{2}\theta$  |
+| $\sqrt{ a^{2}+x^{2} }$ | $x=a\tan \theta\quad -\frac{\pi}{2}\leq \theta\leq \frac{\pi}{2}$                                                                                                                                                  | $\sec^{2}\theta=1+\tan^{2} \theta$ |
+| $\sqrt{ x^{2}-a^{2} }$ | $x=a\sec \theta\quad 0\leq \theta< \frac{\pi}{2}\text{ or } \pi\leq \theta< \frac{3\pi}{2}$<br>注意此處 $\theta$ 的選擇，因為根號開出來必須要大於零，所以 $0\leq \theta\leq \pi$ 不可行。<br>($\tan \theta$ 在 $\frac{\pi}{2}<\theta<\pi$ 時小於零) | $\tan^{2}\theta=1-\sec^{2}\theta$  |
+
+誒，但別寫魔怔了，看到啥就帶啊！萬一普通的 substitution 更簡單呢？
+
+# Integration of Rational Function by Partial Fractions
+
+## The Method of Partial Fractions
+
+當給定 $f(x)= \frac{P(x)}{Q(x)}$，如果 $\text{deg}(P)\geq\text{deg}(Q)$ 則將 $f(x)$ 表示成：
+
+$$
+f(x)=\frac{P(x)}{Q(x)}=S(x)+\frac{R(x)}{Q(x)}
+$$
+
+如果 $Q(x)$ 可以被因式分解，則將其盡可能的分解。$Q(x)$ 一定可以被分解成線性 ($ax+b$) 與二次 ($ax^{2}+bx+c$，$b^{2}-4ac<0$) 的乘積。(非實數根共軛出現)
+
+然後，將 $\frac{R(x)}{Q(x)}$ 化成 partial fractions 的形式：
+
+$$
+\frac{A}{(ax+b)^{i}}\text{ or } \frac{Ax+B}{(ax^{2}+bx+c)^{j}}
+$$
+
+很矇逼吧～沒關係，我們分幾種情況討論：
+
+### CASE I: The denominator  $Q(x)$ is a product of distinct linear factors
+
+此情況下 $Q(x)$ 可以被分解成 $Q(x)=(ax_{1}+b_{1})(ax_{2}+b_{2})\dots(ax_{k}+b_{k})$。
+
+此時有：
+
+$$
+\frac{R(x)}{Q(x)}= \frac{A_{1}}{ax_{1}+b_{1}}+\frac{A_{2}}{ax_{2}+b_{2}}+\dots+\frac{A_{k}}{ax_{k}+b_{k}}
+$$
+
+### CASE II: $Q(x)$ is a product of linear factors, some of which are repeated
+
+此情況下，假設 $(a_{1}x+b_{1})$ 重複了 $r$ 次，我們對每個重複相都如下分解：
+
+$$
+\frac{A_{1}}{ax_{1}+b_{1}}+\frac{A_{2}}{(a_{1}x+b_{1})^{2}}+\dots+\frac{A_{r}}{(a_{1}x+b_{1})^{r}}
+$$
+
+誒，注意這裡是 $\frac{A_{r}}{(a_{1}x+b_{1})^{r}}$ 不是 $\frac{A_{r}x+B_{r}}{(a_{1}x+b_{1})^{r}}$ 呀！！！
+
+### CASE III: $Q(x)$ contains irreducible quadratic factors, none of which is repeated
+
+此情況下，$Q(x)$ 包含了一個無解的(不可因式分解的)二次項。
+
+對每個這樣的項，我們將其分解成：
+
+$$
+\frac{Ax+B}{ax^{2}+bx+c}
+$$
+
+喔對，這邊的積分可以使用三角代換幫忙呦～
+
+$$
+\int \frac{1}{x^{2}+a} \, dx=\frac{1}{a}\tan^{-1}\left( \frac{x}{a} \right)+C
+$$
+
+例如：$\int \frac{x-1}{x^{2}+2} \, dx$ 其實不用套很煩的三角代換，可以分解。
+
+$\int \frac{x-1}{x^{2}+2} \, dx=\int \frac{x}{x^{2}+2} \, dx-\int \frac{1}{x^{2}+2} \, dx$ 這樣一來，第一個可以用 substitution，第二個直接帶公式就好。
+
+$=\frac{1}{2}\ln |x^{2}+2|-\frac{1}{\sqrt{ 2 }}\tan^{-1}\left( \frac{x}{\sqrt{ 2 }} \right)+C$ 
+
+對於任意 $ax^{2}+bx+c$ 我們都可以通過配方 + 代換的方式變成 $u^{2}+d$ 的形式。
+
+而對於任意 $\int\frac{Cu+D}{u^{2}+d}$ 我們都可以化成 $C\int \frac{u}{u^{2}+d} \ dx+D\int \frac{1}{u^{2}+d} \ dx$ 的形式，前者會變成 $\ln$，後者會變成 $\arctan$。
+
+### CASE IV: $Q(x)$ contains a repeated irreducible quadratic factor
+
+$Q(x)$ 會包含 $r$ 個不可分解的二次方程，對於每個這樣的元素，我們都將其展開成：
+
+$$
+\frac{A_{1}x+B_{1}}{(ax^{2}+bx+c)}+\frac{A_{2}x+B_{2}}{(ax^{2}+bx+c)^{2}}+\dots+\frac{A_{r}x+B_{r}}{(ax^{2}+bx+c)^{r}}
+$$
+
+## Rationalizing Substitutions
+
+有時我們會將非有理函數通過適當的代換轉為有理函數處理。
+
+例如，當有 $x^{n/2}$ 的形式時，令 $u=x^{n/2}$ 可能會有用。
+
+例如：$\int \frac{\sqrt{ x+4 }}{x} \ dx$。令 $u=\sqrt{ x+4 }$，則 $x=u^{2}-4$ 且 $dx=2u \ du$。
+
+$\int \frac{\sqrt{ x+4 }}{x} \ dx=\int \frac{u}{u^{2}-4} \ 2u \ du$。
+
 # Tips
 
 1. $\int \frac{1}{2\cos^{2}\theta} \ d\theta=\int \frac{1}{2}\sec^{2}\theta \ d\theta=\frac{1}{2}\tan \theta$ 
+2. $\int_{-1}^{1} \frac{1}{x^{1/3}} \ dx$ 不可以用第五章的理論說因為奇函數所以等於零。因為這是一個狹積分問題。
+3. 寫 7.3 trigonometric substitution 時，記得最後**帶回 $x=$ 某個三角函數**。
+4. 當令 $u=g(x)$ 代換 $x$ 想求 $du$ 但 $g'(x)$ 不好求時，可以考慮求 $x=g^{-1}(u)$ 則 $dx = (g^{-1})'(u) \ du$ 可能比較方便。
+5. 令 $t=\tan\left( \frac{x}{2} \right)$ 可以將 $\sin x=\frac{2t}{1+t^{2}}$ 與 $\cos x=\frac{1-t^{2}}{1+t^{2}}$ 轉成 rational function。
 
 # 重要例題
 
@@ -204,6 +308,44 @@ Sol:
 $a_{m}=\frac{1}{\pi}\int_{-\pi}^{\pi}\sum_{n=1}^{N}a_{n}\sin nx\sin mx=a_{m}$ 
 根據 (3)，因為除了第 $m$ 項使得 $m=n$ 時會等於 $\pi$，其他的 $n$ 值都會導致積分得到 $0$。
 
+6. Find $\int_{0}^{0.3} \frac{x}{(9-25x^{2})^{3/2}} \ dx$. 
+
+Sol:
+因為想湊完全平方，所以令 $x=\frac{3}{5}\sin \theta$，則 $dx=\frac{3}{5}\cos \theta \ d\theta$。
+(注意上下界值的變換)
+$\int_{0}^{0.3} \frac{x}{(9-25x^{2})^{3/2}} \ dx=\int_{0}^{\pi/6} \frac{\frac{3}{5}\cos \theta}{(3\cos \theta)^{3}}  \frac{3}{5}\cos \theta \ dx=\frac{1}{75}\int_{0}^{\pi/6} \frac{\sin \theta}{\cos^{2}\theta} \ d\theta$ 
+接下來有兩種處理方式：
+(I)
+令 $u=\cos \theta$，則 $\frac{1}{75}\int_{0}^{\pi/6} \frac{\sin \theta}{\cos^{2}\theta} \ d\theta=-\frac{1}{75}\int_{1}^{\sqrt{ 3 }/2} u^{-2} \ du=-\frac{1}{75}[-u^{-1}]^{\sqrt{ 3 }/2}_{1}=\frac{1}{75}\left( \frac{2}{\sqrt{ 3 }}-1 \right)$。
+(II)
+$\frac{1}{75}\int_{0}^{\pi/6} \frac{\sin \theta}{\cos^{2}\theta} \ d\theta=\frac{1}{75}\int_{0}^{\pi/6}\sec \theta \tan \theta \ d\theta=\frac{1}{75}[\sec \theta]^{\pi/6}_{0}=\frac{1}{75}\left( \frac{2}{\sqrt{ 3 }}-1 \right)$ 
+
+7. Evaluate $\int_{-a}^{L-a} \frac{\lambda b}{4\pi\epsilon_{0}(x^{2}+b^{2})^{3/2}} \ dx$. 
+
+Sol:
+不難，這邊主要想講上下界的處理，不要直接把反三角函數寫積分上下界那邊，抄得很累。
+令 $x=b\tan \theta$，$\theta_{2}=\tan^{-1}\left( \frac{L-a}{b} \right)$，$\theta_{1}=\tan^{-1}\left( -\frac{a}{b} \right)$。
+$\int_{-a}^{L-a} \frac{\lambda b}{4\pi\epsilon_{0}(x^{2}+b^{2})^{3/2}} \ dx= \frac{\lambda}{4\pi\epsilon_{0}b}\int_{\theta_{1}}^{\theta_{2}}\cos \theta \ d\theta=\frac{\lambda}{4\pi\epsilon_{0}b}[\sin \theta]^{\theta_{2}}_{\theta_{1}}$ (畫圖可得 $\sin \theta_{1}$ 與 $\sin \theta_{2}$ 值)
+$=\frac{\lambda}{4\pi\epsilon_{0}b}\left[ \frac{L-a}{\sqrt{ (L-a)^{2}+b^{2} }}- \frac{a}{\sqrt{ a^{2}+b^{2} }} \right]$ 
+
+8. Evaluate $\int \frac{1}{1-\cos x} \, dx$.
+
+Sol:
+(I)
+令 $t=\tan\left( \frac{x}{2} \right)$，$dt=\frac{1}{2}\sec^{2}\left( \frac{x}{2} \right)\ dx\implies dx=\frac{2}{\sqrt{ 1+t^{2} }}$。
+代進去得到 $\int \frac{1}{1-\cos x} \, dx=\int t^{-2} \ dt=-\cot\left( \frac{x}{2} \right)+C$ 
+(II)
+湊平方：$\int \frac{1}{1-\cos x} \, dx=\int \frac{1}{1-\cos x} \frac{1+\cos x}{1+\cos x} \ dx=\int \frac{1+\cos x}{\sin^{2}x} \ dx$ 
+$=\int \frac{1}{\sin^{2}x} \, dx+\int \frac{\cos x}{\sin^{2}x} \, dx=-\cot x-\csc x+C$ 
+
+9. Evaluate $\int \frac{1}{\sqrt{ x }- ^{3}\sqrt{ x }} \ dx$. 
+
+Sol:
+誒注意這裡 $^{3}\sqrt{ x }=x^{1/3}\neq x^{3/2}$。
+因為我們想讓這個東東變成 rational function，如果取 $u=x^{1/3}$ 代進去 $\sqrt{ x }=u^{3/2}$ 不是整數不好。
+所以取 $u=x^{1/6}$。
+然後你就會做了！
+
 # 大會考
 
 1. $\int_{0}^{e-2}\ln(2+x) \ dx= \ ?$ 
@@ -214,3 +356,37 @@ $\int_{0}^{e-2}\ln(2+x) \ dx= \int_{2}^{e}\ln t  \, dt$
 注意，這邊看起來很簡單，所以你可能會忘記要求反導函數而不是直接帶入！
 利用 IBP，令 $u=\ln t，dv=dt$，則：
 $\int_{2}^{e}\ln t \ dt=[t\ln t]^{e}_{2}-\int_{2}^{e}  \, dt=2-2\ln2$ 
+
+2. Evaluate $\int \frac{x}{\sqrt{ x^{2}+x+1 }} \ dx$. 
+
+Sol:
+解這種題：
+1. 對根號內部配方。
+2. 把平方者代換。
+3. 把代換者再次用三角函數代換。
+4. 解不定積分。
+5. 把不定積分中的三角函數換回 $u$。
+6. 把 $u$ 換回 $x$。
+
+什麼？你說這看起來很簡單？你行你上。
+$\int \frac{x}{\sqrt{ x^{2}+x+1 }} \ dx=\int \frac{x}{\sqrt{ \left( x+\frac{1}{2} \right)^{2}+\frac{3}{4} }} \ dx$ $\left[ \text{let }u=x+\frac{1}{2}\text{, }du=dx \right]$ 
+$=\int \frac{u-\frac{1}{2}}{\sqrt{ u^{2}+\frac{3}{4} }} \ du$ $\left[ \text{let }u=\frac{\sqrt{ 3 }}{2}\tan \theta\text{, }du=\frac{\sqrt{ 3 }}{2}\sec^{2}\theta \right]$ 
+$=\int \frac{\frac{\sqrt{ 3 }}{2}\tan \theta-\frac{1}{2}}{\frac{\sqrt{ 3 }}{2}\sec \theta} \frac{\sqrt{ 3 }}{2}\sec^{2}\theta \ d\theta=\frac{\sqrt{ 3 }}{2}\sec \theta-\frac{1}{2}\ln|\sec \theta+\tan \theta|+C$ 
+$=\frac{\sqrt{ 3 }}{2} \frac{\sqrt{ 4u^{2}+3 }}{\sqrt{ 3 }}-\frac{1}{2}\ln| \frac{\sqrt{ 4u^{2}+3 }}{\sqrt{ 3 }}+\frac{2u}{\sqrt{ 3 }}|+C$ 
+$=\sqrt{ x^{2}+x+1 }-\frac{1}{2}\ln| \frac{2}{\sqrt{ 3 }}\sqrt{ x^{2}+x+1 }+ \frac{2}{\sqrt{ 3 }}\left( x+\frac{1}{2} \right)|+C$ 
+
+3. Evaluate $\int \frac{1}{(x^{2}+1)^{2}} \ dx$ 
+
+Sol:
+誒這個看起來很難解。
+不會，用三角代換令 $x=\tan \theta$ 就好。
+喔，要記得最後把 $\theta$ 換回 $x$。說很多遍了還錯。
+
+4. Evaluate $\int \frac{1}{x^{8}-x} \ dx$. 
+
+Sol:
+$\int \frac{1}{x^{8}-x} \ dx=\int \frac{1}{x(x^{7}-1)} \ dx$ 
+令 $u=x^{7}$ 則 $dx = \frac{1}{7}x^{-6} \ du$。(注意此處 $u\neq x^{7}-1$)
+`~~~^ key`
+$\int \frac{1}{x(x^{7}-1)} \ dx= \frac{1}{7}\int \frac{1}{u-1}\cdot \frac{1}{x}\cdot \frac{1}{x^{6}} \ du= \frac{1}{7}\int \frac{1}{u}\cdot \frac{1}{u-1} \ du = \frac{1}{7}\int \frac{-1}{u}+ \frac{1}{u-1} \ du$ 
+$=\frac{1}{7}\ln| \frac{x^{7}-1}{x^{7}}|+C$ 

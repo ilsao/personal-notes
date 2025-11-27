@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Math/Linear Algebra/Orthogonality.md",
+                "file": "Math/Calculus/Techniques of Integrations.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Orthogonality"
+              "title": "Techniques of Integrations"
             }
           },
           {
@@ -192,8 +192,16 @@
       "bases:Create new base": false
     }
   },
-  "active": "1d5b0d980baa8a22",
+  "active": "930e5d797c093d6f",
   "lastOpenFiles": [
+    "Math/Linear Algebra/Orthogonality.md",
+    "Math/Calculus/Techniques of Integrations.md",
+    "Math/Calculus/Limit.md",
+    "Math/Calculus/Integrals.md",
+    "Math/Calculus/Differentiation Rules.md",
+    "Math/Calculus/Basic concept.md",
+    "Math/Calculus/Applications of Differentiation.md",
+    "CTF/MoeCTF 2025 Writeup.md",
     "Computer Networking/pic/lab2/Pasted image 20251125132423.png",
     "Computer Networking/pic/lab2/Pasted image 20251125131514.png",
     "Computer Networking/pic/lab2/Pasted image 20251125131353.png",
@@ -204,21 +212,14 @@
     "Math/Linear Algebra/pic/Orthogonality/Pasted image 20251126150150.png",
     "Math/Linear Algebra/pic/Orthogonality/Pasted image 20251126144353.png",
     "Math/Linear Algebra/Matrix and Systems.md",
-    "Math/Linear Algebra/Orthogonality.md",
     "Math/Linear Algebra/pic/Orthogonality/Pasted image 20251126114121.png",
     "Math/Linear Algebra/pic/Orthogonality/Pasted image 20251126104511.png",
     "Math/Linear Algebra/pic/Orthogonality/Pasted image 20251126102936.png",
-    "Math/Linear Algebra/pic/Orthogonality/Pasted image 20251126095445.png",
     "Math/Linear Algebra/Vector Space.md",
-    "Math/Calculus/Techniques of Integrations.md",
-    "Math/Calculus/Integrals.md",
-    "Math/Calculus/Differentiation Rules.md",
     "Math/Linear Algebra/Linear Transformation.md",
-    "Math/Calculus/Basic concept.md",
     "Math/Linear Algebra/pic/Orthogonality",
     "Math/Linear Algebra/pic",
     "Computer Networking/Network Layer, Data Plane.md",
-    "Math/Calculus/Applications of Differentiation.md",
     "Physics/Oscillatory Motion.md",
     "Computer Networking/pic/Network Layer, Data Plane",
     "Math/Calculus/大會考 (一) 上半錯題.md",
@@ -236,7 +237,6 @@
     "Computer Networking/Application Layer.md",
     "Computer Graphics/圖形學概覽複習.md",
     "Math/Linear Algebra/Determinants.md",
-    "Computer Networking/Transport Layer.md",
     "Math/Calculus.zip",
     "Math/Calculus/pic",
     "CSAPP/Computer Systems A Programmer’s Perspective.pdf",
