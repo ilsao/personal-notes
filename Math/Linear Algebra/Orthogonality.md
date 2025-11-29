@@ -377,6 +377,226 @@ y_{m}
 \end{bmatrix}
 $$
 
+# Inner Product Spaces
+
+## Definition and Examples
+
+對於向量空間 $V$ 的內積是一個運算使得每一對 $V$ 中的向量 $\mathbf{x}$ 與 $\mathbf{y}$ 都能得到一個實數 $\langle \mathbf{x},\mathbf{y} \rangle$ 滿足下列條件：
+1. $\langle \mathbf{x},\mathbf{y} \rangle \geq 0$ 且等號成立 $\iff \mathbf{x}=0$ 
+2. $\langle \mathbf{x},\mathbf{y} \rangle = \langle \mathbf{y},\mathbf{x} \rangle\quad\forall \mathbf{x},\mathbf{y}\in V$ 
+3. $\langle \alpha \mathbf{x}+\beta \mathbf{y},\mathbf{z} \rangle =\alpha \langle \mathbf{x},\mathbf{z} \rangle+\beta \langle \mathbf{y},\mathbf{z} \rangle\quad\forall \mathbf{x},\mathbf{y},\mathbf{z}\in V$ 與任意標量 $\alpha,\beta$ 
+
+一個有定義內積的向量空間 $V$ 被稱為**內積空間(Inner product space)**。
+
+### The Vector Space $\mathbb{R}^{n}$ 
+
+$\mathbb{R}^{n}$ 上的標準內積就是 scalar product：
+
+$$
+\langle \mathbf{x},\mathbf{y} \rangle  =\mathbf{x}^{T}\mathbf{y}
+$$
+
+若給定一個向量 $\mathbf{w}$ 為全正數項，我們還可以如下定義內積：
+
+$$
+\langle \mathbf{x},\mathbf{y} \rangle =\sum_{i=1}^{n}x_{i}y_{i}w_{i}
+
+$$
+
+其中 $w_{i}$ 項稱為**權重(weights)**。
+
+### The Vector Space $\mathbb{R}^{m\times n}$ 
+
+取 $A,B\in \mathbb{R}^{m\times n}$，我們定義內積：
+
+$$
+\langle A,B \rangle =\sum_{i=1}^{m}\sum_{j=1}^{n}a_{ij}b_{ij}
+$$
+
+也就是說，把 $A,B$ 的每一項按 row 攤平，然後當成一個 $\mathbb{R}^{mn}$ 的向量做內積。
+
+### The Vector Space $C[a,b]$ 
+
+我們如下定義 $C[a,b]$ 中的內積：
+
+$$
+\langle f,g \rangle=\int_{a}^{b}f(x)g(x) \ dx
+$$
+
+注意到：
+
+$$
+\langle f,f \rangle =\int_{a}^{b}(f(x))^{2}\ dx\geq 0
+$$
+
+若在 $x_{0}\in[a,b]$ 時 $f(x_{0})\neq 0$，因為 $(f(x))^{2}$ 連續，所以存在一個區間 $I\in[a,b]$ 使得 $(f(x))^{2}\geq \frac{(f(x_{0}))^{2}}{2}\quad\forall x\in I$ 。若我們令 $I$ 的長度為 $p$，則：
+
+$$
+\langle f,f \rangle =\int_{a}^{b}(f(x))^{2} \ dx\geq \int_{I}(f(x))^{2} \ dx \geq \frac{(f(x_{0}))^{2}p}{2}>0
+$$
+
+所以，想要 $\langle f,f \rangle=0\iff f(x)=0$。
+
+剩餘兩點定義的驗證就留給你們吧！
+
+若我們令 $w(x)$ 為正的連續函數 $\in [a,b]$，則：
+
+$$
+\langle f,g \rangle =\int_{a}^{b}f(x)g(x)w(x) \ dx
+$$
+
+同樣定義了內積。
+
+其中 $w(x)$ 稱為**權重函數(weight function)**，所以 $C[a,b]$ 上的內積可以被定義成不同形式。
+
+### The Vector Space $P_{n}$ 
+
+令 $x_{1},x_{2},\dots,x_{n}$ 為相異實數。對於任意一對 $P_{n}$ 中的多項式：
+
+$$
+\langle p,q \rangle =\sum_{i=1}^{n}p(x_{i})q(x_{i})
+$$
+
+注意到：
+
+$$
+\langle p,p \rangle =\sum_{i=1}^{n}(p(x_{i}))^{2}\geq 0
+$$
+
+如果 $\langle p,p \rangle=0$ 則 $x_{1},\dots,x_{n}$ 必須為 $p(x)=0$ 的根。因為 $\text{deg }p(x)<n$，最多只能有 $n-1$ 個根，所以此情況下 $p(x)$ 必定等於零多項式。
+
+若 $w(x)$ 為正的函數，則：
+
+$$
+\langle p,q \rangle =\sum_{i=1}^{n}p(x_{i})q(x_{i})w(x_{i})
+$$
+
+也定義了 $P_{n}$ 上的內積。
+
+## Basic Properties of Inner Product Spaces
+
+所有在 5.1 節的結果都可以被套用到內積空間。
+
+挖草，這裡用內積的定義證明了畢氏定理。
+
+若 $\mathbf{u}$ 和 $\mathbf{v}$ 正交，則：
+
+$$
+||\mathbf{u}+\mathbf{v}||^{2}=||\mathbf{u}||^{2}+||\mathbf{v}||^{2}
+$$
+
+proof:
+$||\mathbf{u}+\mathbf{v}||^{2}=\langle \mathbf{u}+\mathbf{v},\mathbf{u}+\mathbf{v} \rangle=\langle \mathbf{u},\mathbf{u} \rangle+2\langle \mathbf{u},\mathbf{v} \rangle+\langle \mathbf{v},\mathbf{v} \rangle=||\mathbf{u}||^{2}+||\mathbf{v}||^{2}$ 
+
+對於 $\mathbb{R}^{m\times n}$ 向量空間，從內積公式定義的長度稱為 Frobenius norm 且記作 $||\cdot||_{F}$。
+
+若 $A\in \mathbb{R}^{m\times n}$，則 $||A||_{F}=(\langle A,A \rangle)^{1/2}=\left( \sum_{i=1}^{m}\sum_{j=1}^{n}a^{2}_{ij} \right)^{1/2}$。
+
+若 $\mathbf{u}$ 與 $\mathbf{v}$ 在內積空間 $V$ 中且 $\mathbf{v}\neq 0$，則把 $\mathbf{u}$ 投影到 $\mathbf{v}$ 的 scalar projection 為：
+
+$$
+\alpha= \frac{\langle \mathbf{u},\mathbf{v} \rangle }{||\mathbf{v}||}
+$$
+
+而 vector projection 為：
+
+$$
+\mathbf{p}=\alpha\left( \frac{1}{||\mathbf{v}||}\mathbf{v} \right)= \frac{\langle \mathbf{u},\mathbf{v} \rangle }{\langle \mathbf{v},\mathbf{v} \rangle }\mathbf{v}
+$$
+
+對於上述定義，有以下性質：
+1. $\mathbf{u}-\mathbf{p}$ 和 $\mathbf{p}$ 正交。
+2. $\mathbf{u}=\mathbf{p}\iff$ $\mathbf{u}$ 是 $\mathbf{v}$ 的標量積。
+
+proof:
+(1)
+因為 $\langle \mathbf{p},\mathbf{p} \rangle=\left\langle  \alpha \frac{\mathbf{v}}{||\mathbf{v}||}, \alpha \frac{\mathbf{v}}{||\mathbf{v}||} \right\rangle=\left( \frac{\alpha}{||\mathbf{v}||} \right)^{2}\langle \mathbf{v},\mathbf{v} \rangle=\alpha^{2}$ 
+且 $\langle \mathbf{u},\mathbf{p} \rangle=\left\langle  \mathbf{u}, \frac{\langle \mathbf{u},\mathbf{v} \rangle}{\langle \mathbf{v},\mathbf{v} \rangle}\mathbf{v}  \right\rangle=\frac{(\langle \mathbf{u},\mathbf{v} \rangle)^{2}}{\langle \mathbf{v},\mathbf{v} \rangle}=\alpha^{2}$ 
+又 $\langle \mathbf{u}-\mathbf{p},\mathbf{p} \rangle=\langle \mathbf{u},\mathbf{p} \rangle-\langle \mathbf{p},\mathbf{p} \rangle=\alpha^{2}-\alpha^{2}=0$ 
+所以，$\mathbf{u}-\mathbf{p}$ 與 $\mathbf{p}$ 正交。
+(2)
+($\implies$)
+若 $\mathbf{u}=\mathbf{p}$，則 $\mathbf{u}=\beta \mathbf{v}$，其中 $\beta=\frac{\alpha}{||\mathbf{v}||}$。
+($\impliedby$)
+若 $\mathbf{u}=\beta \mathbf{v}$，則 $\mathbf{p}= \frac{\langle \beta \mathbf{v},\mathbf{v} \rangle}{\langle \mathbf{v},\mathbf{v} \rangle}\mathbf{v}=\beta \mathbf{v}=\mathbf{u}$。
+
+接下來要證明：
+
+$$
+|\langle \mathbf{u},\mathbf{v} \rangle |\leq ||\mathbf{u}|| \ ||\mathbf{v}||
+$$
+
+等號在 $\mathbf{u},\mathbf{v}$ 線性相依時成立。
+
+proof:
+當 $\mathbf{v}=\mathbf{0}$，等式成立。
+當 $\mathbf{v}\neq \mathbf{0}$，令 $\mathbf{p}$ 為 $\mathbf{u}$ 在 $\mathbf{v}$ 上的投影。因為 $\mathbf{p}$ 與 $\mathbf{u}-\mathbf{p}$ 正交，所以：$||\mathbf{p}||^{2}=||\mathbf{u}||^{2}-||\mathbf{u}-\mathbf{p}||^{2}$。
+那麼，可以構建：$\frac{(\langle \mathbf{u},\mathbf{v} \rangle)^{2}}{||\mathbf{v}||^{2}}=||\mathbf{p}||^{2}=||\mathbf{u}||^{2}-||\mathbf{u}-\mathbf{p}||^{2}$。
+移項可得：$(\langle \mathbf{u},\mathbf{v} \rangle)^{2}=||\mathbf{u}||^{2} \ ||\mathbf{v}||^{2}-||\mathbf{u}-\mathbf{p}||^{2} \ ||\mathbf{v}||^{2}\implies |\langle \mathbf{u},\mathbf{v} \rangle| \leq ||\mathbf{u}|| \ ||\mathbf{v}||$ 
+等號成立在 $\mathbf{u}=\mathbf{p}$ 時。根據上面那個東東，可得 $\mathbf{v}$ 與 $\mathbf{u}$ 線性相依時等號成立。
+
+ok 呀，隨著柯西不等式的提出，我們又可以定義兩個向量間的夾角了：
+
+$$
+\cos \theta= \frac{\langle \mathbf{u},\mathbf{v} \rangle }{||\mathbf{u}|| \ ||\mathbf{v}||}
+$$
+
+其中 $\theta\in[0,\pi]$。
+
+## Norms
+
+一個向量空間稱為 normed linear space 若對每個向量空間 $V$ 中的向量 $\mathbf{v}$ 都有一個對應的實數 $||\mathbf{v}||$ (norm of $\mathbf{v}$)，滿足下列條件：
+1. $||\mathbf{v}||\geq 0$，其中等號成立 $\iff \mathbf{v}=\mathbf{0}$。(非負性)
+2. $||\alpha \mathbf{v}||=|\alpha| \ ||\mathbf{v}||\quad \forall$ 標量 $\alpha$ 。(齊次性)
+3. $||\mathbf{v}+\mathbf{w}||\leq ||\mathbf{v}||+||\mathbf{w}||\quad\forall \mathbf{v},\mathbf{w}\in V$。(三角不等式)
+
+需要注意的是，雖然之前我們用內積定義了 norm，但是 norm 可以不是由內積定義的。
+
+若 $V$ 為一個內積空間，則：
+
+$$
+||\mathbf{v}||=\sqrt{ \langle \mathbf{v},\mathbf{v} \rangle  }\quad\forall \mathbf{v}\in V
+$$
+
+定義了 $V$ 上的長度(norm)。
+
+proof:
+我們這邊只證第三點。
+$||\mathbf{u}+\mathbf{v}||^{2}=\langle \mathbf{u}+\mathbf{v},\mathbf{u}+\mathbf{v} \rangle=\langle \mathbf{u},\mathbf{u} \rangle+2\langle \mathbf{u},\mathbf{v} \rangle+\langle \mathbf{v},\mathbf{v} \rangle\leq ||\mathbf{u}||^{2}+2||\mathbf{u}|| \ ||\mathbf{v}||+||\mathbf{v}||^{2}=(||\mathbf{u}||^{2}+||\mathbf{v}||^{2})$ 
+$\implies ||\mathbf{u}+\mathbf{v}||\leq ||\mathbf{u}||^{2}+||\mathbf{v}||^{2}$ 
+
+在給定的向量空間定義許多不同的 norm 是可能的，例如我們可以在 $\mathbb{R}^{n}$ 中定義：
+
+$$
+||\mathbf{x}||_{1}=\sum_{i=1}^{n}|x_{i}|
+$$
+
+另一個 $\mathbb{R}^{n}$ 中重要的 norm 是 uniform norm 或稱 infinity norm：
+
+$$
+||\mathbf{x}||_{\infty}=\text{max}_{1\leq i\leq n}|x_{i}|
+$$
+
+更具一般性的，對任意實數 $p\geq1$ 我們可以定義 $\mathbb{R}^{n}$ 的 norm：
+
+$$
+||\mathbf{x}||_{p}=\left( \sum_{i=1}^{n}|x_{i}|^{p} \right)^{1/p}
+$$
+
+對於 $p=2$，我們有：
+
+$$
+||\mathbf{x}||_{2}=\left( \sum_{i=1}^{n}|x_{i}|^{2} \right)^{1/2}=\sqrt{ \langle \mathbf{x},\mathbf{x} \rangle  }
+$$
+
+所以，$||\cdot||_{2}$ 就是 inner product 對應的 norm。但是對於其他的 $p$ 定義出來的 norm，沒有對應到任何 inner product。
+
+喔對，對於那些沒有對應到內積的 norm，畢氏定理會失效喔～
+
+喔，這節快結束啦～再給你最後一個定義～
+
+令 $\mathbf{x},\mathbf{y}$ 為 normed linear space 的向量。則 $\mathbf{x},\mathbf{y}$ 之間的距離為 $||\mathbf{y}-\mathbf{x}||$。
+
 # Tips
 
 - 做不出來的時候回頭看看題目，說不定會有驚人發現！
