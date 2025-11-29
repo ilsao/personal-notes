@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Computer Networking/Network Layer, Control Plane.md",
+                "file": "Math/Calculus/Techniques of Integrations.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Network Layer, Control Plane"
+              "title": "Techniques of Integrations"
             }
           },
           {
@@ -192,29 +192,28 @@
       "bases:Create new base": false
     }
   },
-  "active": "1d5b0d980baa8a22",
+  "active": "930e5d797c093d6f",
   "lastOpenFiles": [
+    "Math/Calculus/Applications of Differentiation.md",
+    "Math/Calculus/Techniques of Integrations.md",
+    "Computer Networking/Network Layer, Control Plane.md",
     "Computer Networking/pic/Network Layer, Control Plane/Pasted image 20251129150323.png",
     "Computer Networking/pic/Network Layer, Control Plane/Pasted image 20251129145731.png",
     "Computer Networking/pic/Network Layer, Control Plane/Pasted image 20251129145337.png",
     "Computer Networking/pic/Network Layer, Control Plane/Pasted image 20251129145251.png",
     "Computer Networking/pic/Network Layer, Control Plane",
     "Math/Linear Algebra/Orthogonality.md",
-    "Computer Networking/Network Layer, Control Plane.md",
     "Math/Linear Algebra/pic/Orthogonality/Pasted image 20251128161036.png",
     "Math/Linear Algebra/pic/Orthogonality/Pasted image 20251128154324.png",
     "Math/Linear Algebra/pic/Orthogonality/Pasted image 20251128141139.png",
     "Math/Linear Algebra/pic/Orthogonality/Pasted image 20251128133030.png",
-    "Math/Calculus/Techniques of Integrations.md",
     "Math/Calculus/Limit.md",
     "Math/Calculus/Integrals.md",
     "Math/Calculus/Differentiation Rules.md",
     "Math/Calculus/Basic concept.md",
-    "Math/Calculus/Applications of Differentiation.md",
     "CTF/MoeCTF 2025 Writeup.md",
     "Computer Networking/pic/lab2/Pasted image 20251125132423.png",
     "Computer Networking/pic/lab2/Pasted image 20251125131514.png",
-    "Computer Networking/pic/lab2/Pasted image 20251125131353.png",
     "Computer Networking/pic/lab2",
     "Computer Networking/lab2.md",
     "Math/Linear Algebra/Matrix and Systems.md",

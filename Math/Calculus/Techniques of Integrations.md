@@ -257,6 +257,92 @@ $$
 
 $\int \frac{\sqrt{ x+4 }}{x} \ dx=\int \frac{u}{u^{2}-4} \ 2u \ du$。
 
+# Improper Integrals
+
+## Type 1: Infinite Intervals
+
+(a)
+
+若 $\int_{a}^{t}f(x) \ dx$ 對任意 $t\geq a$ 都存在，則：
+
+$$
+\int_{a}^{\infty}f(x) \ dx=\lim_{ t \to \infty } \int_{a}^{t}f(x)\ dx
+$$
+
+若此極限存在且有限，則 $\int_{a}^{\infty}f(x) \ dx$ **收斂(convergent)**。
+
+若此極限不存在，則稱 $\int_{a}^{\infty}f(x) \ dx$ **發散(divergent)**。
+
+你可能會疑惑，既然說了 $\int_{a}^{t}f(x) \ dx$ 對任意 $t\geq a$ 都存在，那為啥 $\lim_{ t \to \infty }\int_{a}^{t} f(x) \ dx$ 會不存在呢？
+
+舉一個簡單的反例，$\int_{a}^{t}x \ dx$ 對於任意 $t\geq a$ 都存在，但是 $\lim_{ t \to \infty }\int_{a}^{t}x \ dx$ 不存在。
+
+(b)
+
+若 $\int_{t}^{b}f(x) \ dx$ 對任意 $t\leq b$ 都存在，則：
+
+$$
+\int_{-\infty}^{b}f(x) \ dx = \lim_{ t \to -\infty } \int_{t}^{b} f(x) \ dx
+$$
+
+若此極限存在且有限，則 $\int_{-\infty}^{b}f(x) \ dx$ 收斂。
+
+(c)
+
+若 $\int_{-\infty}^{a}f(x) \ dx$ 與 $\int_{a}^{\infty}f(x) \ dx$ 都收斂，則我們定義：
+
+$$
+\int_{-\infty}^{\infty}f(x) \ dx=\int_{-\infty}^{a}f(x) \ dx + \int_{a}^{\infty}f(x) \ dx
+$$
+
+## Type 2: Discontinuous Integrands
+
+(a)
+
+若 $f$ 在 $[a,b)$ 連續，但在 $b$ 不連續，則：
+
+$$
+\int_{a}^{b}f(x)\ dx=\lim_{ t \to b^{-} } \int_{a}^{t}f(x) \ dx
+$$
+
+若極限存在且有限。
+
+(b)
+
+若 $f$ 在 $(a,b]$ 連續，但在 $a$ 不連續，則：
+
+$$
+\int_{a}^{b}f(x) \ dx=\lim_{ t \to a^{+} } \int_{t}^{b}f(x) \ dx
+$$
+
+若極限存在且有限。
+
+(c)
+
+若 $a<c<b$ 且 $f$ 在 $c$ 不連續，且 $\int_{a}^{c}f(x) \ dx$ 與 $\int_{c}^{b}f(x) \ dx$ 都收斂，則：
+
+$$
+\int_{a}^{b}f(x) \ dx = \int_{a}^{c}f(x) \ dx + \int_{c}^{b} f(x)\ dx
+$$
+
+## A Comparison Test for Improper Integrals
+
+有時候雖然很難求得狹積分的實際值，但我們還是可以知道該積分收斂還是發散。
+
+注意，雖然以下只對 Type 1 進行說明，但是對 Type 2 的狹積分該結論亦成立。
+
+若 $f$ 與 $g$ 在 $x>a$ 時為連續函數且 $f(x)\geq g(x)\geq 0$，則：
+1. 若 $\int_{a}^{\infty}f(x) \ dx$ 收斂，則 $\int_{a}^{\infty}g(x) \ dx$ 也收斂。
+2. 若 $\int_{a}^{\infty}g(x) \ dx$ 發散，則 $\int_{a}^{\infty}g(x) \ dx$ 也發散。
+
+你需要注意的點有：第一點與第二點 $f$ 與 $g$ 的順序，還有 $f(x)\geq g(x)\geq \boxed{0}$。喔對，還有第一與第二點的反向敘述都不一定成立。
+
+什麼時候要用到 The Comparison Theorem？當你很難將某個函數的反導函數找出來的時候。但是，你需要精明的用這個定理。或許你可以將某個很難確定的積分切割成一個定積分問題 + 狹積分問題，這樣可能會比較好算？
+
+例如：判斷 $\int_{0}^{\infty}e^{-x^{2}} \ dx$ 是否收斂。你應該把它切成 $\int_{0}^{1}e^{-x^{2}}\ dx+\int_{1}^{\infty}e^{-x^{2}} \ dx$，前面明顯是個定積分問題必收斂，後面是一個狹積分問題。
+
+為什麼要這樣切？因為我們想要用 $x\geq1$ 時 $e^{-x^{2}}\leq e^{-x}$ 來套 Comparison Theorem。如果我們還要對 $x$ 討論來討論去顯然很麻煩。
+
 # Tips
 
 1. $\int \frac{1}{2\cos^{2}\theta} \ d\theta=\int \frac{1}{2}\sec^{2}\theta \ d\theta=\frac{1}{2}\tan \theta$ 
@@ -264,6 +350,7 @@ $\int \frac{\sqrt{ x+4 }}{x} \ dx=\int \frac{u}{u^{2}-4} \ 2u \ du$。
 3. 寫 7.3 trigonometric substitution 時，記得最後**帶回 $x=$ 某個三角函數**。
 4. 當令 $u=g(x)$ 代換 $x$ 想求 $du$ 但 $g'(x)$ 不好求時，可以考慮求 $x=g^{-1}(u)$ 則 $dx = (g^{-1})'(u) \ du$ 可能比較方便。
 5. 令 $t=\tan\left( \frac{x}{2} \right)$ 可以將 $\sin x=\frac{2t}{1+t^{2}}$ 與 $\cos x=\frac{1-t^{2}}{1+t^{2}}$ 轉成 rational function。
+6. 注意，求積分前必須先判斷是正常積分還是狹積分，否則可能得到錯誤的答案。
 
 # 重要例題
 
