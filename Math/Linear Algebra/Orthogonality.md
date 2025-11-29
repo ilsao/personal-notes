@@ -318,7 +318,7 @@ $$
 
 那怎麼找 $\mathbf{\hat{x}}$？
 
-我們有 $r(\mathbf{\hat{x}})\in R(A)^{\perp}=N(A^{T})$，也就是 $\mathbf{0}=A^{T}r(\mathbf{\hat{x}})=A(\mathbf{b}-A\mathbf{\hat{x}})$，也就等於求解 $A^{T}A\mathbf{x}=A\mathbf{b}$。
+我們有 $r(\mathbf{\hat{x}})\in R(A)^{\perp}=N(A^{T})$，也就是 $\mathbf{0}=A^{T}r(\mathbf{\hat{x}})=A^{T}(\mathbf{b}-A\mathbf{\hat{x}})$，也就等於求解 $A^{T}A\mathbf{x}=A\mathbf{b}$。
 
 我們將 $A^{T}A\mathbf{x}=A^{T}\mathbf{x}$ 稱為 **normal equation**。
 
@@ -383,6 +383,8 @@ $$
 - 小菜菜，分清楚 $R(A)$ 等於 $\text{Col}(A)$ 不等於 $\text{Row}(A)$。
 - 若已知 $U$ 與 $V$ 為兩向量空間，則想證明 $U$ 是 $V$ 的子空間只需要證明 $U\subseteq V$。
 - 若 $U\subseteq V$，則 $V^{\perp}\subseteq U^{\perp}$。
+- 對非滿秩 $A$ 求 $A\mathbf{x}=\mathbf{b}$ 的 least square problem 得到的 $\mathbf{\hat{x}}$ 有無限多組解，但是 $\mathbf{b}$ 在 $R(A)$ 上的投影 $A\mathbf{\hat{x}}$ 只有一個。(不管代哪個 $\mathbf{\hat{x}}$ 都會得到相同解)
+- $N(A^{T}A)=N(A)$ 
 
 # 重要例題
 
@@ -485,3 +487,49 @@ Sol:
 取任意 $\mathbf{v}\in S^{\perp}$，有 $A\mathbf{v}=\mathbf{xy}^{T}\mathbf{v}+\mathbf{yx}^{T}\mathbf{v}=0$。
 所以 $\mathbf{v}\in N(A)\implies S^{\perp}\subseteq N(A)$。
 綜合 $N(A)\subseteq S^{\perp}$ 與 $\mathbf{v}\in N(A)\implies S^{\perp}\subseteq N(A)$，我們有 $N(A)=S^{\perp}$。
+
+![[Pasted image 20251128133030.png]]
+
+Sol:
+這題其實和 Exercise 7 沒啥大關係。
+但是 Exercise 7 給我們了一個方向，考慮 $\bar{x}=0$ 時的狀況較為簡單。
+令 $z=x-\bar{x}$，則 $\bar{z}=0$。
+那麼 least squares line 為 $y=\bar{y}+dz$。(根據 Exercise 7)
+代回 $z=x-\bar{x}$，有 $y=\bar{y}-d\bar{x}+dx$。
+此時若代入 $x=\bar{x}$，可得 $y=\bar{y}$。所以 $(\bar{x},\bar{y})$ 在 least squares line 上。
+
+讓我們來練習證明若 $A$ 為 $m\times n$ 大小矩陣且 $P=A(A^{T}A)^{-1}A^{T}$，若 $\mathbf{b}\in \mathbb{R}^{n}$ 則 $P\mathbf{b}\in R(A)$。
+
+Sol:
+$P\mathbf{b}=A(A^{T}A)^{-1}A^{T}\mathbf{b}$ 
+令 $\mathbf{y}=(A^{T}A)^{-1}A^{T}\mathbf{b}$，則 $\mathbf{y}\in \mathbb{R}^{n}$。
+所以 $P\mathbf{b}=A\mathbf{y}\in R(A)$。
+
+![[Pasted image 20251128141139.png]]
+
+Sol:
+Explain 太弱了，我們來 Prove。
+因為 $\mathbf{b}\in R(A)$，所以 $\mathbf{b}$ 可以被唯一的表達為 $\mathbf{b}=A\mathbf{x}$，其中 $\mathbf{x}\in \mathbb{R}^{n}$。
+$P\mathbf{b}=A(A^{T}A)^{-1}A^{T}\mathbf{b}=A(A^{T}A)^{-1}(A^{T}A)\mathbf{x}$ 
+$=A\mathbf{x}=\mathbf{b}$ 
+
+![[Pasted image 20251128154324.png]]
+
+Sol:
+我會證，但不知道怎麼系統的寫。
+設 $A$ 為 $m\times n$ 大小矩陣，則 $\mathbf{b}\in \mathbb{R}^{m}$。
+又 $\mathbb{R}^{m}=R(A)\oplus N(A^{T})$，所以 $\mathbf{b}$ 可以被唯一的表示成 $\mathbf{b}=\mathbf{p}+\mathbf{q}$，其中 $\mathbf{p}\in R(A)$，$\mathbf{q}\in N(A^{T})$。
+又由題目可得 $A\mathbf{\hat{x}}+\mathbf{r}=\mathbf{b}$ 且 $A^{T}\mathbf{r}=\mathbf{0}\implies \mathbf{r}\in N(A^{T})$ 且 $A\mathbf{\hat{x}}\in R(A)$。
+因為 $\mathbf{r}=\mathbf{b}-A\mathbf{\hat{x}}$，所以 $\mathbf{r}$ 為殘差。
+因為 $\mathbf{r}\perp R(A)$ ，所以 $A\mathbf{\hat{x}}$ 為 $\mathbf{b}$ 在 $R(A)$ 上的投影 $\implies \mathbf{\hat{x}}$ 是 least squares solution。
+
+![[Pasted image 20251128161036.png]]
+
+Sol:
+因為是若且唯若，所以要雙向證明。但是 ($\impliedby$) 的方法很簡單，這邊只說明 $(\implies)$ 的方法。
+$(\implies)$ 
+令 $\mathbf{y}\in \mathbb{R}^{n}$ 也是 least squares solution，則：
+$A^{T}A\mathbf{\hat{x}}=A^{T}A\mathbf{y}=A^{T}\mathbf{b}\implies A^{T}A(\mathbf{y}-\mathbf{\hat{x}})=\mathbf{0}$ 
+$\implies \mathbf{y}-\mathbf{\hat{x}}\in N(A^{T}A)=N(A)$ 
+$\mathbf{z}:=\mathbf{y}-\mathbf{\hat{x}}$，我們有 $\mathbf{y}=\mathbf{\hat{x}}+\mathbf{z}$ 其中 $\mathbf{z}\in N(A)$。
+因為這邊我們只要證明存在這樣的 $\mathbf{z}$ 滿足 $\mathbf{y}=\mathbf{\hat{x}}+\mathbf{z}$ 且 $\mathbf{z}\in N(A)$ 就好，所以我們可以透過定義 $\mathbf{z}:=\mathbf{y}-\mathbf{\hat{x}}$ 得證。
