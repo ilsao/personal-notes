@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Math/Calculus/Techniques of Integrations.md",
+                "file": "Physics/Electric Current.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Techniques of Integrations"
+              "title": "Electric Current"
             }
           },
           {
@@ -192,10 +192,17 @@
       "bases:Create new base": false
     }
   },
-  "active": "930e5d797c093d6f",
+  "active": "1d5b0d980baa8a22",
   "lastOpenFiles": [
-    "Math/Linear Algebra/Orthogonality.md",
+    "Physics/pic/Pasted image 20251130224328.png",
+    "Physics/The Electric Field and Electric Potiential.md",
+    "Physics/Electric Current.md",
+    "Pasted image 20251130205437.png",
+    "Physics/pic/Pasted image 20251130205235.png",
+    "Pasted image 20251130204501.png",
+    "Physics/Electrostatics.md",
     "Math/Calculus/Techniques of Integrations.md",
+    "Math/Linear Algebra/Orthogonality.md",
     "Math/Calculus/Applications of Differentiation.md",
     "Computer Networking/Network Layer, Control Plane.md",
     "Computer Networking/pic/Network Layer, Control Plane/Pasted image 20251129150323.png",
@@ -206,14 +213,11 @@
     "Math/Linear Algebra/pic/Orthogonality/Pasted image 20251128161036.png",
     "Math/Linear Algebra/pic/Orthogonality/Pasted image 20251128154324.png",
     "Math/Linear Algebra/pic/Orthogonality/Pasted image 20251128141139.png",
-    "Math/Linear Algebra/pic/Orthogonality/Pasted image 20251128133030.png",
     "Math/Calculus/Limit.md",
     "Math/Calculus/Integrals.md",
     "Math/Calculus/Differentiation Rules.md",
     "Math/Calculus/Basic concept.md",
     "CTF/MoeCTF 2025 Writeup.md",
-    "Computer Networking/pic/lab2/Pasted image 20251125132423.png",
-    "Computer Networking/pic/lab2/Pasted image 20251125131514.png",
     "Computer Networking/pic/lab2",
     "Computer Networking/lab2.md",
     "Math/Linear Algebra/Matrix and Systems.md",
@@ -229,14 +233,11 @@
     "Physics/Interference of Wave.md",
     "Physics/Wave Motion.md",
     "Physics/pic",
-    "Physics/Untitled.md",
     "Physics/Uniform Accelerated Motion.md",
     "Physics/Physical Quantities.md",
     "Physics/Rotational Dynamics.md",
     "故事創作與影像敘事/什麼是故事.md",
-    "Physics/Momentum and Collisions.md",
     "Math/Calculus/Calculus, Early Transcendentals.pdf",
-    "Computer Networking/Application Layer.md",
     "Math/Calculus.zip",
     "Math/Calculus/pic",
     "未命名.canvas"
