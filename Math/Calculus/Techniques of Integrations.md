@@ -351,6 +351,9 @@ $$
 4. 當令 $u=g(x)$ 代換 $x$ 想求 $du$ 但 $g'(x)$ 不好求時，可以考慮求 $x=g^{-1}(u)$ 則 $dx = (g^{-1})'(u) \ du$ 可能比較方便。
 5. 令 $t=\tan\left( \frac{x}{2} \right)$ 可以將 $\sin x=\frac{2t}{1+t^{2}}$ 與 $\cos x=\frac{1-t^{2}}{1+t^{2}}$ 轉成 rational function。
 6. 注意，求積分前必須先判斷是正常積分還是狹積分，否則可能得到錯誤的答案。
+7. 若 $\int_{a}^{\infty}f(x) \ dx$ 在 $a$ 不連續，則需要將這個積分拆成兩個狹積分算。例：$\int_{0}^{\infty} \frac{1}{x^{2}} \ dx=\int_{0}^{1} \frac{1}{x^{2}} \ dx+\int_{1}^{\infty} \frac{1}{x^{2}} \ dx$ 才能算。
+8. 我們只會對狹積分討論 convergent 與 divergent，對定積分不做這個討論。
+9. $\int_{-\infty}^{\infty}\tan^{-1}x \ dx$ 發散。不要以為兩個面積抵銷所以等於零。因為狹積分的定義要兩個極限分別存在。
 
 # 重要例題
 
@@ -433,6 +436,24 @@ Sol:
 所以取 $u=x^{1/6}$。
 然後你就會做了！
 
+10. Find $\int_{-\infty}^{0} \frac{z}{z^{4}+4} \ dz$. 
+
+Sol:
+沒法直接三角代換，先用 substition rule 然後再三角代換。
+$\int_{-\infty}^{0} \frac{z}{z^{4}+4} \ dz=\lim_{ t \to -\infty }\int_{t}^{0} \frac{z}{z^{4}+4} \ dz$ $[\text{let }u=z^{2}]$ 
+$=\lim_{ t \to -\infty } \frac{1}{2}\int_{t^{2}}^{0} \frac{1}{u^{2}+4} \ du$ 
+`~~~~~~~~~~~^ 注意這裡變 t 平方`
+$=\lim_{ t \to -\infty } \frac{1}{2}\left[ \frac{1}{2}\tan^{-1}\left( \frac{u}{2} \right) \right]^{0}_{t^{2}}=-\frac{\pi}{8}$  
+
+11. Find the values of $p$ for which the integral converges and evaluate the integral for those values of $p$. $\int_{0}^{1} \frac{1}{x^{p}} \ dx$. 
+
+Sol:
+注意到，當 $p<0$，積分 proper，所以不會用來討論 converge 與 diverge。
+又注意到當 $p=1$ 時，$\int_{0}^{1} \frac{1}{x}\ dx=\lim_{ t \to 0^{+} }[\ln|x|]^{1}_{t}=\infty$ divergent。
+當 $p\neq 1$ 時：$\int_{0}^{1} \frac{1}{x^{p}} \ dx= \frac{1}{1-p}\lim_{ t \to 0^{+} }\left( 1- \frac{1}{t^{p-1}} \right)$ 
+當 $p>1$ 時極限不存在 $\implies$ divergent
+當 $p<1$ 時極限存在且等於 $1\implies$ convergent 且值為 $\frac{1}{1-p}$。
+
 # 大會考
 
 1. $\int_{0}^{e-2}\ln(2+x) \ dx= \ ?$ 
@@ -477,3 +498,19 @@ $\int \frac{1}{x^{8}-x} \ dx=\int \frac{1}{x(x^{7}-1)} \ dx$
 `~~~^ key`
 $\int \frac{1}{x(x^{7}-1)} \ dx= \frac{1}{7}\int \frac{1}{u-1}\cdot \frac{1}{x}\cdot \frac{1}{x^{6}} \ du= \frac{1}{7}\int \frac{1}{u}\cdot \frac{1}{u-1} \ du = \frac{1}{7}\int \frac{-1}{u}+ \frac{1}{u-1} \ du$ 
 $=\frac{1}{7}\ln| \frac{x^{7}-1}{x^{7}}|+C$ 
+
+5. Set $f(x)= \frac{1}{x[\ln (x+1)]^{p}} \ dx$. Determine all positive values of $p$ for which the improper integral $\int_{1}^{\infty} f(x) \ dx$ converges.
+
+Sol:
+因為 $f(x)$ 在 $[1,\infty)$ 有界，所以可以只考慮 $\int_{e}^{\infty}f(x) \ dx$ 因為 $\int_{1}^{e}f(x) \ dx$ 必定收斂。
+因為 $x[\ln(x+1)]^{p}>x[\ln x]^{p}\quad\forall p>0\text{ on }[e,\infty)$，所以 $f(x)< \frac{1}{x[\ln x]^{p}}\quad\forall p>0\text{ on }[e,\infty)$。
+令 $u=\ln x$，則：
+$\lim_{ t \to \infty }\int_{e}^{t} \frac{1}{x[\ln x]^{p}} \ dx=\lim_{ t \to \infty }\int_{1}^{\ln t} \frac{1}{u^{p}} \ du=\lim_{ t \to \infty }\int_{1}^{\ln t} \frac{1}{u^{p}} \ du$ 
+當 $p=1$，$\lim_{ t \to \infty }\int_{1}^{\ln t} \frac{1}{u^{p}} \ dx$ 發散。
+當 $p\neq 1$，$\lim_{ t \to \infty }\int_{1}^{\ln t} \frac{1}{u^{p}} \ dx=\lim_{ t \to \infty }\left[ \frac{1}{1-p}u^{1-p} \right]^{\ln t}_{1}$ 僅在 $1-p<0\implies p>1$ 時收斂。
+(如果此時我們沒有在題目一開始考慮 $[e,\infty)$，就會變成要考慮 $\int_{0}^{\infty} \frac{1}{u^{p}} \ du$ 無論如何都會發散，也就無法夾出來我們的 $p$ 的條件了)
+
+6. For which values of $a$ does the improper integral $\int_{0}^{\infty} \frac{x^{a}}{1+x^{2}} \ dx$ converge? 
+
+Sol:
+我不會，請外援。
