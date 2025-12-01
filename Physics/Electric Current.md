@@ -40,7 +40,7 @@ $$
 代入電流公式：
 
 $$
-i_{p}=\frac{\Delta q_{p}}{\Delta t}=q_{p}N_{p}Av_{p}
+\boxed{i_{p}=\frac{\Delta q_{p}}{\Delta t}=q_{p}N_{p}Av_{p}}
 $$
 
 同理可得負電荷的電流：
@@ -60,7 +60,13 @@ $$
 我們把單位**截面積(cross-section)** 的電流定義為**電流密度(current density)**：
 
 $$
-J=\frac{i}{A} \ (\text{A/m}^{2})
+\boxed{J=\frac{i}{A} \ (\text{A/m}^{2})}
+$$
+
+最後，我們有飄移速度等於：
+
+$$
+v=\frac{J}{Nq}
 $$
 
 # Resistance and Resistivity
@@ -68,7 +74,7 @@ $$
 通常來說，電流 $i$ 正比於電場，那麼 $J\propto E$。我們通過引入**電阻率(electrical resistivity)** $\rho$ 將其轉換成等號：
 
 $$
-E=\rho J
+\boxed{E=\rho J}
 $$
 
 電阻率是材料本身的特性，與材料的形狀無關。
@@ -81,7 +87,7 @@ $$
 \rho=\frac{E(\text{N/C})}{J(\text{C/s-m}^{2})}
 $$
 
-所以，我們將其單位訂為 $\ohm-\text{m}$ (ohm-meter)。
+所以，我們將其單位訂為 $\boxed{\ohm-\text{m}}$ (ohm-meter)。
 
 有時使用電阻率的導數更為方便，引出**導電率(conductivity)** $\sigma$：
 
@@ -100,7 +106,7 @@ $$
 根據第十四章，我們有(假設導線中磁場均勻)：
 
 $$
-\Delta V=V_{1}-V_{2}=\int_{s_{1}}^{s_{2}}E \ ds=El\implies E=\frac{\Delta V}{l}
+\Delta V=V_{1}-V_{2}=\int_{s_{1}}^{s_{2}}E \ ds=El\implies \boxed{E=\frac{\Delta V}{l}}
 $$
 
 注意電位差減的順序，因為 $E$ 積出來值是正的，但是他會把你從高電位挪到低電位(如果你是正電荷的話啦)
@@ -111,10 +117,10 @@ $$
 \Delta V=i \frac{\rho l}{A}
 $$
 
-令 $R=\frac{\rho l}{A}$，則：
+令 $\boxed{R=\frac{\rho l}{A}}$，則：
 
 $$
-V=iR
+\boxed{V=iR}
 $$
 
 我們將 $R$ 稱為**電阻(resistance)**，單位為 $\ohm$。
@@ -144,11 +150,11 @@ $$
 
 因為電荷守恆，所以 $i=i_{1}+i_{2}+i_{3}$。
 
-注意，這裡每個電阻左側的電位都相同，右側的電位也都相同。所以每個電阻的電位差都為 $V$。
+**注意，這裡每個電阻左側的電位都相同，右側的電位也都相同。所以每個電阻的電位差都為 $V$。**
 
 根據歐姆定律：
 
-$$i=\frac{V}{R_{1}}+\frac{V}{R_{2}}+\frac{V}{R_{3}}\implies V=i\left( \frac{1}{\frac{1}{R_{1}}+\frac{1}{R_{2}}+\frac{1}{R_{3}}} \right)=iR_{eq}\implies \frac{1}{R_{eq}}=\frac{1}{R_{1}}+\frac{1}{R_{2}}+\frac{1}{R_{3}}$$
+$$\boxed{i=\frac{V}{R_{1}}+\frac{V}{R_{2}}+\frac{V}{R_{3}}}\implies V=i\left( \frac{1}{\frac{1}{R_{1}}+\frac{1}{R_{2}}+\frac{1}{R_{3}}} \right)=iR_{eq}\implies \frac{1}{R_{eq}}=\frac{1}{R_{1}}+\frac{1}{R_{2}}+\frac{1}{R_{3}}$$
 
 到此為止，我們可以教你一個很酷酷的解題方法：比值法。
 
@@ -228,7 +234,62 @@ $$
 我們同除以 $\Delta t$ 可以將位能變化轉為功率：
 
 $$
-P=Vi=i^{2}R=\frac{V^{2}}{R}
+\boxed{P=Vi}=i^{2}R=\frac{V^{2}}{R}
 $$
 
+# Tips
+
+- 球體表面積公式：$4\pi r^{2}$。
+
 # 威儀指定習題
+
+![[Pasted image 20251201225543.png]]
+
+Sol:
+(a)
+$J=\frac{i}{A}\approx3.33 \times 10^{6}\text{ A/m}^{2}$ 
+(b)
+$1\text{ m}^{3}=10^{6}\text{ cm}^{3}$ 
+所以 $1\text{ m}^{3}$ 有 $9\times 10^{6}\text{ g}$ ， $\frac{9\times 10^{6}}{64}$ 莫耳的銅。
+有 $\frac{9\times 10^{6}}{64}\times6\times 10^{23}\approx 8.47\times 10^{28}$ 個 conduction electrons per $\text{m}^{3}$。
+(c)
+回憶公式：$i=\frac{\Delta q}{\Delta t}=\frac{AvNq\Delta t}{\Delta t}=AvNq$。
+所以 $v=\frac{i}{ANq}=\frac{J}{Nq}\approx 2.46 \times 10^{-4}\text{ m/sec}$ 
+
+![[Pasted image 20251201230902.png]]
+
+Sol:
+已知 $E=\rho J=\rho \frac{i}{A}$ 
+我們將天空與地球視作兩個平行版，就有 $100=\rho \frac{1800}{4\pi(6.37 \times 10^{6})^{2}}\implies \rho \approx 2.83 \times 10^{13} \ \ohm\text{-m}$ 
+
+![[Pasted image 20251201232638.png]]
+![[Pasted image 20251201232657.png]]
+
+Sol:
+因為沒有任何電流流入 $G$，所以通過 $R_{s}$ 的電流會和 $R_{x}$ 的相同。同理可推 $R_{1}, R_{2}$。
+令通過 $R_{s}$ 與 $R_{x}$ 的電流為 $i_{s}$，通過 $R_{1}$ 與 $R_{2}$ 的電流為 $i_{1}$。
+因為沒有任何電流流入 $G$，所以上下兩條電路的電位差為零，那麼有：
+$i_{s}R_{s}=i_{1}R_{1}$ 與 $i_{s}R_{x}=i_{1}R_{2}$。
+兩式相除，得到 $R_{x}=R_{s} \frac{R_{2}}{R_{1}}=470\cdot \frac{100}{10}=4700 \ \ohm$。
+
+![[Pasted image 20251201233750.png]]
+
+Sol:
+第 19 題沒啥，就是說這個加熱器的 Power = 360 W
+根據公式：$Q=mc\Delta T$ 與水的比熱 $c=4186\text{ J/kg}^{\circ}C$ ($1\text{ cal/g}^{\circ}C$)，有 $Q=0.15\times 4186\times(100-27)$。
+又因為只能吸收 $80\%$ 的功率，所以時間為 $\frac{Q}{360\times 0.8}\approx 159\text{ s}$。
+
+# 威儀考古
+
+1. 解釋慧斯同電橋如何測得 $R_{x}$ 的大小。
+
+Sol:
+$R_{s}$ 電阻可調，當 $R_{s}$ 調整到使得檢流計 $G$ 時即可使用如下方法測得 $R_{x}$ 大小。
+因為電流不通過檢流計，所以通過 $R_{s}$ 與通過 $R_{x}$ 的電流大小相等。同理可推 $R_{1},R_{2}$。
+而且，上下電路電位差相等。所以 $i_{s}R_{s}=i_{1}R_{1}$ 且 $i_{s}R_{x}=i_{1}R_{2}\implies R_{x}=R_{s} \frac{R_{2}}{R_{1}}$。
+
+2. A copper wire $15\text{ m}$ long has  $8\times 10^{26}$ mobile electrons. What is the drift velocity of the electrons if the current in the wire is $5\text{ A}$?
+
+Sol:
+這邊要注意不要因為沒給截面積就慌掉，因為我們在計算單位體積所含的電子數時，就會把截面積給除掉。
+$i=AvqN\implies v= \frac{i}{AqN}= \frac{5}{A\times 1.6\times 10^{-19}\times \frac{8\times 10^{26}}{15\cdot A}}=5.86\times 10^{-7}$ 
