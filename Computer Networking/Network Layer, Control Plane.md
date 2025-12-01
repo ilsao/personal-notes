@@ -71,3 +71,4 @@ until N' = N
 要解決這種震盪，我們希望即使路由器以相同週期運行 LS，每個節點上算法執行的時機相異。我們的方法是使得發送鏈路通告的時間隨機話。
 
 ## The Distance-Vector (DV) Routing Algorithm
+
