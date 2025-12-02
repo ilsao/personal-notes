@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Computer Networking/Network Layer, Control Plane.md",
+                "file": "Math/Calculus/Application of Integrals.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Network Layer, Control Plane"
+              "title": "Application of Integrals"
             }
           },
           {
@@ -192,28 +192,30 @@
       "bases:Create new base": false
     }
   },
-  "active": "930e5d797c093d6f",
+  "active": "1d5b0d980baa8a22",
   "lastOpenFiles": [
+    "Math/Calculus/pic/Pasted image 20251202203511.png",
+    "Math/Calculus/pic/Pasted image 20251202203207.png",
+    "Math/Calculus/pic/Pasted image 20251202202632.png",
+    "Math/Calculus/pic/Pasted image 20251202181930.png",
+    "Math/Calculus/pic/Pasted image 20251202181827.png",
+    "Math/Calculus/Applications of Differentiation.md",
+    "Math/Calculus/Application of Integrals.md",
+    "Math/Calculus/pic/Pasted image 20251202171127.png",
+    "Math/Calculus/pic/Pasted image 20251202171051.png",
+    "Computer Networking/pic/Network Layer, Control Plane/Pasted image 20251202144425.png",
+    "Computer Networking/Network Layer, Control Plane.md",
     "Physics/Electric Current.md",
     "Physics/The Electric Field and Electric Potiential.md",
     "Physics/Electrostatics.md",
-    "Computer Networking/Network Layer, Control Plane.md",
-    "Pasted image 20251202144425.png",
     "Computer Networking/pic/Network Layer, Control Plane/Pasted image 20251202141344.png",
     "Physics/Physical Quantities.md",
     "Physics/pic/Pasted image 20251201233750.png",
-    "大學安排.md",
+    "交大/大學安排.md",
     "Physics/pic/Pasted image 20251201232657.png",
-    "Physics/pic/Pasted image 20251201232638.png",
-    "Physics/pic/Pasted image 20251201230902.png",
-    "Physics/pic/Pasted image 20251201225543.png",
-    "Pasted image 20251201225518.png",
-    "Physics/pic/Pasted image 20251201223636.png",
-    "Physics/pic/Pasted image 20251201222726.png",
     "Math/Calculus/Integrals.md",
     "Math/Calculus/Techniques of Integrations.md",
     "Math/Calculus/Differentiation Rules.md",
-    "Math/Calculus/Applications of Differentiation.md",
     "Computer Networking/Network Layer, Data Plane.md",
     "Computer Networking/Intro. to the Internet.md",
     "Computer Networking/Application Layer.md",
@@ -235,7 +237,6 @@
     "Computer Networking/pic/Network Layer, Data Plane",
     "Math/Calculus/大會考 (一) 上半錯題.md",
     "Computer Networking/pic",
-    "Physics/Interference of Wave.md",
     "Physics/pic",
     "Math/Calculus.zip",
     "Math/Calculus/pic",
