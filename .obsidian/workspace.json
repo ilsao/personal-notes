@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Computer Networking/Network Layer, Control Plane.md",
+                "file": "Physics/Electric Current.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Network Layer, Control Plane"
+              "title": "Electric Current"
             }
           },
           {
@@ -194,11 +194,12 @@
   },
   "active": "930e5d797c093d6f",
   "lastOpenFiles": [
+    "Physics/The Electric Field and Electric Potiential.md",
+    "Physics/Electrostatics.md",
+    "Computer Networking/Network Layer, Control Plane.md",
     "Pasted image 20251202144425.png",
     "Computer Networking/pic/Network Layer, Control Plane/Pasted image 20251202141344.png",
     "Physics/Electric Current.md",
-    "Physics/The Electric Field and Electric Potiential.md",
-    "Physics/Electrostatics.md",
     "Physics/Physical Quantities.md",
     "Physics/pic/Pasted image 20251201233750.png",
     "大學安排.md",
@@ -209,12 +210,10 @@
     "Pasted image 20251201225518.png",
     "Physics/pic/Pasted image 20251201223636.png",
     "Physics/pic/Pasted image 20251201222726.png",
-    "Physics/pic/Pasted image 20251201215354.png",
     "Math/Calculus/Integrals.md",
     "Math/Calculus/Techniques of Integrations.md",
     "Math/Calculus/Differentiation Rules.md",
     "Math/Calculus/Applications of Differentiation.md",
-    "Computer Networking/Network Layer, Control Plane.md",
     "Computer Networking/Network Layer, Data Plane.md",
     "Computer Networking/Intro. to the Internet.md",
     "Computer Networking/Application Layer.md",

@@ -193,8 +193,7 @@ Sol:
 ![[Pasted image 20251201223636.png]]
 
 Sol:
-利用能量守恆：$\frac{1}{2}(9.1\times10^{-31})(4\times 10^{6})^{2}=E_{p}$ 
-與 $\frac{V}{q}=E_{p}$ 
+利用能量守恆：$\frac{1}{2}(9.1\times10^{-31})(4\times 10^{6})^{2}=E_{p}$ 與 $\frac{E_{p}}{q}=V$  
 可以得到 $V\approx 45.5\text{ V}$。
 
 # 威儀考古
