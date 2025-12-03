@@ -81,6 +81,56 @@ $$
 
 ![[Pasted image 20251202203511.png]]
 
+# Volumes by Cylindrical Shells
+
+有時想要把一個函數切成內外圓再去繞出體積計算有點難，這就是為啥我們需要下述 method of cylindrical shell。
+
+## The Method of Cylindrical Shells
+
+如果我們想計算下圖這種 cylindrical shell 的體積，可以通過計算：
+$\pi r_{2}^{2}h-\pi r_{1}^{2}h=\pi(r_{2}^{2}-r_{1}^{2})h=\pi(r_{2}+r_{1})(r_{2}-r_{1})h=2\pi \frac{r_{2}+r_{1}}{2}h(r_{2}-r_{1})$ 
+得到。
+
+![[Pasted image 20251203145251.png]]
+
+如果我們令 $r=\frac{r_{1}+r_{2}}{2}$ 為平均半徑，$\Delta r=r_{2}-r_{1}$，則：
+
+$$
+V=2\pi rh\Delta r
+$$
+
+可以記憶：
+
+$$
+V=[\text{circumference}][\text{height}][\text{thickness}]
+$$
+
+現在考慮一個 $y=f(x)$ 與 $x=a$ 和 $x=b$ 形成的區域繞 $y$ 軸旋轉：
+
+![[Pasted image 20251203150017.png]]
+
+則體積為：
+
+$$
+V=\lim_{ n \to \infty } 2\pi \bar{x}f(\bar{x})\Delta x=\int_{a}^{b}2\pi xf(x) \ dx\quad\text{where }0\leq a<b
+$$
+
+## Disks and Washers versus Cylindrical Shells
+
+你需要知道啥時候用啥技巧。
+
+判斷：若一個函數必須被切成兩塊算的時候，好切否？
+
+![[Pasted image 20251203151535.png]]
+
+考慮上圖場景，我們分別使用：
+1. 對 $x$ 積分。
+2. 對 $y$ 積分。
+
+對 $x$ 積分，顯然要使用本節的 method of cylindrical shell：$V=\int_{0}^{2}2\pi(1+x)(2x-x^{2}) \ dx$。
+
+對 $y$ 積分，要使用之前的 Disk：$V=\int_{0}^{4}\pi\left( [\sqrt{ y }+1]^{2}-\left[ \frac{1}{2}y+1 \right]^{2} \right) \ dy$。
+
 # Tips
 
 - 當 $y$ 高於一次方時，考慮把 $x$ 用 $y$ 表達，然後對 $y$ 積分。 
@@ -95,3 +145,28 @@ Sol:
 不難，主要是提醒你 $c$ 可以是 $\pm 6$。
 ![[Pasted image 20251202181930.png]]
 
+![[Pasted image 20251203141532.png]]
+
+Sol:
+我們來算算這東西的體積。
+為了方便，我們把這東西逆時針旋轉 $90^{\circ}$。
+![[Pasted image 20251203141648.png]]
+現在他的截面積長這樣，那我們切成兩部分算。
+$f(x)=R+\sqrt{ r^{2}-x^{2} }$ 與 $g(x)=R-\sqrt{ r^{2}-x^{2} }$，其中 $f$ 當外圓半徑，$g$ 當內圓半徑。
+那麼體積就是：$\int_{-r}^{r}\pi([f(x)]^{2}-[g(x)]^{2}) \ dx$ ！
+
+![[Pasted image 20251203142516.png]]
+
+Sol:
+四分之一個橫截面長成這樣：
+![[Pasted image 20251203142902.png]]
+之所以為正方形，是因為所有邊都垂直。
+我們有 $\bar{PQ}^{2}=r^{2}-x^{2}$。
+那麼體積為：$4\int_{-r}^{r}(r^{2}-x^{2}) \ dx= \frac{16}{3}r^{3}$。
+
+![[Pasted image 20251203175124.png]]
+
+Sol:
+這題不好用 method of cylindrical shell，因為要分三段。
+![[Pasted image 20251203175220.png]]
+我們對 $y$ 積分並使用 washers：$\int_{0}^{3}\pi([y+1+1]^{2}-[(y-1)+1]^{2}) \ dy= \frac{117}{5}\pi$。

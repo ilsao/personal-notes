@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Math/Linear Algebra/Orthogonality.md",
+                "file": "Math/Calculus/Application of Integrals.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Orthogonality"
+              "title": "Application of Integrals"
             }
           },
           {
@@ -194,19 +194,21 @@
   },
   "active": "930e5d797c093d6f",
   "lastOpenFiles": [
+    "Pasted image 20251203175220.png",
+    "Pasted image 20251203175124.png",
+    "Pasted image 20251203151535.png",
+    "Math/Calculus/Integrals.md",
+    "Math/Calculus/Application of Integrals.md",
+    "Math/Calculus/pic/Pasted image 20251203150017.png",
+    "Math/Calculus/pic/Pasted image 20251203145251.png",
+    "Math/Calculus/pic/Pasted image 20251203142902.png",
+    "Math/Calculus/pic/Pasted image 20251203142516.png",
+    "Math/Calculus/pic/Pasted image 20251203141648.png",
+    "Math/Calculus/pic/Pasted image 20251203141532.png",
+    "Math/Calculus/Techniques of Integrations.md",
+    "Math/Linear Algebra/Orthogonality.md",
     "Math/Linear Algebra/pic/Orthogonality/Pasted image 20251203113122.png",
     "Math/Linear Algebra/pic/Orthogonality/Pasted image 20251203111410.png",
-    "Math/Linear Algebra/pic/Orthogonality/Pasted image 20251203110406.png",
-    "Math/Linear Algebra/pic/Orthogonality/Pasted image 20251203002514.png",
-    "Math/Linear Algebra/pic/Orthogonality/Pasted image 20251203105705.png",
-    "Math/Linear Algebra/Orthogonality.md",
-    "Math/Linear Algebra/pic/Orthogonality/Pasted image 20251202235350.png",
-    "Math/Calculus/Application of Integrals.md",
-    "Math/Calculus/pic/Pasted image 20251202203511.png",
-    "Math/Calculus/pic/Pasted image 20251202203207.png",
-    "Math/Calculus/pic/Pasted image 20251202202632.png",
-    "Math/Calculus/pic/Pasted image 20251202181930.png",
-    "Math/Calculus/pic/Pasted image 20251202181827.png",
     "Math/Calculus/Applications of Differentiation.md",
     "Computer Networking/Network Layer, Control Plane.md",
     "Physics/Electric Current.md",
@@ -214,8 +216,6 @@
     "Physics/Electrostatics.md",
     "Physics/Physical Quantities.md",
     "交大/大學安排.md",
-    "Math/Calculus/Integrals.md",
-    "Math/Calculus/Techniques of Integrations.md",
     "Math/Calculus/Differentiation Rules.md",
     "Computer Networking/Network Layer, Data Plane.md",
     "Computer Networking/Intro. to the Internet.md",
