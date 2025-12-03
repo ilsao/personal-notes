@@ -382,7 +382,7 @@ $$
 ## Definition and Examples
 
 對於向量空間 $V$ 的內積是一個運算使得每一對 $V$ 中的向量 $\mathbf{x}$ 與 $\mathbf{y}$ 都能得到一個實數 $\langle \mathbf{x},\mathbf{y} \rangle$ 滿足下列條件：
-1. $\langle \mathbf{x},\mathbf{y} \rangle \geq 0$ 且等號成立 $\iff \mathbf{x}=0$ 
+1. $\langle \mathbf{x},\mathbf{x} \rangle \geq 0$ 且等號成立 $\iff \mathbf{x}=0$ 
 2. $\langle \mathbf{x},\mathbf{y} \rangle = \langle \mathbf{y},\mathbf{x} \rangle\quad\forall \mathbf{x},\mathbf{y}\in V$ 
 3. $\langle \alpha \mathbf{x}+\beta \mathbf{y},\mathbf{z} \rangle =\alpha \langle \mathbf{x},\mathbf{z} \rangle+\beta \langle \mathbf{y},\mathbf{z} \rangle\quad\forall \mathbf{x},\mathbf{y},\mathbf{z}\in V$ 與任意標量 $\alpha,\beta$ 
 
@@ -562,8 +562,8 @@ $$
 
 proof:
 我們這邊只證第三點。
-$||\mathbf{u}+\mathbf{v}||^{2}=\langle \mathbf{u}+\mathbf{v},\mathbf{u}+\mathbf{v} \rangle=\langle \mathbf{u},\mathbf{u} \rangle+2\langle \mathbf{u},\mathbf{v} \rangle+\langle \mathbf{v},\mathbf{v} \rangle\leq ||\mathbf{u}||^{2}+2||\mathbf{u}|| \ ||\mathbf{v}||+||\mathbf{v}||^{2}=(||\mathbf{u}||^{2}+||\mathbf{v}||^{2})$ 
-$\implies ||\mathbf{u}+\mathbf{v}||\leq ||\mathbf{u}||^{2}+||\mathbf{v}||^{2}$ 
+$||\mathbf{u}+\mathbf{v}||^{2}=\langle \mathbf{u}+\mathbf{v},\mathbf{u}+\mathbf{v} \rangle=\langle \mathbf{u},\mathbf{u} \rangle+2\langle \mathbf{u},\mathbf{v} \rangle+\langle \mathbf{v},\mathbf{v} \rangle\leq ||\mathbf{u}||^{2}+2||\mathbf{u}|| \ ||\mathbf{v}||+||\mathbf{v}||^{2}=(||\mathbf{u}||+||\mathbf{v}||)^{2}$ 
+$\implies ||\mathbf{u}+\mathbf{v}||\leq ||\mathbf{u}||+||\mathbf{v}||$ 
 
 在給定的向量空間定義許多不同的 norm 是可能的，例如我們可以在 $\mathbb{R}^{n}$ 中定義：
 
@@ -605,6 +605,8 @@ $$
 - 若 $U\subseteq V$，則 $V^{\perp}\subseteq U^{\perp}$。
 - 對非滿秩 $A$ 求 $A\mathbf{x}=\mathbf{b}$ 的 least square problem 得到的 $\mathbf{\hat{x}}$ 有無限多組解，但是 $\mathbf{b}$ 在 $R(A)$ 上的投影 $A\mathbf{\hat{x}}$ 只有一個。(不管代哪個 $\mathbf{\hat{x}}$ 都會得到相同解)
 - $N(A^{T}A)=N(A)$ 
+- 對於那些沒有對應到內積的 norm，畢氏定理會失效。
+- Norm 定義中 $||\alpha \mathbf{x}||=|\alpha|||\mathbf{x}||$ 小心 $\alpha$ 的絕對值不要掉。
 
 # 重要例題
 
@@ -753,3 +755,45 @@ $A^{T}A\mathbf{\hat{x}}=A^{T}A\mathbf{y}=A^{T}\mathbf{b}\implies A^{T}A(\mathbf{
 $\implies \mathbf{y}-\mathbf{\hat{x}}\in N(A^{T}A)=N(A)$ 
 $\mathbf{z}:=\mathbf{y}-\mathbf{\hat{x}}$，我們有 $\mathbf{y}=\mathbf{\hat{x}}+\mathbf{z}$ 其中 $\mathbf{z}\in N(A)$。
 因為這邊我們只要證明存在這樣的 $\mathbf{z}$ 滿足 $\mathbf{y}=\mathbf{\hat{x}}+\mathbf{z}$ 且 $\mathbf{z}\in N(A)$ 就好，所以我們可以透過定義 $\mathbf{z}:=\mathbf{y}-\mathbf{\hat{x}}$ 得證。
+
+![[Pasted image 20251202235350.png]]
+
+Sol:
+只錯了第一個 condition，所以咱只做第一個。
+因為 $\langle \mathbf{v},\mathbf{v} \rangle\geq 0$ 且等號成立在 $\mathbf{v}=\mathbf{0}$，所以 $||\mathbf{v}||=\sqrt{ \langle \mathbf{v},\mathbf{v} \rangle }\geq 0$ 且等號成立在 $\mathbf{v}=\mathbf{0}$。
+之前寫這題的時候，我錯誤的把 $||\mathbf{v}||^{2}=\langle \mathbf{v},\mathbf{v} \rangle\geq 0$ 寫了出來，但是無論如何平方都是 $\geq 0$ 所以等於啥也沒做。
+
+![[Pasted image 20251203002514.png]]
+
+Sol:
+這題我本來從 $A\mathbf{x}\in \mathbb{R}^{n}$ 出發，後來看 GPT 才知道原來有更簡單的寫法。果然要被 AI 取代了。
+因為已知 $||\cdot||_{2}$ 是 norm，所以：
+(1) $||\mathbf{x}||_{A}=||A\mathbf{x}||_{2}\geq0$ 且等號成立在 $A\mathbf{x}=\mathbf{0}$ 時，因為 $A$ nonsingular，所以 $A\mathbf{x}=\mathbf{0}\iff \mathbf{x}=\mathbf{0}$。
+(2) $||\alpha \mathbf{x}||_{A}=||A(\alpha \mathbf{x})||_{2}=||\alpha A\mathbf{x}||_{2}=|\alpha| \ ||A\mathbf{x}||_{2}$ 
+(3) $||\mathbf{x}+\mathbf{y}||_{A}=||A(\mathbf{x}+\mathbf{y})||_{2}=||A\mathbf{x}+A\mathbf{y}||_{2}\leq ||A\mathbf{x}||_{2}+||A\mathbf{y}||_{2}=||\mathbf{x}||_{A}+||\mathbf{y}||_{A}$ 
+
+![[Pasted image 20251203105705.png]]
+
+Sol:
+$||\mathbf{x}||_{2}=||x_{1}\mathbf{e_{1}}+x_{2}\mathbf{e_{2}}||_{2}\leq ||x_{1}\mathbf{e_{1}}||_{2}+||x_{2}\mathbf{e_{2}}||_{2}$ 
+又 $||x_{1}\mathbf{e_{1}}||_{2}=|x_{1}|=||x_{1}\mathbf{e_{1}}||_{1}$ 同理 $||x_{2}\mathbf{e_{2}}||_{2}=||x_{2}\mathbf{e_{2}}||_{1}$ ，且 $||x_{1}\mathbf{e_{1}}+x_{2}\mathbf{e_{2}}||_{1}=||x_{1}\mathbf{e_{1}}||_{1}+||x_{2}\mathbf{e_{2}}||_{1}$ 。
+所以 $||\mathbf{x}||_{2}=||x_{1}\mathbf{e_{1}}+x_{2}\mathbf{e_{2}}||_{2}\leq ||x_{1}\mathbf{e_{1}}||_{2}+||x_{2}\mathbf{e_{2}}||_{2}=||x_{1}\mathbf{e_{1}}+x_{2}\mathbf{e_{2}}||_{1}\implies ||\mathbf{x}||_{2}\leq||\mathbf{x}||_{1}$。
+
+![[Pasted image 20251203110406.png]]
+
+Sol:
+菜誒，這都想不出來：$(1,0)^{T}$。
+
+![[Pasted image 20251203111410.png]]
+
+Sol:
+哇擦勒，我有想到一點點思路，但是沒有寫下去。
+$||\mathbf{u}||=||(\mathbf{u}+\mathbf{v})-\mathbf{v}||\leq ||\mathbf{u}+\mathbf{v}||+||-\mathbf{v}||=||\mathbf{u}+\mathbf{v}||+||\mathbf{v}||\implies||\mathbf{u}+\mathbf{v}||\geq ||\mathbf{u}||-||\mathbf{v}||$ 
+$||\mathbf{v}||=||(\mathbf{u}+\mathbf{v})-\mathbf{u}||\leq||\mathbf{u}+\mathbf{v}||+||\mathbf{u}||\implies||\mathbf{u}+\mathbf{v}|\geq ||\mathbf{v}||-||\mathbf{u}||$ 
+綜合 $\begin{cases}||\mathbf{u}+\mathbf{v}||\geq||\mathbf{v}||-||\mathbf{u}|| \\ ||\mathbf{u}+\mathbf{v}||\geq ||\mathbf{u}||-||\mathbf{v}||\end{cases}\implies||\mathbf{u}+\mathbf{v}||\geq |\ ||\mathbf{u}||-||\mathbf{v}|| \ |$ 
+
+![[Pasted image 20251203113122.png]]
+
+Sol:
+很坑，小心。
+這邊 $||f||=0$ 只要求 $f(a)=f(b)=0$，而不要求中間所有值都為零，所以不符合。

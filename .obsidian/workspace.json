@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Math/Calculus/Application of Integrals.md",
+                "file": "Math/Linear Algebra/Orthogonality.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Application of Integrals"
+              "title": "Orthogonality"
             }
           },
           {
@@ -192,34 +192,34 @@
       "bases:Create new base": false
     }
   },
-  "active": "1d5b0d980baa8a22",
+  "active": "930e5d797c093d6f",
   "lastOpenFiles": [
+    "Math/Linear Algebra/pic/Orthogonality/Pasted image 20251203113122.png",
+    "Math/Linear Algebra/pic/Orthogonality/Pasted image 20251203111410.png",
+    "Math/Linear Algebra/pic/Orthogonality/Pasted image 20251203110406.png",
+    "Math/Linear Algebra/pic/Orthogonality/Pasted image 20251203002514.png",
+    "Math/Linear Algebra/pic/Orthogonality/Pasted image 20251203105705.png",
+    "Math/Linear Algebra/Orthogonality.md",
+    "Math/Linear Algebra/pic/Orthogonality/Pasted image 20251202235350.png",
+    "Math/Calculus/Application of Integrals.md",
     "Math/Calculus/pic/Pasted image 20251202203511.png",
     "Math/Calculus/pic/Pasted image 20251202203207.png",
     "Math/Calculus/pic/Pasted image 20251202202632.png",
     "Math/Calculus/pic/Pasted image 20251202181930.png",
     "Math/Calculus/pic/Pasted image 20251202181827.png",
     "Math/Calculus/Applications of Differentiation.md",
-    "Math/Calculus/Application of Integrals.md",
-    "Math/Calculus/pic/Pasted image 20251202171127.png",
-    "Math/Calculus/pic/Pasted image 20251202171051.png",
-    "Computer Networking/pic/Network Layer, Control Plane/Pasted image 20251202144425.png",
     "Computer Networking/Network Layer, Control Plane.md",
     "Physics/Electric Current.md",
     "Physics/The Electric Field and Electric Potiential.md",
     "Physics/Electrostatics.md",
-    "Computer Networking/pic/Network Layer, Control Plane/Pasted image 20251202141344.png",
     "Physics/Physical Quantities.md",
-    "Physics/pic/Pasted image 20251201233750.png",
     "交大/大學安排.md",
-    "Physics/pic/Pasted image 20251201232657.png",
     "Math/Calculus/Integrals.md",
     "Math/Calculus/Techniques of Integrations.md",
     "Math/Calculus/Differentiation Rules.md",
     "Computer Networking/Network Layer, Data Plane.md",
     "Computer Networking/Intro. to the Internet.md",
     "Computer Networking/Application Layer.md",
-    "Math/Linear Algebra/Orthogonality.md",
     "Physics/Uniform Accelerated Motion.md",
     "Math/Calculus/Limit.md",
     "Math/Calculus/Calculus, Early Transcendentals.pdf",
