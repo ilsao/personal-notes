@@ -597,6 +597,20 @@ $$
 
 令 $\mathbf{x},\mathbf{y}$ 為 normed linear space 的向量。則 $\mathbf{x},\mathbf{y}$ 之間的距離為 $||\mathbf{y}-\mathbf{x}||$。
 
+# Orthonormal Sets
+
+## Orthogonal Matrices
+
+## Permutation Matrices
+
+## Orthonormal Sets and Least Squares
+
+## Approximation Function
+
+## Approximation by Trigonometric Polynomials
+
+## The Fast Fourier Transformation
+
 # Tips
 
 - 做不出來的時候回頭看看題目，說不定會有驚人發現！

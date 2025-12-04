@@ -131,11 +131,104 @@ $$
 
 對 $y$ 積分，要使用之前的 Disk：$V=\int_{0}^{4}\pi\left( [\sqrt{ y }+1]^{2}-\left[ \frac{1}{2}y+1 \right]^{2} \right) \ dy$。
 
+# Average Value of a Function
+
+我們定義 $f$ 在 $[a,b]$ 的平均值為：
+
+$$
+f_{\text{avg}}=\frac{1}{b-a}\int_{a}^{b}f(x) \ dx
+$$
+
+## The Mean Value Theorem for Integrals
+
+若 $f$ 在 $[a,b]$ 上連續，則 $[a,b]$ 中存在一個數 $c$ 使得：
+
+$$
+f(c)=f_{\text{avg}}= \frac{1}{b-a}\int_{a}^{b}f(x) \ dx
+$$
+
+也就是：
+
+$$
+\int_{a}^{b}f(x) \ dx = f(c)(b-a)
+$$
+
+積分的均值定理的幾何意義就是，存在一個點 $c$ 使得 $f(c)=f_{\text{avg}}$ 且與 $x=a$ 和 $x=b$ 構成的矩形面積會等於 $f(x)$ 與 $x=a$ 和 $x=b$ 構成的面積。
+
+proof:
+(I)
+因為 $f$ 在 $[a,b]$ 上連續，根據極值定理有 $x_{1}\in[a,b]$ 與 $x_{2}\in[a,b]$ 使得 $f(x_{1})=m$ 為 $f$ 在 $[a,b]$ 上的最小值 ，$f(x_{2})=M$ 為 $f$ 在 $[a,b]$ 上的最大值。
+因為 $m\leq f(x)\leq M$，所以 $\int_{a}^{b}m \ dx\leq \int_{a}^{b}f(x) \ dx\leq \int_{a}^{b}M \ dx$。
+因為 $\frac{1}{b-a}>0$，所以同除 $b-a$ 得到 $m\leq \frac{1}{b-a}\int_{a}^{b}f(x) \ dx\leq M$。
+因為 $f$ 在 $[a,b]$ 上連續，根據中間值定理，對於任意 $y\in[m,M]$ 都有一個數 $c\in[x_{1},x_{2}]\subseteq[a,b]$ 使得 $f(c)=y$。
+當取 $y$ 為 $\frac{1}{b-a}\int_{a}^{b}f(x) \ dx$ 則一定有一個數使得 $f(c)=\frac{1}{b-a}\int_{a}^{b}f(x) \ dx$。
+(II)
+令 $F(x)=\int_{a}^{x}f(t) \ dt$。
+根據導數的均值定理，我們有 $F(b)-F(a)=F'(c)(b-a)$，其中 $c\in[a,b]$。
+$\implies \int_{a}^{b}f(x) \ dx=f(c)(b-a)$ 
+
+# Arc Length
+
+## Arc Length of a Curve
+
+想計算一個曲線的長度，我們可以通過在曲線上以 $\Delta x$ 為間隔，取 $P_{i}=(x_{i},f(x_{1}))$。
+
+則曲線的長度為：
+
+$$
+L=\lim_{ n \to \infty } \sum_{i=1}^{n}|P_{i-1}P|
+$$
+
+但是，這東西不好算。如果我們有 $f$ 曲線在 $[a,b]$ 連續且可導，並且 $f'$ 連續，就可以使用積分公式幫忙啦～
+
+若計算 $y=f(x)$ 在 $a\leq x\leq b$ 上的長度，則：
+
+$$
+L=\int_{a}^{b}\sqrt{ 1+[f'(x)]^{2} } \ dx
+$$
+
+proof:
+令 $\Delta y=y_{i}-y_{i-1}$。
+由均值定理，有 $x_{i}^{*}\in[x_{i-1},x_{i}]$ 使得 $f(x_{i})-f(x_{i-1})=f'(x_{i}^{*})(x_{i}-x_{i-1})$。
+也就是：$\Delta y=f'(x_{i}^{*})\Delta x$。($\Delta x>0$)
+代入 $|P_{i-1}P|=\sqrt{ (\Delta x)^{2}+(\Delta y)^{2} }=\sqrt{ \Delta x^{2}+[f'(x_{i}^{*})]^{2}(\Delta x)^{2} }=\sqrt{ 1+[f'(x_{i}^{*})]^{2} }\Delta x$ 
+那麼 $\lim_{ n \to \infty }\sum_{i=1}^{n}\sqrt{ 1+[f'(x_{i}^{*})]^{2} }\Delta x=\int_{a}^{b}\sqrt{ 1+[f'(x)]^{2} } \ dx$。
+
+## The Arc Length Function
+
+若一個 smooth curve $y=f(x)$ 在 $a\leq x\leq b$，令 $s(x)$ 代表從起始 $(a,f(a))$ 到 $(x,f(x))$ 的長度，則 $s(x)$ 稱為 arc length function：
+
+$$
+s(x)=\int_{a}^{x}\sqrt{ 1+[f'(t)]^{2} } \ dt
+$$
+通過 FTC 1，我們有：
+
+$$
+\frac{ds}{dx}=\sqrt{ 1+\left( \frac{dy}{dx} \right)^{2} }
+$$
+
+也就是說 $s$ 的微分最小值為 $1$，且此時曲線的斜率為 $0$。
+
+而：
+
+$$
+ds=\sqrt{ 1+\left( \frac{dy}{dx} \right)^{2} } \ dx
+$$
+
+或者我們也可以寫成：
+
+$$
+(ds)^{2}=(dx)^{2}+(dy)^{2}
+$$
+
+![[Pasted image 20251204184712.png]]
+
 # Tips
 
 - 當 $y$ 高於一次方時，考慮把 $x$ 用 $y$ 表達，然後對 $y$ 積分。 
 - 算兩函數交出的面積時，判斷好誰上誰下。
 - oi，不要看到 $\cos2x-\sin x$ 就自動換成 $\cos 2x=1-2\sin^{2}x$，思考一下是不是不換的反導函數比較簡單？
+- 不是啊，$1+x^{2}=1+2x^{2}+x^{4}$ 而非 $1+2x+x^{2}$ 好伐！
 
 # 重要例題
 
@@ -170,3 +263,54 @@ Sol:
 這題不好用 method of cylindrical shell，因為要分三段。
 ![[Pasted image 20251203175220.png]]
 我們對 $y$ 積分並使用 washers：$\int_{0}^{3}\pi([y+1+1]^{2}-[(y-1)+1]^{2}) \ dy= \frac{117}{5}\pi$。
+
+![[Pasted image 20251203231817.png]]
+
+Sol:
+要計算這個函數的平均值。
+不難，我會但是放這裡以免忘記：
+$\frac{1}{3}\int_{1}^{4} \frac{e^{1/z}}{z^{2}} \ dz$ 令 $u= \frac{1}{z}$ 則 $du=-\frac{1}{z^{2}} \ dx$ 
+$=-\frac{1}{3}\int_{1}^{1/4}e^{u} \ du=\frac{1}{3}(e-e^{1/4})$ 
+
+# 大會考
+
+![[Pasted image 20251204150410.png]]
+
+Sol:
+先計算 $(1,1+\sqrt{ 2 })$ 與 $y=x$ 的距離：$d=\frac{|1-1-\sqrt{ 2 }|}{\sqrt{ 2 }}=1$。
+所以此圓貼著直線旋轉，那麼體積會等於 $(x-1)^{2}+y^{2}\leq 1$ 繞著 $y$ 軸旋轉。
+利用 method of cylindrical shell：$2\int_{0}^{2}2\pi x(\sqrt{ 1-(x-1)^{2} }) \ dx$ 
+注意不要化簡 $\sqrt{ 1-(x-1)^{2}}=\sqrt{ -x^{2}+2x }$ 不然不好代換。
+令 $u=(x-1)$，則等於 $4\pi \int_{-1}^{1}(u+1)\sqrt{ 1-u^{2} } \ dx=4\pi\left( \int_{-1}^{1}u\sqrt{ 1-u^{2} } \ dx +\int_{-1}^{1}\sqrt{ 1-u^{2} } \ dx\right)$ 
+其中 $\int_{-1}^{1}u\sqrt{ 1-u^{2} } \ dx$ 是 odd function 所以等於零，而 $\int_{-1}^{1}\sqrt{ 1-u^{2} } \ dx$ 等於半徑為一的半圓面積，等於 $\frac{\pi}{2}$。
+所以答案為 $4\pi \cdot \frac{\pi}{2} = 2\pi^{2}$。
+
+![[Pasted image 20251204152711.png]]
+
+Sol:
+哇擦勒，會被騙到。
+選 $(A)(D)$，但是很可能會選成 $(C)$。
+![[Pasted image 20251204153012.png]]
+已知 $x=g(y)$ 嘛，如果想要對 $y$ 積分並使用 method of cylindrical shell，我們要找垂直 $y$ 軸的殼高。
+注意上圖，給定一個 $y$，對應的高應該是 $1-y$ 而不是 $y$。
+否則，塗色面積應該相反。
+所以答案就是 $2\pi\int_{0}^{1} y(1-g(y)) \ dy$ 啦！
+
+![[Pasted image 20251204154915.png]]
+
+Sol:
+要分段討論，但不要腦子壞掉右邊函數加一左邊沒加一。
+也不要腦子壞掉變成某個積分的兩倍，不能這樣算好嗎？
+$\int_{-1}^{0}\pi[(x^{3}+1)^{2}-(x+1)^{2}] \ dx +\int_{0}^{1}\pi[(x+1)^{2}-(x^{3}+1)^{2}] \ dx$ 
+$=\pi\left( \left[ \frac{1}{7}x^{7}+\frac{1}{2}x^{4}-\frac{1}{3}x^{3}-x^{2} \right]^{0}_{-1}+\left[ -\frac{1}{7}x^{7}-\frac{1}{2}x^{4}+\frac{1}{3}x^{3}+x^{2} \right]^{1}_{0} \right)$ 注意前者不是直接代 $-1$ 呀！
+$=\pi$ 
+
+![[Pasted image 20251204175532.png]]
+
+Sol:
+這題難在不知道圖形長啥樣。
+長這樣：
+![[Pasted image 20251204175603.png]]
+首先取第一個與 $x$ 軸交點的 $x$ 座標：$\frac{\sin x}{x}=0\implies x_{1}=\pi$。
+所以體積為：$\int_{0}^{\pi}2\pi x \frac{\sin x}{x} \ dx=2\pi[-\cos x]^{\pi}_{0}$ 
+$=2\pi \cdot 2=4\pi$ 注意此處 $\cos0=1$，不要以為代 $0$ 啥都等於 $0$ 而忘記算！
