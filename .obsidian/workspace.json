@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Computer Networking/Network Layer, Control Plane.md",
+                "file": "Math/Calculus/Parametric Equations and Polar Coordinates.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Network Layer, Control Plane"
+              "title": "Parametric Equations and Polar Coordinates"
             }
           },
           {
@@ -194,6 +194,10 @@
   },
   "active": "930e5d797c093d6f",
   "lastOpenFiles": [
+    "Pasted image 20251205165858.png",
+    "Math/Calculus/pic/Pasted image 20251205165714.png",
+    "Computer Networking/Network Layer, Control Plane.md",
+    "Math/Calculus/Parametric Equations and Polar Coordinates.md",
     "Math/Calculus/Application of Integrals.md",
     "Math/Calculus/pic/Pasted image 20251204225245.png",
     "Math/Calculus/pic/Pasted image 20251204224708.png",
@@ -208,7 +212,6 @@
     "Math/Calculus/大會考 (一) 上半錯題.md",
     "Math/Calculus/pic/Pasted image 20251204154915.png",
     "Math/Calculus/pic/Pasted image 20251204153012.png",
-    "Math/Calculus/pic/Pasted image 20251204152711.png",
     "Math/Calculus/Differentiation Rules.md",
     "Math/Linear Algebra/Vector Space.md",
     "Math/Linear Algebra/Linear Transformation.md",
@@ -217,7 +220,6 @@
     "Math/Linear Algebra/Orthogonality.md",
     "Math/Linear Algebra/The Art of Linear Algebra.pdf",
     "Math/Linear Algebra/U1 U2 Summary Note.md",
-    "Computer Networking/Network Layer, Control Plane.md",
     "Physics/Electric Current.md",
     "Physics/The Electric Field and Electric Potiential.md",
     "Physics/Electrostatics.md",
@@ -231,7 +233,6 @@
     "Math/Calculus/Calculus, Early Transcendentals.pdf",
     "Computer Networking/pic/Network Layer, Control Plane",
     "Math/Calculus/Basic concept.md",
-    "CTF/MoeCTF 2025 Writeup.md",
     "Computer Networking/pic/lab2",
     "Math/Linear Algebra/pic/Orthogonality",
     "Math/Linear Algebra/pic",
