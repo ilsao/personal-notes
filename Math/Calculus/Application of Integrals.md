@@ -223,6 +223,52 @@ $$
 
 ![[Pasted image 20251204184712.png]]
 
+# Area of Surface of Revolution
+
+首先考慮圓錐的表面積：
+
+![[Pasted image 20251204224708.png]]
+
+如上圖所示，表面積為：
+
+$$
+A=\frac{1}{2}l^{2}\theta=\frac{1}{2}l^{2} \frac{2\pi r}{l}=\pi rl
+$$
+
+為了計算某個較為複雜的封閉曲線繞出來的表面積，我們可以仿造上一單元求 arc length 的方法，把它們切段利用直線逼近，並取極限。
+
+為了計算切段的表面積，每段都會形如：
+
+![[Pasted image 20251204225245.png]]
+
+而通過一系列其實不是很複雜的運算(大圓錐減小圓錐，並利用相似算 $l_{1}$ 與 $l$ 的關係)，我們可以得到這種東西的表面積為：
+
+$$
+2\pi rl
+$$
+
+其中，$r=\frac{r_{1}+r_{2}}{2}$。
+
+那麼，若 $f$ 為正且 $f'$ 連續，我們定義 $y=f(x)$ 與 $x=a$，$x=b$ 繞 $x$ 軸旋轉出來的體積的表面積為：
+
+$$
+S=\lim_{ n \to \infty } \sum _{i=1}^{n}2\pi f(x_{i}^{*})\sqrt{ 1+[f'(x^{*}_{i})]^{2} }\Delta x=\int_{a}^{b}2\pi f(x)\sqrt{ 1+[f'(x)]^{2} } \ dx
+$$
+
+我們還可以寫成：
+
+$$
+S=\int_{a}^{b}2\pi y \ ds
+$$
+
+因為：
+
+$$
+ds=\sqrt{ 1+\left( \frac{dy}{dx} \right)^{2} }\ dx\text{ or }\sqrt{ 1+\left( \frac{dx}{dy} \right)^{2} } \ dx
+$$
+
+需要注意的是，$ds$ 用兩個版本中哪個都行！只是最後要決定要不要把 $y$ 用 $x$ 表達！(根據最後是 $dx$ 還是 $dy$ 決定)
+
 # Tips
 
 - 當 $y$ 高於一次方時，考慮把 $x$ 用 $y$ 表達，然後對 $y$ 積分。 
@@ -272,6 +318,13 @@ Sol:
 $\frac{1}{3}\int_{1}^{4} \frac{e^{1/z}}{z^{2}} \ dz$ 令 $u= \frac{1}{z}$ 則 $du=-\frac{1}{z^{2}} \ dx$ 
 $=-\frac{1}{3}\int_{1}^{1/4}e^{u} \ du=\frac{1}{3}(e-e^{1/4})$ 
 
+![[Pasted image 20251204214600.png]]
+
+Sol:
+只能說，這種計算題很噁心，不想寫一點。
+$y=(1-x^{2/3})^{3/2}\implies y'=\frac{3}{2}(1-x^{2/3})^{1/2}\left( -\frac{2}{3}x^{-1/3} \right)=-(x^{-2/3}-1)^{1/2}$ 
+$(y')^{2}+1=x^{-2/3}$ $\implies 4\int_{0}^{1}\sqrt{ x^{-2/3} } \ dx=6$ 
+
 # 大會考
 
 ![[Pasted image 20251204150410.png]]
@@ -314,3 +367,12 @@ Sol:
 首先取第一個與 $x$ 軸交點的 $x$ 座標：$\frac{\sin x}{x}=0\implies x_{1}=\pi$。
 所以體積為：$\int_{0}^{\pi}2\pi x \frac{\sin x}{x} \ dx=2\pi[-\cos x]^{\pi}_{0}$ 
 $=2\pi \cdot 2=4\pi$ 注意此處 $\cos0=1$，不要以為代 $0$ 啥都等於 $0$ 而忘記算！
+
+![[Pasted image 20251204222312.png]]
+
+Sol:
+$(y')^{2}+1=(\ln x)^{2}\implies \int_{e}^{e^{2}} \sqrt{ 1+(y')^{2} } \ dx=\int_{e}^{e^{2}}\ln x \ dx$ 
+你可能會想，哇勒這東西沒反導函數可以套吧？
+哈，還是太年輕。用 Integration By Part。
+令 $u=\ln x$，$dv=dx$，則 $v=x$。
+$\int_{e}^{e^{2}}\ln x \ dx=[x\ln x]^{e^{2}}_{e}-\int_{e}^{e^{2}}dx=e^{2}$ 
