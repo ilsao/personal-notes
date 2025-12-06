@@ -599,7 +599,32 @@ $$
 
 # Orthonormal Sets
 
-## Orthonormal Sets and Least Squares
+令 $\mathbf{v_{1}},\dots,\mathbf{v_{n}}$ 為內積空間 $V$ 中的**非零向量**。若 $i\neq j$ 時 $\langle \mathbf{v}_{i},\mathbf{v}_{j} \rangle=0$，則 $\{\mathbf{v_{1}},\dots,\mathbf{v}_{n}\}$ 稱為 orthogonal set。
+
+接一下第一個定理：若 $\{\mathbf{v}_{1},\dots,\mathbf{v}_{n}\}$ 為內積空間 $V$ 中的非零直交集合，則 $\mathbf{v}_{1},\dots,\mathbf{v}_{n}$ 線性獨立。
+
+proof:
+假設 $\mathbf{v}_{1},\dots ,\mathbf{v}_{n}$ 兩兩互相直交且非零，且 $c_{1}\mathbf{v_{1}}+\dots+c_{n}\mathbf{v}_{n}=\mathbf{0}$。
+令 $1\leq j\leq n$，將上式等號左右同時內積 $\mathbf{v}_{j}$，有：$c_{1}\langle \mathbf{v}_{1},\mathbf{v}_{j} \rangle+\dots+c_{n}\langle \mathbf{v}_{n},\mathbf{v}_{j} \rangle=0$ 
+$\implies c_{j}||\mathbf{v}_{j}||^{2}=0$ 
+那麼，所有標量 $c_{1},\dots,c_{n}$ 都必須為零等式才會成立。
+
+接下來說明**正交(orthonormal)** 集合：正交集合首先是直交集合，且每個正交集合中的向量都為單位向量。
+
+也就是說，集合 $\{\mathbf{u}_{1},\dots,\mathbf{u}_{n}\}$ 為正交集合 $\iff \langle \mathbf{u}_{i},\mathbf{u}_{j} \rangle=\delta_{ij}$，且 $\delta_{ij}=\begin{cases}1 & \text{if }i=j \\ 0 & \text{if }i\neq j\end{cases}$。
+
+給定一個直交集合 $\{\mathbf{v}_{1},\dots,\mathbf{v}_{n}\}$，我們可以通過定義：$\mathbf{u}_{i}=\left( \frac{1}{||\mathbf{v}_{i}||} \right)\mathbf{v}_{i}$，使得這些集合構成正交集合。
+
+當 $B=\{\mathbf{u}_{1},\dots,\mathbf{u}_{n}\}$ 為內積空間 $V$ 的正交集合，則 $B$ 是子空間 $S=\text{Span}(\mathbf{u}_{1},\dots,\mathbf{}_{k})$ 的**正交基底(orthonormal basis)**。正交基底很好用呦～
+
+具體怎麼個好用法，參考以下定理。
+
+若 $\mathbf{u}_{1},\dots,\mathbf{u}_{n}$ 是內積空間 $V$ 的正交基底，且 $\mathbf{v}=\sum_{i=1}^{n}c_{i}\mathbf{u}_{i}=c_{1}\mathbf{u_{1}}+\dots+c_{n}\mathbf{u}_{n}$，則 $c_{i}=\langle \mathbf{v},\mathbf{u}_{i} \rangle$。
+
+proof:
+$\langle \mathbf{v},\mathbf{u}_{i} \rangle=\sum_{j=1}^{n}c_{j}\mathbf{v}_{j}\cdot \mathbf{u}_{i}=\sum_{j=1}^{n}c_{j}\delta_{ij}=c_{i}$ 
+
+又比如：若 $\mathbf{u}_{1},\dots,\mathbf{u}_{n}$ 是內積空間 $V$ 的正交基底，且 $\mathbf{v}=\sum_{i=1}^{n}c_{i}\mathbf{u}_{i}$，則 $||\mathbf{v}||^{2}=\sum_{i=1}^{n}c_{i}^{2}$。
 
 # Tips
 
