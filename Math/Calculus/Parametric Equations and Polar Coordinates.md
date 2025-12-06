@@ -78,7 +78,7 @@ $$
 那麼，參數式 $x=f(t)\quad y=g(t)$ 且 $\alpha\leq t\leq\beta$ 構成的曲線下的面積為：
 
 $$
-\int_{a}^{b}y \ dx=\int_{\alpha}^{\beta}g(t)f'(t) \ dt
+\int_{a}^{b}y \ dx=\int_{\alpha}^{\beta}g(t)f'(t) \ dt\quad\left[ \text{or }\int_{\beta}^{\alpha}g(t)f'(t) \ dt \right]
 $$
 
 因為 $dx=f'(t) \ dt$。
@@ -124,6 +124,9 @@ $$
 # Tips
 
 - 注意，這個式子很容易把不等號寫成等號：$\frac{d^{2}y}{dx^{2}}\neq\frac{\frac{d^{2}y}{dt^{2}}}{\frac{d^{2}x}{dt^{2}}}$。
+- 判斷好上下界，對哪個變量積就對那個變量取上下界，然後帶入參數式求解！
+- 判斷好對 $x$ 與 $y$ 來說，應不應該加負號！
+- 因為求面積是對 $x$ 積分，所以應該考慮 $x$ 的大小 ($x$ 的增長)。但是求 arc length 是對 $t$ 積分，所以應該考慮 $t$ 的大小 (曲線的遍歷方式)。
 
 # 重要例題
 
@@ -137,3 +140,19 @@ $\implies(a-b)-(a-b)(a+b)=0\implies(a-b)(1-(a+b))=0\implies a+b=1$ ($\because a\
 考慮 $x$：$2a-a^{3}=2b-b^{3}\implies2(a-b)-(a^{3}-b^{3})=0\implies2(a-b)-(a-b)(a^{2}+ab+b^{2})=0$ 
 $\implies(a-b)(2-(a^{2}+ab+b^{2}))=0\implies a^{2}+ab+b^{2}=2\implies(a+b)^{2}-ab=2\implies ab=-1$ 
 $\implies a-a^{2}=-1\implies a=\frac{1}{2}- \frac{\sqrt{ 5 }}{2},b=\frac{1}{2}+ \frac{\sqrt{ 5 }}{2}$ 
+
+Find the area enclosed by the given parametric curve and the y-axis.
+![[Pasted image 20251206113546.png]]
+
+Sol:
+注意，這裡上下界不能無腦帶 $0,2\pi$！你跑一次就會發現 $0\leq t\leq2\pi$ 會導致曲線跑了兩次。
+那又要注意了，直接寫 $\int_{0}^{\pi }x \ dy$ 是不是就對了勒？
+天真，會差一個負號。因為我們要從 $y=-1$ 積到 $y=1$，所以要寫 $\int_{-1}^{1}x \ dy$！
+那麼代回參數式，可得真正的上下界：$\int_{\pi}^{0}x \ dy$。
+繼續解就可得 $=\frac{4}{3}$。
+
+Find the area enclosed by the given parametric curve and the y-axis.
+![[Pasted image 20251206115424.png]]
+Sol:
+注意，此處的 $x$ 因為向左，所以必須加上負號。
+$\implies-\int_{0}^{2}(t^{2}-2t)\left( \frac{1}{2}t^{-1/2} \right) \ dt=\frac{8\sqrt{ 2 }}{15}$ 

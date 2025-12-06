@@ -1,5 +1,5 @@
 
-如果 $V$ 是一個向量空間，取兩個 $V$ 中的向量。若二者內積為零，則稱此二向量**正交(orthogonal)**。
+如果 $V$ 是一個向量空間，取兩個 $V$ 中的向量。若二者內積為零，則稱此二向量**直交(orthogonal)**。
 
 # The Scalar Product of $\mathbb{R}^{n}$ 
 
@@ -49,9 +49,9 @@ $$
 
 其中，等號成立在某一向量為零向量，或者二向量平行。
 
-我們還定義：若 $\mathbf{x},\mathbf{y}$ 為 $\mathbb{R}^{2}$ 或 $\mathbb{R}^{3}$ 中的兩向量且 $\mathbf{x}^{T}\mathbf{y}=0$，則 $\mathbf{x}$ 與 $\mathbf{y}$ 正交。
+我們還定義：若 $\mathbf{x},\mathbf{y}$ 為 $\mathbb{R}^{2}$ 或 $\mathbb{R}^{3}$ 中的兩向量且 $\mathbf{x}^{T}\mathbf{y}=0$，則 $\mathbf{x}$ 與 $\mathbf{y}$ 直交。
 
-注意，這麼來說，$\mathbf{0}$ 與任意向量都正交。
+注意，這麼來說，$\mathbf{0}$ 與任意向量都直交。
 
 ## Scalar and Vector Projections
 
@@ -69,13 +69,13 @@ $$
 \alpha \mathbf{u}= \frac{\mathbf{x}^{T}\mathbf{y}}{||\mathbf{y}||} \frac{1}{||\mathbf{y}||}\mathbf{y}= \frac{\mathbf{x}^{T}\mathbf{y}}{||\mathbf{y}||^{2}}\mathbf{y}
 $$
 
-以下討論中所有向量皆為 $\mathbb{R}^{3}$ 中的向量。若 $\mathbf{N}$ 是一個非零向量，$P_{0}$ 是一個定點。則所有 $P$ 使得 $\vec{P_{0}P}$ 與 $\mathbf{N}$ 正交的集合，會在三維空間中構成一個平面，且 $N=(a,b,c)$ 為該平面的法向量並且 $P_{0}=(x_{0},y_{0},z_{0})$ 與 $P=(x,y,z)$ 會落在該平面上。
+以下討論中所有向量皆為 $\mathbb{R}^{3}$ 中的向量。若 $\mathbf{N}$ 是一個非零向量，$P_{0}$ 是一個定點。則所有 $P$ 使得 $\vec{P_{0}P}$ 與 $\mathbf{N}$ 直交的集合，會在三維空間中構成一個平面，且 $N=(a,b,c)$ 為該平面的法向量並且 $P_{0}=(x_{0},y_{0},z_{0})$ 與 $P=(x,y,z)$ 會落在該平面上。
 
 $$
 (\vec{P_{0}}P)^{T}\mathbf{N}=0\implies a(x-x_{0})+b(y-y_{0})+c(z-z_{0})=0
 $$
 
-之前我們討論過兩個線性獨立的向量會在 $\mathbb{R}^{3}$ 中張出一個過原點平面。我們還知道，兩個向量的外積與二向量正交。那麼，就可以取二向量外積作為該平面的法向量。
+之前我們討論過兩個線性獨立的向量會在 $\mathbb{R}^{3}$ 中張出一個過原點平面。我們還知道，兩個向量的外積與二向量直交。那麼，就可以取二向量外積作為該平面的法向量。
 
 至於如何計算某定點 $Q$ 到某平面的距離？(取線上或平面上一點與該定點相連，算該向量與法向量的 scalar projection)
 
@@ -116,19 +116,19 @@ $$
 
 # Orthogonal Subspaces
 
-給一波定義：給定兩個 $\mathbb{R}^{n}$ 的子空間 $X$ 和 $Y$，若任意 $\mathbf{x}\in X$ 且 $\mathbf{y}\in Y$ 都有 $\mathbf{x}^{T}\mathbf{y}=0$ 則稱 $X$ 和 $Y$ 正交。計做 $X\perp Y$。
+給一波定義：給定兩個 $\mathbb{R}^{n}$ 的子空間 $X$ 和 $Y$，若任意 $\mathbf{x}\in X$ 且 $\mathbf{y}\in Y$ 都有 $\mathbf{x}^{T}\mathbf{y}=0$ 則稱 $X$ 和 $Y$ 直交。計做 $X\perp Y$。
 
-給你個例子：$A$ 為 $m\times n$ 矩陣，而 $\mathbf{x}\in N(A)$，則 $A\mathbf{x}=\mathbf{0}$。所以，對任意 $A^{T}$ 的 column vector，都有 $\mathbf{x}^{T}\mathbf{y}=0$，所以 $N(A)$ 與 $\text{Col}(A^{T})$ 正交。
+給你個例子：$A$ 為 $m\times n$ 矩陣，而 $\mathbf{x}\in N(A)$，則 $A\mathbf{x}=\mathbf{0}$。所以，對任意 $A^{T}$ 的 column vector，都有 $\mathbf{x}^{T}\mathbf{y}=0$，所以 $N(A)$ 與 $\text{Col}(A^{T})$ 直交。
 
-注意，**$xy$ 平面組成的向量空間與 $yz$ 平面組成的向量空間並不正交**。事實上，只有平面上的某些向量正交。
+注意，**$xy$ 平面組成的向量空間與 $yz$ 平面組成的向量空間並不直交**。事實上，只有平面上的某些向量直交。
 
-接下來再給一個定義：令 $Y$ 為 $\mathbb{R}^{n}$ 的子空間。由 $\mathbb{R}^{n}$ 中所有與任意 $Y$ 中向量正交的向量組成的集合被計為 $Y^{\perp}$。
+接下來再給一個定義：令 $Y$ 為 $\mathbb{R}^{n}$ 的子空間。由 $\mathbb{R}^{n}$ 中所有與任意 $Y$ 中向量直交的向量組成的集合被計為 $Y^{\perp}$。
 
 $$
 Y^{\perp}=\{\mathbf{x}\in \mathbb{R}^{n} \ | \ \mathbf{x}^{T}\mathbf{y}=0 \ \text{ for every } \ y\in Y\}
 $$
 
-$Y^{\perp}$ 稱作**正交補空間(orthogonal complement)**。
+$Y^{\perp}$ 稱作**直交補空間(orthogonal complement)**。
 
 若 $X=\text{Span}(\mathbf{e_{1}}), \ Y=\text{Span}(\mathbf{e_{2}}), \ Z=\text{Span}(\mathbf{e_{3}})$，則：
 
@@ -137,7 +137,7 @@ X^{\perp}=\text{Span}(\mathbf{e_{2}},\mathbf{e_{3}})\quad Y^{\perp}=\text{Span}(
 $$
 
 我們有以下性質：
-- 若 $X$ 與 $Y$ 都是 $\mathbb{R}^{n}$ 的正交子空間，則 $X\cap Y=\{\mathbf{0}\}$。
+- 若 $X$ 與 $Y$ 都是 $\mathbb{R}^{n}$ 的直交子空間，則 $X\cap Y=\{\mathbf{0}\}$。
 - 若 $Y$ 是 $\mathbb{R}^{n}$ 的子空間，則 $Y^{\perp}$ 也是 $\mathbb{R}^{n}$ 的子空間。
 
 proof:
@@ -160,7 +160,7 @@ $$N(A)=R(A^{T})^{\perp}\text{ } 且 \text{ }N(A^{T})=R(A)^{\perp}$$
 
 proof:
 因為已知 $N(A)\perp R(A^{T})$，所以 $N(A)\subseteq R(A^{T})^{\perp}$。
-反過來說，若 $\mathbf{x}$ 為 $R(A^{T})^{\perp}$ 中的任意向量，所以 $\mathbf{x}$ 與 $A^{T}$ 的任意 column vector 都正交，也就是 $A\mathbf{x}=\mathbf{0}$。這要求 $\mathbf{x}\in N(A)$，所以 $N(A)=R(A^{T})^{\perp}$。同理可證 $N(A^{T})=R(A)^{\perp}$。
+反過來說，若 $\mathbf{x}$ 為 $R(A^{T})^{\perp}$ 中的任意向量，所以 $\mathbf{x}$ 與 $A^{T}$ 的任意 column vector 都直交，也就是 $A\mathbf{x}=\mathbf{0}$。這要求 $\mathbf{x}\in N(A)$，所以 $N(A)=R(A^{T})^{\perp}$。同理可證 $N(A^{T})=R(A)^{\perp}$。
 
 雖然你不一定想要，但是再送你一些免費的定理～
 
@@ -213,7 +213,7 @@ $$
 proof:
 令 $\mathbf{z}\in (S^{\perp})^{\perp}$，$\mathbf{u}\in S$，$\mathbf{v}\in S^{\perp}$。
 則因為 $(S^{\perp})^{\perp}\in \mathbb{R}^{n}$，所以 $\mathbf{z}$ 可以被唯一的表達成：$\mathbf{z}=\mathbf{u}+\mathbf{v}$。
-因為 $\mathbf{v}\in S^{\perp}$，所以會與 $\mathbf{z}$ 和 $\mathbf{u}$ 都正交。
+因為 $\mathbf{v}\in S^{\perp}$，所以會與 $\mathbf{z}$ 和 $\mathbf{u}$ 都直交。
 $0=\mathbf{v}^{T}\mathbf{z}=\mathbf{v}^{T}(\mathbf{u}+\mathbf{v})=\mathbf{v}^{T}\mathbf{u}+\mathbf{v}^{T}\mathbf{v}=\mathbf{v}^{T}\mathbf{v}$ 
 所以 $\mathbf{v}=\mathbf{0}$，$\mathbf{z}=\mathbf{u}$。
 所以 $S=(S^{\perp})^{\perp}$。
@@ -234,7 +234,7 @@ $$
 
 那 $A^{T}\mathbf{y}=\mathbf{0}$ 說明的是什麼？Oh，原來想說明 $\mathbf{y}\in N(A^{T})=R(A)^{\perp}$ 呀！
 
-$R(A)$ 指的是 $A$ 的 column space 對吧？根據上述我們還知道 $\mathbf{y}$ 是 $A$ 的 column space 的正交補，所以如果 $\mathbf{b}$ 與 $\mathbf{y}$ 不正交 ($\mathbf{y}^{T}\mathbf{b}\neq 0$)，就說明 $\mathbf{b}\not\in R(A)=\text{Col}(A)$，也就是系統無解！
+$R(A)$ 指的是 $A$ 的 column space 對吧？根據上述我們還知道 $\mathbf{y}$ 是 $A$ 的 column space 的直交補，所以如果 $\mathbf{b}$ 與 $\mathbf{y}$ 不直交 ($\mathbf{y}^{T}\mathbf{b}\neq 0$)，就說明 $\mathbf{b}\not\in R(A)=\text{Col}(A)$，也就是系統無解！
 
 希望下圖能幫助你理解：
 
@@ -244,7 +244,7 @@ $R(A)$ 指的是 $A$ 的 column space 對吧？根據上述我們還知道 $\mat
 
 以下我們將 $A$ 視為一個 $\mathbb{R}^{n}$ 到 $\mathbb{R}^{m}$ 上的線性轉換，即 $\mathbf{x}\in \mathbb{R}^{n}\to A\mathbf{x}\in \mathbb{R}^{m}$
 
-因為 $R(A^{T})$ 與 $N(A)$ 為正交補，所以：$\mathbb{R}^{n}=R(A^{T})\oplus N(A)$。
+因為 $R(A^{T})$ 與 $N(A)$ 為直交補，所以：$\mathbb{R}^{n}=R(A^{T})\oplus N(A)$。
 
 那麼任意 $\mathbf{x}\in \mathbb{R}^{n}$ 都可以寫成 $\mathbf{x}=\mathbf{y}+\mathbf{z}$，其中 $\mathbf{y}\in R(A^{T})$ 且 $\mathbf{z}\in N(A)$。
 
@@ -479,7 +479,7 @@ $$
 
 挖草，這裡用內積的定義證明了畢氏定理。
 
-若 $\mathbf{u}$ 和 $\mathbf{v}$ 正交，則：
+若 $\mathbf{u}$ 和 $\mathbf{v}$ 直交，則：
 
 $$
 ||\mathbf{u}+\mathbf{v}||^{2}=||\mathbf{u}||^{2}+||\mathbf{v}||^{2}
@@ -505,7 +505,7 @@ $$
 $$
 
 對於上述定義，有以下性質：
-1. $\mathbf{u}-\mathbf{p}$ 和 $\mathbf{p}$ 正交。
+1. $\mathbf{u}-\mathbf{p}$ 和 $\mathbf{p}$ 直交。
 2. $\mathbf{u}=\mathbf{p}\iff$ $\mathbf{u}$ 是 $\mathbf{v}$ 的標量積。
 
 proof:
@@ -513,7 +513,7 @@ proof:
 因為 $\langle \mathbf{p},\mathbf{p} \rangle=\left\langle  \alpha \frac{\mathbf{v}}{||\mathbf{v}||}, \alpha \frac{\mathbf{v}}{||\mathbf{v}||} \right\rangle=\left( \frac{\alpha}{||\mathbf{v}||} \right)^{2}\langle \mathbf{v},\mathbf{v} \rangle=\alpha^{2}$ 
 且 $\langle \mathbf{u},\mathbf{p} \rangle=\left\langle  \mathbf{u}, \frac{\langle \mathbf{u},\mathbf{v} \rangle}{\langle \mathbf{v},\mathbf{v} \rangle}\mathbf{v}  \right\rangle=\frac{(\langle \mathbf{u},\mathbf{v} \rangle)^{2}}{\langle \mathbf{v},\mathbf{v} \rangle}=\alpha^{2}$ 
 又 $\langle \mathbf{u}-\mathbf{p},\mathbf{p} \rangle=\langle \mathbf{u},\mathbf{p} \rangle-\langle \mathbf{p},\mathbf{p} \rangle=\alpha^{2}-\alpha^{2}=0$ 
-所以，$\mathbf{u}-\mathbf{p}$ 與 $\mathbf{p}$ 正交。
+所以，$\mathbf{u}-\mathbf{p}$ 與 $\mathbf{p}$ 直交。
 (2)
 ($\implies$)
 若 $\mathbf{u}=\mathbf{p}$，則 $\mathbf{u}=\beta \mathbf{v}$，其中 $\beta=\frac{\alpha}{||\mathbf{v}||}$。
@@ -530,7 +530,7 @@ $$
 
 proof:
 當 $\mathbf{v}=\mathbf{0}$，等式成立。
-當 $\mathbf{v}\neq \mathbf{0}$，令 $\mathbf{p}$ 為 $\mathbf{u}$ 在 $\mathbf{v}$ 上的投影。因為 $\mathbf{p}$ 與 $\mathbf{u}-\mathbf{p}$ 正交，所以：$||\mathbf{p}||^{2}=||\mathbf{u}||^{2}-||\mathbf{u}-\mathbf{p}||^{2}$。
+當 $\mathbf{v}\neq \mathbf{0}$，令 $\mathbf{p}$ 為 $\mathbf{u}$ 在 $\mathbf{v}$ 上的投影。因為 $\mathbf{p}$ 與 $\mathbf{u}-\mathbf{p}$ 直交，所以：$||\mathbf{p}||^{2}=||\mathbf{u}||^{2}-||\mathbf{u}-\mathbf{p}||^{2}$。
 那麼，可以構建：$\frac{(\langle \mathbf{u},\mathbf{v} \rangle)^{2}}{||\mathbf{v}||^{2}}=||\mathbf{p}||^{2}=||\mathbf{u}||^{2}-||\mathbf{u}-\mathbf{p}||^{2}$。
 移項可得：$(\langle \mathbf{u},\mathbf{v} \rangle)^{2}=||\mathbf{u}||^{2} \ ||\mathbf{v}||^{2}-||\mathbf{u}-\mathbf{p}||^{2} \ ||\mathbf{v}||^{2}\implies |\langle \mathbf{u},\mathbf{v} \rangle| \leq ||\mathbf{u}|| \ ||\mathbf{v}||$ 
 等號成立在 $\mathbf{u}=\mathbf{p}$ 時。根據上面那個東東，可得 $\mathbf{v}$ 與 $\mathbf{u}$ 線性相依時等號成立。
@@ -599,17 +599,7 @@ $$
 
 # Orthonormal Sets
 
-## Orthogonal Matrices
-
-## Permutation Matrices
-
 ## Orthonormal Sets and Least Squares
-
-## Approximation Function
-
-## Approximation by Trigonometric Polynomials
-
-## The Fast Fourier Transformation
 
 # Tips
 

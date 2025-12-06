@@ -455,6 +455,14 @@ Sol:
 當 $p>1$ 時極限不存在 $\implies$ divergent
 當 $p<1$ 時極限存在且等於 $1\implies$ convergent 且值為 $\frac{1}{1-p}$。
 
+12. Evaluate $\int \sin^{4}\theta \cos^{2}\theta \ d\theta$. 
+
+Sol:
+首先你肯定不會想要瘋狂降次展開，那麼就只能考慮先換 $\sin \theta \cos \theta=\frac{1}{2}\sin 2\theta$。
+所以：$\int \sin^{4}\theta \cos^{2}\theta \ d\theta=\frac{1}{4}\int \sin^{2}\theta \sin^{2}2\theta \ d\theta=\frac{1}{4}\int \frac{1}{2}\left(1-\cos2\theta  \right)\sin^{2}2\theta \ d\theta$ 
+$=\frac{1}{8}\int \sin^{2}2\theta-\sin^{2}2\theta \cos2\theta \ d\theta= \frac{1}{8}\int \frac{1}{2}(1-\cos4\theta) \ d\theta- \frac{1}{8}\int \sin^{2}2\theta \cos2\theta \ d\theta$ 
+然後你就會了。
+
 # 大會考
 
 1. $\int_{0}^{e-2}\ln(2+x) \ dx= \ ?$ 

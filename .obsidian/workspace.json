@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Math/Calculus/Parametric Equations and Polar Coordinates.md",
+                "file": "Math/Linear Algebra/Orthogonality.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Parametric Equations and Polar Coordinates"
+              "title": "Orthogonality"
             }
           },
           {
@@ -192,32 +192,32 @@
       "bases:Create new base": false
     }
   },
-  "active": "1d5b0d980baa8a22",
+  "active": "930e5d797c093d6f",
   "lastOpenFiles": [
+    "Math/Calculus/大會考 (一) 下半錯題.md",
+    "Math/Calculus/Parametric Equations and Polar Coordinates.md",
+    "Math/Calculus/Application of Integrals.md",
+    "Math/Calculus/Techniques of Integrations.md",
+    "Pasted image 20251206115424.png",
+    "Pasted image 20251206113546.png",
+    "Math/Linear Algebra/Orthogonality.md",
     "Math/Calculus/pic/Pasted image 20251205165858.png",
     "Math/Calculus/pic/Pasted image 20251205165714.png",
     "Computer Networking/Network Layer, Control Plane.md",
-    "Math/Calculus/Parametric Equations and Polar Coordinates.md",
-    "Math/Calculus/Application of Integrals.md",
     "Math/Calculus/pic/Pasted image 20251204225245.png",
     "Math/Calculus/pic/Pasted image 20251204224708.png",
     "Math/Calculus/pic/Pasted image 20251204222312.png",
     "Math/Calculus/Applications of Differentiation.md",
     "Math/Calculus/Integrals.md",
-    "Math/Calculus/Techniques of Integrations.md",
     "Math/Calculus/pic/Pasted image 20251204214600.png",
     "Math/Calculus/pic/Pasted image 20251204184712.png",
     "Math/Calculus/pic/Pasted image 20251204175603.png",
-    "Math/Calculus/pic/Pasted image 20251204175532.png",
     "Math/Calculus/大會考 (一) 上半錯題.md",
-    "Math/Calculus/pic/Pasted image 20251204154915.png",
-    "Math/Calculus/pic/Pasted image 20251204153012.png",
     "Math/Calculus/Differentiation Rules.md",
     "Math/Linear Algebra/Vector Space.md",
     "Math/Linear Algebra/Linear Transformation.md",
     "Math/Linear Algebra/Determinants.md",
     "Math/Linear Algebra/Matrix and Systems.md",
-    "Math/Linear Algebra/Orthogonality.md",
     "Math/Linear Algebra/The Art of Linear Algebra.pdf",
     "Math/Linear Algebra/U1 U2 Summary Note.md",
     "Physics/Electric Current.md",
