@@ -303,6 +303,7 @@ Sol:
 我們有 $\bar{PQ}^{2}=r^{2}-x^{2}$。
 那麼體積為：$4\int_{-r}^{r}(r^{2}-x^{2}) \ dx= \frac{16}{3}r^{3}$。
 
+Find the volume of the solid:
 ![[Pasted image 20251203175124.png]]
 
 Sol:

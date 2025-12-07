@@ -21,7 +21,7 @@ $$
 A=\lim_{ n \to \infty } [f(x_{1}^{*})\Delta x+\dots+f(x_{n}^{*})\Delta x]
 $$
 
-這個東西稱作**黎曼和(Riemann sum)**。
+這東西稱作**黎曼和(Riemann sum)**。
 
 讓我們用求和記號表達這些公式：
 
@@ -135,7 +135,7 @@ $g(x+h)-g(x)=\int_{a}^{x+h}f(t)\ dt-\int_{a}^{x}f(t)\ dt=\int_{a}^{x}f(t) \ dt+\
 $=\int_{x}^{x+h}f(t) \ dt$ 
 那麼，對於 $h\neq 0$ 我們有 $\frac{g(x+h)-g(x)}{h}=\frac{1}{h}\int_{x}^{x+h}f(t) \ dt$。
 假設 $h>0$，因為 $f$ 在 $[x,x+h]$ 上連續，根據極值定理可以找到兩個數 $u,v$ 使得 $f(u)=m$ 為全局最小值，$f(v)=M$ 為全局最大值。(在 $[x,x+h]$ 上)
-也就是：$mh\leq \int_{x}^{x_{h}}f(t) \ dt\leq Mh\implies f(u)\leq \frac{1}{h}\int_{x}^{x_{h}}f(t) \ dt\leq f(v)$ 。
+也就是：$mh\leq \int_{x}^{x+{h}}f(t) \ dt\leq Mh\implies f(u)\leq \frac{1}{h}\int_{x}^{x+{h}}f(t) \ dt\leq f(v)$ 。
 代回 $\frac{g(x+h)-g(x)}{h}=\frac{1}{h}\int_{x}^{x+h}f(t) \ dt$，得到 $f(u)\leq\frac{g(x+h)-g(x)}{h}\leq f(v)$。
 同理，對於 $h<0$ 我們也可以得到相同結論。
 因為 $f$ 在 $[x,x+h]$ 連續，得到 $\lim_{ h \to 0 }f(u)=\lim_{ u \to x }f(u)=f(x)$ 與 $\lim_{ h \to 0 }f(v)=\lim_{ v \to x }f(v)=f(x)$。
@@ -245,7 +245,7 @@ $\int_{-a}^{a}f(x) \ dx=-\int_{0}^{-a}f(x) \ dx+\int_{0}^{a}f(x) \ dx$
 
 # Tips
 
-- 使用左右端點法估計積分時，需要注意函數在區間內的**遞增/減**(判斷左端點估計出來的較大還是揍端點估計出來的較大)。(與 $a$，$b$ 的大小)
+- 使用左右端點法估計積分時，需要注意函數在區間內的**遞增/減**(判斷左端點估計出來的較大還是右端點估計出來的較大)。(與 $a$，$b$ 的大小)
 - 在找 antiderivative 時，如果遇到 $(ax+b)^{n}$ 之類的形式很難找反導函數，可以考慮把括號展開。
 - 若 $u$ 為 $x$ 的函數，且 $g(x)=\int_{0}^{u}f(x) \ dx$。則 $g'(x)=f(u) \frac{du}{dx}$。(因爲 $\frac{d}{dx}g(x)=\frac{d}{du}g(x) \frac{du}{dx}$，注意分辨這個還有 substitution rule 的差別)
 - $\cos(x^{2})$ 的反導函數**不是** $\frac{\sin(x^{2})}{2x}$。相反，我們(以我們的實力來說)找不到他的反導函數。
@@ -357,7 +357,7 @@ $=\frac{4}{3}\left( 7+\ln \frac{2}{9} \right)$
 Sol:
 令 $u=\ln x$，則 $du= \frac{1}{x} \ dx$。
 這樣你可能就矇逼了，但是你大意了：$dx = x \ du = e^{u} \ du$。
-所以 $\int \cos(\ln x) \, dx=\int e^{t}\cos t \, dt$。
+所以 $\int \cos(\ln x) \, dx=\int e^{u}\cos u \, du$。
 
 # 大會考
 
@@ -377,27 +377,25 @@ $\implies \frac{1}{2}(e^{-1/4}+e^{-1})<L<1$
 Sol:
 這題我會，但是感覺很經典所以記錄一下。
 這題重點在用洛必達還有利用 FTC1 替換積分。
-令 $g(x)=\int_{1-x}^{1} \frac{1}{t^{3}+t} \ dt=-\int_{1}^{u} \frac{1}{t^{3}+t}  \, dt$，則 $g'(x)= \frac{1}{u^{3}+u}= \frac{1}{(1-x)^{3}+(1-x)}$。
+令 $g(x)=\int_{1-x}^{1} \frac{1}{t^{3}+t} \ dt=-\int_{1}^{u} \frac{1}{t^{3}+t}  \, dt$，則 $g'(x)= -\frac{1}{u^{3}+u} \ \frac{du}{dx}= \frac{1}{(1-x)^{3}+(1-x)}$。
 那麼 $I=\lim_{ x \to 0^{+} } \frac{g(x)}{x} \stackrel{\left( \frac{0}{0} \right)}{=}\lim_{ x \to 0^{+} } g'(x)=\frac{1}{2}$。
 
 3. Consider $g(x)=\begin{cases} \frac{1}{x}\int_{0}^{\sqrt{ x }} \frac{1}{t^{2}+\sqrt{ t }+1} \ dt & \text{, }x>0 \\ 1 & \text{, }x\leq0\end{cases}$ . Which of the following options are TRUE ? (a) $\lim_{ x \to 0 }g(x)=1$ (b) $\lim_{ x \to \infty }g(x)=0$ (c) $\lim_{ x \to 0 }(\sin x)g(x)=0$ (d) $\lim_{ x \to 1 }g'(x)> 0$. 
 
 Sol:
 這題卡在 (c) 忘記換 $\frac{\sin x}{x}$ 還有 (d) 用估計的方式算積分。
-令 $f(x)=\int_{0}^{\sqrt{ x }} \frac{1}{t^{2}+\sqrt{ t }+1} \ dt$，則 $f'(x)= \frac{1}{2x^{3/2}+2x^{3/4}+2x^{1/2}}$。
+令 $f(x)=\int_{0}^{\sqrt{ x }} \frac{1}{t^{2}+\sqrt{ t }+1} \ dt$，則 $f'(x)= \frac{1}{x+x^{1/4}+x^{1/2}}\cdot \frac{1}{2x^{1/2} }=\frac{1}{2x^{3/2}+2x^{3/4}+x}$。
 (a)
 $\lim_{ x \to 0^{+} }g(x) \stackrel{\left( \frac{0}{0} \right)}{=}\lim_{ x \to 0^{+} }f'(x)=\infty\neq \lim_{ x \to 0^{-} }g(x)=1$ 
 (b)
 $\lim_{ x \to \infty }g(x)=\lim_{ x \to \infty }f'(x)=0$ 
 (c)
-$\lim_{ x \to 0 }(\sin x)g(x)=\lim_{ x \to 0 } \frac{\sin x}{x}f(x)=\lim_{ x \to 0 }f(x)=0$ 
+$\lim_{ x \to 0^{+} }(\sin x)g(x)=\lim_{ x \to 0^{+} } \frac{\sin x}{x}f(x)=\lim_{ x \to 0^{+} }f(x)=0$ 
+$\lim_{ x \to 0^{-} }\sin x=0$ 
 (d)
-$\lim_{ x \to 1 }g'(x)=\lim_{ x \to 1 } \frac{f'(x)x^{2}-f(x)2x}{x^{2}}=\lim_{ x \to 1 }f'(x)-f(x)$ 
-$=\frac{1}{6}-\int_{0}^{1} \frac{1}{t^{2}+\sqrt{ t }+1} \ dt$ 
-因為這個積分不好算，我們用估的：$\frac{1}{t^{2}+\sqrt{ t }+1}$ 在 $t\geq0$ 上單調遞減，所以 $\frac{1}{t^{2}+\sqrt{ t }+1}$ 的最小值為 $\frac{1}{3}$。
-$\implies \int_{0}^{1}\frac{1}{t^{2}+\sqrt{ t }+1} \ dt \geq \frac{1}{3}$。
-$\implies \lim_{ x \to 1 }g'(x)<0$ 
-(d) 選項有錯，但是懶得算了。就醬吧。
+(誒注意這裡，要取 $\geq$，因為這樣取負號後才會變小於等於捏)
+因為 $\frac{1}{t^{2}+\sqrt{ t }+1}\geq \frac{1}{3}$ 在 $t\in[0,1]$，$-\int_{0}^{1} \frac{1}{t^{2}+\sqrt{ t }+1}\leq -\frac{1}{3}$，所以
+$\lim_{ x \to 1 }g'(x)=\lim_{ x \to 1 } \frac{f'(x)x-f(x)}{x^{2}}=\lim_{ x \to 1 }f'(x)-\lim_{ x \to 1 }f(x)=\frac{1}{5}-\int_{0}^{1} \frac{1}{t^{2}+\sqrt{ t }+1} \ dt\leq \frac{1}{5}-\frac{1}{3}<0$   
 
 # 書銘考古
 

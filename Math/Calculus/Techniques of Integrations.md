@@ -14,7 +14,7 @@ $$
 $$
 
 proof:
-$\frac{d}{dx}[f(x)g(x)]=f'(x)g(x)+f(x)+g'(x)$ 
+$\frac{d}{dx}[f(x)g(x)]=f'(x)g(x)+f(x)g'(x)$ 
 $f(x)g(x)=\int[f'(x)g(x)+f(x)g'(x)]=\int f'(x)g(x)+\int f(x)g'(x)$ 
 $\implies \int f(x)g'(x)=f(x)g(x)-\int f'(x)g(x)$ 
 
@@ -125,7 +125,15 @@ $$
 $$
 
 $$
-\int \sec x \, dx = \ln|\tan x+\sec x|+C
+\int \cot x \ dx=\ln|\csc x|+C
+$$
+
+$$
+\int \sec x \, dx = \ln|\sec x+\tan x|+C
+$$
+
+$$
+\int \csc x \ dx=-\ln|\csc x+\cot x|+C
 $$
 
 最後，$\int \cot^{m}x\csc^{n}x \ dx$ 可以使用類似的方法求解。($1+\cot^{2}x=\csc^{2}x$)
@@ -226,7 +234,7 @@ $$
 喔對，這邊的積分可以使用三角代換幫忙呦～
 
 $$
-\int \frac{1}{x^{2}+a} \, dx=\frac{1}{a}\tan^{-1}\left( \frac{x}{a} \right)+C
+\int \frac{1}{x^{2}+a^{2}} \, dx=\frac{1}{a}\tan^{-1}\left( \frac{x}{a} \right)+C
 $$
 
 例如：$\int \frac{x-1}{x^{2}+2} \, dx$ 其實不用套很煩的三角代換，可以分解。
@@ -337,7 +345,9 @@ $$
 
 你需要注意的點有：第一點與第二點 $f$ 與 $g$ 的順序，還有 $f(x)\geq g(x)\geq \boxed{0}$。喔對，還有第一與第二點的反向敘述都不一定成立。
 
-什麼時候要用到 The Comparison Theorem？當你很難將某個函數的反導函數找出來的時候。但是，你需要精明的用這個定理。或許你可以將某個很難確定的積分切割成一個定積分問題 + 狹積分問題，這樣可能會比較好算？
+什麼時候要用到 The Comparison Theorem？當你很難將某個函數的反導函數找出來的時候。但是，你需要精明的用這個定理。
+
+或許你可以將某個很難確定的積分切割成一個定積分問題 + 狹積分問題，這樣可能會比較好算？
 
 例如：判斷 $\int_{0}^{\infty}e^{-x^{2}} \ dx$ 是否收斂。你應該把它切成 $\int_{0}^{1}e^{-x^{2}}\ dx+\int_{1}^{\infty}e^{-x^{2}} \ dx$，前面明顯是個定積分問題必收斂，後面是一個狹積分問題。
 
@@ -423,7 +433,8 @@ $=\frac{\lambda}{4\pi\epsilon_{0}b}\left[ \frac{L-a}{\sqrt{ (L-a)^{2}+b^{2} }}- 
 
 Sol:
 (I)
-令 $t=\tan\left( \frac{x}{2} \right)$，$dt=\frac{1}{2}\sec^{2}\left( \frac{x}{2} \right)\ dx\implies dx=\frac{2}{\sqrt{ 1+t^{2} }}$。
+令 $t=\tan\left( \frac{x}{2} \right)$，$dt=\frac{1}{2}\sec^{2}\left( \frac{x}{2} \right)\ dx\implies dx=\frac{2}{ 1+t^{2} }$。
+($\cos= \frac{1-t^{2}}{1+t^{2}}$)
 代進去得到 $\int \frac{1}{1-\cos x} \, dx=\int t^{-2} \ dt=-\cot\left( \frac{x}{2} \right)+C$ 
 (II)
 湊平方：$\int \frac{1}{1-\cos x} \, dx=\int \frac{1}{1-\cos x} \frac{1+\cos x}{1+\cos x} \ dx=\int \frac{1+\cos x}{\sin^{2}x} \ dx$ 
