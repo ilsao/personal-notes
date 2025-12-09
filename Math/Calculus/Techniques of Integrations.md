@@ -173,11 +173,11 @@ $$
 
 下表展示了一些有用的 trigonometric substitution：
 
-| Expression             | Substitution                                                                                                                                                                                                       | Identity                           |
-| ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------------------------------- |
-| $\sqrt{ a^{2}-x^{2} }$ | $x=a\sin \theta\quad -\frac{\pi}{2}\leq \theta\leq \frac{\pi}{2}$                                                                                                                                                  | $\cos^{2}\theta=1-\sin^{2}\theta$  |
-| $\sqrt{ a^{2}+x^{2} }$ | $x=a\tan \theta\quad -\frac{\pi}{2}\leq \theta\leq \frac{\pi}{2}$                                                                                                                                                  | $\sec^{2}\theta=1+\tan^{2} \theta$ |
-| $\sqrt{ x^{2}-a^{2} }$ | $x=a\sec \theta\quad 0\leq \theta< \frac{\pi}{2}\text{ or } \pi\leq \theta< \frac{3\pi}{2}$<br>注意此處 $\theta$ 的選擇，因為根號開出來必須要大於零，所以 $0\leq \theta\leq \pi$ 不可行。<br>($\tan \theta$ 在 $\frac{\pi}{2}<\theta<\pi$ 時小於零) | $\tan^{2}\theta=1-\sec^{2}\theta$  |
+| Expression             | Substitution                                                                                                                                                                                                        | Identity                           |
+| ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------- |
+| $\sqrt{ a^{2}-x^{2} }$ | $x=a\sin \theta\quad -\frac{\pi}{2}\leq \theta\leq \frac{\pi}{2}$                                                                                                                                                   | $\cos^{2}\theta=1-\sin^{2}\theta$  |
+| $\sqrt{ a^{2}+x^{2} }$ | $x=a\tan \theta\quad -\frac{\pi}{2}\leq \theta\leq \frac{\pi}{2}$                                                                                                                                                   | $\sec^{2}\theta=1+\tan^{2} \theta$ |
+| $\sqrt{ x^{2}-a^{2} }$ | $x=a\sec \theta\quad 0\leq \theta< \frac{\pi}{2}\text{ or } \pi\leq \theta< \frac{3\pi}{2}$ <br>注意此處 $\theta$ 的選擇，因為根號開出來必須要大於零，所以 $0\leq \theta\leq \pi$ 不可行。<br>($\tan \theta$ 在 $\frac{\pi}{2}<\theta<\pi$ 時小於零) | $\tan^{2}\theta=1-\sec^{2}\theta$  |
 
 誒，但別寫魔怔了，看到啥就帶啊！萬一普通的 substitution 更簡單呢？
 
