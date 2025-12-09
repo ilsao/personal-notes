@@ -615,9 +615,14 @@ $\implies c_{j}||\mathbf{v}_{j}||^{2}=0$
 
 給定一個直交集合 $\{\mathbf{v}_{1},\dots,\mathbf{v}_{n}\}$，我們可以通過定義：$\mathbf{u}_{i}=\left( \frac{1}{||\mathbf{v}_{i}||} \right)\mathbf{v}_{i}$，使得這些集合構成正交集合。
 
-當 $B=\{\mathbf{u}_{1},\dots,\mathbf{u}_{n}\}$ 為內積空間 $V$ 的正交集合，則 $B$ 是子空間 $S=\text{Span}(\mathbf{u}_{1},\dots,\mathbf{}_{k})$ 的**正交基底(orthonormal basis)**。正交基底很好用呦～
+當 $B=\{\mathbf{u}_{1},\dots,\mathbf{u}_{n}\}$ 為內積空間 $V$ 的正交集合，則 $B$ 是子空間 $S=\text{Span}(\mathbf{u}_{1},\dots,\mathbf{u}_{k})$ 的**正交基底(orthonormal basis)**。正交基底很好用呦～
 
 具體怎麼個好用法，參考以下定理。
+
+若 $\mathbf{u}_{1},\dots,\mathbf{u}_{n}$ 是內積空間 $V$ 的正交基底，且 $\mathbf{v}=\sum_{i=1}^{n}c_{i}\mathbf{u}_{i}=c_{1}\mathbf{u_{1}}+\dots+c_{n}\mathbf{u}_{n}$，$\mathbf{u}=\sum_{i=1}^{n}d_{i}\mathbf{u}_{i}$，則 $\langle \mathbf{u},\mathbf{v} \rangle=\sum_{i=1}^{n}c_{i}d_{i}$ 
+
+proof:
+$\langle \mathbf{u},\mathbf{v} \rangle=\left\langle  \sum_{i=1}^{n}d_{i}\mathbf{u}_{i},\mathbf{v}  \right\rangle=\sum_{i=1}^{n}c_{i}d_{i}$ (根據之前那個求線性組合的定理)
 
 若 $\mathbf{u}_{1},\dots,\mathbf{u}_{n}$ 是內積空間 $V$ 的正交基底，且 $\mathbf{v}=\sum_{i=1}^{n}c_{i}\mathbf{u}_{i}=c_{1}\mathbf{u_{1}}+\dots+c_{n}\mathbf{u}_{n}$，則 $c_{i}=\langle \mathbf{v},\mathbf{u}_{i} \rangle$。
 
@@ -625,6 +630,28 @@ proof:
 $\langle \mathbf{v},\mathbf{u}_{i} \rangle=\sum_{j=1}^{n}c_{j}\mathbf{v}_{j}\cdot \mathbf{u}_{i}=\sum_{j=1}^{n}c_{j}\delta_{ij}=c_{i}$ 
 
 又比如：若 $\mathbf{u}_{1},\dots,\mathbf{u}_{n}$ 是內積空間 $V$ 的正交基底，且 $\mathbf{v}=\sum_{i=1}^{n}c_{i}\mathbf{u}_{i}$，則 $||\mathbf{v}||^{2}=\sum_{i=1}^{n}c_{i}^{2}$。
+
+## Orthonormal Sets and Least Squares (補充)
+
+若 $A$ 的 column vectors 構成 $\mathbb{R}^{m}$ 中的一個正交集合，則 $A^{T}A=I$ 且 least squares solution 為：
+
+$$
+\mathbf{\hat{x}}=A^{T}\mathbf{b}
+$$
+
+令 $S$ 為內積空間 $V$ 的子空間，且 $\mathbf{x}\in V$。令 $\{\mathbf{u}_{1},\dots,\mathbf{u}_{n}\}$ 為 $V$ 的一組正交基底，若想尋找 $\mathbf{x}$ 在 $S$ 上的投影 $\mathbf{p}$ (尋找 $\mathbf{x}$ 到 $S$ 上的 best least squares approximation，使用 $l(x)=c_{1}\mathbf{u}_{1}+\dots+c_{n}\mathbf{u}_{n}$ 的形式)，則：
+
+$$
+\mathbf{p}=\sum_{i=1}^{n}c_{i}\mathbf{u}_{i}
+$$
+
+其中，$c_{i}=\langle \mathbf{x},\mathbf{u}_{i} \rangle$。(這邊的 $c_{i}$ 其實是投影 $\mathbf{x}$ 到 $\mathbf{u}_{i}$ 的 scalar projection)
+
+延續上述假設，若 $U=(\mathbf{u}_{1},\dots,\mathbf{u}_{n})$ 也可以表示成：
+
+$$
+\mathbf{p}=UU^{T}\mathbf{x}
+$$
 
 # Tips
 
@@ -826,3 +853,18 @@ $||\mathbf{v}||=||(\mathbf{u}+\mathbf{v})-\mathbf{u}||\leq||\mathbf{u}+\mathbf{v
 Sol:
 很坑，小心。
 這邊 $||f||=0$ 只要求 $f(a)=f(b)=0$，而不要求中間所有值都為零，所以不符合。
+
+![[Pasted image 20251208230642.png]]
+
+Sol:
+不難，但是典型。怕你忘了放這給你複習呢。
+令 $\mathbf{u}=\alpha_{1}\mathbf{u_{1}}+\alpha_{2}\mathbf{u_{2}}$。
+則 $\alpha_{1}=\langle \mathbf{u},\mathbf{u_{1}} \rangle=\frac{1}{2}$，$\alpha_{2}=\langle \mathbf{u},\mathbf{u_{2}} \rangle$。
+又 $\mathbf{u}$ 是 unit vector，所以 $\alpha_{1}^{2}+\alpha_{2}^{2}=1\implies|\alpha_{2}|=|\mathbf{u}^{T}\mathbf{u}_{2}|=\frac{\sqrt{ 3 }}{2}$ 
+
+![[Pasted image 20251208232020.png]]
+
+Sol:
+送分題，怕你忘。
+忘記就回去看 5.5 的某個定理。
+$\langle f,g \rangle=3\cdot1+2\cdot(-1)=1$ 
