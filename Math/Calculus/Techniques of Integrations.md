@@ -125,7 +125,7 @@ $$
 $$
 
 $$
-\int \cot x \ dx=\ln|\csc x|+C
+\int \cot x \ dx=-\ln|\csc x|+C
 $$
 
 $$

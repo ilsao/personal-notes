@@ -57,7 +57,7 @@ $$
 
 解：
 
-設$c=1$，$L=2$，$f(x)=5x-3$，則需要找到符合的 $\delta$ 與 $\epsilon$ 使得：
+設 $c=1$，$L=2$，$f(x)=5x-3$，則需要找到符合的 $\delta$ 與 $\epsilon$ 使得：
 
 $$
 0<|x-1|<\delta \implies |f(x) - L| < \epsilon
@@ -372,7 +372,6 @@ $\frac{dy}{dx}$ 不應該被視為某個比值，它是 $x$ 增量變化後，$y
 proof:
 $\lim_{ x \to a }f(x)=\lim_{ x \to a }\left[ \frac{f(x)-f(a)}{x-a}(x-a)+f(a) \right]=\lim_{ x \to a }\left[ \frac{f(x)-f(a)}{x-a}(x-a) \right]+\lim_{ x \to a }f(a)=f(a)$ By Limit Laws. 
 
-
 什麼情況下函數不可導？
 
 1.  A corner
@@ -420,8 +419,8 @@ proof:
 
 Sol:
 By Limit Laws, we have:
-$\lim_{ x \to 1 }[f(x)-8]=\lim_{ x \to 1 } [{\frac{f(x)-8}{x-1}\times(x-1)}]=\lim_{ x \to 1 }[f(x)-8] \times \lim_{ x \to 1 }(x-1)=0$
-$\lim_{ x \to 1 }[f(x)-8 + 8]=0 + \lim_{ x \to 1 }8=8$
+$\lim_{ x \to 1 }[f(x)-8]=\lim_{ x \to 1 } \left[ {\frac{f(x)-8}{x-1}\times(x-1)} \right]=\lim_{ x \to 1 }\frac{[f(x)-8] }{x-1}\times \lim_{ x \to 1 }(x-1)=0$ 
+$\lim_{ x \to 1 }[f(x)-8 + 8]=0 + \lim_{ x \to 1 }8=8$ 
 
 2. Determine the infinite limit $\lim_{ x \to 3^{-} } \frac{x^{2}+4x}{x^{2}-2x-3}$
 
@@ -431,7 +430,7 @@ $\lim_{ x \to 3^{-} } \frac{x^{2}+4x}{x^{2}-2x-3}=\lim_{ x \to 3^{-} } \frac{x(x
 3. Determine the infinite limit $\lim_{ x \to 0 }(\ln x^{2}-x^{-2})$
 
 Sol:
-$\lim_{ x \to 0 }(\ln x^{2}-x^{-2})=\lim_{ x \to 0 }\left( \ln \frac{x^{2}}{e^{1/x^{2}}} \right)=-\infty$
+$\lim_{ x \to 0 }(\ln x^{2}-x^{-2})=\lim_{ x \to 0 }\left( \ln \frac{x^{2}}{e^{1/x^{2}}} \right)=-\infty$ 
 
 4. If 
 
@@ -476,7 +475,7 @@ So, $\lim_{ x \to 3 }x^{2}=9$ by the definition of a limit.
 Sol:
 Given $\epsilon >0$, we let $\delta=\text{min}\left\{ 2, \frac{\epsilon}{8} \right\}$. 
 If $0<|x-3|<\delta \text{, then } 0<|x-3|<2\implies|x+3|<8$.
-`~^ Be aware of the sentence that we use`
+`~^ Be aware of the sentence we used` 
 Also $|x-3|< \frac{\epsilon}{8}$, so $|x^{2}-9| = |x+3||x-3| = 8 \cdot \frac{\epsilon}{8}=\epsilon$.
 `~^ Also notice here`
 Thus, $\lim_{ x \to 3 }x^{2}=9$ by the definition of a limit. 
@@ -573,7 +572,7 @@ Then we have $\lim_{ h \to 0 }f(a+h)=\lim_{ x \to a }f(x)$.
 
 Sol:
 因為使用定義 $\lim_{ x \to a }\cos x=\cos a$ 不好操作，使用 $\lim_{ h \to 0 }\cos(a+h)=\cos(a)$ 證明。
-$\lim_{ h \to 0 }\cos(a+h)=\lim_{ h \to 0 }[\cos a \cos h-\sin a\sin h]=\cos a$
+$\lim_{ h \to 0 }\cos(a+h)=\lim_{ h \to 0 }[\cos a \cos h-\sin a\sin h]=\cos a$ 
 Thus, cosine is a continuous function. 
 
 12. Suppose $f$ is continuous on $[1,5]$ and the only solutions of the equation $f(x)=6$ are $x=1$ and $x=4$. If $f(2)=8$, explain why $f(3)>6$.

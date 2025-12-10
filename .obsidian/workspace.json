@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Computer Networking/The Link Layer and LANs.md",
+                "file": "Math/Calculus/大會考 (一) 下半錯題.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "The Link Layer and LANs"
+              "title": "大會考 (一) 下半錯題"
             }
           },
           {
@@ -192,13 +192,23 @@
       "bases:Create new base": false
     }
   },
-  "active": "1d5b0d980baa8a22",
+  "active": "930e5d797c093d6f",
   "lastOpenFiles": [
+    "Math/Calculus/Parametric Equations and Polar Coordinates.md",
+    "Math/Calculus/Techniques of Integrations.md",
+    "Math/Calculus/Application of Integrals.md",
+    "Math/Calculus/Integrals.md",
+    "Math/Calculus/大會考 (一) 上半錯題.md",
+    "Math/Calculus/Applications of Differentiation.md",
+    "Math/Calculus/Differentiation Rules.md",
+    "Math/Calculus/Limit.md",
+    "Math/Calculus/Basic concept.md",
+    "Math/Calculus/大會考 (一) 下半錯題.md",
+    "Computer Networking/The Link Layer and LANs.md",
     "Computer Networking/pic/Link Layer and LANs",
     "Computer Networking/pic/Link Layer and LANs/Pasted image 20251210141717.png",
     "Computer Networking/Network Layer, Control Plane.md",
     "Computer Networking/Network Layer, Data Plane.md",
-    "Computer Networking/The Link Layer and LANs.md",
     "Math/Linear Algebra/Orthogonality.md",
     "Math/Linear Algebra/pic/Orthogonality/Pasted image 20251210131648.png",
     "Math/Linear Algebra/pic/Orthogonality/Pasted image 20251209235113.png",
@@ -210,14 +220,6 @@
     "Computer Networking/pic/Network Layer, Control Plane/Pasted image 20251209175155.png",
     "Computer Networking/pic/Network Layer, Control Plane/Pasted image 20251209173626.png",
     "Computer Networking/Transport Layer.md",
-    "Math/Calculus/Techniques of Integrations.md",
-    "Math/Calculus/大會考 (一) 下半錯題.md",
-    "Math/Calculus/Applications of Differentiation.md",
-    "Math/Calculus/Application of Integrals.md",
-    "Math/Calculus/大會考 (一) 上半錯題.md",
-    "Math/Calculus/Parametric Equations and Polar Coordinates.md",
-    "Math/Calculus/Integrals.md",
-    "Math/Calculus/Differentiation Rules.md",
     "Math/Linear Algebra/Vector Space.md",
     "Math/Linear Algebra/Linear Transformation.md",
     "Math/Linear Algebra/Determinants.md",
@@ -230,7 +232,6 @@
     "Physics/Physical Quantities.md",
     "交大/大學安排.md",
     "Computer Networking/Intro. to the Internet.md",
-    "Computer Networking/Application Layer.md",
     "Math/Calculus/Calculus, Early Transcendentals.pdf",
     "Computer Networking/pic/Network Layer, Control Plane",
     "Computer Networking/pic/lab2",
@@ -239,7 +240,6 @@
     "Computer Networking/pic/Network Layer, Data Plane",
     "Computer Networking/pic",
     "Physics/pic",
-    "Math/Calculus.zip",
     "未命名.canvas"
   ]
 }

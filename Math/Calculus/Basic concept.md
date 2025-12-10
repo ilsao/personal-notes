@@ -108,8 +108,8 @@ $$
 $$
 
 proof:
-$\sin 2x=2\sin x\cos x=2\tan x\cos^{2}x$
-$=2\tan x \times \frac{1}{1+\tan^{2}x}=\frac{2t}{1+t^{2}}$
+$\sin 2x=2\sin x\cos x=2\tan x\cos^{2}x$ 
+$=2\tan x \times \frac{1}{1+\tan^{2}x}=\frac{2t}{1+t^{2}}$ 
 
 $$
 \cos 2x = \frac{1-t^{2}}{1+t^{2}}，t=\tan x

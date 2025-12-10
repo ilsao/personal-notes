@@ -391,7 +391,7 @@ $y=e^{\ln y}=0$
 
 Sol:
 $\sin3x \to 3x$ as $x\to {0}^{+}$. 
-$\lim_{ x \to 0^{+} }(1+\sin3x)^{1/x}=\lim_{ x \to 0^{+} }(1+3x)^{1/3}$。
+$\lim_{ x \to 0^{+} }(1+\sin3x)^{1/x}=\lim_{ x \to 0^{+} }(1+3x)^{1/x}$。
 注意，**錯誤觀念**是：$\lim_{ x \to 0^{+} }(1+3x)=1^{+}\implies(1^{+})^{\infty}=\infty$。
 不對，這個是不定型，左右 $\ln$ 把指數拉下來。
 $\lim_{ x \to 0^{+} }\ln(1+3x)^{1/x}=\lim_{ x \to 0^{+} } \frac{1}{x}\ln(1+3x) \overset{\left( \frac{0}{0} \right)}{=}\lim_{ x \to 0^{+} } \frac{3}{1+3x}=3$。

@@ -568,7 +568,7 @@ Sol:
 一開始我錯誤的以為，直接使用 $y_{1}'=y_{2}'$ 然後說無解就好。但是，哈哈，還是太年輕太天真了。
 假設兩個函數上的點：$(a, a^{2})$ 與 $(b,b^{2}-2b+2)$。
 想要尋找公切線，需要使得：在 $m_{a}=m_{b}=m_{ab}$。
-我們有：$y_{1}'=2x, y_{2}'=2x-2$
+我們有：$y_{1}'=2x, y_{2}'=2x-2$ 
 所以有：$2a=2b-2= \frac{a^{2}-b^{2}+2b-2}{a-b}\implies a=\frac{1}{2},b=\frac{3}{2}$。
 然後，過 $a$ 做切線：$l:y-\frac{1}{4}=x-\frac{1}{2}$。
 
@@ -708,7 +708,7 @@ The relative error in R is: $\frac{\Delta R}{R}\approx \frac{dR}{R}$
 
 Sol:
 我們將函數分段表達：$g(x)=\begin{cases}x^{2} & \text{if }x\geq0 \\ -x^{2} & \text{if }x<0\end{cases}$ 。
-$\lim_{ x \to 0^{-} }= \frac{-x^{2}}{x}=0=\lim_{ x \to 0^{+} } \frac{x^{2}}{x}$，所以 $g'(0)=0$，$g'(x)$ 連續。
+$\lim_{ x \to 0^{-} }= \frac{-x^{2}}{x}=0=\lim_{ x \to 0^{+} } \frac{x^{2}}{x}$，所以 $g'(0)=0$。
 $\implies g'(x)=\begin{cases}2x & \text{if }x\geq 0 \\ -2x & \text{if }x<0\end{cases}$ 
 $\lim_{ x \to 0^{-} } \frac{-2x}{x}=-2\neq \lim_{ x \to 0^{+} } \frac{2x}{x}=2\implies g''(0) \ \not\exists$ 
 
