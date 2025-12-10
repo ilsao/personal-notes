@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Computer Networking/Network Layer, Control Plane.md",
+                "file": "Math/Linear Algebra/Orthogonality.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Network Layer, Control Plane"
+              "title": "Orthogonality"
             }
           },
           {
@@ -194,6 +194,9 @@
   },
   "active": "1d5b0d980baa8a22",
   "lastOpenFiles": [
+    "Math/Linear Algebra/pic/Orthogonality/Pasted image 20251210131648.png",
+    "Math/Linear Algebra/pic/Orthogonality/Pasted image 20251209235113.png",
+    "Computer Networking/Network Layer, Control Plane.md",
     "Computer Networking/pic/Network Layer, Control Plane/Pasted image 20251209223449.png",
     "Computer Networking/pic/Network Layer, Control Plane/Pasted image 20251209222545.png",
     "Computer Networking/pic/Network Layer, Control Plane/Pasted image 20251209220849.png",
@@ -202,13 +205,10 @@
     "Computer Networking/pic/Network Layer, Control Plane/Pasted image 20251209175155.png",
     "Computer Networking/pic/Network Layer, Control Plane/Pasted image 20251209173626.png",
     "Computer Networking/Transport Layer.md",
-    "Computer Networking/Network Layer, Control Plane.md",
     "Pasted image 20251209164822.png",
     "Math/Calculus/Techniques of Integrations.md",
     "Math/Calculus/大會考 (一) 下半錯題.md",
     "Math/Calculus/pic/Pasted image 20251209142909.png",
-    "Math/Calculus/pic/Pasted image 20251209142816.png",
-    "Math/Calculus/pic/Pasted image 20251209142332.png",
     "Math/Linear Algebra/Orthogonality.md",
     "Math/Calculus/Applications of Differentiation.md",
     "Math/Calculus/Application of Integrals.md",

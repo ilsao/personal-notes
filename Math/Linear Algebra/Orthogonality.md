@@ -185,6 +185,8 @@ $\implies\{\mathbf{x_{1}},\dots,\mathbf{x}_{r},\dots,\mathbf{x}_{n}\}$ 張出 $\
 
 來一波定義：若 $U$ 和 $V$ 為 $W$ 的子空間，取 $\mathbf{u}\in U$，$\mathbf{v}\in V$。若任意 $\mathbf{w}\in W$ 都可以被唯一的表示成 $\mathbf{w}=\mathbf{u}+\mathbf{v}$，則稱 $W$ 是 $U$ 和 $V$ 的**直和(direct sum)**，且記為 $W=U\oplus V$。
 
+$W=U\oplus V\iff W=U+V$ 且 $U\cap V=\{\mathbf{0}\}$。
+
 給你個定理：若 $S$ 是 $\mathbb{R}^{n}$ 的子空間，則：
 
 $$
@@ -653,6 +655,77 @@ $$
 \mathbf{p}=UU^{T}\mathbf{x}
 $$
 
+# The Gram-Schmidt Orthogonalization Process
+
+在本節，我們要學習如何從 $n$ 維內積空間 $V$ 的普通基底 $\{\mathbf{x}_{1},\dots,\mathbf{x}_{n}\}$ 構建正交基底 $\{\mathbf{u}_{1},\dots,\mathbf{u}_{n}\}$。並且使得 $\text{Span}(\mathbf{u}_{1},\dots,\mathbf{u}_{k})=\text{Span}(\mathbf{x}_{1},\dots,\mathbf{x}_{k})\quad\text{for }k=1,\dots,n$。
+
+令 $B=\{\mathbf{v}_{1},\dots \mathbf{v}_{n}\}$ 為內積空間 $V$ 的基底，則 $B'=\{\mathbf{w}_{1},\dots,\mathbf{w}_{n}\}$ 為 $V$ 的直交基底，其中 $\mathbf{w}_{i}$ 如下計算：
+
+$$
+\begin{align}
+ & \mathbf{w}_{1}=\mathbf{v}_{1} \\
+ & \mathbf{w}_{2}=\mathbf{v}_{2}-\frac{\langle \mathbf{v}_{2},\mathbf{w}_{1} \rangle }{\langle \mathbf{w}_{1},\mathbf{w}_{1} \rangle }\mathbf{w}_{1} \\
+ & \mathbf{w}_{3}=\mathbf{v}_{3}-\frac{\langle \mathbf{v}_{3},\mathbf{w}_{2} \rangle }{\langle \mathbf{w}_{2},\mathbf{w}_{2} \rangle }\mathbf{w}_{2}-\frac{\langle \mathbf{v}_{3},\mathbf{w}_{1} \rangle }{\langle \mathbf{w}_{1},\mathbf{w}_{1} \rangle }\mathbf{w}_{1} \\
+ & \vdots \\
+ & \mathbf{w}_{n}=\mathbf{v}_{n}-\frac{\langle \mathbf{v}_{n},\mathbf{w}_{n-1} \rangle }{\langle \mathbf{w}_{n-1},\mathbf{w}_{n-1} \rangle }\mathbf{w}_{n-1}-\dots-\frac{\langle \mathbf{v}_{n},\mathbf{w}_{1} \rangle }{\langle \mathbf{w}_{1},\mathbf{w}_{1} \rangle }\mathbf{w}_{1}
+\end{align}
+$$
+
+每段這樣計算的原因是，計算該向量投影到其他之前向量的投影剪掉，就可以獲得與它們都垂直的向量。
+
+我們對 $\mathbf{w}_{3}$ 進行講述。$\mathbf{v}_{3}$ 對 $\mathbf{w}_{1}$ 與 $\mathbf{w}_{2}$ 的投影的和，就是 $\mathbf{v}_{3}$ 在 $\text{Span}(\mathbf{w}_{1},\mathbf{w}_{2})$ 的投影。此時 $\mathbf{v}_{3}$ 剪掉該投影，就可以獲得同時垂直 $\mathbf{w}_{1}$ 與 $\mathbf{w}_{2}$ 的向量 $\mathbf{w}_{3}$。如下圖所示：
+
+![[Pasted image 20251209235113.png]]
+
+同時，因為直交的 $n$ 個向量會構成一組 $n$ 維基底，所以 $\text{Span}(\mathbf{w}_{1},\dots \mathbf{w}_{n})=\text{Span}(\mathbf{v}_{1},\dots,\mathbf{v}_{n})$。
+
+如果我們想要求得正交基底，我們可以對每項如下操作：
+
+$$
+\mathbf{u}_{i}= \frac{\mathbf{w}_{i}}{||\mathbf{w}_{i}||}
+$$
+
+如果我們想簡化公式，我們可以用正交來表示 (但實際計算起來較複雜)：
+
+$$
+\begin{align}
+ & \mathbf{w}_{1}=\mathbf{v}_{1}  &  \mathbf{u}_{1}= \frac{\mathbf{w}_{1}}{||\mathbf{w}_{1}||} \\
+ & \mathbf{w}_{2}=\mathbf{v}_{2}-\langle \mathbf{v}_{2},\mathbf{u}_{1} \rangle \mathbf{u}_{1} & \mathbf{u}_{2}= \frac{\mathbf{w}_{2}}{||\mathbf{w}_{2}||} \\
+ & \vdots \\
+ & \mathbf{w}_{n}=\mathbf{v}_{n}-\langle \mathbf{v}_{n},\mathbf{u}_{n-1} \rangle\mathbf{u}_{n-1}-\dots-\langle \mathbf{v}_{n},\mathbf{u}_{1} \rangle\mathbf{u}_{1}  & \mathbf{u}_{n}=\frac{\mathbf{w}_{n}}{||\mathbf{w}_{n}||}  
+\end{align}
+$$
+
+## Gram-Schmidt QR Factorization
+
+若 $A$ 為一個 $m\times n$ 矩陣且秩為 $n$，則 $A$ 可以被分解成 $QR$。其中 $Q$ 為 $m\times n$ 矩陣且有正交 column vectors，$R$ 為 $n\times n$ 上三角矩陣且對角線元素全正。
+
+注意，$R$ 必為非奇異因為 $\text{det}(R)>0$。
+
+令 $\{\mathbf{q}_{1},\dots,\mathbf{q}_{n}\}$ 為 $R(A)$ 的 orthonormal basis，則：
+
+$$
+r_{ij}=\langle \mathbf{q}_{i},\mathbf{a}_{j} \rangle 
+$$
+
+proof:
+令 $r_{11}=||\mathbf{a}_{1}||$，$r_{kk}=||\mathbf{a}_{k}-\mathbf{p}_{k-1}||$，$r_{ik}=\langle \mathbf{q}_{i},\mathbf{a}_{j} \rangle$
+由 Gram-Schmidt process，我們有：
+$r_{11}\mathbf{q}_{1}=\mathbf{a}_{1}$ 
+$r_{kk}\mathbf{q}_{k}=\mathbf{a}_{k}-r_{1k}\mathbf{q}_{1}-r_{2k}\mathbf{q}_{2}-\dots-r_{k-1,k}\mathbf{q}_{k-1}$ 
+反過來說，也就是：
+$\mathbf{a}_{1}=r_{11}\mathbf{q}_{1}$ 
+$\mathbf{a}_{2}=r_{12}\mathbf{q}_{1}+r_{22}\mathbf{q}_{2}$ 
+$\vdots$ 
+$\mathbf{a}_{n}=r_{1n}\mathbf{q}_{1}+\dots+r_{nn}\mathbf{q}_{n}$ 
+如果我們令 $Q=(\mathbf{q}_{1},\dots ,\mathbf{q}_{n})$ ，並定義 $R=\begin{bmatrix}r_{11} & r_{12} & \dots & r_{1n} \\ 0 & r_{22} & \dots & r_{2n} \\ \vdots \\ 0 & 0 & \dots & r_{nn}\end{bmatrix}$，則 $QR$ 的第 j 個 column為：
+
+$$Q\mathbf{r}_{j}=\mathbf{a}_{j}$$
+
+所以 
+
+$$QR=(\mathbf{a}_{1}\dots,\mathbf{a}_{n})=A$$
+
 # Tips
 
 - 做不出來的時候回頭看看題目，說不定會有驚人發現！
@@ -868,3 +941,16 @@ Sol:
 送分題，怕你忘。
 忘記就回去看 5.5 的某個定理。
 $\langle f,g \rangle=3\cdot1+2\cdot(-1)=1$ 
+
+![[Pasted image 20251210131648.png]]
+
+Sol:
+計算，煩。
+因為我們要找到 $\mathbb{R}^{4}$ 的正交基底，現在已知兩個，那我們構成：$A=(\mathbf{x}_{1},\mathbf{x_{2}})$。
+那麼它的直交補就是 $R(A)^{\perp}=N(A^{T})$。
+可以簡單地找到 $N(A^{T})=\text{Span}((-1,1,0,0)^{T},(4,0,-3,1)^{T})$。
+對這兩個基底做 Gram-Schmidt process：
+$r_{11}=||(-1,1,0,0)^{T}||=\sqrt{ 2 }\implies \mathbf{q}_{1}=\frac{1}{\sqrt{ 2 }}(-1,1,0,0)^{T}$ 
+$r_{12}=\langle \mathbf{q}_{1},(4,0,-3,1)^{T} \rangle=-2\sqrt{ 2 }$ 
+$r_{22}\mathbf{q}_{2}=(4,0,-3,1)^{T}-(-2\sqrt{ 2 })\mathbf{q}_{1}=(2,2,-3,1)^{T}$ 
+$\implies r_{22}=||(2,2,-3,1)^{T}||=3\sqrt{ 2 }\implies \mathbf{q}_{2}=\frac{1}{3\sqrt{ 2 }}(2,2,-3,1)^{T}$ 
