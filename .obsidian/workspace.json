@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Math/Calculus/大會考 (一) 下半錯題.md",
+                "file": "Math/Linear Algebra/Eigenvalues.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "大會考 (一) 下半錯題"
+              "title": "Eigenvalues"
             }
           },
           {
@@ -192,8 +192,12 @@
       "bases:Create new base": false
     }
   },
-  "active": "930e5d797c093d6f",
+  "active": "1d5b0d980baa8a22",
   "lastOpenFiles": [
+    "Math/Linear Algebra/pic/Eigenvalues",
+    "Math/Linear Algebra/pic/Orthogonality/Pasted image 20251211164926.png",
+    "Math/Calculus/大會考 (一) 下半錯題.md",
+    "Math/Linear Algebra/Eigenvalues.md",
     "Math/Calculus/Parametric Equations and Polar Coordinates.md",
     "Math/Calculus/Techniques of Integrations.md",
     "Math/Calculus/Application of Integrals.md",
@@ -203,7 +207,6 @@
     "Math/Calculus/Differentiation Rules.md",
     "Math/Calculus/Limit.md",
     "Math/Calculus/Basic concept.md",
-    "Math/Calculus/大會考 (一) 下半錯題.md",
     "Computer Networking/The Link Layer and LANs.md",
     "Computer Networking/pic/Link Layer and LANs",
     "Computer Networking/pic/Link Layer and LANs/Pasted image 20251210141717.png",
@@ -218,7 +221,6 @@
     "Computer Networking/pic/Network Layer, Control Plane/Pasted image 20251209212250.png",
     "Computer Networking/pic/Network Layer, Control Plane/Pasted image 20251209210410.png",
     "Computer Networking/pic/Network Layer, Control Plane/Pasted image 20251209175155.png",
-    "Computer Networking/pic/Network Layer, Control Plane/Pasted image 20251209173626.png",
     "Computer Networking/Transport Layer.md",
     "Math/Linear Algebra/Vector Space.md",
     "Math/Linear Algebra/Linear Transformation.md",
@@ -230,8 +232,6 @@
     "Physics/The Electric Field and Electric Potiential.md",
     "Physics/Electrostatics.md",
     "Physics/Physical Quantities.md",
-    "交大/大學安排.md",
-    "Computer Networking/Intro. to the Internet.md",
     "Math/Calculus/Calculus, Early Transcendentals.pdf",
     "Computer Networking/pic/Network Layer, Control Plane",
     "Computer Networking/pic/lab2",
