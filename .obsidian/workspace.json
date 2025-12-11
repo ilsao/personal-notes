@@ -11,14 +11,12 @@
             "id": "930e5d797c093d6f",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "image",
               "state": {
-                "file": "Math/Linear Algebra/Eigenvalues.md",
-                "mode": "source",
-                "source": false
+                "file": "Math/Linear Algebra/pic/Orthogonality/Pasted image 20251210131648.png"
               },
-              "icon": "lucide-file",
-              "title": "Eigenvalues"
+              "icon": "lucide-image",
+              "title": "Pasted image 20251210131648"
             }
           },
           {
@@ -194,10 +192,10 @@
   },
   "active": "1d5b0d980baa8a22",
   "lastOpenFiles": [
-    "Math/Linear Algebra/pic/Eigenvalues",
-    "Math/Linear Algebra/pic/Orthogonality/Pasted image 20251211164926.png",
-    "Math/Calculus/大會考 (一) 下半錯題.md",
+    "Math/Linear Algebra/pic/Eigenvalues/Pasted image 20251211164926.png",
     "Math/Linear Algebra/Eigenvalues.md",
+    "Math/Linear Algebra/pic/Eigenvalues",
+    "Math/Calculus/大會考 (一) 下半錯題.md",
     "Math/Calculus/Parametric Equations and Polar Coordinates.md",
     "Math/Calculus/Techniques of Integrations.md",
     "Math/Calculus/Application of Integrals.md",
@@ -239,7 +237,6 @@
     "Math/Linear Algebra/pic",
     "Computer Networking/pic/Network Layer, Data Plane",
     "Computer Networking/pic",
-    "Physics/pic",
     "未命名.canvas"
   ]
 }
