@@ -11,12 +11,14 @@
             "id": "930e5d797c093d6f",
             "type": "leaf",
             "state": {
-              "type": "image",
+              "type": "markdown",
               "state": {
-                "file": "Math/Linear Algebra/pic/Orthogonality/Pasted image 20251210131648.png"
+                "file": "Computer Networking/The Link Layer and LANs.md",
+                "mode": "source",
+                "source": false
               },
-              "icon": "lucide-image",
-              "title": "Pasted image 20251210131648"
+              "icon": "lucide-file",
+              "title": "The Link Layer and LANs"
             }
           },
           {
@@ -190,8 +192,11 @@
       "bases:Create new base": false
     }
   },
-  "active": "1d5b0d980baa8a22",
+  "active": "930e5d797c093d6f",
   "lastOpenFiles": [
+    "Pasted image 20251211210619.png",
+    "Computer Networking/Network Layer, Control Plane.md",
+    "Math/Linear Algebra/pic/Orthogonality/Pasted image 20251210131648.png",
     "Math/Linear Algebra/pic/Eigenvalues/Pasted image 20251211164926.png",
     "Math/Linear Algebra/Eigenvalues.md",
     "Math/Linear Algebra/pic/Eigenvalues",
@@ -208,10 +213,8 @@
     "Computer Networking/The Link Layer and LANs.md",
     "Computer Networking/pic/Link Layer and LANs",
     "Computer Networking/pic/Link Layer and LANs/Pasted image 20251210141717.png",
-    "Computer Networking/Network Layer, Control Plane.md",
     "Computer Networking/Network Layer, Data Plane.md",
     "Math/Linear Algebra/Orthogonality.md",
-    "Math/Linear Algebra/pic/Orthogonality/Pasted image 20251210131648.png",
     "Math/Linear Algebra/pic/Orthogonality/Pasted image 20251209235113.png",
     "Computer Networking/pic/Network Layer, Control Plane/Pasted image 20251209223449.png",
     "Computer Networking/pic/Network Layer, Control Plane/Pasted image 20251209222545.png",
