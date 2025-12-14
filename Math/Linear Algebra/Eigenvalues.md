@@ -456,5 +456,160 @@ proof:
 我們對比 $TT^{H}$ 與 $T^{H}T$ 的對角線元素，可以發現當 $i\neq j$ 時 $t_{ij}=0$。
 所以 $U$ 將 $A$ 對角化，且 $U$ 的 column vectors 會是 $A$ 的特徵向量。
 
+# The Singular Value Decomposition
+
+此節中，我們假設 $A$ 是 $m\times n$ 矩陣且 $m\geq n$。(注意到這樣假設只是為了方便，所有結論對於 $n>m$ 接成立)
+
+我們想要找到一個方法來將 $A$ 分解成 $A=U\Sigma V^{T}$，其中 $U$ 為 $m\times m$ 單位矩陣，$V$ 為 $n\times n$ 單位矩陣。特別地， $\Sigma$ 為所有非對角元素皆為零的 $m\times n$ 矩陣，並且對角元素滿足：
+
+$$
+\sigma_{1}\geq\sigma_{2}\geq\dots\geq\sigma_{n}\geq0
+$$
+$$
+\Sigma=\begin{bmatrix}
+\sigma_{1} &  &  &  \\
+ & \sigma_{2} &  &  \\
+ &  & \dots &  \\
+ &  &  & \sigma_{n}
+\end{bmatrix}
+$$
+
+我們將 $\sigma_{i}$  稱為 $A$ 的**奇異值(singular value)**，而 $A=U\Sigma V^{T}$ 稱為 $A$ 的**奇異值分解(Singular Value Decomposition, SVD)**。
+
+之後我們會說明，$\text{rank } A$ 就是所有非零奇異值的個數。
+
+## The SVD Theorem
+
+我們要證明，對於任意 $m\times n$ 矩陣 $A$，都能被奇異值分解。
+
+構造出 $A^{T}A$，此矩陣為對稱的 $n\times n$ 矩陣。所以，它的所有特徵值都是實數，且可以找到一個矩陣 $V$，其 column vectors 互相正交並可以使得 $A^{T}A$ 被對角化。
+
+不僅如此，$A^{T}A$ 的特徵值必須非負。因為：
+
+$$
+||A\mathbf{x}||^{2}=\langle A\mathbf{x},A\mathbf{x} \rangle =(A\mathbf{x})^{T}A\mathbf{x}=\mathbf{x}^{T}A^{T}A\mathbf{x}=\lambda||\mathbf{x}||^{2}
+$$
+
+有 $||A\mathbf{x}||^{2}\geq0$ 且 $||\mathbf{x}||^{2}\geq 0$，所以 $\lambda\geq 0$。
+
+我們令 $V$ 的 column 有序，使得相應的 ($A^{T}A$ 的) 特徵值滿足：
+
+$$
+\lambda_{1}\geq \lambda_{2}\geq\dots\geq \lambda_{n}\geq 0
+$$
+
+而 $A$ 的奇異值為：
+
+$$
+\sigma_{j}=\sqrt{ \lambda_{j} }\quad j=1,\dots,n
+$$
+
+令 $r$ 表示 $A$ 的秩，則 $A^{T}A$ 的秩也為 $r$。因為 $A^{T}A$ 對稱，所以它的秩會等於非零特徵值的個數。(特徵值為零代表該方向被壓成零，所以沒被壓成零的方向數等於秩)。
+
+所以：
+
+$$
+\lambda_{1}\geq \lambda_{2}\geq\dots\geq \lambda_{r}>0\quad\text{ and }\lambda_{r+1}=\lambda_{r+2}=\dots=\lambda_{n}=0
+$$
+
+對於奇異值 $\sigma_{i}$ 來說，也有相同的關係。
+
+令 $V_{1}=(\mathbf{v}_{1},\dots,\mathbf{v}_{r})$，$V_{2}=(\mathbf{v}_{r+1},\dots,\mathbf{v}_{n})$，$\Sigma_{1}=\begin{bmatrix}\sigma_{1} &  &  &  \\  & \sigma_{2} &  &  \\  &  & \dots &  \\  &  &  & \sigma_{r}\end{bmatrix}$ 。
+
+那麼，$\Sigma=\begin{bmatrix}\Sigma_{1} & O \\ O & O\end{bmatrix}$。
+
+因為 $V_{2}$ 的 column vectors 是 $A^{T}A$ 的特徵值 $\lambda=0$ 對應的特徵向量，所以：
+
+$$
+A^{T}A\mathbf{v}_{j}=\mathbf{0}\quad j=r+1,\dots,n
+$$
+
+那麼，$V_{2}$ 的 column vectors 會構成 $N(A^{T}A)=N(A)$ 的正交基底。那麼：
+
+$$
+AV_{2}=O
+$$
+
+又因為 $V$ 是單位向量，所以：
+
+$$
+\begin{align}
+ & I=VV^{T}=V_{1}V_{1}^{T}+V_{2}V_{2}^{T} \\
+ & A=AI=AV_{1}V_{1}^{T}+AV_{2}V_{2}^{T}=AV_{1}V_{1}^{T}
+\end{align}
+$$
+
+到目前為止，我們已經構造了 $V$ 與 $\Sigma$。我們現在只需要尋找大小為 $m\times n$ 的單位矩陣 $U$ 使得：
+
+$$
+A=U\Sigma V^{T}
+$$
+
+移項，我們有：$AV=U\Sigma$。
+
+比對前 $r$ 個 column 項：
+
+$$
+A\mathbf{v}_{j}=\sigma_{j}\mathbf{u}_{j}\quad j=1,\dots,r
+$$
+
+我們令：
+
+$$
+\mathbf{u}_{j}=\frac{1}{\sigma_{j}}A\mathbf{v}_{j}\quad j=1,\dots,r
+$$
+
+以及，$U_{1}=(\mathbf{u}_{1},\dots,\mathbf{u}_{r})$。則滿足：$AV_{1}=U_{1}\Sigma_{1}$。如果你想驗證 $U_{1}$ 的 column vectors 組成了 orthonormal set，可以去驗證：$\langle \mathbf{u}_{i},\mathbf{u}_{j} \rangle=\delta_{ij}$。
+
+而且，由上式還可以知道，$\mathbf{u}_{j}, \ 1\leq j\leq r$ 會在 $R(A)$ 裡面。又因為 $R(A)$ 的維度為 $r$ 且 $\mathbf{u}_{1},\dots,\mathbf{u}_{r}$ 線性獨立，所以它們是 $R(A)$ 的一組基底。
+
+我們現在想找 $\mathbf{u}_{r+1},\dots,\mathbf{u}_{m}$ 且與 $\mathbf{u}_{1},\dots,\mathbf{u}_{r}$ 仍兩兩正交，也就是找 $R(A)^{\perp}=N(A^{T})$。令 $\{\mathbf{u}_{r+1},\dots,\mathbf{u}_{m}\}$ 為 $N(A^{T})$ 的一組基底，並令 $U_{2}=(\mathbf{u}_{r+1},\dots,\mathbf{u}_{m})$。
+
+令：
+
+$$
+U=\begin{bmatrix}
+U_{1} & U_{2}
+\end{bmatrix}
+$$
+
+就成功找到所求的 $U$ 了。
+
+驗證一下：
+
+$$
+\begin{align}
+U\Sigma V^{T} & =\begin{bmatrix}
+U_{1} & U_{2}
+\end{bmatrix}\begin{bmatrix}
+\Sigma_{1} & O \\
+O & O
+\end{bmatrix}\begin{bmatrix}
+V_{1}^{T} \\
+V_{2}^{T}
+\end{bmatrix} \\
+ & =U_{1}\Sigma_{1}V_{1}^{T} \\
+ & =AV_{1}V_{1}^{T} \\
+ & =A
+\end{align}
+$$
+
+注意到：
+1. $A$ 的奇異值 $\sigma_{1},\dots,\sigma_{n}$ 唯一，但是 $U$ 和 $V$ 不唯一。
+2. 因為 $V$ 使得 $A^{T}A$ 對角化，所以 $\mathbf{v}_{j}$ 是 $A^{T}A$ 的特徵向量。
+3. $\mathbf{v}_{j}$ 被稱為**右奇異向量(right singular vector)**，$\mathbf{u}_{j}$ 被稱為左奇異向量。
+4. $A$ 的秩會等於非零奇異值($\sigma=\sqrt{ \lambda }$，但是這裡的 $\lambda$ 是相對於 $A^{T}A$ 的)的個數，但是不等於非零特徵值的個數。
+5. 如果我們直接令 $A=U_{1}\Sigma_{1}V_{1}^{T}$，則這種 SVD 稱為 compact form of the singular value decomposition。
+
+我們綜整尋找 SVD 分解的步驟：
+1. 計算 $A^{T}A$。
+2. 計算 $A^{T}A$ 的特徵值，並由大排到小。
+3. 由 $A^{T}A$ 的特徵值計算 $A$ 的奇異值，並由大排到小。
+4. 令 $\mathbf{v}_{i}$ 為 $\lambda_{i}$ 對應的特徵向量。
+5. 令 $\Sigma_{1}$ 為對角矩陣且對角元素為 $\sigma_{i}$，$\Sigma=\begin{bmatrix}\Sigma_{1} & O \\ O & O\end{bmatrix}$。
+6. 令 $\mathbf{u}_{i}=\frac{1}{\sigma_{i}}A\mathbf{v}_{i}\quad 1\leq i\leq r$。
+7. 計算 $N(A^{T})$ 的正交基底 $\mathbf{w}_{r+1},\dots,\mathbf{w}_{m}$ 令 $\mathbf{u}_{j}=\mathbf{w}_{j}\quad r<j\leq m$。
+8. $A=U\Sigma V^{T}$。
+
 # 重要例題
 
