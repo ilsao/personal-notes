@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Computer Networking/The Link Layer and LANs.md",
+                "file": "Physics/Magnetic Fields and Electromagnetic Waves.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "The Link Layer and LANs"
+              "title": "Magnetic Fields and Electromagnetic Waves"
             }
           },
           {
@@ -194,20 +194,28 @@
   },
   "active": "930e5d797c093d6f",
   "lastOpenFiles": [
-    "Computer Networking/Network Layer, Control Plane.md",
+    "Physics/pic/Pasted image 20251214203000.png",
+    "Physics/Magnetic Fields and Electromagnetic Waves.md",
+    "Physics/pic/Pasted image 20251214195131.png",
+    "Physics/pic/Pasted image 20251214194810.png",
+    "Physics/The Electric Field and Electric Potiential.md",
+    "Physics/pic/Pasted image 20251214173831.png",
+    "Physics/pic/Pasted image 20251214172356.png",
     "Computer Networking/Network Layer, Data Plane.md",
-    "Math/Linear Algebra/Eigenvalues.md",
+    "Computer Networking/hw2.md",
+    "Computer Networking/The Link Layer and LANs.md",
+    "Computer Networking/Computer Networking A top-down approach.pdf",
     "Math/Linear Algebra/Orthogonality.md",
+    "Computer Networking/Network Layer, Control Plane.md",
+    "Math/Linear Algebra/Eigenvalues.md",
     "Math/Linear Algebra/Matrix and Systems.md",
     "Math/Linear Algebra/Determinants.md",
-    "Computer Networking/The Link Layer and LANs.md",
     "Computer Networking/pic/Link Layer and LANs/Pasted image 20251212142638.png",
     "Computer Networking/pic/Link Layer and LANs/Pasted image 20251212132209.png",
     "Computer Networking/pic/Link Layer and LANs/Pasted image 20251212125045.png",
     "Computer Networking/pic/Link Layer and LANs/Pasted image 20251211210619.png",
     "Physics/Electric Current.md",
     "Math/Linear Algebra/pic/Orthogonality/Pasted image 20251210131648.png",
-    "Math/Linear Algebra/pic/Eigenvalues/Pasted image 20251211164926.png",
     "Math/Linear Algebra/pic/Eigenvalues",
     "Math/Calculus/大會考 (一) 下半錯題.md",
     "Math/Calculus/Parametric Equations and Polar Coordinates.md",
@@ -220,25 +228,17 @@
     "Math/Calculus/Limit.md",
     "Math/Calculus/Basic concept.md",
     "Computer Networking/pic/Link Layer and LANs",
-    "Computer Networking/pic/Link Layer and LANs/Pasted image 20251210141717.png",
-    "Math/Linear Algebra/pic/Orthogonality/Pasted image 20251209235113.png",
-    "Computer Networking/pic/Network Layer, Control Plane/Pasted image 20251209223449.png",
-    "Computer Networking/pic/Network Layer, Control Plane/Pasted image 20251209222545.png",
     "Computer Networking/Transport Layer.md",
     "Math/Linear Algebra/Vector Space.md",
     "Math/Linear Algebra/Linear Transformation.md",
     "Math/Linear Algebra/The Art of Linear Algebra.pdf",
     "Math/Linear Algebra/U1 U2 Summary Note.md",
-    "Physics/The Electric Field and Electric Potiential.md",
-    "Physics/Electrostatics.md",
-    "Physics/Physical Quantities.md",
     "Math/Calculus/Calculus, Early Transcendentals.pdf",
     "Computer Networking/pic/Network Layer, Control Plane",
     "Computer Networking/pic/lab2",
     "Math/Linear Algebra/pic/Orthogonality",
     "Math/Linear Algebra/pic",
     "Computer Networking/pic/Network Layer, Data Plane",
-    "Computer Networking/pic",
     "未命名.canvas"
   ]
 }
