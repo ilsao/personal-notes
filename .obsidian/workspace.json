@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Computer Networking/The Link Layer and LANs.md",
-                "mode": "source",
+                "file": "Math/Linear Algebra/Eigenvalues.md",
+                "mode": "preview",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "The Link Layer and LANs"
+              "title": "Eigenvalues"
             }
           },
           {
@@ -194,6 +194,8 @@
   },
   "active": "930e5d797c093d6f",
   "lastOpenFiles": [
+    "Math/Linear Algebra/Orthogonality.md",
+    "Computer Networking/The Link Layer and LANs.md",
     "Computer Networking/Network Layer, Control Plane.md",
     "Physics/Final Exam/期末考古題.md",
     "Physics/Final Exam/Wave Motion.md",
@@ -220,10 +222,8 @@
     "Physics/pic/Pasted image 20251215002334.png",
     "Physics/pic/Pasted image 20251215001728.png",
     "Math/Linear Algebra/Eigenvalues.md",
-    "Math/Linear Algebra/Orthogonality.md",
     "Computer Networking/Network Layer, Data Plane.md",
     "Computer Networking/hw2.md",
-    "Computer Networking/The Link Layer and LANs.md",
     "Computer Networking/Computer Networking A top-down approach.pdf",
     "Math/Linear Algebra/Matrix and Systems.md",
     "Math/Linear Algebra/Determinants.md",

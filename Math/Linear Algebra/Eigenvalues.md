@@ -152,7 +152,7 @@ A^{k}=XD^{k}X^{-1}=X\begin{bmatrix}
  & (\lambda_{2})^{k} &  &  \\
  &  & \dots  &  \\
  &  &  & (\lambda_{n})^{k}
-\end{bmatrix}
+\end{bmatrix}X^{-1}
 $$
 
 ## The Polynomials of Matrices
@@ -266,7 +266,7 @@ $$
 3. $\langle \alpha \mathbf{z}+\beta \mathbf{w},\mathbf{u} \rangle=\alpha \langle \mathbf{z},\mathbf{u} \rangle+\beta \langle \mathbf{w},\mathbf{u} \rangle$ 
 
 至於第二點為何正確，我們可以做出如下簡單測驗：
-$\langle \mathbf{z},\mathbf{w} \rangle=\sum_{i=1}^{n}z_{i}\overline{w_{i}}$ 與 $\langle \mathbf{w},\mathbf{z} \rangle=\sum_{i=1}^{n}w_{i}\overline{\mathbf{z}_{i}}$ 
+$\langle \mathbf{z},\mathbf{w} \rangle=\sum_{i=1}^{n}z_{i}\overline{w_{i}}$ 與 $\langle \mathbf{w},\mathbf{z} \rangle=\sum_{i=1}^{n}w_{i}\overline{{z}_{i}}$ 
 如果對第二個式子整體取共軛，有：$\overline{\langle \mathbf{w},\mathbf{z} \rangle}=\sum_{i=1}^{n}\overline{w_{i}}z_{i}=\sum_{i=1}^{n}z_{i}\overline{w_{i}}=\langle \mathbf{z},\mathbf{w} \rangle$ 
 
 需要注意，第三點只有在標量分配在左邊時成立，如果相反 $\langle \mathbf{u},\alpha \mathbf{z}+\beta \mathbf{w} \rangle$ 則：
@@ -356,7 +356,7 @@ proof:
 我們使用數學歸納法證明。
 當 $n=1$ 時結論明顯成立，取 $U=\begin{bmatrix}1\end{bmatrix}$ 即可。
 若當 $n=k$ 時成立，考慮 $n=k+1$ 時的情況。
-令 $A$ 為 $(n+1)\times(n+1)$ 矩陣，且 $\lambda_{1}$ 為 $A$ 的特徵值，$\mathbf{x}_{1}$ 為相應單位特徵向量。
+令 $A$ 為 $(n+1)\times(n+1)$ 矩陣，且 $\lambda_{1}$ 為 $A$ 的特徵值，$\mathbf{w}_{1}$ 為相應單位特徵向量。
 通過 Gram-Schmidt process，可以構成 $\mathbf{w}_{2},\dots,\mathbf{w}_{k+1}$ 使得 $\{\mathbf{w}_{1},\dots,\mathbf{w}_{k+1}\}$ 為 $\mathbb{C}^{k+1}$ 的正交基底。
 令 $W=(\mathbf{w}_{1},\dots,\mathbf{w}_{k+1})$，注意到 $W$ 為單位矩陣。
 以及，$W^{H}A\mathbf{w}_{1}=\lambda_{1}W^{H}\mathbf{w}_{1}=\lambda_{1}\mathbf{e}$。
@@ -385,7 +385,7 @@ proof:
 
 $A\mathbf{u}_{i}=d_{i}\mathbf{u}_{i}$，其中 $\mathbf{u}_{i}$ 為特徵向量，$d_{i}$ 為特徵值。(就這樣被定義逼出來啦！)
 
-誒，這個東西好像我們之前講對角化的時候出現過誒。這麼想就對了，那個時候只說可以找到矩陣 $X$ 使得 $A$ 背對角化，但是這個定理告訴我們這個 $X$ 一定可以被化成單位矩陣！
+誒，這個東西好像我們之前講對角化的時候出現過誒。這麼想就對了，那個時候只說可以找到矩陣 $X$ 使得 $A$ 被對角化，但是這個定理告訴我們這個 $X$ 一定可以被化成單位矩陣！
 
 需要注意的是，因為化成單位矩陣的過程需要使用 Gram-Schmidt process，只能在同一個向量空間中作用。而我們 Hermitian 矩陣又保證了不同特徵值對應出來的特徵向量會互相垂直，略過了不同向量空間無法跨空間做 Gram-Schmidt 的限制，所以才可以費盡心思找到這個單位矩陣喔！
 
@@ -413,7 +413,7 @@ $$
 
 有些 non-Hermitian 矩陣仍然可以擁有完整且由特徵向量構成的正交集合。例如 skew-symmetric 與 skew-Hermitian 矩陣 ($A^{H}=-A^{H}$) 都有這個性質。
 
-若任意 $A$ 矩陣擁有完整且由特徵向量構成的整交集合，則 $A=UDU^{H}$ 其中 $U$ 為單位向量且 $D$ 為對角矩陣 (可能包含複數)。若 $D^{H}\neq D$，則 $A^{H}=UD^{H}U^{H}\neq A$。
+若任意 $A$ 矩陣擁有完整且由特徵向量構成的正交集合，則 $A=UDU^{H}$ 其中 $U$ 為單位向量且 $D$ 為對角矩陣 (可能包含複數)。若 $D^{H}\neq D$，則 $A^{H}=UD^{H}U^{H}\neq A$。
 
 然而：
 
@@ -444,7 +444,7 @@ $$
 AA^{H}=A^{H}A
 $$
 
-我們定義：如果 $A$ 滿足 $AA^{H}=A^{H}$ 則稱 $A$ 為 **normal matrix(正規矩陣)**。
+我們定義：如果 $A$ 滿足 $AA^{H}=A^{H}A$ 則稱 $A$ 為 **normal matrix(正規矩陣)**。
 
 然後有個定理請你看一下：矩陣 $A$ 為 normal matrix $\iff$ $A$ 擁有完整的由特徵向量構成的正交集合。
 
@@ -452,7 +452,7 @@ proof:
 由上面的說明，我們已經證明了 $\impliedby$，現在我們只需要證明 $\implies$。
 ($\implies$)
 根據上面好久 (也不是很久) 之前的定理，我們知道一定存在一個單位矩陣 $U$ 與三角矩陣 $T$ 使得 $T=U^{H}AU$。
-注意到：$TT^{H}=U^{H}AA^{H}U$，$T^{H}T=U^{H}A^{H}AU$。又 $A^{H}A=AA^{h}$，所以 $T$ 也是 normal matrix。
+注意到：$TT^{H}=U^{H}AA^{H}U$，$T^{H}T=U^{H}A^{H}AU$。又 $A^{H}A=AA^{H}$，所以 $T$ 也是 normal matrix。
 我們對比 $TT^{H}$ 與 $T^{H}T$ 的對角線元素，可以發現當 $i\neq j$ 時 $t_{ij}=0$。
 所以 $U$ 將 $A$ 對角化，且 $U$ 的 column vectors 會是 $A$ 的特徵向量。
 
