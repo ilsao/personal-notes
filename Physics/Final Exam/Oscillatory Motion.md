@@ -94,7 +94,7 @@ $$
 
 # 威儀指定習題
 
-1. When a mass of 0.2 kg is suspended from a spring, it stretches 0.04 m. The mass is pulled down an additional distance 0.1 m from its equilibrium position and released. (a) What is the spring constant? (b) What is the period of oscillation?(c) What is the frequency of oscillation? (d) What will be the maximum velocity?
+1. When a mass of 0.2 kg is suspended from a spring, it stretches 0.04 m (平衡位置). The mass is pulled down an additional distance 0.1 m (被從平衡位置再拉出來，也就是振幅) from its equilibrium position and released. (a) What is the spring constant? (b) What is the period of oscillation?(c) What is the frequency of oscillation? (d) What will be the maximum velocity?
 
 Sol:
 (a)
@@ -104,6 +104,7 @@ $T=\frac{2\pi}{\omega}=2\pi \sqrt{ \frac{m}{k} }=\frac{2\pi}{5\sqrt{ g }}\approx
 (c)
 $\nu=\frac{1}{T}\approx2.5\text{ Hz}$ 
 (d)
+$v_{\text{max}}=A\omega=2\pi \nu A=2\pi \cdot 2.5\cdot 0.1\approx 1.57\text{ m/sec}$ 
 $\frac{1}{2}kx_{\text{max}}^{2}=\frac{1}{2}mv_{\text{max}}^{2}\implies v_{max}=\frac{\sqrt{ g }}{2}\approx1.57\text{ m/sec}$ 
 
 2. Two springs with force constants $k_{1}$ = 100 N/m and $k_{2}$ = 200 N/m are connected to opposite ends of a block of mass 3 kg (see Fig. 10-8). (a) If the block is displaced 0.1 m to the right, what is the net force exerted by the springs on the block? The block is released from that position. (b) What are the frequency and the period of the motion? (c) What is the amplitude of the motion? (d) Find an expression for the position of the particle as a function of time?
@@ -111,9 +112,13 @@ $\frac{1}{2}kx_{\text{max}}^{2}=\frac{1}{2}mv_{\text{max}}^{2}\implies v_{max}=\
 ![[Pasted image 20251121202029.png]]
 
 Sol:
+這題因為木塊移動時，兩根彈簧都被拉伸/壓縮相同的位移量，所以可以視為一根係數為 $k=k_{1}+k_{2}$ 的彈簧。
+但是如果是兩個彈簧連在一起，那麼兩個彈簧會被分別拉伸 $x_{1}$ 與 $x_{2}$。
+其中 $x_{1}=\frac{F}{k_{1}}$，$x_{2}=\frac{F}{k_{2}}$，且 $x=x_{1}+x_{2}=\frac{F}{k_{1}}+\frac{F}{k_{2}}=F\left( \frac{1}{k_{1}}+\frac{1}{k_{2}} \right)\implies \frac{1}{k_{\text{eq}}}=\frac{1}{k_{1}}+\frac{1}{k_{2}}$ 
 (a)
 $F=(k_{1}+k_{2})x=30\text{ N}$ 
 (b)
+$k=k_{1}+k_{2}=300$ 
 $T=2\pi \sqrt{ \frac{m}{k} }=0.2\pi$ 
 $\nu=\frac{1}{T}=\frac{5}{\pi}$ 
 (c)
@@ -129,7 +134,7 @@ Sol:
 $0.02\times500=(0.82)v$ 
 $\frac{1}{2}kx^{2}=\frac{1}{2}mv^{2}\implies x\approx0.78\text{ m}$ 
 
-4. A block of mass $m_{1}$ = 3 kg rests on a frictionless surface connected to a spring _(k_ = 150 _N/m)._ A second block of mass $m_{2}$ = 1 kg is launched toward ml with a velocity of 4 m/sec (see Fig. 10-11). After the collision, $m_{2}$ bounces back in the opposite direction with a velocity of 1 m/sec. (a) How much will the spring be compressed? (b) What fraction of the energy is lost in the collision?
+4. A block of mass $m_{1}$ = 3 kg rests on a frictionless surface connected to a spring _(k_ = 150 _N/m)._ A second block of mass $m_{2}$ = 1 kg is launched toward $m_{1}$ with a velocity of 4 m/sec (see Fig. 10-11). After the collision, $m_{2}$ bounces back in the opposite direction with a velocity of 1 m/sec. (a) How much will the spring be compressed? (b) What fraction (部分) of the energy is lost in the collision?
 
 Sol:
 (a)

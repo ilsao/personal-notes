@@ -138,6 +138,7 @@ $$
 $$
 R_{eq}=R_{1}+R_{2}+R_{3}
 $$
+
 因為：$V_{AD}=iR_{eq}=iR_{1}+iR_{2}+iR_{3}=i(R_{1}+R_{2}+R_{3})$。
 
 注意喔，之所以可以這樣算是因為電流大小在整個回路中固定(因為電荷守恆)。
@@ -234,7 +235,7 @@ $$
 我們同除以 $\Delta t$ 可以將位能變化轉為功率：
 
 $$
-\boxed{P=Vi}=i^{2}R=\frac{V^{2}}{R}
+\boxed{P=Vi=i^{2}R}=\frac{V^{2}}{R}
 $$
 
 # Tips
@@ -260,7 +261,7 @@ $1\text{ m}^{3}=10^{6}\text{ cm}^{3}$
 
 Sol:
 已知 $E=\rho J=\rho \frac{i}{A}$ 
-我們將天空與地球視作兩個平行版，就有 $100=\rho \frac{1800}{4\pi(6.37 \times 10^{6})^{2}}\implies \rho \approx 2.83 \times 10^{13} \ \ohm\text{-m}$ 
+我們將天空與地球視作兩個平行版，就有 $100=\rho \frac{1800}{4\pi(6.37 \times 10^{6})^{2}}\implies \rho \approx 2.83 \times 10^{13} \ \boxed{\ohm\text{-m}}$  
 
 ![[Pasted image 20251201232638.png]]
 ![[Pasted image 20251201232657.png]]

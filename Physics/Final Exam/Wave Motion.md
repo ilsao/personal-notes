@@ -42,7 +42,7 @@ $$
 
 我們可以考慮一下 $k$。其實，$\boxed{k=\frac{2\pi}{\lambda}}$ 化簡而成。所以，每當 $x$ 位移 $\lambda$ 整個 $\sin$ 就會因為 $-2\pi$ 位移回原點。
 
-考慮一下兩個特殊情況(第二種符合威儀PPT)：
+考慮一下兩個特殊情況(第二種符合威儀 PPT)：
 
 $$
 \begin{align}
@@ -84,7 +84,7 @@ $$
 我們可以如下計算波的功率：
 
 $$
-P=(\text{energy per wavelength})\times \nu
+\boxed{P=(\text{energy per wavelength})\times \nu}
 $$
 
 因為波中某個點的能量正比於其振幅的平方，所以波上每個點的能量都相同。
@@ -94,7 +94,8 @@ $$
 $$
 v_{y}= \frac{\partial y}{\partial t}=\frac{\partial}{\partial t}A\sin(kx-\omega t)=-A\omega \cos(kx-\omega t)
 $$
-我們可以得到 $\boxed{v_{\text{max}}=A\omega}$。
+
+我們可以得到 $\boxed{v_{\text{max}}=A\omega}$。(此速度是上下震盪的速度，不是波速)
 
 因為動能守恆，當 $v_{\text{max}}$ 發生時，總能量等於 $\frac{1}{2}mv_{max}^{2}$。
 
@@ -109,21 +110,19 @@ $$
 所以：
 
 $$
-\text{Energy per wavelength}=\frac{1}{2}\mu \lambda\omega^{2}A^{2}
+\boxed{\text{Energy per wavelength}=\frac{1}{2}\mu \lambda\omega^{2}A^{2}}
 $$
 
-代回可得功率：
+利用：$v=\lambda \nu$ 與 $\omega=2\pi \nu$，代回可得功率：
 
 $$
-P=\frac{1}{2}\mu \lambda \nu\omega^{2}A^{2}=2\pi^{2}\mu v\nu^{2}A^{2} \propto A^{2}v
+P=\frac{1}{2}\mu \lambda \nu\omega^{2}A^{2}=2\pi^{2}\mu v\nu^{2}A^{2} \propto \boxed{A^{2}v}
 $$
-
-最右邊那個等式利用了：$v=\lambda \nu$ 與 $\omega=2\pi \nu$。
 
 最後我們定義**光強度(Intensity)**：
 
 $$
-I=\frac{P}{A}
+\boxed{I=\frac{P}{Area}\propto A^{2}v}
 $$
 
 其中，$P$ 是功率，$A$ 是接收面積。光強度的單位為：$\text{W/m}^{2}$。
@@ -136,7 +135,7 @@ Sol:
 因為光速太快，可忽略。
 距離 $\approx330\times8=2640\text{ m}$ 
 
-2. The equation of a transverse wave traveling along a very long string is given by $y=6\sin(0.02\pi x+4\pi t)$ where _$x$_ and $y$ are_expressed in centimeters and $t$ in seconds. Find (a) the amplitude, (b) the wavelength, (c) the frequency, (d) the speed of propagation, (e) the direction of propagation of the wave, and (f) the maximum transverse speed of a particle in the string.
+2. The equation of a transverse wave traveling along a very long string is given by $y=6\sin(0.02\pi x+4\pi t)$ where _$x$_ and $y$ are expressed in centimeters and $t$ in seconds. Find (a) the amplitude, (b) the wavelength, (c) the frequency, (d) the speed of propagation, (e) the direction of propagation of the wave, and (f) the maximum transverse speed of a particle in the string.
 
 Sol:
 (a)
@@ -157,7 +156,8 @@ $v=\lambda \nu=200\text{ cm/sec}$
 
 Sol:
 $v=\lambda \nu\implies \lambda=0.6\text{ m}$ 
-$k=\frac{2\pi}{\lambda}=\frac{\omega}{v}=\frac{10\pi}{3}\implies\omega=1100\pi$ 
+$\omega=2\pi \nu=2\pi \cdot 550=1100\pi$ 
+$k=\frac{2\pi}{\lambda}=\frac{2\pi}{0.6}=\frac{10\pi}{3}$ 
 $\implies y=0.010\sin\left( \frac{10\pi}{3}x +1100\pi t\right)$ 
 
 4. A laser produces light pulses of energy $5\text{ J}$ and duration $2 \times 10^{-9}\text{ sec}$. The width of the beam is $1\text{ mm}^{2}$. What is the intensity of the laser light?
@@ -184,6 +184,7 @@ $a_{\text{max}}=A\omega^{2}=0.04\times (24\pi)^{2}=11.52\pi^{2}\text{ m/s}^{2}$
 1. At $t=0$, a pulse is described by $y(x)= \frac{A}{B+x^{2}}$. Pulse moves in $+x$ direction at $3\text{ m/s}$. What is the wave function at t?
 
 Sol:
+因為要求某固定點在 $t$ 時的樣子，就等於求某粒子從 $t_{0}$ 開始經過 $t$ 秒後到達該點，這個粒子在 $t_{0}$ 時的位置。因為 $x=x_{0}+vt$，所以 $x_{0}=x-vt$。代回就有：
 $y(x,t)= \frac{A}{B+(x-vt)^{2}}=\frac{A}{B+(x-3t)^{2}}$ 
 
 2. 指定習題 3

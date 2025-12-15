@@ -172,6 +172,7 @@ $$
 $v_{y}=at=2.4 \times 10^{5}$ 
 求經過 $1\text{ m}$ 需要多久(用 $v_{x}$) ：$t_{1}=\frac{1}{3\times 10^{6}}$ 
 則 $\Delta y=0.02+v_{y}t_{1}=0.01\text{ m}$ 
+`~~~~~~~^ 小心忘加`
 
 ![[Pasted image 20251201215340.png]]
 ![[Pasted image 20251201215354.png]]
@@ -207,4 +208,4 @@ Sol:
 2. 帶電量 $3.2\times 10^{-19}$ 的粒子通過 $3\text{ V}$ 的電壓所需的能量為多少電子伏特?
 
 Sol:
-$\frac{3.2\times 10^{-19}}{1.6\times 10^{-19}}\times3=6\text{ V}$ 
+$\frac{3.2\times 10^{-19}}{1.6\times 10^{-19}}\times3=6\text{ eV}$ 

@@ -128,9 +128,10 @@ Sol:
 ![[Pasted image 20251117151126.png]]
 
 Sol:
+亮紋公式：$d\sin \theta=n\lambda$ 
 $y_{2}-y_{1}=l(\sin \theta_{2}-\sin \theta_{1})=1.5(\tan \theta_{2}-\tan \theta_{1})$ 
 $d\sin \theta_{1}=5000\times10^{-10}\implies \theta_{1}\approx0.716^{\circ}$ 
-$d\sin \theta_{2}=2\times5000\times10^{-1}\implies \theta_{2}\approx1.433^{\circ}$ 
+$d\sin \theta_{2}=2\times5000\times10^{-10}\implies \theta_{2}\approx1.433^{\circ}$ 
 $\implies 1.5(\tan \theta_{2}-\tan\theta_{1})\approx0.0188\text{ m}=1.88\text{ cm}$ 
 
 3. Sodium chloride (NaCl) has a crystal structure similar to that of silver bromide (AgBr) shown in Fig. 12-18. The atomic weight of NaCl is $58.44\text{ g/mole}$ and its density is $2.16\text{ g/cm}^{3}$. (a) Calculate the spacing between the atoms in a NaCl crystal. (b) If X rays of wavelength $1.5 \ \mathring{A}$ are incident on a NaCl crystal, at what angle $\theta$ will the first order diffraction maximum be observed?
@@ -139,6 +140,7 @@ Sol:
 (a)
 設 spacing between the atoms in a NaCl crystal 為 $d$，則一立方公分內有 $\frac{1}{d^{3}}$ 個原子。
 $\frac{1}{d^{3}}= \frac{2.16}{58.44}\times2\times 6\times 10^{23}=4.45\times 10^{22}\implies d\approx 2.82 \ \mathring{A}$ 
+`~~~~~~~~~~^ 有 Na 和 Cl 兩個原子` 
 (b)
 $2d\sin \theta=\lambda\implies \theta \approx15.4^{\circ}$ 
 
@@ -154,6 +156,7 @@ $\implies \nu=\frac{6}{\frac{2}{n}}=3n\text{(Hz)}$，其中 $n$ 為正整數。
 
 Sol:
 (a)
+$I=\frac{P}{area}\propto A^{2}v$ (參見 Wave Motion 那章)
 已知 $I \propto\text{Amplitude}^{2}$，且此時為建設性干涉。
 又知道 $I_{1}:I_{2}=A_{1}^{2}:A_{2}^{2}$，那麼 $I_{T}\propto (A_{1}+A_{2})^{2}=A_{1}^{2}+A_{2}^{2}+2A_{1}A_{2}\implies I_{T}=I_{1}+I_{2}+2(I_{1}I_{2})^{1/2}$ 
 (b)
@@ -164,7 +167,7 @@ Sol:
 1. 人耳最敏感、接收最清楚的聲波頻率為 3000Hz,由此請試著推算出人耳道的大約長度,假設聲速為每秒 340 公尺。
 
 Sol:
-人耳可視為一開一閉的管子 $\implies$ $l=\frac{\lambda}{4}$ (背)
+人耳可視為一開一閉的管子 $\implies$ $l=\frac{\lambda}{4}$ (開口處為腹點，閉口處為節點。一個完整的波會有兩個腹點與節點)
 $340=3000 \times \lambda\implies \lambda=\frac{17}{150}$ 
 $\implies l=\frac{17}{600}\approx0.028\text{ m}=2.8\text{ cm}$ 
 

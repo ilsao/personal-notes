@@ -47,7 +47,7 @@ Sol:
 **注意單位。**
 (a)
 記得：萬有引力常數 $G\approx 6.7\times 10^{-11}$。
-$\frac{GMm}{r^{2}}=\frac{kQq}{r^{2}}\implies q=5\sqrt{ \frac{G}{K} }\approx 4.3\times 10^{-11}\text{ C}$ 
+$\frac{GMm}{r^{2}}=\frac{kQq}{r^{2}}\implies q=5\sqrt{ \frac{G}{k} }\approx 4.3\times 10^{-11}\text{ C}$ 
 (b)
 $\frac{q}{1.6\times 10^{-19}}\approx 2.7\times 10^{9}\text{ e}$ 
 

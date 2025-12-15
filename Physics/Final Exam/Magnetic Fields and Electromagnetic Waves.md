@@ -23,7 +23,7 @@ $$
 由上式，我們可以將導線受力用外積表示：
 
 $$
-F=i\Delta \mathbf{l}\times \mathbf{B}
+\boxed{F=i\Delta \mathbf{l}\times \mathbf{B}}
 $$
 
 通常，我們將 $i$ 視為常數，而 $\Delta l$ 視為指向電流流向的向量。
@@ -55,7 +55,7 @@ $$
 注意到 $ab$ 就是該電線圈的面積，令 $ab=A$，有：
 
 $$
-\tau=iAB\sin \theta
+\boxed{\tau=iAB\sin \theta}
 $$
 
 也就是說，當 $\theta=90^{\circ}$ 時，也就是線圈平面與磁場方向平行時，力矩最大。
@@ -71,8 +71,10 @@ $$
 那麼，我們定義一個量為它們倆的乘積，這個量被稱為**磁偶極矩(magnetic dipole moment)** 或稱**磁矩(magnetic moment)**：
 
 $$
-\mu=iA
+\boxed{\mu=iA}
 $$
+
+注意，有幾圈就要乘幾喔：$\mu=n\cdot iA$。
 
 那麼力矩現在就可以被表示為：
 
@@ -85,7 +87,7 @@ $$
 我們將 $\mathbf{\mu}$ 定義為一個向量，其方向是根據右手定則，右手四指沿著電流方向彎曲後大拇指指向的方向。可見上圖標示。那麼可以繼續重寫公式：
 
 $$
-\tau=\mathbf{\mu}\times \mathbf{B}
+\boxed{\tau=\mathbf{\mu}\times \mathbf{B}}
 $$
 
 # Force On a Moving Charge
@@ -105,7 +107,7 @@ $$
 注意到 $NA\Delta {l}$ 正好是整個體積中包含的電荷總數，所以單個電荷所受的力 $F_{q}$ 為：
 
 $$
-F_{q}=\frac{F}{NA\Delta {l}}=q\mathbf{v}\times \mathbf{B}
+F_{q}=\frac{F}{NA\Delta {l}}=\boxed{q\mathbf{v}\times \mathbf{B}}
 $$
 
 注意，上式假設電流中流動的電荷為正電荷，因為我們假設電流方向與飄移速度同向。
@@ -147,20 +149,20 @@ $$
 因為電場造成的力與磁場造成的力最終會平衡，所以：
 
 $$
-F_{y}=F_{B}\implies q\mathbf{E}_{y}=qvB\implies V_{H}=vBd
+F_{y}=F_{B}\implies q\mathbf{E}_{y}=qvB\implies \boxed{V_{H}=vBd}
 $$
 
 回想 $i=qNAv\implies v=\frac{i}{qNA}$，代回就有：
 
-$$V_{H}=\frac{iBd}{qNA}$$
+$$\boxed{V_{H}=\frac{iBd}{qNA}}$$
 
 注意到 $A$ 是截面積，所以 $A=td$：
 
 $$
-V_{H}=\frac{1}{qN} \frac{iB}{t}
+\boxed{V_{H}=\frac{1}{qN} \frac{iB}{t}}
 $$
 
-其中 $R_{H}=\frac{1}{qN}$，稱為**霍爾係數(Hall coefficient)**。
+其中 $\boxed{R_{H}=\frac{1}{qN}}$，稱為**霍爾係數(Hall coefficient)**。
 
 因為 $i,B,t$ 都是可測量的量，所以霍爾電壓可以拿來計算載流子密度 $N$。
 
@@ -186,7 +188,7 @@ $$
 B=B_{0}\sin(kx-\omega t)
 $$
 
-注意到電磁婆的角頻率 $\omega$ 應該與造成該波的電荷震盪頻率相同。而且，電磁波的傳播不涉及到粒子運動，所以不需要傳播介質。
+注意到電磁波的角頻率 $\omega$ 應該與造成該波的電荷震盪頻率相同。而且，電磁波的傳播不涉及到粒子運動，所以不需要傳播介質。
 
 還有，所有電磁波都以：
 
@@ -195,3 +197,80 @@ c=3\times10^{8}\text{ m/s}
 $$
 
 的速度傳播。
+
+# 威儀指定習題
+
+![[Pasted image 20251214235546.png]]
+
+Sol:
+equator: 赤道
+(a)
+這題錯在看不懂題目，沒搞懂到底怎麼掛的。
+應該是一根線豎直掛著一個東西向的導線。
+由 $F=i\Delta l\times B$，且電流從東流到西與地磁從南到北，可以算出 $F=150\cdot2\cdot 4\times 10^{-5}=1.2\times 10^{-2\text{ N}}$ 且方向向下。
+那麼繩張力為：$mg+F=9\times 10^{-3}\cdot 9.8+1.2\times 10^{-2}\approx 10.02\times 10^{-2}\text{ N}$。
+(b)
+$mg-F=9\times10^{-3}\cdot 9.8-1.2\times 10^{-2}=8.82\times10^{-2}-1.2\times 10^{-2}=7.62\times 10^{-2}\text{ N}$ 
+
+![[Pasted image 20251215001728.png]]
+
+Sol:
+(a)
+對於水平的兩個 wire，因為電流方向平行磁場，所以受力為零。
+對於鉛直兩個 wire，每個 wire 受力 $F=i\Delta l\times B=2\cdot0.6\cdot 0.5=0.6\text{ N}$。
+(b)
+$\tau=\mathbf{r}\times F=0.15\cdot 2\cdot  0.6=0.18\text{ N}$。
+
+![[Pasted image 20251215002334.png]]
+
+Sol:
+(a)
+coil: 盤起
+$l=2\pi r\cdot n\implies r=\frac{l}{2\pi n}$ 
+$\mu=n\cdot i\cdot \pi\left( \frac{l}{2\pi n} \right)^{2}=\frac{il^{2}}{4\pi n}$ 
+`~~~^ 注意這邊要乘以 n`
+當 $n=1$ 時 $\mu$ 有最大值。
+(b)
+$\mu=\frac{il^{2}}{4\pi n}$ 
+
+![[Pasted image 20251215003823.png]]
+
+Sol:
+公式沒背好：$F_{q}=q\mathbf{v}\times \mathbf{B}$。
+所以：$F_{q}=1.6\times 10^{-19}(3\times 10^{5},0,7\times 10^{5})\times(0,0.4,0)=(1.92\mathbf{k}-4.48\mathbf{i})10^{-14\text{ N}}$ 
+
+ ![[Pasted image 20251215012848.png]]
+Sol:
+要使得粒子不被偏轉，必須有 $F_{B}=F_{E}$。
+所以有：$qvB=qE\implies v=\frac{E}{B}=\frac{5\times10^{4}}{10^{-1}}=5\times10^{5}\text{ N/sec}$。
+
+![[Pasted image 20251215013343.png]]![[Pasted image 20251215013358.png]]
+
+Sol:
+公式會記不起來，所以可以自己推導。
+$F_{E}=F_{B}\implies qE=qvB\implies E=vB$ 
+$V_{H}=dE=dvB$ 
+$i=qNAv\implies v=\frac{i}{qNA}$ 
+$\implies V_{H}=\frac{1}{qN} \frac{idB}{A}=\frac{1}{qN} \frac{iB}{t}$ 
+$2\times10^{-6}=\frac{1}{1.6\times 10^{-6}N}\times \frac{50\cdot 0.5}{10^{-3}}\implies N\approx 7.8\times 10^{28}\text{ m}^{3}$ 
+(可以注意到按題目這樣說，載流子會是負電荷，但是計算貌似用不上呢)
+
+# 威儀考古
+
+1. 自然界中原子產生磁場的兩個主要原因?
+
+Sol:
+電子繞著原子核公轉，產生 atomic current，產生磁場。
+電子自轉，自轉電流，產生磁場。
+
+2. 下圖電流中移動的是正電還是負電？
+![[Pasted image 20251215123139.png]]
+
+Sol:
+負電，因為電流方向與磁場外積後受力向下。而下方積累的是負電荷，所以電流中移動的是負電。
+
+3. 解釋什麼是法拉第定律
+
+Sol:
+當磁通量 $\phi$ 產生變化，會產生感應電流 $\epsilon$ 以抵抗磁通量的變化。
+$\epsilon=-\frac{\Delta\phi}{\Delta t}$ 
