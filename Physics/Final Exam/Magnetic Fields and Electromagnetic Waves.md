@@ -207,7 +207,7 @@ equator: 赤道
 (a)
 這題錯在看不懂題目，沒搞懂到底怎麼掛的。
 應該是一根線豎直掛著一個東西向的導線。
-由 $F=i\Delta l\times B$，且電流從東流到西與地磁從南到北，可以算出 $F=150\cdot2\cdot 4\times 10^{-5}=1.2\times 10^{-2\text{ N}}$ 且方向向下。
+由 $F=i\Delta l\times B$，且電流從東流到西與地磁從南到北，可以算出 $F=150\cdot2\cdot 4\times 10^{-5}=1.2\times 10^{-2}\text{ N}$ 且方向向下。
 那麼繩張力為：$mg+F=9\times 10^{-3}\cdot 9.8+1.2\times 10^{-2}\approx 10.02\times 10^{-2}\text{ N}$。
 (b)
 $mg-F=9\times10^{-3}\cdot 9.8-1.2\times 10^{-2}=8.82\times10^{-2}-1.2\times 10^{-2}=7.62\times 10^{-2}\text{ N}$ 
