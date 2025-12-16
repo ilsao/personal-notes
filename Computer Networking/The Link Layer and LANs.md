@@ -302,7 +302,7 @@ ARP 分組中，會有發送方 IP 地址，發送方 MAC 地址，接收方 IP 
 
 ### Properties of Link-Layer Switching
 
-- Elimination of collisions：交換機換存幀，且不會在一個網段上同時傳輸多個幀，使得不會有碰撞發生。交換機的最大聚合帶寬是該交換機所有接口速率之和。
+- Elimination of collisions：交換機緩存幀，且不會在一個網段上同時傳輸多個幀，使得不會有碰撞發生。交換機的最大聚合帶寬是該交換機所有接口速率之和。
 - Heterogeneous links：交換機將鏈路彼此隔離，所以局域網中的不同鏈路可以用不同的速率運行，且可以在不同的媒介上運行。
 - Management：易於管理。
 
