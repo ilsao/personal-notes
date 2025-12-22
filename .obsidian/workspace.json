@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Computer Graphics/GAMES 101/Transformation.md",
+                "file": "Operating Systems/OSTEP/Concurrency.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Transformation"
+              "title": "Concurrency"
             }
           },
           {
@@ -192,27 +192,31 @@
       "bases:Create new base": false
     }
   },
-  "active": "930e5d797c093d6f",
+  "active": "1d5b0d980baa8a22",
   "lastOpenFiles": [
-    "Computer Graphics/pic/GAMES 101/Transformation/Pasted image 20251220194528.png",
-    "Computer Graphics/pic/GAMES 101/Transformation/Pasted image 20251220194151.png",
-    "Computer Graphics/pic/GAMES 101/Transformation/Pasted image 20251220193511.png",
+    "年終總結/2025.md",
+    "年終總結/pic/2025/52.jpg",
+    "年終總結/pic/2025/51.jpg",
+    "年終總結/pic/2025/50.jpg",
+    "年終總結/pic/2025/49.jpg",
+    "年終總結/pic/2025/48.jpg",
+    "年終總結/pic/2025/47.jpg",
+    "年終總結/pic/2025/46.jpg",
+    "年終總結/pic/2025/45.jpg",
+    "年終總結/pic/2025/44.jpg",
+    "年終總結/pic/2025/43.jpg",
+    "年終總結/pic/2025",
+    "年終總結/pic",
+    "年終總結/Untitled.md",
+    "Computer Graphics/GAMES 101/Transformation.md",
+    "年終總結",
     "Computer Graphics/pic/GAMES 101/Transformation",
     "Computer Graphics/圖形學概覽複習.md",
-    "Computer Graphics/GAMES 101/Transformation.md",
     "Computer Graphics/pic/GAMES 101",
     "Computer Graphics/pic",
     "Computer Graphics/GAMES 101",
     "Computer Graphics/Untitled.md",
     "Math/Calculus/Integrals.md",
-    "Physics/pic/Pasted image 20251215200701.png",
-    "Physics/pic/Pasted image 20251215194459.png",
-    "Physics/pic/Pasted image 20251215171427.png",
-    "Physics/pic/Pasted image 20251215123139.png",
-    "Physics/pic/Pasted image 20251215013358.png",
-    "Physics/pic/Pasted image 20251215013343.png",
-    "Physics/pic/Pasted image 20251215012848.png",
-    "Physics/pic/Pasted image 20251215003823.png",
     "Physics/Midterm/Vector.md",
     "Physics/Midterm/Work, Energe, And Power.md",
     "Physics/Midterm/Uniform Accelerated Motion.md",
@@ -235,11 +239,6 @@
     "Math/Calculus/Application of Integrals.md",
     "Computer Networking/pic/Network Layer, Control Plane",
     "Computer Networking/Network Layer, Control Plane.md",
-    "Math/Calculus/Calculus, Early Transcendentals.pdf",
-    "Math/Calculus/Differentiation Rules.md",
-    "Math/Calculus/Techniques of Integrations.md",
-    "Math/Linear Algebra/pic/Orthogonality",
-    "Math/Linear Algebra/pic",
     "未命名.canvas"
   ]
 }
