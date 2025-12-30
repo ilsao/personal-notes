@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Math/Calculus/Sequences, Series, and Power Series.md",
+                "file": "年終總結/2025.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Sequences, Series, and Power Series"
+              "title": "2025"
             }
           }
         ]
@@ -182,8 +182,21 @@
   },
   "active": "65b2d1509034cf2f",
   "lastOpenFiles": [
-    "ysyx/F/F5 支持數列求和的簡單處理器.md",
+    "年終總結/pic/2025/57.jpg",
+    "53b6e02970c8cede3c46ce928f7dac8d.jpg",
+    "年終總結/pic/2025/56.jpg",
+    "年終總結/pic/2025/55.jpg",
+    "年終總結/pic/2025/53.jpg",
+    "年終總結/pic/2025/54.jpg",
+    "Math/Linear Algebra/Orthogonality.md",
+    "Math/Linear Algebra/Eigenvalues.md",
+    "Math/Linear Algebra/Determinants.md",
+    "Math/Linear Algebra/Vector Space.md",
+    "Math/Linear Algebra/Linear Transformation.md",
+    "Math/Linear Algebra/Matrix and Systems.md",
+    "Math/Linear Algebra/U1 U2 Summary Note.md",
     "Math/Calculus/Sequences, Series, and Power Series.md",
+    "ysyx/F/F5 支持數列求和的簡單處理器.md",
     "ysyx/F/pic/F5/4.png",
     "ysyx/F/pic/F5/3.png",
     "ysyx/F/pic/F5/1.png",
@@ -193,11 +206,6 @@
     "ysyx/F/F4 計算機系統的狀態機模型.md",
     "ysyx/F/pic/F4",
     "ysyx/F/pic/F4/1.png",
-    "ysyx/F/pic/F3/45.png",
-    "ysyx/F/pic/F3/44.png",
-    "ysyx/F/pic/F3/43.png",
-    "ysyx/F/pic/F3/42.png",
-    "ysyx/F/pic/F3/41.png",
     "AI Prompts.md",
     "Computer Graphics/GAMES 101/Rasterization.md",
     "Computer Graphics/GAMES 101/Transformation.md",
@@ -220,14 +228,6 @@
     "年終總結/Untitled.md",
     "Computer Graphics/Untitled.md",
     "Math/Calculus/Integrals.md",
-    "Physics/Midterm/Vector.md",
-    "Physics/Midterm/Work, Energe, And Power.md",
-    "Physics/Midterm/Uniform Accelerated Motion.md",
-    "Physics/Midterm/Rotational Motion.md",
-    "Physics/Midterm/Rotational Dynamics.md",
-    "Physics/Midterm/Physical Quantities.md",
-    "Physics/Midterm/Newton's Laws.md",
-    "Physics/Midterm/Momentum and Collisions.md",
     "未命名.canvas"
   ]
 }
