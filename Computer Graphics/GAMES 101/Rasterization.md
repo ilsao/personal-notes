@@ -161,11 +161,11 @@ $P_{1}Q\times P_{1}P_{0}\implies+$
 
 如果轉換成頻域上的圖，會形如 (b) (d) (f)。
 
-![[16.png]]
+![[Computer Graphics/pic/GAMES 101/Rasterization/16.png]]
 
 有了這個觀念，我們就可以解釋為啥之前說取樣數過少會造成走樣了。
 
-![[17.png]]
+![[Computer Graphics/pic/GAMES 101/Rasterization/17.png]]
 
 取樣數較少時，頻率較慢。會造成對應頻域上 ($x$ 軸是頻率) 間隔較少，使得圖像重疊而走樣。
 
@@ -175,7 +175,7 @@ $P_{1}Q\times P_{1}P_{0}\implies+$
 
 也就是說，我們先套用一個低通濾波，過濾掉高頻信號 (使頻域上圖形變窄，因為高頻信號沒了) ，然後取樣。
 
-![[18.png]]
+![[Computer Graphics/pic/GAMES 101/Rasterization/18.png]]
 
 如上圖所示，可以有效減少圖形重疊問題。
 
@@ -189,10 +189,10 @@ $P_{1}Q\times P_{1}P_{0}\implies+$
 
 對每個像素再做 $n\times n$ 細分：
 
-![[19.png]]
+![[Computer Graphics/pic/GAMES 101/Rasterization/19.png]]
 
 ## Supersampling 2
 
 對每個像素中細分後落在三角形內部的數量做統計，數量越多顏色越深。
 
-![[20.png]]
+![[Computer Graphics/pic/GAMES 101/Rasterization/20.png]]
