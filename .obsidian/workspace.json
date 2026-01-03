@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "ysyx/F/F6 功能完備的迷你 RISC-V 處理器.md",
+                "file": "Math/Calculus/Sequences, Series, and Power Series.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "F6 功能完備的迷你 RISC-V 處理器"
+              "title": "Sequences, Series, and Power Series"
             }
           }
         ]
@@ -180,10 +180,13 @@
       "bases:Create new base": false
     }
   },
-  "active": "65b2d1509034cf2f",
+  "active": "1d5b0d980baa8a22",
   "lastOpenFiles": [
-    "RISC-V/RV32I：RISC-V 基礎整數指令集.md",
+    "Math/Linear Algebra/Eigenvalues.md",
+    "Math/Linear Algebra/Linear Transformation.md",
+    "Math/Calculus/Sequences, Series, and Power Series.md",
     "ysyx/F/F6 功能完備的迷你 RISC-V 處理器.md",
+    "RISC-V/RV32I：RISC-V 基礎整數指令集.md",
     "ysyx/F/pic/F6/9.png",
     "ysyx/F/pic/F6/10.png",
     "ysyx/F/pic/F6/8.png",
@@ -204,13 +207,10 @@
     "ysyx/F/pic/F6",
     "年終總結/2025.md",
     "Math/Linear Algebra/Orthogonality.md",
-    "Math/Linear Algebra/Eigenvalues.md",
     "Math/Linear Algebra/Determinants.md",
     "Math/Linear Algebra/Vector Space.md",
-    "Math/Linear Algebra/Linear Transformation.md",
     "Math/Linear Algebra/Matrix and Systems.md",
     "Math/Linear Algebra/U1 U2 Summary Note.md",
-    "Math/Calculus/Sequences, Series, and Power Series.md",
     "ysyx/F/pic/F5",
     "ysyx/F/pic/F4",
     "AI Prompts.md",
