@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Math/Calculus/Sequences, Series, and Power Series.md",
+                "file": "ysyx/F/F6 功能完備的迷你 RISC-V 處理器.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Sequences, Series, and Power Series"
+              "title": "F6 功能完備的迷你 RISC-V 處理器"
             }
           }
         ]
@@ -78,7 +78,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 275.5
+    "width": 285.5
   },
   "right": {
     "id": "1ec41845cb5e3b89",
@@ -182,16 +182,22 @@
   },
   "active": "1d5b0d980baa8a22",
   "lastOpenFiles": [
+    "ysyx/F/pic/F6/20.png",
+    "ysyx/F/pic/F6/19.png",
+    "ysyx/F/pic/F6/18.png",
+    "ysyx/F/pic/F6/17.png",
+    "ysyx/F/pic/F6/16.png",
+    "ysyx/F/pic/F6/15.png",
+    "ysyx/F/pic/F6/14.png",
+    "ysyx/F/pic/F6/13.png",
+    "ysyx/F/pic/F6/12.png",
+    "ysyx/F/pic/F6/11.png",
+    "Math/Calculus/Sequences, Series, and Power Series.md",
     "Math/Linear Algebra/Eigenvalues.md",
     "Math/Linear Algebra/Linear Transformation.md",
-    "Math/Calculus/Sequences, Series, and Power Series.md",
     "ysyx/F/F6 功能完備的迷你 RISC-V 處理器.md",
     "RISC-V/RV32I：RISC-V 基礎整數指令集.md",
     "ysyx/F/pic/F6/9.png",
-    "ysyx/F/pic/F6/10.png",
-    "ysyx/F/pic/F6/8.png",
-    "ysyx/F/pic/F6/7.png",
-    "ysyx/F/pic/F6/6.png",
     "ysyx/F/F5 支持數列求和的簡單處理器.md",
     "ysyx/F/F3 數字邏輯電路基礎.md",
     "ysyx/F/F4 計算機系統的狀態機模型.md",
@@ -199,11 +205,6 @@
     "CSAPP/CSAPP_U3.md",
     "CSAPP/CSAPP_U6.md",
     "CSAPP/CSAPP_U5.md",
-    "ysyx/F/pic/F6/5.png",
-    "ysyx/F/pic/F6/3.png",
-    "ysyx/F/pic/F6/2.png",
-    "ysyx/F/pic/F6/1.png",
-    "ysyx/F/pic/F6/4.png",
     "ysyx/F/pic/F6",
     "年終總結/2025.md",
     "Math/Linear Algebra/Orthogonality.md",
