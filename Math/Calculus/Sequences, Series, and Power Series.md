@@ -84,3 +84,46 @@ $$
 # Tips
 
 - 遇到在正負間反覆橫跳的函數，考慮性質 $\lim_{ n \to \infty }|a_{n}|=\lim_{ n \to \infty }a_{n}$ (若 $a_{n}$ 收斂)。
+- $a^{n}-b^{n}=(a-b)(a^{n-1}+a^{n-2}b+a^{n-3}b^{2}+\dots+ab^{n-2}+b^{n-1})$ 
+
+# 重要例題
+
+收斂還是發散？
+![[Pasted image 20260104162914.png]]
+
+Sol:
+寫的時候不知道發生啥了，竟然想成會不停震盪。
+應該這樣寫：
+$\lim_{ n \to \infty }|a_{n}|=\lim_{ n \to \infty } \frac{3^{n}}{n!}=\lim_{ n \to \infty } \frac{3\times \dots \times3}{1\times\dots \times n}=\lim_{ n \to \infty } \frac{3\times3\times 3}{1\times 2\times 3} \frac{3\times\dots \times3}{4\times\dots \times n}$ 
+$=\lim_{ n \to \infty } \frac{9}{2} \frac{3\times \dots \times 3}{4\times \dots \times n}=\frac{9}{2}\cdot0=0$ 
+所以 $\lim_{ n \to \infty }a_{n}=\lim_{ n \to \infty }|a_{n}|=0$ 。
+
+![[Pasted image 20260104164927.png]]
+
+Sol:
+(a)
+令 $\lim_{ n \to \infty }a_{n}=L$，則有：對任意 $\epsilon> 0$ 都存在一個正整數 $N$ 使得
+若 $n>N$ 則 $|a_{n}-L|<\epsilon$。
+對於 $a_{n+1}$，因為 $n+1>N+1>N$，所以 $|a_{n+1}-L|<\epsilon$ 恆成立。
+也就是說 $\lim_{ n \to \infty }a_{n+1}=L=\lim_{ n \to \infty }a_{n}$。
+(b)
+令 $\lim_{ n \to \infty }a_{n}=L$，則 $\lim_{ n \to \infty } a_{n+1}= \frac{1}{1+L}$。
+利用 (a)，有 $L=\frac{1}{1+L}\implies L= \frac{-1+ \sqrt{ 5 }}{2}$ (注意，負不合)
+
+![[Pasted image 20260104172422.png]]
+
+Sol:
+利用歸納法證明。
+當 $k=1$ 時：
+$a_{2}=1$，所以 $0<a_{2}<a_{1}\leq2$ 成立。
+設 $k=n$ 時 $0<a_{k+1}<a_{k}\leq2$ 成立。
+考慮 $k=n+1$ 時：
+$a_{k+1}<a_{k}\implies-a_{k+1}>-a_{k}\implies \frac{1}{3-a_{k+1}}< \frac{1}{3-a_{k}}$ (分母為正)
+$\implies a_{k+2}<a_{k+1}$ 成立。
+根據我們的假設，$0<3-a_{k+1}\leq2$ 成立 ($a_{k+1}\leq2$)，所以 $0<a_{k+2}<a_{k+1}\leq{2}$ 成立。
+根據單調有界定理，此數列收斂。
+
+![[Pasted image 20260104182213.png]]
+
+Sol:
+$\frac{b^{n+1}-a^{n+1}}{b-a}=b^{n}+b^{n-1}a+\dots+ba^{n-1}+a^{n}<b^{n}+b^{n}+\dots+b^{n}+b^{n}=(n+1)b^{n}$ 
