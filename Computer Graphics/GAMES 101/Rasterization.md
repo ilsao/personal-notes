@@ -196,3 +196,40 @@ $P_{1}Q\times P_{1}P_{0}\implies+$
 對每個像素中細分後落在三角形內部的數量做統計，數量越多顏色越深。
 
 ![[Computer Graphics/pic/GAMES 101/Rasterization/20.png]]
+
+# Visibility
+
+在光栅化過程中，我們需要判斷物體的遮擋與可視關係。
+
+最簡單的算法是**畫家算法(Painter's Algorithm)**，從最深的物體開始繪製，並且不斷更新幀緩衝區。
+
+畫家算法會有一個很大的問題，如果兩個三角形互相從中間穿過彼此，很可能沒法得出正確的渲染結果，因為我們無法判斷到底誰的深度較深。
+
+## Z-Buffer
+
+最終解決此問題的方法是利用 Z 緩衝區。其核心思想是，存儲每個取樣點 (像素) 的深度信息。
+
+所以，我們會需要兩個緩衝區。
+- 幀緩衝區存儲顏色數據。
+- 深度緩衝區存儲深度信息。
+
+注意，為了方便理解，在此我們假設 $z$ 值越小，物體離攝像機越近。(與之前假設不同)
+
+我們在此給出 Z-Buffer 算法的偽代碼：
+
+注意初始化深度緩衝區為 $\infty$。
+
+```
+for (each triangle T)
+	for (each sample (x, y, z) in T)
+		if (z < zbuffer[x, y])
+			framebuffer[x, y] = rgb; // update color
+			zbuffer[x, y] = z;       // update depth
+		else
+			// do nothing, this sample is occluded
+```
+
+下圖展示了兩個互相穿過的三角形經過 Z 緩衝區算法正確顯示的過程：
+
+![[Computer Graphics/pic/GAMES 101/Rasterization/21.png]]
+
