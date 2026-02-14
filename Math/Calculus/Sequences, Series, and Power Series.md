@@ -23,8 +23,6 @@ $$
 
 並且，我們如下定義無窮極限：若對任意正整數 $M$ 都可以找到一個整數 $N$ 使得若 $n>N$ 則 $a_{n}>M$，則有 $\lim_{ n \to \infty }a_{n}=\infty$。
 
-
-
 ## Properties of Convergent Sequences
 
 對比第二章極限的定義，我們有以下發現。
@@ -187,6 +185,20 @@ $$
 
 我們需要小心：$\sum a_{n}\neq \int_{1}^{\infty}f(x) \ dx$。
 
+proof:
+我們現在要證明若 $f$ 在 $[1,\infty)$ 上連續、始終為正，且遞減，則可以用狹積分的收斂與否判斷級數的收斂。
+將 $f$ 劃分成 $n$ 份寬度為 $1$ 的間隔，利用右端點估計函數的積分值，會得到：$a_{2}+a_{3}+\dots+a_{n}\leq \int_{1}^{n}f(x) \ dx$。
+利用左端點估計函數的積分，會得到 $a_{1}+a_{2}+\dots+a_{n-1}\geq \int_{1}^{n}f(x) \ dx$。
+(i)
+若 $\int_{1}^{\infty}f(x) \ dx$ 收斂，則有：$a_{2}+a_{3}+\dots+a_{n}\leq \int_{1}^{n}f(x) \ dx\leq \int_{1}^{\infty}f(x) \ dx$。
+因為 $f\geq0$，所以 $s_{n}=a_{1}+\sum_{i=2}^{n}a_{i}\leq \int_{1}^{\infty}f(x) \ dx=M$。可知 $s_{n}$ 有上界。
+又 $s_{n+1}=a_{n+1}+s_{n}\geq s_{n}$ 所以 $\{s_{n}\}$ 遞增。(非嚴格遞增也沒事)
+根據單調有界定理，$\sum a_{n}$ 收斂。
+(ii)
+若 $\int_{1}^{\infty}f(x) \ dx$ 發散，則隨著 $n\to \infty$，$\int_{1}^{n}f(x) \ dx\to \infty$。
+又有 $s_{n-1}=\sum_{i=1}^{n-1}a_{i}\geq \int_{1}^{n}f(x) \ dx$，所以當 $n\to \infty$ 時 $s_{n-1}\to \infty$。
+這隱含了 $s_{n}\to \infty\text{ as }n\to \infty$。也就是 $\sum a_{n}$ 發散。
+
 ## Estimating the Sum of a Series
 
 假設我們可以通過 Integration Test 知道級數 $\sum a_{n}$ 收斂，我們應該如何估計級數的值？
@@ -231,7 +243,7 @@ $$
 
 # Tips
 
-- 遇到在正負間反覆橫跳的函數，考慮性質 $\lim_{ n \to \infty }|a_{n}|=\lim_{ n \to \infty }a_{n}$ (若 $a_{n}$ 收斂)。
+- 遇到在正負間反覆橫跳的函數，考慮性質 $\lim_{ n \to \infty }|a_{n}|=\lim_{ n \to \infty }a_{n}$ (若 $a_{n}$ 收斂到 $0$)。
 - $a^{n}-b^{n}=(a-b)(a^{n-1}+a^{n-2}b+a^{n-3}b^{2}+\dots+ab^{n-2}+b^{n-1})$ 
 - partial fraction decomposition：$\frac{1}{i(i+1)}=\frac{1}{i}-\frac{1}{i+1}$ 
 

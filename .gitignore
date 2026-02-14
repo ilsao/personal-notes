@@ -1,0 +1,42 @@
+# OS files
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Editor / IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*.tmp
+
+# Obsidian
+.obsidian/workspace.json
+.trash/
+
+# Logs
+*.log
+
+# C / C++ build outputs
+*.o
+*.obj
+*.a
+*.lib
+*.so
+*.dll
+*.dylib
+*.exe
+*.out
+*.class
+
+# CMake
+CMakeFiles/
+CMakeCache.txt
+cmake-build-*/
+compile_commands.json
+
+# Python cache / virtual env
+__pycache__/
+*.pyc
+.venv/
+venv/
