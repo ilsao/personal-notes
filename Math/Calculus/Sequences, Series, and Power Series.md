@@ -31,21 +31,44 @@ $$
 
 並且，當數列極限收斂時所有 Limit Laws 都可以被套用。
 
-而且數列有一個很好用的性質，稱為 Power Law：若 $p>0$ 且 $a_{n}>0$ 則 $\lim_{ n \to \infty }(a_{n})^{p}=[\lim_{ n \to \infty }a_{n}]^{p}$。
+> [!error] 注意
+> 想用洛必達解數列極限時，令函數 $f(x)$ 並在該函數上操作，而非直接對數列應用洛必達。
+> 因為數列不連續 (因而不可微)，不能直接套用洛必達。
+
+而且數列有一個很好用的性質，稱為 Power Law：**若 $p>0$ 且 $a_{n}>0$** 則 $\lim_{ n \to \infty }(a_{n})^{p}=[\lim_{ n \to \infty }a_{n}]^{p}$。
 
 還可以將夾擠定理套用到數列上：若當 $n\geq n_{0}$ 時 $a_{n}\leq b_{n}\leq c_{n}$，且 $\lim_{ n \to \infty }a_{n}=\lim_{ n \to \infty }c_{n}=L$，則 $\lim_{ n \to \infty }b_{n}=L$。
+
+> [!note]
+> Squeeze Theorem 不一定要將整個數列夾住，只要在數列 $n>N$ 時夾住即可。
+
+> [!warning] 注意
+> 找到 $b_{n}$ 並夾住後，要先定義數列 $a_{n}$ 與 $c_{n}$ 才可套用數列的 Squeeze Theorem！
+
+以及，若 $\lim_{ n \to \infty }a_{n}=L$ 且 $f$ 在 $L$ 連續，則：$\lim_{ n \to \infty }f(a_{n})=f(L)=f(\lim_{ n \to \infty }a_{n})$。
+
+> [!warning] 注意
+> 要先**寫出判定** $\lim_{ n \to \infty }a_{n}=L$ 且 $f$ 在 $L$ 連續，才可套用喔！
 
 最後，我們有：若 $\lim_{ n \to \infty }|a_{n}|=0$ 則 $\lim_{ n \to \infty }a_{n}=0$。
 
 proof:
+(I)
 使用 $\epsilon-N$ 定義證明。
 已知 $\lim_{ n \to \infty }|a_{n}|=0$，所以對任意 $\epsilon>0$ 一定存在某整數 $N$ 使得：
 當 $n>N$ 則 $||a_{n}|-0|<\epsilon$ 成立。
 又有 $||a_{n}|-0|=||a_{n}||=|a_{n}|$，且 $|a_{n}-0|=|a_{n}|$，所以必定有：
 當 $n>N$ 則 $|a_{n}-0|<\epsilon$ 成立。
 $\implies \lim_{ n \to \infty }a_{n}=0$ By the definition of a limit.
+(II)
+使用 Squeeze Theorem
+$0\leq a_{n}+|a_{n}|\leq2|a_{n}|$ 
+$a_{n}=(a_{n}+|a_{n}|)-|a_{n}|$ 
 
-並且我們還有最最後一個性質：若 $\lim_{ n \to \infty }a_{n}=L$ 且 $f$ 為一個連續函數，則：
+> [!note]
+> 其實關係是 $\lim_{ n \to \infty }|a_{n}|=0\iff \lim_{ n \to \infty }a_{n}=0$。
+
+並且我們還有最最最後一個性質：若 $\lim_{ n \to \infty }a_{n}=L$ 且 $f$ 為一個連續函數，則：
 
 $$
 \lim_{ n \to \infty }f(a_{n})=\lim_{ n \to \infty } f(L)
@@ -62,22 +85,52 @@ $$
 \end{cases}
 $$
 
+> [!warning] 注意
+> $\lim_{ n \to \infty }(a_{n}+b_{n})$ 只有兩個數列都收斂時才可套用 limit laws，若兩個數列都發散，也不可用 limit laws 斷定最終結果發散！
+
 ## Monotonic and Bounded Sequences
 
 一個數列若對所有 $n\geq1$ 都有 $a_{n}<a_{n+1}$ 則稱為遞增，相反稱為遞減。若一個數列是遞增或遞減的，則其為單調 (Monotonic) 數列。
 
 若存在一個數 $M$ 使得 $a_{n}\leq M \quad\forall n \geq1$ 則稱 $\{a_{n}\}$ 有上界。若存在一個數 $m$ 使得 $a_{n}\geq m\quad\forall n\geq1$ 則稱 $\{a_{n}\}$ 有下界。
 
-注意到一個數列是單調的並無法保證數列收斂，而且一個有界的數列也無法保證收斂 (反例：$(-1)^{n}$)。
+有界則代表存在某數 $M>0$ 使得：$|a_{n}|\leq M$。 
 
 但是，一個單調有界的數列則必定收斂。此定理稱為**單調數列定理 (Monotonic Sequence Theorem)**。
 
-設 $\{a_{n}\}$ 為遞增數列。因為 $\{a_{n}\}$ 有界，所以集合 $S=\{a_{n}|n\geq1\}$ 存在上界。根據完備性公理， $S$ 存在一個最小上界 $L$。
-因為 $L$ 為最小上界，所以 $L-\epsilon$ 不是 $S$ 的上界，則必存在某數 $N$ 使得 $a_{N}>L-\epsilon$。
+> [!warning] 注意
+> 一個數列是單調的並無法保證數列收斂，而一個有界的數列也無法保證收斂 (反例：$(-1)^{n}$)。
+> 話雖如此，但是收斂不一定需要單調。
+
+proof:
+核心想法：利用有界與完備性公理找到最小界，然後利用單調確保數值不能回退。
+設 $\{a_{n}\}$ 為遞增數列。因為 $\{a_{n}\}$ 有界，所以集合 $S=\{a_{n}|n\geq1\}$ 存在上界。根據完備性公理， $S$ 存在一個上確界 $L$。
+因為 $L$ 為上確界，所以 $L-\epsilon$ 不是 $S$ 的上界，則必存在某數 $N$ 使得 $a_{N}>L-\epsilon$。
 又因為 $\{a_{n}\}$ 為遞增數列，所以當 $n>N$ 時有 $a_{n}>a_{N}>L-\epsilon$。
 因為 $L\geq a_{n}$，所以有 $0\leq L-a_{n}<\epsilon\implies|L-a_{n}|<\epsilon$ (當 $n>N$)。
 也就是說，$\lim_{ n \to \infty }a_{n}=L$。
 若 $\{a_{n}\}$ 為遞減數列，同理可證。
+
+> [!note]
+> 此處題目可能要求判斷數列是否單調或遞增。
+> 考慮單調性，我們可以通過對比 $a_{n}$ 與 $a_{n+1}$ 的大小關係得到。
+> 考慮有界，如果數列極限存在則必有界。
+> 因為 $\lim_{ n \to \infty }a_{n}=L$ 代表當 $n>N$ 時， $|a_{n}-L|<\epsilon\implies a_{n}\in(L-\epsilon,L+\epsilon)$。而當 $n\leq N$ 時，包含的項數有限 ($n$ 被限定為整數)，一定有最大最小值。
+
+> [!note]
+> 對於求解遞歸定義數列的極限，套用 $\lim_{ n \to \infty }a_{n}=\lim_{ n \to \infty }a_{n}+1$ (前提是先確定數列收斂，利用單調數列定理)。
+
+> [!Note]
+> 若給一遞歸定義數列與一有界範圍假設，可使用數學歸納法證明。
+
+## Skills For Sequence Limits
+
+1. Limit laws
+2. Squeeze theorem
+3. The $\epsilon-N$ definition
+4. If $\lim_{ n \to \infty }|a_{n}|=0$，then $\lim_{ n \to \infty }a_{n}=0$ 
+5. If $f(n)=a_{n}$, $\lim_{ x \to \infty }f(x)=L\implies \lim_{  n \to \infty }a_{n}=L$ 
+6. The monotonic sequence theorem
 
 # Series
 
@@ -97,13 +150,17 @@ $$
 s_{n}=\sum_{i=1}^{n}a_{i}
 $$
 
-若數列 $\{s_{n}\}$ 收斂且 $\lim_{ n \to \infty }s_{n}$ 存在且為實數，則無限級數 $\sum a_{n}$ 收斂。並且我們寫成：
+若數列 $\{s_{n}\}$ 收斂且 $\lim_{ n \to \infty }s_{n}$ 存在且為實數，則無限級數 $\sum a_{n}$ 收斂。我們寫成：
 
 $$
 a_{1}+a_{2}+\dots=s\quad\text{ or }\quad\sum_{n=1}^{\infty}a_{n}=s
 $$
 
 並且，若 $\{s_{n}\}$ 發散，則級數發散。
+
+> [!note] 
+> 這邊若涉及到將求和展開，可以使用：$\frac{1}{n(n+1)}=\frac{1}{n}-\frac{1}{n+1}$。
+> 或者更延伸的，將 $\frac{1}{f(x)p(x)q(x)}$ 拆成 $\frac{A}{f(x)}+\frac{B}{p(x)}+\frac{C}{q(x)}$。
 
 # Sum of a Geometric Series
 
@@ -136,9 +193,14 @@ $$
 
 ## Test for Divergence
 
-回憶到若某級數對應的部分和數列發散，則該級數發散。
+> [!note]
+> 若某級數對應的部分和數列發散，則該級數發散。 
 
-那麼我們有個定理：若級數 $\sum a_{n}$ 收斂，則 $\lim_{ n \to \infty }a_{n}=0$。
+我們有個定理：若級數 $\sum a_{n}$ 收斂，則 $\lim_{ n \to \infty }a_{n}=0$。
+
+> [!note] Tip for proof
+> 考慮將條件寫下：$\lim_{ n \to \infty }s_{n}=L$，想推得 $\lim_{ n \to \infty }a_{n}=0$。
+> 思考 $s_{n}$ 如何轉 $a_{n}$？利用 $a_{n}=s_{n}-s_{n-1}$ 即可。
 
 proof:
 令 $s_{n}=a_{1}+\dots a_{n}$，則 $a_{n}=s_{n}-s_{n-1}$。
@@ -146,9 +208,15 @@ proof:
 令 $\lim_{ n \to \infty }s_{n}=s$，因為當 $n\to \infty$ 時 $n-1\to \infty$，所以我們還有 $\lim_{ n \to \infty }s_{n-1}=s$。
 所以：$\lim_{ n \to \infty }a_{n}=\lim_{ n \to \infty }(s_{n}-s_{n-1})=0$。
 
-注意到，這個定理可以從左推到右，但不能從右推到左。也就是說 $\lim_{ n \to \infty }a_{n}=0$ 並**不能保證 $\sum a_{n}$ 收斂**。
+> [!warning] 注意
+> 此定理可以從左推到右，但不能從右推到左。也就是說 $\lim_{ n \to \infty }a_{n}=0$ 並**不能保證 $\sum a_{n}$ 收斂**，因為 $\lim_{ n \to \infty }a_{n}=0$ 只能代表每項逐漸接近 $0$，但不代表趨近的足夠快。
 
-雖之而來的，是另一個定理。若 $\lim_{ n \to \infty }a_{n}$ 不存在或 $\lim_{ n \to \infty }a_{n}\neq 0$，則級數 $\sum a_{n}$ 不收斂。
+> [!note]
+> 正因如此，此定理通常用在**證明某級數發散** ($\lim_{ n \to \infty }a_{n}\neq0$)，而非證明收斂。
+
+雖之而來的，是另一個定理。
+
+若 $\lim_{ n \to \infty }a_{n}$ 不存在或 $\lim_{ n \to \infty }a_{n}\neq 0$，則級數 $\sum a_{n}$ 不收斂。因為呀，每次加的數都是非零，怎麼可能收斂呢？
 
 ## Properties for Convergent Series
 
@@ -161,21 +229,22 @@ $$
 \end{align}
 $$
 
-注意到：有限項不會影響到收斂與否的結果。
-
-例如：$\sum_{i=2}^{\infty}a_{n}$ 收斂，則 $\sum_{i=1}^{\infty}=a_{1}+\sum_{i=2}^{\infty}$ 也必定收斂。
+> [!note] 注意到：
+> 有限項不會影響到收斂與否的結果。
+> 例如：$\sum_{i=2}^{\infty}a_{n}$ 收斂，則 $\sum_{i=1}^{\infty}=a_{1}+\sum_{i=2}^{\infty}$ 也必定收斂。
 
 # The Integral Test and Estimates of Sums
 
 ## The Integral Test
 
-假設 $f$ 在 $[1,\infty)$ 上連續、始終為正，且遞減。令 $a_{n}=f(n)$，則：
+假設 $f$ 在 $[1,\infty)$ 上**連續**、**恆正**，且**遞減**。令 $a_{n}=f(n)$，則：
 - 若 $\int_{1}^{\infty}f(x) \ dx$ 收斂，則 $\sum a_{n}$ 收斂。
 - 若 $\int_{1}^{\infty}f(x) \ dx$ 發散，則 $\sum a_{n}$ 發散。
 
-注意，對於 Integral Test，我們不需要從 $n=1$ 開始，就像之前計算狹積分那樣。
+對於 Integral Test，我們不需要從 $n=1$ 開始，就像之前計算狹積分那樣。
 
-還有，$f$ 並不需要總是遞減的。我們只需要保證最終 $f$ 在 $n>N$ 時保證遞減即可。
+> [!note]
+> $f$ 並不需要總是遞減的。我們只需要最終 $f$ 在 $n>N$ 時保證遞減即可。
 
 我們定義 p-series 為 $\sum_{n=1}^{\infty} \frac{1}{n^{p}}$。而 p-series 在 $p>1$ 時收斂，在 $p\leq 1$ 時發散。
 
@@ -183,7 +252,8 @@ $$
 
 或者，我們可以使用 integral test，對狹積分 $\int_{1}^{\infty} \frac{1}{x^{p}} \ dx$ 來說，當 $1-p<0\implies p>1$ 時收斂。
 
-我們需要小心：$\sum a_{n}\neq \int_{1}^{\infty}f(x) \ dx$。
+> [!warning] 注意
+> 雖然可以用 integral test 測試收斂，但$\sum a_{n}\neq \int_{1}^{\infty}f(x) \ dx$。
 
 proof:
 我們現在要證明若 $f$ 在 $[1,\infty)$ 上連續、始終為正，且遞減，則可以用狹積分的收斂與否判斷級數的收斂。
@@ -198,6 +268,14 @@ proof:
 若 $\int_{1}^{\infty}f(x) \ dx$ 發散，則隨著 $n\to \infty$，$\int_{1}^{n}f(x) \ dx\to \infty$。
 又有 $s_{n-1}=\sum_{i=1}^{n-1}a_{i}\geq \int_{1}^{n}f(x) \ dx$，所以當 $n\to \infty$ 時 $s_{n-1}\to \infty$。
 這隱含了 $s_{n}\to \infty\text{ as }n\to \infty$。也就是 $\sum a_{n}$ 發散。
+
+> [!note]
+> 注意 Integral Test 條件。
+> 如果遇到恆負遞增的情況，通過令 $b_{n}=-a_{n}$ 且對 $b_{n}$ 做測試一樣可解。
+> 因為 $b_{n}$ 收斂 $\iff$ $a_{n}$ 收斂。
+
+> [!note]
+> 如果發現 $\lim_{ n \to \infty }s_{n}$ 不會求，考慮判斷一下是否發散吧！
 
 ## Estimating the Sum of a Series
 
@@ -241,11 +319,21 @@ $$
 
 這可以幫助我們預估實際值 $s$ 的上下界，讓我們得到更準確的預估值。
 
+## Skills For Series Divergence Questions
+
+1. Test for divergence
+	1. $\sum a_{n}$ 收斂 $\implies \lim_{ n \to \infty }a_{n}=0$ (通常用在證明極限發散)
+2. The integral test
+	1. 條件：$f(x)$ 在 $[1,\infty)$ 上連續、恆正、遞減。
+	2. 若 $a_{n}=f(n)$ 且 $\int_{1}^{\infty}f(x)\ dx$ 收斂，則 $\sum a_{n}$ 收斂。反之發散。
+3. 使用求和公式化簡級數，然後求 $n\to \infty$ 時的極限。
+
 # Tips
 
 - 遇到在正負間反覆橫跳的函數，考慮性質 $\lim_{ n \to \infty }|a_{n}|=\lim_{ n \to \infty }a_{n}$ (若 $a_{n}$ 收斂到 $0$)。
 - $a^{n}-b^{n}=(a-b)(a^{n-1}+a^{n-2}b+a^{n-3}b^{2}+\dots+ab^{n-2}+b^{n-1})$ 
 - partial fraction decomposition：$\frac{1}{i(i+1)}=\frac{1}{i}-\frac{1}{i+1}$ 
+- 數列收斂 $\implies$ 有界。
 
 # 重要例題
 
@@ -253,7 +341,7 @@ $$
 ![[Pasted image 20260104162914.png]]
 
 Sol:
-寫的時候不知道發生啥了，竟然想成會不停震盪。
+寫的時候不知道發生啥了，竟然想成會不停震盪。注意到第二次寫也想成會不停震盪。
 應該這樣寫：
 $\lim_{ n \to \infty }|a_{n}|=\lim_{ n \to \infty } \frac{3^{n}}{n!}=\lim_{ n \to \infty } \frac{3\times \dots \times3}{1\times\dots \times n}=\lim_{ n \to \infty } \frac{3\times3\times 3}{1\times 2\times 3} \frac{3\times\dots \times3}{4\times\dots \times n}$ 
 $=\lim_{ n \to \infty } \frac{9}{2} \frac{3\times \dots \times 3}{4\times \dots \times n}=\frac{9}{2}\cdot0=0$ 
@@ -268,6 +356,7 @@ Sol:
 對於 $a_{n+1}$，因為 $n+1>N+1>N$，所以 $|a_{n+1}-L|<\epsilon$ 恆成立。
 也就是說 $\lim_{ n \to \infty }a_{n+1}=L=\lim_{ n \to \infty }a_{n}$。
 (b)
+注意，不要想成求通項公式後取極限，因為嘗試後做不到。
 令 $\lim_{ n \to \infty }a_{n}=L$，則 $\lim_{ n \to \infty } a_{n+1}= \frac{1}{1+L}$。
 利用 (a)，有 $L=\frac{1}{1+L}\implies L= \frac{-1+ \sqrt{ 5 }}{2}$ (注意，負不合)
 
@@ -288,3 +377,16 @@ $\implies a_{k+2}<a_{k+1}$ 成立。
 
 Sol:
 $\frac{b^{n+1}-a^{n+1}}{b-a}=b^{n}+b^{n-1}a+\dots+ba^{n-1}+a^{n}<b^{n}+b^{n}+\dots+b^{n}+b^{n}=(n+1)b^{n}$ 
+
+Determine whether the series is convergent or divergent by expressing $s_{n}$ as a telescoping sum. If it is convergent, find its sum. $\sum_{n=2}^{\infty} \frac{1}{n^{3}-n}$ 
+
+Sol:
+令 $\frac{1}{n^{3}-n}= \frac{A}{n}+\frac{B}{n+1}+\frac{C}{n-1}$，通分解得 $A=-1, B=C=\frac{1}{2}$。
+$s_{n}=\sum_{i=2}^{n} \frac{1}{i^{3}-i}=\sum_{i=2}^{n}\left( -\frac{1}{i}+\frac{1}{2}\cdot \frac{1}{i+1}+\frac{1}{2}\cdot \frac{1}{i-1} \right)$ 
+$=\frac{1}{2}\sum_{i=2}^{n}\left( -\frac{2}{i}+\frac{1}{i+1}+\frac{1}{i-1} \right)$ (共提出 $\frac{1}{2}$，因為多乘 $2$ 在分子比乘 $2$ 在分母好算)
+我們列出幾項看看：
+$s_{n}=\frac{1}{2}[ \left( -1+\frac{1}{3}+1 \right)+\left( -\frac{2}{3}+\frac{1}{4}+\frac{1}{2} \right)+\left( -\frac{1}{2}+\frac{1}{5}+\frac{1}{3} \right)+\dots$ 
+$+\left( -\frac{2}{n-2}+\frac{1}{n-1}+\frac{1}{n-3} \right)+\left( -\frac{2}{n-1}+\frac{1}{n}+\frac{1}{n-2} \right)+\left( -\frac{2}{n}+\frac{1}{n+1}+\frac{1}{n-1} \right) ]$ 
+注意力驚人的你，肯定注意到了：第一項的第二位 + (第二項的第一位 + 第三項的第三位) 運算後等於零！
+於是最後會化簡到 $\frac{1}{2}\left[ -1+1+\frac{1}{2}+\frac{1}{n}-\frac{2}{n}+\frac{1}{n+1} \right]=\frac{1}{4}-\frac{1}{2n}+\frac{1}{2n+2}$ 
+於是 $\lim_{ n \to \infty }s_{n}=\frac{1}{4}$。
