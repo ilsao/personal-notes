@@ -179,7 +179,7 @@ Show that $p\lor(q\land r)\equiv(p\lor q)\land(p\lor r)$：
 - Others
 	- $p\land \neg p=F$ 
 	- $p\lor \neg p=T$ 
-	- $p\to q\equiv \neg q\to \neg p\equiv \neg p\lor q$ 
+	- $p\to q\equiv \neg q\to \neg p\equiv \neg p\lor q$ *
 
 ## Exercise
 

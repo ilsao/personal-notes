@@ -191,6 +191,20 @@ $$
 \sum_{n=1}^{\infty}ar^{n-1}=\lim_{ n \to \infty } \frac{a(1-r^{n})}{1-r}=\frac{a}{1-r}
 $$
 
+> [!warning] 注意
+> 對於 11.2 節的題目來說，涉及求無窮級數值的問題，通常都使用幾何級數解。
+> 少部分題目要求將各項列出，互消後得出答案。(telescoping sum)
+
+> [!note]
+> 因為數列離散而無法微分，我們使用**差分**來研究數列的增長情況 (即相鄰兩項相減 $d_{n}=d_{n+1}-d_{n}$) 。
+> 對於遞歸定義的數列，差分通常可以用來降階。通過表達差分間的關係，我們有機會還原原數列的某些關係。
+> 
+> 若
+> - $d_{n}=d_{n-1}$ 數列是等差數列。
+> - $d_{n}=rd_{n-1}$ 數列是等比 + 常數。
+> 
+> 最後，我們可以將 $a_{n}$ 表達成：$a_{n}=a_{1}+\sum_{k=1}^{n-1}d_{k}$。
+
 ## Test for Divergence
 
 > [!note]
@@ -327,6 +341,7 @@ $$
 	1. 條件：$f(x)$ 在 $[1,\infty)$ 上連續、恆正、遞減。
 	2. 若 $a_{n}=f(n)$ 且 $\int_{1}^{\infty}f(x)\ dx$ 收斂，則 $\sum a_{n}$ 收斂。反之發散。
 3. 使用求和公式化簡級數，然後求 $n\to \infty$ 時的極限。
+4. 當級數為幾何級數時，$|r|<1$ 時收斂。
 
 # Tips
 
@@ -390,3 +405,21 @@ $+\left( -\frac{2}{n-2}+\frac{1}{n-1}+\frac{1}{n-3} \right)+\left( -\frac{2}{n-1
 注意力驚人的你，肯定注意到了：第一項的第二位 + (第二項的第一位 + 第三項的第三位) 運算後等於零！
 於是最後會化簡到 $\frac{1}{2}\left[ -1+1+\frac{1}{2}+\frac{1}{n}-\frac{2}{n}+\frac{1}{n+1} \right]=\frac{1}{4}-\frac{1}{2n}+\frac{1}{2n+2}$ 
 於是 $\lim_{ n \to \infty }s_{n}=\frac{1}{4}$。
+
+![[Pasted image 20260227162722.png]]
+![[Pasted image 20260227162750.png]]
+
+Sol:
+這題當時我沒看出他是個等比數列，我好傻。
+意識到這東西是個等比數列，且 $r=\frac{\sin x}{3}$。
+想要級數收斂 $|r|<1$，也就是 $-1<\frac{\sin x}{3}<1$。不等式對 $\forall x$ 皆成立。
+而無窮級數的值為 $\frac{a}{1-r}=\frac{3}{3-\sin x}$。
+
+A sequence ${a_{n}}$ is defined recursively by the equation $a_{n}=\frac{1}{2}(a_{n-1}+a_{n-2})$ for $n\geq 3$, where $a_{1}$ and $a_{2}$ can be any real number. Find $\lim_{ n \to \infty }a_{n}$ in terms of $a_{1}$ and $a_{2}$ by expressing $a_{n+1}-a_{n}$ in terms of $a_{2}-a_{1}$ and summing a series.
+
+Sol:
+這題使用差分技巧。
+看到遞歸，考慮使用 $\lim_{ n \to \infty }a_{n}=\lim_{ n \to \infty }a_{n+1}$。但是這裡顯然不能這樣用。
+那便考慮差分吧，因為有 $a_{n}=a_{1}+\sum_{k=1}^{n-1}d_{k}$。
+$d_{n}=a_{n+1}-a_{n}=\frac{1}{2}(a_{n}+a_{n-1})-a_{n}=-\frac{1}{2}(a_{n}-a_{n-1})\implies d_{n}=-\frac{1}{2}d_{n-1}$ 
+那麼有 $\lim_{ n \to \infty }a_{n}=a_{1}+\sum_{k=1}^{\infty}d_{n}=a_{1}+ \frac{d_{1}}{1+\frac{1}{2}}=a_{1}+ \frac{a_{2}-a_{1}}{\frac{3}{2}}= \frac{a_{1}+2a_{2}}{3}$。
