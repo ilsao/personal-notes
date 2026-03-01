@@ -14,9 +14,9 @@
 
 黑體發出的光譜有如下特徵：
 1. 若將輻射繪製成頻率與強度的圖表，我們可以看到較寬且連續的圖形。注意到 $y$ 軸的單位是 $I(\nu)$，即每單位時間單位面積下，固定頻率所發出的能量。
-2. 將 $I(\nu)$ 對 $\nu$ 積分，其結果不受頻率影響而與溫度四次方正比。此事實被稱為 Stefan-Boltzmann law。其中 $\sigma=5.68\times 10^{-8}\text{ W/m}^{2}\text{-K}^{4}$ 
+2. 將 $I(\nu)$ 對 $\nu$ 積分，其結果不受頻率影響而與溫度四次方正比。此事實被稱為 Stefan-Boltzmann law。其中 $\sigma=5.67\times 10^{-8}\text{ W/m}^{2}\text{-K}^{4}$ 
 $$
-I_{T}=\int_{0}^{\infty}I(\nu) \ d\nu=\sigma T^{4}
+\boxed{I_{T}=\int_{0}^{\infty}I(\nu) \ d\nu=\sigma T^{4}}
 $$
 3. 當溫度漸增，光譜整體往高頻率 (短波長) 趨近 (能量較大)，且峰值變大。根據某人實驗，峰值 $I(\nu)$ 處的頻率 $\nu_{\text{max}}$ 與溫度成正比。
 $$
@@ -28,6 +28,9 @@ $$
 > [!warning] 注意
 > 威儀影片中的圖表使用波長 $\lambda$ 當作 $x$ 軸，注意單位。
 
+> [!note]
+> 此公式用來計算某**溫度** (單位 $K$) 下放出的**黑體輻射功率**。
+
 ## Planck's Theory
 
 為了解釋黑體輻射，普朗克假設系統中的粒子都在以頻率 $\nu$ 做簡諧運動。其放出的能量滿足下式：
@@ -36,7 +39,7 @@ $$
 E=nh\nu
 $$
 
-其中 $n=1,2,3,\dots$，而 $h=6.63\times 10^{-34}\text{ J-sec}$ 為普朗克常數。
+其中 $n=1,2,3,\dots$，而 $\boxed{h=6.63\times 10^{-34}\text{ J-sec}}$ 為普朗克常數。
 
 > [!note]
 > 為了解釋黑體輻射，普朗克將**簡諧運動體的能量**量子化。
@@ -144,18 +147,21 @@ $$
 愛因斯坦說，頻率為 $\nu$ 的電磁波能量不集中在播前，而是集中在稱為**光子(photon)** 的小能量束 (具有粒子性) 上。其中每個光子的能量為：
 
 $$
-E_{\text{photon}}=h\nu
+\boxed{E_{\text{photon}}=h\nu}
 $$
 
 > [!note]
 > 為了解釋光電效應，愛因斯坦將**光**量子化成光子。
+
+> [!note]
+> 給定波長 (nm $10^{-9}$)，利用 $E_{\text{photon}}=\frac{1240}{\lambda}(\text{eV})$ 計算光子能量。
 
 這種情況下，電磁波攜帶能量的方式更像一束粒子，光強度對應粒子密度。增加強度而非頻率，會造成光子密度上升，但對單個光子攜帶的能量不會有變化。
 
 光電效應可以被解釋為能量為 $h\nu$ 的光子與金屬電子碰撞，並將全部能量傳遞給電子。根據能量守恆，有：
 
 $$
-h\nu=E_{k}+E_{b}
+\boxed{h\nu=E_{k}+E_{b}}
 $$
 
 我們令 $\phi$ 為最小束縛能，稱為金屬的**功函數(work function)**。於是上式可改寫為：
@@ -167,7 +173,7 @@ $$
 因為有 $E_{k\text{,max}}=eV_{0}$，所以上式可寫成：
 
 $$
-V_{0}=\frac{h\nu}{e}-\frac{\phi}{e}
+\boxed{V_{0}=\frac{h\nu}{e}-\frac{\phi}{e}}
 $$
 
 讓我們逐步解釋三張圖。
@@ -185,6 +191,10 @@ $$
 若 $h\nu<\phi$，因為光子能量小於金屬功函數，無電子逸出。
 
 最後，因為粒子碰撞瞬時發生，沒有所謂能量積累的過程，電子發射是瞬時的。只要有光子能量 $h\nu>\phi$ 與電子碰撞，該電子就會立刻被擊出。
+
+> [!note]
+> 光電效應之所以只要光子帶有比功函數大的能量就能將電子擊出，是因為光電效應並不是將電子激發，不需要帶有特定能量的光子才能激發。
+
 
 # Further Evidence for the Photon Theorem
 
@@ -235,7 +245,7 @@ $$
 
 ![[Pasted image 20260228155526.png]]
 
-若我們假設散發的能量轉成單一光子，則：
+若我們假設散發的能量轉成單一光子，且電子墜毀在原子核 $E_{k}'=0$，則：
 
 $$
 E_{k}=h\nu_{\text{max}}
@@ -250,7 +260,7 @@ $$
 所以：
 
 $$
-\nu_{\text{max}}=\frac{eV}{h}
+\boxed{\nu_{\text{max}}=\frac{eV}{h}}
 $$
 
 與前面觀察 $\nu_{\text{max}}\propto V$ 吻合。
@@ -292,6 +302,63 @@ $$
  & h\nu=mc^{2} \\
 \implies & mc=\frac{h\nu}{c} \quad\left[ \nu=\frac{c}{\lambda} \right]\\
 \implies & mc=\frac{h}{\lambda} \\
-\implies & p_{\text{photon}}=\frac{E}{c}=\frac{h}{\lambda}
+\implies & \boxed{p_{\text{photon}}=\frac{E}{c}=\frac{h}{\lambda}}
 \end{align}
 $$
+
+# 威儀指定習題
+
+![[Pasted image 20260301140118.png]]![[Pasted image 20260301140132.png]]
+
+Sol:
+利用 Stefan-Boltzmann law，計算某溫度下放出黑體輻射的**功率**。
+首先將太陽**功率**轉換下單位得：$8.4\times 10^{4}\text{ W/m}^{2}$。
+注意到地球用半球接收到太陽光，而用整個球表面積發出黑體輻射。
+考慮 lambert's cosine law，半球會被視為面積 $\pi R^{2}$，是整個表面積的 $\frac{1}{4}$ 倍。
+因此，平均到地球表面後吸收功率應該是：$\frac{8.4\times 10^{4}}{4}$。
+根據黑體輻射公式：$\sigma T^{4}=2.1\times 10^{4}$ 其中 $\sigma=5.67\times 10^{-8}$。
+$\implies T\approx 1100\text{ K}$。
+
+![[Pasted image 20260301142220.png]]
+
+Sol:
+(a)
+要計算截止電壓 $V_{0}$，回想到公式 $V_{0}=E_{k,\text{max}}=h\nu-\phi$。
+因為題目給的是波長，利用公式 $E_{\text{photon}}=\frac{1240}{\lambda}=\frac{1240}{300\text{(nm)}}=4.13\text{ eV}$。
+那麼 $V_{0}=4.13-1.5=2.63\text{ eV}$。
+(b)
+動能公式：$E_{k,\text{max}}=\frac{1}{2}mv^{2}$ 
+$2.63\text{ eV}\times 1.6\times 10^{-19}\text{J/eV}=\frac{1}{2}\times(9.1\times10^{-31}\text{kg})\times v^{2}\implies v\approx 9.6\times 10^{5}\text{ m/s}$ 
+
+![[Pasted image 20260301144741.png]]
+
+Sol:
+這題秒殺。
+(a)
+$E_{\text{photon}}=\frac{1240}{200}=6.2\text{ eV}$ 
+(b)
+$E=2.0+\phi\implies \phi=4.2\text{ eV}$ 
+(c)
+$E_{\text{photon}}=\frac{1240}{600}\approx 2.07\text{ eV}$ 
+$E<\phi$，無法激發電子，$V_{0}=0$。
+
+![[Pasted image 20260301145507.png]]
+
+Sol:
+因為 cut-off frequency 是 $\nu_{0}$，所以 $h\nu_{0}=\phi$ 使得剛好沒電子出現。
+此時使用 $3\nu_{0}$，則 $3h\nu_{0}=E+\phi\implies E=2h\nu_{0}$。
+
+![[Pasted image 20260301145729.png]]
+
+Sol:
+$\begin{cases}h\nu_{0} & =15\text{ eV}+\phi \\ \frac{1}{2}h\nu_{0}  & =3\text{ eV}+\phi\end{cases}\implies h\nu_{0}=24\text{ eV},\ \phi=9\text{ eV}$ 
+$\phi=9\text{ eV}=h\nu\implies \nu= \frac{9\cdot 1.6\times 10^{-19}}{6.63\times10^{-34}}\approx 2.17\times10^{15}\text{ Hz}$ 
+
+![[Pasted image 20260301150456.png]]![[Pasted image 20260301150512.png]]
+
+Sol:
+回憶 X 射線如何產生：電子受原子核吸引而減少能量，此能量以電磁波形式放出。
+想求 X 射線的最大頻率，我們假設電子最終墜毀在原子核將所有能量放出，並且所有能量被集中到一個光子上。
+電子能量為：$E_{k}=eV=5000\text{ eV}$。
+所以：$5000\text{ eV}=h\nu\implies \nu=\frac{5000\times 1.6\times 10^{-19}}{6.63\times 10^{-34}}\approx 1.2\times 10^{18}\text{ Hz}$ 
+$\lambda \nu=c\implies \lambda=\frac{c}{\nu}= \frac{3\times 10^{8}}{1.2\times 10^{18}}=2.5\times 10^{-10}\text{ m}$ 

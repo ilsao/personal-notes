@@ -33,7 +33,7 @@ $$
 帶回總能量：
 
 $$
-E_{\text{total}}=-\frac{1}{2} \frac{1}{4\pi\epsilon_{0}} \frac{e^{2}}{r}
+\boxed{E_{\text{total}}=-\frac{1}{2} \frac{1}{4\pi\epsilon_{0}} \frac{e^{2}}{r}}
 $$
 
 旋轉頻率為：
@@ -139,7 +139,7 @@ $$
 根據第一個假設，有：
 
 $$
-v=\frac{n\hbar}{mv}
+\boxed{v=\frac{n\hbar}{mv}}
 $$
 
 帶入向心力公式：
@@ -148,16 +148,10 @@ $$
 \frac{1}{4\pi\epsilon_{0}} \frac{e^{2}}{r^{2}}=\frac{m}{r} \frac{n^{2}\hbar^{2}}{m^{2}r^{2}}
 $$
 
-令 
-
-$$
-r_{0}=\frac{4\pi \hbar^{2}\epsilon_{0}}{e^{2}m}
-$$
-
 則：
 
 $$
-r_{n}=n^{2}r_{0}
+\boxed{r_{n}=n^{2} \frac{4\pi \hbar^{2}\epsilon_{0}}{e^{2}m}=n^{2}r_{0}}
 $$
 
 所以，半徑也被量子化。只有 $r_{0},4r_{0},9r_{0},\dots$ 的軌道被允許存在。
@@ -167,7 +161,7 @@ $$
 其中：
 
 $$
-r_{0}\approx{0}.53\times 10^{-10}\text{ m}
+\boxed{r_{0}\approx{0}.53\times 10^{-10}\text{ m}}
 $$
 
 由能量公式：
@@ -179,13 +173,19 @@ $$
 帶入 $r_{n}$ 可得：
 
 $$
-E_{n}=-\frac{e^{4}m}{8\epsilon_{0}^{2}h^{2}} \frac{1}{n^{2}}=-\frac{E_{0}}{n^{2}}\quad n=1,2,3,\dots
+\boxed{E_{n}=-\frac{e^{4}m}{8\epsilon_{0}^{2}h^{2}} \frac{1}{n^{2}}=-\frac{E_{0}}{n^{2}}\quad n=1,2,3,\dots}
 $$
 
-計算基態能量，得：$E_{0}=13.56\text{ eV}$。因此 $E_{n=1}=-13.56\text{ eV}$。
+計算基態能量，得：$\boxed{E_{0}=13.56\text{ eV}}$。因此 $E_{n=1}=-13.56\text{ eV}$。
 
 > [!note]
 > 此處為負號是因為此能量為束縛能。
+
+> [!warning] 注意
+> 想將電子從基態激發到 $n$ 階，需要吸收二階束縛能絕對值之差。而不是 $n$ 階束縛能的絕對值。
+
+> [!warning] 注意
+> 現在更準確的數值 $E_{0}=13.6\text{ eV}$。
 
 ## Spectral Lines Predicted by Bohr Model
 
@@ -198,7 +198,7 @@ $$
 帶入 $\lambda \nu=c$：
 
 $$
-\frac{1}{\lambda}=\frac{E_{0}}{hc}\left( \frac{1}{n_{f}^{2}}-\frac{1}{n_{i}^{2}} \right)
+\boxed{\frac{1}{\lambda}=\frac{E_{0}}{hc}\left( \frac{1}{n_{f}^{2}}-\frac{1}{n_{i}^{2}} \right)}
 $$
 
 其中定義：
@@ -210,6 +210,9 @@ $$
 與 Rydberg-Ritz 公式幾乎相同。
 
 ![[Pasted image 20260301012714.png]]
+
+> [!note]
+> 電子從 $n$ 階返回基態，會放出 $C^{n}_{2}$ 條光譜線。
 
 # The Frank-Hertz Experiment
 
@@ -259,4 +262,88 @@ $$
 >- 原子只吸收特定能量。
 >- Bohr 的量子假設正確。
 
-TODO: 補 PPT
+# Light Amplification by Stimulated Emission or Radiation
+
+我們需要先知道兩種電子從高階掉到低階的原因：
+- spontaneous emission：電子經過一段時間後，自發從高階掉往低階。
+- stimulated emission：電子收到剛好等於兩能階差的能量，而從高階掉往低階。
+
+![[Pasted image 20260301134825.png]]
+
+stimulated emission 有三個特性：
+- 一個光子進入，會造成兩個光子被發射，即所謂的 amplification。
+- 發射的兩個光子與入射光子同方向。
+- 發射的兩個光子與入射光子同相 (coherent)。
+
+產生雷射除了需要 stimulated emission，還需要以下兩個條件：
+- population inversion：![[Pasted image 20260301135210.png]]
+- metastable state (亞穩態)：電子被激發到高能階後，正常只需 $10^{-8}\text{ s}$ 就會躍遷回低能階。處于亞穩態者需要 $10^{-3}\text{ s}$ 才會躍遷回低能階。使得 population inversion 變得容易。
+
+雷射擁有以下性質：
+- 單向
+- 高強度
+- 單頻
+- 同項
+
+下圖展示了雷射的產生過程：
+
+![[Pasted image 20260301135552.png]]
+
+裝置左側是完美反射的鏡子，右側是可以部分被穿透的鏡子。
+
+首先外加一個能量，一段時間後各個粒子就會發出不同方向的電磁波。發出電磁波後，因為 stimulated emission，可能會產生一些 coherent 的電磁波。對於那些與鏡面不垂直者，會反彈或直接射出裝置，只有那些垂直者會在裝置內繼續反彈。多次反彈與 stimulated emission 後，產生大量 coherent 的電磁波，從 partial mirror 散發出去時就是雷射。
+
+# 威儀指定習題
+
+
+![[Pasted image 20260301160613.png]]
+
+Sol:
+(a)
+$h\nu=E_{i}-E_{f}=-\frac{E_{0}}{n_{i}^{2}}-\left( -\frac{E_{0}}{n_{f}^{2}} \right)\approx 12.053\text{ eV}$ 
+(b)
+$h\nu=mc^{2}\implies p_{\text{photon}}=\frac{h\nu}{c}\approx 6.42\times 10^{-27}\text{ kg-m/sec}$ 
+(c)
+$\frac{hc}{\lambda}=12.053\text{ eV}\implies \lambda=\frac{6.63\times 10^{-34}\times 3\times 10^{8}}{12.053\times 1.6\times 10^{-19}}\approx 1.03\times 10^{-7}\text{ m}$ 
+
+![[Pasted image 20260301162122.png]]![[Pasted image 20260301162137.png]]
+
+Sol:
+(b)
+這邊注意啥是 recoil speed，顧名思義是發出去一個光子，氫原子自己應該反方向飛的速度。
+這邊光子動能完全由電子躍遷提供：$E_{k}=E_{i}-E_{f}=-\frac{E_{0}}{16}+E_{0}\approx 12.7\text{ eV}$。
+計算光子動量：$\frac{E}{c}\approx 6.77\times 10^{-27}\text{ kg-m/s}$。
+一個氫原子重量為：$1.67\times 10^{-27}\text{ kg}$。
+所以氫原子的 recoil speed 為：$\frac{6.77\times 10^{-27}}{1.67\times 10^{-27}}\approx 4.05\text{ m/s}$。
+
+![[Pasted image 20260301163432.png]]
+
+(看解答)
+Sol:
+首先計算光子動量：$p_{\text{p}}=\frac{100\text{ eV}}{c}\approx5.34\times 10^{-26}\text{ kg-m/s}$ 
+而電子取得的能量為：$100\text{ eV}=E_{k}+\phi\implies E_{k}=100-13.56= 86.44\text{ eV}$ 
+所以，電子的動量為：$p_{\text{e}}=\frac{86.44 \times 1.6\times 10^{-19}}{3\times 10^{8}}=4.6\times 10^{-28}\text{ kg-m/s}$ 
+$p+p_{\text{e}}=p_{\text{p}}$ 
+
+![[Pasted image 20260301170425.png]]
+
+Sol:
+注意審題，此題要求**入射光**的最低頻率。
+因為發出了 $6$ 條光譜線，所以 $C^{n}_{2}=6\implies n=4$。
+$n=4$ 時，具有束縛能 $E=-\frac{E_{0}}{16}=-\frac{13.56}{16}=-0.8475\text{ eV}$。
+我們需要吸收 $13.56-0.8457=12.7143\text{ eV}$ 才能使電子被激發到 $n=4$。
+$\implies \nu=\frac{12.7143\times 1.6\times 10^{-19}}{6.63\times 10^{-34}}\approx 3.07\times 10^{15}\text{ Hz}$  
+
+![[Pasted image 20260301172032.png]]
+
+Sol:
+對於氫原子我們有：$r_{n}=n^{2}r_{0}\implies r_{2}=4\times (0.53\times 10^{-10})=2.12\times 10^{-10}\text{ m}$ 
+回憶 Bohr 假設，$mvr=n\hbar\implies v=\frac{n\hbar}{mr}\approx 1.1\times 10^{6}\text{ m/s}$ 
+圈數：$\frac{vt}{\text{distance}}=\frac{1.1\times 10^{6}\times 10^{-8}}{2\times \pi \times2.12\times 10^{-10}}\approx 8.3\times 10^{6}\text{ rev}$ 
+
+![[Pasted image 20260301173942.png]]
+
+Sol:
+注意，out of its ground 代表要激發到 $n=2$。
+所需能量為：$13.56-\frac{13.56}{4}=10.17\text{ eV}$ 
+所需電位差為 $10.17\text{ V}$。
