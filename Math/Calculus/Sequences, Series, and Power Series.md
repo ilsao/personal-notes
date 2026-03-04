@@ -88,6 +88,9 @@ $$
 > [!warning] 注意
 > $\lim_{ n \to \infty }(a_{n}+b_{n})$ 只有兩個數列都收斂時才可套用 limit laws，若兩個數列都發散，也不可用 limit laws 斷定最終結果發散！
 
+> [!note]
+> 子數列發散 $\implies$ 原數列發散。
+
 ## Monotonic and Bounded Sequences
 
 一個數列若對所有 $n\geq1$ 都有 $a_{n}<a_{n+1}$ 則稱為遞增，相反稱為遞減。若一個數列是遞增或遞減的，則其為單調 (Monotonic) 數列。
@@ -185,7 +188,7 @@ $$
 
 因為當 $-1<r<1$ 時 $\lim_{ n \to \infty }r^{n}=0$，所以有：
 
-若 $|r|<1$ 時幾何級數收斂且和為：
+**當 $|r|<1$ 時幾何級數收斂**且和為：
 
 $$
 \sum_{n=1}^{\infty}ar^{n-1}=\lim_{ n \to \infty } \frac{a(1-r^{n})}{1-r}=\frac{a}{1-r}
@@ -205,7 +208,7 @@ $$
 > 
 > 最後，我們可以將 $a_{n}$ 表達成：$a_{n}=a_{1}+\sum_{k=1}^{n-1}d_{k}$。
 
-## Test for Divergence
+## The Test for Divergence
 
 > [!note]
 > 若某級數對應的部分和數列發散，則該級數發散。 
@@ -223,12 +226,12 @@ proof:
 所以：$\lim_{ n \to \infty }a_{n}=\lim_{ n \to \infty }(s_{n}-s_{n-1})=0$。
 
 > [!warning] 注意
-> 此定理可以從左推到右，但不能從右推到左。也就是說 $\lim_{ n \to \infty }a_{n}=0$ 並**不能保證 $\sum a_{n}$ 收斂**，因為 $\lim_{ n \to \infty }a_{n}=0$ 只能代表每項逐漸接近 $0$，但不代表趨近的足夠快。
+> 此定理可以從左推到右，但不能從右推到左。也就是說 $\lim_{ n \to \infty }a_{n}=0$ 並**不能保證 $\sum a_{n}$ 收斂**，因為 $\lim_{ n \to \infty }a_{n}=0$ 只能代表每項逐漸接近 $0$，但不代表趨近的足夠快。調和級數就是反例。
 
 > [!note]
 > 正因如此，此定理通常用在**證明某級數發散** ($\lim_{ n \to \infty }a_{n}\neq0$)，而非證明收斂。
 
-雖之而來的，是另一個定理。
+雖之而來的，是另一個定理。(好吧，學完離散後就知道其實是 $\neg q\to \neg p$)
 
 若 $\lim_{ n \to \infty }a_{n}$ 不存在或 $\lim_{ n \to \infty }a_{n}\neq 0$，則級數 $\sum a_{n}$ 不收斂。因為呀，每次加的數都是非零，怎麼可能收斂呢？
 
@@ -260,9 +263,12 @@ $$
 > [!note]
 > $f$ 並不需要總是遞減的。我們只需要最終 $f$ 在 $n>N$ 時保證遞減即可。
 
+> [!warning] 注意
+> 注意 The Integral Test 的適用前提。後續章節可以想辦法構建 The Integral Test 的適用條件。
+
 我們定義 p-series 為 $\sum_{n=1}^{\infty} \frac{1}{n^{p}}$。而 p-series 在 $p>1$ 時收斂，在 $p\leq 1$ 時發散。
 
-因為，對於 $p<1$，$\lim_{ n \to \infty } \frac{1}{n^{p}}=\infty$。又對於 $p= 0$，$\lim_{ n \to \infty } \frac{1}{n^{p}}=1$。根據 Test for Divergence，此二情況 p-series 發散。
+因為對於 $p<1$，$\lim_{ n \to \infty } \frac{1}{n^{p}}=\infty$。又對於 $p= 0$，$\lim_{ n \to \infty } \frac{1}{n^{p}}=1$。根據 Test for Divergence，此二情況 p-series 發散。
 
 或者，我們可以使用 integral test，對狹積分 $\int_{1}^{\infty} \frac{1}{x^{p}} \ dx$ 來說，當 $1-p<0\implies p>1$ 時收斂。
 
@@ -335,13 +341,15 @@ $$
 
 ## Skills For Series Divergence Questions
 
-1. Test for divergence
+1. The test for divergence
 	1. $\sum a_{n}$ 收斂 $\implies \lim_{ n \to \infty }a_{n}=0$ (通常用在證明極限發散)
 2. The integral test
 	1. 條件：$f(x)$ 在 $[1,\infty)$ 上連續、恆正、遞減。
 	2. 若 $a_{n}=f(n)$ 且 $\int_{1}^{\infty}f(x)\ dx$ 收斂，則 $\sum a_{n}$ 收斂。反之發散。
 3. 使用求和公式化簡級數，然後求 $n\to \infty$ 時的極限。
 4. 當級數為幾何級數時，$|r|<1$ 時收斂。
+5. p-series test，$p>1$ 時收斂。
+6. 子序列發散，使得原序列發散。
 
 # Tips
 
@@ -423,3 +431,63 @@ Sol:
 那便考慮差分吧，因為有 $a_{n}=a_{1}+\sum_{k=1}^{n-1}d_{k}$。
 $d_{n}=a_{n+1}-a_{n}=\frac{1}{2}(a_{n}+a_{n-1})-a_{n}=-\frac{1}{2}(a_{n}-a_{n-1})\implies d_{n}=-\frac{1}{2}d_{n-1}$ 
 那麼有 $\lim_{ n \to \infty }a_{n}=a_{1}+\sum_{k=1}^{\infty}d_{n}=a_{1}+ \frac{d_{1}}{1+\frac{1}{2}}=a_{1}+ \frac{a_{2}-a_{1}}{\frac{3}{2}}= \frac{a_{1}+2a_{2}}{3}$。
+
+# 大會考
+
+![[Pasted image 20260302200648.png]]
+
+Sol:
+剛看到題你可能很矇逼，但轉念一想下面那東西跟 $x$ 是不是一模一樣？
+於是設：$x=\frac{1}{4+x}\implies x=2\pm \sqrt{ 5 }$，又 $x>0$ 所以負不和。
+
+![[Pasted image 20260302201611.png]]
+
+Sol:
+注意到：$a_{n+1}=\sqrt{ 3a_{n} }$。
+令 $\lim_{ n \to \infty }a_{n}=L$，則 $L=\sqrt{ 3L }\implies L=0\text{ or }3$，$0$ 不合。
+
+![[Pasted image 20260302202330.png]]
+
+Sol:
+利用差分。
+$a_{n+1}-a_{n}=-\frac{1}{3}(a_{n}-a_{n-1})\implies d_{n}=-\frac{1}{3}d_{n-1}=\left( -\frac{1}{3} \right)^{n-1}d_{1}$ 
+$a_{n}=a_{1}+\sum_{i=1}^{n-1}d_{i}$ 
+$\implies \lim_{ n \to \infty }a_{n}=\frac{a}{1-r}=\frac{1}{1+\frac{1}{3}}=\frac{3}{4}$ 
+
+![[Pasted image 20260302203408.png]]
+
+Sol:
+(a)
+令 $b_{n}=\ln a_{n}=n\ln\left( 1+\frac{2}{n} \right)$ 
+這邊我們想用洛必達，當好 $\ln$ 裡面有個 $n$ 在分母，想辦法把它換出來。
+令 $x_{n}=\frac{2}{n}$，則 $x_{n}\to0\text{ as }n\to \infty$。
+此時 $\lim_{ x_{n} \to 0}b_{n}=2\cdot \frac{\ln(1+x)}{x}=2$ 。
+因為 $a_{n}=e^{b_{n}}$，所以 $\lim_{ n \to \infty }a_{n}=\lim_{ n \to \infty }e^{b_{n}}=e^{2}$ 收斂。
+(d)
+看到有除法，我們可以通過相鄰兩相相除將除法消除。
+$\frac{a_{n+1}}{a_{n}}=\frac{n+1}{2}$，當 $n\to \infty$ 時乘法因子不收斂，所以整體不收斂。
+
+![[Pasted image 20260302205020.png]]
+
+Sol:
+(b)
+在嘗試解 (d) 時會解出 $L=1\text{ or }4$，那我們假設 $1\leq a_{n}\leq4$。
+使用歸納法證明。
+當 $k=0$ 時顯然成立。
+假設當 $k=n$ 時命題成立。
+則當 $k=n+1$ 時，因為 $1\leq a_{n}\leq4\implies \frac{1}{4}\leq \frac{1}{a_{n}}\leq1\implies 1\leq \frac{4}{a_{n}}\leq4$，所以根據 M.I. 命題成立。
+(a)
+如果想直接推很難，因為我們不清楚這數列的界。
+但是先從 (b) 下手就好過多了。
+$a_{n+1}-a_{n}= \frac{-(a_{n}-1)(a_{n}-4)}{a_{n}}>0$ (由 $1\leq a_{n}\leq 4$)
+(c) 顯然錯誤
+(d)
+根據單調數列定理，數列收斂。
+設 $\lim_{ n \to \infty }a_{n}=L$，則 $L=5-\frac{4}{L}\implies L=1\text{ or }4$ 但又數列遞增且 $a_{0}=2$，$1$ 不合所以 $L=4$。
+
+![[Pasted image 20260302221128.png]]
+
+Sol:
+注意這題套用 comparison test 的範圍。
+本來我笨笨的選 (A)，但是沒想到有反例：$a_{n}=\frac{1}{n^{2}}$，$b_{n}=-\frac{1}{n}$。
+我們看 (C)，這保證了 $0\leq|b_{n}|\leq|a_{n}|$，利用 comparison test 保證 $b_{n}$ 收斂。

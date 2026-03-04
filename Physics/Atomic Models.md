@@ -6,6 +6,8 @@ Rutherfor, Geiger 與 Marsden 通過 $\alpha$ 粒子散射實驗， 將 $\alpha$
 - 大部分 $\alpha$ 粒子直線通過或小角度散射
 - 少部分粒子大角度偏轉。
 
+![[Pasted image 20260303124455.png]]
+
 此結果與湯姆森提出的模型計算不符。
 
 於是拉塞福提出行星原子模型。表示幾乎所有正電荷與質量都集中在 $10^{-14}\text{ m}$ 處的原子核。而電子在約 $10^{-10}\text{ m}$ 處繞原子核運動。
@@ -75,7 +77,7 @@ $$
 
 ![[Pasted image 20260228204458.png]]
 
-如圖，將少量氣態元素 (模擬理想氣體) 放入玻璃館。管中有兩個金屬電極，並在其上施加高電壓，使得電子釋出並擊打在氣體分子上。氣體發出的電磁輻射通過**準直器(collimator)** 與**繞射光柵(diffraction grating)**，最終在屏幕顯示干涉條紋。
+如圖，將少量氣態元素 (模擬理想氣體) 放入玻璃管。管中有兩個金屬電極，並在其上施加高電壓，使得電子釋出並擊打在氣體分子上。氣體發出的電磁輻射通過**準直器(collimator)** 與**繞射光柵(diffraction grating)**，最終在屏幕顯示干涉條紋。
 
 > [!note]
 > 回憶到，理想氣體忽略了分子間作用力。使得光譜盡可能與單個分子發出的光譜相同。
@@ -139,7 +141,7 @@ $$
 根據第一個假設，有：
 
 $$
-\boxed{v=\frac{n\hbar}{mv}}
+\boxed{v=\frac{n\hbar}{mr}}
 $$
 
 帶入向心力公式：
@@ -185,7 +187,7 @@ $$
 > 想將電子從基態激發到 $n$ 階，需要吸收二階束縛能絕對值之差。而不是 $n$ 階束縛能的絕對值。
 
 > [!warning] 注意
-> 現在更準確的數值 $E_{0}=13.6\text{ eV}$。
+> 現在更準確的數值 $\boxed{E_{0}=13.6\text{ eV}}$。
 
 ## Spectral Lines Predicted by Bohr Model
 
@@ -262,7 +264,7 @@ $$
 >- 原子只吸收特定能量。
 >- Bohr 的量子假設正確。
 
-# Light Amplification by Stimulated Emission or Radiation
+# Light Amplification by Stimulated Emission of Radiation
 
 我們需要先知道兩種電子從高階掉到低階的原因：
 - spontaneous emission：電子經過一段時間後，自發從高階掉往低階。
@@ -271,7 +273,7 @@ $$
 ![[Pasted image 20260301134825.png]]
 
 stimulated emission 有三個特性：
-- 一個光子進入，會造成兩個光子被發射，即所謂的 amplification。
+- 一個光子進入激發，會造成第二個光子被發射，即所謂的 amplification。
 - 發射的兩個光子與入射光子同方向。
 - 發射的兩個光子與入射光子同相 (coherent)。
 
@@ -283,7 +285,7 @@ stimulated emission 有三個特性：
 - 單向
 - 高強度
 - 單頻
-- 同項
+- 同向
 
 下圖展示了雷射的產生過程：
 
@@ -318,12 +320,12 @@ Sol:
 
 ![[Pasted image 20260301163432.png]]
 
-(看解答)
 Sol:
 首先計算光子動量：$p_{\text{p}}=\frac{100\text{ eV}}{c}\approx5.34\times 10^{-26}\text{ kg-m/s}$ 
 而電子取得的能量為：$100\text{ eV}=E_{k}+\phi\implies E_{k}=100-13.56= 86.44\text{ eV}$ 
-所以，電子的動量為：$p_{\text{e}}=\frac{86.44 \times 1.6\times 10^{-19}}{3\times 10^{8}}=4.6\times 10^{-28}\text{ kg-m/s}$ 
-$p+p_{\text{e}}=p_{\text{p}}$ 
+計算電子的動量：$\sqrt{ 2mE_{k} }\approx 5.0\times 10^{-24}\text{ kg-m/s}$ 
+$p_{\text{p}}=p+p_{\text{e}}\implies p\approx -5.0\times 10^{-24}\text{ kg-m/s}$ 
+$v=\frac{p}{m} = -\frac{5.0\times 10^{-24}}{1.67\times 10^{-27}}=3\times 10^{3}\text{ m/s}$ 
 
 ![[Pasted image 20260301170425.png]]
 
@@ -347,3 +349,18 @@ Sol:
 注意，out of its ground 代表要激發到 $n=2$。
 所需能量為：$13.56-\frac{13.56}{4}=10.17\text{ eV}$ 
 所需電位差為 $10.17\text{ V}$。
+
+# 考古
+
+1. 解釋 stimulated emission
+
+Sol:
+電子在激發態時受到一個剛好帶有躍遷能階差的光子誘發，從高階躍遷到低階而放出第二個頻率、方向、相位皆相同的光子。
+
+2. 寫出兩個 stimulated emission 的特性
+
+Sol:
+1. 放出的兩個光子同相 (coherent)
+2. 放出的光子方向相同
+3. 放出的光子頻率相同
+4. 放大作用
