@@ -254,7 +254,7 @@ $$
 
 ## The Integral Test
 
-假設 $f$ 在 $[1,\infty)$ 上**連續**、**恆正**，且**遞減**。令 $a_{n}=f(n)$，則：
+假設 $f$ 在 $[1,\infty)$ 上**連續**、**恆正**，且**遞減**。**令 $a_{n}=f(n)$**，則：
 - 若 $\int_{1}^{\infty}f(x) \ dx$ 收斂，則 $\sum a_{n}$ 收斂。
 - 若 $\int_{1}^{\infty}f(x) \ dx$ 發散，則 $\sum a_{n}$ 發散。
 
@@ -268,9 +268,7 @@ $$
 
 我們定義 p-series 為 $\sum_{n=1}^{\infty} \frac{1}{n^{p}}$。而 p-series 在 $p>1$ 時收斂，在 $p\leq 1$ 時發散。
 
-因為對於 $p<1$，$\lim_{ n \to \infty } \frac{1}{n^{p}}=\infty$。又對於 $p= 0$，$\lim_{ n \to \infty } \frac{1}{n^{p}}=1$。根據 Test for Divergence，此二情況 p-series 發散。
-
-或者，我們可以使用 integral test，對狹積分 $\int_{1}^{\infty} \frac{1}{x^{p}} \ dx$ 來說，當 $1-p<0\implies p>1$ 時收斂。
+因為對於 $p<0$，$\lim_{ n \to \infty } \frac{1}{n^{p}}=\infty$。又對於 $p= 0$，$\lim_{ n \to \infty } \frac{1}{n^{p}}=1$。根據 Test for Divergence，此二情況 p-series 發散。若 $p>0$，當 $p=1$ 時極限發散。又 $\frac{1}{n^{p}}$ 顯然在 $[1,\infty)$ 上連續、恆正且遞減，我們可以使用 integral test。對狹積分 $\int_{1}^{\infty} \frac{1}{x^{p}} \ dx$ 來說，當 $1-p<0\implies p>1$ 時收斂。
 
 > [!warning] 注意
 > 雖然可以用 integral test 測試收斂，但$\sum a_{n}\neq \int_{1}^{\infty}f(x) \ dx$。
@@ -281,7 +279,7 @@ proof:
 利用左端點估計函數的積分，會得到 $a_{1}+a_{2}+\dots+a_{n-1}\geq \int_{1}^{n}f(x) \ dx$。
 (i)
 若 $\int_{1}^{\infty}f(x) \ dx$ 收斂，則有：$a_{2}+a_{3}+\dots+a_{n}\leq \int_{1}^{n}f(x) \ dx\leq \int_{1}^{\infty}f(x) \ dx$。
-因為 $f\geq0$，所以 $s_{n}=a_{1}+\sum_{i=2}^{n}a_{i}\leq \int_{1}^{\infty}f(x) \ dx=M$。可知 $s_{n}$ 有上界。
+因為 $f\geq0$，所以 $s_{n}=a_{1}+\sum_{i=2}^{n}a_{i}\leq a_{1}+\int_{1}^{\infty}f(x) \ dx=M$。可知 $s_{n}$ 有上界。
 又 $s_{n+1}=a_{n+1}+s_{n}\geq s_{n}$ 所以 $\{s_{n}\}$ 遞增。(非嚴格遞增也沒事)
 根據單調有界定理，$\sum a_{n}$ 收斂。
 (ii)
@@ -339,17 +337,136 @@ $$
 
 這可以幫助我們預估實際值 $s$ 的上下界，讓我們得到更準確的預估值。
 
-## Skills For Series Divergence Questions
+> [!warning] 注意
+> 是 $\geq$ 與 $\leq$ 喔，不是 $>$ 或 $<$。
+
+## The Comparison Tests
+
+## The Direct Comparison Test
+
+若 $\sum a_{n}$ 與 $\sum b_{n}$ 為級數且**恆正**，則：
+
+$$
+\begin{align}
+ & (i) \text{若 } \sum b_{n}\text{ 收斂且對所有 } n\text{ 都有 }a_{n}\leq b_{n}\text{，則} \sum a_{n}\text{ 也收斂。} \\
+ & (i) \text{若 } \sum b_{n}\text{ 發散且對所有 } n\text{ 都有 }a_{n}\geq b_{n}\text{，則} \sum a_{n}\text{ 也發散。}
+\end{align}
+$$
+
+proof:
+(i)
+令 $s_{n}=\sum_{i=1}^{n}a_{i}$，$t_{n}=\sum_{i=1}^{n}b_{i}$，$t=\sum_{i=1}^{\infty}b_{i}$。
+$t_{n}\to t$ ，所以對任意 $n$ 都有 $t_{n}\leq t$。
+又 $a_{n}\leq b_{n}\ \forall n$，所以 $s_{n}\leq t\ \forall n$。
+又 $s_{n}$ 單調遞增，根據單調數列定理，$\sum a_{n}$ 收斂。
+(ii)
+此時 $t_{n}\to \infty$，又 $a_{n}\geq b_{n}\ \forall n$，所以 $s_{n}\to \infty$，$\sum a_{n}$ 發散。
+
+使用 direct comparison test 時，我們對 $b_{n}$ 的選擇通常為：
+- p-series
+- 無窮等比級數
+
+## Limit Comparison Test
+
+當某待測級數比已知收斂級數稍大，或比已知發散級數稍小，就無法套用 direct comparison test。此時，可以嘗試 limit comparison test。
+
+若 $\sum a_{n}$ 與 $\sum b_{n}$ 為級數且**恆正**，則：
+
+若 $\lim_{ n \to \infty } \frac{a_{n}}{b_{n}}=c$ ，$\boxed{c>0}$ 且為有限數，則 $a_{n}$ 與 $b_{n}$ 會同時收斂或發散。
+
+> [!warning] 注意
+> 注意到 $c>0$。
+
+若 $\lim_{ n \to \infty } \frac{a_{n}}{b_{n}}=0$ 且 $\sum_{n=1}^{\infty}b_{n}$ 收斂，則 $\sum_{n=1}^{\infty}a_{n}$ 收斂。
+
+若 $\lim_{ n \to \infty } \frac{a_{n}}{b_{n}}=\infty$ 且 $\sum_{n=1}^{\infty}b_{n}$ 發散，則 $\sum_{n=1}^{\infty}a_{n}$ 發散。
+
+proof:
+我們只證第一種情況，後兩種情況留在作業證明。
+令 $m$ 與 $M$ 為兩正數，且使得 $m<c<M$。
+因為 $\lim_{ n \to \infty } \frac{a_{n}}{b_{n}}=c$，所以存在某數 $N$ 使得 $n>N$ 時有：$m< \frac{a_{n}}{b_{n}}<M$。
+$\implies mb_{n}<a_{n}<Mb_{n}$ 
+當 $\sum b_{n}$ 收斂時 $\sum Mb_{n}$ 也收斂，$\sum b_{n}$ 發散時 $\sum mb_{n}$ 也發散。所以，根據 direct comparison test 結論成立。
+
+## Estimating Sums
+
+若我們使用 direct comparison test 來證明 $\sum a_{n}$ 收斂，則我們可以通過比對二者來估計 $\sum a_{n}$。
+
+令：
+
+$$
+\begin{align}
+ & R_{n}=s-s_{n}=a_{n+1}+a_{n+2}+\dots \\
+ & T_{n}=t-t_{n}=b_{n+1}+b_{n+2}+\dots
+\end{align}
+$$
+
+因為 $\forall n$ 都有 $a_{n}\leq b_{n}$，所以 $R_{n}\leq T_{n}$。
+
+若 $\sum b_{n}$ 是 p-series，則我們可使用 11.3 節的方法來預估。若是無窮等比級數，則可用 $\frac{a}{1-r}$ 計算。
+
+# Alternating Series and Absolute Convergence
+
+之前我們討論時，很多定理都只對恆正的級數作用。是時候處理點不是恆正的級數啦～
+
+## Alternating Series
+
+我們將一正一負反覆出現的級數為**交錯級數(alternating series)**。也就是其中每項的形式為：
+
+$$
+a_{n}=(-1)^{n}b_{n-1}\quad\text{ or }\quad a_{n}=(-1)^{n}b_{n}\quad\text{ where } b_{n}\text{ is a positive number }(|a_{n}|)
+$$
+
+我們使用 Alternating Series Test 檢測交錯級數的收斂與否：
+
+若交錯級數：
+
+$$
+\sum_{n=1}^{\infty}(-1)^{n}b_{n}=-b_{1}+b_{2}-b_{3}+b_{4}-b_{5}+\dots\quad (b_{n}>0)
+$$
+
+滿足以下條件：
+
+$$
+\begin{align}
+( & i)\ \  b_{n+1}\leq b_{n}\quad\forall n \\
+(i & i)\ \lim_{ n \to \infty } b_{n}=0
+\end{align}
+$$
+
+則此交錯級數收斂。
+
+在開始證明前，我們先看看下圖。看起來確實會收斂到一個數 $s$ 哈。
+
+![[Pasted image 20260305233957.png]]
+
+proof:
+
+
+> [!warning] 注意
+> 書銘說 Q1 會考這個證明，記得讀喔！
+
+## Estimating Sums of Alternating Series
+
+## Absolute Convergence and Conditional Convergence
+
+## Rearrangements
+
+# Skills For Series Divergence Questions
 
 1. The test for divergence
 	1. $\sum a_{n}$ 收斂 $\implies \lim_{ n \to \infty }a_{n}=0$ (通常用在證明極限發散)
 2. The integral test
 	1. 條件：$f(x)$ 在 $[1,\infty)$ 上連續、恆正、遞減。
 	2. 若 $a_{n}=f(n)$ 且 $\int_{1}^{\infty}f(x)\ dx$ 收斂，則 $\sum a_{n}$ 收斂。反之發散。
+		1. 瑕積分可能需要使用 comparison 幫助求解。
 3. 使用求和公式化簡級數，然後求 $n\to \infty$ 時的極限。
 4. 當級數為幾何級數時，$|r|<1$ 時收斂。
 5. p-series test，$p>1$ 時收斂。
 6. 子序列發散，使得原序列發散。
+7. Comparison Test
+	1. p-series
+	2. 無窮等比級數
 
 # Tips
 
@@ -431,6 +548,72 @@ Sol:
 那便考慮差分吧，因為有 $a_{n}=a_{1}+\sum_{k=1}^{n-1}d_{k}$。
 $d_{n}=a_{n+1}-a_{n}=\frac{1}{2}(a_{n}+a_{n-1})-a_{n}=-\frac{1}{2}(a_{n}-a_{n-1})\implies d_{n}=-\frac{1}{2}d_{n-1}$ 
 那麼有 $\lim_{ n \to \infty }a_{n}=a_{1}+\sum_{k=1}^{\infty}d_{n}=a_{1}+ \frac{d_{1}}{1+\frac{1}{2}}=a_{1}+ \frac{a_{2}-a_{1}}{\frac{3}{2}}= \frac{a_{1}+2a_{2}}{3}$。
+
+![[Pasted image 20260305154515.png]]
+
+Sol:
+這題可以幫助了解之前沒懂的部分。
+注意到你雖然可以想說，以左端點開始算，會小於 $\int_{0}^{\infty}$，但注意到這邊錯誤地從 $0$ 開始算而非 $1$。
+![[Pasted image 20260305154643.png]]根據上圖，可知：$\sum_{i=2}^{6}a_{i}<\int_{1}^{6}f(x)\ dx<\sum_{i=1}^{5}$。
+
+![[Pasted image 20260305155641.png]]
+收斂嗎？
+
+Sol:
+這題用來複習 Substitution Rule。
+令 $f(x)$ 滿足 $f(n)=a_{n}$。
+$\int_{1}^{\infty} \frac{\tan^{-1}x}{1+x^{2}}\ dx=\lim_{ t \to \infty }\int_{1}^{t} \frac{\tan^{-1}x}{1+x^{2}}\ dx$ 
+令 $n=\tan^{-1}x$ 則 $dn=\frac{1}{1+x^{2}}\ dx$。
+$\implies \lim_{ t \to \infty }\int^{\tan^{-1}t}_{\tan^{-1}1}u \ du=\left[ \frac{1}{2}u^{2} \right]^{\tan^{-1}t}_{\tan^{-1}1}=\frac{3\pi^{2}}{32}$ 
+By the Integral Test，級數收斂。
+這題有兩點要注意，首先是 substitution rule 的應用，其次是替換後積分上下界的改變。
+
+![[Pasted image 20260305161513.png]]
+
+Sol:
+再複習一題 Integration by Parts。
+令 $f(x)$ 滿足 $f(n)=a_{n}$。
+$\lim_{ t \to \infty }\int_{2}^{t} \frac{\ln x}{x^{2}}\ dx$，令 $u = \ln x$ 則 $du=\frac{1}{x} \ dx$ 且 $x=e^{u}$。
+$\implies \lim_{ t \to \infty }\int_{\ln2}^{\ln t}ue^{-u}\ du$ 使用 Integration by Parts
+令 $k=u$，$dv=e^{-u}\ du$，則 $dk = du$，$v=-e^{-u}\ du$。
+$\implies \lim_{ t \to \infty }\left( [-ue^{-u}]^{\ln t}_{\ln 2}+\int_{\ln 2}^{\ln t}e^{-u}\ du \right)=\frac{\ln2-1}{2}$ 
+By the Integral Test, 級數收斂。
+
+![[Pasted image 20260305171914.png]]
+找到 $p$ 的範圍使級數收斂。
+
+Sol:
+因為上述東西在 $[1,\infty)$ 上連續、遞減、恆正，所以可以使用 Integral Test。
+令 $f(x)$ 滿足 $f(n)=a_{n}$。
+$\lim_{ t \to \infty }\int_{1}^{t} \frac{\ln x}{x^{p}} \ dx$ 令 $u=\ln x$ 則 $du=\frac{1}{x}\ dx$。
+$\implies \lim_{ t \to \infty }\int_{\ln1}^{\ln t} \frac{u}{e^{(p-1)u}} \ du=\lim_{ t \to \infty }\left( \left[ \frac{e^{(1-p)u}u}{1-p} \right]^{\ln t}_{\ln 1}-\int_{\ln1}^{\ln t} \frac{e^{(1-p)u}}{1-p} \ du \right)$ 
+$\implies$ 上述收斂，等於求 $\int_{\ln 1}^{\ln t} e^{(1-p)u} \ du$ 收斂，即，$\lim_{ u \to \infty } \frac{e^{(1-p)u}}{1-p}$ 收斂。
+$\implies$ 對 $u\to \infty$，僅當 $1-p<0$ 時極限存在。
+所以，$p>1$ 時級數收斂。
+
+![[Pasted image 20260305180823.png]]
+
+Sol:
+$\int_{n+1}^{\infty} \frac{1}{x(\ln x)^{2}}\ dx\leq s-s_{n}\leq \int_{n}^{\infty} \frac{1}{x(\ln x)^{2}} \ dx$ 
+我們要解 $\int_{n}^{\infty} \frac{1}{x(\ln x)^{2}} \ dx<0.01$ $[\text{substitution }u=\ln x]$ 
+$\lim_{ t \to \infty }\int^{\ln t}_{\ln n}u^{-2} \ du=\lim_{ t \to \infty }\left( \frac{1}{\ln n}-\frac{1}{\ln t} \right)=\frac{1}{\ln n}<0.01$  
+$\implies n>e^{100}$ 
+
+![[Pasted image 20260305204022.png]]![[Pasted image 20260305204040.png]]
+
+Sol:
+(a)
+觀察下圖，可知：$\sum_{i=1}^{n} \frac{1}{n}>\int_{1}^{n+1} \frac{1}{x} \ dx$。其實所求就是長方形區域扣掉曲線下面積。
+又 $\int_{1}^{n+1} \frac{1}{x} \ dx=\ln(n+1)>\ln n$，所以有：$t_{n}=1+\frac{1}{2}+\frac{1}{3}+\dots+\frac{1}{n}-\ln n>0$。
+![[Pasted image 20260305204228.png]]
+(b)
+我們將 $t_{n}-t_{n+1}$ 視為整塊弧形面積剪掉下面的長方形。
+因為 $\int_{n}^{n+1} \frac{1}{x} \ dx=[\ln(n+1)-\ln n]$，所以再減去小長方形面積就是：$[\ln(n+1)-\ln n]- \frac{1}{n+1}$。
+且因為 $t_{n}-t_{n+1}>0$，所以此級數單調遞減。
+![[Pasted image 20260305204345.png]]
+(c)
+由於函數單調遞減，且恆正，所以級數 $0<t_{n}<t_{1}=1$ 有界。
+由 M.S.T.，級數收斂。
 
 # 大會考
 
