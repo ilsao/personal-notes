@@ -388,6 +388,10 @@ proof:
 $\implies mb_{n}<a_{n}<Mb_{n}$ 
 當 $\sum b_{n}$ 收斂時 $\sum Mb_{n}$ 也收斂，$\sum b_{n}$ 發散時 $\sum mb_{n}$ 也發散。所以，根據 direct comparison test 結論成立。
 
+> [!note]
+> 遇到判斷 $\sum_{n=1}^{\infty}f(g(n))$ 形式的題目，嘗試在 $g(n)$ 中找到可判斷收斂性的東西 $g(n)=q+h(n)$，其中 $h(n)\to0$ as $n\to \infty$。
+> 然後，取 $b_{n}=h(n)$，並利用 $\lim_{ n \to \infty } \frac{f(g(n))}{h(n)}=\lim_{ x \to 0 } \frac{f(q+x)}{x}$ 與洛必達求解。
+
 ## Estimating Sums
 
 若我們使用 direct comparison test 來證明 $\sum a_{n}$ 收斂，則我們可以通過比對二者來估計 $\sum a_{n}$。
@@ -422,7 +426,7 @@ $$
 若交錯級數：
 
 $$
-\sum_{n=1}^{\infty}(-1)^{n}b_{n}=-b_{1}+b_{2}-b_{3}+b_{4}-b_{5}+\dots\quad (b_{n}>0)
+\sum_{n=1}^{\infty}(-1)^{n-1}b_{n}=b_{1}-b_{2}+b_{3}-b_{4}+b_{5}-b_{6}+\dots\quad (b_{n}>0)
 $$
 
 滿足以下條件：
@@ -441,16 +445,81 @@ $$
 ![[Pasted image 20260305233957.png]]
 
 proof:
+首先考慮以**偶數終止的部分和(even partial sum)**：
+$s_{2}=b_{1}-b_{2}\geq0$ 
+$s_{4}=s_{2}+b_{3}-b_{4}\geq s_{2}$ 
+$s_{2n}=s_{2n-2}+b_{2n-1}-b_{2n}\geq s_{2n-2}$ 
+所以，$0\leq s_{2}\leq s_{4}\leq\dots\leq s_{2n}$。
+換個角度，我們可以視為 $s_{2n}=b_{1}-(b_{2}-b_{3})-(b_{4}-b_{5})-\dots-(b_{2n-2}-b_{2n-1})-b_{2n}$。
+因為 $\{ b_{n} \}$ 非增，所以有：$s_{2n}\leq b_{1}\ \forall n$。
+綜上所述，$\{ s_{2n} \}$ 遞增且有界。由單調數列定理，$\{ s_{2n} \}$ 收斂。
+令 $\lim_{ n \to \infty }s_{2n}=s$。
+現在考慮以奇數終止的部分和：
+$\lim_{ n \to \infty }s_{2n+1}=\lim_{ n \to \infty }(s_{2n}+b_{2n+1})=\lim_{ n \to \infty }s_{2n}+\lim_{ n \to \infty }b_{2n+1}=s+0=s$ 
+因為 even partial sum 與 odd partial sum 都收斂到同一個數 $s$，我們有 $\lim_{ n \to \infty }s_{n}=s$。所以，級數收斂。
 
+> [!error] 小心
+> 確保你區分的出以偶數終止的部分和與偶數項和。
+> 前者會連加到某個偶數，後者只將區間內的偶數項相加。
 
 > [!warning] 注意
 > 書銘說 Q1 會考這個證明，記得讀喔！
 
+> [!note]
+> 只要交錯級數不滿足 $\lim_{ n \to \infty }b_{n}=0$，該級數就不可能收斂。
+> 因為根據 The Test for Divergence，級數收斂必有 $\lim_{ n \to \infty }a_{n}=0$。
+
 ## Estimating Sums of Alternating Series
+
+若 $s=\sum(-1)^{n-1}b_{n}$，其中 $b_{n}>0$ 為滿足 Alternating Series Test 的交錯級數，則：
+
+$$
+|R_{n}|=|s-s_{n}|\leq b_{n+1}
+$$
+
+proof:
+在 Alternating Series Test 的證明過程中，我們知道 $s$ 比所有 even partial sum 大，比所有 odd partial sum 小。
+那麼，$s$ 會夾在連續兩個部分和之間。
+所以，$|s-s_{n}|\leq|s_{n+1}-s_{n}|=b_{n+1}$。
+
+> [!warning] 注意
+> 這種 estimate 僅對滿足 Alternating Series Test 的交錯級數生效，其他類型的級數不可套用。
 
 ## Absolute Convergence and Conditional Convergence
 
+若一個級數 $\sum a_{n}$ 滿足 $\sum|a_{n}|$ 收斂，則我們稱此級數**絕對收斂(absolutely convergnet)**。
+
+若一個級數 $\sum a_{n}$ 收斂，但不滿足絕對收斂，即 $\sum|a_{n}|$ 不收斂，我們稱此級數**條件收斂(conditional convergence)**。
+
+此處應有定理：**若級數 $\sum a_{n}$ 絕對收斂，則此級數收斂。**
+
+proof:
+注意到級數有以下關係：$0\leq a_{n}+|a_{n}|\leq2|a_{n}|$。
+因為 $\sum a_{n}$ 絕對收斂，所以 $\sum|a_{n}|$ 收斂。
+那麼由 direct comparison test，$\sum(a_{n}+|a_{n}|)$ 收斂。
+因為 $\sum a_{n}=\sum(a_{n}+|a_{n}|)-\sum|a_{n}|$，為兩個收斂級數的差，所以亦收斂。
+
+> [!note]
+> 對一個非規律在正負間變化的數列求級數，無法套用 Alternating Series Test。
+> 但是，本章的絕對收斂對這種級數的收斂判斷非常有幫助。
+
 ## Rearrangements
+
+通過重排無窮級數，我們可能：
+- 對絕對收斂來說：與重排前收斂到同一個值 $s$。
+- 對條件收斂來說：重排可使得級數收斂到任意實數。
+
+例如：
+
+對條件收斂級數 $1-\frac{1}{2}+\frac{1}{3}-\frac{1}{4}+\dots=\ln 2$。
+
+若我們將上式乘 $\frac{1}{2}$，則有：$\frac{1}{2}-\frac{1}{4}+\frac{1}{6}-\frac{1}{8}+\dots=\frac{1}{2}\ln2$。
+
+填上一些 $0$：$0+\frac{1}{2}+0-\frac{1}{4}+0-\frac{1}{6}+0-\frac{1}{8}+\dots=\frac{1}{2 }\ln2$。
+
+我們將兩式相加得到：$1+\frac{1}{3}-\frac{1}{2}+\frac{1}{5}+\dots=\frac{3}{2}\ln 2$。
+
+雖然等號左側與原式看似相同，但等號右側卻得到完全不同的值。
 
 # Skills For Series Divergence Questions
 
@@ -464,9 +533,11 @@ proof:
 4. 當級數為幾何級數時，$|r|<1$ 時收斂。
 5. p-series test，$p>1$ 時收斂。
 6. 子序列發散，使得原序列發散。
-7. Comparison Test
+7. Direct/Limit Comparison Test
 	1. p-series
 	2. 無窮等比級數
+8. Alternating Sereis Test
+	1. Conditional convergence
 
 # Tips
 
@@ -615,6 +686,85 @@ Sol:
 由於函數單調遞減，且恆正，所以級數 $0<t_{n}<t_{1}=1$ 有界。
 由 M.S.T.，級數收斂。
 
+![[Pasted image 20260306163745.png]]
+上圖收斂嗎？
+
+Sol:
+第一次寫我有錯誤觀念，利用 $1+\frac{1}{n}>1\ \forall n\geq1$ 與 p-series test。但其實，p-series test 要求 $p$ 為常數，所以不能在此套用。
+取 $a_{n}=\frac{1}{n^{1+1/n}}$ 與 $b_{n}=\frac{1}{n}$ 做 comparison。
+$\lim_{ n \to \infty } \frac{a_{n}}{b_{n}}=\frac{n}{n^{1+1/n}}=\lim_{ n \to \infty } \frac{1}{n^{1/n}}$ 
+分母不好算，先算 $\lim_{ x \to \infty }x^{1/x}$。
+取 $\ln$，$\lim_{ x \to \infty } \frac{1}{x}\ln x\overset{H}{=}\lim_{ x \to \infty } \frac{1}{x}=0$，帶回得 $\lim_{ x \to \infty }x^{1/x}=e^{0}=1$。
+所以：$\lim_{ n \to \infty } \frac{1}{n^{1/n}}=1$。
+又 $\sum \frac{1}{n}$ 為 harmonic series 發散，由 the limit comparison test，$\sum_{n=1}^{\infty} \frac{1}{n^{1+1/n}}$ 發散。
+
+![[Pasted image 20260306170236.png]]
+
+Sol:
+思考一會兒後寫出來了，但放這給你提個醒。
+當 $n>e$ 時 $\frac{1}{n^{p}\ln n}\leq \frac{1}{n^{p}}$，套用 direct comparison test 即可。
+
+![[Pasted image 20260306173058.png]]
+
+Sol:
+(a)
+因為 $\lim_{ n \to \infty } \frac{a_{n}}{b_{n}}=0$，所以存在某數 $N$ 使得 $n>N$ 時 $| \frac{a_{n}}{b_n}-0|<1$。
+$\implies a_{n}<b_{n}$ 因為二者皆恆正。
+由 direct comparison test 可知，因為 $b_{n}$ 收斂，所以 $a_{n}$ 也收斂。
+(b) (ii)
+可能第一眼看，不知道選什麼跟他 comparison。
+那麼我們先試試求導，因為後面大概率得用洛必達。
+$\left( 1-\cos\left( \frac{1}{x^{2}} \right) \right)'= \frac{-2\sin \frac{1}{x^{2}}}{x^{3}}$，看起來，我們得找一個求導後也有 $\frac{1}{x^{3}}$ ，或比 $\frac{1}{x^{3}}$ 大的東西。
+取 $b_{n}=\frac{1}{n^{2}}$。
+則 $\lim_{ n \to \infty } \frac{a_{n}}{b_{n}}= \lim_{ n \to \infty }\frac{1-\cos\left( \frac{1}{n^{2}} \right)}{\frac{1}{n^{2}}}=\lim_{ x \to \infty }\frac{1-\cos\left( \frac{1}{x^{2}} \right)}{\frac{1}{x^{2}}}\overset{H}{=}\lim_{ x \to \infty } \frac{\frac{-2\sin \frac{1}{x}}{x^{3}}}{-\frac{2}{x^{3}}}=\lim_{ x \to \infty }\sin \frac{1}{x^{2}}=0$ 。
+因為 $b_{n}$ 為 $p=2>1$ 的 p-series，所以由 (a) 得 $a_{n}$ 收斂。
+注意到：上面 $\lim_{ n \to \infty } \frac{a_{n}}{b_{n}}$ 不將除以 $\frac{1}{n^{2}}$ 換成乘 $n^{2}$，是因為這樣 $\lim_{ n \to \infty }n^{2}\left( 1-\cos\left( \frac{1}{n^{2}} \right) \right)$ 會變成 $\infty \cdot0$ 的形式，還是要除下去用洛必達解。
+
+![[Pasted image 20260306180709.png]]
+
+Sol:
+法 1：
+令 $s_{n}=\sum_{i=1}^{n}a_{i}$，因為 $\sum a_{n}$ 收斂，所以令 $\lim_{ n \to \infty }s_{n}=s$。
+令 $t_{n}=\sum_{i=1}^{n}a_{i}^{2}$。
+對任意 $n\geq1$， $0\leq t_{n}=\sum_{i=1}^{n}a_{i}^{2}\leq \left( \sum_{i=1}^{n}a_{i} \right)^{2}=s_{n}^{2}\leq s^{2}$ 
+所以 $t_{n}$ 有界且遞增，根據 M.S.T $\sum a_{n}^{2}$ 收斂。
+法 2：
+因為 $\sum a_{n}$ 收斂，所以 $\lim_{ n \to \infty }a_{n}=0$。
+根據極限定義，存在一個數 $N$ 使得 $n>N$ 時有 $|a_{n}-0|<1$。
+因為 $a_{n}\geq 0$，所以有 $0\leq a_{n}^{2}<a_{n}<1$。
+根據 the direct comparison test，級數收斂。
+
+![[Pasted image 20260307204906.png]]
+上級數是條件收斂、絕對收斂，還是發散？
+
+Sol:
+首先，對級數套用 alternating series test。
+$\lim_{ n \to \infty }b_{n}=0$ 且 $b_{n+1}\leq b_{n}$，所以級數收斂。
+現在判斷 $\sum_{n=2}^{\infty}| \frac{(-1)^{n}}{n\ln n}|$ 是否收斂。
+用 direct comparison 或 limit comparison 都無法判斷，此級數也不是 p-series 或無窮等比級數。所以我們剩下一招， Integral test。
+$\lim_{ t \to \infty }\int_{2}^{t} \frac{1}{x\ln x} \ dx\ \left[ u=\ln x\ du=\frac{1}{x} \ dx \right]$ 
+$=\lim_{ t \to \infty }\int_{\ln 2}^{\ln t} \frac{1}{u} \ du=\lim_{ t \to \infty }[\ln u]^{\ln t}_{\ln2}=\infty$ 發散。
+所以，此級數是條件收斂。
+
+![[Pasted image 20260307213128.png]]
+
+Sol:
+(a)
+法一：數學歸納法
+法二：
+$h_{n}=1+\frac{1}{2}+\frac{1}{3}+\dots+\frac{1}{n}$ 
+$s_{n}=1-\frac{1}{2}+\frac{1}{3}-\dots+ \frac{(-1)^{n-1}}{n}$ 
+$h_{2n}=1+\frac{1}{2}+\frac{1}{3}+\dots+ \frac{1}{2n}$ 
+$s_{2n}=1-\frac{1}{2}+\frac{1}{3}-\dots- \frac{1}{2n}$ 
+我們將 $s_{2n}$ 正負分開考慮：
+$s_{2n}=\left( 1+\frac{1}{3}+\dots+\frac{1}{2n-1} \right)-\left( \frac{1}{2}+\frac{1}{4}+\dots+\frac{1}{2n} \right)=\left( 1+\frac{1}{3}+\dots+\frac{1}{2n-1} \right)- \frac{1}{2}h_{n}$ 
+然後將 $h_{2n}$ 奇偶項分開考慮：
+$h_{2n}=\left( 1+\frac{1}{3}+\dots+\frac{1}{2n-1} \right)+\left( \frac{1}{2}+\frac{1}{4}+\dots+\frac{1}{2n} \right)$ 
+那麼，$s_{2n}=\left( h_{2n}-\frac{1}{2}h_{n} \right)-\frac{1}{2}h_{n}=h_{2n}-h_{n}$。
+(b)
+$\lim_{ n \to \infty }s_{2n}=\lim_{ n \to \infty }(h_{2n}-h_{n})=\lim_{ n \to \infty }[(h_{2n}-\ln(2n))-(h_{n}-\ln n)+(\ln(2n)-\ln n)]$  
+$=\gamma-\gamma+\ln2=\ln2$ 
+
 # 大會考
 
 ![[Pasted image 20260302200648.png]]
@@ -674,3 +824,86 @@ Sol:
 注意這題套用 comparison test 的範圍。
 本來我笨笨的選 (A)，但是沒想到有反例：$a_{n}=\frac{1}{n^{2}}$，$b_{n}=-\frac{1}{n}$。
 我們看 (C)，這保證了 $0\leq|b_{n}|\leq|a_{n}|$，利用 comparison test 保證 $b_{n}$ 收斂。
+
+![[Pasted image 20260308201311.png]]
+
+Sol:
+(A)
+法一：
+如果知道不等式 當 $x>0$ 時 $\tan^{-1}x<x$，可以很快用 direct comparison test 得出結果。
+法二：
+取 $b_{n}=\frac{1}{1+n^{2}}$ 做 limit comparison test。
+$\lim_{ n \to \infty } \frac{a_{n}}{b_{n}}= \lim_{ n \to \infty }\frac{\tan^{-1}\left( \frac{1}{1+n^{2}} \right)}{\frac{1}{1+n^{2}}}=\lim_{ x \to 0 } \frac{\tan^{-1}x}{x}\overset{H}{=}\lim_{ x \to 0 } \frac{1}{1+x^{2}}=1$ 
+因為 $b_{n}=\frac{1}{1+n^{2}}\leq \frac{1}{n^{2}}$ 又 $\frac{1}{n^{2}}$ 為 $p=2>1$ 的 p-series，所以 $b_{n}$ 收斂。
+由 the limit comparison test，極限為 $1>0$ 且 $b_{n}$ 收斂，所以 $a_{n}$ 收斂。
+(B)
+取 $b_{n}=\frac{1}{n}$ 做 the limit comparison test，上式發散。
+(C)
+Alternating Series Test，$\lim_{ n \to \infty }b_{n}\neq 0$，發散。
+(D)
+$\sum_{n=2}^{\infty}\ln\left( 1-\frac{1}{n} \right)=\sum_{n=2}^{\infty}\ln\left( \frac{n-1}{n} \right)=\sum_{n=2}^{\infty}(\ln(n-1)-\ln n)$ 
+令 $s_{n}$ 為 $n=2$ 開始的 partial sum，則：
+$s_{n}=(\ln1-\ln 2)+(\ln 2-\ln3)+\dots+(\ln(n-1)-\ln n)=\ln 1-\ln n$ 
+$\sum_{n=2}^{\infty}\ln\left( 1-\frac{1}{n} \right)=\lim_{ n \to \infty }s_{n}=-\infty$ 發散
+
+![[Pasted image 20260308204622.png]]
+
+Sol:
+(a)
+這選項得用 Integral test，我沒想到。
+$\lim_{ t \to \infty }\int_{1}^{t}xe^{-x^{2}}\ dx\ [u=x^{2} \ du=2x \ dx]$ 
+$=\lim_{ t \to \infty } \frac{1}{2}\int_{1}^{t^{2}}e^{-u}\ du=-\frac{1}{2}[e^{-u}]^{t^{2}}_{1}$ 收斂
+(b)
+收斂 By Alternating Series Test。
+(c)
+取 $b_{n}=\frac{1}{n}$ 做 limit comparison test，發散。
+(d)
+$\frac{\sin n}{n^{2}+1}\leq \frac{1}{n^{2}+1}$，By direct comparison test，收斂。
+
+![[Pasted image 20260308210110.png]]
+
+Sol:
+這題我弄錯的選項是 (a)。
+(a)
+取 $b_{n}=\frac{1}{n}$，則 $\lim_{ n \to \infty } \frac{a_{n}}{b_{n}}= \lim_{ n \to \infty }\frac{\sin\left( \frac{1}{n} \right)}{\frac{1}{n}}=\lim_{ x \to 0 } \frac{ \sin x}{x}=1$。
+注意到當 $\lim_{ x \to 0 } \frac{\sin x}{x}=1$，但 $\lim_{ x \to \infty } \frac{\sin x}{x}=0$ by squeeze theorem (不是 L'Hospital)。
+
+![[Pasted image 20260308211237.png]]
+
+Sol:
+顯然，對任意常數 $p$ 都有 $\lim_{ n \to \infty } \frac{1}{n(\ln n)^{p}}=0$。
+並且 $x>e^{-p}$ 時 $\left[ \frac{1}{x(\ln x)^{p}} \right]'=\frac{-((\ln x)^{p-1}\cdot(p+\ln x))}{[x(\ln x)^{p}]^{2}}<0$ $\forall p$，所以 $p$ 的範圍為 $(-\infty,\infty)$。
+
+![[Pasted image 20260308213732.png]]
+
+Sol:
+(A) 正確
+(B)
+錯，若 $a_{n}=\frac{(-1)^{n-1}}{n}$，則 $|a_{n}|+a_{n}=\begin{cases} \frac{2}{n} & \text{if n is even} \\ 0 & \text{if n is odd}\end{cases}$ 發散。
+(C)
+錯，若 $a_{n}=-1$，則 $|a_{n}|+a_{n}=0\implies \sum(|a_{n}|+a_{n})$ 收斂，但 $\sum a_{n}$ 發散。
+(D)
+錯，若 $a_{n}= \frac{(-1)^{n-1}}{\sqrt{ n }}$ 則收斂 by alternating series test，但 $a_{n}^{2}=\frac{1}{n}$ 卻發散。
+
+![[Pasted image 20260308214655.png]]
+
+Sol:
+(A)
+錯，很陰險。
+反例：$a_{n}=\frac{(-1)^{n}}{n}$ 收斂，但 $\sum(-1)^{n}a_{n}=\sum \frac{1}{n}$ 發散。
+
+![[Pasted image 20260308220200.png]]
+這東西收斂嗎？
+
+Sol:
+即判斷 $\sum_{n=1}^{\infty}\ln\left( 1+\frac{1}{n^{2}} \right)$ 的收斂性。
+取 $b_{n}=\frac{1}{n^{2}}$ 做 limit comparison test，$\lim_{ n \to \infty } \frac{a_{n}}{b_{n}}= \lim_{ n \to \infty }\frac{\ln\left( 1+\frac{1}{n^{2}} \right)}{\frac{1}{n^{2}}}=\lim_{ x \to 0 } \frac{\ln (1+x)}{x}=1$。
+因為 $b_{n}$ 收斂，所以級數收斂 by the limit comparison test。
+
+![[Pasted image 20260308221058.png]]
+判斷收斂性？
+
+Sol:
+這題很有迷惑性，你可能會以為 $\tan x$ 是週期函數，所以這東西不會遞減而發散。
+但是，注意觀察 $\tan x$ 在 $\left( 0, \frac{\pi}{2} \right)$ 遞增，所以在 $n$ 足夠大時，$\frac{\pi}{n}$ 會使得 $\tan\left( \frac{\pi}{n} \right)$ 遞減。
+又 $\lim_{ n \to \infty } \tan\left( \frac{\pi}{n} \right)=0$，所以級數收斂 By Alternating Series Test。
