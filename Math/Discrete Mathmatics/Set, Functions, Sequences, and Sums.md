@@ -37,7 +37,7 @@ $$
 > $\phi \not\in\{0\}$ 因為 $\{0\}$ 不包含空集合 $\{ \ \}$。
 > 但是，$\phi \subset\{0\}$，因為 $\phi$ 是任意集合的子集合。
 
-> [!note]
+> [!error] 超級無敵大提醒！！！
 > 使用 $\in$ 時，直接對左側對象判斷是否在右側中出現。
 > 使用 $\subset$ 時，先對左側對象拆大括號後，再判斷是否在右側中出現。
 
@@ -217,4 +217,169 @@ $$
 $$
 |A\cup B|=|A|+|B|-|A\cap B|
 $$
+
+# Functions
+
+我們定義函數 $f:A\to B$ 為：對**每個** $A$ 中的元素，都可以找到**一個** $B$ 中對應的元素。
+
+其中，我們稱：
+- $A$：**定義域(domain)** 
+- $B$：**對應域(codomain)** 
+- $f(A)$：**值域(range)** 
+
+並且有：$f(A)\subseteq B$。
+
+而從 $A$ 中取一些值作為集合 $S$，則 $f(S)$ 被稱為函數的**映像(image)**，$f(S)\subseteq f(A)$。
+
+> [!warning] 注意
+> $f(x)=\frac{1}{x}$ 不是 $\mathbb{R}\to \mathbb{R}$ 的函數，因為 $0\in \mathbb{R}$，但 $f(0)\not\in \mathbb{R}$。
+> 而 $f(x)=\pm x$ 不是函數，因為一個輸入對應到多個輸出。
+
+## One-to-one Function
+
+回憶一下 1-1 函數的定義：
+
+若對 $f$ 來說，$x_{1}\neq x_{2}\iff f(x_{1})\neq f(x_{2})$ 則稱 $f$ 為一對一函數。
+
+## Onto and Surjective
+
+若 $f:A\to B$ 中，$\forall b\in B$ 都 $\exists a\in A$ 使得 $f(a)=b$，則 $f$ 被稱為**映成(onto)** 或**蓋射(surjective)**。
+
+> [!note]
+> $|A|<|B|$ 時，函數不可能 onto。
+
+例如：$f:\mathbb{Z}^{+}\to S=\{ \text{偶正整數} \}$ 且 $f(x)=2x$，則 $f$ 為映成函數。
+
+因為，對任意 $s\in S$，$s$ 為偶正整數，則 $\frac{s}{2}$ 為正整數。
+
+取 $x=\frac{s}{2}$，有 $f(x)=s\quad\forall s\in S$。
+
+若一個函數同時是映成與一對一函數，則稱其為**雙射(bijection)**。
+
+我們統整一波：
+
+| 1-1              | onto             | bijection     |
+| ---------------- | ---------------- | ------------- |
+| $\|A\|\leq\|B\|$ | $\|A\|\geq\|B\|$ | $\|A\|=\|B\|$ |
+
+## Compositions of Functions
+
+**若有 $f:A\to B$ 與 $g:C\to A$，則 $f\circ g:C\to B$。**
+
+讓我們試證兩個東西。
+
+若 $f$ 與 $f\circ g$ 都是一對一函數，則 $g$ 是否為一對一函數？
+
+proof:
+我們很難從 $f$ 出發，考慮從 $g$ 出發。
+設 $g(x)=g(y)$。
+因為 $f$ 是一對一函數，所以有 $f(g(x))=f(g(y))$。
+因為 $f\circ g$ 是一對一函數，有 $x=y$。
+所以，$g$ 是一對一函數。
+
+若 $f$ 與 $f\circ g$ 都是映成函數，則 $g$ 是否為映成函數？
+
+proof:
+使用 $\neg q\to \neg p$。
+設 $g$ 不是映成函數，所有 $\exists c\in C$ 使得 $\forall b\in B$ 都有 $g(b)\neq c$。
+那麼，$f(g(b))\neq c$。
+但是，$g(b)\in C\not\in A$，無法保證 $f$ 不是映成函數。
+例如：
+$f:\{ -1,1 \}\to \{ 1 \},f(x)=x^{2}$ 
+$g:\{ 1 \}\to \{ -1,1 \},g(x)=x$ 
+注意， $g$ 的對應域不等於值域。
+顯然 $f$ 是映成函數，而 $f\circ g:\{ 1 \}\to \{ 1 \}$ 也是映成函數。
+所以此命題不成立。
+
+# Inverse Funcitons
+
+一個擁有反函數的函數 $f$，必定是一個一對一函數。並且，$f^{-1}(b)=a$ 與 $f(f^{-1}(x))=x$。
+
+# Sequences and Summations
+
+注意到，數列的通項公式可能會由 $n$ 從零或一開始而不同。
+
+讓我們嘗試證明：$\sum_{k=1}^{n}k^{2}= \frac{n(n+1)(2n+1)}{6}$。
+
+proof:
+我們使用歸納法。
+當 $k=1$ 時，$\frac{1(2)(3)}{6}=1$ 正確。
+假設當 $k=n$ 時命題正確。
+當 $k=n+1$ 時，$\sum_{i=1}^{n+1}i^{2}=\sum_{i=1}^{n}i^{2}+(n+1)^{2}= \frac{n(n+1)(2n+1)}{6}+(n^{2}+2n+1)$ 
+$= \frac{(n+1)(n+2)(2(n+1)+1)}{6}$ 命題正確。
+
+# Cardinality
+
+$A$ 與 $B$ 集合擁有相同的基數 $\iff$ 兩集合間存在一個函數 $f$ 使得兩集合一對一對應。(1-1 與 onto，即雙射 bijection)
+
+我們記為：
+
+$$
+|A|=|B|
+$$
+
+## Exercise
+
+讓我們來數數吧！問：$\mathbb{N}=\{ 0,1,2,\dots \}$ 和 $\{ 3n|n\in \mathbb{N} \}$，兩集合哪個元素較多？
+
+Sol:
+令 $f:\mathbb{N}\to \{ 3n|n\in \mathbb{N} \}$ 為 $f(x)=3x$ 即可。
+因為 $f$ 是一對一且映成函數，所以 $|\mathbb{N}|=|\{ 3n|n\in \mathbb{R} \}|$。
+
+> [!note]
+> 整數的基數與正整數的基數相同。
+
+## Countable
+
+當一個集合有限，或基數與 $\mathbb{Z}^{+}$ 或 $\mathbb{N}$ 相同，則此集合**可數(countable)**。
+
+> [!note]
+> 一個集合是有限，則此集合元素有限，或可以找到一個方法將元素排好，然後按照 $1,2,3,\dots$ 數。
+> 能不能數完不影響是否可數，例如，整數是可數集合。
+
+我們可以通過如下方法數整數：
+
+| 數法    | 1   | 2   | 3   | 4   | 5   | ... |
+| ----- | --- | --- | --- | --- | --- | --- |
+| 整數的排法 | 0   | 1   | -1  | 2   | -2  | ... |
+
+我們也可以嚴謹證明：
+
+proof:
+我們要證明 $\mathbb{Z}$ 可數，就是證明 $\mathbb{Z}$ 的基數與 $\mathbb{Z}^{+}$ 相同。
+即，存在雙射函數 $f:\mathbb{Z}\to \mathbb{Z}^{+}$。
+令 $f(x)=\begin{cases}2x & \text{if }x\in \{ 1,2,3,\dots \} \\ |2x|+1 & \text{if }x\in \{ 0,-1,-2,\dots \}\end{cases}$。
+那麼，$f:\mathbb{Z}\to \mathbb{Z}^{+}$ 為雙射函數。
+所以，整數集合是可數集合。
+
+## Exercise
+
+證明正奇數是可數集合。
+
+proof:
+$f:\mathbb{N}^{+}\to \{ \text{positive odd intergers} \}$ 
+令 $f(x)=2n-1$，則 $f$ 為雙射函數。
+所以正奇數是可數集合。
+
+> [!note]
+> 注意到，雙射是雙向的，所以可以從 $\mathbb{N}^{+}$ 出發，也可以從 $\{ \text{positive odd intergers} \}$ 出發。
+
+## Schroder-Bernstein Theorem
+
+在證明兩集合相等時，找出雙射函數有時並不容易。我們使用 Schroder-Bernstein Theorem，來回找一個一對一函數即可。
+
+Schroder-Bernstein Theorem 是這樣描述的：若 $|A|\leq|B|$ 且 $|B|\leq|A|$，則 $|A|=|B|$。也就是說，若存在一對一函數 $f$ 將 $A$ 映射到 $B$，且存在一對一函數 $g$ 將 $B$ 映射到 $A$，則 $A$ 與 $B$ 一一對應。
+
+## Hilbert's Paradox
+
+Hilbert's infinite hotel 擁有無限多個房間，且每個房間都滿人。
+
+此時，分三種情況：
+- 有一位客人要入住：將所有客人向後移動一位房間號，這樣 $1$ 號房間空出，那位客人可以注入。即，$\infty+1=\infty$。
+- 有 $\infty$ 位可數客人要入住：若此時來了 $\infty$ 位**可數** (注意，此條件必須) 客人，只需要將所有客人移動到房號 $\times2$ 的房間，就空出了正奇數個房間。因為正奇數有無窮多個，所以剛好夠 $\infty$ 個可數客人入住。即，$\infty+\infty=\infty$。
+- 有 $\infty$ 組 $\infty$ 位客人入住：注意到**質因數分解結果唯一**，我們將原本住在酒店中的旅客稱為第 $0$ 團。只需將第 $n$ 團第 $k$ 位客人安排在 $2^{n}3^{k}$ 號房間，就可使每人都有房間可住。即，$\infty+\infty+\dots=\infty$。
+
+> [!note]
+> 有限與無限集合的情況可能完全相反。
+> 例如：$|\{ 1,2,3,\dots,100 \}|>|\{ 2,4,6,\dots,100 \}|$，但 $|\mathbb{Z}|=|\mathbb{Z}^{+}|$。
 

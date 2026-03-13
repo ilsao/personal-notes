@@ -101,7 +101,7 @@ $\implies(0.6758)_{10}=(1.011)_{2}$
 3. 若 $M<N$，不會產生 end carry 且結果會變為 $r^{n}-(N-M)$。可以看出這是 $N-M$ 的 r's complement。想得到正確的答案，我們只需對結果再取一次補碼並添上負號即可。
 
 > [!warning] 注意
-> 對於 1's complement，一但有進位到溢出，我們需要補 $1$ 在末尾。
+> 對於 1's complement，一但有 (end-carry) 進位到溢出，我們需要補 $1$ 在末尾。
 
 # Signed Binary Numbers
 
@@ -114,7 +114,9 @@ $\implies(0.6758)_{10}=(1.011)_{2}$
 ![[Pasted image 20260304111446.png]]
 
 > [!warning] 注意
-> 對 unsigned 沒有所謂 complement 的表示，因為 complement 就是專門用來表示複數的東西。
+> 對 unsigned 沒有所謂 complement 的表示，因為 complement 就是專門用來表示負數的東西。
+
+對於 Signed Magnitude，若兩數符號相同，則保留符號並對大小相加。若異號，則取值較大者之符號，並將二者大小相減。
 
 對於 2's complement，無論是加法或減法，我們直接相加即可。記得丟棄進位的符號位呦。
 

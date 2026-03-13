@@ -295,6 +295,9 @@ proof:
 > [!note]
 > 如果發現 $\lim_{ n \to \infty }s_{n}$ 不會求，考慮判斷一下是否發散吧！
 
+> [!warning] 注意
+> The Integral Test 應該是你嘗試過其他手段後，最後的手段，因為求積分較為複雜。
+
 ## Estimating the Sum of a Series
 
 假設我們可以通過 Integration Test 知道級數 $\sum a_{n}$ 收斂，我們應該如何估計級數的值？
@@ -391,6 +394,13 @@ $\implies mb_{n}<a_{n}<Mb_{n}$
 > [!note]
 > 遇到判斷 $\sum_{n=1}^{\infty}f(g(n))$ 形式的題目，嘗試在 $g(n)$ 中找到可判斷收斂性的東西 $g(n)=q+h(n)$，其中 $h(n)\to0$ as $n\to \infty$。
 > 然後，取 $b_{n}=h(n)$，並利用 $\lim_{ n \to \infty } \frac{f(g(n))}{h(n)}=\lim_{ x \to 0 } \frac{f(q+x)}{x}$ 與洛必達求解。
+
+> [!note]
+> 對足夠大的 $n$，有 $\ln n<\sqrt{ n }$。
+> 此不等式可以幫助求解 comparison test。
+
+> [!note]
+> 對於 $\sum \frac{\sqrt{ n^{3}+1 }}{3n^{3}+4n^{2}+2}$ 這類級數，取 $b_{n}= \frac{\sqrt{ n^{3} }}{n^{3}}= \frac{1}{n^{3/2}}$ 做 limit comparison test 是個好方法。
 
 ## Estimating Sums
 
@@ -503,11 +513,24 @@ proof:
 > 對一個非規律在正負間變化的數列求級數，無法套用 Alternating Series Test。
 > 但是，本章的絕對收斂對這種級數的收斂判斷非常有幫助。
 
+> [!note]
+> **絕對收斂**對處理包含 $\sin$ 或 $\cos$ 在分子的級數非常有幫助。
+
+> [!warning] 注意
+> 條件收斂表示 $\sum a_{n}$ 收斂，但 $\sum |a_{n}|$ 不收斂。
+> 但由於條件收斂收斂，所以 $\lim_{ n \to \infty } a_{n}=0\implies \lim_{ n \to \infty }|a_{n}|=0$。
+> 不要看到絕對值就直接慢錯啊！
+
+> [!error] 小心
+> $\sum a_{n}$ 收斂，無法推得 $\sum(-1)^{n}|a_{n}|$ 收斂。
+> 反例：$a_{n}=1+0-2+0+3+0-4+\dots$ 
+> 此時 $\sum(-1)^{n}|a_{n}|=-\sum|a_{n}|$。
+
 ## Rearrangements
 
 通過重排無窮級數，我們可能：
 - 對絕對收斂來說：與重排前收斂到同一個值 $s$。
-- 對條件收斂來說：重排可使得級數收斂到任意實數。
+- 對條件收斂來說：重排可使得級數收斂到任意實數 (包含 $\pm \infty$)。
 
 例如：
 
@@ -521,7 +544,67 @@ proof:
 
 雖然等號左側與原式看似相同，但等號右側卻得到完全不同的值。
 
-# Skills For Series Divergence Questions
+# The Ratio and Root Test
+
+## The Ratio Test
+
+The Ratio Test 分三部分描述：
+
+(i)
+
+若 $\lim_{ n \to \infty } | \frac{a_{n+1}}{a_{n}}|=L<1$，則 $\sum a_{n}$ **絕對**收斂 (Therefore 收斂)。
+
+(ii)
+
+若 $\lim_{ n \to \infty } | \frac{a_{n+1}}{a_{n}}|=L>1$，則 $\sum a_{n}$ 發散。
+
+(iii)
+
+若 $\lim_{ n \to \infty } | \frac{a_{n+1}}{a_{n}}|=1$，則無法判斷 $\sum a_{n}$ 收斂與否。
+
+proof:
+我們通過對無窮等比級數的 direct comparison test 來證明。
+因為 $L<1$，我們可以找到一個數 $r$ 使得 $L<r<1$。
+由極限的定義，有一個數 $N$ 使得 $n>N$ 時：$| \frac{a_{n+1}}{a_{n}}|<r\implies|a_{n+1}|<|a_{n}|r$。
+也就是 $|a_{N+k}|<|a_{N}|r^{k}\quad\forall k\geq1$。
+因為 $0<r<1$，通過與無窮等比級數的 direct comparison test，收斂。
+其餘情況同理可證。
+
+> [!note]
+> The Ratio Test 適合處理分數中帶有 $n!$ 或多次方的問題。
+
+> [!warning] 注意
+> 條件收斂只可能發生在 $\lim_{ n \to \infty } | \frac{a_{n+1}}{a_{n}}|=1$ 時的情況。
+> 因為當 $<1$，絕對收斂。
+> 若 $>1$，則表示 $a_{n}$ 持續變大，那麼 $\lim_{ n \to \infty }a_{n}\neq 0$，根據 the test for divergence 發散。
+
+## The Root Test
+
+The Root Test 同樣分三部分闡述：
+
+(i)
+
+若 $\lim_{ n \to \infty }|a_{n}|^{1/n}=L<1$，則 $\sum a_{n}$ **絕對**收斂 (Therefore 收斂)。
+
+(ii)
+
+若 $\lim_{ n \to \infty }|a_{n}|^{1/n}=L>1$，則 $\sum a_{n}$ 發散。
+
+(iii)
+
+若 $\lim_{ n \to \infty }|a_{n}|^{1/n}=1$，則 $\sum a_{n}$ 無法判斷收斂與否。
+
+> [!note]
+> 如果 Root Test 極限為 $1$，就不用試 Ratio Test。因為結果會相同。
+> 相反，同理。
+
+> [!note]
+> Root Test 適合處理帶著大括號 $n$ 次方的數列。
+
+> [!error] 小心
+> Ratio Test 與 Root Test 都需要掛上絕對值。
+
+# Strategy For Testing Series
 
 1. The test for divergence
 	1. $\sum a_{n}$ 收斂 $\implies \lim_{ n \to \infty }a_{n}=0$ (通常用在證明極限發散)
@@ -531,13 +614,27 @@ proof:
 		1. 瑕積分可能需要使用 comparison 幫助求解。
 3. 使用求和公式化簡級數，然後求 $n\to \infty$ 時的極限。
 4. 當級數為幾何級數時，$|r|<1$ 時收斂。
-5. p-series test，$p>1$ 時收斂。
+5. p-series test，$p>1$ 時收斂，$p\leq 1$ 時發散。
 6. 子序列發散，使得原序列發散。
 7. Direct/Limit Comparison Test
 	1. p-series
 	2. 無窮等比級數
 8. Alternating Sereis Test
-	1. Conditional convergence
+	1. Absolutely convergence
+	2. Conditional convergence
+9. Ratio Test
+10. Root Test
+
+這邊，我們希望你學完這章的內容後，可以輕易的判斷出以下級數的收斂性。
+
+- $\sum \frac{1}{n}$ 發散
+- $\sum \frac{1}{e^{n}}$ 收斂 (此為公比為 $\frac{1}{e}<1$ 的無窮等比級數)
+- $\sum \frac{1}{n!}$ 收斂 (ratio test)
+- $\sum \frac{1}{n^{p}}$ 當 $p<1$ 時收斂
+- $\sum \frac{1}{\ln n}$ 發散 (direct comparison test with $\frac{1}{n}$)
+- $\sum \frac{1}{(\ln n)^{\ln n}}$ 收斂
+- $\sum \frac{\ln n}{n}$ 發散 (limit comparison test with $\frac{1}{n}$ 或 integral test)
+- $\sum \frac{\ln n}{n^{2}}$ 收斂 (direct comparison test with $\frac{1}{n^{3/2}}$ 或 integral test)
 
 # Tips
 
@@ -765,6 +862,46 @@ $h_{2n}=\left( 1+\frac{1}{3}+\dots+\frac{1}{2n-1} \right)+\left( \frac{1}{2}+\fr
 $\lim_{ n \to \infty }s_{2n}=\lim_{ n \to \infty }(h_{2n}-h_{n})=\lim_{ n \to \infty }[(h_{2n}-\ln(2n))-(h_{n}-\ln n)+(\ln(2n)-\ln n)]$  
 $=\gamma-\gamma+\ln2=\ln2$ 
 
+Prove or disprove: $\sum a_{n}$ 收斂，則 $\sum(-1)^{n}|a_{n}|$ 收斂。
+
+Sol:
+反例：$a_{n}=1+0-\frac{1}{2}+0+\frac{1}{3}+0-\frac{1}{4}+\dots$ 
+則 $\sum(-1)^{n}|a_{n}|=-\sum \frac{1}{n}$ 發散。
+
+$\sum \frac{1}{(\ln n)^{\ln n}}$ 是否收斂？
+
+Sol:
+注意到 $(\ln n)^{\ln n}=(e^{\ln \ln n})^{\ln n}=(e^{\ln n})^{\ln \ln n}=n^{\ln \ln n}$，並且 $\ln \ln n\to \infty$。
+所以，當 $n$ 足夠大時，$\frac{1}{(\ln n)^{\ln n}}< \frac{1}{n^{2}}$。
+那麼，By direct comparison test，收斂。
+
+$\sum \sin(\pi \sqrt{ 4n^{2}+2n+1 })$ 收斂嗎？
+
+Sol:
+$=\sum \sin (\pi\sqrt{ 4n^{2}+2n+1 }-\pi \sqrt{ 4n^{2} })$ 
+$=\sum \sin\left( \frac{\pi^{2}(4n^{2}+2n+1)-\pi^{2}(4n^{2})}{\pi \sqrt{ 4n^{2}+2n+1 }+\pi \sqrt{ 4n^{2} }} \right)$ 
+$\sum \sin\left( \frac{\pi(2n+1)}{\sqrt{ 4n^{2}+2n+1 }+\sqrt{ 4n^{2} }} \right)=\sum a_{n}$ 
+$\lim_{ n \to \infty }a_{n}=\sin \frac{\pi}{2}=1$ 
+所以發散 by the test for divergence。
+
+![[Pasted image 20260310140005.png]]
+![[Pasted image 20260310135950.png]]
+
+Sol:
+$\lim_{ n \to \infty }| \frac{a_{n+1}}{a_{n}}|=\lim_{ n \to \infty }| \frac{-(n+1)n^{n}}{(n+1)^{n+1}b_{n}}|=\lim_{ n \to \infty } \frac{n^{n}}{(n+1)^{n}b_{n}}$ 
+$=\lim_{ n \to \infty } \frac{1}{b_{n}} \left( \frac{n}{n+1} \right)^{n}=\lim_{ n \to \infty } \frac{1}{b_{n}} \left( \frac{1}{1+\frac{1}{n}} \right)^{n}=\frac{2}{e}<1$ 
+$\implies$ 絕對收斂 by the Ratio Test
+
+![[Pasted image 20260313210129.png]]
+
+Sol:
+$\sum_{n=1}^{\infty}(2^{1/n}-1)$ 
+取 $b_{n}= \frac{1}{n}$ 做 limit comparison test。
+令 $t=\frac{1}{n}$，且 $t\to0^{+}$ as $n\to \infty$。
+因為 $\lim_{ t \to 0^{+}} \frac{2^{t}-1}{t}\overset{H}{=}\lim_{ t \to 0^{+} }(e^{t\ln2}-1)'=\lim_{ t \to 0^{+} }\ln2\cdot e^{t\ln 2}=\ln2$，
+所以 $\lim_{ n \to \infty } \frac{2^{1/n}-1}{\frac{1}{n}}=\lim_{ t \to 0^{+} } \frac{2^{t}-1}{t}=\ln 2>0$。
+因為 $\sum\frac{1}{n}$ 發散，所以 $\sum(2^{1/n}-1)$ 發散 by the limit comparison test。
+
 # 大會考
 
 ![[Pasted image 20260302200648.png]]
@@ -907,3 +1044,33 @@ Sol:
 這題很有迷惑性，你可能會以為 $\tan x$ 是週期函數，所以這東西不會遞減而發散。
 但是，注意觀察 $\tan x$ 在 $\left( 0, \frac{\pi}{2} \right)$ 遞增，所以在 $n$ 足夠大時，$\frac{\pi}{n}$ 會使得 $\tan\left( \frac{\pi}{n} \right)$ 遞減。
 又 $\lim_{ n \to \infty } \tan\left( \frac{\pi}{n} \right)=0$，所以級數收斂 By Alternating Series Test。
+
+![[Pasted image 20260313173025.png]]
+
+Sol:
+最難的是 (C)，也是答案。
+$|(-1)^{n} \frac{\ln n}{n-\ln n}|= \frac{\ln n}{n-\ln n}$ 
+因為 $n-\ln n<n$，所以 $\frac{\ln n}{n-\ln n}> \frac{1}{n}$。
+又 $\frac{1}{n}$ 是 $p=1$ 的 p-series，所以 $\sum_{n=1}^{\infty} \frac{\ln n}{n-\ln n}$ 發散 $\implies$ 不可能絕對收斂。
+令 $f(x)= \frac{\ln x}{x-\ln x}$，則 $f'(x)= \frac{\frac{1}{x}(x-\ln x)-\ln x\left( 1-\frac{1}{x} \right)}{(x-\ln x)^{2}}= \frac{1-\ln x}{(x-\ln x)^{2}}<0\quad\forall x>e$ 
+又 $\lim_{ x \to \infty } \frac{\ln x}{x-\ln x}= \lim_{ x \to \infty } \frac{\frac{1}{x}}{1- \frac{1}{x}}=0$，所以 $\sum_{n=1}^{\infty}(-1)^{n} \frac{\ln n}{n-\ln n}$ 收斂 by the alternating series test。
+所以，這東西是條件收斂。
+
+![[Pasted image 20260313175027.png]]
+
+Sol:
+注意到條件收斂只可能發生在 ratio test 等於 $1$ 時，所以我們需要對端點再次確認。
+$\lim_{ n \to \infty } | \frac{a_{n+1}}{a_{n}}|=\lim_{ n \to \infty }|3x \frac{(n+1)^{2}}{(n+2)^{2}}|=3|x|$ 
+我們想要讓其絕對收斂，則 $3|x|<1\implies x\in\left( -\frac{1}{3}, \frac{1}{3} \right)$ 
+考慮 $3|x|=1$：
+$x=\frac{1}{3}$：$\sum_{n=1}^{\infty} \frac{1}{(n+1)^{2}}$ 收斂 by direct comparison test
+$x= -\frac{1}{3}$：$\sum_{n=1}^{\infty} \frac{(-1)^{n}}{(n+1)^{2}}$ 收斂 by alternating series test
+所以，實際令級數收斂的 $x$ 區間為 $\left[ -\frac{1}{3}, \frac{1}{3} \right]$。
+
+![[Pasted image 20260313201117.png]]
+
+Sol:
+首先證明 $\sum\frac{1}{n!}$ 收斂。
+$\frac{1}{n!}=\frac{1}{1\times 2\times 3\times \dots \times n}< \frac{1}{2^{n-1}}\quad\forall n>2$ 
+因為 $\frac{1}{2^{n-1}}$ 是公比 $\frac{1}{2}<1$ 的等比數列，所以 $\sum \frac{1}{n!}$ 收斂 by direct comparison test。
+又 $| \frac{\cos n}{n!}|\leq \frac{1}{n!}$，所以 $\sum_{n=1}^{\infty}\frac{\cos n}{n!}$ 收斂 by the direct comparison test。
