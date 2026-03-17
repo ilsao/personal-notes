@@ -5,13 +5,13 @@
 於是提出：**導波(pilot wave)** 即**物質波(matter wave)** 的概念。其波長與頻率為：
 
 $$
-\begin{align}
+\boxed{\begin{align}
  & \lambda=\frac{h}{p} \\
  & \nu=\frac{E}{h}
-\end{align}
+\end{align}}
 $$
 
-為了證明物質波，我們嘗試使粒子束表現出波的性質。但設計此實現會遇到問題，波長 $\lambda=\frac{h}{p}$，通常因為 $p$ 過大導致 $\lambda$ 過短，難以找到狹縫使得此波展現繞射現象。
+為了證明物質波，我們嘗試使粒子束表現出波的性質。但設計此實驗會遇到問題，波長 $\lambda=\frac{h}{p}$，通常因為 $p$ 過大導致 $\lambda$ 過短，難以找到狹縫使得此波展現繞射現象。
 
 因為 $h$ 不能動，只能藉由減輕質量縮小 $p$。顯然，選擇電子當作實驗粒子是個好選項。
 
@@ -87,7 +87,7 @@ $N$ 實際上會有波動：
 因為在某區域內找到光子的機率會正比於光子密度 $N$，那麼也會正比於波函數的振幅平方：
 
 $$
-P\propto N\propto(\text{amplitude})^{2}
+\boxed{P\propto N\propto(\text{amplitude})^{2}}
 $$
 
 那麼，現在我們知道所謂物質波，就是一種描述粒子機率密度的函數。我們將其稱為**波函數(wave function)**：
@@ -99,13 +99,13 @@ $$
 若我們想求得，在時間 $t$ 時，粒子出現在 $r$ 附近小體積 $dV$ 的機率，可以如下計算：
 
 $$
-P(r,t)dV=|\psi|^{2}dV
+\boxed{P(r,t)dV=|\psi|^{2}dV}
 $$
 
 注意到粒子在空間中出現的機率和為 $1$，所以：
 
 $$
-\int_{-\infty}^{\infty}|\psi|^{2}dV=1
+\boxed{\int_{-\infty}^{\infty}|\psi|^{2}dV=1}
 $$
 
 ![[Pasted image 20260314130442.png]]
@@ -119,7 +119,7 @@ $$
 在量子力學中，Werner Heisenberg 提出了**不確定性原則(uncertainty principle)**。我們無法同時準確的測量粒子的位置分量與對應的動量分量。即：
 
 $$
-\Delta p_{x}\Delta x\geq \hbar
+\boxed{\Delta p_{x}\Delta x\geq \hbar\quad \hbar=\frac{h}{2\pi}\approx 1.05\times 10^{-34}}
 $$
 
 其中 $\Delta$ 代表測量的不確定度。
@@ -151,7 +151,7 @@ $$
 為了讓光子獲得動量，電子會得到方向相反大小相同的動量，所以電子的不確定度為：
 
 $$
-\Delta p_{x}(\text{electron})=2p_{\text{electron}}\sin \phi=\frac{2h}{\lambda}\sin \phi
+\Delta p_{x}(\text{electron})=2p_{\text{photon}}\sin \phi=\frac{2h}{\lambda}\sin \phi
 $$
 
 所以，在定位電子的過程中，自然地引入了不確定性。
@@ -164,7 +164,7 @@ $$
 
 # Matter Wave And The Uncertainty Principle
 
-這邊我們使用物質波的概念推倒不確定性原則。
+這邊我們使用物質波的概念推導不確定性原則。
 
 我們使用一種常見的波開始推導：
 
@@ -174,8 +174,8 @@ $$
 
 此波有以下性質：
 - 振幅 $A$ 在所有 $x$ 與 $t$ 都相同
-- 有明確的波長 $\lambda=\frac{2\pi}{k}$ 
-- 有明確的頻率 $\nu=\frac{\omega}{2\pi}$ 
+- 有明確的波長 $\boxed{\lambda=\frac{2\pi}{k}}$ 
+- 有明確的頻率 $\boxed{\nu=\frac{\omega}{2\pi}}$ 
 - 波向 $+x$ 方向傳播，速度為 $\lambda \nu=\frac{\omega}{k}$ 
 
 只要一個波有確定的動量與能量，就滿足德布羅意條件。即具有明確的 $\lambda$ 與 $\nu$。
@@ -186,7 +186,7 @@ $$
 \Delta x=\infty
 $$
 
-這其實符合不確定性原則，因為具有確定的 $\lambda$ 即具有確定的 $p$。根據 $\Delta p_{x}\Delta x\geq \hbar$，當 $\Delta p_{x}=0$ 時必有 $\Delta x=\infty$。
+這確實符合不確定性原則，因為具有確定的 $\lambda$ 即具有確定的 $p$。根據 $\Delta p_{x}\Delta x\geq \hbar$，當 $\Delta p_{x}=0$ 時必有 $\Delta x=\infty$。
 
 因此，這種波雖然可以描述確定動量與能量的粒子，但粒子卻完全無法定位。
 
@@ -215,14 +215,14 @@ $$
 因為疊加了無限個波，所以我們用積分表示：
 
 $$
-\int_{-\infty}^{\infty}\int_{-\infty}^{\infty}A(k,\omega)\sin(kx-\omega t) \ dk \ d\omega
+\boxed{\int_{-\infty}^{\infty}\int_{-\infty}^{\infty}A(k,\omega)\sin(kx-\omega t) \ dk \ d\omega}
 $$
 
 對於每個 $k$ 與 $\omega$，$A(k,\omega)$ 可能都有不同的值。所以 $A(k,\omega)$ 實際決定了每種波長混合了多少比例。
 
 ![[Pasted image 20260314142702.png|389]]
 
-圖左為 $A(k)$ 混合比例，圖右為生成的波包。可觀察出混合的 $k$ 範圍越大，形成的波包就越窄。
+圖左為 $A(k)$ 混合比例，圖右為生成的波包。可觀察出**混合的 $k$ 範圍越大，形成的波包就越窄**。
 
 這從數學角度說明了不確定性原則：
 - 當 $k$ 範圍較小時，波長、動量較為確定，但由於波包較寬，位置較不確定。
@@ -288,7 +288,7 @@ $$
 而波包的速度，即**群速度(group velocity)** 為：
 
 $$
-v_{\text{group}}= \frac{\frac{\Delta\omega}{2}}{\frac{\Delta k}{2}}=\frac{\Delta\omega}{\Delta k}\approx \frac{d\omega}{dk}
+\boxed{v_{\text{group}}= \frac{\frac{\Delta\omega}{2}}{\frac{\Delta k}{2}}=\frac{\Delta\omega}{\Delta k}\approx \frac{d\omega}{dk}}
 $$
 
 我們可以簡單驗證群速度就是粒子速度。
@@ -359,3 +359,30 @@ Sol:
 $\implies\Delta v\geq \frac{1.05\times 10^{-27}}{9.1\times 10^{-31}}=1150$ 
 $\Delta vt=1150\times 10^{-6}=1.15\times 10^{-3}$ 
 $\Delta x'=\Delta x+\Delta vt\approx1.15\times 10^{-3}\text{ m}$ 
+
+# 威儀考古
+
+1. 請詳細描述哥本哈根學派對於波函數的解釋
+
+Sol:
+波函數的振幅平方表示粒子出現的機率密度
+
+2. 請問量子力學主要在做什麼？尋找或計算物理系統的？
+
+Sol:
+波函數
+
+3. 為什麼在古典物理中沒有觀察到動量與位置的不準確性？
+
+Sol:
+不確定性由：$\Delta p\Delta x\geq \hbar$ 給出，$\hbar=\frac{h}{2\pi}$ 是極小的值。
+宏觀物體的質量較大，使位置不確定性在宏觀下極小而不易測量。
+
+4. 請問何謂 de Broglie Hypothesis？標明所有用到的參數。
+
+Sol:
+所有具有動量的物體由物質波描述其行為。
+$\lambda=\frac{h}{p}$ 
+$\lambda$ 為德布羅意波長，$p$ 為粒子動量，$h$ 為普朗克常數。
+$\nu=\frac{E}{h}$ 
+$\nu$ 為物質波頻率，$E$ 為粒子能量。

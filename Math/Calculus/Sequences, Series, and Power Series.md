@@ -19,7 +19,7 @@ $$
 
 若 $\lim_{ n \to \infty }a_{n}$ 存在則稱該數列收斂，否則稱該數列發散。
 
-一個更嚴謹的定義如下：若對任意 $\epsilon >0$ 都可以找到一個**整數** (注意到定義域必須為整數) $N$ 使得若 $n>N$ 則 $|a_{n}-L|<\epsilon$，則有 $\lim_{ n \to \infty }a_{n}=L$。
+一個更嚴謹的定義如下：若對任意 $\epsilon >0$ 都可以找到一個**整數** (注意到定義域必須為整數) $N$ 使得若 $n>N$ 則 $|a_{n}-L|<\epsilon$，就有 $\lim_{ n \to \infty }a_{n}=L$。
 
 並且，我們如下定義無窮極限：若對任意正整數 $M$ 都可以找到一個整數 $N$ 使得若 $n>N$ 則 $a_{n}>M$，則有 $\lim_{ n \to \infty }a_{n}=\infty$。
 
@@ -35,7 +35,7 @@ $$
 > 想用洛必達解數列極限時，令函數 $f(x)$ 並在該函數上操作，而非直接對數列應用洛必達。
 > 因為數列不連續 (因而不可微)，不能直接套用洛必達。
 
-而且數列有一個很好用的性質，稱為 Power Law：**若 $p>0$ 且 $a_{n}>0$** 則 $\lim_{ n \to \infty }(a_{n})^{p}=[\lim_{ n \to \infty }a_{n}]^{p}$。
+而且數列有一個很好用的性質，稱為 Power Law：**若 $\boxed{p>0}$ 且 $a_{n}\geq0$** 則 $\lim_{ n \to \infty }(a_{n})^{p}=[\lim_{ n \to \infty }a_{n}]^{p}$。
 
 還可以將夾擠定理套用到數列上：若當 $n\geq n_{0}$ 時 $a_{n}\leq b_{n}\leq c_{n}$，且 $\lim_{ n \to \infty }a_{n}=\lim_{ n \to \infty }c_{n}=L$，則 $\lim_{ n \to \infty }b_{n}=L$。
 
@@ -44,11 +44,6 @@ $$
 
 > [!warning] 注意
 > 找到 $b_{n}$ 並夾住後，要先定義數列 $a_{n}$ 與 $c_{n}$ 才可套用數列的 Squeeze Theorem！
-
-以及，若 $\lim_{ n \to \infty }a_{n}=L$ 且 $f$ 在 $L$ 連續，則：$\lim_{ n \to \infty }f(a_{n})=f(L)=f(\lim_{ n \to \infty }a_{n})$。
-
-> [!warning] 注意
-> 要先**寫出判定** $\lim_{ n \to \infty }a_{n}=L$ 且 $f$ 在 $L$ 連續，才可套用喔！
 
 最後，我們有：若 $\lim_{ n \to \infty }|a_{n}|=0$ 則 $\lim_{ n \to \infty }a_{n}=0$。
 
@@ -68,11 +63,14 @@ $a_{n}=(a_{n}+|a_{n}|)-|a_{n}|$
 > [!note]
 > 其實關係是 $\lim_{ n \to \infty }|a_{n}|=0\iff \lim_{ n \to \infty }a_{n}=0$。
 
-並且我們還有最最最後一個性質：若 $\lim_{ n \to \infty }a_{n}=L$ 且 $f$ 為一個連續函數，則：
+並且我們還有最最最後一個性質：若 $\lim_{ n \to \infty }a_{n}=L$ 且 $f$ 在 $L$ 連續，則：
 
 $$
 \lim_{ n \to \infty }f(a_{n})=\lim_{ n \to \infty } f(L)
 $$
+
+> [!warning] 注意
+> 要先**寫出判定** $\lim_{ n \to \infty }a_{n}=L$ 且 $f$ 在 $L$ 連續，才可套用喔！
 
 此節以一個結論收尾：
 
@@ -101,10 +99,6 @@ $$
 
 但是，一個單調有界的數列則必定收斂。此定理稱為**單調數列定理 (Monotonic Sequence Theorem)**。
 
-> [!warning] 注意
-> 一個數列是單調的並無法保證數列收斂，而一個有界的數列也無法保證收斂 (反例：$(-1)^{n}$)。
-> 話雖如此，但是收斂不一定需要單調。
-
 proof:
 核心想法：利用有界與完備性公理找到最小界，然後利用單調確保數值不能回退。
 設 $\{a_{n}\}$ 為遞增數列。因為 $\{a_{n}\}$ 有界，所以集合 $S=\{a_{n}|n\geq1\}$ 存在上界。根據完備性公理， $S$ 存在一個上確界 $L$。
@@ -114,6 +108,10 @@ proof:
 也就是說，$\lim_{ n \to \infty }a_{n}=L$。
 若 $\{a_{n}\}$ 為遞減數列，同理可證。
 
+> [!warning] 注意
+> 一個數列是單調的並無法保證數列收斂，而一個有界的數列也無法保證收斂 (反例：$(-1)^{n}$)。
+> 話雖如此，但是收斂不一定需要單調。
+
 > [!note]
 > 此處題目可能要求判斷數列是否單調或遞增。
 > 考慮單調性，我們可以通過對比 $a_{n}$ 與 $a_{n+1}$ 的大小關係得到。
@@ -121,7 +119,7 @@ proof:
 > 因為 $\lim_{ n \to \infty }a_{n}=L$ 代表當 $n>N$ 時， $|a_{n}-L|<\epsilon\implies a_{n}\in(L-\epsilon,L+\epsilon)$。而當 $n\leq N$ 時，包含的項數有限 ($n$ 被限定為整數)，一定有最大最小值。
 
 > [!note]
-> 對於求解遞歸定義數列的極限，套用 $\lim_{ n \to \infty }a_{n}=\lim_{ n \to \infty }a_{n}+1$ (前提是先確定數列收斂，利用單調數列定理)。
+> 對於求解遞歸定義數列的極限，套用 $\lim_{ n \to \infty }a_{n}=\lim_{ n \to \infty }a_{n+1}$ (前提是先確定數列收斂，利用單調數列定理)。
 
 > [!Note]
 > 若給一遞歸定義數列與一有界範圍假設，可使用數學歸納法證明。
@@ -129,11 +127,12 @@ proof:
 ## Skills For Sequence Limits
 
 1. Limit laws
-2. Squeeze theorem
-3. The $\epsilon-N$ definition
-4. If $\lim_{ n \to \infty }|a_{n}|=0$，then $\lim_{ n \to \infty }a_{n}=0$ 
-5. If $f(n)=a_{n}$, $\lim_{ x \to \infty }f(x)=L\implies \lim_{  n \to \infty }a_{n}=L$ 
-6. The monotonic sequence theorem
+2. Power law ($p>0$ and $a_{n}\geq0$)
+3. Squeeze theorem
+4. The $\epsilon-N$ definition
+5. If $\lim_{ n \to \infty }|a_{n}|=0$，then $\lim_{ n \to \infty }a_{n}=0$ 
+6. If $f(n)=a_{n}$, $\lim_{ x \to \infty }f(x)=L\implies \lim_{  n \to \infty }a_{n}=L$ 
+7. The monotonic sequence theorem
 
 # Series
 
@@ -425,7 +424,7 @@ $$
 
 ## Alternating Series
 
-我們將一正一負反覆出現的級數為**交錯級數(alternating series)**。也就是其中每項的形式為：
+我們將一正一負反覆出現的級數稱為**交錯級數(alternating series)**。也就是其中每項的形式為：
 
 $$
 a_{n}=(-1)^{n}b_{n-1}\quad\text{ or }\quad a_{n}=(-1)^{n}b_{n}\quad\text{ where } b_{n}\text{ is a positive number }(|a_{n}|)
@@ -461,7 +460,7 @@ $s_{4}=s_{2}+b_{3}-b_{4}\geq s_{2}$
 $s_{2n}=s_{2n-2}+b_{2n-1}-b_{2n}\geq s_{2n-2}$ 
 所以，$0\leq s_{2}\leq s_{4}\leq\dots\leq s_{2n}$。
 換個角度，我們可以視為 $s_{2n}=b_{1}-(b_{2}-b_{3})-(b_{4}-b_{5})-\dots-(b_{2n-2}-b_{2n-1})-b_{2n}$。
-因為 $\{ b_{n} \}$ 非增，所以有：$s_{2n}\leq b_{1}\ \forall n$。
+因為 $\{ b_{n} \}$ 非增，所以有：$s_{2n}\leq b_{1}\ \forall n\geq 1$。
 綜上所述，$\{ s_{2n} \}$ 遞增且有界。由單調數列定理，$\{ s_{2n} \}$ 收斂。
 令 $\lim_{ n \to \infty }s_{2n}=s$。
 現在考慮以奇數終止的部分和：
@@ -501,7 +500,7 @@ proof:
 
 若一個級數 $\sum a_{n}$ 收斂，但不滿足絕對收斂，即 $\sum|a_{n}|$ 不收斂，我們稱此級數**條件收斂(conditional convergence)**。
 
-此處應有定理：**若級數 $\sum a_{n}$ 絕對收斂，則此級數收斂。**
+此處應有定理：**若級數 $\sum a_{n}$ 絕對收斂，則此級數收斂**。
 
 proof:
 注意到級數有以下關係：$0\leq a_{n}+|a_{n}|\leq2|a_{n}|$。
@@ -511,15 +510,12 @@ proof:
 
 > [!note]
 > 對一個非規律在正負間變化的數列求級數，無法套用 Alternating Series Test。
-> 但是，本章的絕對收斂對這種級數的收斂判斷非常有幫助。
-
-> [!note]
-> **絕對收斂**對處理包含 $\sin$ 或 $\cos$ 在分子的級數非常有幫助。
+> 但是，本章的絕對收斂對這種級數的收斂判斷非常有幫助，例如包含 $\sin$ 或 $\cos$ 在分子的級數。
 
 > [!warning] 注意
 > 條件收斂表示 $\sum a_{n}$ 收斂，但 $\sum |a_{n}|$ 不收斂。
 > 但由於條件收斂收斂，所以 $\lim_{ n \to \infty } a_{n}=0\implies \lim_{ n \to \infty }|a_{n}|=0$。
-> 不要看到絕對值就直接慢錯啊！
+> 不要看到絕對值就直接判錯啊！
 
 > [!error] 小心
 > $\sum a_{n}$ 收斂，無法推得 $\sum(-1)^{n}|a_{n}|$ 收斂。
@@ -529,8 +525,8 @@ proof:
 ## Rearrangements
 
 通過重排無窮級數，我們可能：
-- 對絕對收斂來說：與重排前收斂到同一個值 $s$。
-- 對條件收斂來說：重排可使得級數收斂到任意實數 (包含 $\pm \infty$)。
+- 對**絕對**收斂來說：與重排前收斂到同一個值 $s$。
+- 對**條件**收斂來說：重排可使得級數收斂到任意實數 (包含 $\pm \infty$)。
 
 例如：
 
@@ -617,15 +613,19 @@ The Root Test 同樣分三部分闡述：
 5. p-series test，$p>1$ 時收斂，$p\leq 1$ 時發散。
 6. 子序列發散，使得原序列發散。
 7. Direct/Limit Comparison Test
-	1. p-series
-	2. 無窮等比級數
+	1. limit comparison test 比出來的極限 $c>0$ 則同時發散 / 收斂
+	2. p-series
+	3. 無窮等比級數
 8. Alternating Sereis Test
 	1. Absolutely convergence
 	2. Conditional convergence
 9. Ratio Test
+	1. 比出來的極限 $L<1$ 則絕對收斂
+	2. $L=1$ 無法判斷
+	3. $L>1$ 發散
 10. Root Test
 
-這邊，我們希望你學完這章的內容後，可以輕易的判斷出以下級數的收斂性。
+這邊，我們希望你學完這章的內容後，可以輕易地判斷出以下級數的收斂性。
 
 - $\sum \frac{1}{n}$ 發散
 - $\sum \frac{1}{e^{n}}$ 收斂 (此為公比為 $\frac{1}{e}<1$ 的無窮等比級數)
@@ -705,7 +705,7 @@ $+\left( -\frac{2}{n-2}+\frac{1}{n-1}+\frac{1}{n-3} \right)+\left( -\frac{2}{n-1
 Sol:
 這題當時我沒看出他是個等比數列，我好傻。
 意識到這東西是個等比數列，且 $r=\frac{\sin x}{3}$。
-想要級數收斂 $|r|<1$，也就是 $-1<\frac{\sin x}{3}<1$。不等式對 $\forall x$ 皆成立。
+想要級數收斂 $|r|<1$，也就是 $-1<\frac{\sin x}{3}<1$。不等式對 $\forall n\geq1$ 皆成立。
 而無窮級數的值為 $\frac{a}{1-r}=\frac{3}{3-\sin x}$。
 
 A sequence ${a_{n}}$ is defined recursively by the equation $a_{n}=\frac{1}{2}(a_{n-1}+a_{n-2})$ for $n\geq 3$, where $a_{1}$ and $a_{2}$ can be any real number. Find $\lim_{ n \to \infty }a_{n}$ in terms of $a_{1}$ and $a_{2}$ by expressing $a_{n+1}-a_{n}$ in terms of $a_{2}-a_{1}$ and summing a series.
@@ -739,6 +739,7 @@ By the Integral Test，級數收斂。
 ![[Pasted image 20260305161513.png]]
 
 Sol:
+(I)
 再複習一題 Integration by Parts。
 令 $f(x)$ 滿足 $f(n)=a_{n}$。
 $\lim_{ t \to \infty }\int_{2}^{t} \frac{\ln x}{x^{2}}\ dx$，令 $u = \ln x$ 則 $du=\frac{1}{x} \ dx$ 且 $x=e^{u}$。
@@ -746,6 +747,8 @@ $\implies \lim_{ t \to \infty }\int_{\ln2}^{\ln t}ue^{-u}\ du$ 使用 Integratio
 令 $k=u$，$dv=e^{-u}\ du$，則 $dk = du$，$v=-e^{-u}\ du$。
 $\implies \lim_{ t \to \infty }\left( [-ue^{-u}]^{\ln t}_{\ln 2}+\int_{\ln 2}^{\ln t}e^{-u}\ du \right)=\frac{\ln2-1}{2}$ 
 By the Integral Test, 級數收斂。
+(II)
+Direct comparison test with $\frac{\ln n}{n^{2}}\leq\frac{\sqrt{ n }}{n^{2}}=\frac{1}{n^{3/2}}\text{ for some }n>N$ 收斂。
 
 ![[Pasted image 20260305171914.png]]
 找到 $p$ 的範圍使級數收斂。
@@ -792,14 +795,13 @@ Sol:
 $\lim_{ n \to \infty } \frac{a_{n}}{b_{n}}=\frac{n}{n^{1+1/n}}=\lim_{ n \to \infty } \frac{1}{n^{1/n}}$ 
 分母不好算，先算 $\lim_{ x \to \infty }x^{1/x}$。
 取 $\ln$，$\lim_{ x \to \infty } \frac{1}{x}\ln x\overset{H}{=}\lim_{ x \to \infty } \frac{1}{x}=0$，帶回得 $\lim_{ x \to \infty }x^{1/x}=e^{0}=1$。
-所以：$\lim_{ n \to \infty } \frac{1}{n^{1/n}}=1$。
+所以：$\lim_{ n \to \infty } \frac{1}{n^{1/n}}=1>0$。
 又 $\sum \frac{1}{n}$ 為 harmonic series 發散，由 the limit comparison test，$\sum_{n=1}^{\infty} \frac{1}{n^{1+1/n}}$ 發散。
 
 ![[Pasted image 20260306170236.png]]
 
 Sol:
-思考一會兒後寫出來了，但放這給你提個醒。
-當 $n>e$ 時 $\frac{1}{n^{p}\ln n}\leq \frac{1}{n^{p}}$，套用 direct comparison test 即可。
+標準的做法是 integral test。
 
 ![[Pasted image 20260306173058.png]]
 
@@ -995,7 +997,7 @@ $=\lim_{ t \to \infty } \frac{1}{2}\int_{1}^{t^{2}}e^{-u}\ du=-\frac{1}{2}[e^{-u
 (c)
 取 $b_{n}=\frac{1}{n}$ 做 limit comparison test，發散。
 (d)
-$\frac{\sin n}{n^{2}+1}\leq \frac{1}{n^{2}+1}$，By direct comparison test，收斂。
+$|\frac{\sin n}{n^{2}+1}|\leq \frac{1}{n^{2}+1}$，By direct comparison test，收斂 by absolute convergenct。
 
 ![[Pasted image 20260308210110.png]]
 
@@ -1008,7 +1010,7 @@ Sol:
 ![[Pasted image 20260308211237.png]]
 
 Sol:
-顯然，對任意常數 $p$ 都有 $\lim_{ n \to \infty } \frac{1}{n(\ln n)^{p}}=0$。
+顯然，對任意常數 $p$ 都有 $\lim_{ n \to \infty } \frac{1}{n(\ln n)^{p}}=0$。( $p<0$ 時反覆做 L'Hospital 即可)
 並且 $x>e^{-p}$ 時 $\left[ \frac{1}{x(\ln x)^{p}} \right]'=\frac{-((\ln x)^{p-1}\cdot(p+\ln x))}{[x(\ln x)^{p}]^{2}}<0$ $\forall p$，所以 $p$ 的範圍為 $(-\infty,\infty)$。
 
 ![[Pasted image 20260308213732.png]]

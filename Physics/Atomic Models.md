@@ -119,7 +119,7 @@ Brackett 系列：
 1. 古典力學認為電子有無限多條不同半徑的軌道，但 Bohr 假設電子只能在某些特定軌道上。電子角動量 $L$ 必須滿足：
 
 $$
-L=mvr=n\hbar\quad n=1,2,3,\dots\quad \hbar= \frac{h}{2\pi}
+L=mvr=n\hbar\quad n=1,2,3,\dots\quad \hbar= \frac{h}{2\pi}\approx 1.05\times 10^{-34}
 $$
 
 > [!note]

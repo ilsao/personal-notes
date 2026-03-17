@@ -16,7 +16,7 @@ OQT 有幾個缺陷：
 薛丁格假設了這樣的方程，使得我們可以通過給定位能，計算出對應的波函數：
 
 $$
--\frac{\hbar^{2}}{2m} \frac{\partial^{2}\psi}{\partial x^{2}}+E_{p}=i\hbar \frac{\partial \psi}{\partial t}
+\boxed{-\frac{\hbar^{2}}{2m} \frac{\partial^{2}\psi}{\partial x^{2}}+E_{p}=i\hbar \frac{\partial \psi}{\partial t}}
 $$
 
 薛丁格方程是這麼猜出來的，我們由 $E=\frac{1}{2}mv^{2}+E_{p}$ 出發。兩邊同乘 $\psi$：
@@ -65,28 +65,32 @@ $$
 我們根據德布羅意假設：
 
 $$
-\begin{align}
+\boxed{\begin{align}
  & E=h\nu=h \frac{\omega}{2\pi}=\hbar\omega \\
  & p=\frac{h}{\lambda}=\frac{h}{\frac{2\pi}{k}}=\hbar k \\
-\end{align}
+\end{align}}
 $$
 
 又有：
 
 $$
-E=\frac{p^{2}}{2m}\implies \hbar\omega=\frac{\hbar^{2}k^{2}}{2m}
+\boxed{E=\frac{p^{2}}{2m}\implies \hbar\omega=\frac{\hbar^{2}k^{2}}{2m}}
 $$
+
+> [!warning] 注意
+> 自由粒子符合 $E= \frac{\hbar^{2}k^{2}}{2m}$，因為 $E=E_{k}$。
+> 但對非自由粒子而言，$E=E_{k}+E_{p}$，不能這樣簡化。
+> 並且注意到非自由粒子的動量會變化，$p=\hbar k$。因為 $\hbar$ 是常數，所以 $k$ 必須是隨位置變化的函數。
 
 與我們帶入薛丁格方程得到的結果相同，所以對一個確定動量與能量的自由粒子，其波函數為：
 
 $$
-\psi=Ae^{i(kx-\omega t)}
+\boxed{\psi=Ae^{i(kx-\omega t)}}
 $$
 
 > [!note]
 > 波函數可以是虛函數，因為其本身沒意義，我們需要的是 $|\psi|^{2}$。
 > 
-
 當 $\psi$ 是虛函數時，我們按數學定義寫：
 
 $$
@@ -123,7 +127,7 @@ $$
 在波函數中考慮時，則為：
 
 $$
-\int_{-\infty}^{\infty}\psi^{*}x\psi \ dx
+\boxed{\bar{x}=\int_{-\infty}^{\infty}\psi^{*}x\psi \ dx}
 $$
 
 且：
@@ -135,7 +139,7 @@ $$
 我們使用 $E_{p}(x)$ 帶入，也可求得位能的期望值：
 
 $$
-\overline{ E_{p} }=\int_{-\infty}^{\infty}\psi^{*}E_{p}(x)\psi \ dx
+\boxed{\overline{ E_{p} }=\int_{-\infty}^{\infty}\psi^{*}E_{p}(x)\psi \ dx}
 $$
 
 我們將提出動量 $p$ 的操作子記做：
@@ -153,13 +157,13 @@ $$
 如果要計算動量的期望值：
 
 $$
-\bar{p}=\int_{-\infty}^{\infty}\psi^{*}\left( -i\hbar \frac{\partial}{\partial x} \right)\psi \ dx
+\boxed{\bar{p}=\int_{-\infty}^{\infty}\psi^{*}\left( -i\hbar \frac{\partial}{\partial x} \right)\psi \ dx}
 $$
 
 若要計算能量的期望值：
 
 $$
-\bar{E}=\int_{-\infty}^{\infty}\psi^{*}\left( i\hbar \frac{\partial}{\partial t} \right)\psi \ dx
+\boxed{\bar{E}=\int_{-\infty}^{\infty}\psi^{*}\left( i\hbar \frac{\partial}{\partial t} \right)\psi \ dx}
 $$
 
 我們使用自由粒子的波函數展示一下計算能量期望值的正確性：
@@ -223,13 +227,14 @@ $$
 顯然，我們有：
 
 $$
-G=E\text{ and }\Gamma(t)=e^{-iEt/h}\quad\forall \psi
+G=E\text{ and }\boxed{\Gamma(t)=e^{-iEt/h}}\quad\forall \psi
 $$
 
 現在，想要求解 $\psi$，我們只需要求解一個偏微分即可方程：
 
 $$
--\frac{\hbar^{2}}{2m} \frac{d^{2}\chi(x)}{dx^{2}}+E_{p}(x)\chi(x)=E\chi(x)
+\boxed{-\frac{\hbar^{2}}{2m} \frac{d^{2}\chi(x)}{dx^{2}}+E_{p}(x)\chi
+(x)=E\chi(x)}
 $$
 
 > [!note]
@@ -281,14 +286,24 @@ $$
 \begin{align}
  & -\frac{\hbar^{2}}{2m} \frac{d^{2}\chi}{dx^{2}}=E\chi \\
 \implies & \frac{d^{2}\chi}{dx}+ \frac{2mE}{\hbar^{2}}\chi =0 \\
-\implies & \frac{d^{2}\chi}{dx}+k^{2}\chi=0\quad k=\frac{2mE}{\hbar^{2}}
+\implies & \boxed{\frac{d^{2}\chi}{dx}+k^{2}\chi=0}\quad k^{2}=\frac{2mE}{\hbar^{2}}
+\end{align}
+$$
+
+這邊我們來證明 $k^{2} = \frac{2mE}{\hbar^{2}}$：
+
+$$
+\begin{align}
+p & =\frac{h}{\lambda}=\frac{h}{\frac{2\pi}{k}}=k\hbar \\
+\implies E & =\frac{p^{2}}{2m}=\frac{k^{2}\hbar^{2}}{2m} \\
+\implies k^{2} & =\frac{2mE}{\hbar^{2}}
 \end{align}
 $$
 
 計算後解得：
 
 $$
-\chi(x)=ae^{ikx}+be^{-ikx}=(a+b)\cos kx+i(a-b)\sin kx=A\cos kx+B\sin kx
+\chi(x)=ae^{ikx}+be^{-ikx}=(a+b)\cos kx+i(a-b)\sin kx=\boxed{A\cos kx+B\sin kx}
 $$
 
 其中 $a$ 與 $b$ 為任意常數。
@@ -298,18 +313,17 @@ $$
 帶回解得：
 
 $$
-\chi=B\sin kx\quad k=\frac{n\pi}{a}\quad n=1,2,3,\dots
+\boxed{\chi=B\sin kx\quad k=\frac{n\pi}{a}\quad n=1,2,3,\dots}
 $$
 
 > [!note]
 > $n=0$ 不可取，這樣會導致 $k=0$，從而導致 $\chi=0\ \forall x$。
 
-從：
+從而：
 
 $$
-E= \frac{k^{2}\hbar^{2}}{2m}=\frac{n^{2}\pi^{2}}{a^{2}} \frac{\hbar^{2}}{2m}=n^{2}E_{0}\quad E_{0}= \frac{\pi^{2}\hbar^{2}}{2m}
+E= \frac{k^{2}\hbar^{2}}{2m}=\frac{n^{2}\pi^{2}}{a^{2}} \frac{\hbar^{2}}{2m}=\boxed{n^{2}E_{0}}\quad \boxed{E_{0}= \frac{\pi^{2}\hbar^{2}}{2ma^{2}}}
 $$
-
 
 ![[Pasted image 20260314231510.png]]
 
@@ -332,9 +346,9 @@ $$
 
 # Quantum Tunneling
 
-實際上，在有限深位能井的周圍 $\frac{d\chi}{dx}$ 並不為零，因為要使得 $\chi$ 連續。
-
 ![[Pasted image 20260314232451.png|589]]
+
+在井外時，雖然能量 $E<E_{p}$ 但是薛丁格方程仍存在解。為了使波函數連續，所以波函數延伸至井外。
 
 所以按理來說，有那麼一丁點可能粒子隧穿到壁壘外側。
 
@@ -348,3 +362,78 @@ $$
 
 ![[Pasted image 20260314232827.png|903]]
 
+# 威儀指定習題
+
+![[Pasted image 20260315160017.png]]![[Pasted image 20260315160037.png]]
+
+Sol:
+(a) 在 $x=0$ 時不連續
+(b) 在 $x\to 0$ 時 $\chi(x)\to \infty$ 
+(c) 在 $x\to0$ 時 $\chi(x)\to-\infty$ 
+
+![[Pasted image 20260315160633.png]]
+
+Sol:
+代入 time-independent Schrodinger equation $\frac{d^{2}\chi}{dx^{2}}+k^{2}\chi=0$ 解。
+$\frac{d}{dx}\left( \frac{d}{dx} \right)(ae^{ikx}+be^{-ikx})=\frac{d}{dx}(ikae^{ikx}-ikbe^{-ikx})=-k^{2}ae^{ikx}+k^{2}be^{-ikx}=-k^{2}\chi$ 
+$\implies \frac{d^{2}\chi}{dx^{2}}+k^{2}\chi=-k^{2}\chi+k^{2}\chi=0$ 
+符合 time-independent Schrodinger equation，所以 $ae^{ikx}+be^{-ikx}$ 也是一個解。
+
+![[Pasted image 20260315164336.png]]![[Pasted image 20260315164354.png]]
+
+Sol:
+(a)
+$E_{0}= \frac{\pi ^2\hbar^{2}}{2ma^{2}}\approx \frac{3.14^{2}\times(1.05\times 10^{-34})^{2}}{2\times 9.1\times 10^{-31}\times 10^{-20}}\approx 5.98\times 10^{-18}\text{ J}\approx37.4\text{ eV}$  
+(b)
+兩者具有相同量級。
+(c)
+$E_{0}= \frac{\pi^{2}\hbar^{2}}{2m(10^{-14})^{2}}\approx5.98\times 10^{-10}\text{ J}\approx 3.7\times 10^{9}\text{ eV}$ 
+(d)
+幾乎不可能在原子核中找到電子，因為 (c) 的答案顯示，幾乎是原子核束縛能的 $10^{3}$ 倍。
+
+![[Pasted image 20260315193507.png]]
+
+Sol:
+(a)
+$E_{0}=\frac{\pi^{2}\hbar^{2}}{2ma^{2}}\approx 5.44\times 10^{-70}\text{ J}$ 
+(b)
+$E=n^{2}E_{0}\implies n=\sqrt{ \frac{E}{E_{0}} }$ 
+$E=E_{k}=\frac{1}{2}mv^{2}=5\times 10^{-7}$ 
+$n=\sqrt{ \frac{5\times 10^{-7}}{5.44\times 10^{-70}} }\approx 3\times 10^{31}$ 
+
+![[Pasted image 20260315194720.png]]
+
+Sol:
+就愛這種送分題，嘻嘻。
+$\lim_{ n \to \infty } \frac{(n+1)^{2}E_{0}-n^{2}E_{0}}{n^{2}E_{0}}=\lim_{ n \to \infty } \frac{(n+1)^{2}-n^{2}}{n^{2}}=\lim_{ n \to \infty } \frac{2n+1}{n^{2}}=0$ 
+
+![[Pasted image 20260315194830.png]]
+
+Sol:
+其實沒你想的那麼難，不用算什麼機率之類的東西。
+我們利用能量算出速度，然後使用速度除以長度即可。
+$E_{k}=E=\frac{1}{2}mv^{2}=6\times 10^{6}\times 1.6\times 10^{-19}\implies v\approx 1.69\times 10^{7}\text{ m/s}$ 
+$\text{collisions/s}=\frac{\text{velocity}}{\text{width}}= \frac{1.69\times 10^{7}}{10^{-14}}=1.69\times 10^{21}$ 
+
+# 威儀考古
+
+1. 在 Schrodinger equation 的 eigenfunction 中，$\psi$ 與 $\frac{\partial \psi}{\partial x}$ 需要滿足什麼條件？
+
+Sol:
+連續、有限、單值
+
+2. 量子力學認為能量？$T=0\text{ K}$ 時能量？
+
+Sol:
+量子化
+能量 $E=E_{0}\neq 0$ 
+
+3. 請問 $\chi(x)=A\ln(kx)$ 是否可能為薛丁格方程式？為啥？
+
+Sol:
+不能，因為當 $x\to 0$ 時，$\ln(kx)\to - \infty$，非有限值。
+
+4. Time-independent Schrodinger equation 為：$-\frac{\hbar^{2}}{2m} \frac{d^{2}}{dx^{2}}\chi+E_{p}\chi=E\chi$ 為何 $E$ 被量子化？
+
+Sol:
+$\chi$ 需要滿足物理條件與系統邊界條件，僅在特定 $E$ 值時薛丁格方程才有可接受解。
