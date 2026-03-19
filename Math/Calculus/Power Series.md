@@ -27,6 +27,10 @@ $$
 > [!note]
 > 注意到當 $x=a$ 時對 $n\geq1$ 的項都為零，所以此時 power series 必發散。
 
+> [!note]
+> 注意，power series 形如：$\sum_{n=0}^{\infty}c_{n}(x-a)^{n}$。
+> 所以，與 $n$ 無關的常數應該提到 $\sum$ 前面
+
 我們通常對 power series 使用 Ratio / Root Test 來找到使其收斂的 $x$。
 
 > [!note]
@@ -56,11 +60,80 @@ $$
 
 # Representations of Functions as Power Series
 
-> [!note]
-> $\ln(1+z)=-\ln(1+z)^{-1}=-\ln\left( \frac{1}{1+z} \right)=-\ln\left( 1+ \frac{1}{1+z}-1 \right)=-\ln\left( 1  -\frac{z}{1+z} \right)$  就可以計算任意 $z$ 的值。
+## Representations of Functions using Geometric Series
+
+我們從無窮級數開始。這次我們不將無窮級數的和視為 $\frac{1}{1-x}$，而將 $\frac{1}{1-x}$ 視為展開的無窮級數：
+
+$$
+\frac{1}{1-x}=1+x+x^{2}+x^{3}+\dots=\sum_{n=0}^{\infty} x^{n}\quad|x|<1
+$$
+
+我們將其稱為：power series representation of $\frac{1}{1-x}$ on the interval $(-1,1)$ centered at $0$。
+
+## Differentiation and Integration of Power Series
+
+根據下列定理，我們可以對 power series term-by-term 微分或積分。
+
+若 power series $\sum c_{n}(x-a)^{n}$ 有收斂半徑 $R>0$，則如下定義的函數 $f$：
+
+$$
+f(x)=c_{0}+c_{1}(x-a)+c_{2}(x-a)^{2}+\dots=\sum_{n=0}^{\infty} c_{n}(x-a)^{n}
+$$
+
+在區間 $(a-R,a+R)$ 可導且連續。
+
+$$
+\begin{align}
+ & (i)\ f'(x)=c_{1}+2c_{2}(x-a)+3c_{3}(x-a)^{2}+\dots=\sum_{n=1}^{\infty} nc_{n}(x-a)^{n-1} \\
+ & (ii)\ \int f(x) \ dx=C+c_{0}(x-a)+c_{1} \frac{(x-a)^{2}}{2}+c_{2} \frac{(x-a)^{3}}{3}+\dots=C\sum_{n=0}^{\infty} c_{n} \frac{(x-a)^{n+1}}{n+1}
+\end{align}
+$$
+
+並且，$f'$ 與 $\int f(x)\ dx$ 的收斂半徑與原函數相同為 $R$。
+
+> [!error] 小心
+> 雖然上述定理說，積分或微分後的收斂半徑與原函數相同。
+> 但，這不代表收斂**區間**與函數相同。注意端點收斂情況。
+
+> [!warning] 注意
+> 若 power series 不是由 $\frac{1}{1-r}$ 轉換而來，不要亂套 $|r|<1$。
+> 用 Ratio Test 較為保險。
 
 > [!warning] 注意
 > 雖然 power series 定義出的函數一定無限可微，但一個無限可微的函數，不一定可表達為 power series。
+
+給你補個範例，防止忘記怎麼算：
+
+![[Pasted image 20260318230511.png|661]]
+
+> [!note]
+> $\ln(1+z)=-\ln[(1+z)^{-1}]=-\ln\left( \frac{1}{1+z} \right)=-\ln\left( 1+ \frac{1}{1+z}-1 \right)=-\ln\left( 1  -\frac{z}{1+z} \right)$  就可以計算任意 $z$ 的值。
+
+## Functions Defined by Power Series
+
+有些特別重要的函數無法被基本函數表達，必須由 power series 表達。
+
+例如：Bessel function。
+
+$$
+J_{0}(x)=\sum_{n=0}^{\infty} \frac{(-1)^{n}x^{2n}}{2^{2n}(n!)^{2}}
+$$
+
+> [!note] Index Shift
+> $\sum_{n=1}^{\infty}a_{n}=\sum_{n=0}^{\infty}a_{n+1}$ 
+> 如果形如 $\sum_{n=1}^{\infty} x^{2n-1}=\sum_{n=0}^{\infty}x^{2n+1}$，考慮將 $n=1$ 時代入 $2n-1=1$，並用 $n=0$ 代入 index shift 後的式子應該與前者相同：$2n+k=1\implies k=1$。
+
+# Taylor and Maclaurin Series
+
+## Definition of Taylor Series and Maclaurin Series
+
+## When Is a Function Represented by Its Taylor Series?
+
+## Taylor Series of Important Functions
+
+## New Taylor Series from Old
+
+## Multiplication and Division of Power Series
 
 # Exercise
 
@@ -92,6 +165,58 @@ Sol:
 (d)
 注意到 $\sum \frac{x^{n}}{n^{2}}$ 收斂區間為 $[-1,1]$。
 於是答案為：$\sum \frac{1}{n^{2}} (\frac{x-m}{r})^{n}$。
+
+![[Pasted image 20260317223325.png]]![[Pasted image 20260317223357.png]]
+![[Pasted image 20260317223421.png]]
+
+Sol:
+11.
+$f(x)= \frac{x-1}{x+2}= \frac{(x+2)-3}{x+2}=1- \frac{3}{x+2}=1-\frac{3}{2}\cdot \frac{1}{1+\frac{x}{2}}=1- \frac{3}{2}\sum_{n=0}^{\infty}\left( -\frac{x^{}}{2} \right)^{n}＝1-\sum_{n=0}^{\infty} \frac{3(-1)^{n}}{2^{n+1}}x^{n}$ 
+無窮級數 $\sum_{n=0}^{\infty}\left( -\frac{x}{2} \right)^{n}$ 在 $|-\frac{x}{2}|< 1$ 時收斂 $\implies|x|<2\implies R=2\implies$ 收斂區間為 $(-2,2)$。
+12.
+不要害怕提出 $x$，硬提 $\frac{x+a}{a^{2}}$ 就好。
+$f(x)= \frac{x+a}{x^{2}+a^{2}}=\frac{x+a}{a^{2}}\cdot \frac{1}{1-\left( -\frac{x^{2}}{a^{2}} \right)}= \frac{x+a}{a^{2}}\sum_{n=0}^{\infty}\left( -\frac{x^{2}}{a^{2}} \right)^{n}= \frac{x+a}{a^{2}}\sum_{n=0}^{\infty}(-1)^{n}\left( \frac{x}{a} \right)^{2n}$ 
+$=\left( \frac{x}{a^{2}}+\frac{1}{a} \right)\sum_{n=0}^{\infty}(-1)^{n}\left( \frac{x}{a} \right)^{2n}=\sum_{n=0}^{\infty} \frac{(-1)^{n}x^{2n+1}}{a^{2n+2}}+\sum_{n=0}^{\infty} \frac{(-1)^{n}x^{2n}}{a^{2n}+1}$ 
+收斂條件 $|-\frac{x^{2}}{a^{2}}|<1\implies|x|<a\implies R=a\implies$ 收斂區間為 $(-a,a)$。
+
+![[Pasted image 20260318201951.png|771]]
+
+Sol:
+(a)
+不要做 11.9 的題目做傻了，這明顯不能視為 geometric series 然後 $|r|<1$ 吧！
+用 Ratio Test 才是正解！
+(b) 略，不會，就賭大會考不考。
+(c)
+$J_{0}= \sum_{n=0}^{\infty} \frac{(-1)^{n}x^{2n}}{2^{2n}(n!)^{2}}$ 
+$J_{0}'=\sum_{n=0}^{\infty} \frac{(-1)^{n}(2n)x^{2n-1}}{2^{2n}(n!)^{2}}$ 注意到當 $n=0$ 時，該項為零。
+$=\sum_{n=1}^{\infty} \frac{(-1)^{n}x^{2n-1}}{2^{2n-1}n!(n-1)!}$         注意到若以 $n=0$ 化簡，會出現 $(-1)!$ 這種為定義行為
+$=-\sum_{n=0}^{\infty} \frac{(-1)^{n}x^{2n+1}}{2^{2n+1}(n+1)!n!}=-J_{1}(x)$ 
+
+![[Pasted image 20260318204240.png|727]]
+
+Sol:
+(a)
+觀察一下，感覺很像一次微分。嗯，沒錯你說得對。
+$\sum_{n=1}^{\infty}nx^{n-1}=\frac{d}{dx}\left( \sum_{n=0}^{\infty} x^{n}\right)=\frac{d}{dx}\left( \frac{1}{1-x} \right)= \frac{1}{(1-x)^{2}}$ 
+(b)
+(i) 這個簡單，補個 $x$ 就好 $\implies \frac{x}{(1-x)^{2}}$。不教。
+(ii) 觀察一波，喔，原來是 $x=\frac{1}{2}$ 帶進去 (i) 就行 $\implies \frac{\frac{1}{2}}{\left( 1-\frac{1}{2} \right)^{2}}=2$ 
+(c)
+(i)
+看到 $n(n-1)$，思考一下。感覺像二次微分。
+$\sum_{n=2}^{\infty}n(n-1)x^{n}=x^{2} \frac{d^{2}}{dx^{2}}\left( \sum_{n=0}^{\infty}x^{n} \right)=x^{2} \frac{d^{2}}{dx^{2}}\left( \frac{1}{1-x} \right)=\frac{2x^{2}}{(1-x)^{3}}$ 
+(ii) 帶看看得到 $4$ 
+(iii) 有點難度。將 $n^{2}=(n^{2}-n)+n$ 帶入，得到 $4+2=6$。
+
+![[Pasted image 20260318213840.png|841]]
+Sol:
+(a)
+這邊英文沒看懂：completing the square 表示配方。
+$\int_{0}^{1/2} \frac{1}{\left( x-\frac{1}{2} \right)^{2}+\frac{3}{4}}\ dx=\int_{0}^{1/2} \frac{1}{\left( x-\frac{1}{2} \right)^{2}+\left( \frac{\sqrt{ 3 }}{2} \right)^{2}} \ dx$ 看著有種 $\int \frac{1}{x^{2}+a^{2}}\ dx=\frac{1}{a}\tan^{-1}\left( \frac{x}{a} \right)+C$ 的樣子
+令 $u=x-\frac{1}{2}\ du=dx$ 
+$\int_{-1/2}^{0} \frac{1}{u^{2}+\left( \frac{\sqrt{ 3 }}{2} \right)^{2}} \ du=\left[ \frac{2}{\sqrt{ 3 }}\tan^{-1}\left( \frac{2u}{\sqrt{ 3 }} \right) \right]^{0}_{-\frac{1}{2}}=-\frac{2}{\sqrt{ 3 }}\cdot \frac{-\pi}{6}=\frac{\pi}{3\sqrt{ 3 }}$ 
+(b) 寫到這，很痛苦。於是直接貼上解答，等你心情好再看吧。
+![[Pasted image 20260318214744.png|712]]
 
 # 大會考
 
