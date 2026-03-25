@@ -19,12 +19,14 @@ Theorem 1:
 $x+x=(x+x)1=(x+x)(x+x')=x+xx'=x+0=x$ 
 Theorem 2:
 $x+1=x+(x+x')=x+x'=1$ 
-Theorem 5:
-By Truth Table
+Theorem 5 (b):
+$\begin{cases}(xy)(x'+y')=0 \\ (xy)+(x'+y')=1\end{cases}$ 即證明互為補數。
+$(xy)(x'+y')=(xyx'+xyy')=0$ 
+$(xy)+(x'+y')=x'+(xy+y')=x'+(x+y')+(y+y')=x'+x+y'=1+y'=1$ 
 Theorem 6:
 $x+xy=x(1+y)=x(1)=x$ 
 
-Boolean Algebra 的操作符優先級：
+Boolean Algebra 的操作符**優先級**：
 1. 括號
 2. 取反
 3. 且
@@ -32,7 +34,7 @@ Boolean Algebra 的操作符優先級：
 
 # Algebraic Manipulation
 
-literal：變量或取反變量，例如 $x$，$y'$。
+**literal**：變量或取反變量，例如 $x$，$y'$。
 
 term：項，一個 AND 或兩個 OR 組合，例如 $xy, y+z$。(包含輸入的單個門電路)
 
@@ -45,6 +47,9 @@ proof:
 吸收律：$a+ab=a$。
 $(a+b)(a+c)=aa+ac+ba+bc=a+ac+ba+bc=a+ba+bc=a+ab+bc=a+bc$ 
 
+> [!note]
+> 適合用來解 $A+A'F=(A+A')(A+F)=A+F$。
+
 ![[Pasted image 20260319172611.png|825]]
 
 特別注意 Ex2, Ex5。
@@ -52,6 +57,34 @@ $(a+b)(a+c)=aa+ac+ba+bc=a+ac+ba+bc=a+ba+bc=a+ab+bc=a+bc$
 說明 Ex5 的思路：
 觀察式子，前兩項減無可減，但多了 $yz$。
 想辦法讓 $yz$ 與前兩項有相同項，於是利用 $1=x+x'$。
+
+![[Pasted image 20260324230043.png]]
+
+Sol:
+難難的。
+before: 24 literals
+after: 8 literals
+$BCDEF+ABDF+BCDF'+CD'EF+CD'EF'+BDF'$ 
+$=BCDEF+ABDF+BCDF'+CD'E(F+F')+BDF'$ 
+$=BCDEF+ABDF+CD'E+BD(CF'+F')$ 
+$=BCDEF+ABDF+CD'E+BDF'$ 
+$=BD(CEF+AF+F')+CD'E$ 
+$=BD(CEF+(A+F')(F+F'))+CD'E$ 
+$=BD(CEF+A+F')+CD'E$ 
+$=BD((CE+F')(F+F')+A)+CD'E$ 
+$=BD(CE+A+F')+CD'E$ 
+$=BD(A+F')+BDCE+CD'E$ 
+$=BD(A+F')+CE(BD+D')$ 
+$=BD(A+F')+CE(B+D')$ 
+
+化減 $(x+y'+z')(x'+z)$。
+
+Sol:
+$xx'+x'y'+x'z'+xz+y'z+zz'$ 
+$=x'y'+x'z'+xz+y'z$ 注意此處容易忘記繼續化減
+$=x'y'+x'z'+xz+(x+x')y'z$ 
+$=x'y'+x'z'+xz+xy'z+x'y'z$ 
+$=x'y'+x'z'+xz$ 
 
 # Complement of a Function
 
@@ -88,7 +121,7 @@ $n$ 個變量可以組成 $2^{n}$ 個 minterms 或 maxterms。
 $f_{1}'=m_{0}+m_{2}+m_{3}+m_{5}+m_{6}=\sum(0,2,3,5,6)$ 
 $\implies f_{1}=(f_{1}')'=M_{0}M_{2}M_{3}M_{5}M_{6}=\prod(0,2,3,5,6)$ 
 
-我們將 product of maxterms 視為：排除法。因為 $f=M_{0}=xyz$ 實際代入時為 $0$，於是 product of maxterms 可以將列出的 maxterms 對應全部置零。
+我們將 product of maxterms 視為：排除法。因為 $f=M_{0}=x+y+z$ 實際代入時為 $0$，於是 product of maxterms 可以將列出的 maxterms 對應全部置零。
 
 將  sum of minterms 視為：挑選。因為 $f=m_{0}=x'y'z'$ 實際代入時為 $1$，於是 sum of minterms 可將所有對應值全部置一。
 
@@ -140,7 +173,7 @@ $=\prod(0,2,4,5)$
 
 因為，$n$ 個輸入的結果必須獨立於輸入順序與運算先後。
 
-所以，AND 與 OR 可以拓展。NAND 與 NOR 不滿足結合律，所以不能拓展。
+所以，**AND 與 OR 可以拓展。NAND 與 NOR 不滿足結合律，所以不能拓展**。
 
 例如：
 $(x\text{ NOR }y)\text{ NOR }z=((x+y)'+z)'=(x+y)z'$ 
@@ -154,7 +187,7 @@ $x\text{ NOR }(y\text{ NOR }z)=(x+(y+z)')'=x'(y+z)$
 
 ![[Pasted image 20260319230442.png|811]]
 
-因為 XOR 與 XNOR 都可交換與結合，可拓展。
+因為 **XOR 與 XNOR 都可交換與結合，可拓展。** 
 
 positive logic：$1$ 表示高電壓，$0$ 表示低電壓。
 
