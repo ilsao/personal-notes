@@ -14,6 +14,7 @@ priority_queue<ListNode*, vector<ListNode*>, cmp> q;
 ``` cpp
 class Solution {
 public:
+	// heapify assumed that the subtrees have been heapified already
     void heapify(vector<int>& nums, int i, int n) {
         int left  = 2 * i + 1;
         int right = 2 * i + 2;
@@ -24,6 +25,8 @@ public:
             largest = nums[largest] > nums[right] ? largest : right;
         if (largest != i) {
             swap(nums[i], nums[largest]);
+            // the subtrees have been heapified;
+            // we need only check the swapped subtree
             heapify(nums, largest, n);
         }
     }
@@ -37,7 +40,8 @@ public:
             heapify(nums, i, sz);
 
         // 2. sort - swap the first item and the last one (remember to heapify)
-        // since we're building max heap, swap the first and the last one can move the largest number to the end
+        // since we're building a max heap, 
+        // swapping the first and the last item can move the largest number to the end
         int n = sz;
         for (int i = 0; i < sz; i++) {
             swap(nums[0], nums[sz - i - 1]);
@@ -53,41 +57,40 @@ public:
 基本思路：不斷將數組拆分，直到最小單元，然後兩兩合併。
 
 ``` cpp
-#include <vector>
-using namespace std;
-
 class Solution {
 public:
-    void merge(vector<int>& arr, int left, int mid, int right) {
-        vector<int> temp;
-        int i = left;
-        int j = mid + 1;
+    void merge(vector<int>& nums, int l, int mid, int r) {
+        int left = l, right = mid + 1;
+        int sz = r - l + 1;
+        vector<int> tmp;
+        tmp.reserve(sz);
 
-        while (i <= mid && j <= right) {
-            if (arr[i] <= arr[j]) {
-                temp.push_back(arr[i++]);
-            } else {
-                temp.push_back(arr[j++]);
-            }
+        while (left <= mid && right <= r) {
+            if (nums[left] <= nums[right])
+                tmp.push_back(nums[left++]);
+            else
+                tmp.push_back(nums[right++]);
         }
+        while (left <= mid)
+            tmp.push_back(nums[left++]);
+        while (right <= r)
+            tmp.push_back(nums[right++]);
 
-        while (i <= mid) temp.push_back(arr[i++]);
-        while (j <= right) temp.push_back(arr[j++]);
-
-        for (int k = 0; k < temp.size(); k++) {
-            arr[left + k] = temp[k];
-        }
+        for (int i = 0; i < sz; i++)
+            nums[l + i] = tmp[i];
     }
 
-    void mergeSort(vector<int>& arr, int left, int right) {
-        if (left >= right) return;
+    void mergeSort(vector<int>& nums, int l, int r) {
+        if (l >= r) return;
+        int mid = (l + r) / 2;
+        mergeSort(nums, l, mid);
+        mergeSort(nums, mid + 1, r);
+        merge(nums, l, mid, r);
+    }
 
-        int mid = left + (right - left) / 2;
-
-        mergeSort(arr, left, mid);
-        mergeSort(arr, mid + 1, right);
-
-        merge(arr, left, mid, right);
+    vector<int> sortArray(vector<int>& nums) {
+        mergeSort(nums, 0, nums.size() - 1);
+        return nums;
     }
 };
 ```
@@ -132,3 +135,4 @@ public:
     }
 };
 ```
+
