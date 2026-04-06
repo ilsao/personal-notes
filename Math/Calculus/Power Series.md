@@ -14,7 +14,7 @@ $$
 f(x)=c_{0}+c_{1}x+c_{2}x^{2}
 $$
 
-$f$ 的定義域是所有使級數收斂的 $x$。注意到 $f$ 跟多項式很像，唯一的區別是 $f$ 有無限多項。
+$f$ 的**定義域是所有使級數收斂的 $x$**。注意到 $f$ 跟多項式很像，唯一的區別是 $f$ 有無限多項。
 
 更一般地，級數形如：
 
@@ -25,7 +25,7 @@ $$
 稱為 power series in $(x-a)$ 或以 $a$ 為中心的 power series 或關於 $a$ 的 power series。
 
 > [!note]
-> 注意到當 $x=a$ 時對 $n\geq1$ 的項都為零，所以此時 power series 必發散。
+> 注意到當 $x=a$ 時對 $n\geq1$ 的項都為零，所以此時 power series 必收斂。
 
 > [!note]
 > 注意，power series 形如：$\sum_{n=0}^{\infty}c_{n}(x-a)^{n}$。
@@ -158,6 +158,7 @@ $$
 
 > [!note]
 > 我們可以對任意函數執行泰勒展開，但這些泰勒展開不一定與原函數相等。
+> 你得判斷泰勒級數的收斂性與是否收斂到與原函數相等。
 
 > [!note]
 > 無論某函數的 power series 是如何找到的，power series 都是唯一的。(對相同 $a$ 為中心展開的係數會相同)
@@ -247,7 +248,7 @@ $$
 
 > [!note]
 > 對於 Maclaurin Series，$f^{(n)}(0)=c_{n}\times n!$。
-> 但是注意，$c_{n}$ 不一定等於直接把 $n$ 代入 Maclaurin Series，而是 $x^{n}$ 的係數！
+> 但是注意，$c_{n}$ 不等於直接把 $n$ 代入 Maclaurin Series，而是 $x^{n}$ 的係數！
 
 ## Multiplication and Division of Power Series
 

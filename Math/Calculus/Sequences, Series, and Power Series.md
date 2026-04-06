@@ -249,6 +249,11 @@ $$
 > 有限項不會影響到收斂與否的結果。
 > 例如：$\sum_{i=2}^{\infty}a_{n}$ 收斂，則 $\sum_{i=1}^{\infty}=a_{1}+\sum_{i=2}^{\infty}$ 也必定收斂。
 
+> [!warning] 注意：
+> 當 $\sum a_{n}$ 與 $\sum b_{n}$ 收斂時，$\sum a_{n}b_{n}$ 不一定收斂。反例 $a_{n}=b_{n}= \frac{(-1)^{n}}{\sqrt{ n }}$。
+> 但是，若 $a_{n}\geq0$ 或 $b_{n}\geq 0$，則 $\sum a_{n}b_{n}$ 一定收斂。
+> 又或者說，若 $a_{n}$ 與 $b_{n}$ 都是絕對收斂，則 $\sum a_{n}b_{n}$ 一定收斂。(一個絕對一個不絕對的話，也不能保證喔)
+
 # The Integral Test and Estimates of Sums
 
 ## The Integral Test
@@ -514,7 +519,7 @@ proof:
 
 > [!warning] 注意
 > 條件收斂表示 $\sum a_{n}$ 收斂，但 $\sum |a_{n}|$ 不收斂。
-> 但由於條件收斂收斂，所以 $\lim_{ n \to \infty } a_{n}=0\implies \lim_{ n \to \infty }|a_{n}|=0$。
+> 但由於條件收斂，所以 $\lim_{ n \to \infty } a_{n}=0\implies \lim_{ n \to \infty }|a_{n}|=0$。
 > 不要看到絕對值就直接判錯啊！
 
 > [!error] 小心
@@ -630,11 +635,14 @@ The Root Test 同樣分三部分闡述：
 - $\sum \frac{1}{n}$ 發散
 - $\sum \frac{1}{e^{n}}$ 收斂 (此為公比為 $\frac{1}{e}<1$ 的無窮等比級數)
 - $\sum \frac{1}{n!}$ 收斂 (ratio test)
-- $\sum \frac{1}{n^{p}}$ 當 $p<1$ 時收斂
+- $\sum \frac{1}{n^{p}}$ 當 $p>1$ 時收斂
 - $\sum \frac{1}{\ln n}$ 發散 (direct comparison test with $\frac{1}{n}$)
 - $\sum \frac{1}{(\ln n)^{\ln n}}$ 收斂
 - $\sum \frac{\ln n}{n}$ 發散 (limit comparison test with $\frac{1}{n}$ 或 integral test)
 - $\sum \frac{\ln n}{n^{2}}$ 收斂 (direct comparison test with $\frac{1}{n^{3/2}}$ 或 integral test)
+
+> [!note]
+> $a^{\ln b}=b^{\ln a}$ 
 
 # Tips
 
