@@ -1,3 +1,11 @@
+# 自定義 Sort
+
+```cpp
+sort(list.begin(), list.end(), [](auto &a, auto &b) {
+    return a.second > b.second;        // descending
+});
+```
+
 # Heap Sort
 
 若想對 `priority_queue` 自定義比較規則，使用：

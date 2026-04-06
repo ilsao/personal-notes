@@ -19,5 +19,7 @@
 
 [Merge k Sorted Lists](https://leetcode.com/problems/merge-k-sorted-lists/) (min heap, priority queue) (記得複習自訂 priority queue 排序語法)
 
+[Maximum Subsequence Score](https://leetcode.com/problems/maximum-subsequence-score/) (priority queue + 自訂 sort)
+
 ![[Pasted image 20260324182058.png|329]]
 
