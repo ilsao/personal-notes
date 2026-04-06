@@ -302,6 +302,9 @@ proof:
 > [!warning] 注意
 > The Integral Test 應該是你嘗試過其他手段後，最後的手段，因為求積分較為複雜。
 
+> [!note]
+> 有 $\ln$ 出現在分母的有更大機率要用到 Integral Test 喔！
+
 ## Estimating the Sum of a Series
 
 假設我們可以通過 Integration Test 知道級數 $\sum a_{n}$ 收斂，我們應該如何估計級數的值？
@@ -637,9 +640,12 @@ The Root Test 同樣分三部分闡述：
 - $\sum \frac{1}{n!}$ 收斂 (ratio test)
 - $\sum \frac{1}{n^{p}}$ 當 $p>1$ 時收斂
 - $\sum \frac{1}{\ln n}$ 發散 (direct comparison test with $\frac{1}{n}$)
-- $\sum \frac{1}{(\ln n)^{\ln n}}$ 收斂
+- $\sum \frac{1}{(\ln n)^{\ln n}}$ 收斂，轉 $e$ 
+- $\sum \frac{1}{(\ln n)^{n}}$ 收斂，轉 $e$
+- $\sum \frac{1}{n^{\ln n}}$ 收斂，轉 $e$ 
 - $\sum \frac{\ln n}{n}$ 發散 (limit comparison test with $\frac{1}{n}$ 或 integral test)
 - $\sum \frac{\ln n}{n^{2}}$ 收斂 (direct comparison test with $\frac{1}{n^{3/2}}$ 或 integral test)
+- $\sum \frac{1}{n(\ln n)^{p}}$ 當 $p>1$ 時收斂 (integral test)
 
 > [!note]
 > $a^{\ln b}=b^{\ln a}$ 
@@ -686,7 +692,7 @@ $a_{2}=1$，所以 $0<a_{2}<a_{1}\leq2$ 成立。
 考慮 $k=n+1$ 時：
 $a_{k+1}<a_{k}\implies-a_{k+1}>-a_{k}\implies \frac{1}{3-a_{k+1}}< \frac{1}{3-a_{k}}$ (分母為正)
 $\implies a_{k+2}<a_{k+1}$ 成立。
-根據我們的假設，$0<3-a_{k+1}\leq2$ 成立 ($a_{k+1}\leq2$)，所以 $0<a_{k+2}<a_{k+1}\leq{2}$ 成立。
+根據我們的假設，$0< \frac{1}{3-a_{k+1}}\leq2$ 成立 ($a_{k+1}\leq2$)，所以 $0<a_{k+2}<a_{k+1}\leq{2}$ 成立。
 根據單調有界定理，此數列收斂。
 
 ![[Pasted image 20260104182213.png]]
@@ -736,6 +742,7 @@ Sol:
 收斂嗎？
 
 Sol:
+法 1
 這題用來複習 Substitution Rule。
 令 $f(x)$ 滿足 $f(n)=a_{n}$。
 $\int_{1}^{\infty} \frac{\tan^{-1}x}{1+x^{2}}\ dx=\lim_{ t \to \infty }\int_{1}^{t} \frac{\tan^{-1}x}{1+x^{2}}\ dx$ 
@@ -743,6 +750,8 @@ $\int_{1}^{\infty} \frac{\tan^{-1}x}{1+x^{2}}\ dx=\lim_{ t \to \infty }\int_{1}^
 $\implies \lim_{ t \to \infty }\int^{\tan^{-1}t}_{\tan^{-1}1}u \ du=\left[ \frac{1}{2}u^{2} \right]^{\tan^{-1}t}_{\tan^{-1}1}=\frac{3\pi^{2}}{32}$ 
 By the Integral Test，級數收斂。
 這題有兩點要注意，首先是 substitution rule 的應用，其次是替換後積分上下界的改變。
+法 2
+取 $b_{n}=\frac{1}{n^{2}}$ 做 limit comparison test。
 
 ![[Pasted image 20260305161513.png]]
 
@@ -762,6 +771,7 @@ Direct comparison test with $\frac{\ln n}{n^{2}}\leq\frac{\sqrt{ n }}{n^{2}}=\fr
 找到 $p$ 的範圍使級數收斂。
 
 Sol:
+(I)
 因為上述東西在 $[1,\infty)$ 上連續、遞減、恆正，所以可以使用 Integral Test。
 令 $f(x)$ 滿足 $f(n)=a_{n}$。
 $\lim_{ t \to \infty }\int_{1}^{t} \frac{\ln x}{x^{p}} \ dx$ 令 $u=\ln x$ 則 $du=\frac{1}{x}\ dx$。
@@ -769,8 +779,11 @@ $\implies \lim_{ t \to \infty }\int_{\ln1}^{\ln t} \frac{u}{e^{(p-1)u}} \ du=\li
 $\implies$ 上述收斂，等於求 $\int_{\ln 1}^{\ln t} e^{(1-p)u} \ du$ 收斂，即，$\lim_{ u \to \infty } \frac{e^{(1-p)u}}{1-p}$ 收斂。
 $\implies$ 對 $u\to \infty$，僅當 $1-p<0$ 時極限存在。
 所以，$p>1$ 時級數收斂。
+(II)
+注意到：$\ln n$ 比任意正冪都慢。即，$\ln n<n^{\epsilon}$ 其中 $\epsilon>0$。
+通過 comparison + p-sereis + edge condition 判斷即可。
 
-![[Pasted image 20260305180823.png]]
+![[Pasted image 20260305180823.png|1148]]
 
 Sol:
 $\int_{n+1}^{\infty} \frac{1}{x(\ln x)^{2}}\ dx\leq s-s_{n}\leq \int_{n}^{\infty} \frac{1}{x(\ln x)^{2}} \ dx$ 
@@ -778,7 +791,8 @@ $\int_{n+1}^{\infty} \frac{1}{x(\ln x)^{2}}\ dx\leq s-s_{n}\leq \int_{n}^{\infty
 $\lim_{ t \to \infty }\int^{\ln t}_{\ln n}u^{-2} \ du=\lim_{ t \to \infty }\left( \frac{1}{\ln n}-\frac{1}{\ln t} \right)=\frac{1}{\ln n}<0.01$  
 $\implies n>e^{100}$ 
 
-![[Pasted image 20260305204022.png]]![[Pasted image 20260305204040.png]]
+![[Pasted image 20260305204022.png|900]]
+![[Pasted image 20260305204040.png|1010]]
 
 Sol:
 (a)
@@ -794,7 +808,7 @@ Sol:
 由於函數單調遞減，且恆正，所以級數 $0<t_{n}<t_{1}=1$ 有界。
 由 M.S.T.，級數收斂。
 
-![[Pasted image 20260306163745.png]]
+![[Pasted image 20260306163745.png|225]]
 上圖收斂嗎？
 
 Sol:
@@ -806,12 +820,12 @@ $\lim_{ n \to \infty } \frac{a_{n}}{b_{n}}=\frac{n}{n^{1+1/n}}=\lim_{ n \to \inf
 所以：$\lim_{ n \to \infty } \frac{1}{n^{1/n}}=1>0$。
 又 $\sum \frac{1}{n}$ 為 harmonic series 發散，由 the limit comparison test，$\sum_{n=1}^{\infty} \frac{1}{n^{1+1/n}}$ 發散。
 
-![[Pasted image 20260306170236.png]]
+![[Pasted image 20260306170236.png|833]]
 
 Sol:
 標準的做法是 integral test。
 
-![[Pasted image 20260306173058.png]]
+![[Pasted image 20260306173058.png|774]]
 
 Sol:
 (a)
@@ -827,7 +841,7 @@ $\left( 1-\cos\left( \frac{1}{x^{2}} \right) \right)'= \frac{-2\sin \frac{1}{x^{
 因為 $b_{n}$ 為 $p=2>1$ 的 p-series，所以由 (a) 得 $a_{n}$ 收斂。
 注意到：上面 $\lim_{ n \to \infty } \frac{a_{n}}{b_{n}}$ 不將除以 $\frac{1}{n^{2}}$ 換成乘 $n^{2}$，是因為這樣 $\lim_{ n \to \infty }n^{2}\left( 1-\cos\left( \frac{1}{n^{2}} \right) \right)$ 會變成 $\infty \cdot0$ 的形式，還是要除下去用洛必達解。
 
-![[Pasted image 20260306180709.png]]
+![[Pasted image 20260306180709.png|1048]]
 
 Sol:
 法 1：
@@ -838,7 +852,7 @@ Sol:
 法 2：
 因為 $\sum a_{n}$ 收斂，所以 $\lim_{ n \to \infty }a_{n}=0$。
 根據極限定義，存在一個數 $N$ 使得 $n>N$ 時有 $|a_{n}-0|<1$。
-因為 $a_{n}\geq 0$，所以有 $0\leq a_{n}^{2}<a_{n}<1$。
+因為 $a_{n}\geq 0$，此時有 $0\leq a_{n}^{2}<a_{n}<1$。
 根據 the direct comparison test，級數收斂。
 
 ![[Pasted image 20260307204906.png]]
@@ -853,7 +867,7 @@ $\lim_{ t \to \infty }\int_{2}^{t} \frac{1}{x\ln x} \ dx\ \left[ u=\ln x\ du=\fr
 $=\lim_{ t \to \infty }\int_{\ln 2}^{\ln t} \frac{1}{u} \ du=\lim_{ t \to \infty }[\ln u]^{\ln t}_{\ln2}=\infty$ 發散。
 所以，此級數是條件收斂。
 
-![[Pasted image 20260307213128.png]]
+![[Pasted image 20260307213128.png|917]]
 
 Sol:
 (a)
@@ -890,12 +904,12 @@ $\sum \sin(\pi \sqrt{ 4n^{2}+2n+1 })$ 收斂嗎？
 Sol:
 $=\sum \sin (\pi\sqrt{ 4n^{2}+2n+1 }-\pi \sqrt{ 4n^{2} })$ 
 $=\sum \sin\left( \frac{\pi^{2}(4n^{2}+2n+1)-\pi^{2}(4n^{2})}{\pi \sqrt{ 4n^{2}+2n+1 }+\pi \sqrt{ 4n^{2} }} \right)$ 
-$\sum \sin\left( \frac{\pi(2n+1)}{\sqrt{ 4n^{2}+2n+1 }+\sqrt{ 4n^{2} }} \right)=\sum a_{n}$ 
+$=\sum \sin\left( \frac{\pi(2n+1)}{\sqrt{ 4n^{2}+2n+1 }+\sqrt{ 4n^{2} }} \right)=\sum a_{n}$ 
 $\lim_{ n \to \infty }a_{n}=\sin \frac{\pi}{2}=1$ 
 所以發散 by the test for divergence。
 
-![[Pasted image 20260310140005.png]]
-![[Pasted image 20260310135950.png]]
+![[Pasted image 20260310140005.png|869]]
+![[Pasted image 20260310135950.png|364]]
 
 Sol:
 $\lim_{ n \to \infty }| \frac{a_{n+1}}{a_{n}}|=\lim_{ n \to \infty }| \frac{-(n+1)n^{n}}{(n+1)^{n+1}b_{n}}|=\lim_{ n \to \infty } \frac{n^{n}}{(n+1)^{n}b_{n}}$ 
@@ -934,12 +948,12 @@ $a_{n+1}-a_{n}=-\frac{1}{3}(a_{n}-a_{n-1})\implies d_{n}=-\frac{1}{3}d_{n-1}=\le
 $a_{n}=a_{1}+\sum_{i=1}^{n-1}d_{i}$ 
 $\implies \lim_{ n \to \infty }a_{n}=\frac{a}{1-r}=\frac{1}{1+\frac{1}{3}}=\frac{3}{4}$ 
 
-![[Pasted image 20260302203408.png]]
+![[Pasted image 20260302203408.png|888]]
 
 Sol:
 (a)
 令 $b_{n}=\ln a_{n}=n\ln\left( 1+\frac{2}{n} \right)$ 
-這邊我們想用洛必達，當好 $\ln$ 裡面有個 $n$ 在分母，想辦法把它換出來。
+這邊我們想用洛必達，剛好 $\ln$ 裡面有個 $n$ 在分母，想辦法把它換出來。
 令 $x_{n}=\frac{2}{n}$，則 $x_{n}\to0\text{ as }n\to \infty$。
 此時 $\lim_{ x_{n} \to 0}b_{n}=2\cdot \frac{\ln(1+x)}{x}=2$ 。
 因為 $a_{n}=e^{b_{n}}$，所以 $\lim_{ n \to \infty }a_{n}=\lim_{ n \to \infty }e^{b_{n}}=e^{2}$ 收斂。
@@ -947,7 +961,7 @@ Sol:
 看到有除法，我們可以通過相鄰兩相相除將除法消除。
 $\frac{a_{n+1}}{a_{n}}=\frac{n+1}{2}$，當 $n\to \infty$ 時乘法因子不收斂，所以整體不收斂。
 
-![[Pasted image 20260302205020.png]]
+![[Pasted image 20260302205020.png|1019]]
 
 Sol:
 (b)
@@ -972,7 +986,7 @@ Sol:
 本來我笨笨的選 (A)，但是沒想到有反例：$a_{n}=\frac{1}{n^{2}}$，$b_{n}=-\frac{1}{n}$。
 我們看 (C)，這保證了 $0\leq|b_{n}|\leq|a_{n}|$，利用 comparison test 保證 $b_{n}$ 收斂。
 
-![[Pasted image 20260308201311.png]]
+![[Pasted image 20260308201311.png|925]]
 
 Sol:
 (A)
@@ -993,7 +1007,7 @@ $\sum_{n=2}^{\infty}\ln\left( 1-\frac{1}{n} \right)=\sum_{n=2}^{\infty}\ln\left(
 $s_{n}=(\ln1-\ln 2)+(\ln 2-\ln3)+\dots+(\ln(n-1)-\ln n)=\ln 1-\ln n$ 
 $\sum_{n=2}^{\infty}\ln\left( 1-\frac{1}{n} \right)=\lim_{ n \to \infty }s_{n}=-\infty$ 發散
 
-![[Pasted image 20260308204622.png]]
+![[Pasted image 20260308204622.png|1418]]
 
 Sol:
 (a)
@@ -1007,7 +1021,7 @@ $=\lim_{ t \to \infty } \frac{1}{2}\int_{1}^{t^{2}}e^{-u}\ du=-\frac{1}{2}[e^{-u
 (d)
 $|\frac{\sin n}{n^{2}+1}|\leq \frac{1}{n^{2}+1}$，By direct comparison test，收斂 by absolute convergenct。
 
-![[Pasted image 20260308210110.png]]
+![[Pasted image 20260308210110.png|1184]]
 
 Sol:
 這題我弄錯的選項是 (a)。
@@ -1015,31 +1029,31 @@ Sol:
 取 $b_{n}=\frac{1}{n}$，則 $\lim_{ n \to \infty } \frac{a_{n}}{b_{n}}= \lim_{ n \to \infty }\frac{\sin\left( \frac{1}{n} \right)}{\frac{1}{n}}=\lim_{ x \to 0 } \frac{ \sin x}{x}=1$。
 注意到當 $\lim_{ x \to 0 } \frac{\sin x}{x}=1$，但 $\lim_{ x \to \infty } \frac{\sin x}{x}=0$ by squeeze theorem (不是 L'Hospital)。
 
-![[Pasted image 20260308211237.png]]
+![[Pasted image 20260308211237.png|1175]]
 
 Sol:
 顯然，對任意常數 $p$ 都有 $\lim_{ n \to \infty } \frac{1}{n(\ln n)^{p}}=0$。( $p<0$ 時反覆做 L'Hospital 即可)
 並且 $x>e^{-p}$ 時 $\left[ \frac{1}{x(\ln x)^{p}} \right]'=\frac{-((\ln x)^{p-1}\cdot(p+\ln x))}{[x(\ln x)^{p}]^{2}}<0$ $\forall p$，所以 $p$ 的範圍為 $(-\infty,\infty)$。
 
-![[Pasted image 20260308213732.png]]
+![[Pasted image 20260308213732.png|1111]]
 
 Sol:
 (A) 正確
 (B)
-錯，若 $a_{n}=\frac{(-1)^{n-1}}{n}$，則 $|a_{n}|+a_{n}=\begin{cases} \frac{2}{n} & \text{if n is even} \\ 0 & \text{if n is odd}\end{cases}$ 發散。
+錯，若 $a_{n}=\frac{(-1)^{n-1}}{n}$，則 $|a_{n}|+a_{n}=\begin{cases} \frac{2}{n} & \text{if n is odd} \\ 0 & \text{if n is even}\end{cases}$ 發散。
 (C)
 錯，若 $a_{n}=-1$，則 $|a_{n}|+a_{n}=0\implies \sum(|a_{n}|+a_{n})$ 收斂，但 $\sum a_{n}$ 發散。
 (D)
 錯，若 $a_{n}= \frac{(-1)^{n-1}}{\sqrt{ n }}$ 則收斂 by alternating series test，但 $a_{n}^{2}=\frac{1}{n}$ 卻發散。
 
-![[Pasted image 20260308214655.png]]
+![[Pasted image 20260308214655.png|1132]]
 
 Sol:
 (A)
 錯，很陰險。
 反例：$a_{n}=\frac{(-1)^{n}}{n}$ 收斂，但 $\sum(-1)^{n}a_{n}=\sum \frac{1}{n}$ 發散。
 
-![[Pasted image 20260308220200.png]]
+![[Pasted image 20260308220200.png|277]]
 這東西收斂嗎？
 
 Sol:
@@ -1047,7 +1061,7 @@ Sol:
 取 $b_{n}=\frac{1}{n^{2}}$ 做 limit comparison test，$\lim_{ n \to \infty } \frac{a_{n}}{b_{n}}= \lim_{ n \to \infty }\frac{\ln\left( 1+\frac{1}{n^{2}} \right)}{\frac{1}{n^{2}}}=\lim_{ x \to 0 } \frac{\ln (1+x)}{x}=1$。
 因為 $b_{n}$ 收斂，所以級數收斂 by the limit comparison test。
 
-![[Pasted image 20260308221058.png]]
+![[Pasted image 20260308221058.png|370]]
 判斷收斂性？
 
 Sol:
@@ -1055,7 +1069,7 @@ Sol:
 但是，注意觀察 $\tan x$ 在 $\left( 0, \frac{\pi}{2} \right)$ 遞增，所以在 $n$ 足夠大時，$\frac{\pi}{n}$ 會使得 $\tan\left( \frac{\pi}{n} \right)$ 遞減。
 又 $\lim_{ n \to \infty } \tan\left( \frac{\pi}{n} \right)=0$，所以級數收斂 By Alternating Series Test。
 
-![[Pasted image 20260313173025.png]]
+![[Pasted image 20260313173025.png|907]]
 
 Sol:
 最難的是 (C)，也是答案。
@@ -1066,7 +1080,7 @@ $|(-1)^{n} \frac{\ln n}{n-\ln n}|= \frac{\ln n}{n-\ln n}$
 又 $\lim_{ x \to \infty } \frac{\ln x}{x-\ln x}= \lim_{ x \to \infty } \frac{\frac{1}{x}}{1- \frac{1}{x}}=0$，所以 $\sum_{n=1}^{\infty}(-1)^{n} \frac{\ln n}{n-\ln n}$ 收斂 by the alternating series test。
 所以，這東西是條件收斂。
 
-![[Pasted image 20260313175027.png]]
+![[Pasted image 20260313175027.png|1376]]
 
 Sol:
 注意到條件收斂只可能發生在 ratio test 等於 $1$ 時，所以我們需要對端點再次確認。

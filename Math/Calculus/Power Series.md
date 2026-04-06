@@ -91,6 +91,9 @@ $$
 
 並且，$f'$ 與 $\int f(x)\ dx$ 的收斂半徑與原函數相同為 $R$。
 
+> [!warning] 注意
+> 這邊積分常數不總是 0，記得檢查呀！
+
 > [!error] 小心
 > 雖然上述定理說，積分或微分後的收斂半徑與原函數相同。
 > 但，這不代表收斂**區間**與函數相同。注意端點收斂情況。
@@ -256,7 +259,8 @@ $$
 
 # Exercise
 
-![[Pasted image 20260316202212.png]]![[Pasted image 20260316212331.png]]
+![[Pasted image 20260316202212.png|1004]]
+![[Pasted image 20260316212331.png|542]]
 
 Sol:
 這題倒在了處理 $x=a\pm R$ 的判斷上。
@@ -276,7 +280,7 @@ Sol:
 偏移到中點：$\sum(x-m)^{n}$。
 使收斂半徑為 $r$：$\sum\left( \frac{x-m}{r} \right)^{n}$。
 (b)
-注意到 $\sum \frac{x^{n}}{n}$ 收斂區間為 $[p,q)$。
+注意到 $\sum \frac{x^{n}}{n}$ 收斂區間為 $[-1,1)$。
 想令左右端點閉合關係調轉：$\sum(-1)^{n} (\frac{x^{n}}{n})$。
 於是答案為 $\sum(-1)^{n}\left( \frac{1}{n} \right)\left( \frac{x-m}{r} \right)^{n}$。
 (c)
@@ -285,8 +289,9 @@ Sol:
 注意到 $\sum \frac{x^{n}}{n^{2}}$ 收斂區間為 $[-1,1]$。
 於是答案為：$\sum \frac{1}{n^{2}} (\frac{x-m}{r})^{n}$。
 
-![[Pasted image 20260317223325.png]]![[Pasted image 20260317223357.png]]
-![[Pasted image 20260317223421.png]]
+![[Pasted image 20260317223325.png|989]]
+![[Pasted image 20260317223357.png|294]]
+![[Pasted image 20260317223421.png|344]]
 
 Sol:
 11.
@@ -337,8 +342,8 @@ $\int_{-1/2}^{0} \frac{1}{u^{2}+\left( \frac{\sqrt{ 3 }}{2} \right)^{2}} \ du=\l
 (b) 寫到這，很痛苦。於是直接貼上解答，等你心情好再看吧。
 ![[Pasted image 20260318214744.png|712]]
 
-![[Pasted image 20260320200505.png]]
-![[Pasted image 20260320200439.png]]
+![[Pasted image 20260320200505.png|1194]]
+![[Pasted image 20260320200439.png|386]]
 
 Sol:
 注意，第 $n$ 項為 $c_{n}(x-a)^{n}$。就算前面幾項是零，也要算。
@@ -349,17 +354,17 @@ $f'''=\sin x=0$
 四個一循環。
 $\cos x=0+ -\frac{1}{1!}\left( x-\frac{\pi}{2} \right)+0+\frac{1}{3!}\left( x-\frac{\pi}{2} \right)^{3}+\dots=\sum_{n=0}^{\infty} \frac{(-1)^{n+1}}{(2n+1)!}\left( x-\frac{\pi}{2} \right)^{2n+1}$ 
 
-![[Pasted image 20260320204522.png]]
-![[Pasted image 20260320204508.png]]
+![[Pasted image 20260320204522.png|1127]]
+![[Pasted image 20260320204508.png|274]]
 
 Sol:
 注意 $\binom{k}{0}=1$ 即可。
 $(1-x)^{3/4}=(1+(-x))^{3/4}=\sum_{n=0}^{\infty}\binom{k}{n}(-x)^{n}$ 
 $=1-\frac{\frac{3}{4}}{1!}x+\frac{\frac{3}{4}\left( -\frac{1}{4} \right)}{2!}x^{2}- \frac{\frac{3}{4}\left( -\frac{1}{4} \right)\left( -\frac{5}{4} \right)}{3!}x^{3}+\dots$ 
 $1-\frac{3}{4}x- \frac{3}{4}\sum_{n=2}^{\infty} \frac{1\times5\times\dots\times(4n-7)}{4^{n-1}n!}x^{n}$ 注意，不是 $(4n-7)!$ 
-$=1-\frac{3}{4}-\sum_{n=2}^{\infty} \frac{3(4n-7)!}{4^{n}n!}x^{n}$ 
+$=1-\frac{3}{4}-\sum_{n=2}^{\infty} \frac{3(1\times5\times\dots \times(4n-7))}{4^{n}n!}x^{n}$ 
 
-![[Pasted image 20260320205937.png]]
+![[Pasted image 20260320205937.png|342]]
 
 Sol:
 $\sin^{2}x=\frac{1}{2}(1-\cos2x)$ 
@@ -374,7 +379,8 @@ Sol:
 $\lim_{ x \to 0} \frac{\sqrt{ 1+x }-1-\frac{1}{2}x}{x^{2}}=\lim_{ x \to 0 } \frac{\left( 1-\frac{1}{2}x-\frac{1}{8}x^{2}+\frac{1}{16}x^{3}+\dots \right)-1-\frac{1}{2}x}{x^{2}}=\lim_{ x \to 0 } \frac{-\frac{1}{8}x^{2}+\frac{1}{16}x^{3}+\dots}{x^{2}}$ 
 $=\lim_{ x \to 0 }\left( -\frac{1}{8}+\frac{1}{16}x+\dots \right)=-\frac{1}{8}$ 
 
-![[Pasted image 20260321211947.png|827]]![[Pasted image 20260321212002.png|290]]
+![[Pasted image 20260321211947.png|827]]
+![[Pasted image 20260321212002.png|290]]
 
 Sol:
 感覺右半是 $e^{x^{4}}$，但左邊多了個 $(-1)^{n}$。
@@ -382,7 +388,7 @@ Sol:
 
 # 大會考
 
-![[Pasted image 20260316223935.png]]
+![[Pasted image 20260316223935.png|1240]]
 
 Sol:
 這題卡在不知道 $f'$ 應該對誰微分，實際上應該對 $x$ 微分。
@@ -394,7 +400,7 @@ $f''(x)=\sum_{n=1}^{\infty} \frac{(n-1)x^{n-2}}{n}$
 顯然因為 $\lim_{ n \to \infty } \frac{(n-1)x^{n-2}}{n}=x^{n-2}$，在端點時 ($x=\pm 1$) 不為零。
 所以兩個端點都發散 by the test for divergence。
 
-![[Pasted image 20260316230314.png]]
+![[Pasted image 20260316230314.png|968]]
 
 Sol:
 雖然聰明如我，立馬注意到了答案，但是放這怕你忘記。
@@ -403,7 +409,7 @@ Sol:
 簡單，立馬注意到當 $0<p\leq1$ 時會成立。
 所以秒選 (B) 好吧。
 
-![[Pasted image 20260316231634.png]]
+![[Pasted image 20260316231634.png|1091]]
 
 Sol:
 不難，算的時候有點腦子混掉了。
@@ -418,7 +424,7 @@ $0<x_{2}\leq 6$
 取交集得：$0<x\leq6$。
 注意，$6$ 有等號。因為在該點收斂呀！
 
-![[Pasted image 20260320001234.png]]
+![[Pasted image 20260320001234.png|876]]
 
 Sol:
 小小陷阱題，看我拿捏你。
@@ -428,21 +434,21 @@ $f(x)=\sum_{n=0}^{\infty} \frac{(-1)^{n}}{(2n+1)(2n+2)}x^{2n+2}$
 $2n+2=8\implies n=3$ 
 $\implies a_{8}= -\frac{1}{7\times8}=-\frac{1}{56}$ 
 
-![[Pasted image 20260321215042.png]]
+![[Pasted image 20260321215042.png|901]]
 
 Sol:
 小陷阱一波，這個積分的積分常數 $C\neq 0$。
 $f(x)=\cos^{-1}(x)=-\int \frac{1}{\sqrt{ 1-x^{2} }}\ dx=-\int\left( 1+\frac{1}{2}x^{2}+\frac{3}{4}x^{4}+\dots \right)\ dx=-\left( x+\frac{1}{6}x^{3}+\frac{3}{20}x^{5}+\dots \right)+C$ 
 因為 $f(0)=\cos^{-1}(0)=\frac{\pi}{2}$，所以前三項非零項為 $\frac{\pi}{2}-x-\frac{1}{6}x^{3}$。
 
-![[Pasted image 20260321221857.png]]
+![[Pasted image 20260321221857.png|999]]
 
 Sol:
 $2(1-x)^{-3}=2\left( 1+3x+(-3)(-4) \frac{x^{2}}{2!} +(-3)(-4)(-5) -\frac{x^{3}}{3!}+\dots\right)$ 
 $=2\left( \sum_{n=0}^{\infty} \frac{(n+2)!}{n!2!}x^{n} \right)=\sum_{n=0}^{\infty}(n+1)(n+2)x^{n}$ 
 $\implies a_{n}=(n+1)(n+2)$ 
 
-![[Pasted image 20260321223339.png]]
+![[Pasted image 20260321223339.png|1061]]
 
 Sol:
 忘記將 $\frac{1}{1-x}$ 展開了。
@@ -456,7 +462,8 @@ Sol:
 題目要求 $a_{1}$，即 $k^{2}$ 的係數。
 $T(k)=4\int_{0}^{\pi/2}(1-k^{2}\sin^{2}x)^{-1/2}\ dx$ 
 $=4\int_{0}^{\pi/2}\left( 1+\frac{1}{2}k^{2}\sin^{2}x +\dots\right)\ dx$ 
-$4\left[ x+\frac{k^{2}}{2}\left( \frac{1}{2}x-\frac{1}{4}\sin2x \right) \right]^{\pi/2}_{0}$ 
+因此 $a_{1}=4\cdot \frac{1}{2}\int^{\pi/2}_{0}\sin^{2}x\ dx$ 
+$=4\left[ x+\frac{k^{2}}{2}\left( \frac{1}{2}x-\frac{1}{4}\sin2x \right) \right]^{\pi/2}_{0}$ 
 $=4\times \frac{1}{2}\times\left( \frac{1}{2} \times \frac{\pi}{2} \right)=\frac{\pi}{2}$ 
 補：
 $\int \sin^{2}x\ dx=\int\left( \frac{1}{2}(1-\cos2x) \right)\ dx$ 解即可。
