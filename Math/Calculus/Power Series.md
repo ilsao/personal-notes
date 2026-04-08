@@ -85,7 +85,7 @@ $$
 $$
 \begin{align}
  & (i)\ f'(x)=c_{1}+2c_{2}(x-a)+3c_{3}(x-a)^{2}+\dots=\sum_{n=1}^{\infty} nc_{n}(x-a)^{n-1} \\
- & (ii)\ \int f(x) \ dx=C+c_{0}(x-a)+c_{1} \frac{(x-a)^{2}}{2}+c_{2} \frac{(x-a)^{3}}{3}+\dots=C\sum_{n=0}^{\infty} c_{n} \frac{(x-a)^{n+1}}{n+1}
+ & (ii)\ \int f(x) \ dx=C+c_{0}(x-a)+c_{1} \frac{(x-a)^{2}}{2}+c_{2} \frac{(x-a)^{3}}{3}+\dots=C+\sum_{n=0}^{\infty} c_{n} \frac{(x-a)^{n+1}}{n+1}
 \end{align}
 $$
 
@@ -265,8 +265,8 @@ $$
 Sol:
 這題倒在了處理 $x=a\pm R$ 的判斷上。
 由 Ratio Test 易得 $R=2$，我們得判斷 $x=\pm2$ 時的收斂性。
-注意力驚人的做題家，注意到：$|a_{n}|= \frac{n!2^{n}}{1\cdot 3\cdot 5\cdot\dots \cdot(2n-1)}= \frac{(1\cdot 2\cdot 3\cdot \dots \cdot n)2^{n}}{1\cdot 3\cdot 5\cdot \dots \cdot (2n-1)}= \frac{2\cdot 4 \cdot 6\cdot \dots \cdot 2n}{1 \cdot 3 \cdot 5 \cdot \dots \cdot (2n-1)}>1$。
-所以，當 $x=\pm 2$ 時級數發散 By test for divergence。
+注意力驚人的做題家 (不是我)，注意到：$|a_{n}|= \frac{n!2^{n}}{1\cdot 3\cdot 5\cdot\dots \cdot(2n-1)}= \frac{(1\cdot 2\cdot 3\cdot \dots \cdot n)2^{n}}{1\cdot 3\cdot 5\cdot \dots \cdot (2n-1)}= \frac{2\cdot 4 \cdot 6\cdot \dots \cdot 2n}{1 \cdot 3 \cdot 5 \cdot \dots \cdot (2n-1)}>1$。
+所以，當 $x=\pm 2$ 時級數發散 By the test for divergence。
 於是收斂區間為 $(-2,2)$。
 
 ![[Pasted image 20260316214529.png]]
@@ -295,8 +295,13 @@ Sol:
 
 Sol:
 11.
+(I)
 $f(x)= \frac{x-1}{x+2}= \frac{(x+2)-3}{x+2}=1- \frac{3}{x+2}=1-\frac{3}{2}\cdot \frac{1}{1+\frac{x}{2}}=1- \frac{3}{2}\sum_{n=0}^{\infty}\left( -\frac{x^{}}{2} \right)^{n}＝1-\sum_{n=0}^{\infty} \frac{3(-1)^{n}}{2^{n+1}}x^{n}$ 
 無窮級數 $\sum_{n=0}^{\infty}\left( -\frac{x}{2} \right)^{n}$ 在 $|-\frac{x}{2}|< 1$ 時收斂 $\implies|x|<2\implies R=2\implies$ 收斂區間為 $(-2,2)$。
+(II)
+$f(x)=\frac{1}{2}(x-1) \frac{1}{1+\frac{x}{2}}=\frac{x-1}{2}\sum_{n=0}^{\infty}\left( -\frac{x}{2} \right)^{n}=\frac{x-1}{2}\sum_{n=0}^{\infty} \frac{(-1)^{n}}{2^{n}}x^{n}=(x-1)\sum_{n=0}^{\infty} \frac{(-1)^{n}}{2^{n+1}}x^{n}$ 
+$=\sum_{n=0}^{\infty} \frac{(-1)^{n}}{2^{n+1}}x^{n+1}-\sum_{n=0}^{\infty} \frac{(-1)^{n}}{2^{n+1}}x^{n}=\left( \frac{1}{2}x-\frac{1}{2} \right)+\left( -\frac{1}{4}x^{2}+\frac{1}{4}x \right)+\dots$ 
+$=-\frac{1}{2}+\sum_{n=1}^{\infty} \frac{3(-1)^{n-1}}{2^{n+1}}x^{n}$ 
 12.
 不要害怕提出 $x$，硬提 $\frac{x+a}{a^{2}}$ 就好。
 $f(x)= \frac{x+a}{x^{2}+a^{2}}=\frac{x+a}{a^{2}}\cdot \frac{1}{1-\left( -\frac{x^{2}}{a^{2}} \right)}= \frac{x+a}{a^{2}}\sum_{n=0}^{\infty}\left( -\frac{x^{2}}{a^{2}} \right)^{n}= \frac{x+a}{a^{2}}\sum_{n=0}^{\infty}(-1)^{n}\left( \frac{x}{a} \right)^{2n}$ 
@@ -376,7 +381,7 @@ $R=\infty$
 ![[Pasted image 20260321211133.png]]
 
 Sol:
-$\lim_{ x \to 0} \frac{\sqrt{ 1+x }-1-\frac{1}{2}x}{x^{2}}=\lim_{ x \to 0 } \frac{\left( 1-\frac{1}{2}x-\frac{1}{8}x^{2}+\frac{1}{16}x^{3}+\dots \right)-1-\frac{1}{2}x}{x^{2}}=\lim_{ x \to 0 } \frac{-\frac{1}{8}x^{2}+\frac{1}{16}x^{3}+\dots}{x^{2}}$ 
+$\lim_{ x \to 0} \frac{\sqrt{ 1+x }-1-\frac{1}{2}x}{x^{2}}=\lim_{ x \to 0 } \frac{\left( 1+\frac{1}{2}x-\frac{1}{8}x^{2}+\frac{1}{16}x^{3}+\dots \right)-1-\frac{1}{2}x}{x^{2}}=\lim_{ x \to 0 } \frac{-\frac{1}{8}x^{2}+\frac{1}{16}x^{3}+\dots}{x^{2}}$ 
 $=\lim_{ x \to 0 }\left( -\frac{1}{8}+\frac{1}{16}x+\dots \right)=-\frac{1}{8}$ 
 
 ![[Pasted image 20260321211947.png|827]]
@@ -444,7 +449,7 @@ $f(x)=\cos^{-1}(x)=-\int \frac{1}{\sqrt{ 1-x^{2} }}\ dx=-\int\left( 1+\frac{1}{2
 ![[Pasted image 20260321221857.png|999]]
 
 Sol:
-$2(1-x)^{-3}=2\left( 1+3x+(-3)(-4) \frac{x^{2}}{2!} +(-3)(-4)(-5) -\frac{x^{3}}{3!}+\dots\right)$ 
+$2(1-x)^{-3}=2\left( 1+3x+(-3)(-4) \frac{x^{2}}{2!} +(-3)(-4)(-5) \left( -\frac{x^{3}}{3!} \right)+\dots\right)$ 
 $=2\left( \sum_{n=0}^{\infty} \frac{(n+2)!}{n!2!}x^{n} \right)=\sum_{n=0}^{\infty}(n+1)(n+2)x^{n}$ 
 $\implies a_{n}=(n+1)(n+2)$ 
 

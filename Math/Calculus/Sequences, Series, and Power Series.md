@@ -97,7 +97,7 @@ $$
 
 有界則代表存在某數 $M>0$ 使得：$|a_{n}|\leq M$。 
 
-但是，一個單調有界的數列則必定收斂。此定理稱為**單調數列定理 (Monotonic Sequence Theorem)**。
+但是，一個單調且有上下界的數列則必定收斂。此定理稱為**單調數列定理 (Monotonic Sequence Theorem)**。
 
 proof:
 核心想法：利用有界與完備性公理找到最小界，然後利用單調確保數值不能回退。
@@ -252,7 +252,7 @@ $$
 > [!warning] 注意：
 > 當 $\sum a_{n}$ 與 $\sum b_{n}$ 收斂時，$\sum a_{n}b_{n}$ 不一定收斂。反例 $a_{n}=b_{n}= \frac{(-1)^{n}}{\sqrt{ n }}$。
 > 但是，若 $a_{n}\geq0$ 或 $b_{n}\geq 0$，則 $\sum a_{n}b_{n}$ 一定收斂。
-> 又或者說，若 $a_{n}$ 與 $b_{n}$ 都是絕對收斂，則 $\sum a_{n}b_{n}$ 一定收斂。(一個絕對一個不絕對的話，也不能保證喔)
+> 又或者說，**若 $\sum a_{n}$ 與 $\sum b_{n}$ 都是絕對收斂，則 $\sum a_{n}b_{n}$ 一定收斂**。(一個絕對一個不絕對的話，也不能保證喔)
 
 # The Integral Test and Estimates of Sums
 
@@ -645,7 +645,12 @@ The Root Test 同樣分三部分闡述：
 - $\sum \frac{1}{n^{\ln n}}$ 收斂，轉 $e$ 
 - $\sum \frac{\ln n}{n}$ 發散 (limit comparison test with $\frac{1}{n}$ 或 integral test)
 - $\sum \frac{\ln n}{n^{2}}$ 收斂 (direct comparison test with $\frac{1}{n^{3/2}}$ 或 integral test)
+- $\sum \frac{\ln n}{n^{p}}$ 當 $p>1$ 時收斂 (integral test)
+- $\sum \frac{1}{n^{p}\ln n}$ 當 $p>1$ 時收斂 (integral test)
 - $\sum \frac{1}{n(\ln n)^{p}}$ 當 $p>1$ 時收斂 (integral test)
+- $\sum \frac{(-1)^{n}}{n(\ln n)^{p}}$ 對任意 $p$ 都收斂 (alternating series test)
+- $\sum\frac{1}{n^{p}(\ln)^{q}}$ 當 $p>1$ 時收斂，若 $p=1$ 則回歸上種類型討論。若 $p<1$ 則直接發散，無論 $q$ 的大小。
+- $\sum \frac{1}{n\ln n(\ln \ln n)^{p}}$ 當 $p>1$ 時收斂 (integral test) (不要想成上一個版本！)
 
 > [!note]
 > $a^{\ln b}=b^{\ln a}$ 
@@ -781,7 +786,7 @@ $\implies$ 對 $u\to \infty$，僅當 $1-p<0$ 時極限存在。
 所以，$p>1$ 時級數收斂。
 (II)
 注意到：$\ln n$ 比任意正冪都慢。即，$\ln n<n^{\epsilon}$ 其中 $\epsilon>0$。
-通過 comparison + p-sereis + edge condition 判斷即可。
+通過 comparison + p-series + edge condition 判斷即可。
 
 ![[Pasted image 20260305180823.png|1148]]
 
@@ -820,10 +825,20 @@ $\lim_{ n \to \infty } \frac{a_{n}}{b_{n}}=\frac{n}{n^{1+1/n}}=\lim_{ n \to \inf
 所以：$\lim_{ n \to \infty } \frac{1}{n^{1/n}}=1>0$。
 又 $\sum \frac{1}{n}$ 為 harmonic series 發散，由 the limit comparison test，$\sum_{n=1}^{\infty} \frac{1}{n^{1+1/n}}$ 發散。
 
+![[Pasted image 20260407141513.png|625]]
+
+Sol:
+問題同上，不能立馬用 p-series 判斷。
+取 $b_{n}=\frac{1}{n\ln n}$ 做 limit comparison。
+$\lim_{ n \to \infty } \frac{a_{n}}{b_{n}}=\lim_{ n \to \infty }\frac{n\ln n}{n(\ln n)^{1+1/n}}=\lim_{ n \to \infty } \frac{1}{n(\ln n)^{1/n}}$ 
+先判斷 $\lim_{ n \to \infty }n(\ln n)^{1/n}=e^{0}=1$ 
+所以 $\lim_{ n \to \infty } \frac{a_{n}}{b_{n}}=1>0$，又 $\sum \frac{1}{n\ln n}$ **發散**，所以原級數發散，
+
 ![[Pasted image 20260306170236.png|833]]
 
 Sol:
 標準的做法是 integral test。
+當 $p>1$ 時收斂。
 
 ![[Pasted image 20260306173058.png|774]]
 
@@ -840,6 +855,11 @@ $\left( 1-\cos\left( \frac{1}{x^{2}} \right) \right)'= \frac{-2\sin \frac{1}{x^{
 則 $\lim_{ n \to \infty } \frac{a_{n}}{b_{n}}= \lim_{ n \to \infty }\frac{1-\cos\left( \frac{1}{n^{2}} \right)}{\frac{1}{n^{2}}}=\lim_{ x \to \infty }\frac{1-\cos\left( \frac{1}{x^{2}} \right)}{\frac{1}{x^{2}}}\overset{H}{=}\lim_{ x \to \infty } \frac{\frac{-2\sin \frac{1}{x}}{x^{3}}}{-\frac{2}{x^{3}}}=\lim_{ x \to \infty }\sin \frac{1}{x^{2}}=0$ 。
 因為 $b_{n}$ 為 $p=2>1$ 的 p-series，所以由 (a) 得 $a_{n}$ 收斂。
 注意到：上面 $\lim_{ n \to \infty } \frac{a_{n}}{b_{n}}$ 不將除以 $\frac{1}{n^{2}}$ 換成乘 $n^{2}$，是因為這樣 $\lim_{ n \to \infty }n^{2}\left( 1-\cos\left( \frac{1}{n^{2}} \right) \right)$ 會變成 $\infty \cdot0$ 的形式，還是要除下去用洛必達解。
+
+![[Pasted image 20260407143943.png]]
+
+Sol:
+取 $b_{n}=\frac{1}{n}$ 做 limit comparison，並做兩次洛必達即可得此級數發散。
 
 ![[Pasted image 20260306180709.png|1048]]
 
@@ -926,6 +946,12 @@ $\sum_{n=1}^{\infty}(2^{1/n}-1)$
 所以 $\lim_{ n \to \infty } \frac{2^{1/n}-1}{\frac{1}{n}}=\lim_{ t \to 0^{+} } \frac{2^{t}-1}{t}=\ln 2>0$。
 因為 $\sum\frac{1}{n}$ 發散，所以 $\sum(2^{1/n}-1)$ 發散 by the limit comparison test。
 
+![[Pasted image 20260407142849.png]]
+
+Sol:
+有兩層，而且其實與上題不同解法。
+先套 root test：$\lim_{ n \to \infty }(n^{1/n}-1)=\lim_{ n \to \infty }(n^{1/n})-1=e^{0}-1=0<1$ 
+收斂。
 # 大會考
 
 ![[Pasted image 20260302200648.png]]

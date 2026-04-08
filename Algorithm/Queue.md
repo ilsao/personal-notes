@@ -1,3 +1,49 @@
+# Monotonic Queue
+
+分為兩種：遞增 / 遞減單調隊列
+
+其中：
+- 遞增：找滑動窗口區間最小值
+- 遞減：找滑動窗口區間最大值
+
+使用 Deque 實現，因為會需要 `pop_back()` 函數。
+
+例如：找滑動窗口區間最大值
+1. 維護一個遞減單調隊列 (存索引)
+2. 每個區間的最大值就是 `q.front()` 
+3. 當窗口移出，且 `q.front()` 恰好等於移出的索引，則 `q.pop_front()` 
+
+```cpp
+vector<int> maxSlidingWindow(vector<int>& nums, int k) {
+	vector<int> ans;
+	int sz = nums.size();
+	int l = 0, r = 0;
+
+	deque<int> q;
+
+	while (r < sz) {
+		// right pointer shift
+		while ((r - l + 1) <= k) {
+			// monotonic queue operation
+			while (!q.empty() && nums[q.back()] <= nums[r])
+				q.pop_back();
+			q.push_back(r);
+
+			r++;
+		}
+		
+		// get current maximum
+		ans.push_back(nums[q.front()]);
+		
+		// update left pointer and maintain the monotonic queue
+		if (!q.empty() && l == q.front())
+			q.pop_front();
+		l++;
+	}
+	return ans;
+}
+```
+
 # Queue
 
 ## 核心概念
