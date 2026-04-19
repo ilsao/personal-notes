@@ -46,6 +46,7 @@ $$
 若 $S$ 為集合，則 $S$ 的**冪集合(power set)** 是 $S$ 所有子集合形成的集合，記為 $P(S)$。
 
 例如：$S=\{ 1,2 \}$。
+
 則：$|S|=2$，而 $P(S)=\{ \phi,\{ 1 \},\{ 2 \},\{ 1,2 \} \}$。
 
 > [!note]
@@ -199,11 +200,11 @@ $=\{ x|x\in \bar{A}\cup \bar{B} \}=\bar{A}\cup \bar{B}$
 緊接著我們來定義連續運算：
 
 $$
-\cup^{n}_{i=1}A_{i}=A_{1}\cup A_{2}\cup\dots \cup A_{n}
+\bigcup^{n}_{i=1}A_{i}=A_{1}\cup A_{2}\cup\dots \cup A_{n}
 $$
 
 $$
-\cap_{i=1}^{n}A_{i}=A_{1}\cap A_{2}\cap\dots \cap A_{n}
+\bigcap_{i=1}^{n}A_{i}=A_{1}\cap A_{2}\cap\dots \cap A_{n}
 $$
 
 或者，更靈活的令 $I=\{ 1,3,5 \}$：
@@ -280,16 +281,16 @@ proof:
 若 $f$ 與 $f\circ g$ 都是映成函數，則 $g$ 是否為映成函數？
 
 proof:
-使用 $\neg q\to \neg p$。
-設 $g$ 不是映成函數，所有 $\exists c\in C$ 使得 $\forall b\in B$ 都有 $g(b)\neq c$。
-那麼，$f(g(b))\neq c$。
-但是，$g(b)\in C\not\in A$，無法保證 $f$ 不是映成函數。
-例如：
+反例：
 $f:\{ -1,1 \}\to \{ 1 \},f(x)=x^{2}$ 
 $g:\{ 1 \}\to \{ -1,1 \},g(x)=x$ 
 注意， $g$ 的對應域不等於值域。
 顯然 $f$ 是映成函數，而 $f\circ g:\{ 1 \}\to \{ 1 \}$ 也是映成函數。
 所以此命題不成立。
+
+> [!note]
+> 回憶到 onto 是 $|A|\geq |B|$。
+> 而 one-to-one 是 $|A|\leq |B|$。
 
 # Inverse Funcitons
 
@@ -310,7 +311,7 @@ $= \frac{(n+1)(n+2)(2(n+1)+1)}{6}$ 命題正確。
 
 # Cardinality
 
-$A$ 與 $B$ 集合擁有相同的基數 $\iff$ 兩集合間存在一個函數 $f$ 使得兩集合一對一對應。(1-1 與 onto，即雙射 bijection)
+$A$ 與 $B$ 集合擁有相同的基數 $\iff$ 兩集合間存在一個函數 $f$ 使得**兩集合一對一對應**。(1-1 與 onto，即雙射 bijection)
 
 我們記為：
 
@@ -357,12 +358,12 @@ proof:
 證明正奇數是可數集合。
 
 proof:
-$f:\mathbb{N}^{+}\to \{ \text{positive odd intergers} \}$ 
-令 $f(x)=2n-1$，則 $f$ 為雙射函數。
+$f:\mathbb{Z}^{+}\to \{ \text{positive odd intergers} \}$ 
+令 $f(x)=2x-1$，則 $f$ 為雙射函數。
 所以正奇數是可數集合。
 
 > [!note]
-> 注意到，雙射是雙向的，所以可以從 $\mathbb{N}^{+}$ 出發，也可以從 $\{ \text{positive odd intergers} \}$ 出發。
+> 注意到，雙射是雙向的，所以可以從 $\mathbb{Z}^{+}$ 出發，也可以從 $\{ \text{positive odd intergers} \}$ 出發。
 
 ## Schroder-Bernstein Theorem
 

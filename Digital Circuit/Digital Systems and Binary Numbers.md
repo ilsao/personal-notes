@@ -197,3 +197,25 @@ $$
 中間的區域屬於不確定區，類似未定義行為。
 
 ![[Pasted image 20260304134242.png]]
+
+# 練習題
+
+![[Pasted image 20260417140817.png]]
+
+Sol:
+設未知數即可。
+(a)
+$\frac{6x+7}{5}=x+1\implies x=-2$ 不合
+無解
+(b)
+$(x+5)3=5x+1\implies x=7$ 
+(c)
+$x^{2}+2x+3+x^{2}+2x=3x^{2}+3\implies x=0\text{ or }4$ 
+$0$ 不合，故 base 為 $4$。
+
+![[Pasted image 20260417142440.png|570]]
+
+Sol:
+先用 7's complement 算然後 + 1。
+7's complement：$(7777-2360)_{8}=(5417)_{8}$ 
+8's complement：$(5417)_{8}+(1)_{8}=(5420)_{8}\neq (5418)_{8}$ 

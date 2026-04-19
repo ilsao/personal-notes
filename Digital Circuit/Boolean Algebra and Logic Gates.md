@@ -192,3 +192,30 @@ $x\text{ NOR }(y\text{ NOR }z)=(x+(y+z)')'=x'(y+z)$
 positive logic：$1$ 表示高電壓，$0$ 表示低電壓。
 
 negative logic：$0$ 表示高電壓，$1$ 表示低電壓。
+
+# 練習題
+
+![[Pasted image 20260417150915.png]]
+
+Sol:
+(a)
+$(x'+x)y'z'+y=y+y'z'=(y+y')(y+z')=y+z'$ 
+可能會沒化減完！
+
+![[Pasted image 20260417160657.png]]
+
+Sol:
+那時候忘記 F' 要怎麼變 POS。
+SOP 直接展開：$x'w'+yw'+x'y+x'z$ 
+POS 先取 SOP 的補：
+$F'=(x'+w')(x'+y)(w'+y+z')=x'w'+yw'+x'y+x'z$ 
+再取 $F=(F')'=(x+w)(y'+w)(x+y)(x+z')$ 
+
+使用 minterms 表示下圖 $y$：
+![[Pasted image 20260417162257.png|631]]
+
+Sol:
+$y=(a'+bcd+e')'=a(b'+c'+d')e=ab'e+ac'e+ad'e$ 
+注意到這邊初始是 $e'$，因為第二個 NAND 的 $e$ 前面沒有相對應的 circle，得插入一個 inverter。
+注意到全部都是 $a$ 開始，所以可以畫 $a=1$ 時的 k-map。應該要從 $16$ 開始數，所以每個數都要 $+16$。
+$y=\sum(17,19,21,23,25,27,29)$ 

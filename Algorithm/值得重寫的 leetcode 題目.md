@@ -13,7 +13,7 @@
 
 [Convert Sorted Array to Binary Search Tree](https://leetcode.com/problems/convert-sorted-array-to-binary-search-tree/) 
 
-[Delete Node in a BST](https://leetcode.com/problems/delete-node-in-a-bst 
+[Delete Node in a BST](https://leetcode.com/problems/delete-node-in-a-bst) 
 
 [Sort an Array](https://leetcode.com/problems/sort-an-array/) (heap sort)
 

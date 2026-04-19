@@ -687,7 +687,7 @@ Sol:
 令 $\lim_{ n \to \infty }a_{n}=L$，則 $\lim_{ n \to \infty } a_{n+1}= \frac{1}{1+L}$。
 利用 (a)，有 $L=\frac{1}{1+L}\implies L= \frac{-1+ \sqrt{ 5 }}{2}$ (注意，負不合)
 
-![[Pasted image 20260104172422.png]]
+![[Pasted image 20260104172422.png|864]]
 
 Sol:
 利用歸納法證明。
@@ -987,9 +987,12 @@ Sol:
 看到有除法，我們可以通過相鄰兩相相除將除法消除。
 $\frac{a_{n+1}}{a_{n}}=\frac{n+1}{2}$，當 $n\to \infty$ 時乘法因子不收斂，所以整體不收斂。
 
-![[Pasted image 20260302205020.png|1019]]
+![[Pasted image 20260302205020.png|852]]
 
 Sol:
+(d)
+根據單調數列定理，數列收斂。
+設 $\lim_{ n \to \infty }a_{n}=L$，則 $L=5-\frac{4}{L}\implies L=1\text{ or }4$ 但又數列遞增且 $a_{0}=2$，$1$ 不合所以 $L=4$。
 (b)
 在嘗試解 (d) 時會解出 $L=1\text{ or }4$，那我們假設 $1\leq a_{n}\leq4$。
 使用歸納法證明。
@@ -1001,9 +1004,6 @@ Sol:
 但是先從 (b) 下手就好過多了。
 $a_{n+1}-a_{n}= \frac{-(a_{n}-1)(a_{n}-4)}{a_{n}}>0$ (由 $1\leq a_{n}\leq 4$)
 (c) 顯然錯誤
-(d)
-根據單調數列定理，數列收斂。
-設 $\lim_{ n \to \infty }a_{n}=L$，則 $L=5-\frac{4}{L}\implies L=1\text{ or }4$ 但又數列遞增且 $a_{0}=2$，$1$ 不合所以 $L=4$。
 
 ![[Pasted image 20260302221128.png]]
 

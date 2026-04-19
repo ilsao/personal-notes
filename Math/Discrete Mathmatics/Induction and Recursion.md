@@ -65,7 +65,7 @@ $P(2)$ 成立，因為 $2$ 是質數。
 
 ## Well-Ordering 良序性
 
-良序性公理：任意一個**非空**的**非負**整數集合，都有最小元素。
+良序性公理：任意一個**非空**的**非負整數**集合，都有最小元素。
 
 > [!warning] 注意
 > 良序性公理不保證唯一性。
@@ -80,7 +80,7 @@ Sol:
 根據 $S$ 的定義，$r\geq0$。
 欲證 $r<d$。
 假設 $r\geq d$，則 $r-d\geq 0$。
-則 $a-d(q_{0}+1)=a-dq_{0}-d=r-d\geq 0$，代表 $r-d\in S$，$S$ 集合中有比 $r$ 小的數。
+則 $r-d=a-dq_{0}-d=a-d(q_{0}+1)\geq 0$，代表 $r-d\in S$，$S$ 集合中有比 $r$ 小的數。
 產生矛盾。
 所以，$r<d$。
 唯一性：
@@ -96,7 +96,7 @@ $\implies r_{1}=r_{2}$
 
 ![[Pasted image 20260406141217.png|861]]
 
-於是，解為：$f(n)=\begin{cases}4^n+2f(n-1) & \text{if }n\geq{2} \\ 3 & \text{if }n=1\end{cases}$ 
+於是，解為：$f(n)=\begin{cases}4^{n-1}+2f(n-1) & \text{if }n\geq{2} \\ 3 & \text{if }n=1\end{cases}$ 
 
 Example：令 $f_{n}$ 為第 $n$ 個 Fibonacci number。Show that $f_{n}>\alpha^{n-2}$，其中 $\alpha=\frac{1+\sqrt{ 5 }}{2}$ 且 $n\geq 3$。
 

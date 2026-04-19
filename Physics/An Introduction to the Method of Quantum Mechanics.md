@@ -62,7 +62,7 @@ $$
 
 只要滿足 $\frac{\hbar^{2}k^{2}}{2m}=\hbar\omega$，就說明這是一個解。
 
-我們根據德布羅意假設：
+因為我們根據德布羅意假設：
 
 $$
 \boxed{\begin{align}
@@ -259,9 +259,13 @@ $$
 
 同樣地，若 $\chi$ 在某點不僅有一個值，代表 $\bar{p}$ 也有多個值。雖然我們無法準確測量 $p$ 的值，但我們理應可以 $p$ 的平均值。
 
-最後，若 $\chi$ 在某點不連續，則 $\frac{d\chi}{dx}$ 在該點無限大。若 $\frac{d\chi}{dx}$ 不連續，則 $\frac{d^{2}\chi}{dx^{2}}$ 不連續，物理上不可能。
+最後，若 $\chi$ 在某點不連續，則 $\frac{d\chi}{dx}$ 在該點無限大。若 $\frac{d\chi}{dx}$ 不連續，則 $\frac{d^{2}\chi}{dx^{2}}$ 不連續，物理上不可能。(回憶：因為 $-\frac{\hbar}{2m} \frac{d^{2}\chi}{dx^{2}}+E_{p}\chi=E\chi$ 必須有限)
 
 在**束縛系統(bound systems)** 中，這些限制可能導致能量或其他物理量的量子化。
+
+> [!note]
+> 這邊用 $p$ 討論，是因為 $\chi$ 是關於 $x$ 的函數。
+> 而 $p$ 的運算子也是對 $x$ 微分 $-i\hbar \frac{\partial}{\partial x}$。
 
 # Application of the Schrodinger Theory
 
@@ -364,14 +368,14 @@ $$
 
 # 威儀指定習題
 
-![[Pasted image 20260315160017.png]]![[Pasted image 20260315160037.png]]
+![[Pasted image 20260315160017.png|668]]![[Pasted image 20260315160037.png|666]]
 
 Sol:
 (a) 在 $x=0$ 時不連續
 (b) 在 $x\to 0$ 時 $\chi(x)\to \infty$ 
 (c) 在 $x\to0$ 時 $\chi(x)\to-\infty$ 
 
-![[Pasted image 20260315160633.png]]
+![[Pasted image 20260315160633.png|768]]
 
 Sol:
 代入 time-independent Schrodinger equation $\frac{d^{2}\chi}{dx^{2}}+k^{2}\chi=0$ 解。
@@ -379,7 +383,7 @@ $\frac{d}{dx}\left( \frac{d}{dx} \right)(ae^{ikx}+be^{-ikx})=\frac{d}{dx}(ikae^{
 $\implies \frac{d^{2}\chi}{dx^{2}}+k^{2}\chi=-k^{2}\chi+k^{2}\chi=0$ 
 符合 time-independent Schrodinger equation，所以 $ae^{ikx}+be^{-ikx}$ 也是一個解。
 
-![[Pasted image 20260315164336.png]]![[Pasted image 20260315164354.png]]
+![[Pasted image 20260315164336.png|671]]![[Pasted image 20260315164354.png|669]]
 
 Sol:
 (a)
@@ -391,7 +395,7 @@ $E_{0}= \frac{\pi^{2}\hbar^{2}}{2m(10^{-14})^{2}}\approx5.98\times 10^{-10}\text
 (d)
 幾乎不可能在原子核中找到電子，因為 (c) 的答案顯示，幾乎是原子核束縛能的 $10^{3}$ 倍。
 
-![[Pasted image 20260315193507.png]]
+![[Pasted image 20260315193507.png|811]]
 
 Sol:
 (a)
@@ -407,7 +411,7 @@ Sol:
 就愛這種送分題，嘻嘻。
 $\lim_{ n \to \infty } \frac{(n+1)^{2}E_{0}-n^{2}E_{0}}{n^{2}E_{0}}=\lim_{ n \to \infty } \frac{(n+1)^{2}-n^{2}}{n^{2}}=\lim_{ n \to \infty } \frac{2n+1}{n^{2}}=0$ 
 
-![[Pasted image 20260315194830.png]]
+![[Pasted image 20260315194830.png|676]]
 
 Sol:
 其實沒你想的那麼難，不用算什麼機率之類的東西。

@@ -155,7 +155,7 @@ Primes：只能被自身與 $1$ 整除的數。
 
 ## The Fundamental Theorem of Arithmetic (算數基本定理)
 
-Theorem：任意大於 $1$ 的整數都可以被唯一的表示為一個或多個質數乘積，其中質數因子以非遞減排列。
+Theorem：任意大於 $1$ 的整數都可以被唯一的表示為**一個或多個質數乘積**，其中質數因子以非遞減排列。
 
 Ex: $13=13,100=2^{2}\times5^{2}$ 
 
@@ -199,7 +199,7 @@ Greatest Common Divisor：若 $a,b\in \mathbb{Z}$ 且不全為 $0$，則存在 $
 
 若 $a\geq b$ 則 $a=bq+r$ 其中 $0\leq r<b$。
 
-如果 $d$ 同時整除 $b$ 與 $r$，則必定整除 $a$。
+如果 $d$ 同時整除 $b$ 與 $r$，則必定整除 $bq+r=a$。
 
 所以算法如下：
 1. 計算 $r=a\text{ mod }b$ 
@@ -233,8 +233,8 @@ proof:
 唯一性：
 設 $b,c$ 是 $a$ modulo $m$ 的**任意**兩反元素。
 則有 $ba\equiv ca\equiv{1}\ (\text{mod }m)$。
-所以，$ba-ca\equiv0\ (\text{mod }m)$。
-又 $a$ 與 $m$ 互質，所以 $b-c\equiv 0\ (\text{mod m})$。
+所以，$ba-ca\equiv a(b-c)\equiv0\ (\text{mod }m)$。
+又 $a$ 與 $m$ 互質，所以不可能 $a$ 被 $m$ 整除，只能 $m\mid(b-c)$。
 因此 $b\equiv c\ (\text{mod }m)$，所以 $b,c$ 在模 $m$ 上唯一。
 
 ![[Pasted image 20260402162928.png|584]]
@@ -276,4 +276,7 @@ proof:
 > $j$ 取 $\overline{ M_{i} }$ 而不是 $\overline{ a_{i} }$。
 
 ![[Pasted image 20260402201419.png|627]]
+
+> [!note]
+> 最後不要忘記 $\text{mod }m$。
 

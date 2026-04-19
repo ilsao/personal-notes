@@ -22,13 +22,9 @@ heapify up：用在插入新元素時。
 ```cpp
 void heapify_up(vector<int>& heap, int i) {
     if (i == 0) return;  // 到 root 了
-
     int parent = (i - 1) / 2;
-
     if (heap[parent] >= heap[i]) return;
-
     swap(heap[parent], heap[i]);
-
     heapify_up(heap, parent);
 }
 ```
@@ -38,7 +34,7 @@ heapify down：用在刪除舊元素時。
 2. 取末尾元素放置在堆頂
 3. 與 (最大 (max heap) 或最小 (min heap)) child 比較，若不滿足性質則 `swap(parent, child)` 
 	1. swap 後遞歸向下確認 (parent(當前處理節點) 與自己的 child 交換，繼續與下層 child 比較)
-4. 否則，滿足 heap 性質停止地歸
+4. 否則，滿足 heap 性質停止遞歸
 
 ```cpp
 void heapify_down(vector<int>& heap, int i) {

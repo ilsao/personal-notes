@@ -134,6 +134,9 @@ $$
 
 因此，我們必須由位置機率與動量機率來描述粒子行為。
 
+> [!note]
+> 對庫倫力，有：$E_{k}=-\frac{1}{2}E_{p}\implies E_{\text{total}}=E_{k}+E_{p}=-E_{k}$。
+
 # Physical Origin of The Uncertainty Principle
 
 這裡我們嘗試用古典物理解釋不確定性原則，主要思想是測量過程本身就會引入不確定性。
@@ -310,10 +313,10 @@ $$
 ![[Pasted image 20260315142721.png]]
 
 Sol:
-$E_{k}=6000\text{ eV}\approx 9.6\times 10^{-15}\text{ J}=\frac{p^{2}}{2m}\implies p \approx1.3\times 10^{-22}$  
+$E_{k}=60000\text{ eV}\approx 9.6\times 10^{-15}\text{ J}=\frac{p^{2}}{2m}\implies p \approx1.3\times 10^{-22}$  
 $\lambda=\frac{h}{p}\implies \lambda \approx \frac{6.63\times 10^{-34}}{1.3\times 10^{-22}}\approx 5\times 10^{-12}\text{ m}$ 
 
-![[Pasted image 20260315142936.png]]
+![[Pasted image 20260315142936.png|704]]
 
 Sol:
 這題純屬忘記前面的觀念。
