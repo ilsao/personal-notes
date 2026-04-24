@@ -124,6 +124,10 @@ NAND 是萬用門，可以實現任意門電路。
 
 ![[Pasted image 20260414215652.png|675]]
 
+> [!note]
+> 對於 AOI 或 OAI 的計算，我們通常先計算出 F'，然後再用 AOI 或 OAI 轉 F。
+> 直接用 F 套 AOI 或 OAI 加上反相器倒是顯得無趣了。
+
 ## Exclusive-OR Function
 
 ![[Pasted image 20260414215856.png|449]]
@@ -134,9 +138,14 @@ $x\oplus y=xy'+x'y$ 先實際搭，然後轉 NAND。
 
 ![[Pasted image 20260414222014.png|480]]
 
+令 $\odot$ 為 XNOR，則：$x\odot y=(x\oplus y)'=x'\oplus y=1\oplus x\oplus y$ 
+
+> [!note]
+> XOR 不是萬能門電路，因為它不能組成 complement。因而不能組成 AND 與 OR。
+
 ## Odd and Even Functions
 
-我們可用 $A\oplus B\oplus C$ 表示 odd function，用 $(A\oplus B\oplus C)$ 表示 even function。
+我們可用 $A\oplus B\oplus C$ 表示 odd function，用 $(A\oplus B\oplus C)'$ 表示 even function。
 
 因為若 $A$、$B$、$C$ 三個單位包含奇數個 $1$，$A\oplus B\oplus C$ 就會為真。 
 
@@ -161,6 +170,14 @@ $=(AB'+A'B)(CD+C'D')+(AB+A'B')(CD'+C'D)$
 > [!note]
 > 可能背反，小心。
 
+奇繳驗：加上 parity bit 後，使 $1$ 的總數為奇數。($p=(x\oplus y\oplus z)'$)
+
+偶繳驗：加上 parity bit 後，使 $1$ 的總數為偶數。($p=x\oplus y\oplus z$)
+
+Odd parity checker：$c=(x\oplus y\oplus z\oplus p)'$ 
+
+Even parity checker：$c=x\oplus y\oplus z\oplus p$ 
+
 ## Verilog
 
 ![[Pasted image 20260414224032.png|849]]
@@ -181,7 +198,7 @@ Sol:
 ![[Pasted image 20260414232441.png|283]]
 $F(w,x,y,z)=\sum(4,5,6,7,11,13,15)$ 
 
-2. Find all the prime implicants for the following Boolean functions, and determine which are essential: (a) $F(A,B,C,D)=\sum(0,2,3,5,7,8,10,11,14,15)$ (b) $F(A,B,C,D)=\sum(2,3,4,5,6,7,9,11,12,13)$ 
+2. Find all the prime implicants for the following Boolean functions, and determine which are essential: (b) $F(A,B,C,D)=\sum(0,2,3,5,7,8,10,11,14,15)$ (c) $F(A,B,C,D)=\sum(2,3,4,5,6,7,9,11,12,13)$ 
 
 Sol:
 (a)

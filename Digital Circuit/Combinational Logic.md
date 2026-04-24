@@ -48,7 +48,7 @@
 
 觀察易得：
 - $C=xy=(x'+y')'$  
-- $S=x\oplus y$ 又 $S'=xy+x'y$ 所以 $S=(C+x'y)'$ 
+- $S=x\oplus y$ 又 $S'=xy+x'y'$ 所以 $S=(C+x'y')'$ 
 
 ![[Pasted image 20260416193200.png|731]]
 
@@ -80,7 +80,7 @@ Ripple Adder 需要等前一位 Carry 計算出來後，才能得出當前位的
 
 我們使用 Carry Lookahead Adder 提前計算 Carry。
 
-對於第 $i$ 個 FA，當 $A_{i}=B_{i}=1$ 時，必然會造成進位。稱其為 carry generated，記做 $G_{i}$。當 $A_{i}$ 或 $B_{i}$ 某一個為 $1$ (稱其為 carry propagated，記做 $P_{i}$。)，且 Carry in $C_{i}$ 為 $1$ 時，必然造成進位。
+對於第 $i$ 個 FA，當 $A_{i}=B_{i}=1$ 時，必然會造成進位。稱其為 carry generated，記做 $G_{i}$。當 $A_{i}$ 或 $B_{i}$ 某一個為 $1$ (稱其為 carry propagated，記做 $P_{i}$)，且 Carry in $C_{i}$ 為 $1$ 時，必然造成進位。
 
 ![[Pasted image 20260416194910.png|321]]
 
@@ -160,7 +160,7 @@ BCD Adder 會有：
 
 因為輸入不會大於 9，所以輸出最多為：$9 + 9 + 1 = 19$ 其中 $1$ 代表 carry-in。
 
-當輸出大於 $9$ 時，令 $C=1$，且輸出 $+6$。
+當輸出大於 $9$ 時，令 $C=1$，且輸出原始值 $+6$。
 
 ![[Pasted image 20260416213007.png|606]]
 
@@ -317,4 +317,5 @@ $w=A,x=A\oplus B,y=A\oplus B\oplus C,z=A\oplus B\oplus C\oplus D$
 Sol:
 ![[Pasted image 20260418131255.png|290]]
 注意到我們若使用公式計算 $V$，容易混淆。
+這邊如果直接用減的，不好計算 $C$。我們使用補碼計算。
 我們直接用，計算後的值能否被 $4$ 位**補碼**表達即可。

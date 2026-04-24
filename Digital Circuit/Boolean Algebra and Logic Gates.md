@@ -36,7 +36,7 @@ Boolean Algebra 的操作符**優先級**：
 
 **literal**：變量或取反變量，例如 $x$，$y'$。
 
-term：項，一個 AND 或兩個 OR 組合，例如 $xy, y+z$。(包含輸入的單個門電路)
+term：項，一個 AND 或一個 OR 組合，例如 $xy, y+z$。(product term, sum term) (包含輸入的單個門電路)
 
 化簡 boolean 表達式，就是減少 literal 與 term 的過程 $\implies$ 電路更優。
 
@@ -121,9 +121,9 @@ $n$ 個變量可以組成 $2^{n}$ 個 minterms 或 maxterms。
 $f_{1}'=m_{0}+m_{2}+m_{3}+m_{5}+m_{6}=\sum(0,2,3,5,6)$ 
 $\implies f_{1}=(f_{1}')'=M_{0}M_{2}M_{3}M_{5}M_{6}=\prod(0,2,3,5,6)$ 
 
-我們將 product of maxterms 視為：排除法。因為 $f=M_{0}=x+y+z$ 實際代入時為 $0$，於是 product of maxterms 可以將列出的 maxterms 對應全部置零。
+我們將 product of maxterms 視為：排除法。因為 $f=M_{0}=x+y+z$ 實際代入時，僅當 $x=y=z=0$ 時為 $0$，於是 product of maxterms 可以將列出的 maxterms 對應全部置零。
 
-將  sum of minterms 視為：挑選。因為 $f=m_{0}=x'y'z'$ 實際代入時為 $1$，於是 sum of minterms 可將所有對應值全部置一。
+將  sum of minterms 視為：挑選。因為 $f=m_{0}=x'y'z'$ 實際代入時，僅當 $x=y=z=0$ 時為 $1$，於是 sum of minterms 可將所有對應值全部置一。
 
 我們通過以下操作將某化減過的表達式轉為 sum of minterms：
 
@@ -150,6 +150,10 @@ $=\prod(0,2,4,5)$
 
 - sum of products：$F=y'+xy+x'yz'$ 
 - product of sums：$F=x(y'+z)(x'+y+z)$ 
+
+> [!note]
+> canonical form：每項必定由 maxterm 或 minterm 組成。
+> standard form：只要是 sum of products / product of sums 即可。
 
 對於 $n$ 個變量，會有 $2^{n}$ 個 row 的真值表。
 
@@ -206,7 +210,7 @@ $(x'+x)y'z'+y=y+y'z'=(y+y')(y+z')=y+z'$
 
 Sol:
 那時候忘記 F' 要怎麼變 POS。
-SOP 直接展開：$x'w'+yw'+x'y+x'z$ 
+SOP 直接展開：$wx+wy'z+xy'$  
 POS 先取 SOP 的補：
 $F'=(x'+w')(x'+y)(w'+y+z')=x'w'+yw'+x'y+x'z$ 
 再取 $F=(F')'=(x+w)(y'+w)(x+y)(x+z')$ 
