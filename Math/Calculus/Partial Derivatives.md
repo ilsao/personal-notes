@@ -30,7 +30,7 @@
 
 **等高線(level curve)**：函數 $f$ 的等高線由等式 $f(x,y)=k$ 構成的曲線構成，其中 $k$ 為常數且在 $f$ 的值域裡。可看成 $z=k$ 與函數圖形的交線投影到 $xy$ 平面。
 
-**等高線圖(contour map)**：將所有等高線收集起來繪成的圖，並且我們假設每個 $k$ 的取值間隔相同。等高線越密，圖形越抖。
+**等高線圖(contour map)**：將所有等高線收集起來繪成的圖，並且我們假設每個 $k$ 的取值間隔相同。等高線越密，圖形越陡。
 
 ## Functions of Three or More Variables
 
@@ -70,7 +70,7 @@ $$
 - 延直線 $y=mx$ 逼近
 - 延曲線 $y=x^{2}$ 逼近
 
-思考方式為：看到不同次方，則優先使用能使同皆的路徑。
+思考方式為：看到不同次方，則優先使用能使同階的路徑。
 
 ![[Pasted image 20260417221323.png|619]]
 ![[Pasted image 20260417221337.png|626]]![[Pasted image 20260417221416.png|280]]
@@ -100,6 +100,9 @@ $$
 
 但前提是，$(a,b)$ **在函數的定義域中**。即，$\lim_{ (x,y) \to (a,b) }r(x,y)\neq0$。
 
+> [!note]
+> 沒錯，這邊講的就是有理函數分母等於零時候的情況！
+
 同理，夾擠定理在此處仍適用。
 
 ![[Pasted image 20260417222040.png|655]]
@@ -124,7 +127,7 @@ $$
 在此我們考慮合成函數。若 $f$ 是一個雙變量連續函數，$g$ 為單變量連續函數，則 $g\circ f$ 連續。
 
 > [!warning] 注意
-> 若考慮區域 $y≥x^{b}y≥x^{b}$，則需先取邊界點 $(a,a^{b})$，再構造由上方與下方趨近該點的路徑，以判斷極限是否存在。  
+> 若考慮區域 $y≥x^{b}$，則需先取邊界點 $(a,a^{b})$，再構造由上方與下方趨近該點的路徑，以判斷極限是否存在。  
 > 單純的不等式僅描述範圍，並非一條路徑。
 
 ## Functions of Three or More Variables
@@ -138,7 +141,7 @@ $$
 當計算雙變量函數 $f(x,y)$ 在點 $(a,b)$ 時對 $x$ 的導數時，定義如下：
 
 $$
-f_{x}(a,b)=g'(a)\quad\text{ where }g(x)=f(x,b)=\lim_{ h \to 0} \frac{f(a+h,b)-f(a,b)}{h} 
+f_{x}(a,b)=g'(a)=\lim_{ h \to 0} \frac{f(a+h,b)-f(a,b)}{h} \quad\text{ where }g(x)=f(x,b)
 $$
 
 即，將 $y$ 視為常數然後對 $f$ 求導。
@@ -171,10 +174,10 @@ $$
 
 $$
 \begin{align}
- & (f_{x})_{x}=f_{xx}=f_{11}= \frac{\partial}{\partial x}\left( \frac{\partial f}{\partial x} \right)=\frac{\partial^{2}f}{\partial x^{2}}= \frac{\partial z^{2}}{\partial x^{2}} \\
- & (f_{x})_{y}=f_{xy}=f_{12}= \frac{\partial}{\partial y}\left( \frac{\partial f}{\partial x} \right)= \frac{\partial^{2}f}{\partial y\partial x}= \frac{\partial z^{2}}{\partial y\partial x} \\
- & (f_{y})_{x}=f_{yx}=f_{21}= \frac{\partial}{\partial x}\left( \frac{\partial f}{\partial y} \right)= \frac{\partial^{2}f}{\partial x\partial y}= \frac{\partial z^{2}}{\partial x\partial y} \\
- & (f_{y})_{y}=f_{yy}=f_{22}= \frac{\partial}{\partial y}\left( \frac{\partial f}{\partial y} \right)=\frac{\partial^{2}f}{\partial y^{2}}= \frac{\partial z^{2}}{\partial y^{2}}
+ & (f_{x})_{x}=f_{xx}=f_{11}= \frac{\partial}{\partial x}\left( \frac{\partial f}{\partial x} \right)=\frac{\partial^{2}f}{\partial x^{2}}= \frac{\partial^{2} z}{\partial x^{2}} \\
+ & (f_{x})_{y}=f_{xy}=f_{12}= \frac{\partial}{\partial y}\left( \frac{\partial f}{\partial x} \right)= \frac{\partial^{2}f}{\partial y\partial x}= \frac{\partial^{2} z}{\partial y\partial x} \\
+ & (f_{y})_{x}=f_{yx}=f_{21}= \frac{\partial}{\partial x}\left( \frac{\partial f}{\partial y} \right)= \frac{\partial^{2}f}{\partial x\partial y}= \frac{\partial^{2} z}{\partial x\partial y} \\
+ & (f_{y})_{y}=f_{yy}=f_{22}= \frac{\partial}{\partial y}\left( \frac{\partial f}{\partial y} \right)=\frac{\partial^{2}f}{\partial y^{2}}= \frac{\partial^{2} z}{\partial y^{2}}
 \end{align}
 $$
 
@@ -195,13 +198,13 @@ $$
 > $\frac{d}{dx}(\tan x)=\sec^{2}x$ 
 > $\frac{d}{dx}(\sec x)=\sec x\tan x$
 
-> [!note]
+> [!error] 小心
 > 對 $f_{xy}(0,0)$ 先計算 $f_{x}(0,y)$，然後計算 $f_{xy}(0,0)$。
 > 但對 $f_{x}(0,0)$ 則直接計算 $\lim_{ h \to 0 } \frac{f(h,0)-f(0,0)}{h}$。
 
 > [!note]
 > 可微偏導必存在，可微必連續。
-> 偏導存在，則不一定連續，亦不一定可微。
+> 偏導存在，不一定連續，亦不一定可微。
 
 # Tangent Planes and Linear Approximations
 
@@ -211,7 +214,7 @@ $$
 
 ![[Pasted image 20260423145649.png|313]]
 
-若 $f$ 具有連續的偏導 (因而可微)，則其過 $P(x_{0},y_{0},z_{0})$ 的切平面為：
+若 $f$ 具有**連續的偏導** (因而可微)，則其過 $P(x_{0},y_{0},z_{0})$ 的切平面為：
 
 $$
 z-z_{0}=f_{x}(x_{0},y_{0})(x-x_{0})+f_{y}(x_{0},y_{0})(y-y_{0})
@@ -254,7 +257,7 @@ $$
 
 其中 $(\epsilon_{1},\epsilon_{2})\to(0,0)$ as $(x,y)\to(0,0)$。
 
-即，若 $f_{x},f_{y}$ 在 $(a,b)$ 附近存在，且在 $(a,b)$ 點連續，則 $f$ 可導。
+即，若 $f_{x},f_{y}$ 在 $(a,b)$ 附近存在，**且偏導在 $(a,b)$ 點連續**，則 $f$ 可微。
 
 ## Differentials
 
@@ -343,7 +346,7 @@ Show that the limit does not exist.
 ![[Pasted image 20260419131310.png|264]]
 
 Sol:
-我錯誤的嘗試延曲線 $y=x^{3/2}$ 逼近 $(0,0)$。
+我錯誤的嘗試沿曲線 $y=x^{3/2}$ 逼近 $(0,0)$。
 令 $f(x,y)= \frac{x^{2}+xy^{2}}{x^{4}+y^{2}}$ 
 於是 $f(x,x^{3/2})=\frac{x^{2}+x^{4}}{x^{4}+x^{3}}$，那時我錯誤的認為此時極限會等於 $1$。
 但是，由於是趨近 $(0,0)$ 而非 $(\infty,\infty)$，所以極限應該由最小次方項決定為 $\infty$。
@@ -372,11 +375,13 @@ Sol:
 因此，沿 $y=mx^{a}$ 與 $y=x^{5}$ 趨近 $(0,0)$ 得到兩個不同值，所以 $f$ 在 $(0,0)$ 時極限不存在。
 (c)
 在 $y=0$ 時 $f$ 不連續：
-取點 $(a,0)$。
-因為當沿路徑 $y\to 0^{-}$ 時 $f(a,y)=0$，而沿路徑 $y\to 0^{+}$ 且 $y<a^{4}$ 時 $f(a,y)=1$，有兩個不同的值，極限不存在。
+若我們趨近 $(a,0)$ 沿 $x=a$，令 $y\to 0^{+}$ 則 $f(x,y)=1$ for $0<y<a^{4}$。所以 $\lim_{ y \to 0^{+} }f(a,y)=1$。
+若沿 $x=a$，令 $y\to0^{-}$ 則 $f(x,y)=0$ 且 $\lim_{ y \to 0^{-} }f(a,y)=0$。
+因此極限不存在，且 $f$ 在 $y=0$ 時不連續。
 在 $y=x^{4}$ 時 $f$ 不連續：
-取點 $(a,a^{4})$。
-因為當 $y\geq a^{4}$ 時 $f(a,y)=0$，而 $0<y<a^{4}$ 時 $f(a,y)=1$，有兩個不同的值，極限不存在。
+沿路徑 $x=a$，令 $y\to a^{4+}$ 趨近 $(a,a^{4})$，則 $f(x,y)=0$。因此 $\lim_{ y \to a^{4+} }f(a,y)=0$。
+沿路徑 $x=a$，令 $y\to a^{4-}$ 趨近，則 $f(x,y)=1$。因此 $\lim_{ y \to a^{4-} }f(a,y)=1$。
+因此極限不存在，且 $f$ 在 $y=x^{4}$ 時不連續。
 
 ![[Pasted image 20260419142542.png|891]]
 
@@ -424,7 +429,6 @@ $\implies dV=2\pi rh\ dr+\pi r^{2}\ dr$
 
 ![[Pasted image 20260423202651.png|680]]
 
-
 Sol:
 卡點在於，不知道怎麼求 curve 的在 $P(2,1,3)$ 切線斜率。
 其實不難，先算得 $t=0,u=1$ 時會令 $\mathbf{r}_{1},\mathbf{r}_{2}$ 到達 $P$。
@@ -447,7 +451,7 @@ $R_{s}= \frac{\partial G}{\partial x} \frac{dx}{ds}+ \frac{\partial G}{\partial 
 $\implies R_{s}=9\times 4+(-2)\times 2=32$ 
 $R_{t}= G_{u} u_{t}+G_{v}v_{t}=9\times(-3)+(-2)\times 6=-39$ 
 
-![[Pasted image 20260424152334.png]]
+![[Pasted image 20260424152334.png|800]]
 
 Sol:
 已知：$a=20,b=30, \frac{da}{dt}=3, \frac{db}{dt}=-2$ 
@@ -511,7 +515,7 @@ $\implies b=2$
 Sol:
 選 (B)(D)
 (B)
-我第一次錯誤的認為直接代入 $f(0,y)=-1$ 就可說可導。
+我第一次錯誤的認為直接代入 $f(0,y)=1$ 就說可導。
 但不是的，這邊我們也要考慮 $x$ 的擾動。
 應該這樣說：
 因為 $y\neq 0$，所以 $\frac{y^{2}-x^{2}}{x^{2}+y^{2}}$ 有定義。
@@ -526,8 +530,8 @@ $f_{y}(0,0)=\lim_{ h \to 0 } \frac{f(0,h)-f(0,0)}{h}=0$ 存在
 ![[Pasted image 20260422234229.png|764]]
 
 Sol:
-這題重點是不要怕，硬給他用極限定義微下去。
+這題重點是不要怕，硬給他用偏導定義微下去。
 $f_{x}(0,y)=\lim_{ h \to 0} \frac{f(h,y)-f(0,y)}{h}=\lim_{ h \to 0 } \frac{1}{h}\left( h^{2}\tan^{-1}\left( \frac{y}{h} \right)-y^{2}\tan^{-1}\left( \frac{h}{y} \right) \right)$ 
 $=\lim_{ h \to 0 }\left( h\tan^{-1}\left( \frac{y}{h} \right)-\frac{y^{2}}{h}\tan^{-1}\left( \frac{h}{y} \right) \right)$ 
-$=-\lim_{ h \to 0 } \frac{\tan^{-1}\left( \frac{h}{y} \right)}{\frac{h}{y}}=-y$ 
+$=-\lim_{ h \to 0 } \frac{\tan^{-1}\left( \frac{h}{y} \right)}{\frac{h}{y^{2}}}=-y$ 
 $f_{xy}(0,0)=\lim_{ h \to 0 } \frac{f_{x}(0,h)-f_{x}(0,0)}{h}=\lim_{ h \to 0 } -\frac{h}{h}=-1$ 

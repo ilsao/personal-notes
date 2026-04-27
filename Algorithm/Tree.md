@@ -1,3 +1,7 @@
+# TODO:
+
+為啥 AVL 的高度是 $\log n$？
+
 # Heap (Priority Queue)
 
 heap 是完全二叉樹：除最後一層，其餘層全滿。最後一層應從左到右填。
