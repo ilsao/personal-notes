@@ -26,16 +26,16 @@ $$
 Ed=RAJ\implies E=R \frac{A}{d}J
 $$
 
-令**電阻率(electrical resistivity)** $\rho=\frac{RA}{d}$ ($\ohm-m$)，則：
+令**電阻率(electrical resistivity)** $\boxed{\rho=\frac{RA}{d}}$ ($\ohm-m$)，則：
 
 $$
-E=\rho J
+\boxed{E=\rho J}
 $$
 
 令**導電率(electrical conductivity)** $\sigma=\frac{1}{\rho}$，則：
 
 $$
-J=\sigma E
+\boxed{J=\sigma E}
 $$
 
 下列皆為常數：
@@ -56,10 +56,12 @@ CFE 有四個假設：
 2. 忽略電子間的互相作用，並假設由正電離子造成的位能為**常數**。即，電子可被視為理想氣體，滿足 Maxwel-Boltzmann 統計。
 3. 不受電場時，電子以隨機熱運動速度移動：
 $$
-\frac{1}{2}m\bar{v}^{2}=\frac{3}{2}k_{B}T
+\boxed{\frac{1}{2}m\bar{v}^{2}=\frac{3}{2}k_{B}T}
 $$
-   其中波茲曼常數 $k_{B}=1.38\times 10^{-23}\text{ J/K}$。
+   其中波茲曼常數 $\boxed{k_{B}=1.38\times 10^{-23}\text{ J/K}=8.61\times 10^{-5}\text{ eV/K}}$。
 4. 對固體施加電場 $E$ 時，自由電子會有平均**飄移速度(drift velocity)**，方向與電場相反而形成電流。
+
+![[Pasted image 20260427190633.png|338]]
 
 ## Ohm's Laws: Derivation from CFE
 
@@ -81,7 +83,7 @@ $$
 
 圖中黑線為隨機運動，藍線為增加飄移速度後的運動軌跡。
 
-由於電場越大，電子碰撞的機率上升。所以達到平衡狀態時，飄移速度會為定值 (但飄移速度大小會隨電場上升而增快) 而不會是非勻速運動。
+由於**電場越大，電子碰撞的機率上升** (從而不繼續加速)。所以**達到平衡狀態時，飄移速度會為定值** (但飄移速度大小會隨電場上升而增快) 而不會是非勻速運動。
 
 現在我們嘗試推導歐姆定律：$J=\sigma E$ 且 $\sigma$ 與 $E$ 無關。
 
@@ -91,7 +93,7 @@ $$
 - $\Delta q=qNAv_{d}\Delta t$ 
 - $i=\frac{\Delta q}{\Delta t}=qNAv_{d}$ 
 - $J=\frac{i}{A}=qNv_{d}$ 
-- $v_{d}=\frac{J}{qN}$ 
+- $\boxed{v_{d}=\frac{J}{qN}}$ 
 
 現在來找 $v_{d}$：
 
@@ -101,7 +103,7 @@ $\implies \frac{dv}{dt}=\frac{qE}{m}\implies dv=\frac{qE}{m}dt$
 $\int_{0}^{v}dv=\frac{qE}{m}\int_{0}^{t}dt$ 
 於是得到：
 $$
-v_{d}=\frac{qE}{m}t
+\boxed{v_{d}=\frac{qE}{m}t}
 $$
 
 > [!note]
@@ -111,13 +113,13 @@ $$
 令 $t=\tau$ (平均碰撞時間)，關聯 $E$ 與 $J$ (為了證明 $J=\sigma E$)：
 
 $$
-\frac{J}{qN}=\frac{qE}{m}\tau\implies J=\frac{q^{2}N\tau}{m}E
+\frac{J}{qN}=\frac{qE}{m}\tau\implies \boxed{J=\frac{q^{2}N\tau}{m}E}
 $$
 
 對比發現：
 
 $$
-\sigma=\frac{q^{2}N\tau}{m}
+\boxed{\sigma=\frac{q^{2}N\tau}{m}}
 $$
 
 現在我們要證明 $\sigma$ 與 $E$ 無關，即 $\tau$ 與 $E$ 無關 (因為 $q,N,m$ 皆為常數)。
@@ -162,13 +164,6 @@ $$
 \sigma \propto T^{-1/2}
 $$
 
-from:
-$\sigma=\frac{q^{2}N\tau}{m}$ 
-又唯一與溫度相關的量為 $\tau$。
-$\tau \approx \frac{l}{v_{RMS}}$ 
-$v_{RMS}=\left( \frac{3k_{B}T}{m} \right)^{1/2}$ 
-$\implies\sigma \propto T^{-1/2}$ 
-
 但實際測量：
 
 $$
@@ -178,8 +173,8 @@ $$
 # Quantum-Mechanical Free Electron (QMFE) Model
 
 A. Sommerfeld 對自由電子模型做以下修改：
-1. 電子由量子力學描述。即電子氣體能階量子化。
-2. 電子遵守包力不相容原理。
+1. 電子由量子力學描述。即電子氣體**能階量子化**。
+2. 電子遵守**包力不相容**原理。
 
 對能量分布統計來說：
 - 經典氣體遵守 Maxwell-Boltzmann 統計
@@ -187,9 +182,8 @@ A. Sommerfeld 對自由電子模型做以下修改：
 
 A. Sommerfeld 保留以下特性：
 1. 價電子在固體中自由移動
-2. 除去與離子的碰撞，忽略電子與晶格離子的靜電作用
+2. 除去與離子的碰撞，忽略電子與晶格離子的靜電作用 (在固體中位能為定值)
 3. 忽略電子間作用
-
 $\implies$ 此假設使價電子保留理想氣體特徵，但由量子力學處理之。
 
 ## Three-Dimensional Infinite Potential Well
@@ -206,7 +200,7 @@ $\implies$ 此假設使價電子保留理想氣體特徵，但由量子力學處
 
 解：$-\frac{\hbar^{2}}{2m}\left( \frac{\partial^{2}\chi}{\partial x^{2}}+\frac{\partial ^{2}\chi}{\partial y^{2}}+\frac{\partial^{2}\chi}{\partial z^{2}} \right)=E\chi$ 
 
-利用變數分離法，解出：$\chi(x,y,z)=A\sin(k_{1}x)\sin(k_{2}y)\sin(k_{3}z)$，其中 $A=B^{3}$ (一維情況的三次方) 。
+利用變數分離法，解出：$\boxed{\chi(x,y,z)=A\sin(k_{1}x)\sin(k_{2}y)\sin(k_{3}z)}$，其中 $A=B^{3}$ (一維情況的三次方) 。
 
 代入邊界條件連續，即在 $x=a,y=a,z=a$ 時 $\chi=0$。得到：
 
@@ -217,7 +211,7 @@ $$
 從 $k=\sqrt{ \frac{2mE}{\hbar^{2}} }$ 得：
 
 $$
-E_{n_{1},n_{2},n_{3}}=\frac{\pi^{2}\hbar^{2}}{2ma^{2}}(n_{1}^{2}+n_{2}^{2}+n_{3}^{2})
+\boxed{E_{n_{1},n_{2},n_{3}}=\frac{\pi^{2}\hbar^{2}}{2ma^{2}}(n_{1}^{2}+n_{2}^{2}+n_{3}^{2})}
 $$
 
 ## Occupancy Condition at $T=0\text{ K}$ 
@@ -244,13 +238,13 @@ $$
 - $E<E_{F}$：全滿
 - $E>E_{F}$：全空
 
-於是令 $F(E)$ 為某能量 $E$ 被電子填滿的機率，在 $T=0\text{ K}$ 時：
+於是令 $F(E)$ 為某能量為 $E$ 的量子態被電子填滿的機率，在 $T=0\text{ K}$ 時：
 
 $$
-F(E)=\begin{cases}
+\boxed{F(E)=\begin{cases}
 1 & E<E_{F} \\
 0 & E>E_{f}
-\end{cases}
+\end{cases}}
 $$
 
 這個分布其實就是 Fermi-Dirac 分布。
@@ -277,7 +271,7 @@ $$
 
 因為我們只允許 $n_{1},n_{2},n_{3}$ 為正值，所以只考慮 $\frac{1}{8}$ 個球。
 
-於是電子總數為：
+於是電子總數為 (2 為自旋)：
 
 $$
 2\times\left( \frac{1}{8}\times\text{sphere volume} \right)\times(\text{number of points per unit volume})
@@ -290,14 +284,16 @@ Na^{3}=2\times\left( \frac{1}{8}\times \frac{4}{3}\pi n_{f}^{3} \right)\times 1\
 $$
 
 $$
-E_{F}(0)=\frac{\hbar^{2}}{2m}(3N\pi^{2})^{2/3}
+\boxed{E_{F}(0)=\frac{\hbar^{2}}{2m}(3N\pi^{2})^{2/3}}
 $$
+
+Cu：的 $E_{F}= 6.95\text{ eV}$ 
 
 ## Density of States
 
 我們考慮相鄰能量間隔：$\Delta E\sim \frac{\hbar^{2}\pi^{2}}{2ma^{2}}$。若取 $a=1\text{ cm}$，則能量差為：
 
-![[Pasted image 20260425154410.png|378]]
+![[Pasted image 20260425154410.png|563]]
 
 是一個極小的值，可視為**準連續(quasicontinuous)**。
 
@@ -327,7 +323,7 @@ $\frac{dn}{dE}=\frac{1}{2}\left( \frac{1}{EE_{0}} \right)^{1/2}\implies dn=\frac
 $$
 \begin{align}
 g(E)dE & = \frac{\pi}{2E_{0}^{3/2}}E^{1/2}dE \\
- & =CE^{1/2}dE\quad\quad\quad\quad C=\frac{\pi}{2E_{0}^{3/2}}=\frac{a^{3}(2m)^{3/2}}{2\hbar^{3}\pi^{2}} \\
+ & =\boxed{CE^{1/2}dE}\quad\quad\quad\quad \boxed{C=\frac{\pi}{2E_{0}^{3/2}}=\frac{a^{3}(2m)^{3/2}}{2\hbar^{3}\pi^{2}}} \\
  & \implies g(E)dE\propto E^{1/2}
 \end{align}
 $$
@@ -340,23 +336,31 @@ $$
 
 ![[Pasted image 20260425155654.png|302]]![[Pasted image 20260425155707.png|265]]
 
+![[Pasted image 20260427200013.png|533]]
+
+注意到 (單個電子的) 平均能量為：
+
+$$
+\boxed{\overline{ E }(T=0)=\frac{3}{5}E_{F}}
+$$
+
 ## Energy Distribution of Electrons for $T>0\text{ K}$ 
 
 若電子具有約 $k_{B}T$ 的熱能時，就會嘗試躍遷到更高能量的狀態。
 
-只有能量在 $E_{F}$ 下方約 $k_{B}T$ 範圍內的電子可能躍遷。若電子能量低於 $E_{F}$ 很多，因為能量比它們高的能階已被佔據，所以無法躍遷。
+**只有能量在 $E_{F}$ 下方約 $k_{B}T$ 範圍內的電子可能躍遷**。若電子能量低於 $E_{F}$ 很多，因為能量比它們高的能階已被佔據，所以無法躍遷。
 
 Fermi-Dirac 分布的精確形式：
 
 $$
-F(E)=\frac{1}{\text{exp}\left( \frac{E-E_{F}}{k_{B}T} \right)+1}
+\boxed{F(E)=\frac{1}{\text{exp}\left( \frac{E-E_{F}}{k_{B}T} \right)+1}}
 $$
 
 當 $E\leq E_{F}-k_{B}T$ 時 $F(E)\approx 1$，又 $E\geq E_{F}+k_{B}T$ 時 $F(E)\approx0$。
 
 ![[Pasted image 20260425163724.png|298]]
 
-重新定義 Fermi Energy：$E_{F}$ 是使電子佔據機率為 $\frac{1}{2}$ 的能量。
+重新定義 Fermi Energy：**$E_{F}$ 是使電子佔據機率為 $\frac{1}{2}$ 的能量**。
 
 ## Failure of CFE Model Revisited
 
@@ -366,18 +370,26 @@ $$
 - 經典：每個電子都可以吸收熱能
 - 量子：只有比例約 $\frac{k_{B}T}{E_{F}}$ 的電子可以吸收熱能
 
-回憶到：$C_{v}=\frac{dE}{dT}$ 
+回憶到：$\boxed{C_{v}=\frac{dE}{dT}}$ 
 
 對 CFE 來說：$d E=N_{A}\times\left( \frac{3}{2}k_{B}\ d T \right)$ 
 $\implies C_{v}=\frac{dE}{dT}=\frac{3}{2}(N_{A}k_{B})=\frac{3}{2}R$ 
 
 對 QMFE 來說：
-能量變化 = 被激發的電子數 $\times$ 平均獲得能量
-$\Delta E=N_{A}\times\left( \frac{k_{B}T}{E_{F}} \right)\times(k_{B}\Delta T)= \frac{N_{A}k_{B}^{2}T^{2}}{E_{F}}$ 
-$\implies C_{v}=\frac{dE}{dT}=\frac{2N_{A}k_{B}^{2}}{E_{F}}T=\frac{2k_{B}}{E_{F}}RT$ 
+能量變化 = **被激發的電子數 $\times$ 平均獲得能量** 
+$\Delta E=\boxed{N_{A}\times\left( \frac{k_{B}T}{E_{F}} \right)\times(k_{B}\Delta T)}= \frac{N_{A}k_{B}^{2}T^{2}}{E_{F}}$ 
+$\implies C_{v}=\frac{dE}{dT}=\frac{2N_{A}k_{B}^{2}}{E_{F}}T=\boxed{\frac{2k_{B}}{E_{F}}RT}$ 
 代入 $E_{F}\approx 5\text{ eV}$ 則有 $C_{v}\approx 10^{-4}RT$ 
 
 ### Electrical Conductivity
+
+CFE Model 認為：
+from:
+$\sigma=\frac{q^{2}N\tau}{m}$ 
+又唯一與溫度相關的量為 $\tau$。
+$\tau \approx \frac{l}{v_{RMS}}$ 
+$v_{RMS}=\left( \frac{3k_{B}T}{m} \right)^{1/2}$ 
+$\implies\sigma \propto T^{-1/2}$ 
 
 這邊我們想解釋：$\sigma \propto T^{-1}$。
 
@@ -390,7 +402,7 @@ $\implies C_{v}=\frac{dE}{dT}=\frac{2N_{A}k_{B}^{2}}{E_{F}}T=\frac{2k_{B}}{E_{F}
 代入 $g(E)dE=CE^{1/2}dE$，得：
 
 $$
-g(v)dv\propto v^{2}\ dv
+\boxed{g(v)dv\propto v^{2}\ dv}
 $$
 令 $v_{F}$ 為能量為 $E_{F}$ 時的速度，則：
 
@@ -402,21 +414,21 @@ $$
 
 這表示，每個電子都參與導電過程且獲得了能量。
 
-> [!note]
+> [!warning]
 > 在比熱的討論時，只有接近 $E_{F}$ 的電子獲得了能量。
 > 這是因為：
-> - 比熱情況：電子獲得的能量隨機分配，所以分布不會總體偏移 (包利不相容)。
-> - 電場情況：每個電子都獲得相同的能量，同時偏移。
+> - 比熱情況：電子獲得的**能量隨機分配**，所以分布不會總體偏移 (包利不相容)。
+> - 電場情況：每個電子都**獲得相同的能量**，同時偏移。
 
-雖然每個電子都參與導電，但實際決定散射時間 $\tau$ 的是接近 $E_{F}$ 的電子。
+雖然每個電子都參與導電，但實際**決定散射時間 $\tau$ 的是接近 $E_{F}$ 的電子**。
 
-因為電子在散射時會損失能量，所以只有那些低能態有空位的電子會被散射，即接近 $E_{F}$ 的電子。
+因為電子在散射時會損失能量，所以**只有低能態有空位的電子會被散射**，即接近 $E_{F}$ 的電子。
 
-電子不會被無限加速，因為必須要有高能態空位電子才能加速，所以會被 $E_{F}$ 附近電子阻擋。
+電子不會被無限加速，因為必須要**有高能態空位電子才能加速**，所以會被 $E_{F}$ 附近電子阻擋。
 
 已知：$\tau=\frac{l}{v_{F}}$ 與 $\sigma=\frac{q^{2}N\tau}{m}$。代入得 $\sigma=\frac{q^{2}Nl}{mv_{F}}$。
 
-但在 QMFE 中，$E_{F}$ 因而 $v_{F}$ 與溫度無關。若依照 CFE 假設，$l$ 為原子間距，則 $l$ 也與溫度無關。因而 $\sigma$ 與溫度無關，與實驗相矛盾。
+但在 QMFE 中，$E_{F}$ (因而 $v_{F}$) 與溫度無關。若依照 CFE 假設，$l$ 為原子間距，則 $l$ 也與溫度無關。因而 $\sigma$ 與溫度無關，與實驗相矛盾。
 
 所以，CFE 中 $l$ 的假設錯誤。
 
@@ -439,7 +451,7 @@ $\implies l=390\times 10^{-10}$
 - $\lambda_{F}=\frac{h}{\sqrt{ 2mE_{F} }}\approx 4.65\times 10^{-10}\text{ m}$ ($\lambda=\frac{h}{p}$)
 - 晶格間距 $d=2.09\times 10^{-10}\text{ m}$ 
 
-因為 $\lambda_{F}>d$，電子幾乎不被晶格散射，可以自由穿越晶體。
+因為 $\lambda_{F}>2d$，電子幾乎不被晶格散射，可以自由穿越晶體。
 
 真正的散射由以下導致：
 - 缺陷
@@ -451,13 +463,13 @@ $\implies l=390\times 10^{-10}$
 於是：
 
 $$
-l\propto \frac{1}{\pi r^{2}}
+\boxed{l\propto \frac{1}{\pi r^{2}}}
 $$
 
 且振動能量：
 
 $$
-E\propto r^{2}\propto T
+\boxed{E\propto r^{2}\propto T}
 $$
 
 > [!note]
@@ -474,3 +486,78 @@ $$
 $$
 \sigma=\frac{q^{2}Nl}{mv_{F}}\propto T^{-1}
 $$
+
+# 威儀指定習題
+
+![[Pasted image 20260427194620.png|695]]
+
+Sol:
+電子數 / 莫爾 $\times$ 一立方公尺的莫爾數
+$6\times 10^{23}\times\left( \frac{19.3}{197} \right)\times 10^{6}$ 
+$\approx 5.87\times 10^{28}\text{ m}^{3}$ 
+注：monovalent 一價的
+
+![[Pasted image 20260427195337.png|661]]
+
+Sol:
+$V_{H}=R_{H} \frac{iB}{d}=\frac{1}{Nq} \frac{iB}{d}$ 
+$\implies 2.6\times 10^{-6}= \frac{1}{N\times 1.6\times 10^{-19}} \frac{20\times 1.2}{10^{-3}}$ 
+$\implies N= 5.77\times 10^{28}\text{ m}^{3}$ 
+
+![[Pasted image 20260427201344.png|712]]
+
+Sol:
+(a)
+因為 $k_{B}T\ll E_{F}$，所以當 $T$ 不大時基本沒啥影響。
+雖然 $\overline{ E }(T=0\text{ K})=\frac{3}{5}E_{F}$，但對 $\overline{ E }(T=300\text{ K})\approx \frac{3}{5}E_{F}$ 
+銅的 $E_{F}\approx 6.95\text{ eV}$。
+$\Delta E=\frac{3}{5}E_{F}-\frac{3}{2}k_{B}T=4.13\text{ eV}$ 
+注意：這個是一個電子放出的能量
+$\text{E/m}^{3}=4.13\times 8.4\times 10^{28}=3.46\times 10^{29}\text{ eV}$ 
+(b)
+$t= \frac{3.46\times 10^{29}\times 1.6\times 10^{-19}}{100}=5.54\times 10^{8}\text{ s}$ 
+
+![[Pasted image 20260427202704.png|683]]
+
+Sol:
+處於激發態的部分約為：$\frac{k_{B}T}{E_{F}}$ 
+$\approx\frac{ 8.63\times 10^{-5}\times 300}{6.95}=3.7\times 10^{-3}$ 
+
+![[Pasted image 20260427202933.png|738]]
+
+Sol:
+$\frac{k_{B}T}{E_{F}}\approx \frac{8.63\times 10^{-5}\times 2273}{1}\approx 0.196$ 
+
+![[Pasted image 20260427203659.png|690]]
+
+Sol:
+這邊的 show 不是讓你說明，是讓你用數學啦！
+能量為 $E$ 的量子態被填滿的機率為：$F(E)=\frac{1}{\text{exp}\left( \frac{E-E_{F}}{k_{B}T} \right)+1}$ 
+$F(E_{F}+\Delta E)=\frac{1}{\text{exp}\left( \frac{\Delta E}{k_{B}T} \right)+1}$ 
+$F(E-\Delta E)=\frac{1}{\text{exp}\left( -\frac{\Delta E}{k_{B}T} \right)+1}$ 
+想說明 $E_{F}+\Delta E$ 的能態被佔據的機率等於 $E_{F}-\Delta E$ 的態空掉的機率，只需相加兩個機率等於 $1$ 即可。
+令 $t=\frac{\Delta E}{k_{B}T}$。
+$F(E_{F}+\Delta E)+F(E_{F}-\Delta E)=\frac{1}{e^{t}+1}+\frac{1}{e^{-t}+1}$ 
+$= \frac{e^{-t}+1+e^{t}+1}{(e^{t}+1)(e^{-t}+1)}=1$ 
+
+# 威儀考古
+
+1. 畫出Fermi-Dirac Distribution的圖形，並標出重要的座標軸及數值
+
+Sol:
+![[Pasted image 20260425145848.png|271]]
+
+2. $k_{B}T$ 在 $T=300\text{ K}$ 時的數值為？
+
+Sol:
+$\approx 8.63\times 10^{-5}\times 300=2.589\times 10^{-2}\text{ eV}$ 
+
+3. Kronig-Penny Model 有兩個缺點  第一個是 Not much physical insight (只是純粹解數學式而得到結果) 請問第二個是什麼?
+
+Sol:
+沒有給出一個能帶中的量子態數
+
+4. 請解釋何謂 Fermi-Dirac Distribution
+
+Sol:
+在熱平衡下，能量為 $E$ 的量子態被佔據的機率。

@@ -12,10 +12,10 @@ $$
 E_{p}(x)=E_{p}(x+d)
 $$
 
-Bloch 定理說這種週期性位能中，波函數為：
+Bloch 定理說這種**週期性位能中**，波函數為：
 
 $$
-\chi(x)=u_{k}(x)e^{ikx}\quad u_{k}(x)=u_{k}(x+d)
+\boxed{\chi(x)=u_{k}(x)e^{ikx}\quad u_{k}(x)=u_{k}(x+d)}
 $$
 
 可想成：平面波 $\times$ 週期性波
@@ -99,10 +99,10 @@ u_{II}(x)=Ce^{(\xi-ik)x}+De^{-(\xi+ik)x}
 $$
 
 為了使波函數 well-behave：
-1. 波函數連續
+1. **波函數連續**：
 	- $\chi_{I}\left( \frac{c}{2} \right)=\chi_{II}\left( \frac{c}{2} \right)$ 
 	- $\frac{d\chi_{I}}{dx}\left( \frac{c}{2} \right)=\frac{d\chi_{II}}{dx}\left( \frac{c}{2} \right)$ 
-2. 週期性條件：
+2. **週期性條件**：
 	- $u_{I}\left( -\frac{c}{2} \right)=u_{II}\left( b+\frac{c}{2} \right)$ 
 	- $\frac{du_{I}}{dx}\left( -\frac{c}{2} \right)=\frac{du_{II}}{dx}\left( b+\frac{c}{2} \right)$ 
 
@@ -117,20 +117,20 @@ $$
 四個條件解四個變量，解得：
 
 $$
-P \frac{\sin(\gamma d)}{\gamma d}+\cos(\gamma d)=\cos(kd)
+\boxed{P \frac{\sin(\gamma d)}{\gamma d}+\cos(\gamma d)=\cos(kd)}
 $$
 
 其中：
 
 $$
-P=\frac{mE_{p_{0}}bd}{\hbar^{2}},\gamma=\sqrt{ \frac{2mE}{\hbar^{2}} }
+\boxed{P=\frac{mE_{p_{0}}bd}{\hbar^{2}},\gamma=\sqrt{ \frac{2mE}{\hbar^{2}} }}
 $$
 
 ## Allowed and Forbidden Energy Bands
 
 由上面那個含 $P$ 方程：
-- 左邊與能量有關 ($\gamma=\sqrt{ \frac{2mE}{\hbar^{2}} }$)
-- 右邊與動量有關 ($\lambda=\frac{h}{p},k=\frac{2\pi}{\lambda}=\frac{p}{\hbar}$)
+- 左邊與**能量**有關 ($\gamma=\sqrt{ \frac{2mE}{\hbar^{2}} }$)
+- 右邊與**動量**有關 ($\lambda=\frac{h}{p},k=\frac{2\pi}{\lambda}=\frac{p}{\hbar}$)
 
 可視為：
 
@@ -144,12 +144,12 @@ $$
 
 ## Dispersion Relation
 
-色散關係：$E$ 與 $k$ 間的關係。
+**色散關係：$E$ 與 $k$ 間的關係**。
 
 對自由粒子：
 
 $$
-E=\frac{\hbar^{2}k^{2}}{2m}
+\boxed{E=\frac{\hbar^{2}k^{2}}{2m}}
 $$
 
 是一個拋物線。
@@ -166,7 +166,9 @@ Kronig-Kenny Model 有以下問題：
 
 # Tight-Binding Approximation
 
-若在一個無限深位能井中，波函數 $\chi$ 為滿足薛丁格方程的一個解，則波函數 $-\chi$ 也是一個解。因為姐總是線性的。
+Tight-Binding Approximation：假設電子主要局域於原子附近，其波函數可由各原子軌域線性組合而成，並透過與鄰近原子的重疊形成能帶結構。
+
+若在一個無限深位能井中，波函數 $\chi$ 為滿足薛丁格方程的一個解，則波函數 $-\chi$ 也是一個解。因為解總是線性的 (函數乘以某個常數仍是一個解)。
 
 從物理意義上看，機率密度為 $|\chi|^{2}$，會將負號抹去。所以二者的物理意義相同。
 
@@ -189,15 +191,15 @@ Kronig-Kenny Model 有以下問題：
 
 ![[Pasted image 20260426140610.png|599]]
 
-觀察到兩井距離遠時，$\chi_{S}$ 與 $\chi_{A}$ 簡併。
+觀察到兩井距離遠時，$\chi_{S}$ 與 $\chi_{A}$ 簡併 (模平方行為相同)。
 
 逐漸靠近兩井，波函數開始重疊。
 
-$\chi_{S}$ 表現的像一個寬度 $2a$ 的位能井的基態波函數：
+$\chi_{S}$ 表現的像一個寬度 $2a$ 的位能井的**基態**波函數：
 
 ![[Pasted image 20260426140850.png|528]]
 
-$\chi_{A}$ 表現的像一個寬度 $2a$ 的位能井的第一激發態函數：
+$\chi_{A}$ 表現的像一個寬度 $2a$ 的位能井的第一**激發態**函數：
 
 ![[Pasted image 20260426140900.png|524]]
 
@@ -218,32 +220,32 @@ $\chi_{A}$ 表現的像一個寬度 $2a$ 的位能井的第一激發態函數：
 
 現考慮六個氫原子，他們可以形成多少個不同的態？
 
-我們有六個波函數，所以有：$1+5-$、$2+4-$、$\dots$、$6+$ 共六種。
+我們有六個波函數 (視為正交基底)，所以會有六種互相獨立的線性組合 (線代沒忘吧)。
 
 ![[Pasted image 20260426141729.png|383]]
 
 ![[Pasted image 20260426143210.png|265]]
 
-我們用曲率來判別波函數能量的大小，曲率越高的波函數，波函數包含更多較大的 $k$ 來描述。越大的 $k$ 表示越大的 $p$，動量越大則能量越大。
+我們用曲率來判別波函數能量的大小，**曲率越高的波函數，波函數包含更多較大的 $k$ 來描述。越大的 $k$ 表示越大的 $p$，動量越大則能量越大**。
 
 推廣到 $N$ 個原子，會有 $N$ 個不同的能階。當 $N$ 接近現實晶體時 $\approx 10^{-23}$，能階間距 $\approx 10^{-23}\text{ eV}$。就會形成準連續的能帶。
 
 ![[Pasted image 20260426143233.png|343]]
 
 觀察出：
-- 能帶寬取決於原子的接近程度，越接近則越寬。
-- 能階越高，能帶越寬。因為較高能階的波函數較寬，電子有更大的機率出現在離原子核較遠處。造成波函數重疊較嚴重，能量差距較明顯。
-- 能帶寬度獨立於原子數目 $N$，因為距離較遠的兩個原子互相影響較少，能帶寬主要由相鄰原子間的耦合決定。
+- 能帶**寬取決於原子的接近程度**，越接近則越寬。
+- **能階越高，能帶越寬**。因為較高能階的波函數較寬，電子有更大的機率出現在離原子核較遠處。造成波函數重疊較嚴重，能量差距較明顯。
+- **能帶寬度獨立於原子數目 $N$**，因為距離較遠的兩個原子互相影響較少，能帶寬主要由相鄰原子間的耦合決定。
 
 # Conductors, Insulators, and Semiconductors
 
 電子要能導電，需滿足：
 - 電子能躍遷到更高的能量態 (被加速)，且該態 allowed and empty。
 
-通過上節的討論，我們知道一個能帶有 $N$ 個能態，每個能態可放兩個電子，且每個 $m_{l}$ 會展出一個能帶。所以可放的電子數為：
+通過上節的討論，**我們知道一個能帶有 $N$ 個能態，每個能態可放兩個電子，且每個 $m_{l}$ (不同 $m_{l}$ 有不同的波函數) 會展出一個能帶**。所以可放的電子數為：
 
 $$
-2(l+1)N
+\boxed{2(2l+1)N}
 $$
 
 定義：
@@ -340,7 +342,7 @@ $\implies qE=\frac{\hbar^{2}}{\frac{d^{2}E}{dk^{2}}}a$
 於是：
 
 $$
-m^{*}=\frac{\hbar^{2}}{\frac{d^{2}E}{dk^{2}}}
+\boxed{m^{*}=\frac{\hbar^{2}}{\frac{d^{2}E}{dk^{2}}}}
 $$
 
 在 CFE 中，$\sigma$ 被修正為：$\sigma=\frac{q^{2}N\tau}{m^{*}}$ 
@@ -374,7 +376,7 @@ $$
 
 用 Bragg 反射理解：$2d\sin \theta=n\lambda$。
 
-我們考慮 Bragg 反射最強烈時的角度 $\theta=90^{\circ}$，於是 $2d\sin \theta=2d=n\lambda=n\left( \frac{2\pi}{k} \right)\implies k=\frac{n\pi}{d}$ 時電子波會被反射。
+我們考慮 **Bragg 反射最強烈時的角度 $\theta=90^{\circ}$**，於是 $2d\sin \theta=2d=n\lambda=n\left( \frac{2\pi}{k} \right)\implies k=\frac{n\pi}{d}$ 時電子波會被反射。
 
 1. $k$ 接近 $0$ 時：不滿足 Bragg 反射條件，不反射。$m^{*}>0$，與電場反向加速。
 2. $k$ 接近能帶頂端時，$k=\frac{n\pi}{d}$：滿足反射條件，$m^{*}<0$，與電場同向加速。
@@ -442,6 +444,12 @@ $$
 
 ![[Pasted image 20260427005513.png|205]]
 
+注意到：
+
+$$
+\boxed{V_{H}=\left( \frac{1}{Nq} \right) \frac{iB}{d}=R_{H} \frac{iB}{d}}
+$$
+
 定義：$\frac{1}{N{q}}=R_{H}$ 為 Hall Coefficient。
 
 $R_{H}>0$ ：正電荷在流動。
@@ -450,4 +458,66 @@ $R_{H}<0$：負電荷在流動。
 
 ![[Pasted image 20260427005828.png|598]]
 
-注意到：半導體的 conductivity 與 resistivity 範圍都很大。
+注意到：半導體的 conductivity 與 resistivity 範圍都很大。(因為半導體的自由電子受熱激發，導電性受溫度影響)
+
+# 威儀指定習題
+
+![[Pasted image 20260427220443.png|711]]
+
+Sol:
+我把 $++-$ 與 $+--$ 錯誤的認為是兩種了。
+![[Pasted image 20260427221254.png|469]]
+注意到雖然有三種線性組合，但是第二種是錯誤的，因為他不左右對稱。
+正確的 2nd level 應該是 + 0 -。
+
+![[Pasted image 20260427222526.png|720]]
+
+Sol:
+![[08bcb1dd00b479d082e3bfe2dffc1788.jpg|292]]
+
+![[Pasted image 20260428102603.png|831]]
+
+Sol:
+非導體：band gap 能量較大 (several $\text{eV}$)，通常可見光能量不足以達到 band gap 能量使電子激發。可見光照射時無法被吸收 $\implies$ 物體透明
+半導體：band gap 能量較小 ($10^{-1}\sim10^{-4}\text{ eV}$)，可見光足以激發電子，但紅外線不足以激發。紅外線照射時無法被吸收 $\implies$ 物體在可見光下不透明，在紅外線下透明。
+導體：沒有 band gap 且具有較高能量的空態，且量子態間能量差距極小。可吸收任意波長的光以躍遷到較高的空態。
+
+![[Pasted image 20260428104506.png|715]]
+
+Sol:
+能量最高的可見光波長 $\approx 400\text{ nm}$ 且能量為 $E=\frac{1240}{400}=3.1\text{ eV}$ 
+比所有上述物質的 energy gap 能量小，可見光無法被任意物質吸收 $\implies$ 全部在可見光下都透明。
+使物質不透明的波長：
+KCl: $\frac{1240}{7.6}$ 
+KBr: $\frac{1240}{6.3}$ 
+KI: $\frac{1240}{5.6}$ 
+
+![[Pasted image 20260428105226.png|799]]
+
+Sol:
+(a)
+注意這邊 $N=6\times 10^{23}\times\left( \frac{2.7}{26.98}\times 10^{6} \right)\times3$，因為是三價。
+代入 $E_{F}=\frac{\hbar^{2}}{2m}(3N\pi^{2})^{2/3}\approx 11.6\text{ eV}$ 
+(b)
+直接用 $E_{F}'=\frac{\hbar^{2}}{m^{*}}(3N\pi ^{2})^{2/3}\propto \frac{1}{m^{*}}$ 
+$\frac{E_{F}}{E_{F}'}=\frac{m^{*}}{m}=\frac{11.6}{12}\approx 0.97$ 
+$\implies m^{*}=0.97m$ 其中 $m$ 為自由電子質量
+
+# 威儀考古
+
+1. 假設晶體中有N個鈉 請畫出Na($1s^{2} 2s^{2} 2p^{6} 3s^{1}$) 的價帶並標示出個數與 $E_{F}$ 
+
+Sol:
+![[Pasted image 20260428115348.png|348]]
+
+2. 請解釋為何大部分的絕緣體都是透明的 (練習題 5)
+
+3. (a) 請寫出Quantum Mechanic Free Electron Model和Kronig-Penny Model的基本假設有何不同? (b) 和Kronig-Penny Model相比，Tight Binding Approximation 的優點為何?
+
+Sol:
+(a)
+QMFE Model：假設固體中位能為定值，電子視為自由電子。
+Kronig-Penny Model：假設固體中有週期性位能，以描述晶格對電子的影響。
+(b)
+更具物理意義的表示能帶出現的原因
+具體的說明能帶中有多少個量子態 ($N$ 個)，可放入多少電子 ($2N$ 個)。
